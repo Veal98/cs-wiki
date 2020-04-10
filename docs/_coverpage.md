@@ -6,7 +6,9 @@
 
 
 [GitHub](<https://github.com/Veal98/CS-Wiki>)
+[语 雀](<https://www.yuque.com/veal98/wiki>)
 [开始阅读](README.md)
+
 
 <!-- 背景图片 -->
 ![](https://img-blog.csdnimg.cn/20200410105725118.jpg)
