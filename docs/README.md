@@ -1,3 +1,31 @@
+<center><a href = "https://github.com/Veal98/CS-Wiki">🎃 Github</a> &emsp;&emsp;&emsp;
+|
+&emsp;&emsp;&emsp;<a href = "https://www.yuque.com/veal98/wiki">🐤 语雀</a> &emsp;&emsp;&emsp;
+|
+&emsp;&emsp;&emsp;<a href = "https://gitee.com/veal98/CS-Wiki">🎄 Gitee</a>&emsp;&emsp;&emsp;
+</center>
+
+---
+
+## 💡 关于
+小牛肉的知识库✌<br>
+- ⚡ **如果 Github 加载太慢的话可以使用 Gitee** <br>
+    &emsp;&ensp;在线阅读地址 [https://veal98.gitee.io/cs-wiki](https://veal98.gitee.io/cs-wiki)
+- 🐦 **文章首发于语雀** <br>
+    &emsp;&ensp;在线阅读地址 [https://www.yuque.com/veal98/wiki](https://www.yuque.com/veal98/wiki)
+- 📄 **保存为 PDF 方式** <br>
+    &emsp;&ensp;使用 Chrome 浏览器打开该页面，鼠标右键 - 打印 - 选择目标打印机 - 另存为PDF - 保存
+- 🙏 由于本人水平有限，仓库中的知识点来自本人原创、视频、书籍、博客等，<br>
+    &emsp;&ensp;非原创均已标明出处（或在参考资料中列出），如有遗漏，请 issue 提出。
+- 📌 [电脑效率软件推荐]()
+- 📖 [笔记类软件推荐]()
+- 🔑 [IDEA/Navicat 破解]()
+
+
+---
+
+## 📑 目录
+
 ### 📚 数据结构
 - [【零】参考资料]()
 - [【一】线性表](数据结构/线性表.md)
@@ -57,6 +85,7 @@
 - [23 - 二叉搜索树的后序遍历序列]()
 - [24 - 二叉树中和为某一值的路径]()
 - [25 - 复杂链表的复制](剑指Offer/25.md)
+- [26 - 二叉搜索树与双向链表](剑指Offer/26.md)
 
 ### 🍎 C++
 - [【零】参考资料](C++/参考资料.md)
@@ -64,7 +93,7 @@
 - [【二】函数](C++/2.md)
 - [【三】类与对象](C++/3.md)
 - [【四】数据的共享与保护](C++/4.md)
-- [【五】数组与指针](C++/5.md()
+- [【五】数组与指针](C++/5.md())
 - [【六】类的继承与派生](C++/6.md)
 - [【七】多态性](C++/7.md)
 - [【八】函数模板和类模板](C++/8.md)
@@ -89,3 +118,23 @@
 - [Vue.js 计算属性](Vue/计算属性.md)
 - [Vue.js 监听属性](Vue/监听属性.md)
 - [Vue.js 样式绑定](Vue/样式绑定.md)
+
+---
+
+## ❌ 纠错
+由于本人水平有限 🙋，若发现文章错误或者排版问题，<br>
+欢迎前往 Github 提 issue 指正：🚪 传送门  [前往 Github 纠错](https://github.com/Veal98/CS-Wiki/issues)<br>
+或者前往语雀对应的文章评论指出： 🚪 传送门 [前往 yuque 纠错](https://www.yuque.com/veal98/wiki)
+
+---
+
+## 🎁 Donate
+创作不易，请作者喝杯蛋白粉吧~ ☕<br>
+<br>
+<img src = "https://img-blog.csdnimg.cn/20200411153503610.jpg" width = "200px"/> <img src = "https://img-blog.csdnimg.cn/20200411153602406.jpg" width = "200px"/>
+---
+
+## 👮 License
+本仓库遵循 [CC BY-NC-SA 4.0（署名 - 非商业性使用 - 相同方式共享）协议](https://www.shiyanlou.com/library/interview-c++/LICENSE)，转载请注明出处 [小牛肉的Wiki](https://veal98.github.io/CS-Wiki/#/)
+
+
