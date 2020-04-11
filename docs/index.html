@@ -14,45 +14,43 @@
     }
     body{
       font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
-
     }
+ 
   </style>
 </head>
 <body background="" 
 style=" background-repeat:no-repeat ;background-size:100% 100%;background-attachment: fixed;">
-  <div id="app" >加载中</div>
+
+  <nav>
+    <a href="https://github.com/Veal98/CS-Wiki">🎃 Github</a>
+    <a href="https://gitee.com/veal98/CS-Wiki">🎄 Gitee</a>
+    <a href="https://www.yuque.com/veal98/wiki">🐤 语雀</a>
+    <a href="#/README">🏠 主页</a>
+  </nav>
+
+  <div id="app" >🏃‍🏃‍🏃‍💨加载中</div>
   <script>
     window.$docsify = {
       name: '💪 小牛肉',
       nameLink: '#/README',
       logo: '',
-      repo: 'https://github.com/Veal98/CS-Wiki',
+      // repo: 'https://github.com/Veal98/CS-Wiki',s
       themeColor: '#36B7EB',
       coverpage: true,
       onlyCover: true,
-      search: 'auto', // 默认值
-
-      search: [
-        '/',            // => /README.md
-        '/guide',       // => /guide.md
-        '/get-started', // => /get-started.md
-        '/zh-cn/',      // => /zh-cn/README.md
-      ],
-
-      // 完整配置参数
       search: {
-        maxAge: 86400000, // 过期时间，单位毫秒，默认一天
-        paths: [], // or 'auto'
+        paths: 'auto',
         placeholder: '🔍 搜索',
         noData: '😒 找不到结果',
-        // 搜索标题的最大层级, 1 - 6
+        // Headline depth, 1 - 6
         depth: 6
-      }
+      },//增加搜索框
+
     }
   </script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
-  <script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
+  <script src="//cdn.jsdelivr.net/docsify/lib/plugins/zoom-image.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
 
@@ -67,7 +65,6 @@ style=" background-repeat:no-repeat ;background-size:100% 100%;background-attach
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-javascript.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-css.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-powershell.min.js"></script>
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   
 </body>
 </html>

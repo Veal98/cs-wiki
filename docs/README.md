@@ -1,12 +1,3 @@
-<center><a href = "https://github.com/Veal98/CS-Wiki">🎃 Github</a> &emsp;&emsp;&emsp;
-|
-&emsp;&emsp;&emsp;<a href = "https://www.yuque.com/veal98/wiki">🐤 语雀</a> &emsp;&emsp;&emsp;
-|
-&emsp;&emsp;&emsp;<a href = "https://gitee.com/veal98/CS-Wiki">🎄 Gitee</a>&emsp;&emsp;&emsp;
-</center>
-
----
-
 ## 💡 关于
 小牛肉的知识库✌<br>
 - ⚡ **如果 Github 加载太慢的话可以使用 Gitee** <br>
@@ -14,12 +5,13 @@
 - 🐦 **文章首发于语雀** <br>
     &emsp;&ensp;在线阅读地址 [https://www.yuque.com/veal98/wiki](https://www.yuque.com/veal98/wiki)
 - 📄 **保存为 PDF 方式** <br>
-    &emsp;&ensp;使用 Chrome 浏览器打开该页面，鼠标右键 - 打印 - 选择目标打印机 - 另存为PDF - 保存
+    &emsp;&ensp;使用 Chrome 浏览器打开该页面，收起目录栏，鼠标右键 - 打印 - 选择目标打印机 - 另存为PDF - 保存
 - 🙏 由于本人水平有限，仓库中的知识点来自本人原创、视频、书籍、博客等，<br>
     &emsp;&ensp;非原创均已标明出处（或在参考资料中列出），如有遗漏，请 issue 提出。
 - 📌 [电脑效率软件推荐]()
 - 📖 [笔记类软件推荐]()
 - 🔑 [IDEA/Navicat 破解]()
+- 🔮 [个人博客搭建教程]()
 
 
 ---
@@ -118,6 +110,8 @@
 - [Vue.js 计算属性](Vue/计算属性.md)
 - [Vue.js 监听属性](Vue/监听属性.md)
 - [Vue.js 样式绑定](Vue/样式绑定.md)
+- [Vue.js 事件处理器](Vue/事件处理器.md)
+- [Vue.js 表单](Vue/表单.md)
 
 ---
 
