@@ -5,17 +5,14 @@
 
 <br />![](https://cdn.nlark.com/yuque/0/2020/png/1237282/1586271263838-ee97211d-0900-4441-8e27-aea55165a3b0.png#align=left&display=inline&height=1025&originHeight=1025&originWidth=1702&size=0&status=done&style=none&width=1702)<br />
 
-
 ---
 
 <a name="6e93623e"></a>
 # 一、Spring 概述
 
-
-<a name="63772351"></a>
 ## 1. Spring是什么
 
-<br />我们常说的 Spring 实际上 是指 `SpringFramework` ，而 SpringFramework 只是 Spring 家族的的一个分支而已。<br />
+我们常说的 Spring 实际上 是指 `SpringFramework` ，而 SpringFramework 只是 Spring 家族的的一个分支而已。<br />
 <br />Spring是分层的 Java SE/EE应用 full-stack 轻量级开源框架，**以 IOC（Inverse Of Control： 反转控制）和 AOP（Aspect Oriented Programming：面向切面编程）为内核**，提供了展现层 Spring MVC 和持久层 Spring JDBC 以及业务层事务管理等众多的企业级应用技术，还能整合开源世界众多 著名的第三方框架和类库，逐渐成为使用最多的Java EE 企业应用开源框架。<br />
 
 > - 在软件业，AOP为Aspect Oriented Programming的缩写，意为：面向切面编程，可以通过预编译方式和运行期动态代理实现在**不修改源代码的情况下给程序动态统一添加功能的一种技术**。AOP是OOP的延续，是软件开发中的一个热点，也是Spring框架中的一个重要内容，是函数式编程的一种衍生范型。利用AOP可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提高了开发的效率。
@@ -31,12 +28,11 @@
 
 
 
-<a name="e6d9bcc8"></a>
 ## 2. Spring体系结构
 
-<br />![](https://cdn.nlark.com/yuque/0/2020/png/1237282/1586271263818-ebdb96c6-2377-4803-aa3f-e127ca9e7221.png#align=left&display=inline&height=600&originHeight=600&originWidth=864&size=0&status=done&style=none&width=864)<br />ORM: 对象关系映射（Object Relational Mapping，简称ORM）是通过使用描述**对象和数据库之间映射**的元数据，**将面向对象语言程序中的对象自动持久化到关系数据库中**。本质上就是将数据从一种形式转换到另外一种形式。<br />
+![](https://cdn.nlark.com/yuque/0/2020/png/1237282/1586271263818-ebdb96c6-2377-4803-aa3f-e127ca9e7221.png#align=left&display=inline&height=600&originHeight=600&originWidth=864&size=0&status=done&style=none&width=864)<br />ORM: 对象关系映射（Object Relational Mapping，简称ORM）是通过使用描述**对象和数据库之间映射**的元数据，**将面向对象语言程序中的对象自动持久化到关系数据库中**。本质上就是将数据从一种形式转换到另外一种形式。<br />
 
-<a name="0a5014a3"></a>
+
 ## 3. Spring的优势
 
 
@@ -58,8 +54,6 @@ Spring对 JavaEE API（如 JDBC、JavaMail、远程调用等）进行了薄薄�
 <a name="b59bad20"></a>
 # 二、IOC 的概念和作用
 
-
-<a name="8983e44b"></a>
 ## 1. 程序的耦合
 
 
@@ -92,16 +86,13 @@ Class.forName("com.mysql.jdbc.Driver");
 
 
 
-<a name="eae7a291"></a>
 ## 2. 解耦的思路
 
-<br />使用`反射`来创建对象，而避免使用new关键字<br />
+使用`反射`来创建对象，而避免使用new关键字<br />
 
 <a name="cdc152ec"></a>
 ## 3. 简单工厂模式解耦
 
-
-<a name="f6c06258"></a>
 ### 简单工厂模式中的问题
 
 
@@ -183,10 +174,9 @@ public class Client {
 
 
 
-<a name="46d66ad0"></a>
 ### 解耦（多例）
 
-<br />`Bean`: 可重用组件<br />
+`Bean`: 可重用组件<br />
 <br />`javaBean`: 用java语言编写的可重用组件。 **javaBean > 实体类**<br />
 <br />解耦方法：<br />
 
@@ -259,7 +249,7 @@ public class AccountServiceImpl implements IAccountService {
 <a name="13f83048"></a>
 ### 简单工厂模式解耦升级版（单例）
 
-<br />利用容器存储每次new出来的对象<br />
+利用容器存储每次new出来的对象<br />
 
 ```java
 // 一个创建Bean对象的工厂
@@ -339,7 +329,7 @@ public class BeanFactory{
 <a name="f9a1c018"></a>
 ## 4. IoC的概念
 
-<br />`IOC = 控制反转 = Inversion of Control`	实际上就是指对一个对象控制权的转换。<br />比如：<br />
+`IOC = 控制反转 = Inversion of Control`	实际上就是指对一个对象控制权的转换。<br />比如：<br />
 
 ```java
 public class Book{
@@ -369,8 +359,6 @@ public class User{
 <a name="23c3d58e"></a>
 # 三、使用 Spring的 IoC解决程序耦合
 
-
-<a name="f608b144"></a>
 ## 1. 案例
 
 
@@ -425,7 +413,7 @@ public class Client {
 ```
 <br />![](https://cdn.nlark.com/yuque/0/2020/png/1237282/1586271263880-60a99f96-fdf6-4d69-9336-2b8f78194563.png#align=left&display=inline&height=77&originHeight=77&originWidth=787&size=0&status=done&style=none&width=787)<br />
 
-<a name="9953934c"></a>
+
 ## 2. ApplicationContext 的三个常用实现类
 
 
@@ -446,7 +434,6 @@ ApplicationContext ac = new FileSystemXmlApplicationContext("E:\\Codes\\Spring-P
 
 
 
-<a name="5afe705a"></a>
 ## 3. BeanFactory和 ApplicationContext 的区别
 
 
@@ -471,8 +458,6 @@ ApplicationContext ac = new FileSystemXmlApplicationContext("E:\\Codes\\Spring-P
 <a name="85444b05"></a>
 # 四、IOC 中 bean 标签和管理对象细节
 
-
-<a name="2db7c1a8"></a>
 ## 1. 创建bean的三种方式
 
 
@@ -543,7 +528,7 @@ public class StaticFactory {
 <a name="3d243772"></a>
 ## 2. bean对象的作用范围
 
-<br />在 XML 或者 Java 中配置注册的 bean ，如果多次获取，获取到的对象是否是同一个?<br />
+在 XML 或者 Java 中配置注册的 bean ，如果多次获取，获取到的对象是否是同一个?<br />
 
 ```java
 public class Client {
@@ -574,7 +559,7 @@ public class Client {
 
 
 
-<a name="20684812"></a>
+
 ## 3. bean对象的生命周期
 
 
@@ -614,8 +599,6 @@ public class Client {
 <a name="b5ac5be8"></a>
 # 五、spring的依赖注入 DI
 
-
-<a name="92908ad4"></a>
 ## 1. 什么是依赖注入
 
 
@@ -646,10 +629,9 @@ public class Client {
 
 
 
-<a name="5bf435e0"></a>
 ## 2. 构造函数注入
 
-<br />顾名思义，就是使用类中的构造函数，给成员变量赋值。注意，赋值的操作不是我们自己做的，而是通过配置的方式，让 spring 框架来为我们注入。<br />
+顾名思义，就是使用类中的构造函数，给成员变量赋值。注意，赋值的操作不是我们自己做的，而是通过配置的方式，让 spring 框架来为我们注入。<br />
 
 - 构造函数注入：<br />
 	使用的便签：`constructor-arg`<br />
@@ -723,10 +705,9 @@ public class Client {
 
 
 
-<a name="be589048"></a>
 ## 2. set方法注入 常用
 
-<br />顾名思义，就是在类中提供需要注入成员的 set 方法。<br />
+顾名思义，就是在类中提供需要注入成员的 set 方法。<br />
 
 - 涉及的标签：`property`
 - 出现的位置：bean标签的内部
@@ -782,10 +763,9 @@ public class AccountServiceImpl implements IAccountService {
 
 
 
-<a name="3aeaa0e7"></a>
 ## 3. 集合类型的注入(本质还是set)
 
-<br />用于给list结构集合注入数据的标签：list、array、set<br />
+用于给list结构集合注入数据的标签：list、array、set<br />
 <br />用于给Map结构集合注入数据的标签 : map、props<br />
 <br />**结构相同，标签可以互换**<br />
 
