@@ -2,11 +2,10 @@
 
 # Veal 🐮 Wiki
 
-- 💖 小牛肉的Wiki，包含计算机网络、操作系统、数据结构、数据库、Java、C++、Vue、剑指Offer等 💖 
+- 小牛肉的Wiki，包含计算机网络、操作系统、数据结构、数据库、Java、C++、Vue、剑指Offer等
 
 
 [GitHub](<https://github.com/Veal98/CS-Wiki>)
-[语 雀](<https://www.yuque.com/veal98/wiki>)
 [开始阅读](README.md)
 
 
