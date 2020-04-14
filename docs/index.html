@@ -21,21 +21,40 @@
       font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
       
     }
-   /* 设置内容居中和宽度 */
+    /* 设置内容居中和宽度 */
     .content{
       width:1000px;
       margin: 0 auto;
     }
+    /* 导航栏 */
     .app-nav{
       position: fixed;
       top: 0;
     }
+    /* 置顶按钮 */
+    #GoTop{
+      width:40px;
+      height:40px;
+      background-color:rgb(66, 185, 131);
+      position:fixed;
+      border-radius: 50%;
+      bottom:30px;
+      right:30px;
+      font-size:19pt;
+      text-align:center;
+      color:#FFF;
+      text-decoration:none; 
+    }
+
   </style>
 </head>
 <body background="" 
 style=" background-repeat:no-repeat ;background-size:100% 100%;background-attachment: fixed;">
 
   <div id="app" >🏃‍🏃‍🏃‍💨加载中</div>
+  <div>
+    　　<a href="javascript://" id="GoTop">∧</a>
+  </div>
   <script>
     window.$docsify = {
       name: '💪 小牛肉',
@@ -71,6 +90,7 @@ style=" background-repeat:no-repeat ;background-size:100% 100%;background-attach
       
     }
   </script>
+ 
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
   <script src="//cdn.jsdelivr.net/docsify/lib/plugins/zoom-image.js"></script>
@@ -95,5 +115,18 @@ style=" background-repeat:no-repeat ;background-size:100% 100%;background-attach
 
   <!-- 分栏 docsify-example-panels-->
   <script src="https://cdn.jsdelivr.net/npm/docsify-example-panels"></script>
+
+  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+  <!-- 置顶按钮 -->
+  <script type="text/javascript">
+    
+
+    $(function () {
+        $('#GoTop').click(function () {
+          $('html,body,.content').animate({ scrollTop: 0 }, 300);
+          return false;
+        });
+    }) 
+</script>
 </body>
 </html>
