@@ -679,44 +679,53 @@ end //
 
 ## 19. 触发器 TRIGGER
 
-触发器会在某个表执行以下语句时而自动执行：DELETE、INSERT、UPDATE。
-
-
-
-触发器必须指定在语句执行之前还是之后自动执行，之前执行使用 BEFORE 关键字，之后执行使用 AFTER 关键字。`BEFORE` 用于数据验证和净化，`AFTER` 用于审计跟踪，将修改记录到另外一张表中。
-
-
-
-- `INSERT` 触发器包含一个名为 NEW 的虚拟表。
-- `DELETE` 触发器包含一个名为 OLD 的虚拟表，并且是只读的。
-- `UPDATE` 触发器包含一个名为 NEW 和一个名为 OLD 的虚拟表，其中 NEW 是可以被修改的，而 OLD 是只读的。
-
-
-
 ### 创建触发器
 
+触发器仅限于数据库中增 删 改三种操作
+
+触发器定义如下：
+
 ```sql
-CREATE TRIGGER trigger_name trigger_time trigger_event ON tbl_name FOR EACH ROW trigger_stmt
+create trigger 触发器名 
+	before/after 触发事件
+	on 表名
+	[referencing 引用名] 可选的
+	for each row/statement
+	when SQL语句
+	动作
 ```
 
+**before/after**：触发器必须指定在语句执行之前还是之后自动执行，之前执行使用 BEFORE 关键字，之后执行使用 AFTER 关键字。`BEFORE` 用于数据验证和净化，`AFTER` 用于审计跟踪，将修改记录到另外一张表中。
 
+**触发事件**：
 
-参数：
+- insert：触发器包含一个名为 NEW 的虚拟表。
 
-- trigger_time 是触发程序的动作时间。它可以是 before 或 after，以指明触发程序是在激活它的语句之前或之后触发。
-- trigger_event 指明了激活触发程序的语句的类型
+- delete ：触发器包含一个名为 OLD 的虚拟表，并且是只读的。
 
-- - INSERT：将新行插入表时激活触发程序
-  - UPDATE：更改某一行时激活触发程序
-  - DELETE：从表中删除某一行时激活触发程序
+- update：触发器包含一个名为 NEW 和一个名为 OLD 的虚拟表，其中 NEW 是可以被修改的，而 OLD 是只读的。
 
-- tbl_name：监听的表，**必须是永久性的表**，**不能将触发程序与TEMPORARY表或视图关联起来**。
-- trigger_stmt：**当触发程序激活时执行的语句**。执行多个语句，可使用 BEGIN...END 复合语句结构
+**引用名：**
 
+> 触发器事件既然是数据库更新操作，这些操作的执行势必会引起数据库中某些值的改变，即由旧值变成新值，这些新旧值称为过渡值。在触发器的条件和动作中可以引用这些过渡值
 
+- OLD【ROW】AS 旧元组别名 （row旧元组名是可选的）
+- NEW【ROW】AS 新元组别名
+- OLD TABLE AS 旧表别名
+- NEW TABLE AS 旧表别名
+
+**示例：**
+
+如果cource表中删除一个元组，若该元组的主键是sc表中的外键，则卷回删除该元组的操作。
 
 ```sql
-CREATE TRIGGER mytrigger AFTER INSERT ON mytable FOR EACH ROW SELECT NEW.col into @result;
+CREATE TRIGGER mytrigger 
+BEFORE DELETE ON cource  
+referencing old as o 
+for each row
+when (exists (select * from sc
+             where cno = o.cno))
+ROLLBACK;
 ```
 
 
