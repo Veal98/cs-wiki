@@ -1,13 +1,12 @@
-# （一）Spring框架概述 + 基于XML的IoC配置
+# 🐌（一）Spring框架概述 + 基于XML的IoC配置
 
-<a name="c97c0438"></a>
+
 # 思维导图
 
 <br />![](https://cdn.nlark.com/yuque/0/2020/png/1237282/1586271263838-ee97211d-0900-4441-8e27-aea55165a3b0.png#align=left&display=inline&height=1025&originHeight=1025&originWidth=1702&size=0&status=done&style=none&width=1702)<br />
 
 ---
 
-<a name="6e93623e"></a>
 # 一、Spring 概述
 
 ## 1. Spring是什么
@@ -326,7 +325,7 @@ public class BeanFactory{
 ```
 
 
-<a name="f9a1c018"></a>
+
 ## 4. IoC的概念
 
 `IOC = 控制反转 = Inversion of Control`	实际上就是指对一个对象控制权的转换。<br />比如：<br />
@@ -354,9 +353,7 @@ public class User{
 <br />**这种由主动创建对象到被动创建对象的改变就叫做控制反转 IoC**<br />
 <br />**IoC 只能解决程序间的依赖关系，别的事情都干不了**
 
----
 
-<a name="23c3d58e"></a>
 # 三、使用 Spring的 IoC解决程序耦合
 
 ## 1. 案例
@@ -411,26 +408,29 @@ public class Client {
     }
 }
 ```
-<br />![](https://cdn.nlark.com/yuque/0/2020/png/1237282/1586271263880-60a99f96-fdf6-4d69-9336-2b8f78194563.png#align=left&display=inline&height=77&originHeight=77&originWidth=787&size=0&status=done&style=none&width=787)<br />
+<br />![](https://cdn.nlark.com/yuque/0/2020/png/1237282/1586271263880-60a99f96-fdf6-4d69-9336-2b8f78194563.png#align=left&display=inline&height=77&originHeight=77&originWidth=787&size=0&status=done&style=none&width=787)
 
 
 ## 2. ApplicationContext 的三个常用实现类
 
 
-- `ClassPathXmlApplicationContext`<br />
-它可以加载**类路径下**的配置文件，要求配置文件必须在类路径下。
-```java
-ApplicationContext ac = new ClassPathXmlApplicationContext("bean.xml");
-```
+- `ClassPathXmlApplicationContext`
 
-- `FileSystemXmlApplicationContext`<br />
-它可以加载磁盘**任意路径下**的配置文件（必须有访问权限）
-```java
-ApplicationContext ac = new FileSystemXmlApplicationContext("E:\\Codes\\Spring-Programs\\spring01\\src\\main\\resources\\bean.xml");
-```
+  它可以加载**类路径下**的配置文件，要求配置文件必须在类路径下。
+    ```java
+  ApplicationContext ac = new ClassPathXmlApplicationContext("bean.xml");
+    ```
 
-- `AnnotationConfigApplicationContext`<br />
-它是用于读取注解创建容器的，见后续博客
+- `FileSystemXmlApplicationContext`
+
+  它可以加载磁盘**任意路径下**的配置文件（必须有访问权限）
+    ```java
+  ApplicationContext ac = new FileSystemXmlApplicationContext("E:\\Codes\\Spring-Programs\\spring01\\src\\main\\resources\\bean.xml");
+    ```
+
+- `AnnotationConfigApplicationContext`
+
+  它是用于读取注解创建容器的，见后续博客
 
 
 
@@ -438,11 +438,11 @@ ApplicationContext ac = new FileSystemXmlApplicationContext("E:\\Codes\\Spring-P
 
 
 - `ApplicationContext`	单例对象适用 （一般采用此接口，Spring可根据配置文件智能决定创建对象的方式）
-<br />		它在创建容器时，创建对象采取的策略是采用**立即加载**的方式，也就是说，：只要一读取配置文件，默认情况下就马上会创建对象。
-<br />	`ApplicationContext ac = new ClassPathXmlApplicationContext("bean.xml");`
-<br />执行完这条语句即读取配置文件之后对象就被创建了
+它在创建容器时，创建对象采取的策略是采用**立即加载**的方式，也就是说，：只要一读取配置文件，默认情况下就马上会创建对象。
+`ApplicationContext ac = new ClassPathXmlApplicationContext("bean.xml");`
+执行完这条语句即读取配置文件之后对象就被创建了
 - `BeanFactory`	多例对象适用
-<br />	它在创建容器时，创建对象采取的策略是采用**延迟加载**的方式，也就是说，什么时候根据id获取对象了，什么时候才真正创建对象
+它在创建容器时，创建对象采取的策略是采用**延迟加载**的方式，也就是说，什么时候根据id获取对象了，什么时候才真正创建对象
 ```java
 //--------------BeanFactory-----------------
         Resource resource =  new ClassPathResource("bean.xml");
@@ -451,29 +451,32 @@ ApplicationContext ac = new FileSystemXmlApplicationContext("E:\\Codes\\Spring-P
         System.out.println(aService);
 ```
 
-- <br />执行到`IAccountService aService = (IAccountService) factory.getBean("accountService");`这条语句，即对象需要被使用的时候对象才会被创建
 
----
 
-<a name="85444b05"></a>
+执行到`IAccountService aService = (IAccountService) factory.getBean("accountService");`这条语句，即对象需要被使用的时候对象才会被创建
+
+
+
 # 四、IOC 中 bean 标签和管理对象细节
 
 ## 1. 创建bean的三种方式
 
 
 - **第一种**：使用**默认无参构造函数**创建
-<br />在spring的配置文件中使用bean标签，配以id和class属性后，且没有其他属性和标签时。采用的就是默认构造函数创建bean对象，此时_如果 bean（类） 中没有**默认无参构造函数**，将会创建失败_
-> bean标签：
-> 作用：  用于配置对象让 spring 来创建的。  默认情况下它调用的是类中的无参构造函数。如果没有无参构造函数则不能创建成功。
-> 属性：
-> id：给对象在容器中提供一个唯一标识。用于获取对象。
-> class：指定类的全限定类名。用于反射创建对象。默认情况下调用无参构造函数。
-> scope：指定对象的作用范围。   （见bean的生命周期）
-
-- <br />`<bean id = "accountService" class = "com.smallbeef.service.impl.AccountServiceImpl"></bean>`
+在spring的配置文件中使用bean标签，配以id和class属性后，且没有其他属性和标签时。采用的就是默认构造函数创建bean对象，此时_如果 bean（类） 中没有**默认无参构造函数**，将会创建失败_
+  
+    > bean标签：
+    > 作用：  用于配置对象让 spring 来创建的。  默认情况下它调用的是类中的无参构造函数。如果没有无参构造函数则不能创建成功。
+    > 属性：
+    > id：给对象在容器中提供一个唯一标识。用于获取对象。
+    > class：指定类的全限定类名。用于反射创建对象。默认情况下调用无参构造函数。
+    > scope：指定对象的作用范围。   （见bean的生命周期）
+  
+  ```xml
+  <bean id = "accountService" class = "com.smallbeef.service.impl.AccountServiceImpl"></bean>
+  ```
+  
 - **第二种**：Spring管理简单工厂- 使用简单工厂模式的方法创建对象(使用某个类中的方法创建对象，并存入 Spring 容器)
-
-
 
 ```java
   /** 
@@ -500,12 +503,17 @@ ApplicationContext ac = new FileSystemXmlApplicationContext("E:\\Codes\\Spring-P
   </bean>
 ```
 
-<br />先把工厂的创建交给 spring 来管理。   然后在使用工厂的 bean 来调用里面的方法<br />
-<br />`id` 属性：指定 bean 的 id，用于从容器中获取<br />
-<br />`factory-bean` 属性：用于指定实例工厂 bean 的 id。<br />
-<br />`factory-method` 属性：用于指定实例工厂中创建对象的方法。<br />
 
-- **第三种**：spring管理静态工厂-使用静态工厂的方法创建对象 (使用某个类中的**静态方法**创建对象，并存入spring容器)
+
+先把工厂的创建交给 spring 来管理。   然后在使用工厂的 bean 来调用里面的方法
+
+`id` 属性：指定 bean 的 id，用于从容器中获取
+
+`factory-bean` 属性：用于指定实例工厂 bean 的 id。
+
+`factory-method` 属性：用于指定实例工厂中创建对象的方法。
+
+- **第三种**：spring管理静态工厂-使用静态工厂的方法创建对象 (使用某个类中的**静态方法**创建对象，并存入Spring容器)
 ```java
 /** 
  * 模拟一个静态工厂类
@@ -519,16 +527,16 @@ public class StaticFactory {
 ```
 ```xml
 <bean id="accountService"  
-   	  class="com.itheima.factory.StaticFactory"     
+   	  class="com.smallbeef.factory.StaticFactory"     
       factory-method="createAccountService">
 </bean>
 ```
 
 
-<a name="3d243772"></a>
+
 ## 2. bean对象的作用范围
 
-在 XML 或者 Java 中配置注册的 bean ，如果多次获取，获取到的对象是否是同一个?<br />
+在 XML 或者 Java 配置（见下文） 注册的 bean ，如果多次获取，获取到的对象是否是同一个?
 
 ```java
 public class Client {
@@ -543,9 +551,12 @@ public class Client {
 }
 ```
 
-<br />bean标签的`scope`属性：<br />
-<br />	作用：指定bean的作用范围<br />
-<br />	取值：<br />
+
+
+bean标签的`scope`属性：
+	作用：指定bean的作用范围
+
+​	取值：
 
 - **singleton** : 默认值，单例的.    （bean对象默认是单例模式）
 - **prototype** : 多例的.
@@ -564,39 +575,39 @@ public class Client {
 
 
 > `bean` 标签：
+>
 > `init-method`：指定类中的初始化方法名称。
+>
 > `destroy-method`：指定类中销毁方法名称。
 
 
 
 - **单例对象：scope="singleton"**
 
+​	 一个应用只有一个对象的实例。它的作用范围就是整个引用。
 
-<br />	 一个应用只有一个对象的实例。它的作用范围就是整个引用。<br />
-<br />	生命周期：<br />
+​	生命周期：
 
 - 对象出生：当应用加载，创建容器时，对象就被创建了。
 - 对象活着：只要容器在，对象一直活着。
 - 对象死亡：当应用卸载，销毁容器时，对象就被销毁了。
 
 
-<br />总结： **单例对象的生命周期和容器相同**<br />
-<br />
-<br />
+
+总结： **单例对象的生命周期和容器相同**
+
 
 - **多例对象：scope="prototype"**
 
+​	每次访问对象时，都会重新创建对象实例。
 
-<br />	每次访问对象时，都会重新创建对象实例。<br />
-<br />生命周期：<br />
+​	生命周期：
 
 - 对象出生：当使用对象时，创建新的对象实例。
 - 对象活着：只要对象在使用中，就一直活着。
 - 对象死亡：**当对象长时间不用，且没有别的对象引用时，由 java 的垃圾回收器进行回收。**
 
----
 
-<a name="b5ac5be8"></a>
 # 五、spring的依赖注入 DI
 
 ## 1. 什么是依赖注入
@@ -854,6 +865,4 @@ public class AccountServiceImpl implements IAccountService {
 
     </bean>
 ```
-
----
 
