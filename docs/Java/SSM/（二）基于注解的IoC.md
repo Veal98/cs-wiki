@@ -129,11 +129,12 @@ public class Client {
 - **只有一个相符合的bean时，直接匹配数据类型**
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200316114613172.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMTMzOTg2,size_16,color_FFFFFF,t_70)
 
-- **有多个相匹配的bean时，先匹配数据类型，再根据 变量名称 与 bean的id 进行精确匹配**
+- **有多个相符合的bean时，先匹配数据类型，再将变量名称和bean的id进行匹配**
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200316115920895.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMTMzOTg2,size_16,color_FFFFFF,t_70)
 
 当变量名称找不到一样的 bean 的 id 的时候，就会报错。
 为解决变量名称和 bean 的 id 不匹配的情况，有了如下注解 `Qualifier`。
+
 ### @Qualifier
 作用：  在自动按照类型注入的基础之上，再按照 Bean 的 id 注入。
 **它在给成员变量注入时不能独立使用，必须和 `@Autowire` 一起使用；但是给方法参数注入时，可以独立使用**
@@ -167,15 +168,15 @@ public class AccountServiceImpl implements IAccountService {
 
     @Override
     public void saveAccount() {
-        accountDaoImpl.saveAccount();
+        accountDaoImpl2.saveAccount();
     }
 }
 ```
 
-<br> 
+ 
 
-==以上三个注解都智能注入其他bean类型的数据，而基本类型和String类型无法使用上述注解实现(用 `@Value` 实现)。==
-==另外，集合类型的注入只能通过XML来实现==
+以上三个注解都只能能注入其他bean类型的数据，而基本类型和String类型无法使用上述注解实现(用 `@Value` 实现)。
+**另外，集合类型的注入只能通过XML来实现**
 
 ### @Value
 作用：  **注入基本数据类型和 String 类型的数据**

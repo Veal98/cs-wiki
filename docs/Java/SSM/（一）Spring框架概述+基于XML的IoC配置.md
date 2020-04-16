@@ -621,22 +621,27 @@ bean标签的`scope`属性：
 
 
 - **IOC的作用：**<br />
-降低程序间的耦合（依赖关系）
+  降低程序间的耦合（依赖关系）
+
 - **依赖关系的管理：**<br />
-都交给spring来管理。<br />
-在当前类需要用到其他类的对象，由spring为我们提供，我们只需要在配置文件中说明
+  都交给spring来管理。<br />
+  在当前类需要用到其他类的对象，由spring为我们提供，我们只需要在配置文件中说明
+
 - `依赖关系的维护：就称之为依赖注入`
-- **依赖注入：**<br />
-	a. _能注入的数据有三类：_
+
+- **依赖注入：**
+	
+  a. 能注入的数据有三类：
+  
   - 基本类型和String
   - 其他bean类型（在配置文件中或者注解配置过的bean)
   - 复杂类型/集合类型<br />
-
-<br />b. _注入的方式有三种：_
-
-  - 使用构造函数提供
-  - 使用set方法提供
-  - 使用注解提供（见后续博客）
+  
+  b. 注入的方式有三种：
+  
+    - 使用构造函数提供
+    - 使用set方法提供
+    - 使用注解提供（见后续博客）
 
 
 
@@ -776,9 +781,11 @@ public class AccountServiceImpl implements IAccountService {
 
 ## 3. 集合类型的注入(本质还是set)
 
-用于给list结构集合注入数据的标签：list、array、set<br />
-<br />用于给Map结构集合注入数据的标签 : map、props<br />
-<br />**结构相同，标签可以互换**<br />
+用于给list结构集合注入数据的标签：list、array、set
+
+用于给Map结构集合注入数据的标签 : map、props
+
+**结构相同，标签可以互换**<br />
 
 ```java
 public class AccountServiceImpl implements IAccountService {
