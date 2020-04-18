@@ -1,5 +1,7 @@
 # 🍪【三】关系数据库标准语言SQL
 
+<br>
+
 # 一、数据定义
 
 关系数据库系统支持三级模式结构，其模式，外模式，内模式中的基本对象有模式、表、视图和索引，所以SQL的数据定义功能包括模式定义、表定义、视图和索引的定义
@@ -52,7 +54,7 @@ CASCADE | RESTRICT 必选其一
 > 数据库的创建和使用：
 >
 > CREATE DATABASE test;
-> USE test;
+> USE test;****
 
 ### ① 定义基本表 CREATE
 
@@ -151,7 +153,7 @@ drop index 索引名
 
 数据字典是关系数据库管理系统内部的一组系统表，它记录了数据库中所有的定义信息，包括关系模式定义、视图定义、索引定义、完整性约束定义、各类用户对数据库的操作权限、统计信息等。关系数据库管理系统在执行SQL的数据定义语句时，实际上就是在更新数据字典中的相应信息
 
-
+<br>
 
 # 二、数据查询
 
@@ -336,6 +338,18 @@ having count(*) > 3;
 > where 不可以使用聚集函数。一般需用聚集函数才会用 having
 >
 > SQL标准要求`HAVING必须引用GROUP BY子句中的列或用于合计函数中的列`。
+
+
+
+⚠ **GROUP BY 子句出现在 WHERE 子句之后，ORDER BY 子句之前**
+
+```sql
+SELECT col, COUNT(*) AS num
+FROM mytable
+where col > 2
+GROUP BY col
+ORDER BY num;
+```
 
 ## 2. 连接查询
 
@@ -556,29 +570,353 @@ from SC,(select Sno,AVG(Grade) from SC group by Sno)
 		as Avg_SC(avg_sno,avg_grade);
 ```
 
-
-
-# P125
-
-
+<br>
 
 # 三、数据更新
 
 ## 1. 插入数据
 
+### ① 插入元组
+
+```sql
+insert int Student(Sno,Sname,Sgender,Sdept,Sage)
+values('123','小红','男','CS',20);
+```
+
+若不指出要添加的属性，则需要添加表中的所有属性
+
+### ② 插入子查询结果
+
+```sql
+# 对每一个系，求学生的平均年龄，并把结果存入表 Dept_age
+insert into Dept_age(Sdept,Avg_age)
+select Sdept,AVG(Sage)
+from Student
+group by Sdept;
+```
+
 ## 2. 修改数据
+
+### ① 修改某个元组的值
+
+```sql
+# 修改学号001的年龄
+update Student
+set Sage = 15
+where Sno = '001';
+```
+
+### ② 修改多个元组的值
+
+```sql
+# 将所有学生年龄加1岁
+update Stduent
+set Sage = Sage + 1;
+```
+
+### ③ 带子查询的修改语句
+
+```sql
+# 将计算机系全体学生成绩置0
+update Student
+set Sgrade = 0
+where Sno in(
+	select Sno
+    from Student
+    where Sdept = 'CS'
+);
+```
 
 ## 3. 删除数据
 
+### ① 删除某个元组
+
+```sql
+# 删除学号001学生记录
+delete 
+from Student
+where Sno = '001';
+```
+
+### ② 删除多个元组
+
+```sql
+# 删除所有学生记录
+delete 
+from student;
+```
+
+### ③ 带子查询的删除语句
+
+```sql
+# 删除计算机系所有学生的选课记录
+delete 
+from SC
+where Sno in(
+	select Sno
+    from Student
+    where Sdept = 'CS'
+);
+```
+
+<br>
+
 # 四、空值的处理
+
+## 1. 空值的产生
+
+比如：插入语句中没有赋值的属性，其值为空值
+
+```sql
+insert into Student(Sno,Cno)
+values('123','323');
+# 除了Sno,Cno 外其余属性就是空值
+```
+
+## 2. 空值的判断
+
+**IS NULL / IS NOT NULL**
+
+```sql
+# 查询漏填信息的学生
+select *
+from Student
+where Sname is null or Sgender is null or Sage is null or Sdept is null;
+```
+
+## 3. 空值的约束条件
+
+- 属性定义中有 **NOT NULL** 约束条件时不能取空值
+
+- 加了 **UNIQUE** 限制的属性不能取空值
+
+- **主键**不能取空值
+
+<br>
 
 # 五、视图
 
-##  1. 定义视图
+视图是从一个或几个基本表（或视图）导出的表。
 
-## 2. 查询视图
+它与基本表不同，是一个虚表。
 
-## 3. 更新视图
+**数据库中只存放视图的定义，不存放视图对应的数据，这些数据任然存放在原来的基本表中。所以一旦基本表中的数据变化，那么视图中的数据也会相应变化。**
 
-## 4. 视图的作用
+其实视图就好像一个窗口，透过它可以看到自己想要看到的数据及其变化
 
+##  1. 建立视图
+
+![](https://gitee.com/veal98/images/raw/master/img/20200418095518.png)
+
+### ① 建立在单个表上的视图
+
+```sql
+# 建立计算机系学生视图，并要求插入/修改/删除操作时，保证该视图只有计算机系学生
+create view CS_Student
+as
+select *
+from Student
+where Sdept = 'CS'
+with check option;
+```
+
+由于加上了 with check option 子句，以后对视图进行 修改 / 添加 / 删除 操作时，DBMS都会自动加上 Sdept = 'CS' 这个条件
+
+<br>
+
+若一个视图是从单个基本表导出的，并且只是去掉了某些行某些列，但保留了主键，则称这类视图为 **行列子集视图**。 上述视图 CS_Student 就是一个行列子集视图
+
+### ② 建立在多个表上的视图
+
+```sql
+# 建立计算机系选修了1号课程的学生的视图（包括学号，姓名，成绩）
+create view CS_S1(View_Sno,View_Sname,View_Grade)
+as
+select Student.Sno,Sname,Grade
+from Student,SC
+where Student.Sno = SC.Sno and
+	  Sdept = 'CS' and
+	  SC.Cno = '1';
+```
+
+由于视图的属性列中包含了两个表的同名列 Sno，所以必须在视图名后面说明视图的各个属性列名
+
+### ③ 建立在视图上的视图
+
+```sql
+# 建立计算机系选修了1号课程 且 成绩在90分以上的学生的视图
+create view CS_S2
+as
+select View_Sno,View_Sname,View_Grade
+from CS_S1
+where View_Grade >= 90;
+```
+
+## 2. 删除视图
+
+```sql
+drop view 视图名；
+```
+
+若该视图上还导出了一个视图，则删除视图操作拒绝执行
+
+或者可以使用 `CASCADE `进行级联删除，删除该视图和由它导出的所有视图
+
+```sql
+drop view 视图名 CASCADE; 
+```
+
+## 3. 查询视图
+
+视图的查询和表的查询是一样的
+
+```sql
+# 建立计算机系学生视图，并要求插入/修改/删除操作时，保证该视图只有计算机系学生
+create view CS_Student
+as
+select *
+from Student
+where Sdept = 'CS'
+with check option;
+
+# 查询选修了1号课程的计算机系学生
+select CS_Student.Sno,Sname
+from CS_Student,SC
+where CS_Student.Sno = SC.Sno and
+	  SC.Cno = '1';
+```
+
+## 4. 更新视图
+
+更新视图和更新表操作基本一致，不过有些时候视图是不允许更新的
+
+![](https://gitee.com/veal98/images/raw/master/img/20200418102146.png)
+
+## 5. 视图的优点
+
+- **视图能够简化用户的操作**
+
+- **视图使用户能以多种角度看待同一数据**
+
+- **视图对重构数据库提供了一定程序的逻辑独立性**
+
+  数据的逻辑独立性是指当数据库数据库构造时，如增加新的关系或对原来关系增加新的字段等，用户的应用程序不会受到影响
+
+- **视图能够对机密数据提供安全保护**
+
+- **适当利用视图可以更清晰的表达查询**
+
+<br>
+
+# 六、SQL语句综合习题
+
+有如下四个表：
+
+- 供应商表 S（Sno,Sname, Status, City） 
+- 零件表 P （Pno,Pname,Color,Weight）
+- 工程项目表 J (Jno,Jname,City)
+- 供应情况表 SPJ (Sno,Pno,Jno,Qty)
+
+![](https://gitee.com/veal98/images/raw/master/img/20200418113215.png)
+
+![](https://gitee.com/veal98/images/raw/master/img/20200417155118.png)
+
+- 找出所有供应商姓名和所在城市
+
+  ```sql
+  select Sname,City 
+  from S;
+  ```
+
+- 找出所有零件的名称、颜色、重量
+
+  ```sql
+  select Pname,Color,Weight
+  from P;
+  ```
+
+- 找出使用供应商S1所供应零件的工程号码
+
+  ```sql
+  select distinct Jno
+  from SPJ
+  where Sno = 'S1';
+  ```
+
+- 找出工程项目J2使用的各种零件的名称及其数量
+
+  ```sql
+  select P.Pname,SPJ.QTY
+  from SPJ,P
+  where SPJ.Pno = P.Pno and 
+  	  SPJ.Jno = 'J2';
+  ```
+
+- 找出上海厂商供应的所有零件号码
+
+  ```sql
+  select Pno 
+  from SPJ,S
+  where SPJ.Sno = S.Sno and
+  	  S.City = '上海';
+  ```
+
+- 找出使用上海产的零件的工程名称
+
+  ```sql
+  select Jname
+  from SPJ,S,J
+  where S.Sno = SPJ.Sno and
+  	  J.Jno = SPJ.Jno and
+  	  S.City = '上海';
+  ```
+
+- 找出没有使用天津产的零件的工程号码
+
+  ```sql
+  select distinct Jno
+  from SPJ
+  where Jno not in(
+  	select distinct Jno 
+      from SPJ,S
+      where SPJ.Sno = S.Sno and 
+      S.City = '天津'
+  );	
+  ```
+
+- 把全部红色零件的颜色改成蓝色
+
+  ```sql
+  update P
+  set Color = '蓝色'
+  where Color = '红色';
+  ```
+
+- 由S5供给J4的零件P6改为由S3供应
+
+  ```sql
+  Update SPJ
+  set Sno = 'S3'
+  where Sno = 'S5' and
+  	  Jno = 'J4' and
+  	  Pno = 'P6';
+  ```
+
+- 从供应商中删除供应商号是S2的记录，并从供应关系中删除相应的记录
+
+  ```sql
+  delete from S
+  where Sno = 'S2';
+  
+  delete from SPJ
+  where Sno = 'S2';
+  ```
+
+- 请将(S2，J6，P4，200)插入供应情况关系
+
+  ```sql
+  insert into SPJ
+  values(S2,J6,P4,200);
+  ```
+
+  
