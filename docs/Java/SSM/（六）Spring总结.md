@@ -1,4 +1,4 @@
-# ⛵ （六）Spring 总结
+# -- ⛵ （六）Spring 总结
 
 
 
@@ -215,6 +215,8 @@ public class Client {
  <!--告知Spirng在创建容器时要扫描的包，配置所需要的标签不是在beans的约束中，而是一个名称为context空间和约束中-->
 <context:component-scan base-package="com.smallbeef"></context:component-scan>
 ```
+
+或者使用 配置类 +**`@ComponentScan`** 注解(详细见下文)
 
 - `@Component`
 
@@ -680,6 +682,206 @@ name = 王老师
 private String name;
 ```
 
+## 5. Spring的纯注解配置
+
+### ① @Comfiguration 配置类
+
+作用：  用于指定当前类是一个 Spring 配置类，当创建容器时会从该类上加载注解。
+获取容器时需要使用 `AnnotationApplicationContext`(有 `@Configuration` 注解的类 `.class`)。 
+属性：  value:用于指定配置类的字节码 
+
+细节：当配置类作为 `AnnotationConfigApplicationContext` 对象创建的参数时，该配置类上的 `@Configuration` 注解可以不写
+
+读取配置类：
+
+```java
+ApplicationContext ac = new AnnotationConfigApplicationContext(SpringConfiguration.class);
+```
+
+### ② @ComponentScan 自动化扫描
+
+作用：  用于指定 Spring 在初始化容器时要扫描的包。
+作用和在 Spring 的 xml 配置文件中的： 
+`<context:component-scan base-package="com.smallbeef"/>` 是一样的。 
+属性：  `basePackages / value`：用于指定要扫描的包。
+
+```java
+@Configuration 
+@ComponentScan("com.smallbeef") 
+public class JDBCConfiguration { 
+
+} 
+```
+
+### ③ @Bean 配置方法
+
+作用：  该注解只能写在方法上，**表明把当前方法的返回值作为bean对象存入spring 容器中。** 
+属性：  name：给当前 `@Bean` 注解方法创建的对象指定一个名称(即 bean 的 id）。 默认值是当前方法的名称
+
+细节：**当我们使用注解配置方法时，如果方法有参数，Spring 框架会去容器中查找有没有相匹配的 bean 对象，查找方法和AutoWired一样。**
+
+```java
+/**
+ * 连接数据库的配置类  
+ */ 
+@Configuration 
+@ComponentScan("com.smallbeef") 
+public class JDBCConfiguration {
+
+    /**
+     * 创建一个数据源，并存入 spring 容器中   
+     * * @return   
+     * */  
+    @Bean(name="dataSource")  
+    public DataSource createDataSource() {   
+        try {    
+            ComboPooledDataSource ds = new ComboPooledDataSource();    
+            ds.setUser("root");    
+            ds.setPassword("1234");    
+            ds.setDriverClass("com.mysql.jdbc.Driver");
+            ds.setJdbcUrl("jdbc:mysql:///spring_day02");    
+            return ds;   
+        } catch (Exception e) {    
+            throw new RuntimeException(e);   
+        }  
+    }
+
+    /**
+     * 创建一个 QuerryRunner对象，并且也存入 spring 容器中   
+     * * @param dataSource   
+     * * @return   
+     * */  
+    @Bean(name="dbAssit")  
+    public  DBAssit createDBAssit(DataSource dataSource) {   
+        return new  DBAssit(dataSource);  
+    }  
+} 
+```
+
+
+### ④ @Import 导入其他配置类
+
+**作用：**  用于导入其他配置类，有 `@Import` 注解的类就是主配置类。在引入其他配置类时，其他子配置类可以不用再写 @Configuration 注解。当然，写上也没问 题。 
+**属性：**  value[]：用于指定其他配置类的字节码。 
+
+
+
+大的 SpringConfiguration 类利用 @Import 包含小的 JDBCConfiguration 配置类，这样 AnnotationConfigApplicationContext 直接加载大的配置类，就会把这些小的配置类也都加载进来
+
+```java
+@Configuration //在 AnnotationConfigApplicationContext中做参数时可以不写该注解
+@ComponentScan(basePackages = "com.smallbeef.spring") 
+@Import({ JdbcConfig.class，xxxxxConfig.class, xxxxConfig.class}) 
+public class SpringConfiguration { 
+
+} 
+ 
+public class JdbcConfig{ 
+
+} 
+
+——————————————————————————————————————————————
+
+ ApplicationContext ac = new AnnotationConfigApplicationContext(SpringConfiguration.class);
+ 
+```
+
+### ⑤ @PropertySource 加载 .pro文件配置
+
+**作用**：用于加载 `.properties` 文件中的配置。例如我们配置数据源时，可以把连接数据库的信息写到 properties 配置文件中，就可以使用此注解指定 properties 配置文件的位置。 
+**属性：**  value[]：用于指定 properties 文件位置。**如果是在类路径下，需要写上 classpath:** 
+
+可以看到以上数据库的配置是写死的
+
+```java
+   @Bean(name="dataSource")  
+    public DataSource createDataSource() {   
+        try {    
+            ComboPooledDataSource ds = new ComboPooledDataSource();    
+            ds.setUser("root");    
+            ds.setPassword("1234");    
+            ds.setDriverClass("com.mysql.jdbc.Driver");
+            ds.setJdbcUrl("jdbc:mysql:///spring_day02");    
+            return ds;   
+        } catch (Exception e) {    
+            throw new RuntimeException(e);   
+        }  
+    }
+```
+
+我们将数据库配置放在 `.properties` 文件中，利用 @PropertySource 注解读取该文件，并用 @Value 注解传值
+`jdbcConfig.properties`
+
+```java
+jdbc.driver=com.mysql.jdbc.Driver  
+jdbc.url=jdbc:mysql://localhost:3306/day44_ee247_spring 
+jdbc.username=root 
+jdbc.password=1234
+```
+
+利用 @Value 取值
+
+```java
+/**
+ * 连接数据库的配置类  
+ */ 
+@Configuration 
+@ComponentScan("com.smallbeef") 
+public class JDBCConfiguration {
+	@Value("${jdbc.driver}")  //与properties中属性一致
+	private Stirng driver;
+	
+	@Value("${jdbc.url}")
+	private String url;
+	
+	@Value("${jdbc.username}")
+	private String username;
+	
+	@Value("${jdbc.password}")
+	private String password;
+	
+    /**
+     * 创建一个数据源，并存入 spring 容器中   
+     * * @return   
+     * */  
+    @Bean(name="dataSource")  
+    public DataSource createDataSource() {   
+        try {    
+            ComboPooledDataSource ds = new ComboPooledDataSource();    
+            ds.setUser("username");    
+            ds.setPassword("password");    
+            ds.setDriverClass("driver");
+            ds.setJdbcUrl("url");    
+            return ds;   
+        } catch (Exception e) {    
+            throw new RuntimeException(e);   
+        }  
+    }
+
+    /**
+     * 创建一个 QuerryRunner对象，并且也存入 spring 容器中   
+     * * @param dataSource   
+     * * @return   
+     * */  
+    @Bean(name="dbAssit")  
+    public  DBAssit createDBAssit(DataSource dataSource) {   
+        return new  DBAssit(dataSource);  
+    }  
+} 
+```
+
+利用 @PropertySource 传入 properties 文件
+
+```java
+@Configuration
+@ComponentScan(basePackages = "com.smallbeef.spring") 
+@Import(JdbcConfig.class) 
+@PropertySource("classpath:jdbcConfig.properties")
+public class SpringConfiguration { 
+
+} 
+```
+
 
 
 # 三、IoC 实例
@@ -829,15 +1031,445 @@ public class Teacher {
 
  通过注解的形式已经减少了大量的get、set方法，通过 @Resource 注入了依赖的班长，并且通过 @Value 注入了老师的姓名和科目。(当然 @Value 也可以通过 SpEl 表达式 获取 properties 文件中的值)
 
-
+<br>
 
 # 四、AOP
 
+## 1. AOP 概念
 
+`Aspect Oriented Programming: 面向切面编程`。通过预编译方式和运行期动态代理实现程序功能的统一维护的一种技术。降低耦合，提高程序的可重用性，同时提高开发效率。
+
+简单的说：就是把程序中重复的代码抽取出来，在需要执行的时候，使用动态代理的技术，在不修改源码的基础上，对我们的已有方法进行增强。
+
+AOP常见的使用场景：
+
+- 日志
+- 事务
+- 数据库操作
+- ....
+
+这些操作中，无一例外有很多模板化的代码，而解决模板化的代码，消除臃肿就是 AOP 的强项
+
+## 2. AOP 的优势
+
+- 降低耦合
+- 减少重复代码
+- 提高开发效率
+- 维护方便
+
+## 3. AOP实现 — 动态代理
+
+**动态代理：** 
+当想要给<u>实现了某个接口的类中的方法</u>加一些额外的处理。比如说加日志，加事务等。
+可以给这个类创建一个代理，**故名思议就是创建一个新的类，这个类不仅包含原来类方法的功能，而且还在原来的基础上添加了额外处理的新类**。
+
+这个代理类并不是定义好的，是动态生成的。具有解耦意义，灵活，扩展性强。可以在运行期动态创建某个interface 的实例。
+
+<br>
+
+**如何实现动态代理？**
+
+:point_right: 详细参照此篇博客 ：[你真的完全了解Java动态代理吗？看这篇就够了](https://www.jianshu.com/p/95970b089360)
+
+Java标准库提供了动态代理功能，允许在运行期动态创建一个接口的实例；
+
+动态代理是通过` Proxy` 创建代理对象，然后将接口方法“代理”给 `InvocationHandler` 完成的。
+
+实例代码如下：
+```java
+/**
+ * 定义一个接口
+ */
+interface Hello{
+    void morning(String name);
+}
+
+/**
+ * 动态代理创建接口实例
+ */
+public class dynamic_proxy{
+    public static void main(String[] args) {
+        InvocationHandler handler = new InvocationHandler(){
+        
+            @Override
+            public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+                System.out.println(method);
+                // 增强moring方法
+                if(method.getName().equals("morning")){
+                    System.out.println("Good Morning," + args[0]);
+                }
+                return null;
+            }
+        };
+        
+        Hello hello = (Hello) Proxy.newProxyInstance(Hello.class.getClassLoader(), new Class[]{Hello.class}, handler);
+        hello.morning("Jack");
+        
+
+    }
+}
+```
+
+在运行期动态创建一个interface实例的方法如下：
+
+1. 首先必须定义一个接口 Hello（被代理）
+
+2. 定义一个 `InvocationHandler` 实例，它负责实现接口方法 morning 的调用；
+
+3. 通过 `Proxy.newProxyInstance()` 创建接口 Hello 实例的代理对象，它需要3个参数：
+	- **参数1：**使用的 `ClassLoader` 类加载器。通常就是接口类的ClassLoader；
+	
+	  (因为代理的是 Hello，所以用加载 Hello 的类加载器。)
+
+	- **参数2：**需要实现的接口数组，至少需要传入一个接口进去；
+	- **参数3：**用来处理接口方法调用的 InvocationHandler 实例。
+	
+4. 将返回的 Object 强制转型为接口。
+
+
+
+## 4. 切入点表达式
+
+### ① 切入点表达式的作用
+
+切入点表达式的作用是：指明要对业务层中哪些方法增强
+
+### ② 切入点表达式的写法
+
+表达式：
+
+**访问修饰符  返回值  包名.包名.包名...类名.方法名(参数列表)**
+<br>
+**标准的表达式写法：**
+
+ ```xml
+public void com.smallbeef.service.impl.AccountServiceImpl.saveAccount()
+ ```
+
+**访问修饰符可以省略**
+
+```xml
+ void com.smallbeef.service.impl.AccountServiceImpl.saveAccount()
+```
+**返回值可以使用通配符，表示任意返回值**
+
+   * `com.smallbeef.service.impl.AccountServiceImpl.saveAccount()`
+
+     表示任意包。但是有几级包，就需要写几个 `*.`
+
+   * `*.*.*.*.AccountServiceImpl.saveAccount())`
+
+     `..` 表示当前包及其子包
+
+   * `*..AccountServiceImpl.saveAccount()`
+
+     使用 * 来实现通配
+
+   * `*..*.*()`
+
+     可以直接写数据类型：
+
+     基本类型直接写名称，比如 int
+
+     引用类型写 <u>包名.类名</u> 的方式   java.lang.String
+
+     可以使用通配符表示任意类型，但是必须有参数
+
+     **可以使用 ` .. ` 表示有无参数均可，有参数可以是任意类型**
+
+     全通配写法：`*..*.*(..)`
+
+- **实际开发中切入点表达式的通常写法：切到业务层实现类下的所有方法**
+
+​		`* com.smallbeef.service.impl.*.*(..)`
+
+### ③ 通用化切入点表达式
+
+配置切入点表达式，方便代码书写
+
+id属性用于指定表达式的唯一标识。expression属性用于指定表达式内容
+
+此标签写在 `aop:aspect` 标签 **内部** 只能当前切面使用。
+
+它还可以写在 `aop:aspect` **外面**，此时就变成了所有切面可用
+
+**注：该标签必须写在切面之前**
+
+```java
+<aop:pointcut id="pt1" expression="execution(* com.smallbeef.service.impl.*.*(..))"></aop:pointcut>
+```
+
+通过 `point-ref` 属性引用
+
+```java
+<aop:before method="beforePrintLog" pointcut-ref="pt1" ></aop:before>
+```
+
+## 5. 五种通知类型
+
+- **前置通知**：在切入点方法执行之前执行
+- **后置通知**：在切入点方法正常执行之后值。它和异常通知永远只能执行一个
+- **异常通知：**在切入点方法执行产生异常之后执行。它和后置通知永远只能执行一个
+- **最终通知**：无论切入点方法是否正常执行它都会在其后执行
+- **环绕通知**：它是 Spring 框架为我们提供的一种可以在代码中手动控制增强方法何时执行的方式
+
+### ① 前置通知
+
+```xml
+<!-- 配置前置通知：在切入点方法beforePrintLog执行之前执行-->
+<aop:before method="beforePribeforePrintLogntLog" pointcut-ref="pt1" ></aop:before>
+```
+
+### ② 后置通知
+
+```xml
+<!-- 配置最终通知：无论切入点方法afterReturningPrintLog是否正常执行它都会在其后面执行-->
+<aop:after-returning method="afterReturningPrintLog" pointcut-ref="pt1"></aop:after>
+```
+
+### ③ 异常通知
+
+```xml
+ <!-- 配置异常通知：在切入点方法afterThrowingPrintLog执行产生异常之后执行。它和后置通知永远只能执行一个-->
+<aop:after-throwing method="afterThrowingPrintLog" pointcut-ref="pt1"></aop:after-throwing>
+```
+
+### ④ 最终通知
+
+```xml
+<!-- 配置最终通知：无论切入点方法是否正常执行它都会在其后面执行-->
+<aop:after method="afterPrintLog" pointcut-ref="pt1"></aop:after>
+```
+
+### ⑤ 环绕通知
+
+它是 Spring 框架为我们提供的一种可以在代码中手动控制增强方法何时执行的方式
+
+```xml
+<!-- 配置环绕通知 -->
+<aop:around method="aroundPringLog" pointcut-ref="pt1"></aop:around>
+```
+
+Spring框架为我们提供了一个接口：`ProceedingJoinPoint`。该接口有一个方法 `proceed()`，此方法就相当于**明确调用切入点方法。**
+
+该接口可以作为环绕通知的方法参数，在程序执行时，Spring 框架会为我们提供该接口的实现类供我们使用。
+
+```java
+public Object aroundPringLog(ProceedingJoinPoint pjp){
+        Object rtValue = null;
+        try{
+            Object[] args = pjp.getArgs();//得到方法执行所需的参数
+
+            System.out.println("Logger类中的aroundPringLog方法开始记录日志了。。。前置通知");
+
+            rtValue = pjp.proceed(args);//明确调用业务层方法（切入点方法）
+
+            System.out.println("Logger类中的aroundPringLog方法开始记录日志了。。。后置通知");
+
+            return rtValue;
+        }catch (Throwable t){
+            System.out.println("Logger类中的aroundPringLog方法开始记录日志了。。。异常通知");
+            throw new RuntimeException(t);
+        }finally {
+            System.out.println("Logger类中的aroundPringLog方法开始记录日志了。。。最终通知");
+        }
+}
+```
+
+要增加的方法在 `proceed` 之前调用就是前置通知，在之后调用就是后置通知，
+
+在异常中调用就是异常通知，在 finally 中调用就是最终通知
+
+## 6. XML 配置 AOP
+
+### ① 导入约束和依赖
+
+```xml
+?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+  		
+  	<dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>5.0.2.RELEASE</version>
+        </dependency>
+
+        <!--负责解析切入点表达式-->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.8.7</version>
+        </dependency>
+    </dependencies>
+  		
+</beans>
+```
+
+### ② 配置Spring 的 IoC
+
+比如：
+
+```xml
+<!-- 配置srping的Ioc,把service对象配置进来-->
+<bean id="accountService" class="com.smallbeef.service.impl.AccountServiceImpl"></bean>
+```
+
+当然也可以用 < component-scan > + @Component 或者纯注解配置 IoC
+
+### ③ 配置 AOP
+
+- 使用 `aop:config` 标签表明开始 AOP 的配置
+
+- 使用 `aop:aspect` 标签表明配置切面
+
+  - id 属性：是给切面提供一个唯一标识
+
+  - ref 属性：是指定通知类 bean 的 id。
+
+- 在 `aop:aspect` 标签的内部使用对应标签来配置**通知的类型**（四种常用的通知类型 见下文）
+
+  - method 属性：用于指定Logger类中哪个方法是前置通知
+
+  - pointcut 属性：用于指定 **切入点表达式**，即指定对哪些方法进行增强
+
+    **`execution` + 切入点表达式**
+
+
+
+```xml
+<!--配置AOP-->
+<aop:config>
+     <!--配置切面 -->
+     <aop:aspect id="logAdvice" ref="logger">
+         <!-- 配置通知的类型，并且建立通知方法和切入点方法的关联-->
+         <aop:pointcut id="pt1" expression="execution(* com.smallbeef.service.impl.*.*(..))"></aop:pointcut>
+         <aop:before method="printLog" pointcut-ref="pt1"></aop:before>
+     </aop:aspect>
+</aop:config>
+```
+
+## 7. 注解配置AOP
+
+导入依赖和约束以及IOC配置同XML配置
+
+首先：如果我们希望使用注解配置AOP，则需要在xml文件中配置 Spring 开启 对注解 AOP 的支持
+
+```xml
+<!-- 配置spring开启注解AOP的支持 -->
+<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+```
+
+当然，上面的这个标签等同于注解 `@EnableAspectJAutoProxy`，可在配置类中配合 @Configuration + @ComponentScan 使用
+
+<br>
+
+- `@Aspect` 	表示当前类是一个切面类 = < aop:aspect > 标签
+
+- `@Pointcut` 配置切入点表达式
+
+    ```java 
+    @Pointcut("execution(* com.smallbeef.service.impl.*.*(..))")
+    private void pt1(){} 
+    ```
+
+- `@Before("pt1()") ` 前置通知
+
+- `@AfterReturning("pt1()")` 后置通知
+
+- `@AfterThrowing("pt1()")` 异常通知
+
+- `@After("pt1()")` 最终通知
+
+- `@Around("pt1()")` 环绕通知
+
+<br>
+
+**示例:**
+
+```java
+/**
+ * 用于记录日志的工具类，它里面提供了公共的代码
+ */
+@Component
+@Aspect//表示当前类是一个切面类
+public class Logger {
+    /**
+     * 配置切入点表达式
+     */
+    @Pointcut("execution(* com.smallbeef.service.impl.*.*(..))")
+    private void pt1(){}
+
+    /**
+     * 前置通知
+     */
+    @Before("pt1()")
+    public  void beforePrintLog(){
+        System.out.println("前置通知Logger类中的beforePrintLog方法开始记录日志了。。。");
+    }
+
+    /**
+     * 后置通知
+     */
+    @AfterReturning("pt1()")
+    public  void afterReturningPrintLog(){
+        System.out.println("后置通知Logger类中的afterReturningPrintLog方法开始记录日志了。。。");
+    }
+    /**
+     * 异常通知
+     */
+    @AfterThrowing("pt1()")
+    public  void afterThrowingPrintLog(){
+        System.out.println("异常通知Logger类中的afterThrowingPrintLog方法开始记录日志了。。。");
+    }
+
+    /**
+     * 最终通知
+     */
+    @After("pt1()")
+    public  void afterPrintLog(){
+        System.out.println("最终通知Logger类中的afterPrintLog方法开始记录日志了。。。");
+    }
+    
+	/**
+	* 环绕通知和上面四个不能同时存在
+	*/
+	// @Around("pt1()")
+    public Object aroundPringLog(ProceedingJoinPoint pjp){
+        Object rtValue = null;
+        try{
+            Object[] args = pjp.getArgs();//得到方法执行所需的参数
+
+            System.out.println("Logger类中的aroundPringLog方法开始记录日志了。。。前置");
+
+            rtValue = pjp.proceed(args);//明确调用业务层方法（切入点方法）
+
+            System.out.println("Logger类中的aroundPringLog方法开始记录日志了。。。后置");
+
+            return rtValue;
+        }catch (Throwable t){
+            System.out.println("Logger类中的aroundPringLog方法开始记录日志了。。。异常");
+            throw new RuntimeException(t);
+        }finally {
+            System.out.println("Logger类中的aroundPringLog方法开始记录日志了。。。最终");
+        }
+    }
+}
+```
+
+
+
+<br>
 
 # 五、JdbcTemplates
 
+<br>
 
-
-# 五、事务控制
+# 六、事务控制
 

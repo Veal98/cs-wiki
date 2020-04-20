@@ -433,7 +433,8 @@ public class BeanFactory {
 ## 3. AOP 的实现方式
 **动态代理**
 
----
+<br>
+
 # 三、基于 XML 的 AOP 配置
 
 ## 1. 代码准备
@@ -519,44 +520,73 @@ public class Logger {
 
 ### c. 配置 AOP
 - 使用 `aop:config` 标签表明开始 AOP 的配置
+
 - 使用 `aop:aspect` 标签表明配置切面
-                id 属性：是给切面提供一个唯一标识
-                ref 属性：是指定通知类 bean 的 id。
+
+     - id 属性：是给切面提供一个唯一标识
+
+     - ref 属性：是指定通知类 bean 的 id。
+
 - 在 `aop:aspect` 标签的内部使用对应标签来配置**通知的类型**（四种常用的通知类型 见下文）
-               我们现在示例是让 printLog 方法在切入点方法执行之前之前：所以是前置通知
-               `aop:before`：表示配置前置通知
-                    method 属性：用于指定Logger类中哪个方法是前置通知
-                    pointcut 属性：用于指定 **切入点表达式**，该表达式的含义指的是对业务层中哪些方法增强
+
+     - method 属性：用于指定Logger类中哪个方法是前置通知
+
+     - pointcut 属性：用于指定 **切入点表达式**，该表达式用于指定对哪些方法进行增强    
+
+**切入点表达式的写法：**
+
+关键字：`execution` (表达式)
+
+表达式：
+
+**访问修饰符  返回值  包名.包名.包名...类名.方法名(参数列表)**
+<br>                    
+**标准的表达式写法：**
+
+ ```xml
+public void com.smallbeef.service.impl.AccountServiceImpl.saveAccount()
+ ```
+
+
+
+**访问修饰符可以省略**
+
+```xml
+ void com.smallbeef.service.impl.AccountServiceImpl.saveAccount()
+```
+
+
+**返回值可以使用通配符，表示任意返回值**
+
+   * `com.smallbeef.service.impl.AccountServiceImpl.saveAccount()`
+
+        表示任意包。但是有几级包，就需要写几个 `*.`
+
+   * `*.*.*.*.AccountServiceImpl.saveAccount())`
+
+        `..` 表示当前包及其子包
+
+   * `*..AccountServiceImpl.saveAccount()`
+
+        使用 * 来实现通配
+
+                * `*..*.*()`
+                       参数列表：
+                可以直接写数据类型：
                     
->**切入点表达式的写法：**
->          关键字：`execution` (表达式)
->          表达式：
->              ==访问修饰符  返回值  包名.包名.包名...类名.方法名(参数列表)==
-><br>                    
->标准的表达式写法：
->              public void com.smallbeef.service.impl.AccountServiceImpl.saveAccount()
->          **访问修饰符可以省略**
->              void com.smallbeef.service.impl.AccountServiceImpl.saveAccount()
->          **返回值可以使用通配符，表示任意返回值**
->                  * com.smallbeef.service.impl.AccountServiceImpl.saveAccount()
->              **包名可以使用通配符，表示任意包。但是有几级包，就需要写几个 `*.`**
->                  * *.*.*.*.AccountServiceImpl.saveAccount())
->              **包名可以使用 `..` 表示当前包及其子包**
->                  * *..AccountServiceImpl.saveAccount()
->              **类名和方法名都可以使用 `*` 来实现通配**
->                  * *..*.*()
->              **参数列表：**
->                  可以直接写数据类型：
->                      基本类型直接写名称           int
->                      引用类型写包名.类名的方式   java.lang.String
->                  可以使用通配符表示任意类型，但是必须有参数
->                  **可以使用 `..` 表示有无参数均可，有参数可以是任意类型**
->              全通配写法：
->                  * *..*.*(..)
->                 ><br>
->              **实际开发中切入点表达式的通常写法：**
->                  切到业务层实现类下的所有方法
->`* com.smallbeef.service.impl.*.*(..)`
+                    基本类型直接写名称，比如 int
+                
+               引用类型写 <u>包名.类名</u> 的方式   java.lang.String
+            
+            可以使用通配符表示任意类型，但是必须有参数
+            
+            **可以使用 ` .. ` 表示有无参数均可，有参数可以是任意类型**
+            
+            全通配写法：`*..*.*(..)`
+
+- 实际开发中切入点表达式的通常写法：切到业务层实现类下的所有方法
+
+​		`* com.smallbeef.service.impl.*.*(..)`
 
 ```xml
  <!--配置AOP-->
@@ -571,18 +601,21 @@ public class Logger {
 
 ## 3. 通用化切入点表达式
 配置切入点表达式，方便代码书写
+
 id属性用于指定表达式的唯一标识。expression属性用于指定表达式内容
 
 此标签写在 `aop:aspect` 标签 **内部** 只能当前切面使用。
+
 它还可以写在 `aop:aspect` **外面**，此时就变成了所有切面可用
 
 **注：该标签必须写在切面之前**
+
 ```java
-	<aop:pointcut id="pt1" expression="execution(* com.itheima.service.impl.*.*(..))"></aop:pointcut>
+<aop:pointcut id="pt1" expression="execution(* com.smallbeef.service.impl.*.*(..))"></aop:pointcut>
 ```
 通过 `point-ref` 属性引用
 ```java
- <aop:before method="beforePrintLog" pointcut-ref="pt1" ></aop:before>
+<aop:before method="beforePrintLog" pointcut-ref="pt1" ></aop:before>
 ```
 
 ## 4. 四种常用的通知类型 
@@ -645,17 +678,22 @@ public class Logger {
 ```
 
 -   **问题：**
-         当我们配置了环绕通知之后，切入点方法没有执行，而通知方法执行了。
+   
+   当我们配置了环绕通知之后，切入点方法没有执行，而通知方法执行了。
+   
 -  **分析：**
-        通过对比动态代理中的环绕通知代码，发现动态代理的环绕通知有明确的切入点方法调用，而我们的代码中没有。
+   
+    通过对比动态代理中的环绕通知代码，发现动态代理的环绕通知有明确的切入点方法调用，而我们的代码中没有。
+   
 - **解决：**
-      Spring框架为我们提供了一个接口：`ProceedingJoinPoint`。该接口有一个方法 `proceed()`，此方法就相当于**明确调用切入点方法。**
-      该接口可以作为环绕通知的方法参数，在程序执行时，Spring 框架会为我们提供该接口的实现类供我们使用。
+  
+  Spring框架为我们提供了一个接口：`ProceedingJoinPoint`。该接口有一个方法 `proceed()`，此方法就相当于**明确调用切入点方法。**
+  
+  该接口可以作为环绕通知的方法参数，在程序执行时，Spring 框架会为我们提供该接口的实现类供我们使用。
   
 - Spring中的环绕通知：
-    **它是 Spring 框架为我们提供的一种可以在代码中手动控制增强方法何时执行的方式。**
     
-     
+    **它是 Spring 框架为我们提供的一种可以在代码中手动控制增强方法何时执行的方式。**
 ```java
     public Object aroundPringLog(ProceedingJoinPoint pjp){
         Object rtValue = null;
@@ -675,10 +713,11 @@ public class Logger {
         }finally {
             System.out.println("Logger类中的aroundPringLog方法开始记录日志了。。。最终通知");
         }
-    }
+}
 ```
 
 要增加的方法在 `proceed` 之前调用就是前置通知，在之后调用就是后置通知，
+
 在异常中调用就是异常通知，在 finally 中调用就是最终通知
 
 ---
@@ -706,10 +745,11 @@ public class Logger {
 </beans>
 ```
 ### 不使用 xml 的配置方式
-`@ComponentScan(basePackages="com.smallbeef")` = 
-	*<context:component-scan base-package="com.smallbeef"></context:component-scan>*
+`@ComponentScan(basePackages="com.smallbeef")` 等价于
+	【<context:component-scan base-package="com.smallbeef">< /context:component-scan>】
 
-**`@EnableAspectJAutoProxy`** = *< aop:aspectj-autoproxy>< /aop:aspectj-autoproxy >*
+**`@EnableAspectJAutoProxy`** 等价于 【< aop:aspectj-autoproxy>< /aop:aspectj-autoproxy >】
+
 ```java
 @Configuration 
 @ComponentScan(basePackages="com.smallbeef") 

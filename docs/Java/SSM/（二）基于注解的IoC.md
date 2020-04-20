@@ -315,8 +315,7 @@ public class JDBCConfiguration {
 ```
 
 ## @Import
-**作用：**  用于导入其他配置类，有 `@Import` 注解的类就是主配置类.
-			在引入其他配置类时，其他子配置类可以不用再写 @Configuration 注解。当然，写上也没问 题。 
+**作用：**  用于导入其他配置类，有 `@Import` 注解的类就是主配置类。在引入其他配置类时，其他子配置类可以不用再写 @Configuration 注解。当然，写上也没问 题。 
 **属性：**  value[]：用于指定其他配置类的字节码。 
 
 
@@ -324,7 +323,7 @@ public class JDBCConfiguration {
 大的 SpringConfiguration 类利用 @Import 包含小的 JDBCConfiguration 配置类，这样 AnnotationConfigApplicationContext 直接加载大的配置类，就会把这些小的配置类也都加载进来
 ```java
 @Configuration //在 AnnotationConfigApplicationContext中做参数时可以不写该注解
-@ComponentScan(basePackages = "com.itheima.spring") 
+@ComponentScan(basePackages = "com.smallbeef.spring") 
 @Import({ JdbcConfig.class，xxxxxConfig.class, xxxxConfig.class}) 
 public class SpringConfiguration { 
 

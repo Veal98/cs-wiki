@@ -196,7 +196,7 @@ from Student;
 
 ### ② 选择表中的若干元组
 
-#### 消除取值重复的行
+#### 消除取值重复的行 distinct
 
 使用 distinct 关键字 去除重复记录
 
@@ -280,7 +280,35 @@ from student
 order by sdept,sage desc;
 ```
 
-### ④ 聚集函数
+### ④ top
+
+```sql
+# 查询成绩第一的学生姓名
+select Sname
+from Student
+where Sgrade = (
+	select top 1 Sgrade 
+    from Student
+    order by Sgrade desc
+);
+```
+
+```sql
+# 查询第21-30行的数据，id主键自增，但可能不连续
+# 先查询出前20行的数据，后查询去除这20行的10行数据
+select top 10 *
+from student
+where id not in(
+	select top 20 id
+    from student
+    order by id
+)
+order by id;
+```
+
+
+
+### ⑤ 聚集函数
 
 ![](https://gitee.com/veal98/images/raw/master/img/20200417154133.png)
 
@@ -296,7 +324,7 @@ select count(distinct Sno)
 from sc;
 ```
 
-### ⑤ group by 子句
+### ⑥ group by 子句
 
 group by 分组：把具有相同的数据值的行放在同一组中。
 
