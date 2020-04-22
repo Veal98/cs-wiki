@@ -2,6 +2,7 @@
 <style>
     h2
     {
+      border-bottom:2px  solid   rgb(66, 185, 131);
       margin-bottom:50px;
       font-size: 1em;
     }
@@ -17,22 +18,21 @@
 </style>
 </head>
 
-<details>
+## 💡 关于
 
-**<summary>💡 关于</summary>**
+- ⚡ 如果 Github 加载太慢的话可以使用 Gitee，在线阅读地址 [https://veal98.gitee.io/cs-wiki](https://veal98.gitee.io/cs-wiki)
 
-- ⚡ **如果 Github 加载太慢的话可以使用 Gitee**，在线阅读地址 [https://veal98.gitee.io/cs-wiki](https://veal98.gitee.io/cs-wiki)
-
-- 📄 **保存为 PDF 方式** ：使用 Chrome 浏览器打开该页面，收起目录栏，鼠标右键 - 打印 - 选择目标打印机 - 另存为PDF - 保存
+- 📄 保存为 PDF 方式：使用 Chrome 浏览器打开该页面，收起目录栏，鼠标右键 - 打印 - 选择目标打印机 - 另存为PDF - 保存
 
 - 🙏 由于本人水平有限，仓库中的知识点来自本人原创、视频、书籍、博客等，非原创均已标明出处（或在参考资料中列出），如有遗漏，请 issue 提出。
 
----
+- 💓 [有事坚持，有人去爱，有知己，能果腹。放弃不难，但坚持一定很酷。](README) 与君共勉 ~
 
-</details>
 
 
 ## 📑 目录
+
+<br>
 
 | 工具 | 数据结构 | 计算机网络 | 操作系统 | 数据库 | 算法 | C++  | Java | Vue  |
 | :------: | :------: | :--------: | :------: | :----: | :-------: | :--: | :--: | :--: |
@@ -138,22 +138,19 @@
 - [Vue.js 自定义指令](Vue/13.自定义指令.md)
 - [Vue.js 路由](Vue/14.路由.md)
 
----
 
 ## ❌ 纠错
+
+<br>
+
 由于本人水平有限 🙋，若发现文章错误或者排版问题，
 
 欢迎前往 Github 提 issue 指正：🚪 传送门  [前往 Github 纠错](https://github.com/Veal98/CS-Wiki/issues)
 
----
-
-## 🎁 Donate
-创作不易，请作者喝杯蛋白粉吧~ ☕<br>
-
-<img src = "https://img-blog.csdnimg.cn/20200411153503610.jpg" width = "200px"/> <img src = "https://img-blog.csdnimg.cn/20200411153602406.jpg" width = "200px"/>
-
----
 
 ## 👮 License
-本仓库遵循 [CC BY-NC-SA 4.0（署名 - 非商业性使用 - 相同方式共享）协议](https://www.shiyanlou.com/library/interview-c++/LICENSE)，转载请注明出处 [小牛肉的Wiki](https://veal98.github.io/CS-Wiki/#/)
+
+<br>
+
+本仓库由 **飞天小牛肉** 整理创作，采用 [CC BY-NC-SA 4.0（署名 - 非商业性使用 - 相同方式共享）协议](https://www.shiyanlou.com/library/interview-c++/LICENSE) 进行许可，可自由转载、引用，但需要注明作者和文章出处 [小牛肉的Wiki](https://veal98.github.io/CS-Wiki/#/)
 
