@@ -1,3 +1,22 @@
+<head>
+<style>
+    h2
+    {
+      margin-bottom:50px;
+      font-size: 1em;
+    }
+    h2 span{
+      display:inline-block;
+      background: rgb(66, 185, 131);
+      color:#ffffff;
+      padding:  10px  16px;
+      border-radius:5px;
+      box-shadow: 5px 5px 10px black;
+    }
+   
+</style>
+</head>
+
 <details>
 
 **<summary>💡 关于</summary>**
@@ -15,7 +34,7 @@
 
 ## 📑 目录
 
-| 工具 | 数据结构 | 计算机网络 | 操作系统 | 数据库 | 剑指Offer | C++  | Java | Vue  |
+| 工具 | 数据结构 | 计算机网络 | 操作系统 | 数据库 | 算法 | C++  | Java | Vue  |
 | :------: | :------: | :--------: | :------: | :----: | :-------: | :--: | :--: | :--: |
 | [🔨](README?id=🔨-工具) |    [📚](README?id=📚-数据结构)     |     [💻](README?id=💻-计算机网络)      |    [📜](README?id=📜-操作系统)     |   [📘](README?id=📘-数据库)   |     [⏳](README?id=⏳-算法)     |  [🍎](README?id=🍎-C++)   |  [🍵](README?id=🍵-Java)   |  [🎉](README?id=🎉-Vue)   |
 
@@ -72,6 +91,7 @@
 - [【七】查询处理和优化](数据库/【七】查询处理和优化)
 - [【八】事务处理 - 数据库恢复技术](数据库/【八】事务处理-数据库恢复技术)
 - [【九】事务处理 - 并发控制](数据库/【九】事务处理-并发控制)
+- [【十】索引进阶](数据库/【十】索引进阶.md)
 
 
 
@@ -136,5 +156,4 @@
 
 ## 👮 License
 本仓库遵循 [CC BY-NC-SA 4.0（署名 - 非商业性使用 - 相同方式共享）协议](https://www.shiyanlou.com/library/interview-c++/LICENSE)，转载请注明出处 [小牛肉的Wiki](https://veal98.github.io/CS-Wiki/#/)
-
 

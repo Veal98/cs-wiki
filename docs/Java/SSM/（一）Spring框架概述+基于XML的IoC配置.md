@@ -1,9 +1,8 @@
-# 🐌（一）Spring框架概述 + 基于XML的IoC配置
 
 
 # 思维导图
 
-<br />![](https://cdn.nlark.com/yuque/0/2020/png/1237282/1586271263838-ee97211d-0900-4441-8e27-aea55165a3b0.png#align=left&display=inline&height=1025&originHeight=1025&originWidth=1702&size=0&status=done&style=none&width=1702)<br />
+![](https://cdn.nlark.com/yuque/0/2020/png/1237282/1586271263838-ee97211d-0900-4441-8e27-aea55165a3b0.png#align=left&display=inline&height=1025&originHeight=1025&originWidth=1702&size=0&status=done&style=none&width=1702)<br />
 
 ---
 
