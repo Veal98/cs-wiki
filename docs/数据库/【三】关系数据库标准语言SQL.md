@@ -335,8 +335,6 @@ from sc
 group by Cno;
 ```
 
-
-
 如果分组后话需要对这些组进行过滤，则使用 `HAVING` 短语
 
 ```sql
@@ -346,6 +344,20 @@ from sc
 group by sno
 having count(*) > 3;
 ```
+
+```sql
+# 有两个表Study(sno,cno)和Student(sno,sname)，查询选修了2或3门课的学生
+select * from Student s
+where s.sno in(
+	select stu.sno from Studty stu
+    group by stu.sno 
+    having count(*) >= 2
+);
+```
+
+<br>
+
+
 
 **`WHERE` 过滤行，`HAVING` 过滤分组，行过滤应当先于分组过滤。**
 
@@ -696,7 +708,39 @@ where Sno in(
 );
 ```
 
+```sql
+# 删除重复数据，只保留一条记录（除id以外，其余全部相同）
+-- ② 删除除了分组中最小id以外的所有值，即重复数据 --
+delete from Student
+where id not in
+select id from(
+	-- ① 按照除id以外的任意属性就行分组排列，并选出每个分组中的最小id -- 
+	select MIN(id) from Student
+    group by Sname
+);
+```
+
+> 🚨 注意： 
+>
+> ```sql
+> delete from test 
+> where id not in(
+> 	select Min(id) from test 
+>     group by name
+> );
+> ```
+>
+> 这样写在 MySQL 中会报错，
+>
+> `You can't specify target table for update in FROM clause`
+>
+> **不允许使用同一表中查询的数据作为同一表的更新数据。**
+>
+> 我们需要在select外面套上一层，让数据库认为我们不是使用同一个表的查询数据作为更新数据
+
 <br>
+
+
 
 # 四、空值的处理
 

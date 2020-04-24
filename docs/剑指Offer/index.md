@@ -51,4 +51,13 @@
 | [42 - 和为S的两个数字](剑指Offer/42.md)                      |     ⭐      |
 | [43 - 左旋转字符串](剑指Offer/43.md)                         |     ⭐      |
 | [44 - 翻转单词顺序列](剑指Offer/44.md)                       |     ⭐⭐     |
+| [45 - 扑克牌顺子](剑指Offer/45.md)                           |     ⭐⭐     |
 
+
+
+---
+
+📝 **参考解题思路：**
+
+- 牛客网 剑指 Offer 题解
+- [剑指Offer——名企面试官精讲典型编程题](https://github.com/gatieme/CodingInterviews)

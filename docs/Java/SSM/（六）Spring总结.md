@@ -76,7 +76,7 @@ public class User{
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <!--把对象的创建交割spring来管理-->
+    <!--把对象的创建交给spring来管理-->
     <bean id = "accountService" class = "com.smallbeef.service.impl.AccountServiceImpl"></bean>
     <bean id = "accountDao" class = "com.smallbeef.dao.impl.AccountDaoImpl"></bean>
   </beans>Copy to clipboardErrorCopied
@@ -1459,13 +1459,113 @@ public class Logger {
 }
 ```
 
+<br>
+
+
+
+# 五、JdbcTemplate
+
+JdbcTemplate 是 Spring 利用 AOP 思想封装的 JDBC  操作工具
+
+## 1. 导入依赖和约束
+
+```xml
+<dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>5.0.2.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>5.0.2.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.6</version>
+        </dependency>
+    </dependencies>
+```
+
+## 2. 注解配置
+
+首先需要创建数据库表和实体类
+
+配置文件如下：
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--配置JdbcTemplate-->
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+
+    <!-- 配置数据源-->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+        <property name="url" value="jdbc:mysql://localhost:3306/eesy"></property>
+        <property name="username" value="root"></property>
+        <property name="password" value="1234"></property>
+    </bean>
+</beans>
+```
+
+## 3. CRUD 操作
+
+```java
+/**
+ * JdbcTemplate的CRUD操作
+ */
+public class JdbcTemplateDemo3 {
+
+    public static void main(String[] args) {
+        //1.加载配置文件，获取容器
+        ApplicationContext ac = new ClassPathXmlApplicationContext("bean.xml");
+        //2.获取对象
+        JdbcTemplate jt = ac.getBean("jdbcTemplate",JdbcTemplate.class);
+        //3.执行操作
+        //保存
+		jt.update("insert into account(name,money)values(?,?)","eee",3333f);
+        //更新
+		jt.update("update account set name=?,money=? where id=?","test",4567,7);
+        //删除
+		jt.update("delete from account where id=?",8);
+        //查询所有
+		List<Account> accounts = jt.query("select * from account where money > ?",new BeanPropertyRowMapper<Account>(Account.class),1000f);
+		for(Account account : accounts){
+	           System.out.println(account);
+        }
+        //查询一个（查询id=1）
+		List<Account> accounts = jt.query("select * from account where id = ?",new BeanPropertyRowMapper<Account>(Account.class),1);
+		//get(0)表示获得第一个
+		System.out.println(accounts.isEmpty()?"没有内容":accounts.get(0));
+
+        //查询返回一行一列（使用聚合函数，但不加group by子句）
+        //第二个参数指定方法的返回类型
+        Long count = jt.queryForObject("select count(*) from account where money > ?",Long.class,1000f);
+        System.out.println(count);
+
+
+    }
+}
+```
+
+在查询时，如果使用了 `BeanPropertyRowMapper`，要求查出来的字段必须和 Bean 的属性名一一对应。
+
 
 
 <br>
 
-# 五、JdbcTemplates
 
-<br>
 
 # 六、事务控制
 
