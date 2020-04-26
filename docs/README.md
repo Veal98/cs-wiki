@@ -14,11 +14,12 @@
       border-radius:5px;
       box-shadow: 5px 5px 10px black;
     }
-
 </style>
 
 
 ## 💡 关于
+
+- 🎫 本仓库初衷是为了准备考研初试和复试，搭建一个完善的专业课知识体系，起于此，但不止于此，参考众多资料后，对于校招小伙伴应该也有一定的帮助。后期会不断改进完善，也欢迎各位小伙伴提出好的建议
 
 - ⚡ 如果 Github 加载太慢的话可以使用 Gitee，在线阅读地址 [https://veal98.gitee.io/cs-wiki](https://veal98.gitee.io/cs-wiki)
 
@@ -28,15 +29,17 @@
 
 - 💓 [有事坚持，有人去爱，有知己，能果腹。放弃不难，但坚持一定很酷。](README) 与君共勉 ~
 
+  ![](http://pic1.win4000.com/wallpaper/c/579b18623b1e3.jpg)
+
 
 
 ## 📑 目录
 
 <br>
 
-| 工具 | 数据结构 | 计算机网络 | 操作系统 | 数据库 | 算法 | C++  | Java | Vue  |
-| :------: | :------: | :--------: | :------: | :----: | :-------: | :--: | :--: | :--: |
-| [🔨](README?id=🔨-工具) |    [📚](README?id=📚-数据结构)     |     [💻](README?id=💻-计算机网络)      |    [📜](README?id=📜-操作系统)     |   [📘](README?id=📘-数据库)   |     [⏳](README?id=⏳-算法)     |  [🍎](README?id=🍎-C++)   |  [🍵](README?id=🍵-Java)   |  [🎉](README?id=🎉-Vue)   |
+| 工具 | 数据结构 | 计算机网络 | 操作系统 | 数据库 | 算法 | 软件工程 | C++  | Java | Vue  |
+| :------: | :------: | :--------: | :------: | :----: | :-------: | :--: | :--: | :--: | :--: |
+| [🔨](README?id=🔨-工具) |    [📚](README?id=📚-数据结构)     |     [💻](README?id=💻-计算机网络)      |    [📜](README?id=📜-操作系统)     |   [📘](README?id=📘-数据库)   |     [⏳](README?id=⏳-算法)     |     [🔋](README?id=🔋-软件工程)     |  [🍎](README?id=🍎-C++)   |  [🍵](README?id=🍵-Java)   |  [🎉](README?id=🎉-Vue)   |
 
 
 ### 🔨 工具
@@ -97,7 +100,15 @@
 
 ### ⏳ 算法
 
-- [① 剑指 Offer 题解](剑指Offer/index.md)
+- [① 剑指 Offer 题解 — Java / C++](剑指Offer/index.md)
+
+
+
+### 🔋 软件工程
+
+- [软件工程重点知识总结](软件工程/软件工程重点知识总结.md)
+
+
 
 
 ### 🍎 C++
@@ -111,14 +122,14 @@
 - [【七】多态性](C++/7.多态性.md)
 - [【八】函数模板和类模板](C++/8.函数模板和类模板.md)
 - [【九】文件和输入输出流](C++/9.文件和输入输出流.md)
-- [C++ 概念题汇总](C++/概念题汇总.md)
+- [【🔥】C++ 面试指南](C++/面试指南.md)
 
 ### 🍵 Java
 
 - [参考资料](Java/参考资料.md)
-- [Java基础知识]()
+- Java基础知识
 - [SSM框架](Java/SSM-Index.md)
-- [SpringBoot]()
+- SpringBoot
 
 ### 🎉 Vue
 - [参考资料](Vue/参考资料.md)
@@ -152,4 +163,6 @@
 <br>
 
 本仓库由 **飞天小牛肉** 整理创作，采用 [CC BY-NC-SA 4.0（署名 - 非商业性使用 - 相同方式共享）协议](https://www.shiyanlou.com/library/interview-c++/LICENSE) 进行许可，可自由转载、引用，但需要注明作者和文章出处 [小牛肉的Wiki](https://veal98.github.io/CS-Wiki/#/)
+
+<br>
 

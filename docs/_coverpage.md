@@ -1,8 +1,10 @@
 <img width="136px" style="border-radius: 50%" bor src="https://img-blog.csdnimg.cn/20200410105903679.jpg">
 
-## Veal 🐮 Wiki
+## CS 📚 Wiki
 
-- 小牛肉的Wiki，包含计算机网络、操作系统、数据结构、数据库、Java、C++、Vue、剑指Offer等
+### 他山之石，可以攻玉
+
+- 小牛肉的知识库，力图构建计算机/软件工程相关的完善知识体系
 
 [GitHub](<https://github.com/Veal98/CS-Wiki>)
 [开始阅读](README.md)
