@@ -145,3 +145,5 @@
 <br>
 
 本仓库由 **飞天小牛肉** 整理创作，采用 [CC BY-NC-SA 4.0（署名 - 非商业性使用 - 相同方式共享）协议](https://www.shiyanlou.com/library/interview-c++/LICENSE) 进行许可，可自由转载、引用，但需要注明作者和文章出处 [小牛肉的Wiki](https://veal98.github.io/CS-Wiki/#/)
+
+<br>
