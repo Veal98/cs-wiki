@@ -1,4 +1,3 @@
-<head>
 <style>
     h2
     {
