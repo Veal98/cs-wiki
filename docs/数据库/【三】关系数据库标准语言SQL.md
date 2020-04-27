@@ -24,7 +24,7 @@ create schema "S-T" authorization WANG;
 
 **示例：**
 
-为用户ZHANG创建一个模式TEST，并且在其中定义一个表table1
+为用户 ZHANG 创建一个模式 TEST，并且在其中定义一个表 table1
 
 ```sql
 create schema "TEST" authorization ZHANG
@@ -50,7 +50,7 @@ CASCADE | RESTRICT 必选其一
 > 数据库的创建和使用：
 >
 > CREATE DATABASE test;
-> USE test;****
+> USE test;
 
 ### ① 定义基本表 CREATE
 
@@ -147,9 +147,11 @@ drop index 索引名
 
 ## 4. 数据字典
 
-数据字典是关系数据库管理系统内部的一组系统表，它记录了数据库中所有的定义信息，包括关系模式定义、视图定义、索引定义、完整性约束定义、各类用户对数据库的操作权限、统计信息等。关系数据库管理系统在执行SQL的数据定义语句时，实际上就是在更新数据字典中的相应信息
+数据字典是关系数据库管理系统内部的一组系统表，它**记录了数据库中所有的定义信息**，包括关系模式定义、视图定义、索引定义、完整性约束定义、各类用户对数据库的操作权限、统计信息等。**关系数据库管理系统在执行SQL的数据定义语句时，实际上就是在更新数据字典中的相应信息**
 
 <br>
+
+
 
 # 二、数据查询
 
@@ -267,7 +269,7 @@ from SC;
 ### ③ order by 子句
 
 - desc 降序 
-- asc升序 默认
+- asc 升序 默认
 
 ```sql
 # 院系按升序排，年龄按降序排
@@ -324,7 +326,7 @@ from sc;
 
 group by 分组：把具有相同的数据值的行放在同一组中。
 
-分组后聚集函数将作用于每一组，即每一组都有一个函数值
+**分组后聚集函数将作用于每一组，即每一组都有一个聚集函数值**
 
 **示例：**
 
@@ -335,7 +337,7 @@ from sc
 group by Cno;
 ```
 
-如果分组后话需要对这些组进行过滤，则使用 `HAVING` 短语
+如果分组后还需要对这些组进行过滤，则使用 `HAVING` 短语
 
 ```sql
 # 查询选修了三门以上课程的学生学号
@@ -369,11 +371,11 @@ where s.sno in(
 >
 > having 字段必须是查询出来的，where 字段必须是数据表存在的。
 >
-> **where 不可以使用字段的别名，having 可以。因为执行WHERE代码时，可能尚未确定列值。**
+> **where 不可以使用字段的别名，having 可以。因为执行 WHERE 代码时，可能尚未确定列值。**
 >
 > where 不可以使用聚集函数。一般需用聚集函数才会用 having
 >
-> SQL标准要求`HAVING必须引用GROUP BY子句中的列或用于合计函数中的列`。
+> SQL标准要求`HAVING 必须引用 GROUP BY 子句中的列或用于合计函数中的列`。
 
 
 
@@ -447,9 +449,9 @@ where Student.Sno = SC.Sno AND
 
 ## 3. 嵌套查询
 
-在SQL语言中，一个select-from-where语句称为一个查询块。
+在 SQL 语言中，一个 select-from-where 语句称为一个查询块。
 
-将一个查询块套在另一个查询块的where子句或HAVING短语的条件中的查询称为嵌套查询
+将一个查询块套在另一个查询块的 where 子句或 HAVING 短语的条件中的查询称为嵌套查询
 
 ### ① 带有 in 谓词的子查询
 
@@ -495,7 +497,15 @@ where Sage < ANY(select Sage
 
 ### ④ 带有 EXISTS 谓词的子查询
 
-EXISTS代表存在，带有该谓词的子查询不返回任何数据，只产生逻辑真值true或逻辑假值false
+`EXISTS` 代表存在，带有该谓词的子查询不返回任何数据，只产生逻辑真值 true 或逻辑假值 false
+
+- exists 引导的内层查询如果 能查出数据，则继续外层查询
+
+- not exists 引导的内层查询如果 查不出数据，则继续外层查询
+
+> **exists 的查询步骤是顺序执行，并不会先做子查询**，与 in 相反。
+>
+> 顺序执行，如果exists 的查询结果为真，则将最外层的查询结果添加进最终结果集
 
 **示例：**
 
@@ -511,16 +521,18 @@ where exists(
 );
 ```
 
-由exists引出的子查询，其目标列表达式通常都用 * ，因为该子查询只返回true 或 false，给出列名无实际意义
+由exists引出的子查询，其目标列表达式通常都用 * ，因为该子查询只返回 true 或 false，给出列名无实际意义
 
 ```sql
 # 查询选修了全部课程的学生姓名
 select Sname
 from Student
 where not exists(
+    # 首先我们要直到一共有哪些课程
 	select *
-	from Cource
+	from Cource 
 	where not exists(
+        # 其次，我们需要统计选修了所有课程的学生号
 		select * 
 		from SC
 		where Sno = Student.Sno
@@ -531,6 +543,23 @@ where not exists(
 ```
 
 由于没有全程量词，可将题目的意思转化为 没有一门课程是他不选修的
+
+exists 可以理解为一个循环
+
+```cpp
+for(循环从Student表拿一行学生数据){
+　　for(循环从Course表拿一行课程信息){
+　　　　for(循环在SC表拿一行进行比对){
+　　　　　　SC表中的这条数据判断：
+　　　　　   SC.Sno == Student.Sno ， SC.Cno == Course.Cno;
+　　　　　　/*是否SC表中的学号 = Student表中的学号 且
+　　　　　　　SC表中的Cno = Course表中的Cno*/
+　　　　}
+　　}
+}
+```
+
+
 
 ```sql
 # 查询至少选修了学生001选修的全部课程的学生号码
@@ -712,11 +741,12 @@ where Sno in(
 # 删除重复数据，只保留一条记录（除id以外，其余全部相同）
 -- ② 删除除了分组中最小id以外的所有值，即重复数据 --
 delete from Student
-where id not in
-select id from(
-	-- ① 按照除id以外的任意属性就行分组排列，并选出每个分组中的最小id -- 
-	select MIN(id) from Student
-    group by Sname
+where id not in(
+	select id from(
+		-- ① 按照除id以外的任意属性就行分组排列，并选出每个分组中的最小id -- 
+		select MIN(id) from Student
+    	group by Sname
+    )temp
 );
 ```
 
