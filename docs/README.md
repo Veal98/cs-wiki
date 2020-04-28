@@ -18,7 +18,7 @@
 
 ## 💡 关于
 
-- 🎫 本仓库初衷是为了准备考研初试和复试，搭建一个完善的专业课知识体系，起于此，但不止于此，参考众多资料后，对于校招小伙伴应该也有一定的帮助。后期会不断改进完善，也欢迎各位小伙伴提出好的建议
+- 🎫 本仓库初衷是为了准备考研初试和复试，搭建一个完善的专业课知识体系，起于此，但不止于此，后期会不断改进完善，也欢迎各位小伙伴提出好的建议
 
 - ⚡ 如果 Github 加载太慢的话可以使用 Gitee，在线阅读地址 [https://veal98.gitee.io/cs-wiki](https://veal98.gitee.io/cs-wiki)
 
@@ -126,16 +126,18 @@
 
 ### 🍵 Java
 
-- [参考资料](Java/参考资料.md)
-- Java基础知识
-- [SSM框架](Java/SSM-Index.md)
-- SpringBoot
+- [【零】参考资料](Java/参考资料.md)
+- [【一】Jave SE 和 Java EE 的区别](Java/JaveSE和JavaEE的区别.md)
+- [【二】Java SE 基础知识](Java/JavaSE基础知识/JavaSE-index.md)
+- [【三】Java EE 基础知识](Java/JavaEE基础知识.md)
+- [【四】SSM 框架](Java/SSM/SSM-Index.md)
+- 【五】SpringBoot
 
 ### 🎉 Vue
 - [参考资料](Vue/参考资料.md)
 - [Vue.js 入门](Vue/1.入门.md)
 - [Vue.js安装](Vue/2.安装.md)
-- [Vue-Cli 3+搭建的项目目录结构](Vue/3.目录结构.md)
+- [Vue-Cli 3+ 搭建的项目目录结构](Vue/3.目录结构.md)
 - [Vue.js 模板语法](Vue/4.模板语法.md)
 - [Vue.js 条件语句](Vue/5.条件语句.md)
 - [Vue.js 循环语句](Vue/6.循环语句.md)

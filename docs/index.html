@@ -64,6 +64,24 @@
     .markdown-section blockquote{
       background: rgb(236,248,242);
     }
+    .markdown-section > div > img, .markdown-section pre {
+      box-shadow: 2px 2px 20px 6px #ddd !important;
+    }
+    img, pre {
+      border-radius: 8px;
+    }
+    .markdown-section hr{
+      position: relative;
+      margin: 2rem auto;
+      margin-top: 2rem;
+      margin-right: auto;
+      margin-bottom: 2rem;
+      margin-left: auto;
+      width: calc(100% - 4px);
+      border: 2px dashed rgb(66, 185, 131);
+      background: #fff;
+    }
+   
   </style>
 </head>
 <body background="" style=" background-repeat:no-repeat ;background-size:100% 100%;background-attachment: fixed;">
@@ -84,13 +102,14 @@
       coverpage: true,
       onlyCover: true,
      
-      // search: {
-      //   paths: 'auto',
-      //   placeholder: '🔍 搜索',
-      //   noData: '😒 找不到结果',
-      //   // Headline depth, 1 - 6
-      //   depth: 6
-      // },//增加搜索框
+      search: {
+        paths: 'auto',
+        placeholder: '🔍 搜索',
+        noData: '😒 找不到结果',
+        // Headline depth, 1 - 6
+        depth: 6,
+        maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+      },//增加搜索框
    
       footer: {
         copy: '<span>Copyright &copy; 2019 - 2020</span>',
@@ -115,7 +134,7 @@
   <script src="//cdn.jsdelivr.net/docsify/lib/plugins/zoom-image.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
 
-  <!-- <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script> -->
+  <script src="https://cdn.bootcss.com/docsify/4.5.9/plugins/search.min.js"></script>
 
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-bash.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-java.min.js"></script>
