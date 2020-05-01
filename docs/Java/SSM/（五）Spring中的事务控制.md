@@ -251,8 +251,9 @@ public class AccountServiceImpl implements IAccountService{
 ```
 
 ## 4. 基于XML 的声明式事务控制配置步骤
-1. 配置事务管理器
-采用 `DataSourceTransactionManager`
+1. **配置事务管理器**
+
+  采用 `DataSourceTransactionManager`
 ```java
 	<!-- 配置事务管理器 -->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
@@ -260,19 +261,23 @@ public class AccountServiceImpl implements IAccountService{
         <property name="dataSource" ref="dataSource"></property>
     </bean>
 ```
-2. 配置事务的通知
-	使用 `tx:advice` 标签配置事务通知
-    属性：
-    id：给事务通知起一个唯一标识
-    transaction-manager：给事务通知提供一个事务管理器引用
+2. **配置事务的通知**
+	
+  使用 `tx:advice` 标签配置事务通知
+  
+  属性：
+  
+  - id：给事务通知起一个唯一标识
+  - transaction-manager：给事务通知提供一个事务管理器引用
 ```java
 	<!-- 事务的配置 --> 
 	<tx:advice id="txAdvice" transaction-manager="transactionManager"> 
 	</tx:advice> 
 ```
 
-3. 配置事务的属性
-在 tx:advice 标签**内部** 配置事务的属性 
+3. **配置事务的属性**
+
+  在 tx:advice 标签**内部** 配置事务的属性 
 ```java
 	<!-- 配置事务的通知-->
     <tx:advice id="txAdvice" transaction-manager="transactionManager">
@@ -297,19 +302,19 @@ public class AccountServiceImpl implements IAccountService{
  	<!-- 配置aop-->
     <aop:config>
         <!-- 配置切入点表达式-->
-        <aop:pointcut id="pt1" expression="execution(* com.itheima.service.impl.*.*(..))"></aop:pointcut>
+        <aop:pointcut id="pt1" expression="execution(* com.smallbeef.service.impl.*.*(..))"></aop:pointcut>
     </aop:config>
 ```
 
 5. 配置切入点表达式和事务通知的对应关系
 ```java
- 	<!-- 配置aop-->
-    <aop:config>
-        <!-- 配置切入点表达式-->
-        <aop:pointcut id="pt1" expression="execution(* com.itheima.service.impl.*.*(..))"></aop:pointcut>
-        <!--建立切入点表达式和事务通知的对应关系 -->
-        <aop:advisor advice-ref="txAdvice" pointcut-ref="pt1"></aop:advisor>
-    </aop:config>
+<!-- 配置aop-->
+<aop:config>
+    <!-- 配置切入点表达式-->
+    <aop:pointcut id="pt1" expression="execution(* com.smallbeef.service.impl.*.*(..))" />
+    <!--建立切入点表达式和事务通知的对应关系 -->
+    <aop:advisor advice-ref="txAdvice" pointcut-ref="pt1" />
+</aop:config>
 ```
 
 # 三、基于注解的配置方式
@@ -369,8 +374,8 @@ public class AccountServiceImpl implements IAccountService{
 2. 开启 Spring 对注解事务的支持
 
 ```java
-	<!-- 开启spring对注解事务的支持-->
-    <tx:annotation-driven transaction-manager="transactionManager"></tx:annotation-driven>
+<!-- 开启spring对注解事务的支持-->
+<tx:annotation-driven transaction-manager="transactionManager"></tx:annotation-driven>
 ```
 可以在配置类中用注解 `@EnableTransactionManagement` 替换
 
@@ -416,7 +421,9 @@ public class AccountServiceImpl implements IAccountService{
 }
 ```
 该注解的属性和 xml 中的属性含义一致。
+
 该注解可以出现在接口上，类上和方法上。 
+
 - 出现接口上，表示该接口的所有实现类都有事务支持。 
 - 出现在类上，表示类中所有方法有事务支持 
 - 出现在方法上，表示该方法有事务支持。 
