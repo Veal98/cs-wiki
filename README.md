@@ -6,7 +6,7 @@
 
 - 🎫 本仓库初衷是为了准备考研初试和复试，秉持基础知识点 + 常见面试题的学习逻辑，力求搭建一个完善的专业课知识体系。起于此，但不止于此，后期会不断改进完善，也欢迎各位小伙伴提出好的建议~（注：每个模块的面试指南均具有完善的知识体系且涵盖大部分重要知识点，绝不是网络上的面试题随意拼凑而来）
 
-- ⚡ 如果 Github 加载太慢的话可以使用 Gitee，在线阅读地址 [https://veal98.gitee.io/cs-wiki](https://veal98.gitee.io/cs-wiki)，经常会忘记同步更新，可 issue 提醒~
+- ⚡ 如果 Github 加载太慢的话可以使用 Gitee，在线阅读地址 [https://veal98.gitee.io/cs-wiki](https://veal98.gitee.io/cs-wiki)
 
 - 📄 保存为 PDF 方式：使用 Chrome 浏览器打开该页面，收起目录栏，鼠标右键 - 打印 - 选择目标打印机 - 另存为PDF - 保存
 
@@ -79,7 +79,8 @@
 - [【七】查询处理和优化](数据库/【七】查询处理和优化)
 - [【八】事务处理 - 数据库恢复技术](数据库/【八】事务处理-数据库恢复技术)
 - [【九】事务处理 - 并发控制](数据库/【九】事务处理-并发控制)
-- [【十】索引进阶](数据库/【十】索引进阶.md)
+- [【十】数据库编程](数据库/【十】数据库编程.md)
+- [【🔥】数据库面试指南](数据库/面试指南.md)
 
 
 
@@ -112,16 +113,18 @@
 
 ### 🍵 Java
 
-- [参考资料](Java/参考资料.md)
-- Java基础知识
-- [SSM框架](Java/SSM-Index.md)
-- SpringBoot
+- [【零】参考资料](Java/参考资料.md)
+- [【一】Jave SE 和 Java EE 的区别](Java/JaveSE和JavaEE的区别.md)
+- [【二】Java SE 基础知识](Java/JavaSE基础知识/JavaSE-index.md)
+- [【三】Java EE 基础知识](Java/JavaEE基础知识.md)
+- [【四】SSM 框架](Java/SSM/SSM-Index.md)
+- 【五】SpringBoot
 
 ### 🎉 Vue
 - [参考资料](Vue/参考资料.md)
 - [Vue.js 入门](Vue/1.入门.md)
 - [Vue.js安装](Vue/2.安装.md)
-- [Vue-Cli 3+搭建的项目目录结构](Vue/3.目录结构.md)
+- [Vue-Cli 3+ 搭建的项目目录结构](Vue/3.目录结构.md)
 - [Vue.js 模板语法](Vue/4.模板语法.md)
 - [Vue.js 条件语句](Vue/5.条件语句.md)
 - [Vue.js 循环语句](Vue/6.循环语句.md)
@@ -149,5 +152,3 @@
 <br>
 
 本仓库由 **飞天小牛肉** 整理创作，采用 [CC BY-NC-SA 4.0（署名 - 非商业性使用 - 相同方式共享）协议](https://www.shiyanlou.com/library/interview-c++/LICENSE) 进行许可，可自由转载、引用，但需要注明作者和文章出处 [小牛肉的Wiki](https://veal98.github.io/CS-Wiki/#/)
-
-<br>
