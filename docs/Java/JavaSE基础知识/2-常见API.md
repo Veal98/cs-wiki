@@ -19,7 +19,7 @@ public class MyClass /*extends Object*/ {
 
 ## 2. toString()
 
-### 方法摘要
+**方法摘要**：
 
 - `public String toString()`：返回该对象的字符串表示。
 
@@ -27,7 +27,7 @@ toString方法返回该对象的字符串表示，其实该字符串内容就是
 
 由于toString方法返回的结果是内存地址，而在开发中，经常需要按照对象的属性得到相应的字符串表现形式，因此也需要重写它。
 
-### 覆盖重写
+**覆盖重写**：
 
 如果不希望使用toString方法的默认行为，则可以对它进行覆盖重写。例如自定义的Person类：
 
@@ -49,17 +49,17 @@ public class Person {
 
 ## 3. equals()
 
-### 方法摘要
+**方法摘要**：
 
 - `public boolean equals(Object obj)`：指示其他某个对象是否与此对象“相等”。
 
 调用成员方法equals并指定参数为另一个对象，则可以判断这两个对象是否是相同的。这里的“相同”有默认和自定义两种方式。
 
-### 默认地址比较
+**默认地址比较**：
 
 如果没有覆盖重写equals方法，那么Object类中默认进行`==`运算符的对象地址比较，只要不是同一个对象，结果必然为false。
 
-### 对象内容比较
+**对象内容比较**：
 
 如果希望进行对象的内容比较，即所有或指定的部分成员变量相同就判定两个对象相同，则可以覆盖重写equals方法。例如：
 
@@ -86,13 +86,51 @@ public class Person {
 }
 ```
 
+🚩 **equals 和 == 比较：**
+
+`·`equals`: 它的作用是**判断两个对象的地址是不是相等**。即，判断两个对象是不是同一个对象。(基本数据类型 == 比较的是值，引用数据类型 == 比较的是内存地址)
+
+`equals()` : 它的作用也是判断两个对象是否相等。但它一般有两种使用情况：
+
+- 情况1：类没有覆盖 equals() 方法。则通过 equals() 比较该类的两个对象时，等价于通过“==”比较这两个对象。
+
+- 情况2：类覆盖了 equals() 方法。一般，我们都覆盖 equals() 方法来两个对象的内容相等；若它们的内容相等，则返回 true (即，认为这两个对象相等)。
+
+举个例子：
+
+```java
+public class test1 {
+    public static void main(String[] args) {
+        String a = new String("ab"); // a 为一个引用
+        String b = new String("ab"); // b为另一个引用,对象的内容一样
+        String aa = "ab"; // 放在常量池中
+        String bb = "ab"; // 从常量池中查找
+        if (aa == bb) // true
+            System.out.println("aa==bb");
+        if (a == b) // false，非同一对象
+            System.out.println("a==b");
+        if (a.equals(b)) // true String的 equals方法是被重写过的
+            System.out.println("aEQb");
+        if (42 == 42.0) { // true
+            System.out.println("true");
+        }
+    }
+}
+```
+
+**说明：**
+
+- **String中的equals方法是被重写过的，因为object的equals方法是比较的对象的内存地址，而String的equals方法比较的是对象的值。**
+- 当创建String类型的对象时，虚拟机会在常量池中查找有没有已经存在的值和要创建的值相同的对象，如果有就把它赋给当前引用。如果没有就在常量池中重新创建一个String对象。（详细见下文 String类）
+  
+
 ## 4. hashCode()
 
-hashCode() 返回散列值，而 equals() 是用来判断两个对象是否等价。
+hashCode() 返回散列值，这个散列值的作用是确定该对象在哈希表中的索引位置。
 
-**等价的两个对象散列值一定相同，但是散列值相同的两个对象不一定等价**。
+**等价（equals）的两个对象散列值一定相同，但是散列值相同的两个对象不一定等价**。
 
-在覆盖 equals() 方法时应当总是覆盖 hashCode() 方法，保证等价的两个对象散列值也相等。
+**在覆盖 equals() 方法时，也应当覆盖 hashCode() 方法，保证等价的两个对象散列值也相等。**
 
 下面的代码中，新建了两个等价的对象，并将它们添加到 HashSet 中。**我们希望将这两个对象当成一样的，只在集合中添加一个对象**，但是因为 EqualExample 没有实现 hasCode() 方法，因此这两个对象的散列值是不同的，最终导致集合添加了两个等价的对象。
 
@@ -205,7 +243,7 @@ System.out.println(list);
 
 String 在`java.lang.String`包中，所有 java.lang 包的下类都无须进行导包
 
-String 被声明为 final，因此它不可被继承。
+**String 被声明为 final，因此它不可被继承**。
 
 **在 Java 8 中，String 内部使用 char 数组存储数据**。
 
@@ -235,6 +273,7 @@ value 数组被声明为 final，这意味着 value 数组初始化之后就不�
 ## 2. String 成员函数
 
 **判断**
+
 - `public boolean equals (Object anObject)` ：将此字符串与指定对象进行比较。 
 - `public boolean equalsIgnoreCase (String anotherString)` ：将此字符串与指定对象进行比较，忽略大小 写。 
 
@@ -416,13 +455,13 @@ public class Demo16StringBuilder {
 - StringBuilder 不是线程安全的
 - StringBuffer 是线程安全的，内部使用 synchronized 进行同步
 
-## 6. String Pool
+## 6. 字符串常量池 String Pool
 
 **字符串常量池**（String Pool）保存着所有字符串字面量（literal strings），这些字面量在编译时期就确定。不仅如此，还可以使用 String 的 `intern() `方法在运行过程中将字符串添加到 String Pool 中。
 
 当一个字符串调用 intern() 方法时，如果 String Pool 中已经存在一个字符串和该字符串值相等（使用 equals() 方法进行确定），那么就会返回 String Pool 中字符串的引用；否则，就会在 String Pool 中添加一个新的字符串，并返回这个新字符串的引用。
 
-下面示例中，s1 和 s2 采用 **构造函数** new String() 的方式新建了两个不同字符串，而 s3 和 s4 是通过 s1.intern() 方法取得一个字符串引用。**intern() 首先把 s1 引用的字符串放到 String Pool 中，然后返回这个字符串引用**。因此 s3 和 s4 引用的是同一个字符串。
+下面示例中，s1 和 s2 采用 **构造函数 new String() **的方式新建了两个不同字符串，而 s3 和 s4 是通过 s1.intern() 方法取得一个字符串引用。**intern() 首先把 s1 引用的字符串放到 String Pool 中，然后返回这个字符串引用**。因此 s3 和 s4 引用的是同一个字符串。
 
 ```java
 String s1 = new String("aaa");
@@ -441,3 +480,15 @@ String s6 = "bbb";
 System.out.println(s5 == s6);  // true
 ```
 
+🚩 **总结：**
+
+- `String str = "i"` 的方式，java 虚拟机会将其分配到常量池中；
+
+- `String str = new String(“i”) ` 则会被分到堆内存中。可通过 intern 方法 手动加入常量池
+
+## 7. new String(“xyz”) 创建了几个字符串对象
+
+使用这种方式一共会创建两个字符串对象（前提是 String Pool 中还没有 "abc" 字符串对象）。
+
+- "abc" 属于字符串字面量，因此编译时期会在 String Pool 中创建一个字符串对象，指向这个 "abc" 字符串字面量；
+- 而使用 new 的方式会在堆中创建一个字符串对象。
