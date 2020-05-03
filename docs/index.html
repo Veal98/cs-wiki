@@ -18,7 +18,8 @@
       text-decoration: none;
     }
     body{
-      font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+      /* font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif; */
+      font-family: "Source Sans Pro", "Helvetica Neue", "Arial", sans-serif !important;
     }
     /* 设置内容居中和宽度 */
     .content{
@@ -70,7 +71,7 @@
     img, pre {
       border-radius: 8px;
     }
-    .markdown-section hr{
+    /* .markdown-section hr{
       position: relative;
       margin: 2rem auto;
       margin-top: 2rem;
@@ -80,7 +81,7 @@
       width: calc(100% - 4px);
       border: 2px dashed rgb(66, 185, 131);
       background: #fff;
-    }
+    } */
     
   </style>
 </head>
@@ -89,11 +90,12 @@
   <div>
     　　<a href="javascript://" id="GoTop">∧</a>
   </div>
+
  
   <script>
     window.$docsify = {
       name: '💪 小牛肉',
-      nameLink: '#/README',
+      nameLink: '/',
       logo: '',
       repo: 'https://github.com/Veal98/CS-Wiki',
       // themeColor: '#6c5ce7',
@@ -101,6 +103,7 @@
       auto2top:true,
       coverpage: true,
       onlyCover: true,
+
      
       search: {
         paths: 'auto',
@@ -148,6 +151,8 @@
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-css.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-powershell.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-sql.min.js"></script>
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
   <script src="//unpkg.com/docsify-footer-enh/dist/docsify-footer-enh.min.js"></script>

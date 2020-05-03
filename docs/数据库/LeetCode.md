@@ -1,4 +1,4 @@
-# 💾 LeetCode 数据库部分
+# 💾 LeetCode 数据库部分题目
 
 ---
 
@@ -12,7 +12,7 @@
 
 >  FirstName, LastName, City, State
 
-<br>
+
 
 需要保留Person表中未连接的数据
 
@@ -165,4 +165,134 @@ having count(Email) > 1;
 select c.Name as Customers from Customers c
 where c.Id not in (select distinct o.CustomerId from Orders o);
 ```
+
+<br>
+
+
+
+### [184. 部门工资最高的员工](https://leetcode-cn.com/problems/department-highest-salary/)
+
+<img src="https://gitee.com/veal98/images/raw/master/img/20200503134807.png"  />
+
+<br>
+
+```sql
+select 
+    d.Name as Department,
+    e.Name as Employee,
+    e.Salary 
+from 
+    Employee e,Department d 
+where
+    e.DepartmentId=d.id and
+    (e.Salary,e.DepartmentId) in (
+        select max(Salary),DepartmentId 
+        from Employee 
+        group by DepartmentId);
+```
+
+<br>
+
+
+
+### [185. 部门工资前三高的所有员工](https://leetcode-cn.com/problems/department-top-three-salaries/)
+
+<img src="https://gitee.com/veal98/images/raw/master/img/20200503135952.png"  />
+
+先定义找出前三高薪水的查询语句，即不超过三个值比这个薪水大。
+
+```sql
+SELECT e1.Salary 
+FROM Employee AS e1
+WHERE 3 > 
+		(SELECT  count(DISTINCT e2.Salary) 
+		 FROM	Employee AS e2 
+	 	 WHERE	e1.Salary < e2.Salary 	AND 
+         		e1.DepartmentId = e2.DepartmentId) ;
+```
+
+> 举个栗子：
+> 当 e1 = e2 = [4,5,6,7,8]
+>
+> e1.Salary = 4，e2.Salary 可以取值 [5,6,7,8]，count(DISTINCT e2.Salary) = 4
+>
+> e1.Salary = 5，e2.Salary 可以取值 [6,7,8]，count(DISTINCT e2.Salary) = 3
+>
+> e1.Salary = 6，e2.Salary 可以取值 [7,8]，count(DISTINCT e2.Salary) = 2
+>
+> e1.Salary = 7，e2.Salary 可以取值 [8]，count(DISTINCT e2.Salary) = 1
+>
+> e1.Salary = 8，e2.Salary 可以取值 []，count(DISTINCT e2.Salary) = 0
+>
+> 最后 3 > count(DISTINCT e2.Salary)，所以 e1.Salary 可取值为 [6,7,8]，即集合前 3 高的薪水
+
+
+
+再把两个表连接，获得各个部门工资前三高的员工
+
+```sql
+select d.Name as Department,
+       e.Name as Employee,
+       e.Salary as Salary
+from Employee e, Department d
+where e.DepartmentId = d.Id and
+      3 > (
+          select count(distinct e2.Salary)
+          from Employee e2
+          where e.Salary < e2.Salary
+          and e.DepartmentId = e2.DepartmentId
+      )
+order by d.Id, e.Salary desc;
+```
+
+<br>
+
+
+
+### [196. 删除重复的电子邮箱](https://leetcode-cn.com/problems/delete-duplicate-emails/)
+
+<img src="https://gitee.com/veal98/images/raw/master/img/20200503142021.png" style="zoom:80%;" />
+
+**方法一：**
+
+```sql
+delete from Person
+where Id not in (
+    select Id from(
+        select min(Id) as id
+        from Person
+        group by Email
+    ) as temp
+);
+```
+
+需要套一层临时表，因为查询语句的输出不能作为更新语句的输入
+
+**方法二：**
+
+```sql
+# 如果用了表别名，delete后要加别名
+delete p1 from Person p1,Person p2
+where p1.Email = p2.Email
+      and p1.Id > p2.Id;
+```
+
+<br>
+
+
+
+### [197. 上升的温度](https://leetcode-cn.com/problems/rising-temperature/)
+
+<img src="https://gitee.com/veal98/images/raw/master/img/20200503143419.png" style="zoom:80%;" />
+
+MySQL 使用 [DATEDIFF](https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html#function_datediff) 来比较两个日期类型的值。
+
+```sql
+select w1.Id 
+from Weather w1, Weather w2
+where DATEDIFF(w1.RecordDate,w2.RecordDate) = 1 AND
+      w1.Temperature > w2.Temperature;
+```
+
+<br>
 
