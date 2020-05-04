@@ -25,8 +25,9 @@
     .content{
       width:1000px;
       margin: 0 auto;
-
+      padding-top: 30px;
     }
+    
     /* 导航栏 */
     .app-nav{
       position: fixed;
@@ -65,9 +66,67 @@
     .markdown-section blockquote{
       background: rgb(236,248,242);
     }
-    .markdown-section > div > img, .markdown-section pre {
+    .markdown-section pre {
       box-shadow: 2px 2px 20px 6px #ddd !important;
     }
+    .markdown-section pre>code {
+      color: #c0c3c1 !important;
+      font-family: 'Inconsolata', consolas,"PingFang SC", "Microsoft YaHei", monospace !important;
+      background-color: #282c34 !important;    
+      font-size: 15px !important;
+      white-space: pre !important;
+      line-height: 1.5 !important;
+
+      -moz-tab-size: 4 !important;
+      -o-tab-size: 4 !important;
+      tab-size: 4 !important;
+
+    }
+    markdown-section code, .markdown-section pre {
+      background-color: #282c34;
+    }
+    .token.directive.keyword{
+      color: #4faee2 !important;
+    }
+
+    .token.keyword{
+      color: #c678dd !important;
+    }
+
+    .token.comment{
+      color: #5c6370 !important;
+    }
+
+    .token.tag{
+      color: #a589ad !important;
+    }
+
+
+    .token.attr-name{
+      color: #de916c !important;
+    }
+    .token.attr-value{
+      color: #4faee2 !important;
+    }
+
+    .token.macro.property{
+      color: #4faee2 !important;
+    }
+
+    .token.function{
+      color: #e6b456 !important;
+    }
+    .token.string{
+      color: #98b755 !important;
+    }
+    .token.punctuation{
+      color: #c0c3c1 !important;
+    }
+
+    .token.number{
+      color:#c0c3c1  !important;
+    }
+
     img, pre {
       border-radius: 8px;
     }
