@@ -96,6 +96,8 @@ response.sendRedirect("test.jsp");
 
 # 二、JSP
 
+`Java Server Page`： Java 服务器界面
+
 ## 1. JSP 和 Servlet 的关系
 
 - **Servlet是一个特殊的Java程序**，它运行于服务器的JVM中，能够依靠服务器的支持向浏览器提供显示内容。

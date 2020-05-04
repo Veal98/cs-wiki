@@ -35,20 +35,6 @@
       position: fixed;
       top: 0;
     }
-    /* 置顶按钮 */
-    /* #GoTop{
-      width:36px;
-      height:36px;
-      background-color:rgb(66, 185, 131);
-      position:fixed;
-      border-radius: 50%;
-      bottom:30px;
-      right:20px;
-      font-size:19pt;
-      text-align:center;
-      color:#FFF;
-      text-decoration:none; 
-    } */
     h1
     {
       margin-bottom:50px;
@@ -219,11 +205,11 @@
   <script src="//unpkg.com/docsify-footer-enh/dist/docsify-footer-enh.min.js"></script>
   
   <!-- Tab分标签  docsify-tabs-->
-  <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script> -->
 
-
-    <script src="https://wugenqiang.github.io/CS-Notes/plugin/jquery.js"></script>
-    <script src="https://wugenqiang.github.io/CS-Notes/plugin/jquery.goup.js"></script>
+  <!-- 来源 wugenqiang.CS-Notes -->
+  <script src="https://wugenqiang.github.io/CS-Notes/plugin/jquery.js"></script>
+  <script src="https://wugenqiang.github.io/CS-Notes/plugin/jquery.goup.js"></script>
 
   <!-- 置顶按钮 -->
   <script type="text/javascript">
@@ -246,5 +232,37 @@
         "创作不易，若要转载或引用请务必保留原文链接，并申明来源，谢谢合作！😊 - by 小牛肉", 
         "success"); };
   </script>
+
+  <!-- 鼠标特效  -->
+  <script type="text/javascript">
+    var a_idx = 0;
+    jQuery(document).ready(function ($) {
+      $("body").click(function (e) {
+        var a = new Array("🎨","🍭","🍬", "🍕", "🎈", "😊", "🎉", "🍗", "👺", "🥣", "🔋", "🍧", "🎃", "🚗","🙆‍♀️","🚠", "🎁");
+        var $i = $("<span></span>").text(a[a_idx]);
+        a_idx = (a_idx + 1) % a.length;
+        var x = e.pageX,
+          y = e.pageY;
+        $i.css({
+          "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+          "top": y - 20,
+          "left": x,
+          "position": "absolute",
+          "font-weight": "bold",
+          "color": "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
+        });
+        $("body").append($i);
+        $i.animate({
+          "top": y - 180,
+          "opacity": 0
+        },
+          1500,
+          function () {
+            $i.remove();
+          });
+      });
+    });
+  </script>
+  
 </body>
 </html>
