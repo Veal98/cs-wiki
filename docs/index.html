@@ -9,6 +9,8 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css"/>
+  <!-- alert -->
+  <link rel="stylesheet" href="https://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.css" type='text/css' media='all' />
   <!--网页标题左侧显示-->
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <!--收藏夹显示图标-->
@@ -34,7 +36,7 @@
       top: 0;
     }
     /* 置顶按钮 */
-    #GoTop{
+    /* #GoTop{
       width:36px;
       height:36px;
       background-color:rgb(66, 185, 131);
@@ -46,7 +48,7 @@
       text-align:center;
       color:#FFF;
       text-decoration:none; 
-    }
+    } */
     h1
     {
       margin-bottom:50px;
@@ -146,9 +148,9 @@
 </head>
 <body background="" style=" background-repeat:no-repeat ;background-size:100% 100%;background-attachment: fixed;">
   <div id="app" >🏃‍🏃‍🏃‍💨加载中</div>
-  <div>
+  <!-- <div>
     　　<a href="javascript://" id="GoTop">∧</a>
-  </div>
+  </div> -->
 
  
   <script>
@@ -220,15 +222,29 @@
   <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
 
 
-  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://wugenqiang.github.io/CS-Notes/plugin/jquery.js"></script>
+    <script src="https://wugenqiang.github.io/CS-Notes/plugin/jquery.goup.js"></script>
+
   <!-- 置顶按钮 -->
   <script type="text/javascript">
-    $(function () {
-        $('#GoTop').click(function () {
-          $('html,body,.content').animate({ scrollTop: 0 }, 1000);
-          return false;
-        });
-    }) 
-</script>
+    $(document).ready(function () {
+      $.goup({
+        trigger: 100,
+        bottomOffset: 32,
+        locationOffset: 32,
+        title: '',
+        titleAsText: true
+      });
+    });
+  </script>
+
+  <!-- 复制提醒 -->
+  <script src="https://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.js"></script>
+  <script>
+    document.body.oncopy = function () { 
+      swal("复制成功 🎉", 
+        "创作不易，若要转载或引用请务必保留原文链接，并申明来源，谢谢合作！😊 - by 小牛肉", 
+        "success"); };
+  </script>
 </body>
 </html>
