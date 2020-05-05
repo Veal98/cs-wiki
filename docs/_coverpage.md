@@ -12,7 +12,7 @@
 
 <img src="https://img.shields.io/badge/version-v2.0.0-green.svg" data-origin="https://img.shields.io/badge/version-v1.0.0-green.svg" alt=""> 
 <img src="https://img.shields.io/badge/author-Veal98-yellow.svg" data-origin="https://img.shields.io/badge/author-Veal98-yellow.svg" alt=""> 
-<img src="https://img.shields.io/badge/license-CC_BY_NC_SA-blue.svg" data-origin="https://img.shields.io/badge/license-CC_BY_NC_SA-blue.svg" alt="">
+<img src="https://img.shields.io/badge/license-GPL-blue.svg" data-origin="https://img.shields.io/badge/license-GPL-blue.svg" alt="">
 
 <br>
 
