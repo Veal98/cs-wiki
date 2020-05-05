@@ -142,7 +142,7 @@
   <script>
     window.$docsify = {
       name: '💪 小牛肉',
-      nameLink: '/',
+      nameLink: 'https://veal98.gitee.io/cs-wiki/#/',
       logo: '',
       repo: 'https://github.com/Veal98/CS-Wiki',
       // themeColor: '#6c5ce7',
@@ -192,14 +192,12 @@
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-java.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-cpp.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-c.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-clike.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-core.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-javascript.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-css.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-powershell.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-sql.min.js"></script>
 
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
 
 
   <script src="//unpkg.com/docsify-footer-enh/dist/docsify-footer-enh.min.js"></script>
@@ -208,8 +206,8 @@
   <!-- <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script> -->
 
   <!-- 来源 wugenqiang.CS-Notes -->
-  <script src="https://wugenqiang.github.io/CS-Notes/plugin/jquery.js"></script>
-  <script src="https://wugenqiang.github.io/CS-Notes/plugin/jquery.goup.js"></script>
+  <script src="https://wugenqiang.gitee.io/cs-notes/plugin/jquery.js"></script>
+  <script src="https://wugenqiang.gitee.io/cs-notes/plugin/jquery.goup.js"></script>
 
   <!-- 置顶按钮 -->
   <script type="text/javascript">
@@ -231,6 +229,13 @@
       swal("复制成功 🎉", 
         "创作不易，若要转载或引用请务必保留原文链接，并申明来源，谢谢合作！😊 - by 小牛肉", 
         "success"); };
+  </script>
+
+  <!-- PWA 离线化 -->
+  <script>
+    if (typeof navigator.serviceWorker !== 'undefined') {
+      navigator.serviceWorker.register('pwa.js')
+    }
   </script>
 
   
