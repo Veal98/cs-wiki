@@ -66,7 +66,7 @@ request.getRequestDispatcher("login_success.jsp").forward(request, response);
 
 **重定向（Redirect）** 是利用服务器返回的状态码来实现的。客户端浏览器请求服务器的时候，服务器会返回一个状态码。服务器通过 `HttpServletResponse` 的 `setStatus(int status)` 方法设置状态码。如果服务器返回 301 (永久重定向) 或者 302（临时重定向），则浏览器会到新的网址重新请求该资源。
 
-```cpp
+```java
 response.sendRedirect("test.jsp");
 ```
 
@@ -91,8 +91,11 @@ response.sendRedirect("test.jsp");
 - **从效率来说**
 
   - forward:高.
+- redirect:低.
 
-  - redirect:低.
+<br>
+
+
 
 # 二、JSP
 

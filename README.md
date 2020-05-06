@@ -152,6 +152,6 @@
 
 <br>
 
-本仓库由 **飞天小牛肉** 整理创作，秉持互联网的开源共享精神，采用 [GPL（通用公共许可证）](https://www.gnu.org/licenses/gpl-3.0.html) 进行许可，可自由转载、引用，但需要注明作者和文章出处 [小牛肉的Wiki](https://veal98.github.io/CS-Wiki/#/)
+本仓库由 **飞天小牛肉** 整理创作，秉持互联网的开源共享精神，采用 [GPL（通用公共许可证）](https://www.gnu.org/licenses/gpl-3.0.html) 进行许可，可自由转载、引用，但需要注明作者和文章出处 [小牛肉的Wiki](https://veal98.gitee.io/cs-wiki/#/)
 
 
