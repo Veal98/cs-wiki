@@ -10,7 +10,7 @@
 - 力图构建计算机/软件工程相关的完善知识体系
 
 
-<img src="https://img.shields.io/badge/version-v2.0-green.svg" data-origin="https://img.shields.io/badge/version-v2.0-green.svg" alt=""> 
+<img src="https://img.shields.io/badge/version-v2.1-green.svg" data-origin="https://img.shields.io/badge/version-v2.0-green.svg" alt=""> 
 <img src="https://img.shields.io/badge/author-小牛肉-yellow.svg" data-origin="https://img.shields.io/badge/author-小牛肉-yellow.svg" alt=""> 
 <img src="https://img.shields.io/badge/license-GPL-blue.svg" data-origin="https://img.shields.io/badge/license-GPL-blue.svg" alt="">
 
