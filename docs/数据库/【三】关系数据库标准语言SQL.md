@@ -669,7 +669,7 @@ from SC,(select Sno,AVG(Grade) from SC group by Sno)
 ### ① 插入元组
 
 ```sql
-insert int Student(Sno,Sname,Sgender,Sdept,Sage)
+insert into Student(Sno,Sname,Sgender,Sdept,Sage)
 values('123','小红','男','CS',20);
 ```
 
@@ -817,6 +817,8 @@ where Sname is null or Sgender is null or Sage is null or Sdept is null;
 
 <br>
 
+
+
 # 五、视图
 
 视图是从一个或几个基本表（或视图）导出的表。
@@ -932,7 +934,7 @@ where CS_Student.Sno = SC.Sno and
 ## 6. 视图的缺点
 
 - 查询视图时，必须把对视图的查询转化为对基本表的查询。如果这个视图是由一个复杂的多表查询所定义，那么即使是视图的一个简单查询，数据库也把它变成一个复杂的结合体，需要花费一定的时间。
-- 当用户试图修改视图的某些行时，数据库必须把它转化为对基本表的某些行的修改，如果视图设计多个表的话，由于完整性约束，可能是无法修改的
+- 当用户试图修改视图的某些行时，数据库必须把它转化为对基本表的某些行的修改，如果视图涉及多个表的话，由于完整性约束，可能是无法修改的
 
 <br>
 

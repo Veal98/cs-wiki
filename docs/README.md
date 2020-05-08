@@ -163,6 +163,7 @@
 - [ ] Spring 面试指南
 - [ ] Mybaits 博客转移 + 面试指南
 - [ ] SpringMVC 博客转移 + 面试指南
+- [ ] JavaSE 基础总结 + 面试指南
 - [ ] 设计模式总结
 - [ ] vue学习
 - [ ] SpringBoot 学习
