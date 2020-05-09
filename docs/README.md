@@ -160,17 +160,23 @@
 
 ## ⏰ 待做
 
-- [ ] Spring 面试指南
-- [ ] Mybaits 博客转移 + 面试指南
-- [ ] SpringMVC 博客转移 + 面试指南
-- [ ] JavaSE 基础总结 + 面试指南
-- [ ] 设计模式总结
-- [ ] vue学习
-- [ ] SpringBoot 学习
-- [ ] C++ 各章节优化
-- [ ] 结束剑指 Offer
+⬜ Spring 面试指南
 
+⬜ Mybaits 博客转移 + 面试指南
 
+⬜ SpringMVC 博客转移 + 面试指南
+
+⬜ JavaSE 基础总结 + 面试指南
+
+⬜ 设计模式总结
+
+⬜ vue学习
+
+⬜ SpringBoot 学习
+
+⬜ C++ 各章节优化
+
+⬜ 结束剑指 Offer
 
 ## ❌ 纠错
 
