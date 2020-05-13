@@ -101,20 +101,14 @@
 - [  ✍ LeetCode 数据库部分题目](数据库/LeetCode.md)
 - [  🔥 数据库面试指南](数据库/面试指南.md)
 
-
-
 ### ⏳ 算法
 
 - [① 剑指 Offer 题解 — Java / C++](剑指Offer/index.md)
-
-
 
 ### 🔋 软件工程
 
 - [参考资料](软件工程/参考资料.md)
 - [软件工程重点知识总结](软件工程/软件工程重点知识总结.md)
-
-
 
 
 ### 🍎 C++
@@ -160,25 +154,17 @@
 
 ## ⏰ 待做
 
-⬜ Spring 面试指南
-
-⬜ Mybaits 博客转移 + 面试指南
-
-⬜ SpringMVC 博客转移 + 面试指南
-
-⬜ JavaSE 基础总结 + 面试指南
-
-⬜ 设计模式总结
-
-⬜ vue学习
-
-⬜ SpringBoot 学习
-
-⬜ C++ 各章节优化
-
-⬜ 结束剑指 Offer
-
-✅ 软件工程重点知识总结补全
+- [ ] Spring 面试指南
+- [ ] Mybaits 博客转移 + 面试指南
+- [ ] SpringMVC 博客转移 + 面试指南
+- [ ] JavaSE 基础总结 + 面试指南
+- [ ] SpringBoot 学习
+- [ ] JSON + Ajax 总结
+- [ ] 设计模式总结
+- [ ] vue学习
+- [ ] C++ 各章节优化
+- [ ] 结束剑指 Offer
+- [x] ~~软件工程重点知识总结补全~~
 
 
 
@@ -188,6 +174,8 @@
 由于本人水平有限 🙋，若发现文章错误或者排版问题，
 
 欢迎前往 Github 提 issue 指正：🚪 传送门  [前往 Github 纠错](https://github.com/Veal98/CS-Wiki/issues)
+
+
 
 
 ## 👮 License
