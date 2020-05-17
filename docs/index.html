@@ -199,13 +199,11 @@
         style: 'text-align: left;',
       },
 
-      tabs: {
-        persist: true,      // default
-        sync: true,      // default
-        theme: 'material', // default
-        tabComments: true,      // default
-        tabHeadings: true       // default
-      }
+      copyCode: {
+          buttonText: 'Copy',
+          errorText: 'Error',
+          successText: 'OK!'
+      },
       
     }
   </script>
@@ -249,6 +247,8 @@
       navigator.serviceWorker.register('pwa.js')
     }
   </script>
-
+  
+  <!-- 访问量统计 -->
+  <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </body>
 </html>
