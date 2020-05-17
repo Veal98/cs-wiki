@@ -11,7 +11,7 @@
   <meta http-equiv="Expires" content="0" />
 
   <!-- 解除其他平台的防盗链 -->
-  <meta name="referrer" content="never">
+  <!-- <meta name="referrer" content="never"> -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -173,8 +173,8 @@
       },//增加搜索框
    
       footer: {
-        copy: '<span>Copyright &copy; 2019 - 2020</span>',
-        auth: ' 💗 飞天小牛肉',
+        copy: '⏰ <span id="sitetime"></span> <br> 👀 本站总访问量: <span id="busuanzi_value_site_pv"></span> | 🙎‍♂️ 本站访客数<span id="busuanzi_value_site_uv"></span> <br> 🔏 Copyright &copy; 2019 - 2020</span>',
+        auth: ' <strong>飞天小牛肉</strong>',
         pre: '<hr/>',
         style: 'text-align: left;',
       },
@@ -184,7 +184,6 @@
           errorText: 'Error',
           successText: 'OK!'
       },
-      
     }
   </script>
  
@@ -226,7 +225,7 @@
   </script>
   
   <!-- 访问量统计 -->
-  <!-- <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   <!-- 运行时间统计 -->
   <script language=javascript>
@@ -259,8 +258,8 @@
       var diffDays = Math.floor((diff / days) - diffYears * 365);
       var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
       var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
-      // var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
-      document.getElementById("sitetime").innerHTML = " 本网页已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 ";
+      var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+      document.getElementById("sitetime").innerHTML = " 本网页已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒 ";
     }
     siteTime();
   </script>
