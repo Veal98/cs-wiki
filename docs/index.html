@@ -61,10 +61,6 @@
     {
       margin-bottom:50px;
       font-size: 1em;
-      /* background-image: url(http://img.xiaogangzai.cn/title_h1.png); 
-      background-position: center top;
-      background-repeat: no-repeat;
-      background-size: 75px; */
     }
     h1 span{
       display:inline-block;
@@ -74,11 +70,6 @@
       border-radius:5px;
       box-shadow: 5px 5px 10px black;
     }
-    /* ul li{
-      list-style-type:none;
-      list-style-image: url(https://gitee.com/veal98/images/raw/master/img/20200515145334.png);
-    } */
-   
 
     h2 span{
       margin-left: 8px;
@@ -155,17 +146,6 @@
     img, pre {
       border-radius: 8px;
     }
-    /* .markdown-section hr{
-      position: relative;
-      margin: 2rem auto;
-      margin-top: 2rem;
-      margin-right: auto;
-      margin-bottom: 2rem;
-      margin-left: auto;
-      width: calc(100% - 4px);
-      border: 2px dashed rgb(66, 185, 131);
-      background: #fff;
-    } */
     
   </style>
 </head>
@@ -227,9 +207,6 @@
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-sql.min.js"></script>
 
   <script src="//unpkg.com/docsify-footer-enh/dist/docsify-footer-enh.min.js"></script>
-  
-  <!-- Tab分标签  docsify-tabs-->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script> -->
 
   
   <!-- 复制提醒 -->
@@ -249,6 +226,43 @@
   </script>
   
   <!-- 访问量统计 -->
-  <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <!-- <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+
+  <!-- 运行时间统计 -->
+  <script language=javascript>
+    function siteTime() {
+      window.setTimeout("siteTime()", 1000);
+      var seconds = 1000;
+      var minutes = seconds * 60;
+      var hours = minutes * 60;
+      var days = hours * 24;
+      var years = days * 365;
+      var today = new Date();
+      var todayYear = today.getFullYear();
+      var todayMonth = today.getMonth() + 1;
+      var todayDate = today.getDate();
+      var todayHour = today.getHours();
+      var todayMinute = today.getMinutes();
+      var todaySecond = today.getSeconds();
+      /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+      year - 作为date对象的年份，为4位年份值
+      month - 0-11之间的整数，做为date对象的月份
+      day - 1-31之间的整数，做为date对象的天数
+      hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+      minutes - 0-59之间的整数，做为date对象的分钟数
+      seconds - 0-59之间的整数，做为date对象的秒数
+      microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+      var t1 = Date.UTC(2020, 03, 21, 00, 00, 00); //北京时间2020-03-21 00:00:00
+      var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+      var diff = t2 - t1;
+      var diffYears = Math.floor(diff / years);
+      var diffDays = Math.floor((diff / days) - diffYears * 365);
+      var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+      var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+      // var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+      document.getElementById("sitetime").innerHTML = " 本网页已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 ";
+    }
+    siteTime();
+  </script>
 </body>
 </html>
