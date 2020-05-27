@@ -28,7 +28,7 @@
 
 
 
-- 🎪 项目源码存放 Github，需要自取：
+- 🎪 项目源码存放 Github，需要自取：[https://github.com/Veal98/SSM_StudentManager](https://github.com/Veal98/SSM_StudentManager)
 
 
 
