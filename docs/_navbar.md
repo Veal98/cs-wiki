@@ -1,14 +1,4 @@
 
 * [🏠 主页](README)
-    * [🔨 工具](README?id=🔨-工具)
-    * [📚 数据结构](README?id=📚-数据结构)
-    * [💻 计算机网络](README?id=💻-计算机网络)
-    * [📜 操作系统](README?id=📜-操作系统)
-    * [📘 数据库](README?id=📘-数据库)
-    * [⏳ 算法](README?id=⏳-算法)
-    * [🔋 软件工程](README?id=🔋-软件工程)
-    * [🍎 C++](README?id=🍎-c)
-    * [🍵 Java](README?id=🍵-java)
-    * [🎉 Vue](README?id=🎉-vue)
 
 

@@ -27,3 +27,9 @@ Java EE,以前称为 J2EE，定位在服务器端应用。企业版本帮助开�
 ## 4. 三者关系图
 
 <img src="https://gitee.com/veal98/images/raw/master/img/20200428123117.png" style="zoom: 50%;" />
+
+---
+
+# 📚 References
+
+- 🏓 [JavaSE、JavaEE和JavaWeb的区别与联系](https://blog.csdn.net/Astady/article/details/105461846?depth_1-utm_source=distribute.pc_relevant.none-task-blog-OPENSEARCH-2&utm_source=distribute.pc_relevant.none-task-blog-OPENSEARCH-2)

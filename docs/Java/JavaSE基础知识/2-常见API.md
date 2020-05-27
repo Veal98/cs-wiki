@@ -492,3 +492,15 @@ System.out.println(s5 == s6);  // true
 
 - "abc" 属于字符串字面量，因此编译时期会在 String Pool 中创建一个字符串对象，指向这个 "abc" 字符串字面量；
 - 而使用 new 的方式会在堆中创建一个字符串对象。
+
+---
+
+# 📚 References
+
+- 💜 [java经验总结-208道面试题](https://www.zhihu.com/question/27858692/answer/787505434)
+
+- 😈 [我没有三颗心脏-Java面试知识点](https://www.cnblogs.com/wmyskxz/tag/Java面试知识点/)
+
+- 🐤 [CS-Notes](https://cyc2018.github.io/CS-Notes)
+
+- 🛴 [JavaGuide](https://gitee.com/SnailClimb/JavaGuide)

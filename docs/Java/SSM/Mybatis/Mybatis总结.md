@@ -1890,15 +1890,18 @@ MyBatis系统中默认定义了两级缓存：**一级缓存**和**二级缓存*
 ## 3. 缓存相关设置
 和缓存有关的设置/属性：
 - `cacheEnabled=true`：开启二级缓存
-   
+  
+
 false：关闭缓存（二级缓存关闭）(一级缓存仍然可用)
-   
+
 - 每个 **select** 标签都有 `useCache="true"` (默认) 
   
+
 配置这个select是否使用二级缓存。一级缓存一直是使用的 
-  
+
 - 每个增删改标签默认 `flushCache="true"`：sql执行以后，会同时清空一级和二级缓存。 
-	 
+	
+
 查询标签默认 `flushCache="false"` 
 	 
 - `sqlSession.clearCache();` 清除当前session的一级缓存；
@@ -1975,3 +1978,17 @@ false：关闭缓存（二级缓存关闭）(一级缓存仍然可用)
 <mapper namespace="com.smallbeef.mybatis.dao.DepartmentMapper">
 	<cache-ref namespace="com.atguigu.mybatis.dao.EmployeeMapper"/>
 ```
+
+---
+
+# 📚 References
+
+- 😁 [视频 - MyBatis_尚硅谷](https://www.bilibili.com/video/BV1zb411V77d?from=search&seid=1905892273992508442)
+
+  **课程配套百度网盘资源：**
+
+  链接：https://pan.baidu.com/s/1bH-d1yBugAr0DjGzx7DGIA
+
+  提取码：nsct
+
+- 🥝 公众号 江南一点雨 相关教程

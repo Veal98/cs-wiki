@@ -388,7 +388,7 @@ public ModelMap addAllAttributes(Collection<?> attributeValues) {...}
 public ModelMap addAllAttributes(Map<String, ?> attributes){...}
 ```
 
-## 4. ModelView
+## 4. ModelAndView
 
 使用ModelAndView类用来存储处理完后的结果数据，以及显示该数据的视图。ModelAndView 中的Model代表模型，View代表视图，这个名字就很好地解释了该类的作用
 
@@ -401,6 +401,7 @@ public ModelMap addAllAttributes(Map<String, ?> attributes){...}
 **设置视图**：
 
 - `void setView(View view)` 
+
 - `void setViewName(String viewName)`
 
 **示例代码**：
@@ -1683,3 +1684,19 @@ OK，至此，图片服务器 fileupload 的配置完毕，接下来开始应用
 最终图片保存在 图片服务器 的 target 文件夹下的 uploads 中
 
 ![img](https://img-blog.csdnimg.cn/20200325121428874.png)
+
+---
+
+# 📚 References
+
+- 🐟 [视频 - SpringMVC教程IDEA版-3天-2018黑马SSM-03](https://www.bilibili.com/video/av47953244/)
+
+  **课程配套百度网盘资源：**
+
+  链接：https://pan.baidu.com/s/1uXeLJz3xkwgj2UbqwPVKiw
+
+  提取码：j7hm
+
+- 🥦 [Model、ModelMap和ModelAndView的使用详解](https://blog.csdn.net/ITBigGod/article/details/79685610?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase)
+
+- 🥝 公众号 江南一点雨 相关教程
