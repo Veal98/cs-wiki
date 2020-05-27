@@ -16,7 +16,7 @@
 
 项目包含学生信息的增删改查功能以及分页功能，最终效果如下图所示：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200527212652.png" style="zoom:80%;" />![](https://gitee.com/veal98/images/raw/master/img/20200527212729.png)
+<img src="https://gitee.com/veal98/images/raw/master/img/20200527212652.png" style="zoom:80%;" />
 
 ![](https://gitee.com/veal98/images/raw/master/img/20200527212729.png)
 
