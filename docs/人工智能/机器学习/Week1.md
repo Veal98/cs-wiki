@@ -1,4 +1,4 @@
-# 一、引言
+# 一、Introduction
 
 ## 1. 什么是机器学习 Machine Learning
 
@@ -154,6 +154,60 @@ Of the following examples, which would you address using an <u>unsupervised lear
 - ✅ Given a set of news articles found on the web, group them into set of articles about the same story. 新闻归类
 - ✅  Given a database of customer data, automatically discover market segments and group customers into different market segments. 市场划分
 - ❌ Given a database of patients diagnosed as either having diabetes (糖尿病) or not, learn to classify new patients as having diabetes or not. 糖尿病预测
+
+## ✍ Quiz
+
+### ① 第 1 题
+
+A computer program is said to learn from experience E with respect to some task T and some **performance measure P** if its performance on T, as measured by P, improves with experience E. Suppose we feed a learning algorithm a lot of historical weather data, and have it learn to **predict weather**. What would be a reasonable choice for P? 一个计算机程序从经验E中学习任务T，并用P来衡量表现。并且，T的表现P随着经验E的增加而提高。 假设我们给一个学习算法输入了很多历史天气的数据，让它学会预测天气。什么是P的合理选择？
+
+- The process of the algorithm examining a large amount of historical weather data. 计算大量历史气象数据的过程
+
+- ✅ The probability of it correctly predicting a future date's weather. 正确预测未来日期天气的概率
+
+- None of these.
+
+- The weather prediction task.  天气预报任务
+
+### ② 第 2 题
+
+Suppose you are working on **weather prediction**, and your weather station makes one of three predictions for each day's weather: Sunny, Cloudy or Rainy. You'd like to use a learning algorithm to predict tomorrow's weather. Would you treat this as a classification or a regression problem? 假设你正在做天气预报，并使用算法预测明天气温（摄氏度/华氏度），你会把这当作一个分类问题还是一个回归问题？
+
+- Regression
+
+- ✅ Classification
+
+### ③ 第 3 题
+
+Suppose you are working on **stock market prediction**, and you would like to predict the price of a particular stock tomorrow (measured in dollars). You want to use a learning algorithm for this. Would you treat this as a classification or a regression problem? 假设你在做股市预测。你想预测某家公司是否会在未来7天内宣布破产（通过对之前面临破产风险的类似公司的数据进行训练）。你会把这当作一个分类问题还是一个回归问题？
+
+- Classification
+
+- ✅ Regression
+
+### ④ 第 4 题
+
+Some of the problems below are best addressed using a supervised learning algorithm, and the others with an unsupervised learning algorithm. Which of the following would you apply **supervised learning** to? (Select all that apply.) In each case, assume some appropriate dataset is available for your algorithm to learn from. 下面的一些问题最好使用有监督的学习算法来解决，而其他问题则应该使用无监督的学习算法来解决。以下哪一项你会使用监督学习？（选择所有适用的选项）在每种情况下，假设有适当的数据集可供算法学习。
+
+- ✅ In farming, given data on crop yields over the last 50 years, learn to predict next year's crop yields. 在农业领域，根据过去50年作物产量的数据，学会预测明年的作物产量。
+
+- Given a large dataset of medical records from patients suffering from heart disease, try to learn whether there might be different clusters of such patients for which we might tailor separate treatments. 鉴于心脏病患者的医疗记录量很大，请尝试了解是否存在不同的此类患者群，我们可以针对这些患者进行单独治疗。
+
+- ✅ Given data on how 1000 medical patients respond to an experimental drug (such as effectiveness of the treatment, side effects, etc.), discover whether there are different categories or "types" of patients in terms of how they respond to the drug, and if so what these categories are. 给定 1000 名医疗患者对实验药物（如治疗效果、副作用等）的反应数据，发现患者在药物反应方面是否有不同类别或"类型"，如果是，这些类别是什么。
+
+- ✅ Examine a web page, and classify whether the content on the web page should be considered "child friendly" (e.g., non-pornographic, etc.) or "adult."  检查网页，并分类网页上的内容是否应被视为"儿童友好"（例如，非色情等）或"成人"。
+
+### ⑤ 第 5 题
+
+Which of these is a reasonable definition of machine learning?
+
+- Machine learning is the science of programming computers. 机器学习是计算机编程的科学。
+
+- ✅ Machine learning is the field of study that gives computers the ability to learn without being explicitly programmed. 机器学习是使计算机无需明确编程即可学习的研究领域。
+
+- Machine learning is the field of allowing robots to act intelligently. 机器学习是允许机器人智能行动的领域。
+
+- Machine learning learns from labeled data. 机器学习从标记的数据中学习。
 
 
 
@@ -322,11 +376,130 @@ $J(θ_0,θ_1)$ 就是代价函数 cost function，也称为**平方误差函数 
 
 ## 6. 梯度下降的直观理解
 
-## 7. 梯度下降的线性回归
+对于微分项 $α\frac{\partial}{\partial θ_j}J(θ_0,θ_1)$，首先，我们来讲解**偏导数  $\frac{\partial}{\partial θ_j}J(θ_0,θ_1)$**的作用 
 
-## 8. 接下来的内容
+<img src="https://gitee.com/veal98/images/raw/master/img/20200528103819.png" style="zoom:50%;" />
 
+⭐ 显然，**偏导数项的作用就是使得 J(θ1) 不断趋向于最小值，即控制梯度下降的方向**
 
+接下来，再解释一下学习速率 α 
+
+![](https://gitee.com/veal98/images/raw/master/img/20200528104812.png)
+
+- If α is too small, gradient descent can be slow
+- If α is too large, gradient descent can overshoot the minimum （越过最小值）. It may fail to converge（收敛）, or even diverge（发散）. 如果 α 太大，它会导致无法收敛，甚至发散
+
+⭐ 显然，**学习率 α 的作用就是控制梯度下降的速度**
+
+<br>
+
+❓ 那么，**如果我们预先把 θ1 放在一个局部的最低点，下一步梯度下降法会怎样工作？**
+
+假设你将 θ1 初始化在局部最低点，在这儿，它已经在一个局部的最优处或局部最低点。结果是局部最优点的导数将等于零，因为它是那条切线的斜率。这意味着你已经在局部最优点，它使得不再改变，也就是新的  θ1  等于原来的  θ1 ，因此，如果你的参数已经处于局部最低点，那么梯度下降法更新其实什么都没做，它不会改变参数的值。**这也解释了为什么即使学习速率 α 保持不变时，梯度下降也可以收敛到局部最低点**。
+
+<img src="https://gitee.com/veal98/images/raw/master/img/20200528105934.png" style="zoom: 50%;" />
+
+我们来看一个例子，这是代价函数 J(θ)：
+
+<img src="https://gitee.com/veal98/images/raw/master/img/20200528105841.png" style="zoom: 50%;" />
+
+随着导数的越来越小，梯度下降的步伐也越来越小。
+
+⭐ **在梯度下降法中，当我们接近局部最低点时，梯度下降法会自动采取更小的幅度**，这是因为在局部最低时导数等于零，所以当我们接近局部最低时，导数值会自动变得越来越小，所以梯度下降将自动采取较小的幅度，这就是梯度下降的做法。**所以实际上没有必要再另外减小 α** 。
+
+这就是梯度下降算法，你可以用它来最小化任何代价函数 J，不只是线性回归中的代价函数 J。
+
+接下来，我们要用代价函数 J，回到它的本质，线性回归中的代价函数。也就是我们前面得出的平方误差函数，结合梯度下降法，以及平方代价函数，我们会得出第一个机器学习算法，即**线性回归算法**。
+
+## 7. 梯度下降的线性回归 Gradient descent for linear regression
+
+<img src="https://gitee.com/veal98/images/raw/master/img/20200528110555.png" style="zoom:50%;" />
+
+推导过程：求出代价函数的偏导数
+
+<img src="https://gitee.com/veal98/images/raw/master/img/20200528111926.png" style="zoom: 50%;" />
+
+将我们求出的偏导数代入梯度下降算法：
+
+<img src="https://gitee.com/veal98/images/raw/master/img/20200528112411.png" style="zoom: 50%;" />
+
+下面我们通过一个动态图来直观感受<u>梯度下降是如何影响代价函数的</u>
+
+![gif](https://gitee.com/veal98/images/raw/master/img/20200528113141.gif)
+
+对于上述算法，我们也称为**批量梯度下降 Batch Gradient descent** 。**" 批量" 指的是在梯度下降的每一步中，我们都用到了所有的训练样本**，在梯度下降中，在计算微分求导项时，我们需要进行求和运算。因此，批量梯度下降法这个名字说明了我们需要考虑所有这一"批"训练样本，而事实上，有时也有其他类型的梯度下降法，不是这种"批量"型的，不考虑整个的训练集，而是每次只关注训练集中的一些小的子集。在后面的课程中，我们也将介绍这些方法。
+
+现在我们已经掌握了梯度下降，我们可以在不同的环境中使用梯度下降法，我们还将在不同的机器学习问题中大量地使用它。所以，🎉 **祝贺大家成功学会你的第一个机器学习算法**。
+
+在接下来的课程中，我们将学习<u>泛化的梯度下降算法</u>，这将使梯度下降更加强大。
+
+## ✍ Quiz
+
+### ① 第 1 题
+
+Consider the problem of predicting how well a student does in her second year of college/university, given how well she did in her first year.
+
+Specifically, let x be equal to the number of "A" grades (including A-. A and A+ grades) that a student receives in their first year of college (freshmen year). We would like to predict the value of y, which we define as the number of "A" grades they get in their second year (sophomore year).
+
+Refer to the following training set of a small sample of different students' performances (note that this training set may also be referenced in other questions in this quiz). Here each row is one training example. Recall that in linear regression, our hypothesis is **hθ(x)=θ0+θ1x**, and we use m to denote the number of training examples.
+
+<img src="https://gitee.com/veal98/images/raw/master/img/20200528151422.png" style="zoom: 67%;" />
+
+For the training set given above, what is the value of m? 对于上面给出的训练集，m的值是多少？
+
+- ✅ m = 4
+
+### ② 第 2 题
+
+for this question, assume that we are using the training set from Q1. Recall our definition of the cost function was $J(\theta_0,\theta_1)=\frac{1}{2m}\sum^m_{i=1}(h_\theta(x^{(i)})-y^{(i)})^2$
+
+What is J(0, 1) ? 
+
+对于这个问题，假设我们使用第一题中的训练集。并且，我们对代价函数的定义是 $J(\theta_0,\theta_1)=\frac{1}{2m}\sum^m_{i=1}(h_\theta(x^{(i)})-y^{(i)})^2$ ，求 J(0,1)
+
+- ✅ 已知   **hθ(x)=θ0+θ1x**，$J(\theta_0,\theta_1)=\frac{1}{2m}\sum^m_{i=1}(h_\theta(x^{(i)})-y^{(i)})^2$
+
+  θ0 = 0，θ1 = 1，代入即可：
+
+  $J(0,1)=\frac{1}{2*4}\left((3-2)^2+(1-2)^2+(0-1)^2+(4-3)^2 \right)=0.5$
+
+### ③ 第 3 题
+
+Suppose we set $\theta_0 = -1$,  $\theta_1 = 0.5$ . What is  $h_{\theta}(4)$ ?
+
+- ✅  $h_{\theta}(4)=-1+0.5*4=1$
+
+### ④ 第 4 题
+
+In the given figure, the cost function $ J(\theta_0,\theta_1)$ has been plotted against  $\theta_0$ and $\theta_1$, as shown in 'Plot 2'. The contour plot for the same cost function is given in 'Plot 1'. Based on the figure, choose the correct options (check all that apply). 代价函数J(θ0,θ1)与θ0,θ1的关系如图2所示。“图1”中给出了相同代价函数的等高线图。根据图示，选择正确的选项（选出所有正确项）
+
+![](https://gitee.com/veal98/images/raw/master/img/20200528195552.png)
+
+- If we start from point B, gradient descent with a well-chosen learning rate will eventually help us reach at or near point A, as the value of cost function $J(\theta_0,\theta_1$) is maximum at point A.  从B点开始，学习率合适的梯度下降算法会最终帮助我们到达或者接近A点，即代价函数J(θ0,θ1)在A点有最大值
+
+- ✅ Point P (the global minimum of plot 2) corresponds to point A of Plot 1. 点P（图2的全局最小值）对应于图1的点A
+
+- Point P (The global minimum of plot 2) corresponds to point C of Plot 1. 点P（图2的全局最小值）对应于图1的点C
+
+- ✅ If we start from point B, gradient descent with a well-chosen learning rate will eventually help us reach at or near point A, as the value of cost function $J(\theta_0,\theta_1)$  is minimum at A. 从B点开始，学习率合适的梯度下降算法会最终帮助我们到达或者接近A点，即代价函数J(θ0,θ1)在A点有最小值
+
+- If we start from point B, gradient descent with a well-chosen learning rate will eventually help us reach at or near point C, as the value of cost function $J(\theta_0,\theta_1)$ is minimum at point C.  从B点开始，学习率合适的梯度下降算法会最终帮助我们到达或者接近C点，即代价函数J(θ0,θ1)在C点有最小值
+
+### ⑤ 第 5 题
+
+Suppose that for some linear regression problem (say, predicting housing prices as in the lecture), we have some training set, and for our training set we managed to find some $\theta_0, \theta_1 $such that$ J(\theta_0, \theta_1)=0$.
+
+Which of the statements below must then be true? (Check all that apply.)
+
+假设对于某个线性回归问题（比如预测房价），我们有一些训练集，对于我们的训练集，我们能够找到一些θ0,θ1，使得J(θ0,θ1)=0。 以下哪项陈述是正确的？（选出所有正确项）
+
+- 为了实现这一点，我们必须有θ0=0,θ1=0，这样才能使J(θ0,θ1)=0
+
+- ✅ 对于满足J(θ0,θ1)=0的θ0,θ1的值，其对于每个训练例子(x(i),y(i))，都有hθ(x(i))=y(i)
+
+- 这是不可能的：通过J(θ0,θ1)=0的定义，不可能存在θ0,θ1使得J(θ0,θ1)=0
+
+- 即使对于我们还没有看到的新例子，我们也可以完美地预测y的值（例如，我们可以完美地预测我们尚未见过的新房的价格）
 
 ---
 
@@ -348,6 +521,8 @@ $J(θ_0,θ_1)$ 就是代价函数 cost function，也称为**平方误差函数 
 
 
 
+
+
 ---
 
 
@@ -355,4 +530,7 @@ $J(θ_0,θ_1)$ 就是代价函数 cost function，也称为**平方误差函数 
 # 📚 References
 
 - 🤖 [吴恩达机器学习经典名课【中英字幕】](https://www.bilibili.com/video/BV164411S78V?p=2)
-- 🧀 [黄海广- deeplearning_ai_books](https://github.com/fengdu78/deeplearning_ai_books)
+
+- 💠 [黄海广 - 斯坦福大学2014机器学习教程中文笔记](http://www.ai-start.com/ml2014/)
+
+- 🍧 [90题细品吴恩达《机器学习》，感受被刷题支配的恐惧](https://www.kesci.com/home/project/5e0f01282823a10036b280a7)

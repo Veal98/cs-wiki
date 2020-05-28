@@ -18,7 +18,8 @@
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/vue.css">
   <!-- alert -->
   <link rel="stylesheet" href="https://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.css" type='text/css' media='all' />
-  
+  <!-- latex -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
   <!--网页标题左侧显示-->
   <link rel="icon" href="https://gitee.com/veal98/images/raw/master/img/20200518211442.png" type="image/x-icon">
   <!--收藏夹显示图标-->
@@ -208,7 +209,8 @@
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-powershell.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-sql.min.js"></script>
 
-  <script src="https://cdn.bootcss.com/KaTeX/0.10.0/katex.min.js"></script>
+  <!-- latex -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
 
   <!-- CDN files for docsify-katex -->
   <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
@@ -220,7 +222,7 @@
   <script>
     document.body.oncopy = function () { 
       swal("复制成功 🎉", 
-        "若要转载或引用请务必保留原文链接，并申明来源。如果你觉得本仓库不错，那就来 Github 给个 star 吧 😊   - by 小牛肉", 
+        "若要转载或引用请务必保留原文链接，并申明来源。如果你觉得本仓库不错，那就来 Github 给个 star 吧 😊", 
         "success"); };
   </script>
 
