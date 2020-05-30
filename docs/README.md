@@ -114,6 +114,7 @@
 - 【五】Spring Boot
   - [1 - Spring Boot 入门](Java/Spring全家桶/SpringBoot/1-入门.md)
   - [2 - 配置文件](Java/Spring全家桶/SpringBoot/2-配置文件.md)
+  - [3 - 日志](Java/Spring全家桶/SpringBoot/3-日志.md)
 
 
 
@@ -124,7 +125,7 @@
 > 本部分笔记及 Quiz 均参考吴恩达老师的机器学习课程
 
 - [Week-1 | Introduction + 单变量线性回归 + 线代知识回顾](人工智能/机器学习/Week1.md)
-- [Week-1 | 多变量线性回归](人工智能/机器学习/Week2.md)
+- [Week-2 | 多变量线性回归](人工智能/机器学习/Week2.md)
 
 ## 🔨 工具
 <br>
