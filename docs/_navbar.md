@@ -1,4 +1,15 @@
-
-* [🏠 主页](README)
+* [📑 计算机基础](README?id=📑-计算机基础)
+    * [📚 数据结构](README?id=📚-数据结构)
+    * [⏳ 算法](README?id=⏳-算法)
+    * [💻 计算机网络](README?id=💻-计算机网络)
+    * [📜 操作系统](README?id=📜-操作系统)
+    * [📘 数据库](README?id=📘-数据库)
+    * [🔋 软件工程](README?id=🔋-软件工程)
+* [🍵 Java](README?id=🍵-java)
+    * [👔 Java 基础](README?id=👔-java-基础)
+    * [🎡 Spring 全家桶](README?id=🎡-spring-全家桶)
+* [🤖 AI](README?id=🤖-ai)
+    * [🚀 Python](README?id=🚀-python)
+    * [🎮 机器学习](README?id=🎮-机器学习)
 
 

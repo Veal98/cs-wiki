@@ -122,9 +122,12 @@
 
 ### 🚀 Python
 
-- [Python 入门学习笔记](人工智能/Python/Python学习笔记.md)
+- Python 入门学习笔记
+  - [1 - Python基础](人工智能/Python/Python入门学习笔记/1-Python基础.md)
+  - [2 - 函数](人工智能/Python/Python入门学习笔记/2-函数.md)
+  - [3 - 高级特性](人工智能/Python/Python入门学习笔记/3-高级特性.md)
 
-### 💻 机器学习
+### 🎮 机器学习
 
 > 本部分笔记及 Quiz 均参考吴恩达老师的机器学习课程
 

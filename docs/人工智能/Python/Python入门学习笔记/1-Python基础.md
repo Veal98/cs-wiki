@@ -1,6 +1,8 @@
-# 🚀 Python 学习笔记
+# ⛪ Python 基础
 
 ---
+
+
 
 ## 一、Python 环境安装
 
@@ -203,110 +205,110 @@ list是一种有序的集合，可以随时添加和删除其中的元素。
 
 - **创建**
 
-    比如，列出班里所有同学的名字，就可以用一个list表示：
+  比如，列出班里所有同学的名字，就可以用一个list表示：
 
-    ```python
-    classmates = ['Jack','Bod','Track']
-    print(classmates) # 输出 ['Jack', 'Bod', 'Track']
-    ```
+  ```python
+  classmates = ['Jack','Bod','Track']
+  print(classmates) # 输出 ['Jack', 'Bod', 'Track']
+  ```
 
-    用`len()`函数可以获得 list 元素的个数：
+  用`len()`函数可以获得 list 元素的个数：
 
-    ```python
-    print(len(classmates)) # 3
-    ```
+  ```python
+  print(len(classmates)) # 3
+  ```
 
-    🚩 list 里面的元素的数据类型可以不同，比如：
+  🚩 list 里面的元素的数据类型可以不同，比如：
 
-    ```python
-    L = ['Apple', 123, True]
-    ```
+  ```python
+  L = ['Apple', 123, True]
+  ```
 
-    list 元素也可以是 另一个 list，比如：
+  list 元素也可以是 另一个 list，比如：
 
-    ```python
-    s = ['python', 'java', ['asp', 'php'], 'scheme']
-    print(len(s)) # 4
-    ```
+  ```python
+  s = ['python', 'java', ['asp', 'php'], 'scheme']
+  print(len(s)) # 4
+  ```
 
-    要注意`s`只有4个元素，其中`s[2]`又是一个list，如果拆开写就更容易理解了：
+  要注意`s`只有4个元素，其中`s[2]`又是一个list，如果拆开写就更容易理解了：
 
-    ```python
-    p = ['asp', 'php']
-    s = ['python', 'java', p, 'scheme']
-    ```
+  ```python
+  p = ['asp', 'php']
+  s = ['python', 'java', p, 'scheme']
+  ```
 
-    要拿到`'php'`可以写`p[1]`或者`s[2][1]`，因此`s`可以看成是一个二维数组，类似的还有三维、四维……数组，不过很少用到。
+  要拿到`'php'`可以写`p[1]`或者`s[2][1]`，因此`s`可以看成是一个二维数组，类似的还有三维、四维……数组，不过很少用到。
 
-    如果一个 list 中一个元素也没有，就是一个空的 list，它的长度为0：
+  如果一个 list 中一个元素也没有，就是一个空的 list，它的长度为0：
 
-    ```python
-    L = []
-    print(len(L)) # 0
-    ```
+  ```python
+  L = []
+  print(len(L)) # 0
+  ```
 
 
 - **访问**
 
-    用索引来访问 list 中每一个位置的元素，记得索引是从 `0` 开始的：
+  用索引来访问 list 中每一个位置的元素，记得索引是从 `0` 开始的：
 
-    ```python
-    print(classmates[0]) # Jack
-    ```
+  ```python
+  print(classmates[0]) # Jack
+  ```
 
-    当索引超出了范围时，Python会报一个`IndexError`错误
+  当索引超出了范围时，Python会报一个`IndexError`错误
 
-    🚩 如果要取最后一个元素，除了计算索引位置外，还可以用`-1`做索引，直接获取最后一个元素：
+  🚩 如果要取最后一个元素，除了计算索引位置外，还可以用`-1`做索引，直接获取最后一个元素：
 
-    ```python
-    print(classmates[-1]) # Track
-    ```
+  ```python
+  print(classmates[-1]) # Track
+  ```
 
-    以此类推，可以获取倒数第2个、倒数第3个：
+  以此类推，可以获取倒数第2个、倒数第3个：
 
-    ```python
-    print(classmates[-1]) # Track
-    print(classmates[-2]) # Bod
-    print(classmates[-3]) # Jack
-    ```
+  ```python
+  print(classmates[-1]) # Track
+  print(classmates[-2]) # Bod
+  print(classmates[-3]) # Jack
+  ```
 
 - **插入**
 
-    list 是一个可变的有序表，所以，可以利用 `append` 往 list 中追加元素到末尾：
+  list 是一个可变的有序表，所以，可以利用 `append` 往 list 中追加元素到末尾：
 
-    ```python
-    classmates.append('Admin')
-    ```
+  ```python
+  classmates.append('Admin')
+  ```
 
-    也可以利用 `insert` 把元素插入到指定的位置，比如索引号为`1`的位置：
+  也可以利用 `insert` 把元素插入到指定的位置，比如索引号为`1`的位置：
 
-    ```python
-    classmates.insert(1,'Michael')
-    ```
+  ```python
+  classmates.insert(1,'Michael')
+  ```
 
 - **删除**
 
-    要删除list末尾的元素，用`pop()`方法：
+  要删除list末尾的元素，用`pop()`方法：
 
-    ```python
-    classmates.pop()
-    ```
+  ```python
+  classmates.pop()
+  ```
 
-    要删除指定位置的元素，用`pop(i)`方法，其中`i`是索引位置：
+  要删除指定位置的元素，用`pop(i)`方法，其中`i`是索引位置：
 
-    ```python
-    classmates.pop(1)
-    ```
+  ```python
+  classmates.pop(1)
+  ```
 
 - **替换**
 
-    要把某个元素替换成别的元素，可以直接赋值给对应的索引位置：
+  要把某个元素替换成别的元素，可以直接赋值给对应的索引位置：
 
-    ```python
-    classmates[1] = 'Sarah'
-    ```
+  ```python
+  classmates[1] = 'Sarah'
+  ```
 
-    
+  
 
 ##### Ⅱ 不可变有序列表 - 元组 tuple ( )
 
@@ -383,38 +385,38 @@ dict 全称 dictionary，<u>在其他语言中也称为 map</u>，使用 键-值
 
 - **创建**
 
-    示例代码：学生姓名和成绩
+  示例代码：学生姓名和成绩
 
-    ```python
-    d = {'Michale':92, 'Bod':91, 'Jack':100}
-    print(d) # {'Michale': 92, 'Bod': 91, 'Jack': 100}
-    ```
+  ```python
+  d = {'Michale':92, 'Bod':91, 'Jack':100}
+  print(d) # {'Michale': 92, 'Bod': 91, 'Jack': 100}
+  ```
 
-    把数据放入dict的方法，除了初始化时指定外，还可以通过key放入：
+  把数据放入dict的方法，除了初始化时指定外，还可以通过key放入：
 
-    ```python
-    d['Adam'] = 88
-    print(d) # {'Michale': 92, 'Bod': 91, 'Jack': 100, 'Adam': 88}
-    ```
-	
-	请务必注意，dict内部存放的顺序和key放入的顺序是没有关系的。
-	
+  ```python
+  d['Adam'] = 88
+  print(d) # {'Michale': 92, 'Bod': 91, 'Jack': 100, 'Adam': 88}
+  ```
+
+  请务必注意，dict内部存放的顺序和key放入的顺序是没有关系的。
+
 - **判断 value 是否存在**
 
-    由于一个 key 只能对应一个value，所以，**多次对一个 key 放入 value，后面的值会把前面的值冲掉**
+  由于一个 key 只能对应一个value，所以，**多次对一个 key 放入 value，后面的值会把前面的值冲掉**
 
-    如果key不存在，dict就会报错：`KeyError`。要避免key不存在的错误，有两种办法，一是通过`in`判断 key 是否存在：
+  如果key不存在，dict就会报错：`KeyError`。要避免key不存在的错误，有两种办法，一是通过`in`判断 key 是否存在：
 
-    ```python
-    print('Thomas' in d) # False
-    ```
+  ```python
+  print('Thomas' in d) # False
+  ```
 
-    二是通过dict提供的 `get()` 方法，如果key不存在，可以返回`None`，或者自己指定的 value：
+  二是通过dict提供的 `get()` 方法，如果key不存在，可以返回`None`，或者自己指定的 value：
 
-    ```python
-    print(d.get('Thomas')) # None
-    print(d.get('Thomas', -1) # -1
-    ```
+  ```python
+  print(d.get('Thomas')) # None
+  print(d.get('Thomas', -1) # -1
+  ```
 
 - **删除**
 
@@ -450,21 +452,21 @@ set和dict的唯一区别仅在于没有存储对应的value，但是，set的�
 
 - **创建**
 
-    要创建一个set，需要提供一个 list 作为输入集合：
+  要创建一个set，需要提供一个 list 作为输入集合：
 
-    ```python
-    s = set([1, 2, 3])
-    print(s) # {1, 2, 3}
-    ```
+  ```python
+  s = set([1, 2, 3])
+  print(s) # {1, 2, 3}
+  ```
 
-    注意，传入的参数`[1, 2, 3]`是一个 list，而显示的`{1, 2, 3}`只是告诉你这个 set 内部有1，2，3 这3个元素，显示的顺序也不表示set是有序的。
+  注意，传入的参数`[1, 2, 3]`是一个 list，而显示的`{1, 2, 3}`只是告诉你这个 set 内部有1，2，3 这3个元素，显示的顺序也不表示set是有序的。
 
-    **重复元素在set中自动被过滤：**
+  **重复元素在set中自动被过滤：**
 
-    ```python
-    s = set([1, 1, 2, 2, 3, 3])
-    print(s) # {1, 2, 3}
-    ```
+  ```python
+  s = set([1, 1, 2, 2, 3, 3])
+  print(s) # {1, 2, 3}
+  ```
 
 - **添加**
 
@@ -499,7 +501,7 @@ set和dict的唯一区别仅在于没有存储对应的value，但是，set的�
 
 ### 2. 不可变对象详解
 
-上面我们讲了，str 是不变对象，而 list 是可变对象。
+上面我们讲了，**str / None 是不变对象，而 list 是可变对象**。
 
 对于可变对象，比如 list，对 list 进行操作，list 内部的内容是会变化的，比如：
 
@@ -908,6 +910,7 @@ print(a) # [0, 1, 2, 3, 4]
 ```
 
 range(101)就可以生成0-100的整数序列，计算如下：
+
 ```python
 sum = 0
 for x in range(101):
@@ -982,11 +985,9 @@ while n < 10:
 
 执行上面的代码可以看到，打印的不再是1～10，而是 1，3，5，7，9。
 
-可见`continue`的作用是提前结束本轮循环，并直接开始下一轮循环。
+可见`continue`的作用是提前结束本轮循环，并直接开始下一轮循环。 
 
 ---
-
-
 
 # 📚 References
 
