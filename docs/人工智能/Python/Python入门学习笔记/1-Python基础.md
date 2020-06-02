@@ -390,6 +390,9 @@ dict 全称 dictionary，<u>在其他语言中也称为 map</u>，使用 键-值
   ```python
   d = {'Michale':92, 'Bod':91, 'Jack':100}
   print(d) # {'Michale': 92, 'Bod': 91, 'Jack': 100}
+  print(d['Michale']) # 92
+  
+  print(d[0]) # KeyError: 0
   ```
 
   把数据放入dict的方法，除了初始化时指定外，还可以通过key放入：
