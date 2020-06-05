@@ -1,4 +1,4 @@
-# 六、逻辑回归 Logistic Regression
+# 🍜 六、逻辑回归 Logistic Regression
 
 ## 1. 分类问题 Classification
 
@@ -333,7 +333,7 @@ def cost(theta, X, y):
 
 
 
-# 七、正则化 Regularization
+# 🥧 七、正则化 Regularization
 
 ## 1. 过拟合的问题 The Problem of Overfitting
 

@@ -1,4 +1,4 @@
-# 一、Introduction
+# 🍖 一、Introduction
 
 ## 1. 什么是机器学习 Machine Learning
 
@@ -215,7 +215,7 @@ Which of these is a reasonable definition of machine learning?
 
 
 
-# 二、单变量线性回归 Linear Regression with One Variable
+# 🍕 二、单变量线性回归 Linear Regression with One Variable
 
 ## 1. 模型表示
 
@@ -507,7 +507,7 @@ Which of the statements below must then be true? (Check all that apply.)
 
 
 
-# 三、线性代数回顾(Linear Algebra Review)
+# 🍔 三、线性代数回顾(Linear Algebra Review)
 
 ---
 
