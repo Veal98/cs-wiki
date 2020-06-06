@@ -387,7 +387,7 @@ def cost(theta, X, y):
 
 <img src="https://gitee.com/veal98/images/raw/master/img/20200603212547.png" style="zoom:80%;" />
 
-如果选择的正则化参数 λ 过大，则会把所有的参数都最小化了，导致模型变成 $h_θ(x) = θ_0 $，也就是下图所示的情况，造成欠拟合。 
+🚩 **如果选择的正则化参数 λ 过大，则会把所有的参数都最小化了，导致模型变成 $h_θ(x) = θ_0 $，也就是下图所示的情况，造成欠拟合。** 
 
 <img src="https://gitee.com/veal98/images/raw/master/img/20200603213028.png" style="zoom: 67%;" />
 
