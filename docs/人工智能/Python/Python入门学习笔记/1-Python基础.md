@@ -6,6 +6,12 @@
 
 推荐安装 **Anaconda**，这是一个基于Python的数据处理和科学计算平台，它已经内置了许多非常有用的第三方库，我们装上Anaconda，就相当于把数十个第三方模块自动安装好了，非常简单易用。
 
+要在Windows上运行，先下载[Anaconda安装包](https://www.anaconda.com/download/)。跟随Anaconda下载页面的Windows安装指导进行安装即可。
+
+现在，来确认设置是否正确。打开命令行窗口（`cmd.exe`），输入`python`以打开Python解释器。可以看到类似下面的Anaconda版本的输出：
+
+![](https://gitee.com/veal98/images/raw/master/img/20200607093744.png)
+
 ## 二、第一个 Python 程序
 
 ### 1. Hello World

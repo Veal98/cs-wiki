@@ -134,6 +134,9 @@
   - [9 - IO 编程](人工智能/Python/Python入门学习笔记/9-IO编程.md)
   - [10 - 进程和线程](人工智能/Python/Python入门学习笔记/10-进程和线程.md)
   - [11 - 正则表达式](人工智能/Python/Python入门学习笔记/11-正则表达式.md)
+- **Python 数据分析**
+  - [1 - 准备工作](人工智能/Python/Python数据分析/1-准备工作.md)
+  - [2 - IPython 和 Jupyter NoterBook](人工智能/Python/Python数据分析/2-IPython和Jupyter-Notebook.md)
 
 ### 🎮 机器学习
 
