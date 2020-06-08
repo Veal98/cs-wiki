@@ -136,7 +136,8 @@
   - [11 - 正则表达式](人工智能/Python/Python入门学习笔记/11-正则表达式.md)
 - **Python 数据分析**
   - [1 - 准备工作](人工智能/Python/Python数据分析/1-准备工作.md)
-  - [2 - IPython 和 Jupyter NoterBook](人工智能/Python/Python数据分析/2-IPython和Jupyter-Notebook.md)
+  - [2 - IPython 和 Jupyter NoteBook](人工智能/Python/Python数据分析/2-IPython和Jupyter-Notebook.md)
+  - [3 - Python 语法基础、数据结构、函数、文件](人工智能/Python/Python数据分析/3-Python语法基础+数据结构+函数+文件.md)
 
 ### 🎮 机器学习
 

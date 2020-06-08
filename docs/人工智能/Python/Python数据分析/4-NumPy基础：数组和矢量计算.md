@@ -1,16 +1,20 @@
-NumPy（Numerical Python的简称）是Python数值计算最重要的基础包。大多数提供科学计算的包都是用NumPy的数组作为构建基础。
+# 🍩 第 4 章 Numpy 基础：数组和矢量计算
 
-NumPy的部分功能如下：
+---
 
-- ndarray，一个具有矢量算术运算和复杂广播能力的快速且节省空间的多维数组。
+NumPy（Numerical Python的简称）是Python数值计算最重要的基础包。大多数提供科学计算的包都是用NumPy 的数组作为构建基础。
+
+NumPy 的部分功能如下：
+
+- `ndarray`，一个具有矢量算术运算和复杂广播能力的快速且节省空间的多维数组。
 - 用于对整组数据进行快速运算的标准数学函数（无需编写循环）。
 - 用于读写磁盘数据的工具以及用于操作内存映射文件的工具。
 - 线性代数、随机数生成以及傅里叶变换功能。
 - 用于集成由C、C++、Fortran等语言编写的代码的A C API。
 
-由于NumPy提供了一个简单易用的C API，因此很容易将数据传递给由低级语言编写的外部库，外部库也能以NumPy数组的形式将数据返回给Python。这个功能使Python成为一种包装C/C++/Fortran历史代码库的选择，并使被包装库拥有一个动态的、易用的接口。
+👍 **由于NumPy提供了一个简单易用的C API，因此很容易将数据传递给由低级语言编写的外部库，外部库也能以NumPy数组的形式将数据返回给Python**。这个功能使Python成为一种包装C/C++/Fortran历史代码库的选择，并使被包装库拥有一个动态的、易用的接口。
 
-NumPy本身并没有提供多么高级的数据分析功能，理解NumPy数组以及面向数组的计算将有助于你更加高效地使用诸如pandas之类的工具。因为NumPy是一个很大的题目，我会在附录A中介绍更多NumPy高级功能，比如广播。
+NumPy本身并没有提供多么高级的数据分析功能，<u>理解NumPy数组以及面向数组的计算将有助于你更加高效地使用诸如pandas之类的工具</u>。因为NumPy是一个很大的题目，附录A中介绍了更多NumPy高级功能，比如广播。
 
 对于大部分数据分析应用而言，我最关注的功能主要集中在：
 
@@ -23,9 +27,7 @@ NumPy本身并没有提供多么高级的数据分析功能，理解NumPy数组�
 
 虽然NumPy提供了通用的数值数据处理的计算基础，但大多数读者可能还是想将pandas作为统计和分析工作的基础，尤其是处理表格数据时。pandas还提供了一些NumPy所没有的领域特定的功能，如时间序列处理等。
 
->笔记：Python的面向数组计算可以追溯到1995年，Jim Hugunin创建了Numeric库。接下来的10年，许多科学编程社区纷纷开始使用Python的数组编程，但是进入21世纪，库的生态系统变得碎片化了。2005年，Travis Oliphant从Numeric和Numarray项目整合出了NumPy项目，进而所有社区都集合到了这个框架下。
-
-NumPy之于数值计算特别重要的原因之一，是因为它可以高效处理大数组的数据。这是因为：
+⭐ **NumPy之于数值计算特别重要的原因之一，是因为它可以高效处理大数组的数据**。这是因为：
 
 - NumPy是在一个连续的内存块中存储数据，独立于其他Python内置对象。NumPy的C语言编写的算法库可以操作内存，而不必进行类型检查或其它前期工作。比起Python的内置序列，NumPy数组使用的内存更少。
 - NumPy可以在整个数组上执行复杂的计算，而不需要Python的for循环。
@@ -52,7 +54,7 @@ Wall time: 1.05 s
 
 基于NumPy的算法要比纯Python快10到100倍（甚至更快），并且使用的内存更少。
 
-# 4.1 NumPy的ndarray：一种多维数组对象
+## 4.1 NumPy 的 ndarray：一种多维数组对象
 NumPy最重要的一个特点就是其N维数组对象（即ndarray），该对象是一个快速而灵活的大数据集容器。你可以利用这种数组对整块数据执行一些数学运算，其语法跟标量元素之间的运算一样。
 
 要明白Python是如何利用与标量值类似的语法进行批次计算，我先引入NumPy，然后生成一个包含随机数据的小数组：
@@ -804,7 +806,7 @@ array([[[ 0,  4],
 
 swapaxes也是返回源数据的视图（不会进行任何复制操作）。
 
-# 4.2 通用函数：快速的元素级数组函数
+## 4.2 通用函数：快速的元素级数组函数
 通用函数（即ufunc）是一种对ndarray中的数据执行元素级运算的函数。你可以将其看做简单函数（接受一个或多个标量值，并产生一个或多个标量值）的矢量化包装器。
 
 许多ufunc都是简单的元素级变体，如sqrt和exp：
@@ -893,7 +895,7 @@ Out[154]: array([    nan,     nan,     nan,  2.318 ,  1.9022,  1.8574,  2.2378])
 
 ![](http://upload-images.jianshu.io/upload_images/7178691-236dba83b6a420cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-# 4.3 利用数组进行数据处理
+## 4.3 利用数组进行数据处理
 NumPy数组使你可以将许多种数据处理任务表述为简洁的数组表达式（否则需要编写循环）。用数组表达式代替循环的做法，通常被称为矢量化。一般来说，矢量化数组运算要比等价的纯Python方式快上一两个数量级（甚至更多），尤其是各种数值计算。在后面内容中（见附录A）我将介绍广播，这是一种针对矢量化计算的强大手段。
 
 作为简单的例子，假设我们想要在一组值（网格型）上计算函数``sqrt(x^2+y^2)``。np.meshgrid函数接受两个一维数组，并产生两个二维矩阵（对应于两个数组中所有的(x,y)对）：
@@ -1184,7 +1186,7 @@ Out[212]: array([ True, False, False,  True,  True, False,  True], dtype=bool)
 NumPy中的集合函数请参见表4-6。
 ![](http://upload-images.jianshu.io/upload_images/7178691-80e85ae6b9c89ada.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-# 4.4 用于数组的文件输入输出
+## 4.4 用于数组的文件输入输出
 NumPy能够读写磁盘上的文本数据或二进制数据。这一小节只讨论NumPy的内置二进制格式，因为更多的用户会使用pandas或其它工具加载文本或表格数据（见第6章）。
 
 np.save和np.load是读写磁盘数组数据的两个主要函数。默认情况下，数组是以未压缩的原始二进制格式保存在扩展名为.npy的文件中的：
@@ -1218,7 +1220,7 @@ Out[218]: array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 In [219]: np.savez_compressed('arrays_compressed.npz', a=arr, b=arr)
 ```
 
-# 4.5 线性代数
+## 4.5 线性代数
 线性代数（如矩阵乘法、矩阵分解、行列式以及其他方阵数学等）是任何数组库的重要组成部分。不像某些语言（如MATLAB），通过*对两个二维数组相乘得到的是一个元素级的积，而不是一个矩阵点积。因此，NumPy提供了一个用于矩阵乘法的dot函数（既是一个数组方法也是numpy命名空间中的一个函数）：
 ```python
 In [223]: x = np.array([[1., 2., 3.], [4., 5., 6.]])
@@ -1303,7 +1305,7 @@ array([[-1.6914,  4.38  ,  0.1757,  0.4075, -0.7838],
 
 ![](http://upload-images.jianshu.io/upload_images/7178691-dcdb66e49e5f70ea.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-# 4.6 伪随机数生成
+## 4.6 伪随机数生成
 numpy.random模块对Python内置的random进行了补充，增加了一些用于高效生成多种概率分布的样本值的函数。例如，你可以用normal来得到一个标准正态分布的4×4样本数组：
 ```python
 In [238]: samples = np.random.normal(size=(4, 4))
@@ -1350,7 +1352,7 @@ array([ 0.4714, -1.191 ,  1.4327, -0.3127, -0.7206,  0.8872,  0.8596,
 
 ![](http://upload-images.jianshu.io/upload_images/7178691-6ed04fae3d1178e2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-# 4.7 示例：随机漫步
+## 4.7 示例：随机漫步
 我们通过模拟随机漫步来说明如何运用数组运算。先来看一个简单的随机漫步的例子：从0开始，步长1和－1出现的概率相等。
 
 下面是一个通过内置的random模块以纯Python的方式实现1000步的随机漫步：
@@ -1459,5 +1461,15 @@ In [271]: steps = np.random.normal(loc=0, scale=0.25,
    .....:                          size=(nwalks, nsteps))
 ```
 
-# 4.8 结论
+## ✅ End
 虽然本书剩下的章节大部分是用pandas规整数据，我们还是会用到相似的基于数组的计算。在附录A中，我们会深入挖掘NumPy的特点，进一步学习数组的技巧。
+
+---
+
+# 📚 References
+
+- 📕  [《利用Python进行数据分析-第2版-中文译版》](https://www.jianshu.com/p/04d180d90a3f)
+
+  <img src="https://gitee.com/veal98/images/raw/master/img/20200607091609.png" style="zoom:50%;" />
+
+- 🚝 [Gihub《Python数据分析》配套源码](https://github.com/wesm/pydata-book)

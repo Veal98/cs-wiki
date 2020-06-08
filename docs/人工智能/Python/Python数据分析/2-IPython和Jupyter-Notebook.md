@@ -1,4 +1,4 @@
-# 🧀 第2章 IPython和Jupyter Notebook
+# 🧀 第 2 章 IPython 和 Jupyter Notebook
 
 ## 2.1 Python解释器 
 
@@ -437,7 +437,7 @@ In [26]: %matplotlib inline
 
 # 📚 References
 
-- 📕  [《Python数据分析-第2版-中文译版》](https://www.jianshu.com/p/04d180d90a3f)
+- 📕  [《利用Python进行数据分析-第2版-中文译版》](https://www.jianshu.com/p/04d180d90a3f)
 
   <img src="https://gitee.com/veal98/images/raw/master/img/20200607091609.png" style="zoom:50%;" />
 
