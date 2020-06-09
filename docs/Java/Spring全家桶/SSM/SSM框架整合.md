@@ -1099,7 +1099,55 @@ c3p0.checkoutTimeout=10000
 c3p0.acquireRetryAttempts=2
 ```
 
+## 3. 编写 Mapper 映射文件
+在 resources 文件夹下新建 mapper.studentDao.xml 文件：
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
+<mapper namespace="com.smallbeef.dao.StudentDao">
+
+    <!--int getTotal(); 获取学生总个数-->
+    <select id="getTotal" resultType="int">
+        SELECT COUNT(*) FROM student
+    </select>
+
+    <!--void addStudent(Student student); 增加一个学生-->
+    <insert id="addStudent" parameterType="Student">
+        INSERT INTO student VALUES(NULL, #{student_id}, #{name}, #{age}, #{sex}, #{birthday})
+    </insert>
+
+    <!--void deleteStudent(int id); 删除一个学生-->
+    <delete id="deleteStudent" parameterType="int">
+        DELETE FROM student WHERE id = #{id}
+    </delete>
+
+    <!--void updateStudent(Student student); 修改一个学生信息-->
+    <update id="updateStudent" parameterType="Student">
+        UPDATE student SET student_id = #{student_id}, name = #{name},
+        age = #{age}, sex = #{sex}, birthday = #{birthday} WHERE id = #{id}
+    </update>
+
+    <!--Student getStudent(int id); 根据 id 查询一个学生信息-->
+    <select id="getStudent" resultMap="student" parameterType="int">
+        SELECT * FROM student WHERE id = #{id}
+    </select>
+
+    <resultMap id="student" type="student">
+        <id column="id" property="id"/>
+        <result column="student_id" property="student_id"/>
+        <result column="name" property="name"/>
+        <result column="age" property="age"/>
+        <result column="sex" property="sex"/>
+        <result column="birthday" property="birthday" javaType="java.sql.Date"/>
+    </resultMap>
+    <!--List<Student> list(int start, int count); 查询从start位置开始的count条数据-->
+    <select id="list" resultMap="student">
+        SELECT * FROM student ORDER BY student_id asc limit #{param1}, #{param2}
+    </select>
+</mapper>
+```
 
 ---
 

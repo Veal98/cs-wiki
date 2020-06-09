@@ -138,6 +138,7 @@
   - [1 - 准备工作](人工智能/Python/Python数据分析/1-准备工作.md)
   - [2 - IPython 和 Jupyter NoteBook](人工智能/Python/Python数据分析/2-IPython和Jupyter-Notebook.md)
   - [3 - Python 语法基础、数据结构、函数、文件](人工智能/Python/Python数据分析/3-Python语法基础+数据结构+函数+文件.md)
+  - [4 - Numpy 基础：数组和矢量计算](人工智能/Python/Python数据分析/4-Numpy基础-数组和矢量计算.md)
 
 ### 🎮 机器学习
 
