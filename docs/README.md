@@ -93,6 +93,8 @@
 
 ## 🍵 Java
 
+> 🔊 因研究生方向为 AI，Java 板块内容暂时停更
+
 ### 👔 Java 基础
 
 - [【一】Jave SE 和 Java EE 的区别](Java/Java基础/JaveSE和JavaEE的区别.md)
@@ -140,7 +142,8 @@
   - [3 - Python 语法基础、数据结构、函数、文件](人工智能/Python/Python数据分析/3-Python语法基础+数据结构+函数+文件.md)
   - [4 - Numpy 基础：数组和矢量计算](人工智能/Python/Python数据分析/4-Numpy基础-数组和矢量计算.md)
   - [4.1 - Numpy 练习题 100 题](人工智能/Python/Python数据分析/4.1-Numpy练习题100题.md)
-  - [5 - pandas 入门](人工智能/Python/Python数据分析/5-pandas入门.md)
+  - [5 - pandas- 入门](人工智能/Python/Python数据分析/5-pandas入门.md)
+  - [6 - pandas - 数据加载、存储与文件格式](人工智能/Python/Python数据分析/6-pandas数据加载、存储与文件格式.md)
 
 ### 🎮 机器学习
 
@@ -152,6 +155,7 @@
   - [Week-5 | 神经网络：进阶](人工智能/机器学习/Week5.md)
   - [Week-6 | 应用机器学习的建议 + 机器学习系统的设计](人工智能/机器学习/Week6.md)
   - [Week-7 | 支持向量机 SVM](人工智能/机器学习/Week7.md)
+  - [Week-8 | 聚类 (K-means 算法) + 降维 (PCA 算法)](人工智能/机器学习/Week8.md)
 
 ## 🔨 工具
 <br>
