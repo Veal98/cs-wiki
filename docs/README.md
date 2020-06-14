@@ -141,9 +141,10 @@
   - [2 - IPython 和 Jupyter NoteBook](人工智能/Python/Python数据分析/2-IPython和Jupyter-Notebook.md)
   - [3 - Python 语法基础、数据结构、函数、文件](人工智能/Python/Python数据分析/3-Python语法基础+数据结构+函数+文件.md)
   - [4 - Numpy 基础：数组和矢量计算](人工智能/Python/Python数据分析/4-Numpy基础-数组和矢量计算.md)
-  - [4.1 - Numpy 练习题 100 题](人工智能/Python/Python数据分析/4.1-Numpy练习题100题.md)
-  - [5 - pandas- 入门](人工智能/Python/Python数据分析/5-pandas入门.md)
-  - [6 - pandas - 数据加载、存储与文件格式](人工智能/Python/Python数据分析/6-pandas数据加载、存储与文件格式.md)
+  - [✍ Numpy 练习题 100 题](人工智能/Python/Python数据分析/4.1-Numpy练习题100题.md)
+  - [5 - pandas：入门](人工智能/Python/Python数据分析/5-pandas入门.md)
+  - [6 - pandas：数据加载、存储与文件格式](人工智能/Python/Python数据分析/6-pandas数据加载、存储与文件格式.md)
+  - [7 - pandas：数据清洗和准备](人工智能/Python/Python数据分析/7-pandas数据清洗和准备.md)
 
 ### 🎮 机器学习
 
@@ -157,6 +158,7 @@
   - [Week-7 | 支持向量机 SVM](人工智能/机器学习/Week7.md)
   - [Week-8 | 聚类 (K-means 算法) + 降维 (PCA 算法)](人工智能/机器学习/Week8.md)
   - [Week-9 | 异常检测 + 推荐系统](人工智能/机器学习/Week9.md)
+  - [Week-10 | 大规模机器学习 + 应用实例：图片文字识别](人工智能/机器学习/Week10.md)
 
 ## 🔨 工具
 <br>
