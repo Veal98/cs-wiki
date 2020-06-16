@@ -181,7 +181,7 @@ K-means 是一种迭代算法，在其内部循环中重复执行以下两个步
 
 # 🚛 十四、降维(Dimensionality Reduction)
 
-## 1. 动机一：数据压缩 Motivation I_ Data Compression
+## 1. 目标一：数据压缩 Motivation I_ Data Compression
 
 <u>本节中，我们开始学习第二种类型的无监督学习问题，称为降维</u>。有几个不同的的原因使你可能想要做降维。一是数据压缩，数据压缩不仅允许我们压缩数据，使用较少的计算机内存或磁盘空间，它还能加速我们的学习算法。
 
@@ -203,7 +203,7 @@ K-means 是一种迭代算法，在其内部循环中重复执行以下两个步
 
 这样的处理过程可以被用于把任何维度的数据降到任何想要的维度，例如将1000维的特征降至100维。
 
-## 2. 动机二：数据可视化 Motivation II_ Visualization
+## 2. 目标二：数据可视化 Motivation II_ Visualization
 
 在许多及其学习问题中，如果我们能将数据可视化，我们便能寻找到一个更好的解决方案，降维可以帮助我们。
 
@@ -403,3 +403,4 @@ K-means 是一种迭代算法，在其内部循环中重复执行以下两个步
 
 - 🍧 [90题细品吴恩达《机器学习》，感受被刷题支配的恐惧](https://www.kesci.com/home/project/5e0f01282823a10036b280a7)
 
+- 🥩 [吴恩达机器学习 课后实验 python实现](https://www.kesci.com/home/project/5da16a37037db3002d441810)

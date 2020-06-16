@@ -97,15 +97,12 @@
 
 ### 👔 Java 基础
 
-- [【一】Jave SE 和 Java EE 的区别](Java/Java基础/JaveSE和JavaEE的区别.md)
-- **【二】Java SE 基础知识**
-  - [1 - 基础](Java/Java基础/JavaSE基础知识/1-基础.md)
-  - [2 - 常见 API](Java/Java基础/JavaSE基础知识/2-常见API.md)
-  - [3 - 反射 + 序列化 + 动态代理](Java/Java基础/JavaSE基础知识/3-反射+序列化+动态代理.md)
-  - [4 - 集合 + 泛型](Java/Java基础/JavaSE基础知识/4-集合+泛型.md)
-  - [5 - 异常](Java/Java基础/JavaSE基础知识/5-异常.md)
-  - [6 - 多线程](Java/Java基础/JavaSE基础知识/6-多线程.md)
-- [【三】Java EE 基础知识](Java/Java基础/JavaEE基础知识.md)
+- [1 - 基础](Java/Java基础/JavaSE基础知识/1-基础.md)
+- [2 - 常见 API](Java/Java基础/JavaSE基础知识/2-常见API.md)
+- [3 - 反射 + 序列化 + 动态代理](Java/Java基础/JavaSE基础知识/3-反射+序列化+动态代理.md)
+- [4 - 集合 + 泛型](Java/Java基础/JavaSE基础知识/4-集合+泛型.md)
+- [5 - 异常](Java/Java基础/JavaSE基础知识/5-异常.md)
+- [6 - 多线程](Java/Java基础/JavaSE基础知识/6-多线程.md)
 
 ### 🎡 Spring 全家桶
 
@@ -140,11 +137,14 @@
   - [1 - 准备工作](人工智能/Python/Python数据分析/1-准备工作.md)
   - [2 - IPython 和 Jupyter NoteBook](人工智能/Python/Python数据分析/2-IPython和Jupyter-Notebook.md)
   - [3 - Python 语法基础、数据结构、函数、文件](人工智能/Python/Python数据分析/3-Python语法基础+数据结构+函数+文件.md)
-  - [4 - Numpy 基础：数组和矢量计算](人工智能/Python/Python数据分析/4-Numpy基础-数组和矢量计算.md)
-  - [✍ Numpy 练习题 100 题](人工智能/Python/Python数据分析/4.1-Numpy练习题100题.md)
+  - [4 - Numpy：基础 - 数组和矢量计算](人工智能/Python/Python数据分析/4-Numpy基础-数组和矢量计算.md)
+  - [✍ Numpy：练习题 100 题](人工智能/Python/Python数据分析/4.1-Numpy练习题100题.md)
   - [5 - pandas：入门](人工智能/Python/Python数据分析/5-pandas入门.md)
   - [6 - pandas：数据加载、存储与文件格式](人工智能/Python/Python数据分析/6-pandas数据加载、存储与文件格式.md)
   - [7 - pandas：数据清洗和准备](人工智能/Python/Python数据分析/7-pandas数据清洗和准备.md)
+  - [8 - pandas：数据规整 - 聚合、合并和重塑](人工智能/Python/Python数据分析/8-pandas数据规整：聚合、合并和重塑.md)
+  - [9 - matplotlib：绘图和可视化](人工智能/Python/Python数据分析/9-matplotlib绘图和可视化.md)
+  - [10 - pandas：数据聚合与分组运算](人工智能/Python/Python数据分析/10-pandas数据聚合与分组运算.md)
 
 ### 🎮 机器学习
 

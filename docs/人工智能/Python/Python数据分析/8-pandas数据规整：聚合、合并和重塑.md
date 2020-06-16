@@ -1,10 +1,17 @@
+# 🚧 第 8 章  pandas 数据规整：聚合、合并和重塑
+
+---
+
 在许多应用中，数据可能分散在许多文件或数据库中，存储的形式也不利于分析。本章关注可以聚合、合并、重塑数据的方法。
 
-首先，我会介绍pandas的层次化索引，它广泛用于以上操作。然后，我深入介绍了一些特殊的数据操作。在第14章，你可以看到这些工具的多种应用。
+## 8.1 层次化索引
 
-# 8.1 层次化索引
+### 1. 层次化索引
 
-层次化索引（hierarchical indexing）是pandas的一项重要功能，它使你能在一个轴上拥有多个（两个以上）索引级别。抽象点说，它使你能以低维度形式处理高维度数据。我们先来看一个简单的例子：创建一个Series，并用一个由列表或数组组成的列表作为索引：
+层次化索引（hierarchical indexing）是pandas的一项重要功能，它使你能在一个轴上拥有多个（两个以上）索引级别。抽象点说，它使你能以低维度形式处理高维度数据。
+
+我们先来看一个简单的例子：创建一个 Series，并用一个由列表或数组组成的列表作为索引：
+
 ```python
 In [9]: data = pd.Series(np.random.randn(9),
    ...:                  index=[['a', 'a', 'a', 'b', 'b', 'c', 'c', 'd', 'd'],
@@ -24,7 +31,7 @@ d  2    0.281746
 dtype: float64
 ```
 
-看到的结果是经过美化的带有MultiIndex索引的Series的格式。索引之间的“间隔”表示“直接使用上面的标签”：
+看到的结果是经过美化的带有 MultiIndex 索引的 Series 的格式。索引之间的“间隔”表示“直接使用上面的标签”：
 ```python
 In [11]: data.index
 Out[11]: 
@@ -67,7 +74,7 @@ d    0.281746
 dtype: float64
 ```
 
-层次化索引在数据重塑和基于分组的操作（如透视表生成）中扮演着重要的角色。例如，可以通过unstack方法将这段数据重新安排到一个DataFrame中：
+层次化索引在数据重塑和基于分组的操作（如透视表生成）中扮演着重要的角色。例如，可以通过 `unstack` 方法将这段数据重新安排到一个 DataFrame 中：
 ```python
 In [16]: data.unstack()
 Out[16]: 
@@ -94,9 +101,9 @@ d  2    0.281746
 dtype: float64
 ```
 
-stack和unstack将在本章后面详细讲解。
+stack 和 unstack 将在本章后面详细讲解。
 
-对于一个DataFrame，每条轴都可以有分层索引：
+对于一个 DataFrame，每条轴都可以有分层索引：
 ```python
 In [18]: frame = pd.DataFrame(np.arange(12).reshape((4, 3)),
    ....:                      index=[['a', 'a', 'b', 'b'], [1, 2, 1, 2]],
@@ -130,7 +137,7 @@ b    1        6   7        8
      2        9  10       11
 ```
 
->注意：小心区分索引名state、color与行标签。
+>🚨 小心区分索引名 state、color 与行标签。
 
 有了部分列索引，因此可以轻松选取列分组：
 ```python
@@ -150,9 +157,9 @@ MultiIndex.from_arrays([['Ohio', 'Ohio', 'Colorado'], ['Green', 'Red', 'Green']]
                        names=['state', 'color'])
 ```
 
-## 重排与分级排序
+### 2. 重排 swaplevle 与分级排序 sort_index
 
-有时，你需要重新调整某条轴上各级别的顺序，或根据指定级别上的值对数据进行排序。swaplevel接受两个级别编号或名称，并返回一个互换了级别的新对象（但数据不会发生变化）：
+有时，你需要重新调整某条轴上各级别的顺序，或根据指定级别上的值对数据进行排序。`swaplevel` 接受两个级别编号或名称，并返回一个互换了级别的新对象（但数据不会发生变化）：
 ```python
 In [24]: frame.swaplevel('key1', 'key2')
 Out[24]: 
@@ -165,9 +172,9 @@ key2 key1
 2    b        9  10       11
 ```
 
-而sort_index则根据单个级别中的值对数据进行排序。交换级别时，常常也会用到sort_index，这样最终结果就是按照指定顺序进行字母排序了：
+而`sort_index`则根据单个级别中的值对数据进行排序。交换级别时，常常也会用到 sort_index，这样最终结果就是按照指定顺序进行字母排序了：
 ```python
-In [25]: frame.sort_index(level=1)
+In [25]: frame.sort_index(level=1) # 按照索引的第一列排序，即本表中的key2
 Out[25]: 
 state      Ohio     Colorado
 color     Green Red    Green
@@ -177,7 +184,7 @@ b    1        6   7        8
 a    2        3   4        5
 b    2        9  10       11
 
-In [26]: frame.swaplevel(0, 1).sort_index(level=0)
+In [26]: frame.swaplevel(0, 1).sort_index(level=0) # 按照索引的第 0 列排序，即本表中的 key2
 Out[26]: 
 state      Ohio     Colorado
 color     Green Red    Green
@@ -188,9 +195,9 @@ key2 key1
      b        9  10       11
 ```
 
-## 根据级别汇总统计
+### 3. 根据级别汇总统计 level
 
-许多对DataFrame和Series的描述和汇总统计都有一个level选项，它用于指定在某条轴上求和的级别。再以上面那个DataFrame为例，我们可以根据行或列上的级别来进行求和：
+许多对DataFrame和Series的描述和汇总统计都有一个 **`level` 选项，它用于指定在某条轴上求和的级别**。再以上面那个DataFrame为例，我们可以根据行或列上的级别来进行求和：
 ```python
 In [27]: frame.sum(level='key2')
 Out[27]: 
@@ -212,9 +219,9 @@ b    1        14    7
 
 这其实是利用了pandas的groupby功能，本书稍后将对其进行详细讲解。
 
-## 使用DataFrame的列进行索引
+### 4. 使用 DataFrame 的列进行索引 set_index
 
-人们经常想要将DataFrame的一个或多个列当做行索引来用，或者可能希望将行索引变成DataFrame的列。以下面这个DataFrame为例：
+人们经常想要将 DataFrame 的一个或多个列当做行索引来用，或者可能希望将行索引变成 DataFrame 的列。以下面这个 DataFrame 为例：
 ```python
 In [29]: frame = pd.DataFrame({'a': range(7), 'b': range(7, 0, -1),
    ....:                       'c': ['one', 'one', 'one', 'two', 'two',
@@ -233,7 +240,7 @@ Out[30]:
 6  6  1  two  3
 ```
 
-DataFrame的set_index函数会将其一个或多个列转换为行索引，并创建一个新的DataFrame：
+DataFrame 的 `set_index` 函数会将其一个或多个列转换为行索引，并创建一个新的 DataFrame：
 ```python
 In [31]: frame2 = frame.set_index(['c', 'd'])
 
@@ -250,7 +257,7 @@ two 0  3  4
     3  6  1
 ```
 
-默认情况下，那些列会从DataFrame中移除，但也可以将其保留下来：
+默认情况下，那些列（c、d）会从 DataFrame 中移除，但也可以将其保留下来：
 ```python
 In [33]: frame.set_index(['c', 'd'], drop=False)
 Out[33]: 
@@ -265,7 +272,8 @@ two 0  3  4  two  0
     3  6  1  two  3
 ```
 
-reset_index的功能跟set_index刚好相反，层次化索引的级别会被转移到列里面：
+`reset_index` 的功能跟set_index刚好相反，层次化索引的级别会被转移到列里面：
+
 ```python
 In [34]: frame2.reset_index()
 Out[34]:
@@ -279,7 +287,7 @@ c  d  a  b
 6  two  3  6  1
 ```
 
-# 8.2 合并数据集
+## 8.2 合并数据集
 
 pandas对象中的数据可以通过一些方式进行合并：
 
@@ -289,9 +297,9 @@ pandas对象中的数据可以通过一些方式进行合并：
 
 我将分别对它们进行讲解，并给出一些例子。本书剩余部分的示例中将经常用到它们。
 
-##数据库风格的DataFrame合并
+###1. 数据库风格的 DataFrame 合并 merge
 
-数据集的合并（merge）或连接（join）运算是通过一个或多个键将行连接起来的。这些运算是关系型数据库（基于SQL）的核心。pandas的merge函数是对数据应用这些算法的主要切入点。
+数据集的合并（merge）或连接（join）运算是通过一个或多个键将行连接起来的。这些运算是关系型数据库（基于SQL）的核心。pandas 的 `merge` 函数是对数据应用这些算法的主要切入点。
 
 以一个简单的例子开始：
 ```python
@@ -320,7 +328,7 @@ Out[38]:
 2      2   d
 ```
 
-这是一种多对一的合并。df1中的数据有多个被标记为a和b的行，而df2中key列的每个值则仅对应一行。对这些对象调用merge即可得到：
+这是一种**多对一的合并**。df1中的数据有多个被标记为a和b的行，而df2中key列的每个值则仅对应一行。对这些对象调用merge即可得到：
 ```python
 In [39]: pd.merge(df1, df2)
 Out[39]: 
@@ -333,7 +341,7 @@ Out[39]:
 5      5   a      0
 ```
 
-注意，我并没有指明要用哪个列进行连接。如果没有指定，merge就会将重叠列的列名当做键。不过，最好明确指定一下：
+注意，我并没有指明要用哪个列进行连接。**如果没有指定，merge就会将重叠列的列名当做键**。不过，最好明确指定一下：
 ```python
 In [40]: pd.merge(df1, df2, on='key')
 Out[40]: 
@@ -365,7 +373,7 @@ Out[43]:
 5      5    a      0    a
 ```
 
-可能你已经注意到了，结果里面c和d以及与之相关的数据消失了。默认情况下，merge做的是“内连接”；结果中的键是交集。其他方式还有"left"、"right"以及"outer"。外连接求取的是键的并集，组合了左连接和右连接的效果：
+可能你已经注意到了，结果里面c和d以及与之相关的数据消失了。**默认情况下，merge做的是“内连接”**即结果中只保留匹配的行。其他方式还有"left"、"right"以及"outer"。外连接求取的是键的并集，组合了左连接和右连接的效果：
 ```python
 In [44]: pd.merge(df1, df2, how='outer')
 Out[44]: 
@@ -380,9 +388,9 @@ Out[44]:
 7    NaN   d    2.0
 ```
 
-表8-1对这些选项进行了总结。
+下表对这些选项进行了总结：
 
-![表8-1 不同的连接类型](http://upload-images.jianshu.io/upload_images/7178691-e49b3341f4a3c90e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+<img src="https://gitee.com/veal98/images/raw/master/img/20200615105416.png" style="zoom:50%;" />
 
 
 多对多的合并有些不直观。看下面的例子：
@@ -428,7 +436,8 @@ Out[49]:
 10      5   b    3.0
 ```
 
-多对多连接产生的是行的笛卡尔积。由于左边的DataFrame有3个"b"行，右边的有2个，所以最终结果中就有6个"b"行。连接方式只影响出现在结果中的不同的键的值：
+🚩 **多对多连接产生的是行的笛卡尔积**。<u>由于左边的DataFrame有3个"b"行，右边的有2个，所以最终结果中就有6个"b"行</u>。连接方式只影响出现在结果中的不同的键的值：
+
 ```python
 In [50]: pd.merge(df1, df2, how='inner')
 Out[50]: 
@@ -467,9 +476,9 @@ Out[53]:
 
 结果中会出现哪些键组合取决于所选的合并方式，你可以这样来理解：多个键形成一系列元组，并将其当做单个连接键（当然，实际上并不是这么回事）。
 
->注意：在进行列－列连接时，DataFrame对象中的索引会被丢弃。
+>🚨 在进行列－列连接时，DataFrame对象中的索引会被丢弃。
 
-对于合并运算需要考虑的最后一个问题是对重复列名的处理。虽然你可以手工处理列名重叠的问题（查看前面介绍的重命名轴标签），但merge有一个更实用的suffixes选项，用于指定附加到左右两个DataFrame对象的重叠列名上的字符串：
+对于合并运算需要考虑的最后一个问题是**对重复列名的处理**。虽然你可以手工处理列名重叠的问题（查看前面介绍的重命名轴标签），但merge有一个更实用的 `suffixes` 选项，用于指定附加到左右两个DataFrame对象的重叠列名上的字符串：
 ```python
 In [54]: pd.merge(left, right, on='key1')
 Out[54]: 
@@ -492,19 +501,13 @@ Out[55]:
 5  bar       one     3        two     7
 ```
 
-merge的参数请参见表8-2。使用DataFrame的行索引合并是下一节的主题。
+merge 函数的参数请参见下表：
 
-表8-2 merge函数的参数
+![](https://gitee.com/veal98/images/raw/master/img/20200615105810.png)
 
-![](http://upload-images.jianshu.io/upload_images/7178691-35ca716a4f1b8475.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+### 2. 索引上的合并
 
-![](http://upload-images.jianshu.io/upload_images/7178691-c86672e733ceccd9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-indicator 添加特殊的列_merge，它可以指明每个行的来源，它的值有left_only、right_only或both，根据每行的合并数据的来源。
-
-## 索引上的合并
-
-有时候，DataFrame中的连接键位于其索引中。在这种情况下，你可以传入left_index=True或right_index=True（或两个都传）以说明索引应该被用作连接键：
+有时候，DataFrame中的连接键位于其索引中。在这种情况下，**你可以传入 `left_index=True` 或`right_index=True`（或两个都传）以说明索引应该被用作连接键**：
 ```python
 In [56]: left1 = pd.DataFrame({'key': ['a', 'b', 'a', 'a', 'b', 'c'],
    ....:                       'value': range(6)})
@@ -701,9 +704,9 @@ e   5.0     6.0      13.0     14.0      11.0    12.0
 f   NaN     NaN       NaN      NaN      16.0    17.0
 ```
 
-## 轴向连接
+### 3. 轴向连接 concat
 
-另一种数据合并运算也被称作连接（concatenation）、绑定（binding）或堆叠（stacking）。NumPy的concatenation函数可以用NumPy数组来做：
+另一种数据合并运算也被称作连接（concatenation）、绑定（binding）或堆叠（stacking）。NumPy的`concatenation`函数可以用NumPy数组来做：
 ```python
 In [79]: arr = np.arange(12).reshape((3, 4))
 
@@ -726,7 +729,7 @@ array([[ 0,  1,  2,  3,  0,  1,  2,  3],
 - 连接的数据集是否需要在结果对象中可识别？
 - 连接轴中保存的数据是否需要保留？许多情况下，DataFrame默认的整数标签最好在连接时删掉。
 
-pandas的concat函数提供了一种能够解决这些问题的可靠方式。我将给出一些例子来讲解其使用方式。假设有三个没有重叠索引的Series：
+pandas的`concat`函数提供了一种能够解决这些问题的可靠方式。我将给出一些例子来讲解其使用方式。假设有三个没有重叠索引的Series：
 ```python
 In [82]: s1 = pd.Series([0, 1], index=['a', 'b'])
 
@@ -749,7 +752,8 @@ g    6
 dtype: int64
 ```
 
-默认情况下，concat是在axis=0上工作的，最终产生一个新的Series。如果传入axis=1，则结果就会变成一个DataFrame（axis=1是列）：
+**默认情况下，concat是在axis=0上工作的，最终产生一个新的Series。如果传入axis=1，则结果就会变成一个DataFrame（axis=1是列）**：
+
 ```python
 In [86]: pd.concat([s1, s2, s3], axis=1)
 Out[86]: 
@@ -763,7 +767,7 @@ f  NaN  NaN  5.0
 g  NaN  NaN  6.0
 ```
 
-这种情况下，另外的轴上没有重叠，从索引的有序并集（外连接）上就可以看出来。传入join='inner'即可得到它们的交集：
+这种情况下，另外的轴上没有重叠，从索引的有序并集（外连接）上就可以看出来。传入` join='inner'` 即可得到它们的交集：
 ```python
 In [87]: s4 = pd.concat([s1, s3])
 
@@ -790,9 +794,9 @@ a  0  0
 b  1  1
 ```
 
-在这个例子中，f和g标签消失了，是因为使用的是join='inner'选项。
+在这个例子中， f 和 g 标签消失了，是因为使用的是join='inner'选项。
 
-你可以通过join_axes指定要在其它轴上使用的索引：
+你可以通过 `join_axes` 指定要在其它轴上使用的索引：
 ```python
 In [91]: pd.concat([s1, s4], axis=1, join_axes=[['a', 'c', 'b', 'e']])
 Out[91]: 
@@ -803,7 +807,7 @@ b  1.0  1.0
 e  NaN  NaN
 ```
 
-不过有个问题，参与连接的片段在结果中区分不开。假设你想要在连接轴上创建一个层次化索引。使用keys参数即可达到这个目的：
+不过有个问题，参与连接的片段在结果中区分不开。假设你想要在连接轴上创建一个层次化索引。使用 keys参数即可达到这个目的：
 ```python
 In [92]: result = pd.concat([s1, s1, s3], keys=['one','two', 'three'])
 
@@ -825,7 +829,8 @@ two    0.0  1.0  NaN  NaN
 three  NaN  NaN  5.0  6.0
 ```
 
-如果沿着axis=1对Series进行合并，则keys就会成为DataFrame的列头：
+**如果沿着 axis=1 对 Series 进行合并，则keys就会成为DataFrame的列头**：
+
 ```python
 In [95]: pd.concat([s1, s2, s3], axis=1, keys=['one','two', 'three'])
 Out[95]: 
@@ -881,7 +886,12 @@ b      2   3    NaN  NaN
 c      4   5    7.0  8.0
 ```
 
-此外还有两个用于管理层次化索引创建方式的参数（参见表8-3）。举个例子，我们可以用names参数命名创建的轴级别：
+此外还有两个用于管理层次化索引创建方式的参数（参见下表）：
+
+![](https://gitee.com/veal98/images/raw/master/img/20200615111121.png)
+
+举个例子，我们可以用names参数命名创建的轴级别：
+
 ```python
 In [102]: pd.concat([df1, df2], axis=1, keys=['level1', 'level2'],
    .....:           names=['upper', 'lower'])
@@ -913,7 +923,7 @@ Out[106]:
 1 -0.577087  0.124121  0.302614
 ```
 
-在这种情况下，传入ignore_index=True即可：
+在这种情况下，传入 `ignore_index=True` 即可：
 ```python
 In [107]: pd.concat([df1, df2], ignore_index=True)
 Out[107]: 
@@ -925,9 +935,9 @@ Out[107]:
 4  0.302614 -0.577087       NaN  0.124121
 ```
 
-![表8-3 concat函数的参数](http://upload-images.jianshu.io/upload_images/7178691-339436563b519415.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-## 合并重叠数据
+
+### 4. 合并重叠数据 combine_first
 
 还有一种数据组合问题不能用简单的合并（merge）或连接（concatenation）运算来处理。比如说，你可能有索引全部或部分重叠的两个数据集。举个有启发性的例子，我们使用NumPy的where函数，它表示一种等价于面向数组的if-else：
 ```python
@@ -963,7 +973,7 @@ In [113]: np.where(pd.isnull(a), b, a)
 Out[113]: array([ 0. ,  2.5,  2. ,  3.5,  4.5,  nan])
 ```
 
-Series有一个combine_first方法，实现的也是一样的功能，还带有pandas的数据对齐：
+Series有一个 `combine_first` 方法，实现的也是一样的功能，还带有pandas的数据对齐：
 ```python
 In [114]: b[:-2].combine_first(a[2:])
 Out[114]: 
@@ -976,7 +986,7 @@ f    0.0
 dtype: float64
 ```
 
-对于DataFrame，combine_first自然也会在列上做同样的事情，因此你可以将其看做：用传递对象中的数据为调用对象的缺失数据“打补丁”：
+对于DataFrame，combine_first自然也会在列上做同样的事情，因此你可以将其看做：⭐ **用传递对象中的数据为调用对象的缺失数据“打补丁”**：
 ```python
 In [115]: df1 = pd.DataFrame({'a': [1., np.nan, 5., np.nan],
    .....:                     'b': [np.nan, 2., np.nan, 6.],
@@ -1002,7 +1012,7 @@ Out[118]:
 3  3.0  6.0
 4  7.0  8.0
 
-In [119]: df1.combine_first(df2)
+In [119]: df1.combine_first(df2) # 用 df2 中的数据给 df1 打补丁
 Out[119]: 
      a    b     c
 0  1.0  NaN   2.0
@@ -1012,18 +1022,20 @@ Out[119]:
 4  7.0  8.0   NaN
 ```
 
-# 8.3 重塑和轴向旋转
+## 8.3 重塑和轴向旋转
 
 有许多用于重新排列表格型数据的基础运算。这些函数也称作重塑（reshape）或轴向旋转（pivot）运算。
 
-## 重塑层次化索引
+### 1. 重塑层次化索引 stack / unstack
 
 层次化索引为DataFrame数据的重排任务提供了一种具有良好一致性的方式。主要功能有二：
 
-- stack：将数据的列“旋转”为行。
-- unstack：将数据的行“旋转”为列。
+- `stack`：将数据的列“旋转”为行。
+
+- `unstack`：将数据的行“旋转”为列
 
 我将通过一系列的范例来讲解这些操作。接下来看一个简单的DataFrame，其中的行列索引均为字符串数组：
+
 ```python
 In [120]: data = pd.DataFrame(np.arange(6).reshape((2, 3)),
    .....:                     index=pd.Index(['Ohio','Colorado'], name='state'),
@@ -1183,9 +1195,10 @@ three  left          5     2
        right        10     7
 ```
 
-## 将“长格式”旋转为“宽格式”
+### 2. 将“长格式”旋转为“宽格式”
 
-多个时间序列数据通常是以所谓的“长格式”（long）或“堆叠格式”（stacked）存储在数据库和CSV中的。我们先加载一些示例数据，做一些时间序列规整和数据清洗：
+**多个时间序列数据通常是以所谓的“长格式”（long）或“堆叠格式”（stacked）存储在数据库和CSV中的**。我们先加载一些示例数据，做一些时间序列规整和数据清洗：
+
 ```python
 In [139]: data = pd.read_csv('examples/macrodata.csv')
 
@@ -1218,7 +1231,7 @@ In [145]: ldata = data.stack().reset_index().rename(columns={0: 'value'})
 
 这就是多个时间序列（或者其它带有两个或多个键的可观察数据，这里，我们的键是date和item）的长格式。表中的每行代表一次观察。
 
-关系型数据库（如MySQL）中的数据经常都是这样存储的，因为固定架构（即列名和数据类型）有一个好处：随着表中数据的添加，item列中的值的种类能够增加。在前面的例子中，date和item通常就是主键（用关系型数据库的说法），不仅提供了关系完整性，而且提供了更为简单的查询支持。有的情况下，使用这样的数据会很麻烦，你可能会更喜欢DataFrame，不同的item值分别形成一列，date列中的时间戳则用作索引。DataFrame的pivot方法完全可以实现这个转换：
+关系型数据库（如MySQL）中的数据经常都是这样存储的，因为固定架构（即列名和数据类型）有一个好处：随着表中数据的添加，item列中的值的种类能够增加。在前面的例子中，date和item通常就是主键（用关系型数据库的说法），不仅提供了关系完整性，而且提供了更为简单的查询支持。有的情况下，使用这样的数据会很麻烦，你可能会更喜欢DataFrame，不同的item值分别形成一列，date列中的时间戳则用作索引。DataFrame的 `pivot` 方法完全可以实现这个转换：
 ```python
 In [147]: pivoted = ldata.pivot('date', 'item', 'value')
 
@@ -1250,7 +1263,8 @@ date
 [203 rows x 3 columns]
 ```
 
-前两个传递的值分别用作行和列索引，最后一个可选值则是用于填充DataFrame的数据列。假设有两个需要同时重塑的数据列：
+**前两个传递的值分别用作行和列索引，最后一个可选值则是用于填充DataFrame的数据列**。假设有两个需要同时重塑的数据列：
+
 ```python
 In [149]: ldata['value2'] = np.random.randn(len(ldata))
 
@@ -1313,9 +1327,9 @@ date
 1960-09-30  2.70  2839.022   5.6  0.377984  0.286350 -0.753887
 ```
 
-## 将“宽格式”旋转为“长格式”
+### 3. 将“宽格式”旋转为“长格式” melt
 
-旋转DataFrame的逆运算是pandas.melt。它不是将一列转换到多个新的DataFrame，而是合并多个列成为一个，产生一个比输入长的DataFrame。看一个例子：
+旋转DataFrame的逆运算是 `pandas.melt`。它不是将一列转换到多个新的DataFrame，而是合并多个列成为一个，产生一个比输入长的DataFrame。看一个例子：
 ```python
 In [157]: df = pd.DataFrame({'key': ['foo', 'bar', 'baz'],
    .....:                    'A': [1, 2, 3],
@@ -1330,7 +1344,7 @@ Out[158]:
 2  3  6  9  baz
 ```
 
-key列可能是分组指标，其它的列是数据值。当使用pandas.melt，我们必须指明哪些列是分组指标。下面使用key作为唯一的分组指标：
+key列可能是分组指标，其它的列是数据值。<u>当使用pandas.melt，我们必须指明哪些列是分组指标。下面使用key作为唯一的分组指标：</u>
 ```python
 In [159]: melted = pd.melt(df, ['key'])
 
@@ -1348,7 +1362,7 @@ Out[160]:
 8  baz        C      9
 ```
 
-使用pivot，可以重塑回原来的样子：
+使用 `spivot`，可以重塑回原来的样子：
 ```python
 In [161]: reshaped = melted.pivot('key', 'variable', 'value')
 
@@ -1361,7 +1375,7 @@ baz       3  6  9
 foo       1  4  7
 ```
 
-因为pivot的结果从列创建了一个索引，用作行标签，我们可以使用reset_index将数据移回列：
+因为 pivot 的结果从列创建了一个索引，用作行标签，我们可以使用 `reset_index` 将数据移回列：
 ```python
 In [163]: reshaped.reset_index()
 Out[163]: 
@@ -1384,7 +1398,7 @@ Out[164]:
 5  baz        B      6
 ```
 
-pandas.melt也可以不用分组指标：
+pandas.melt 也可以不用分组指标：
 ```python
 In [165]: pd.melt(df, value_vars=['A', 'B', 'C'])
 Out[165]: 
@@ -1413,6 +1427,16 @@ Out[166]:
 8        B     6
 ```
 
-#8.4 总结
+## ✅ End 
 
-现在你已经掌握了pandas数据导入、清洗、重塑，我们可以进一步学习matplotlib数据可视化。我们在稍后会回到pandas，学习更高级的分析。
+现在你已经掌握了pandas数据导入、清洗、重塑，我们可以进一步学习 matplotlib 数据可视化。我们在稍后会回到pandas，学习更高级的分析。
+
+---
+
+# 📚 References
+
+- 📕  [《利用Python进行数据分析-第2版-中文译版》](https://www.jianshu.com/p/04d180d90a3f)
+
+  <img src="https://gitee.com/veal98/images/raw/master/img/20200607091609.png" style="zoom:50%;" />
+
+- 🚝 [Gihub《Python数据分析》配套源码](https://github.com/wesm/pydata-book)
