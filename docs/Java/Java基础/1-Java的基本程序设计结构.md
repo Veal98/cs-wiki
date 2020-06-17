@@ -1,9 +1,3 @@
-> 💡 正值大四升研究生的暑假，准备按照《Java 核心技术》全面复盘一下 Java 基础知识，以求完善知识体系，大概率将 Java 作为自己以后的主语言。
->
-> 💻 本笔记开发环境为 Java 8 + VS-Code。
-
----
-
 # ☕ Java 的基本程序设计结构
 
 ## 1. HelloWorld
@@ -118,7 +112,7 @@ if(Double.isNaN(x))
 
 ### ⑤ boolean 类型
 
-boolean (布尔）类型有两个值：false 和 true, 用来判定逻辑条件。**整型值和布尔值之间不能进行相互转换**。
+boolean (布尔）类型有两个值：`false` 和 `true`, 用来判定逻辑条件。**整型值和布尔值之间不能进行相互转换**。
 
 > **在 C++ 中， 数值甚至指针可以代替 boolean 值。值 0 相当于布尔值 false, 非 0 值相当于布尔值 true, 在 Java 中则不是这样**。 因此， Java 程序员不会遇到下述麻烦： 
 >
@@ -186,6 +180,11 @@ public class Demo{
 ```
 
 **关键字 `final` 表示这个变量只能被赋值一次。一旦被赋值之后，就不能够再更改了。习惯上, 常量名使用全大写。**
+
+```java
+final int A = 1;
+// A = 2;  // cannot assign value to final variable 'x'
+```
 
 在 Java 中，经常希望某个常量可以在一个类中的多个方法中使用，通常将这些常量称为 类常量。可以使用关键字 `static final` 设置一个类常量。 下面是使用类常量的示例：
 
@@ -267,7 +266,7 @@ public class Demo{
 > System.out.println(sqrt(PI));
 > ```
 >
-> 在第 3 章中 对象与类 中将讨论**静态导入**。
+> 在<u>第 2 章 对象与类</u> 中将讨论**静态导入**。
 
 ### ② 数值类型之间的转换
 
@@ -415,32 +414,895 @@ enum Size{SMALL,MEDIUM,LARGE,EXTRA_LARGE};
 size = Size.MEDIUM;
 ```
 
-Size 类型的变量只能存储这个类型声明中给定的某个枚举值，或者 null 值，**null 表示这个变量没有设置任何值**。 有关枚举类型的详细内容将在第 4 章介绍。
+Size 类型的变量只能存储这个类型声明中给定的某个枚举值，或者 null 值，**null 表示这个变量没有设置任何值**。有关枚举类型 将在<u>第 3 章 继承</u>介绍。
 
-## 6. 字符串
+## 6. 字符串 String
+
+### ① 概述
+
+从概念上讲， Java 字符串就是 Unicode 字符序列。 例如， 串 `“Java\u2122” ` 由 5 个 Unicode 字符 J、a、 v、a 和™。**Java 没有内置的字符串类型**， 而是在标准 Java 类库中提供了 一个**预定义类** `String`。每个用**双引号括起来的字符串都是 String类的一个实例**：
+
+```java
+String e = ""; // 空串
+String a = "hello";
+```
+
+**在 Java 8 中，String 内部使用 char 数组存储数据**。
+
+```java
+public final class String
+    implements java.io.Serializable, Comparable<String>, CharSequence {
+    /** The value is used for character storage. */
+    private final char value[];
+}
+```
+
+**在 Java 9 之后，String 类的实现改用 byte 数组存储字符串**，同时使用 `coder` 来标识使用了哪种编码。
+
+```java
+public final class String
+    implements java.io.Serializable, Comparable<String>, CharSequence {
+    /** The value is used for character storage. */
+    private final byte[] value;
+
+    /** The identifier of the encoding used to encode the bytes in {@code value}. */
+    private final byte coder;
+}Copy to clipboardErrorCopied
+```
+
+value 数组被声明为 final，这意味着 value 数组初始化之后就不能再引用其它数组。并且 String 内部没有改变 value 数组的方法，因此可以保证 String 不可变。
+
+### ② 字串 substring
+
+String 类的 substring 方法可以从一个较大的字符串提取出一个子串。例如：
+
+```java
+String a = "hello";
+String s = a.substring(0,3); // 从下标 0 开始 到 下标 3 为止，不包含 3。 左闭右开
+```
+
+substring 的工作方式有一个优点：**容易计算子串的长度**：字符串 s.substring(a, b) 的长度 为 b-a。
+
+### ③ 拼接 +
+
+Java语言允许使用 + 号连接（拼接）两个字符串。
+
+```java
+String a = "hello";
+String b = "world";
+String c = a + b; // c = "helloworld"
+```
+
+**当将一个字符串与一个非字符串的值进行拼接时，后者被转换成字符串**（在<u>第 3 章 继承</u>中可 以看到，<u>任何一个 Java 对象都可以转换成字符串</u>）。例如：
+
+```java
+int age = 13;
+String rating = "PG" + age; // rating = "PG13"
+```
+
+这种特性通常用在输出语句中。例如：
+
+```java
+int a = 12;
+System.out.println("a = " + a);
+```
+
+**如果需要把多个字符串放在一起， 用一个定界符分隔，可以使用静态 `join` 方法**：
+
+```java
+String all = String.join("/","S","M","L"); // all = "S/M/L"
+```
+
+### ④ 不可变字符串
+
+String 类没有提供用于直接修改字符串的方法。首先提取需要的字符， 然后再拼接上替换的字符串：
+
+```java
+String a = "hello";
+a = a.substring(0,3) + "ab"; // a = "helab"
+```
+
+⭐ 由于不能修改 Java 字符串中的字符， 所以在 **Java 文档中将 String 类对象称为不可变字符串**， 如同数字 3 永远是数字 3 —样，**字符串“ hello” 永远包含字符 h、 e、1、 1 和 o 的代 码单元序列， 而不能修改其中的任何一个字符。当然， 可以修改字符串变量 a， 让它 引用另外一个字符串**， 这就如同可以将存放 3 的数值变量改成存放 4 一样。
+
+通过拼接“ hel” 和“ ab ” 来创建一个新字符串的效率确实不高。但是，不可变字符串却有一个优点：**编译器可以让字符串共享**。
+
+可以想象将各种字符串存放在公共的存储池中。字符串变量指向存储池中相应的位置。如果复制一个字符串变量， 原始字符串与复制的字符串共享相同的字符。
+
+> 📜 C++ 字符串是可修改的， 也就是说，可以修改字符串中的单个字符。
+
+### ⑤ 检测字符串是否相等 equals
+
+可以使用 equals 方法检测两个字符串是否相等。
+
+对于表达式： `s.equals(t)`， 如果字符串 s 与字符串 t 相等， 则返回 true ; 否则， 返回 false。
+
+需要注意，s与 t 可以是字符串变量， 也可以是字符串字面量。 例如， 下列表达式是合法的：
+
+```java
+String a = "hello";
+"hello".equals(a); // true
+```
+
+要想检测两个字符串是否相等，而不**区分大小写**， 可以使用 `equalsIgnoreCase` 方法：
+
+```java
+"Hello".equals(a); // true
+```
+
+⭐ **一定不要使用 `==` 运算符检测两个字符串是否相等！ 这个运算符只能够确定两个字符串是否放置在同一个位置上。**当然， 如果字符串放置在同一个位置上， 它们必然相等。但是， 完全有可能将内容相同的多个字符串的拷贝放置在不同的位置上。
+
+```java
+public class Demo{
+    public static void main(String[] args) {
+        String a = "hello";
+        if(a == "hello")
+            System.out.println("a == hello is true");
+        else
+            System.out.println("a == hello is false");
+        if(a.substring(0,3) == "hel")
+            System.out.println("a.substring(0,3) == \"hel\"");
+        else
+            System.out.println("a.substring(0,3) == \"hel\" is false");
+    }
+}
+```
+
+<img src="https://gitee.com/veal98/images/raw/master/img/20200617094812.png" style="zoom:80%;" />
 
 
+
+> 📜 C++ 的 string 类重载了 `==` 运算符以便检测字符串内容的相等性。 可惜 Java 没有采用这种方式， 它的字符串“ 看起来、 感觉起来” 与数值一样， 但进行相等性测试时， 其操作方式又类似于指针。
+
+### ⑥ 空串与 Null 串
+
+空串 "" 是长度为 0 的字符串。可以调用以下代码检查一个字符串是否为空：
+
+```java
+if(str.length() == 0){
+    // todo
+}
+```
+
+或者
+
+```java
+if(str.equals("")){
+	// todo
+}
+```
+
+**空串是一个 Java 对象， 有自己的串长度（ 0 ) 和内容（空）**。
+
+不过， String 变量还可以存放一个特殊的值， 名为 `null`, 这表示目前没有任何对象与该变量关联。要检查一个字符串是否为 null, 要使用以下条件：
+
+```java
+if(str == null){
+    // todo
+}
+```
+
+有时要检查一个字符串既不是 null 也不为空串，这种情况下就需要使用以下条件：
+
+```java
+if(str != null && str.length() != 0){
+    // todo
+}
+```
+
+**首先要检查 str 不为 null。如果在一个 null 值上调用方法， 会出现错误**。
+
+### ⑦ 码点与代码单元
+
+Java 字符串由 char 值序列组成。从 3.3.3 节“ char 类型” 已经看到， char 数据类型是一 个采用 UTF-16 编码表示 Unicode 码点的代码单元。大多数的常用 Unicode 字符使用一个代 码单元就可以表示，而辅助字符需要一对代码单元表示。
+
+`length` 方法将返回采用 UTF-16 编码表示的给定字符串所需要的代码单元数量。例如：
+
+```java
+String a = "hello";
+int len = a.length(); // len = 5
+```
+
+要想得到实际的长度，即码点数量，可以调用：
+
+```java
+int cpCount = a.codePointCount(0, len); // 5
+```
+
+**调用 `s.charAt(n) ` 将返回位置 n 的代码单元**，n 介于 0 ~ s.length() - 1之间。例如：
+
+```java
+char last = a.charAt(4); // "o"
+```
+
+要想得到第 i 个码点，应该使用下列语句：
+
+```java
+int index = a.offsetByCodePoints(0, 2); // 2
+int cp = a.codePointAt(index); // 108
+```
+
+###  ⑧ String API
+
+Java 中的 String类包含了 50 多个方法。令人惊讶的是绝大多数都很有用， 可以设想使用的频率非常高。下面的 API 注释汇总了一部分最常用的方法：
+
+> 📜 这里还列出了所给类的版本号。如果某个方法是在这个版本之后添加的， 就会给出 一个单独的版本号。
+>
+> 👉 更多方法请参见：[String 官方联机文档  https://docs.oracle.com/javase/8/docs/api/](https://docs.oracle.com/javase/8/docs/api/)
+
+- `java.lang.String`
+
+  ![](https://gitee.com/veal98/images/raw/master/img/20200617100840.png)
+
+  ![](https://gitee.com/veal98/images/raw/master/img/20200617100736.png)
+
+  ![](https://gitee.com/veal98/images/raw/master/img/20200617100811.png)
+
+> 📜 在 API 注释中， 有一些 `CharSequence` 类型的参数这是一种**接口类型**， **所有字符串都属于这个接口** ，<u>第 4 章 接口、lamda表达式与内部类</u> 将介绍更多有关接口类型的内容。现在只需要知道只要看到 一个 CharSequence 形参， 完全可以传入 String 类型的实参。
+
+### ⑨ StringBuiler
+
+#### Ⅰ String 字符串拼接问题
+
+有些时候， 需要由较短的字符串构建字符串， 例如， 按键或来自文件中的单词。采用字符串连接的方式达到此目的效率比较低。⭐ **由于String类的对象内容不可改变，所以每当进行字符串拼接时，总是会在内存中创建一个新的对象。**既耗时， 又浪费空间。例如：
+
+```java
+public class StringDemo {
+    public static void main(String[] args) {
+        String s = "Hello";
+        s += "World";
+        System.out.println(s);
+    }
+}
+```
+
+这段代码其实总共产生了三个字符串，即`"Hello"`、`"World"`和`"HelloWorld"`。引用变量 s 首先指向`Hello`对象，最终指向拼接出来的新字符串对象，即`HelloWord` 。
+
+👍 使用 `StringBuilder/ StringBuffer` 类就可以避免这个问题的发生。
+
+#### Ⅱ StringBuilder 初始化
+
+> 📜 在 JDK5.0 中引入 `StringBuilder` 类。 这个类的前身是 `StringBuffer`, `StringBuffer`效率稍有些低， 但允许采用**多线程**的方式执行添加或删除字符的操作。如果所有字符串在一个单线程中编辑 （通常都是这样) ， 则应该用 `StringBuilder` 替代它。 **这两个类的 API 是相同的**。
+
+StringBuiler不能像 String 那样直接用字符串赋值，所以也不能那样初始化。**它需要通过构造方法来初始化**
+
+如果需要用许多小段的字符串构建一个字符串， 那么应该按照下列步骤进行。 首先， 构建一个空的字符串构建器：
+
+```java
+StringBuilder builder = new StringBuilder();
+```
+
+当每次需要添加一部分内容时， 就调用 `append` 方法：
+
+```java
+char ch = 'a';
+builder.append(a);
+
+String str = "ert"
+builder.append(str);
+```
+
+在需要构建字符串时就凋用  `toString` 方法， 将可以得到一个 String 对象， 其中包含了构建器中的字符序列。
+
+```java
+String mystr = builder.toString();
+```
+
+#### Ⅲ StringBuiler API
+
+下面的 API 注释包含了 StringBuilder 类中的重要方法：（StringBuffer 和 StringBuilder API 相同）
+
+- `java.lang.StringBuilder`
+
+  ![](https://gitee.com/veal98/images/raw/master/img/20200617104211.png)
+
+#### Ⅳ String、StringBuffer、StringBuilder 比较
+
+**可变性**
+
+- String 不可变
+- StringBuffer 和 StringBuilder 可变
+
+**线程安全**
+
+- String 不可变，因此是线程安全的
+- StringBuilder 不是线程安全的，效率较高
+- StringBuffer 是线程安全的，内部使用 synchronized 进行同步，效率较低
+
+### ⑩ 字符串常量池 String Pool
+
+**字符串常量池**（String Pool）保存着所有字符串字面量（literal strings），这些字面量在编译时期就确定。不仅如此，还可以使用 String 的 `intern() `方法在运行过程中将字符串添加到 String Pool 中。
+
+**当一个字符串调用 intern() 方法时，如果 String Pool 中已经存在一个字符串和该字符串值相等（使用 equals() 方法进行确定），那么就会返回 String Pool 中字符串的引用**；否则，就会在 String Pool 中添加一个新的字符串，并返回这个新字符串的引用。
+
+下面示例中，s1 和 s2 采用 **构造函数 new String() **的方式新建了两个不同字符串，而 s3 和 s4 是通过 s1.intern() 方法取得一个字符串引用。**intern() 首先把 s1 引用的字符串放到 String Pool 中，然后返回这个字符串引用**。因此 s3 和 s4 引用的是同一个字符串。
+
+```java
+String s1 = new String("aaa");
+String s2 = new String("aaa");
+System.out.println(s1 == s2);           // false
+String s3 = s1.intern();
+String s4 = s1.intern();
+System.out.println(s3 == s4);           // true
+```
+
+如果是采用 "bbb" 这种**字面量的形式**直接创建字符串，**会自动地将字符串放入 String Pool 中**。
+
+```java
+String s5 = "bbb";
+String s6 = "bbb";
+System.out.println(s5 == s6);  // true
+```
+
+🚩 **总结：**
+
+- `String str = "i"` 的方式，java 虚拟机会自动将其分配到常量池中；
+
+- `String str = new String(“i”) ` 则会被分到堆内存中。可通过 intern 方法手动加入常量池
+
+### ⑪ new String(“xyz”) 创建了几个字符串对象
+
+使用这种方式一共会创建两个字符串对象（前提是 String Pool 中还没有 "abc" 字符串对象）。
+
+- "abc" 属于字符串字面量，因此编译时期会在 String Pool 中创建一个字符串对象，指向这个 "abc" 字符串字面量；
+- 而使用 new 的方式会在堆中创建一个字符串对象。
 
 ## 7. 输入输出
 
+### ① 读取输入 Scanner
 
+前面已经看到，打印输出到“ 标准输出流”（即控制台窗口）是一件非常容易的事情，只要 调用 `System.out.println` 即可。然而，读取“ 标准输人流” `System.in` 就没有那么简单了。要想通过控制台进行输人，首先需要构造一个 `Scanner` 对象，并与“ 标准输人流” `System.in` 关联。
+
+> 📜 Scanner 类定义在 `java.util.Scanner` 包中。当使用的类不是定义在基本 java.lang 包中时，一定要使用 import 指示字将相应的包加载进来。
+
+```java
+Scanner in = Scanner(System.in);
+```
+
+（构造函数和 new 操作符将在 <u>第 2 章 对象与类</u> 中详细地介绍）
+
+现在，就可以使用 Scanner 类的各种方法实现输入操作了。例如， `nextLine` 方法将输入 一行。
+
+```java
+System.out.println("input");
+String name = in.nextLine();
+```
+
+使用 nextLine 方法是因为在输人行中有可能包含空格。要想读取一个单词（以空白 符作为分隔符，) 就调用
+
+```java
+String name = in.next();
+```
+
+要想读取一个整数， 就调用 `nextlnt` 方法。
+
+```java
+int age = in.nextInt()
+```
+
+与此类似，要想读取一个浮点数， 就调用 `nextDouble` 方法。
+
+👇 API 如下：
+
+![](https://gitee.com/veal98/images/raw/master/img/20200617112448.png)
+
+### ② 格式化输出 printf
+
+在早期的 Java 版本中，格式化数值曾引起过一些争议。庆幸的是，Java SE 5.0 沿用了 C 语言库函数中的 `printf` 方法。例如，调用
+
+```java
+double x = 10000.0 / 3.0;
+System.out.printf("%8.2f",x); // 3333.33
+```
+
+可以用 8 个字符的宽度和小数点后两个字符的精度打印 x。也就是说，打印输出一个空格和 7 个字符。
+
+在 printf 中，可以使用多个参数， 例如：
+
+```java
+System.out.printf("Hello,%s,Next year, you will be %d",name,age);
+```
+
+### ③ 文件输入与输出
+
+要想对文件进行读取，就需要一个用 File 对象构造一个 Scanner 对象，如下所示：
+
+```java
+Scanner in = new Scanner(Paths.get("myfile.txt"),"UTF-8");
+```
+
+**如果文件名中包含反斜杠符号，就要记住在每个反斜杠之前再加一个额外的反斜杠**：`c:\\docs\\file.txt`
+
+现在，就可以利用前面介绍的任何一个 Scanner 方法对文件进行读取。 要想写入文件， 就需要构造一个 `PrintWriter` 对象。在构造器中，只需要提供文件名：
+
+```java
+PrintWriter out = new PrintWriter("file.txt","UTF-8");
+```
+
+如果文件不存在，则创建该文件。 可以像输出到 System.out—样使用 print、 println 以及 printf 命令。
+
+👇 API 如下：
+
+![](https://gitee.com/veal98/images/raw/master/img/20200617113401.png)
 
 ## 8. 控制流程
 
+> 📜 Java 的控制流程结构与 C 和 C++ 的控制流程结构一样， 只有很少的例外情 况。没有 goto 语句，但 break 语句可以带标签， 可以利用它实现从内层循环跳出的目的 (这种情况 C 语言采用 goto 语句实现) 。另外，还有一种变形的 for 循环， 在 C 或 C++ 中 没有这类循环。它有点类似于 C# 中的 foreach 循环。
 
+### ① 块作用域
 
-## 9. 大数值
+在深入学习控制结构之前， 需要了解块（block) 的概念。
 
+块（即复合语句）是指由一对大括号括起来的若干条简单的 Java 语句。**块确定了变量的作用域**。一个块可以嵌套在另一个块中。下面就是在 main方法块中嵌套另一个语句块的示例。
 
+```java
+public static void main(String[] args) {
+    int n;
+    {
+        int k;
+    }
+}
+```
+
+但是，**不能在嵌套的两个块中声明同名的变量**。例如，下面的代码就有错误，而无法通过编译
+
+```java
+public static void main(String[] args) {
+    int n;
+    {
+        int n;
+    }
+}
+```
+
+> 📜 <u>在 C++ 中， 可以在嵌套的块中重定义一个变量</u>。在内层定义的变量会覆盖在外层定义的变量。这样，有可能会导致程序设计错误， 因此在 **Java 中不允许这样做**。
+
+### ② 条件语句 if / else
+
+```java
+if(a >= b){
+	// todo
+}
+else{
+	// todo
+}
+```
+
+else 子句与最邻近的 if 构成一组。
+
+```java
+if(condition1){
+	// todo
+}
+else if(condition2){
+	// todo
+}
+else if(condition3){
+	// todo
+}
+else{
+	// todo
+}
+```
+
+### ③ 循环 while
+
+```java
+while(conditon){
+	// todo
+}
+```
+
+如果开始循环条件的值就为 false, 则 while 循环体一次也不执行
+
+while 循环语句首先检测循环条件。因此， 循环体中的代码有可能不被执行。如果希望循环体至少执行一次， 则应该将检测条件放在最后。 使用 `do/while` 循环语句可以实现这种操作方式。它的语法格式为：
+
+```java
+do{
+	// todo
+}while(conditon);
+```
+
+### ④ 确定循环 for
+
+for 循环语句是支持迭代的一种通用结构， 利用每次迭代之后更新的计数器或类似的变量 来控制迭代次数。
+
+```java
+for(int i = 0; i < 10;i ++)
+	System.out.println(i);
+```
+
+### ⑤ 多重选择：switch
+
+```java
+import java.util.*;
+public class Demo{
+    int n = 0;
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("select an option (1,2,3,4)");
+        int choice = in.nextInt();
+        switch(choice){
+            case 1:
+                System.out.println("1");
+                break;
+            case 2:
+                System.out.println("2");
+                break;
+            case 3:
+                System.out.println("3");
+                break;
+            case 4:
+                System.out.println("4");
+                break;
+            default:
+                System.out.println("-1");
+                break;    
+        }
+    }
+}
+```
+
+case 标签可以是： 
+
+- 类型为 char、byte、 short 或 int 的常量表达式。 
+- 枚举常量。 
+- 从 Java SE 7开始， case 标签还可以是字符串字面量。
+
+> 🚨 有可能触发多个 case 分支。 **如果在 case 分支语句的末尾没有 break 语句， 那么就会接着执行下一个 case 分支语句**。这种情况相当危险， 常常会引发错误。 为此，我们在 程序中很少使用 switch 语句
+
+### ⑥ 中断控制流程语句 break / continue
+
+- **不带标签的 break**
+
+  ```java
+  while (years <= 100){
+  	balance += payment;
+  	double interest = balance * interestRate / 100;
+  	balance += interest;
+  	if (balance >= goal ) 
+          break;
+  	years++ ;
+  }
+  ```
+
+  在循环开始时， 如果 years > 100, 或者在循环体中 balance >= goal , 则退出循环语句。
+
+- **带标签的 break**
+
+  Java 还提供了一种带标签的 break语句，用于跳出多重嵌套的循环语句。 有时候，在嵌套很深的循环语句中会发生一些不可预料的事情。此时可能更加希望跳到嵌套的所有循环语句之外。通过添加一些额外的条件判断实现各层循环的检测很不方便。 
+
+  这里有一个示例说明了 break 语句的工作状态。请注意，**标签必须放在希望跳出的最外层循环之前， 并且必须紧跟一个冒号。**
+
+  ```java
+  Scanner in = new Scanner(System.in);
+  int n;
+  read_data:
+  while (. . .){ // this loop statement is tagged with the label
+  	for (. . .){ // this inner loop is not labeled
+  		Systen.out.print("Enter a number >= 0: ");
+  		n = in.nextlnt();
+  		if (n < 0) // should never happen-can’t go on
+  			break read.data;
+  			// break out of readjata loop
+  	}
+  }
+  // this statement is executed immediately after the labeled break
+  if (n < 0){ // check for bad situation
+  	// deal with bad situation
+  }
+  else{
+  	// carry out normal processing
+  }
+  ```
+
+  **如果输入有误，通过执行带标签的 break 跳转到带标签的语句块末尾**。对于任何使用 break语句的代码都需要检测循环是正常结束， 还是由 break 跳出。
+
+- **continue**
+
+  最后，还有一个 continue 语句。与 break 语句一样， 它将中断正常的控制流程。**continue 语句将控制转移到最内层循环的首部**。
+
+  ```java
+  Scanner in = new Scanner(System.in);
+  while (sum < goal ){
+      System.out.print("Enter a number: ")；
+  	n = in.nextlntO；
+  	if (n < 0) 
+          continue;
+  	sum += n; // not executed if n < 0
+  }
+  ```
+
+  如果 n < 0, 则 continue 语句越过了当前循环体的剩余部分， 立刻跳到循环首部。
+
+  <u>如果将 continue 语句用于 for 循环中， 就可以跳到 for 循环的“ 更新” 部分</u>。例如， 下面这个循环：
+
+  ```java
+  for (count = 1; count <= 100; count++){
+  	System.out.print("Enter a number, -1 to quit: ");
+  	n = in.nextlntO；
+  	if (n < 0) 
+  		continue;
+  	sum += n; // not executed if n < 0
+  }
+  ```
+
+  **如果 n < 0, 则 continue 语句跳到 count++ 语句**。
+
+## 9. 大数类 BigInteger / BigDecimal
+
+如果基本的整数和浮点数精度不能够满足需求， 那么可以使用 `java.math` 包中的两个很有用的类：`Biglnteger` 和 `BigDecimal` 这两个类可以处理包含任意长度数字序列的数值。 **`Biglnteger` 类实现了任意精度的整数运算，` BigDecimal` 实现了任意精度的浮点数运算。**
+
+<u>使用静态的 `valueOf` 方法可以将普通的数值转换为大数值</u>：
+
+```java
+BigInteger a = BigInteger.valueOf(100);
+```
+
+遗憾的是，不能使用人们熟悉的算术运算符（如：`+` 和 `*`) 处理大数值。 而需要使用大数类中的 add 和 multiply 方法。
+
+```java
+Biglnteger c = a.add(b); // c = a + b
+Biglnteger d = c.multiply(b.add(Biglnteger.valueOf(2))); // d = c * (b + 2)
+```
+
+> 📜 **与 C++ 不同， Java 没有提供运算符重载功能**。 程序员无法重定义 `+` 和 `*` 运算 符， 使其应用于 BigInteger 类的 add 和 multiply 运算。Java 语言的设计者确实为字符串的连接重载了 + 运算符，但没有重载其他的运算符，也没有给 Java 程序员在自己的类中重载运算符的机会 ，
+
+👇 API 如下：
+
+![](https://gitee.com/veal98/images/raw/master/img/20200617142617.png)
 
 ## 10. 数组
 
+### ① 概述
 
+```java
+int[] a = new int[100]
+```
 
+这条语句创建了一个可以存储 100 个整数的数组。
 
+> 📜 可以使用下面两种形式声明数组 ：
+>
+> `int[] a;a`
+>
+> 或 
+>
+> `int a[];` 
+>
+> 大多数 Java 应用程序员喜欢使用第一种风格， 因为它将类型 `int[] `( 整型数组）与变量名分开了。
+
+创建一个数字数组时， 所有元素都初始化为 0。boolean 数组的元素会初始化为 fals， **对象数组的元素则初始化为一个特殊值 `null`, 这表示这些元素（还）未存放任何对象**。例如：
+
+```java
+String[] news = new String[10];
+```
+
+会创建一个包含 10 个字符串的数组， 所有字符串都为 null。
+
+要想获得数组中的元素个数，可以使用 `array.length`：
+
+```java
+System.out.println(a.length());
+```
+
+**一旦创建了数组， 就不能再改变它的大小**（尽管可以改变每一个数组元素）。**如果经常需要在运行过程中扩展数组的大小， 就应该使用另一种数据结构—数组列表（array list)** 。有关数组列表的详细内容请参看<u>第 3 章 继承</u>。
+
+### ② for each 循环
+
+Java 有一种功能很强的循环结构， 可以用来依次处理数组中的每个元素（其他类型的元素集合亦可）而**不必为指定下标值而分心**。 这种**增强的 for 循环**的语句格式为：
+
+```java
+for(variable:collection){
+    // todo
+}
+```
+
+**collection 这一集合表达式必须是一个数组或者是一个实现了 Iterable 接口的类对象**（例如 ArrayList)。
+
+```java
+int[] a = new int[100];
+for(int i = 0; i < 100; i++)
+    a[i] = i;
+
+for(int element: a)
+    System.out.println(element);
+```
+
+> 📜 for each 循环语句的循环变量将会遍历数组中的每个元素， 而不需要使用下标值。
+
+>  🚩 **有个更加简单的方式打印数组中的所有值**， 即利用 `Arrays` 类的 `toString` 方法。 调用 `Arrays.toString(a)`, 返回一个包含数组元素的字符串，这些元素被放置在括号内， 并用逗号分隔， 例如，“ [2,3,5,7,11,13] ” ，要想打印数组，可以调用 
+>
+> ```java
+> System.out.println(Arrays.toString(a));
+> ```
+
+### ③ 数组初始化以及匿名数组
+
+在 Java中， 提供了一种创建数组对象并同时赋予初始值的简化书写形式。下面是例子： 
+
+```java
+int[] smallPrimes = { 2, 3, 5, 7, 11, 13 };
+```
+
+ 请注意， 在使用这种语句时，不需要调用 new。 
+
+甚至还可以初始化一个**匿名的数组**： 
+
+```java
+new int[] { 17, 19, 23, 29, 31, 37 } 
+```
+
+这种表示法将创建一个新数组并利用括号中提供的值进行初始化，数组的大小就是初始值的 个数。 **使用这种语法形式可以在不创建新变量的情况下重新初始化一个数组**。例如： 
+
+```java
+smallPrimes = new int[] { 17, 19, 23, 29, 31, 37 };
+```
+
+> 📜 在 Java 中， 允许数组长度为 0。**在编写一个结果为数组的方法时， 如果碰巧结果为空， 则这种语法形式就显得非常有用**。此时可以创建一个长度为 0 的数组： 
+>
+> ```java
+> new elementType[0] 
+> ```
+>
+> 注意， 数组长度为 0 与 null 不同
+
+### ④ 数组拷贝
+
+在 Java 中，允许**将一个数组变量拷贝给另一个数组变量。这时， 两个变量将引用同一个数组**：
+
+```java
+int[] a = {1,2,3,4,5};
+int[] b = a;
+b[1] = 10; // a[1] 也变成 10
+```
+
+**如果希望将 一个数组的所有值拷贝到一个新的数组中去， 就要使用 Arrays 类的 `copyOf` 方法**：
+
+```java
+int[] c = Arrays.copyOf(a, 2 * a.length());
+```
+
+💡 **第 2 个参数是新数组的长度。这个方法通常用来增加数组的大小**：<u>如果数组元素是数值型，那么多余的元素将被赋值为 0 ; 如果数组元素是布尔型，则将赋值 为 false。相反，如果长度小于原始数组的长度，则只拷贝最前面的数据元素。</u>
+
+### ⑤ 命令行参数
+
+前面已经看到多个使用 Java 数组的示例。 每一个 Java 应用程序都有一个带 `String[] args `参数的 main 方法。**这个参数表明 main 方法将接收一个字符串数组， 也就是命令行参数**。
+
+```java
+public class Demo {
+    public static void main(String[] args){
+        if (args.length == 0 || args[0].equals("-h"))
+            System.out.print("Hello,");
+        else if (args[0].equals("-g"))
+            System.out.print("Goodbye,");
+        // print the other command-line arguments
+        for (int i = 1; i < args.length; i ++)
+            System.out.print(" " + args[i]);
+        System.out.println("!");
+    }
+}
+```
+
+<img src="https://gitee.com/veal98/images/raw/master/img/20200617145407.png" style="zoom:80%;" />
+
+> 📜 在 Java 应用程序的 main 方法中， `程序名并没有存储在 args 数组中`。例如, 当使用下列命令运行程序时 :
+>
+> `java Demo-h world`， 
+>
+> `args[0]` 是 `-h`， 而不是“ Message” 或“ java”
+
+### ⑥ 数组排序
+
+要想对数值型数组进行排序， 可以使用 Arrays 类中的 `sort` 方法：
+
+```java
+int[] a = new int[1000];
+...
+Arrays.sort(a);
+```
+
+**这个方法使用了优化的快速排序算法**。
+
+👇 Arrays 类还提供了几个使用很便捷的方法，API 如下：
+
+![](https://gitee.com/veal98/images/raw/master/img/20200617150457.png)
+
+### ⑦ 多维数组
+
+在 Java 中， 声明一个二维数组相当简单。例如： 
+
+```java
+double[][] a;
+```
+
+ **与一维数组一样， 在调用 new 对多维数组进行初始化之前不能使用它**。 在这里可以这样初始化：
+
+```java
+a = new double[2][3]:
+```
+
+另外， 如果知道数组元素， 就可以不调用 new， 而直接使用简化的书写形式对多维数组 进行初始化。例如：
+
+```java
+int[][] a = { 
+    {16, 3, 2, 13}， 
+    {5, 10, 11, 8}, 
+    {9, 6, 7, 12}, 
+    {4, 15, 14, 1} 
+};
+```
+
+ 一旦数组被初始化， 就可以利用两个方括号访问每个元素， 例如， `a[i][j]`。
+
+> 📜  for each 循环语句不能自动处理二维数组的每一个元素。它是按照行， 也就是一维数组处理的。要想访问二维数组 a 的所有元素， 需要使用两个嵌套的循环， 如下所示：
+>
+> ```java
+> public class Demo {
+>     public static void main(String[] args){
+>         int[][] a = { 
+>             {16, 3, 2, 13},
+>             {5, 10, 11, 8}, 
+>             {9, 6, 7, 12}, 
+>             {4, 15, 14, 1} 
+>         };
+>         for(int[] row : a)
+>             for(int value : row)
+>                 System.out.println(row + " " + value);
+>     }
+> }
+> ```
+> <img src="https://gitee.com/veal98/images/raw/master/img/20200617151555.png" style="zoom:80%;" />
+
+> 💡 要想快速地打印一个二维数组的数据元素列表， 可以调用：
+>
+> ```java
+> System.out.println(Arrays.deepToString(a));
+> // [[16, 3, 2, 13], [5, 10, 11, 8], [9, 6, 7, 12], [4, 15, 14, 1]]
+> ```
+
+### ⑧ 不规则数组
+
+到目前为止，读者所看到的数组与其他程序设计语言中提供的数组没有多大区别。但实际存在着一些细微的差异， 而这正是 Java 的优势所在：Java 实际上没有多维数组，只有一维数组。多维数组被解释为“ 数组的数组。”
+
+<img src="https://gitee.com/veal98/images/raw/master/img/20200617153937.png" style="zoom: 67%;" />
+
+由于可以单独地存取数组的某一行， 所以可以让两行交换。
+
+```java
+int[] temp = a[1];
+a[1] = a[2];
+a[2] = temp;
+```
+
+还可以方便地构造一个**“ 不规则” 数组**， 即**数组的每一行有不同的长度**。下面是一个典型的示例。
+
+```java
+import java.util.Arrays;
+
+public class Demo {
+    public static void main(String[] args){
+        int[][] odds = new int[6][];
+        for(int i = 0; i < 6; i++)
+            odds[i] = new int[i+1]; // 二维数组的每行都增加一个元素
+        for(int i = 0; i < odds.length; i++){
+            for(int j = 0; j < odds[i].length; j++){
+                odds[i][j] = i + 1;
+            }
+        }
+        System.out.println(Arrays.deepToString(odds)); 
+        // [[1], [2, 2], [3, 3, 3], [4, 4, 4, 4], [5, 5, 5, 5, 5], [6, 6, 6, 6, 6, 6]]
+    }
+}
+```
 
 ---
 
 # 📚 References
 
 - 《Java 核心技术 - 卷 1 基础知识 - 第 10 版》
+
+- 🐤 [CS-Notes](https://cyc2018.github.io/CS-Notes)
+
+- 💜 [java经验总结-208道面试题](https://www.zhihu.com/question/27858692/answer/787505434)
+
+- 😈 [我没有三颗心脏-Java面试知识点](https://www.cnblogs.com/wmyskxz/tag/Java面试知识点/)

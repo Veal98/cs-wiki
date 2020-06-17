@@ -93,16 +93,13 @@
 
 ## 🍵 Java
 
-> 🔊 因研究生方向为 AI，Java 板块内容暂时停更
-
 ### 👔 Java 基础
 
-- [1 - 基础](Java/Java基础/JavaSE基础知识/1-基础.md)
-- [2 - 常见 API](Java/Java基础/JavaSE基础知识/2-常见API.md)
-- [3 - 反射 + 序列化 + 动态代理](Java/Java基础/JavaSE基础知识/3-反射+序列化+动态代理.md)
-- [4 - 集合 + 泛型](Java/Java基础/JavaSE基础知识/4-集合+泛型.md)
-- [5 - 异常](Java/Java基础/JavaSE基础知识/5-异常.md)
-- [6 - 多线程](Java/Java基础/JavaSE基础知识/6-多线程.md)
+> 🔊 正值大四升研究生的暑假，总觉得之前总结的 Java 基础太过浮躁、急于求成了，准备按照《Java 核心技术》并综合之前所总结的知识点全面复盘一下 Java 基础，以求完善知识体系，大概率将 Java 作为自己以后的主语言。
+>
+> 💻 本笔记开发环境为 Java 8 + VS-Code。
+
+- [1 - Java 的基本程序设计结构](Java/Java基础/1-Java的基本程序设计结构.md)
 
 ### 🎡 Spring 全家桶
 
