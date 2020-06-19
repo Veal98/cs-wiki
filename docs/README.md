@@ -101,19 +101,18 @@
 
 - [1 - Java 的基本程序设计结构](Java/Java基础/1-Java的基本程序设计结构.md)
 - [2 - 对象与类](Java/Java基础/2-对象与类.md)
+- [3 - 继承](Java/Java基础/3-继承.md)
 
 ### 🎡 Spring 全家桶
 
 - [【一】Spring 总结](Java/Spring全家桶/SSM/Spring/Spring总结.md)
 - [【二】SpringMVC 总结](Java/Spring全家桶/SSM/SpringMVC/SpringMVC总结.md)
-- [【三】MyBatis 总结](Java/Spring全家桶/SSM/MyBatis/MyBatis总结.md) 
+- [【三】MyBatis 总结](Java/Spring全家桶/SSM/Mybatis/Mybatis总结.md) 
 - [【四】SSM框架整合 — 实例演示](Java/Spring全家桶/SSM/SSM框架整合.md)
 - **【五】Spring Boot**
   - [1 - Spring Boot 入门](Java/Spring全家桶/SpringBoot/1-入门.md)
   - [2 - 配置文件](Java/Spring全家桶/SpringBoot/2-配置文件.md)
   - [3 - 日志](Java/Spring全家桶/SpringBoot/3-日志.md)
-
-
 
 ## 🤖 AI
 
