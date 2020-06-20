@@ -404,3 +404,5 @@ K-means 是一种迭代算法，在其内部循环中重复执行以下两个步
 - 🍧 [90题细品吴恩达《机器学习》，感受被刷题支配的恐惧](https://www.kesci.com/home/project/5e0f01282823a10036b280a7)
 
 - 🥩 [吴恩达机器学习 课后实验 python实现](https://www.kesci.com/home/project/5da16a37037db3002d441810)
+
+- 🍦 [吴恩达机器学习与深度学习作业目录](https://blog.csdn.net/Cowry5/article/details/83302646)
