@@ -288,7 +288,7 @@ def normalEqn(X, y):
 
 ---
 
-# 💻  编程作业  - Python 实现  
+# 💻  编程作业  - 线性回归 
 
 ```python
 import numpy as np

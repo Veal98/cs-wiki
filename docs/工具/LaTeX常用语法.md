@@ -2,8 +2,6 @@
 
 ---
 
-
-
 ### 分数
 
 $\frac{1}{2}$
@@ -22,12 +20,14 @@ $x^{(3)}_2$
 $x^{(3)}_2$
 ```
 
+
+
 ### 矩阵
 
--  $x = \begin{bmatrix} x_0 \\ x_1 \\ x_2 \\ ... \\ x_n\end{bmatrix}$
+-  $x = \begin{bmatrix} x_0 & x_1 \\ ... & ... \\ x_{n-1} & x_n\end{bmatrix}$
 
   ```
-  $x = \begin{bmatrix} x_0 \\ x_1 \\ x_2 \\ ... \\ x_n\end{bmatrix}$
+  x = \begin{bmatrix} x_0 & x_1 \\ ... & ... \\ x_{n-1} & x_n\end{bmatrix}
   ```
 
   
@@ -39,6 +39,7 @@ $x^{(3)}_2$
   ```
 
 
+
 ### 求和符号
 
 $\sum^m_{i=1}$
@@ -46,6 +47,8 @@ $\sum^m_{i=1}$
 ```
 $\sum^m_{i=1}$
 ```
+
+
 
 ### 偏导数
 
