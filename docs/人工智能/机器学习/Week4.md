@@ -1,4 +1,4 @@
-# 🍩 八、神经网络：概述 Neural Networks: Representation
+# 🍩 八、神经网络：前向传播算法 Neural Networks
 
 ## 1. 非线性假设 Non-linear Hypotheses
 

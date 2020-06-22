@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
   <!--网页标题左侧显示-->
   <link rel="icon" href="https://gitee.com/veal98/images/raw/master/img/20200518211442.png" type="image/x-icon">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <!--收藏夹显示图标-->
   <link rel="shortcut icon" href="https://gitee.com/veal98/images/raw/master/img/20200518211442.png" type="image/x-icon">
   <style type="text/css">
@@ -33,11 +34,23 @@
       margin: 0 auto;
       padding-top: 30px;
     }
-    
+    /* .content:before{
+      content: 'Good Luck 🥤';
+      font-size: 1.2rem;
+      color: rgb(239, 112, 96);
+      font-family: 'Inconsolata', consolas,"PingFang SC", "Microsoft YaHei", monospace !important;
+      position: absolute;
+      top: 0;
+      right: 50%;
+      height: 10%;
+      display:flex;
+      flex-direction:row;
+      align-items: center;
+      justify-content: center;
+    } */
+   
     /* 导航栏 */
     .app-nav{
-      position: fixed;
-      top: 0;
     }
    
     .markdown-section code {
@@ -68,7 +81,15 @@
       border-radius:5px;
       box-shadow: 5px 5px 10px black;
     }
-   
+
+    section.cover.has-mask .mask {
+      background-color: #fff;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 100%;
+    }
 
   
     .markdown-section strong {
@@ -158,7 +179,7 @@
      
       auto2top:true,
       coverpage: true,
-      onlyCover: true,
+      // onlyCover: true,
       topMargin: 140,
      
       search: {

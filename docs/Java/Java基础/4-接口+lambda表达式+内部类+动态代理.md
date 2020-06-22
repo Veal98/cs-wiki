@@ -621,7 +621,7 @@ Comparator.comparing(Person::getLastName)
 
 如果两个人的 LastName 相同， 就会使用第二个比较器。
 
-## 3. 内部类
+## 3. 内部类 inner class
 
 内部类（inner class) 是定义在另一个类中的类。为什么需要使用内部类呢？ 其主要原因有以下三点： 
 
@@ -928,22 +928,44 @@ public static Pair minmax(double[] values){
 
  如果没有将 `Pair `类声明为 `static`, 那么编译器将会给出错误报告： <u>没有可用的隐式 `ArrayAlg ` 类型对象初始化内部类对象。</u>
 
-## 4. 代理
+## 4. 动态代理  Dynamic Proxy
 
 **利用代理可以在运行时创建一个实现了一组给定接口的新类。这种功能只有在编译时无法确定需要实现哪个接口时才有必要使用。**
 
-当想要给实现了某个接口的类中的方法，加一些额外的处理。比如说加日志，加事务等。
+### ① 什么是动态代理
 
-可以给这个类创建一个代理，**故名思议就是创建一个新的类，这个类不仅包含原来类方法的功能，而且还在原来的基础上添加了额外处理的新类**。这个代理类并不是定义好的，是动态生成的。具有解耦意义，灵活，扩展性强。可以在运行期动态创建某个interface的实例。
+所有`interface`类型的变量总是通过向上转型并指向某个实例的，常规代码如下：
 
-**动态代理的应用：**
+定义接口：
 
-- Spring的AOP
-- 加事务
-- 加权限
-- 加日志
+```java
+public interface Hello {
+    void morning(String name);
+}
+```
 
-### ① 何时使用代理
+编写实现类：
+
+```java
+public class HelloWorld implements Hello {
+    public void morning(String name) {
+        System.out.println("Good morning, " + name);
+    }
+}
+```
+
+创建实例，转型为接口并调用：
+
+```java
+Hello hello = new HelloWorld();
+hello.morning("Bob");
+```
+
+这种方式就是我们通常编写代码的方式。
+
+⚪ 还有一种方式是动态代码，**我们仍然先定义了接口`Hello`，但是我们并不去编写实现类，而是直接通过JDK提供的一个`Proxy.newProxyInstance()`创建了一个`Hello`接口对象。<u>这种没有实现类但是在运行期动态创建了一个接口对象的方式，我们称为动态代码。JDK提供的动态创建接口对象的方式，就叫动态代理。</u>**
+
+### ② 何时使用代理
 
 ❓ **假设有一个表示接口的 Class 对象（有可能只包含一个接口) ，它的确切类型在编译时无法知道**。这确实有些难度。<u>要想构造一个实现这些接口的类，就需要使用 `newlnstance `方法或反射找出这个类的构造器。但是，不能实例化一个接口，需要在程序处于运行状态时定义一个新类。</u> 
 
@@ -963,13 +985,13 @@ Object invoke(Object proxy, Method method, Object[] args)
 
 <u>无论何时调用代理对象的方法，调用处理器的 `invoke `方法都会被调用， 并向其传递 `Method `对象和原始的调用参数。 调用处理器必须给出处理调用的方式。</u>
 
-### ② 创建代理对象
+### ③ 创建代理对象
 
 要想创建一个代理对象， 需要使用 `Proxy `类的 `newProxylnstance `方法。 这个方法有三个参数： 
 
-- 一个类加载器（class loader) 。作为 Java 安全模型的一部分， 对于系统类和从因特网上下载下来的类，可以使用不同的类加载器。用 `null `表示使用默认的类加载器。 
-- 一个 Class 对象数组， 每个元素都是需要实现的接口。 
-- 一个调用处理器。
+- 一个**类加载器（class loader)** 。作为 Java 安全模型的一部分， 对于系统类和从因特网上下载下来的类，可以使用不同的类加载器。用 `null `表示使用默认的类加载器。 
+- 一个**Class 对象数组**， 每个元素都是需要实现的接口。 
+- 一个**调用处理器 handler**。
 
 ```java
 class TraceHandler implements IncovationHandler{
@@ -994,7 +1016,7 @@ Class[] interfaces = new Class[]{Comparable.class};
 Object proxy = Proxy.newProxyInstance(null,interfaces,handler);
 ```
 
-### ③ 动态代理实例
+### ④ 动态代理实例
 
 ```java
 /**
@@ -1009,8 +1031,8 @@ interface Hello{
  */
 public class dynamic_proxy{
     public static void main(String[] args) {
-        InvocationHandler handler = new InvocationHandler(){
-        
+        // 调用处理器
+        InvocationHandler handler = new InvocationHandler(){ // 匿名内部类
             @Override
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
                 System.out.println(method);
@@ -1020,26 +1042,23 @@ public class dynamic_proxy{
                 return null;
             }
         };
+        // 创建代理
         Hello hello = (Hello) Proxy.newProxyInstance(Hello.class.getClassLoader(), new Class[]{Hello.class}, handler);
         hello.morning("Jack");
-        
-
     }
 }
 ```
 
-在运行期动态创建一个interface实例的方法如下：
+👇 **总结**：在运行期动态创建一个接口实例的方法如下：
 
-- 首先必须定义一个接口 Hello（被代理）
-- 定义一个 `InvocationHandler` 实例，它负责实现接口方法 morning 的调用；
-- 通过 `Proxy.newProxyInstance()` 创建接口 Hello 实例的代理对象，它需要3个参数：
+- 首先必须定义一个接口（被代理）
+- 定义一个 `InvocationHandler` 调用处理器实例，它负责实现接口方法（morning）的调用；
+- 通过 `Proxy.newProxyInstance()` 创建接口（Hello）实例的代理对象，它需要 3 个参数：
   - 使用的 `ClassLoader` 类加载器。通常就是接口类的 ClassLoader；(因为代理的是 Hello，所以用加载 Hello 的类加载器。)
   - 需要实现的接口数组，至少需要传入一个接口进去；
-  - 用来处理接口方法调用的 InvocationHandler 实例。
+  - 用来处理接口方法调用的 `InvocationHandler` 实例。
 
 - 将返回的 Object 强制转型为接口。
-
-
 
 ---
 
