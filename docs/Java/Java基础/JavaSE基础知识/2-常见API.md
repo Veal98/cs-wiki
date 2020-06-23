@@ -183,7 +183,7 @@ Arrays 类 在`java.util.Arrays`包中
 ArrayList 类 在`java.util.ArrayList `包中
 
 ## 1. 作用
-**动态数组**，存储在内的数据称为元素。此类提供一些方法来操作内部存储 的元素。 ArrayList 中可不断的添加元素，其大小也自动增长。（类似于C++中的 `vector` ）
+**动态数组**，存储在内的数据称为元素。此类提供一些方法来操作内部存储的元素。 ArrayList 中可不断的添加元素，其大小也自动增长。（类似于C++中的 `vector` ）
 
 ## 2. 构造方法
 `public ArrayList() ` ：构造一个内容为空的集合。

@@ -1191,7 +1191,7 @@ public class Demo {
 >
 > `args[0]` 是 `-h`， 而不是“ Message” 或“ java”
 
-### ⑥ 数组排序
+### ⑥ 数组排序 Arrays.sort()
 
 要想对数值型数组进行排序， 可以使用 Arrays 类中的 `sort` 方法：
 
@@ -1202,6 +1202,8 @@ Arrays.sort(a);
 ```
 
 **这个方法使用了优化的快速排序算法**。
+
+之所以能够利用 `Arrays.sort()` 对这个对象数组排序，前提是这个对象是实现了 `Comparable `接口的类的实例。`Array.sort` 还能传入一个比较器参数，详细请参见 <u>4-接口</u>
 
 👇 Arrays 类还提供了几个使用很便捷的方法，API 如下：
 

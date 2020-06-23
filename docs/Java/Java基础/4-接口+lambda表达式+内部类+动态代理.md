@@ -1,4 +1,4 @@
-# 🎉 接口、lambda 表达式、内部类、动态代理
+# 	🎉 接口、lambda 表达式、内部类、动态代理
 
 ---
 
@@ -242,21 +242,174 @@ public interface Comparable<T>{
 
   > 📜 当然，**如果两个接口都没有为共享方法提供默认实现， 那么就与 Java SE 8 之前的 情况一样，这里不存在冲突**。 实现类可以有两个选择：实现这个方法，或者干脆不实现。 如果是后一种情况，这个类本身就是抽象的。
 
-### ⑦ Comparator 接口
+### ⑦ Comparable 接口
 
-我们已经了解了如何对一个对象数组排序，前提是这些对象是实现了 `Comparable `接口的类的实例, 例如， 可以对一个字符串数组排序， 因为 `String `类实现了 `Comparable`, 而 且 `String.compareTo` 方法可以按字典顺序比较字符串。
+`Comparable` 接口：强行对**实现它的每个类的对象**进行整体排序。这种排序被称为类的自然排序，类的 `compareTo `方法被称为它的自然比较方法。只能在类中实现 `compareTo() `一次，不能经常修改类的代码实现自己想要的排序。实现此接口的对象列表（和数组）可以通过 `Collections.sort` 或  `Arrays.sort` 进行自动排序，对象可以用作有序映射中的键或有序集合中的元素，无需指定比较器。
 
-现在假设我们希望按长度递增的顺序对字符串进行排序，而不是按字典顺序进行排序。 肯定不能让 `String` 类用两种不同的方式实现 `compareTo `方法 —— 更何况，`String `类也不应由 我们来修改。 
-
-要处理这种情况，`Arrays.sort` 方法还有第二个版本， 有一个数组和一个**比较器 ( comparator )**作为参数， **比较器是实现了 `Comparator `接口的类的实例**。
+👇 `Comparable `接口源码如下：
 
 ```java
-public interface Compare<T>{
-	int compare(T first, T second);
+public interface Comparable<T> {
+    public int compareTo(T o);
 }
 ```
 
-要按长度比较字符串，可以如下定义一个实现 `Comparator<String>`的类： 
+💬 举例如下：
+
+```java
+String[] strArr = {"A","B","C","E","D"};
+Arrays.sort(strArr);
+for (String string : strArr) {
+    System.out.print(string+";");
+}
+```
+
+输出结果：
+
+> A;B;C;D;E;
+
+OK，我们已经了解了如何对一个对象数组排序，前提是这些对象是实现了 `Comparable `接口的类的实例, 例如上述例子中， 可以对一个字符串数组排序， 因为 `String `类实现了 `Comparable`, 而 且 `String.compareTo` 方法可以按字典顺序比较字符串。
+
+👉 `String` 类源码如下：
+
+```java
+public final class String
+    implements java.io.Serializable, Comparable<String>, CharSequence{
+	...
+    public int compareTo(String anotherString) {
+        int len1 = value.length;
+        int len2 = anotherString.value.length;
+        int lim = Math.min(len1, len2);
+        char v1[] = value;
+        char v2[] = anotherString.value;
+
+        int k = 0;
+        while (k < lim) {
+            char c1 = v1[k];
+            char c2 = v2[k];
+            if (c1 != c2) {
+                return c1 - c2;
+            }
+            k++;
+        }
+        return len1 - len2;
+    }
+}
+```
+
+它实现了 `Comparable` 接口，里面也实现了 `compareTo` 方法，所以按照某种规则能够进行排序。
+
+⭐ 所以，如**果我们想要对自定义类型应用此方法，我们必须实现 `Comparable `接口并重写 `compareTo `方法**。
+
+💬 实例如下：
+
+```java
+class Student implements Comparable<Student>{
+    private String name;
+    private int age;
+
+    public Student() {
+    }
+
+    public Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+               "name='" + name + '\'' +
+               ", age=" + age +
+               '}';
+    }
+    
+    @Override
+    public int compareTo(String o){
+        return.age - o.age; // 按年龄升序排序
+    }
+}
+
+public class Demo {
+    public static void main(String[] args) {
+        // 创建四个学生对象 存储到集合中
+        ArrayList<Student> list = new ArrayList<Student>();
+
+        list.add(new Student("rose",18));
+        list.add(new Student("jack",16));
+        list.add(new Student("abc",16));
+        list.add(new Student("ace",17));
+        list.add(new Student("mark",16));
+
+        /*
+          让学生 按照年龄排序 升序
+         */
+		Collections.sort(list);// 要求该list中元素类型必须实现比较器 Comparable 接口
+
+        for (Student student : list) 
+            System.out.println(student);
+    }
+}
+```
+
+输出结果：
+
+> Student{name='jack', age=16}
+>
+> Student{name='abc', age=16}
+>
+> Student{name='mark', age=16}
+>
+> Student{name='ace', age=17}
+>
+> Student{name='rose', age=18}
+
+### ⑧ Comparator 接口 — 比较器
+
+现在假设我们希望按长度递增的顺序对字符串进行排序，而不是按字典顺序进行排序。 肯定不能让 `String` 类用两种不同的方式实现 `compareTo `方法 —— 更何况，`String `类也不应由我们来修改。 
+
+要处理这种情况，`Arrays.sort` 和 `Collections.sort` 方法还有第二个版本， 有一个数组和一个**比较器 ( comparator )**作为参数， **比较器是实现了 `Comparator `接口的类的实例，需要重写 compare 方法**。
+
+> 📜 集合类也有同样的 `sort` 排序方法，通过`Collections.sort()` 进行调用
+
+👇 `Comparator `源码如下：
+
+```java
+@FunctionalInterface
+public interface Comparator<T> {
+    int compare(T o1, T o2);
+    ...
+```
+
+` int compare(T o1, T o2)`：比较其两个参数的大小
+
+比较之后会根据大小返回值。 
+
+- 返回“负数”， 意味着“o1 < o2”；
+- 返回“零”，意味着“o1 = o2”；
+- 返回“正数”，意味着“o1 > o2。
+
+> 升序: o1 - o2
+>
+> 降序: o2 - o1
+
+💬 例如：要按长度比较字符串，可以如下定义一个实现 `Comparator<String>`的类： 
 
 ```java
 class LengthComparator implements Comparator<String>{
@@ -286,7 +439,45 @@ String[] friends = { "Peter", "Paul", "Mary" };
 Arrays.sort(friends, new LengthComparator());
 ```
 
-在下一节中我们会了解， 利用 lambda 表达式可以更容易地使用 `Comparator`。
+利用 lambda 表达式（见下节）可以更容易地使用 `Comparator`：
+
+```java
+public class Demo {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<String>();
+        list.add("cba");
+        list.add("aba");
+        list.add("sba");
+        list.add("nba");
+        //排序方法  按照第一个单词的降序
+        Collections.sort(list,new Comparator<String>(){
+           @Override
+            public int compare(String o1, String o2){
+                return o2.charAt(0) - o1.charAt(0);
+            }
+        });
+        System.out.println(list);
+    }
+}
+```
+
+结果如下：
+
+>  [sba, nba, cba, aba]
+
+**静态 `comparing `方法取一个“ 键提取器” 函数， 它将类型 T 映射为一个可比较的类型 ( 如 String )。对要比较的对象应用这个函数， 然后对返回的键完成比较**。例如，假设有一个 `Person `对象数组，可以如下按名字对这些对象排序： 
+
+```java
+Arrays.sort(people, Comparator.comparing(Person::getName));
+```
+
+可以把比较器与 `thenComparing `方法串起来。例如：
+
+```java
+Arrays.sort(people,Comparator.comparing(Person::getLastName).thenComparing(Person::getFirstName));
+```
+
+如果两个人的 LastName 相同， 就会使用第二个比较器。
 
 ## 2. lambda 表达式
 
@@ -600,26 +791,6 @@ repeat(10,i -> System.out.println("Countdown:" + (9-i)));
 表 6-2 列出了基本类型 `int`、 `long `和 `double `的 34 个可能的规范。 **最好使用这些特殊化规范来减少自动装箱。出于这个原因， 上面的例子中使用了 `IntConsumer `而不是 `Consumer<Integer>`** 。
 
 ![](https://gitee.com/veal98/images/raw/master/img/20200620200016.png)
-
-### ⑧ 再谈 Comparator
-
-`Comparator `接口包含很多方便的静态方法来创建比较器。 这些方法可以用于 lambda 表达式或方法引用。 
-
-**静态 `comparing `方法取一个“ 键提取器” 函数， 它将类型 T 映射为一个可比较的类型 ( 如 String )。对要比较的对象应用这个函数， 然后对返回的键完成比较**。例如，假设有一个 `Person `对象数组，可以如下按名字对这些对象排序： 
-
-```java
-Arrays.sort(people, Comparator.comparing(Person::getName));
-```
-
-可以把比较器与 `thenComparing `方法串起来。例如：
-
-```java
-Arrays.sort(people,
-Comparator.comparing(Person::getLastName)
-.thenComparing(Person::getFirstName));
-```
-
-如果两个人的 LastName 相同， 就会使用第二个比较器。
 
 ## 3. 内部类 inner class
 
@@ -1066,3 +1237,5 @@ public class dynamic_proxy{
 
 - 《Java 核心技术 - 卷 1 基础知识 - 第 10 版》
 - [java经验总结-208道面试题](https://www.zhihu.com/question/27858692/answer/787505434)
+
+- [Comparable接口作用](https://blog.csdn.net/ysj4428/article/details/81195846)
