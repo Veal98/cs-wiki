@@ -27,34 +27,74 @@
       font-family: "Helvetica Neue",Helvetica,"Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;   
       word-spacing:1px; /*更改默认的词间距*/
       letter-spacing:1px;/*更改默认的字符间距*/ 
+      background:rgb(51, 51, 51);
 
     }
-    /* 设置内容居中和宽度 */
+    /* 首页a标签置顶 */
+    section.cover .cover-main {
+        z-index:10 !important;
+    }
+    /* 内容居中和宽度 */
     .content{
       width:1000px;
       margin: 0 auto;
       padding-top: 30px;
     }
-
-    /* 导航栏 */
-    .app-nav{
+    /* 内容区域的字体颜色和背景 */
+    .markdown-section{
+      background:rgb(68,68,68);
+      color: rgb(129, 129, 129);
+      max-width: 90% !important;
+      padding: 30px 30px 40px 30px !important;
+      border-radius: 20px;
     }
-   
+    /* 行代码块 */
     .markdown-section code {
         font-size: 14px;
         font-family: Consolas, monospace, serif;
         white-space: nowrap;
         padding: 0 4px;
-        border: 1px solid #282c34;
         border-radius: 3px;
-        background: #fafafa;
+        background: rgb(68,68,68);
         white-space: normal;
-        color: rgb(198, 120, 221);
+        color: rgb(173, 141, 229);
        
+    }
+    /* 搜索框 */
+    .search {
+        border-bottom: 1px solid rgb(68,68,68) !important;
+    }
+    .search input {
+        background:rgb(51, 51, 51);
+        color: rgb(129, 129, 129)
+    }
+    .search a {
+        color: rgb(129, 129, 129) !important;
+    }
+
+    /* 侧边栏背景颜色 */
+    .sidebar{
+      background:rgb(51, 51, 51);
     }
     .sidebar ul li.active > a {
         font-size: 16px;
     } 
+    /* 侧边栏字体颜色 */
+    .sidebar ul li a{
+        color: rgb(129, 129, 129)
+    }
+    /* 侧边栏标题 */
+    .sidebar > h1 a{
+        color: rgb(216, 216, 216)
+    }
+    /* 侧边栏和内容分界线 */
+    .sidebar {
+      border-right: 1px solid rgb(68,68,68);
+    }
+
+    .sidebar-toggle{
+        background-color: rgb(68,68,68) !important;
+    }
     h1
     {
       margin-bottom:50px;
@@ -62,14 +102,23 @@
     }
     h1 span{
       display:inline-block;
-      background: rgb(66, 185, 131);
+      background: rgb(102, 126, 233);
       color:#ffffff;
       padding:  10px  16px;
       border-radius:5px;
-      box-shadow: 5px 5px 10px black;
+      box-shadow: 2px 2px 5px rgb(216, 216, 216);
     }
-
+    .markdown-section hr {
+        border: none;
+        border-bottom: 2px solid #666 !important;
+        margin: 2em 0;
+    }
+    /* 标题颜色 */
+    .markdown-section h2 span, .markdown-section h3 span, .markdown-section h4 span,.markdown-section h5 span{
+      color: rgb(216, 216, 216)
+    }
     
+    /* 封面半透明遮盖 */
     section.cover.has-mask .mask {
       background-color: #fff;
       opacity: 0;
@@ -79,17 +128,22 @@
       width: 100%;
     }
 
-  
+    /* 加粗 */
     .markdown-section strong {
-    color: rgb(239, 112, 96);
+      color: rgb(115, 143, 205);
     }
+   
+    /* 引用块 */
     .markdown-section blockquote{
-      background: rgb(236,248,242);
+      background: rgb(220, 220, 255);
       padding:10px;
+      border-radius:10px;
     }
+    /* 代码块 */
     .markdown-section pre {
       box-shadow: 2px 2px 20px 6px #ddd !important;
     }
+    /* 代码块 */
     .markdown-section pre>code {
       color: #c0c3c1 !important;
       font-family: 'Inconsolata', consolas,"PingFang SC", "Microsoft YaHei", monospace !important;
@@ -97,12 +151,12 @@
       font-size: 15px !important;
       white-space: pre !important;
       line-height: 1.5 !important;
-
       -moz-tab-size: 4 !important;
       -o-tab-size: 4 !important;
       tab-size: 4 !important;
 
     }
+    /* 代码块 */
     markdown-section code, .markdown-section pre {
       background-color: #282c34;
     }
@@ -162,12 +216,11 @@
       nameLink: '/',
       logo: '',
       repo: 'https://github.com/Veal98/CS-Wiki',
-      // themeColor: '#6c5ce7',
+      themeColor: 'rgb(102, 126, 233)',
       loadNavbar: true,
-     
       auto2top:true,
       coverpage: true,
-      // onlyCover: true,
+      onlyCover: true,
       topMargin: 140,
      
       search: {
@@ -180,7 +233,7 @@
       },//增加搜索框
    
       footer: {
-        copy: '⏰ <span id="sitetime"></span> <br> 🔏 Copyright &copy; 2019 - 2020</span>',
+        copy: '🚀 Copyright &copy; 2019 - 2020</span>',
         auth: ' <strong>飞天小牛肉</strong>',
         pre: '<hr/>',
         style: 'text-align: left;',
@@ -245,48 +298,5 @@
   <!-- 访问量统计 -->
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-  <!-- 运行时间统计 -->
-  <script language=javascript>
-    function siteTime() {
-      window.setTimeout("siteTime()", 1000);
-      var seconds = 1000;
-      var minutes = seconds * 60;
-      var hours = minutes * 60;
-      var days = hours * 24;
-      var years = days * 365;
-      var today = new Date();
-      var todayYear = today.getFullYear();
-      var todayMonth = today.getMonth() + 1;
-      var todayDate = today.getDate();
-      var todayHour = today.getHours();
-      var todayMinute = today.getMinutes();
-      var todaySecond = today.getSeconds();
-      /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
-      year - 作为date对象的年份，为4位年份值
-      month - 0-11之间的整数，做为date对象的月份
-      day - 1-31之间的整数，做为date对象的天数
-      hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
-      minutes - 0-59之间的整数，做为date对象的分钟数
-      seconds - 0-59之间的整数，做为date对象的秒数
-      microseconds - 0-999之间的整数，做为date对象的毫秒数 */
-      var t1 = Date.UTC(2020, 03, 21, 00, 00, 00); //北京时间2020-03-21 00:00:00
-      var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
-      var diff = t2 - t1;
-      var diffYears = Math.floor(diff / years);
-      var diffDays = Math.floor((diff / days) - diffYears * 365);
-      var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
-      var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
-      var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
-      document.getElementById("sitetime").innerHTML = " 本网页已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒 ";
-    }
-    siteTime();
-  
-  
-  
-  
-  
-  </script>
-
-  
 </body>
 </html>

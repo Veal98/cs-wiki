@@ -1,22 +1,25 @@
 <style>
     h2
     {
-      border-bottom:2px  solid   rgb(66, 185, 131);
+      /* border-bottom:2px  solid   rgb(66, 185, 131); */
       margin-bottom:50px;
       font-size: 1em;
     }
     h2 span{
       display:inline-block;
-      background: rgb(66, 185, 131);
+      background: rgb(102, 126, 233);
       color:#ffffff;
       padding:  10px  16px;
       border-radius:5px;
-      box-shadow: 5px 5px 10px black;
+      box-shadow: 2px 2px 5px rgb(216, 216, 216);
     }
     .content{
       width:1000px;
       margin: 0 auto;
       padding-top: 0px;
+    }
+    .markdown-section a {
+      color: rgb(129, 129, 129);
     }
 
 </style>
@@ -26,7 +29,7 @@
 
 - 🎫 本仓库初衷是为了准备考研初试和复试，秉持基础知识点 + 常见考题/面试题的学习逻辑，力求搭建一个完善的专业课知识体系。起于此，但不止于此，后期会不断改进完善，也欢迎各位小伙伴提出好的建议~（注：每个模块的面试指南均具有完善的知识体系且涵盖大部分重要知识点，绝不是网络上的面试题随意拼凑而来）
 
-- ⚡ 如果 Github 加载太慢的话可以使用 Gitee，在线阅读地址 [https://veal98.gitee.io/cs-wiki](https://veal98.gitee.io/cs-wiki)，保持同步更新。Tip: 有时候可能需要刷新几下才能看见更新内容
+- ⚡ 如果 Github 加载太慢的话可以使用 Gitee，在线阅读地址 <u>[https://veal98.gitee.io/cs-wiki](https://veal98.gitee.io/cs-wiki)</u>，保持同步更新。Tip: 有时候可能需要刷新几下才能看见更新内容
 
 - 🙏 由于本人水平有限，仓库中的知识点来自本人原创、视频、书籍、博客等，非原创均已标明出处（或在参考资料中列出），如有遗漏或发现文章错误及排版问题，请 issue 提出  [🚀 传送门](https://github.com/Veal98/CS-Wiki/issues)
 
