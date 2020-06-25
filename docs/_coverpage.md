@@ -33,6 +33,7 @@
         content: "\f107";
     }
 </style>
+
 <div style = "position: absolute;
     bottom: 5px;
     width: 100%;
@@ -60,4 +61,6 @@
 <!-- [开始阅读](README.md) -->
 
 <!-- 背景图片 -->
-![](https://gitee.com/veal98/images/raw/master/img/20200622113539.png)
+
+![](https://gitee.com/veal98/images/raw/master/img/20200625113322.jpg)
+
