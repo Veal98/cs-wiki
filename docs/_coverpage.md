@@ -34,4 +34,5 @@
 [开始阅读](README.md)
 
 <!-- 背景图片 -->
+<!-- ![color](rgb(51, 51, 51)) -->
 ![](https://gitee.com/veal98/images/raw/master/img/20200625113322.jpg)
