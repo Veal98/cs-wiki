@@ -1295,6 +1295,7 @@ public void add(){	// POst
 
 ## 1. 资源准备
 首先需要导入 `jquery.min.js` 框架文件以及 `jackson` 的 依赖
+
 <img src="https://img-blog.csdnimg.cn/20200324105911460.png" alt="在这里插入图片描述" style="zoom:80%;" />
 
 导入jackson依赖（Springmvc 默认用 MappingJacksonHttpMessageConverter 对 json 数据进行转换，需要加入 jackson 的包。 ）

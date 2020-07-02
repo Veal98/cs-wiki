@@ -1,18 +1,16 @@
-# 四、Spring Boot 与 Web开发
+# 📥 四、Spring Boot 与 Web开发
 
 ## 1. 简介
 
 Web 开发过程简介：
 
-- 创建SpringBoot s应用，选中我们需要的模块
+- 创建 SpringBoot 应用，选中我们需要的模块
 
 - SpringBoot 已经默认将这些场景配置好了，只需要在配置文件中指定少量配置就可以运行起来
 
 - 编写业务代码
 
-
-
-## 2. SpringBoot对静态资源的映射规则；
+## 2. SpringBoot 对静态资源的映射规则
 
 ```java
 @ConfigurationProperties(prefix = "spring.resources", ignoreUnknownFields = false)

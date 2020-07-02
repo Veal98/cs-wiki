@@ -1,4 +1,4 @@
-# 🍍 十二、支持向量机(Support Vector Machines)
+# 🍍 支持向量机(Support Vector Machines)
 
 ## 1. 优化目标 Optimization Objective
 

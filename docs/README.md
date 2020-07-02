@@ -116,8 +116,8 @@
 - [【二】SpringMVC 总结](Java/Spring全家桶/SSM/SpringMVC/SpringMVC总结.md)
 - [【三】MyBatis 总结](Java/Spring全家桶/SSM/Mybatis/Mybatis总结.md) 
 - [【四】SSM框架整合 — 实例演示](Java/Spring全家桶/SSM/SSM框架整合.md)
-- **【五】Spring Boot**
-  - [1 - Spring Boot 入门](Java/Spring全家桶/SpringBoot/1-入门.md)
+- **【五】Spring Boot 2.x**
+  - [1 - Spring Boot 入门](Java/Spring全家桶/SpringBoot/1-SpringBoot入门.md)
   - [2 - 配置文件](Java/Spring全家桶/SpringBoot/2-配置文件.md)
   - [3 - 日志](Java/Spring全家桶/SpringBoot/3-日志.md)
 
@@ -152,20 +152,19 @@
 
 ### 🎮 机器学习
 
-> 🔊 吴恩达老师的视频刷完了，接下来按照西瓜书完善下知识体系。本笔记中所有带 🍉 表情的都来源西瓜书，其余来自吴恩达视频、书籍和开源博客等。
-
-- **机器学习笔记**
+- **吴恩达 Coursera 机器学习 课程笔记**
   - [1 - Introduction](人工智能/机器学习/1-Introduction.md)
   - [2 - 模型评估与选择](人工智能/机器学习/2-模型评估与选择.md)
   - [3 - 线性回归](人工智能/机器学习/3-线性回归.md)
-  - [Week-4 | 神经网络：前向传播算法](人工智能/机器学习/Week4.md)
-  - [Week-5 | 神经网络：反向传播算法](人工智能/机器学习/Week5.md)
-  - [Week-6 | 偏差和方差 + 误差分析](人工智能/机器学习/Week6.md)
-  - [Week-7 | 支持向量机 SVM](人工智能/机器学习/Week7.md)
-  - [Week-8 | 聚类 (K-means 算法) + 降维 (PCA 算法)](人工智能/机器学习/Week8.md)
-  - [Week-9 | 异常检测 + 推荐系统](人工智能/机器学习/Week9.md)
-  - [Week-10 | 大规模机器学习 + 应用实例：图片文字识别](人工智能/机器学习/Week10.md)
+  - [4 - 逻辑回归 + 正则化](人工智能/机器学习/4-逻辑回归+正则化.md)
+  - [5 - 神经网络](人工智能/机器学习/5-神经网络.md)
+  - [6 - 支持向量机 SVM](人工智能/机器学习/6-支持向量机SVM.md)
+  - [7 - 聚类 (K-means 算法) + 降维 (PCA 算法)](人工智能/机器学习/7-聚类+降维.md)
+  - [8 - 异常检测 + 推荐系统](人工智能/机器学习/8-异常检测+推荐系统.md)
+  - [9 - 大规模机器学习+图片文字识别](人工智能/机器学习/9-大规模机器学习+图片文字识别.md)
   - [✍ 吴恩达 Coursera 机器学习 — 编程作业 — Python 实现](人工智能/机器学习/吴恩达编程作业.md)
+
+- **Machine Learning in Action 笔记**
 
 ## 🔨 工具
 <br>
