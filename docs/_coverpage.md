@@ -1,16 +1,19 @@
-<!-- <img width="120px" src="https://gitee.com/veal98/images/raw/master/img/20200518211442.png"> -->
-<div style = "font-weight: 700; font-size: 2.5rem; 
+<img width="120px" src="https://gitee.com/veal98/images/raw/master/img/20200518211442.png">
+<!-- <div style = "font-weight: 700; font-size: 2.5rem; 
     color: #fff; text-align: center;
     text-shadow: 0.3rem 0.3rem 0.4rem rgba(0,0,0,.15);
     line-height: 1.5; font-family: 'Playball',cursive;
 ">
     小牛肉的知识库
-</div>
+</div> -->
+
+<br>
+
 <div style = "font-weight: 600; font-size: 1.8rem; 
-    color: rgb(69, 170, 188); text-align: center;
+    color: #fff; text-align: center;
     text-shadow: 0.3rem 0.3rem 0.4rem rgba(0,0,0,.15);
     line-height: 1.2;">
-    CS 📚 Wiki
+    CS Wiki
 </div>
 
 <br>
@@ -34,5 +37,6 @@
 [开始阅读](README.md)
 
 <!-- 背景图片 -->
-<!-- ![color](rgb(51, 51, 51)) -->
-![](https://gitee.com/veal98/images/raw/master/img/20200625113322.jpg)
+<!-- ![](https://gitee.com/veal98/images/raw/master/img/20200625113322.jpg) -->
+![color](#333333)
+

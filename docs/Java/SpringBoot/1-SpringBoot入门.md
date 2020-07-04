@@ -361,7 +361,7 @@ public @interface SpringBootConfiguration {
 public @interface Configuration {
 ```
 
-里面的 `@Component` 这就说明，启**动类本身也是 Spring 中的一个组件而已**，负责启动应用。
+里面的 `@Component` 这就说明，**启动类本身也是 Spring 中的一个组件而已**，负责启动应用。
 
 #### Ⅳ @EnableAutoConfiguration
 
