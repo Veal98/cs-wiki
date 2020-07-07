@@ -1231,9 +1231,7 @@ public class dynamic_proxy{
 
 - 将返回的 Object 强制转型为接口。
 
----
-
-# 📚 References
+## 📚 References
 
 - 《Java 核心技术 - 卷 1 基础知识 - 第 10 版》
 - [java经验总结-208道面试题](https://www.zhihu.com/question/27858692/answer/787505434)

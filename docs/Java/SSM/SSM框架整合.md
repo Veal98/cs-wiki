@@ -1,6 +1,8 @@
-## 🚩 整合说明
+# 🚀 SSM 框架整合 — 高级案例
 
-使用 Spring 去整合另外两个框架，选择XML + 注解的方式 
+---
+
+**整合说明**：使用 Spring 去整合另外两个框架，选择XML + 注解的方式 
 
 <img src="https://gitee.com/veal98/images/raw/master/img/20200524205211.png" style="zoom:80%;" />
 
@@ -12,7 +14,7 @@
 
 - SpringMVC 接管 Controller 层
 
-## 项目效果
+**项目效果**：
 
 项目包含学生信息的增删改查功能以及分页功能，最终效果如下图所示：
 
@@ -20,7 +22,7 @@
 
 ![](https://gitee.com/veal98/images/raw/master/img/20200527212729.png)
 
-## 项目源码 + 目录结构
+**项目源码 + 目录结构**
 
 - 项目目录结构如下图所示：
 
@@ -30,19 +32,13 @@
 
 - 🎪 项目源码存放 Github，需要自取：[https://github.com/Veal98/SSM_StudentManager](https://github.com/Veal98/SSM_StudentManager)
 
-
-
----
-
-
-
-# 一. 搭建Spring环境 
-## 1. 新建Maven的web工程
+## 一、搭建Spring环境 
+### 1. 新建Maven的web工程
 main 文件夹下建立 java 和 src 文件夹，并分别设置为 Source root 和 Resources root
 
-![](https://img-blog.csdnimg.cn/20200331140659862.png)
+![](https://gitee.com/veal98/images/raw/master/img/20200705214940.png)
 
-## 2. pom导入依赖
+### 2. pom导入依赖
 
 ```xml
 <properties>
@@ -199,7 +195,7 @@ main 文件夹下建立 java 和 src 文件夹，并分别设置为 Source root 
   </dependencies>
 ```
 
-## 3. 创建数据库表
+### 3. 创建数据库表
 
 ```sql
 CREATE TABLE `student` (
@@ -214,7 +210,7 @@ CREATE TABLE `student` (
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 ```
 
-## 4. 编写 Bean + Dao + Service
+### 4. 编写 Bean + Dao + Service
 **Bean** （数据库相关（Bean/Dao 都交给Mybatis管理））
 
 ```java
@@ -386,7 +382,7 @@ public class StudentController {
 }
 ```
 
-## 5. 编写Spring配置文件
+### 5. 编写Spring配置文件
 在resources文件夹下新建 `spring-mybatis.xml` 文件（我们将 mybatis 的配置也写在该文件中，此处我们只列出 Spring 所需要的配置）
 
 ```xml
@@ -405,12 +401,8 @@ public class StudentController {
 
 
 
----
-
-
-
-# 二、搭建Spring+SpringMVC环境
-## 1. web.xml 中配置前端控制器、过滤器、监听Spring配置文件，并加载SpringMVC配置文件
+## 二、搭建Spring+SpringMVC环境
+### 1. web.xml 中配置前端控制器、过滤器、监听Spring配置文件，并加载SpringMVC配置文件
 
 ```xml
 <web-app version="2.4"
@@ -497,7 +489,7 @@ public class StudentController {
 >   </welcome-file-list>
 > ```
 
-## 2. 编写SpringMVC配置文件
+### 2. 编写SpringMVC配置文件
 
 在 resources 文件夹下新建 `springmvc.xml` 文件
 
@@ -536,7 +528,7 @@ public class StudentController {
 </beans>
 ```
 
-## 3. 编写 Controller
+### 3. 编写 Controller
 
 ⭐ **在 Controller 中注入 Service 对象**
 
@@ -678,7 +670,7 @@ public class StudentController {
 }
 ```
 
-## 4. 分页模型 Page
+### 4. 分页模型 Page
 
 在 util 包中 新建文件 Page.java
 
@@ -774,7 +766,7 @@ public class Page {
 
 
 
-## 4. 前端界面
+### 4. 前端界面
 
 **listStudent.jsp：学生信息显示 + 增加学生 界面**
 
@@ -1006,13 +998,9 @@ value="${student.age}"
 
 
 
----
 
-
-
-
-# 三、搭建Spring+SpringMVC+Mybatis 环境
-## 1. 编写Mybatis全局配置文件
+## 三、搭建Spring+SpringMVC+Mybatis 环境
+### 1. 编写Mybatis全局配置文件
 对于 Mybatis 的配置，我们将其与 Spring 的配置放在一个文件中：`spring-mybatis.xml`，Spring 接管 MyBatis 的 Session 工厂
 
 ```xml
@@ -1075,7 +1063,7 @@ value="${student.age}"
 </beans>
 ```
 
-## 2. 配置c3p0连接池
+### 2. 配置 c3p0 连接池
 
 在 resources 文件夹下新建 `jdbc.properties`
 
@@ -1099,7 +1087,7 @@ c3p0.checkoutTimeout=10000
 c3p0.acquireRetryAttempts=2
 ```
 
-## 3. 编写 Mapper 映射文件
+### 3. 编写 Mapper 映射文件
 在 resources 文件夹下新建 mapper.studentDao.xml 文件：
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -1149,11 +1137,7 @@ c3p0.acquireRetryAttempts=2
 </mapper>
 ```
 
----
-
-
-
-# 📚 References
+## 📚 References
 
 - 😁 [视频 - SpringMVC_黑马](https://www.bilibili.com/video/av47953244/?spm_id_from=333.788.b_636f6d6d656e74.19)
 

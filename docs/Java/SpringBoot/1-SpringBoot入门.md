@@ -1,5 +1,7 @@
 # 🚪 Spring Boot 入门
 
+---
+
 ## 1. Spring Boot 简介
 
 开发一个web应用，从最初开始接触Servlet结合Tomcat, 跑出一个Hello Wolrld程序，是要经历特别多的步骤；后来就用了框架Struts，再后来是SpringMVC，到了现在的SpringBoot，过一两年又会有其他web框架出现；你们有经历过框架不断的演进，然后自己开发项目所有的技术也在不断的变化、改造吗？建议都可以去经历一遍；
@@ -548,11 +550,7 @@ public class SpringApplication {
 
 ![](https://gitee.com/veal98/images/raw/master/img/20200701111258.png)
 
----
-
-# 📚 References
-
-<br>
+## 📚 References
 
 - [视频 - SpringBoot_权威教程_雷丰阳_尚硅谷](https://www.bilibili.com/video/BV1Et411Y7tQ)
 

@@ -1,4 +1,4 @@
-<img width="120px" src="https://gitee.com/veal98/images/raw/master/img/20200518211442.png">
+<img width="320px" src="https://gitee.com/veal98/images/raw/master/img/20200707092532.png">
 <!-- <div style = "font-weight: 700; font-size: 2.5rem; 
     color: #fff; text-align: center;
     text-shadow: 0.3rem 0.3rem 0.4rem rgba(0,0,0,.15);
@@ -8,12 +8,22 @@
 </div> -->
 
 <br>
+<br>
 
-<div style = "font-weight: 600; font-size: 1.8rem; 
+<div style = "font-weight: 500; font-size: 1.8rem; 
     color: #fff; text-align: center;
     text-shadow: 0.3rem 0.3rem 0.4rem rgba(0,0,0,.15);
     line-height: 1.2;">
     CS Wiki
+</div>
+
+<br>
+
+<div style = "font-weight: 100; font-size: 1.0rem; 
+    color: #eee; text-align: center;
+    text-shadow: 0.3rem 0.3rem 0.4rem rgba(0,0,0,.15);
+    line-height: 1.2;">
+    他山之石，可以攻玉
 </div>
 
 <br>
@@ -34,7 +44,8 @@
 <!-- <img src="https://img.shields.io/badge/author-小牛肉-yellow.svg" data-origin="https://img.shields.io/badge/author-小牛肉-yellow.svg" alt=""> 
 <img src="https://img.shields.io/badge/license-GPL-blue.svg" data-origin="https://img.shields.io/badge/license-GPL-blue.svg" alt=""> -->
 
-[开始阅读](README.md)
+[<i class="fa fa-github-alt fa-spin"></i> GitHub](https://github.com/Veal98/CS-Wiki)
+[<i class="fa fa-spinner fa-spin"></i> 开始阅读](README.md)
 
 <!-- 背景图片 -->
 <!-- ![](https://gitee.com/veal98/images/raw/master/img/20200625113322.jpg) -->

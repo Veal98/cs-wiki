@@ -31,6 +31,23 @@
       background:rgb(51, 51, 51);
 
     }
+    .app-nav {
+        position: fixed;
+        margin: 0;
+        padding: 10px 50px 10px 0;
+        width: calc(100% - 300px);
+        background-color: #333333;
+        /* height: 51px; */
+        color: rgb(216, 216, 216);
+        /* border-bottom: 1px solid #eee; */
+    }
+    .app-nav li ul a {
+        display: block;
+        font-size: inherit;
+        margin: 0;
+        padding: 0;
+        color: black;
+    }
     /* 首页a标签置顶 */
     section.cover .cover-main {
         z-index:10 !important;
@@ -39,7 +56,7 @@
     .content{
       width:1000px;
       margin: 0 auto;
-      padding-top: 30px;
+      padding-top: 60px !important;
     }
     /* 内容区域的字体颜色和背景 */
     .markdown-section{
@@ -133,6 +150,11 @@
     .markdown-section strong {
       color: rgb(115, 143, 205);
     }
+    /* a 标签 */
+    .markdown-section a {
+      color: rgb(66, 185, 163);
+      font-weight: 500;
+  }
     /* 表格 */
     .markdown-section tr:nth-child(2n) {
         background-color: rgb(51, 51, 51);
@@ -216,12 +238,12 @@
   <div id="app" >🏃‍🏃‍🏃‍💨加载中</div>
   <script>
     window.$docsify = {
-      name: 'CS 📚 Wiki',
+      name: '📖 CS Wiki',
       nameLink: 'https://veal98.gitee.io/cs-wiki/#/',
       logo: '',
-      repo: 'https://github.com/Veal98/CS-Wiki',
+      // repo: 'https://github.com/Veal98/CS-Wiki',
       themeColor: 'rgb(102, 126, 233)',
-      loadNavbar: false,
+      loadNavbar: true,
       auto2top:true,
       coverpage: true,
       onlyCover: true,
