@@ -126,7 +126,7 @@ public interface EmployeeMapper {
 ## 5. 创建sql映射文件 Mapper
 映射文件的作用就相当于是定义数据库如何工作，编写sql语句。这也是我们使用MyBatis时编写的最多的文件。
 
-同样在conf文件夹下，创建 `EmployeeMapper.xml` 用来编写 sql 语句
+同样在 conf 文件夹下，创建 `EmployeeMapper.xml` 用来编写 sql 语句
 
 我们采用接口式编程，将接口中的方法和该映射文件绑定起来
 

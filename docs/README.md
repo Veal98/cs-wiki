@@ -122,8 +122,9 @@
   - [1 - Spring Boot 入门](Java/SpringBoot/1-SpringBoot入门.md)
   - [2 - 配置文件](Java/SpringBoot/2-配置文件.md)
   - [3 - 日志](Java/SpringBoot/3-日志.md)
-  - 4 - Web 开发
+  - [4 - Web 开发](Java/SpringBoot/4-Web开发.md)
   - [5 - Web开发 - 实战案例](Java/SpringBoot/5-Web开发-实战案例.md)
+  - [6 - SpringBoot 与数据访问](Java/SpringBoot/6-SpringBoot与数据访问.md)
 
 ## 🤖 AI
 
