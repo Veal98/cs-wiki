@@ -16,13 +16,13 @@ NumPy 的部分功能如下：
 
 👍 **由于NumPy提供了一个简单易用的C API，因此很容易将数据传递给由低级语言编写的外部库，外部库也能以NumPy数组的形式将数据返回给Python**。这个功能使Python成为一种包装C/C++/Fortran历史代码库的选择，并使被包装库拥有一个动态的、易用的接口。
 
-NumPy本身并没有提供多么高级的数据分析功能，<u>理解NumPy数组以及面向数组的计算将有助于你更加高效地使用诸如pandas之类的工具</u>。因为NumPy是一个很大的题目，附录A中介绍了更多NumPy高级功能，比如广播。
+NumPy 本身并没有提供多么高级的数据分析功能，<u>理解 NumPy 数组以及面向数组的计算将有助于你更加高效地使用诸如 pandas 之类的工具</u>。因为 NumPy 是一个很大的题目，附录A中介绍了更多NumPy高级功能，比如广播。
 
 对于大部分数据分析应用而言，我最关注的功能主要集中在：
 
 - 用于数据整理和清理、子集构造和过滤、转换等快速的矢量化数组运算。
 - 常用的数组算法，如排序、唯一化、集合运算等。
-- 高效的描述统计和数据聚合/摘要运算。
+- 高效的描述统计和数据聚合 / 摘要运算。
 - 用于异构数据集的合并/连接运算的数据对齐和关系型数据运算。
 - 将条件逻辑表述为数组表达式（而不是带有if-elif-else分支的循环）。
 - 数据的分组运算（聚合、转换、函数应用等）。。
@@ -104,8 +104,8 @@ Out[18]: dtype('float64')
 
 >🚩 当你在本书中看到“数组”、“NumPy数组”、"ndarray"时，基本上都指的是同一样东西，即ndarray 对象。
 
-### ② 创建ndarray
-创建数组最简单的办法就是使用 `array` 函数。**它接受一切序列型的对象（包括其他数组），然后产生一个新的含有传入数据的NumPy数组**。以一个列表的转换为例：
+### ② 创建 ndarray
+⭐ 创建数组最简单的办法就是使用 `array` 函数。**它接受一切序列型的对象（包括其他数组），然后产生一个新的含有传入数据的NumPy数组**。以一个列表的转换为例：
 ```python
 In [19]: data1 = [6, 7.5, 8, 0, 1]
 
@@ -1473,7 +1473,7 @@ Out[257]: 37
 注意，这里使用argmax并不是很高效，因为它无论如何都会对数组进行完全扫描。在本例中，只要发现了一个True，那我们就知道它是个最大值了。
 
 ### ② 一次模拟多个随机漫步
-如果你希望模拟多个随机漫步过程（比如5000个），只需对上面的代码做一点点修改即可生成所有的随机漫步过程。只要给numpy.random的函数传入一个二元元组就可以产生一个二维数组，然后我们就可以一次性计算5000个随机漫步过程（一行一个）的累计和了：
+如果你希望模拟多个随机漫步过程（比如5000个），只需对上面的代码做一点点修改即可生成所有的随机漫步过程。只要给 `numpy.random` 的函数传入一个二元元组就可以产生一个二维数组，然后我们就可以一次性计算5000个随机漫步过程（一行一个）的累计和了：
 ```python
 In [258]: nwalks = 5000
 
@@ -1530,12 +1530,106 @@ In [271]: steps = np.random.normal(loc=0, scale=0.25,
    .....:                          size=(nwalks, nsteps))
 ```
 
-## ✅ End
-虽然本书剩下的章节大部分是用 pandas 规整数据，我们还是会用到相似的基于数组的计算。在附录A中，我们会深入挖掘 NumPy 的特点，进一步学习数组的技巧。
+## 4.9 NumPy 的矩阵 — Matrix
+一个 m x n 的矩阵是一个由 m 行（row）n 列（column）元素排列成的矩形阵列。
 
----
+矩阵里的元素可以是数字、符号或数学式。以下是一个由 6 个数字元素构成的 2 行 3 列的矩阵：
 
-# 📚 References
+<img src="https://gitee.com/veal98/images/raw/master/img/20200711211207.png" style="zoom:80%;" />
+
+### ① 创建一个 matrix
+
+```python
+import numpy as np
+
+a = np.matrix('1 2; 3 4')
+# 或者
+a = np.mat('1 2; 3 4')
+```
+
+<img src="https://gitee.com/veal98/images/raw/master/img/20200711211755.png" style="zoom:80%;" />
+
+或者
+
+```python
+np.matrix([[1, 2], [3, 4]])
+```
+
+<img src="https://gitee.com/veal98/images/raw/master/img/20200711211827.png" style="zoom:80%;" />
+
+### ② matrix 和 array 的不同之处
+
+⭐ **Numpy 中矩阵 Matrix 只能表示 2 维数据, 但是 numpy arrays (ndarrays) 数组可以是多维的（1D，2D，3D····ND）**。Matrix 是 Array 的一个小的分支，包含于 Array。所以 Matrix 拥有 array 的所有特性。
+
+#### Ⅰ 构造方式不同
+
+```python
+import numpy as np
+ 
+a1 = np.array([[1, 2], [3, 4]])
+b1 = np.mat([[1, 2], [3, 4]])
+ 
+a2 = np.array(([1, 2], [3, 4]))
+b2 = np.mat(([1, 2], [3, 4]))
+ 
+a3 = np.array(((1,2), (3,4)))
+b3 = np.mat(((1,2), (3,4)))
+ 
+b4 = np.mat('1 2; 3 4')
+ 
+print("\n",a1,"\n",b1,"\n",a2,"\n",b2,"\n",a3,"\n",b3,"\n",b4)
+```
+
+结果均为：
+
+```
+ [[1 2]
+ [3 4]]
+```
+
+上述变化就是将 “`[]`” 换成“`()`”。不同之处在于 b4 内用引号、空格和分号来产生矩阵，这个方法只可以在 `matrix()` 函数中使用，即 `b4 = np.mat('1 2; 3 4')`。不可以写成的 `a4 = np.array('1 2; 3 4')` 。
+
+#### Ⅱ 矩阵乘法的不同
+
+在 numpy 中 matrix 的主要优势是：相对简单的乘法运算符号。例如，a 和 b 是两个 matrix，那么 `a*b`就是**矩阵积**。而不用 `np.dot()`。如：
+
+```python
+mata=np.mat('4 3; 2 1')
+matb=np.mat('1 2; 3 4')
+print(mata)
+# [[4 3]
+#  [2 1]]
+print(matb)
+# [[1 2]
+#  [3 4]]
+print(mata*matb)
+# [[13 20]
+#  [ 5  8]]
+```
+
+对比 array：
+
+![](https://gitee.com/veal98/images/raw/master/img/20200711213052.png)
+
+而对于**点乘（对应元素相乘）**：array 中 `*` 代表点乘，而在 matrix 中 `multiply()` 代表点乘。
+
+对于**矩阵平方**：array() 的平方是矩阵对应位置数的平方。mat() 的平方是矩阵与自身的乘积：
+
+![](https://gitee.com/veal98/images/raw/master/img/20200711214326.png)
+
+>  matrix 和 array 都可以通过objects后面加`.T` 得到其转置。
+
+### ③ matrix 和 array 之间的转换
+
+💡 **使用 `matrix.getA()` 可以将 matrix 转换成 array**：
+
+![](https://gitee.com/veal98/images/raw/master/img/20200711213340.png)
+
+**直接使用 `np.mat(array)` 将 array 转换成 matrix**：
+
+![](https://gitee.com/veal98/images/raw/master/img/20200711214652.png)
+
+## 📚 References
 
 - 📕  [《利用Python进行数据分析-第2版-中文译版》](https://www.jianshu.com/p/04d180d90a3f)
 

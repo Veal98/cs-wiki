@@ -151,7 +151,7 @@
   - [1 - 准备工作](人工智能/Python/Python数据分析/1-准备工作.md)
   - [2 - IPython 和 Jupyter NoteBook](人工智能/Python/Python数据分析/2-IPython和Jupyter-Notebook.md)
   - [3 - Python 语法基础、数据结构、函数、文件](人工智能/Python/Python数据分析/3-Python语法基础+数据结构+函数+文件.md)
-  - [4 - Numpy：基础 - 数组和矢量计算](人工智能/Python/Python数据分析/4-Numpy基础-数组和矢量计算.md)
+  - [4 - Numpy 基础](人工智能/Python/Python数据分析/4-Numpy基础.md)
   - [✍ Numpy：练习题 100 题](人工智能/Python/Python数据分析/4.1-Numpy练习题100题.md)
   - [5 - pandas：入门](人工智能/Python/Python数据分析/5-pandas入门.md)
   - [6 - pandas：数据加载、存储与文件格式](人工智能/Python/Python数据分析/6-pandas数据加载、存储与文件格式.md)
@@ -180,6 +180,7 @@
   - [1 - k-近邻算法](人工智能/机器学习/机器学习实战/1-k-近邻算法.md)
   - [2 - 决策树](人工智能/机器学习/机器学习实战/2-决策树.md)
   - [3 - 朴素贝叶斯](人工智能/机器学习/机器学习实战/3-朴素贝叶斯.md)
+  - [4 - Logistic 回归](人工智能/机器学习/机器学习实战/4-Logistic回归.md)
 - 第二部分：【回归】
 - 第三部分：【无监督学习】
 
