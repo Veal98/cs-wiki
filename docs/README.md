@@ -124,6 +124,7 @@
   - [4 - Web 开发](Java/SpringBoot/4-Web开发.md)
   - [5 - Web开发 - 实战案例](Java/SpringBoot/5-Web开发-实战案例.md)
   - [6 - SpringBoot 与数据访问](Java/SpringBoot/6-SpringBoot与数据访问.md)
+  - [7 - 集成 Spring Security](Java/SpringBoot/7-集成SpringSecurity.md)
 
 ---
 
