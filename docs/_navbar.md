@@ -10,7 +10,7 @@
     * [👔 Java 基础](README?id=👔-java-基础)
     * [🎡 SSM](README?id=🎡-SSM)
     * [🔰 SpringBoot 2.x](README?id=🔰-spring-boot-2x)
+    * [📠 Redis](README?id=📠-redis)
 * [<i class="fa fa-user-secret fa-1x"></i> AI](README?id=🤖-ai)
     * [🚀 Python](README?id=🚀-python)
     * [🎮 机器学习](README?id=🎮-机器学习) 
-

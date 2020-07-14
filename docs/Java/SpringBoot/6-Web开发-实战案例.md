@@ -7,6 +7,8 @@
 > 只是一个小 Demo，很多功能都没有完善，只实现了最基本的 CRUD 和登录，登录的密码写死了是123456，用户名随意。
 >
 > 由于实际开发中一般不使用 Thymeleaf，所以本篇对于 Thymeleaf 不做过多详细介绍，会用即可。
+>
+> 📂 源码在此：[https://gitee.com/veal98/springboot_demo](https://gitee.com/veal98/springboot_demo)
 
 Thymeleaf 取值语法：
 
@@ -19,8 +21,6 @@ Thymeleaf 取值语法：
 📄 目录结构如下：
 
 ![](https://gitee.com/veal98/images/raw/master/img/20200707144736.png)
-
-📂 源码在此：[https://gitee.com/veal98/springboot_demo](https://gitee.com/veal98/springboot_demo)
 
 ## 1. 准备工作
 

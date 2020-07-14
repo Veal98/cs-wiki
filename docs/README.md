@@ -108,6 +108,7 @@
 - [6 - 泛型](Java/Java基础/6-泛型.md)
 - [7 - 集合](Java/Java基础/7-集合.md)
 - [8 - 并发](Java/Java基础/8-并发.md)
+- [✍ Java 基础练习题](Java/Java基础/习题.md)
 
 ### 🎡 SSM
 
@@ -120,11 +121,17 @@
 
   - [1 - Spring Boot 入门](Java/SpringBoot/1-SpringBoot入门.md)
   - [2 - 配置文件](Java/SpringBoot/2-配置文件.md)
-  - [3 - 日志](Java/SpringBoot/3-日志.md)
-  - [4 - Web 开发](Java/SpringBoot/4-Web开发.md)
-  - [5 - Web开发 - 实战案例](Java/SpringBoot/5-Web开发-实战案例.md)
-  - [6 - SpringBoot 与数据访问](Java/SpringBoot/6-SpringBoot与数据访问.md)
-  - [7 - 集成 Spring Security](Java/SpringBoot/7-集成SpringSecurity.md)
+  - [3 - 自定义 starter](Java/SpringBoot/3-自定义starter.md)
+  - [4 - 日志](Java/SpringBoot/4-日志.md)
+  - [5 - Web 开发](Java/SpringBoot/5-Web开发.md)
+  - [6 - Web开发 - 实战案例](Java/SpringBoot/6-Web开发-实战案例.md)
+  - [7 - SpringBoot 与数据访问](Java/SpringBoot/7-SpringBoot与数据访问.md)
+  - [8 - 集成 Spring Security](Java/SpringBoot/8-集成SpringSecurity.md)
+  - [9 - 异步、定时、邮件任务](Java/SpringBoot/9-异步定时邮件任务.md)
+
+### 📠 Redis
+
+- [1 - NoSQL 概述](Java/Redis/1-NoSQL概述.md)
 
 ---
 
@@ -181,6 +188,7 @@
   - [2 - 决策树](人工智能/机器学习/机器学习实战/2-决策树.md)
   - [3 - 朴素贝叶斯](人工智能/机器学习/机器学习实战/3-朴素贝叶斯.md)
   - [4 - Logistic 回归](人工智能/机器学习/机器学习实战/4-Logistic回归.md)
+  - [5 - 支持向量机 SVM](人工智能/机器学习/机器学习实战/5-支持向量机.md)
 - 第二部分：【回归】
 - 第三部分：【无监督学习】
 
