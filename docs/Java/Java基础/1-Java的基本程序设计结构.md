@@ -36,13 +36,13 @@ public class FirstSample{
 
 <img src="https://gitee.com/veal98/images/raw/master/img/20200616201042.png" style="zoom: 80%;" />
 
-> 🚨 在 Java 中，`/* */ `注释不能嵌套 „ 也就是说， 不能简单地把代码用 `/*` 和 `*/` 括起来 作为注释， 因为这段代码本身可能也包含一个  `*/` ,
+> 🚨 在 Java 中，`/* */ ` 注释不能嵌套 „ 也就是说， 不能简单地把代码用 `/*` 和 `*/` 括起来 作为注释， 因为这段代码本身可能也包含一个  `*/` ,
 
 ## 3. 数据类型
 
 **Java 是一种强类型语言。这就意味着必须为每一个变量声明一种类型**（Python 就是弱类型语言）。在 Java 中， 共有 8 种基本类型（ primitive type ),  其中有 4 种整型、2  种浮点类型、 1  种用于表示 Unicode 编码的字符单元的字符类型 char  和 1 种用于表示真值的 boolean 类型。
 
-> 📜  Java 有一个**能够表示任意精度的算术包**， 通常称为 `大数值（ bignumber)` ，虽然被称为大数值，但**它并不是一种新的 Java 类型，而是一个 Java 对象**。 本章稍后将会详细地介绍它的用法。
+> 📜  Java 有一个**能够表示任意精度的算术包**， 通常称为 **大数值（ bignumber)** ，虽然被称为大数值，但**它并不是一种新的 Java 类型，而是一个 Java 对象**。 本章稍后将会详细地介绍它的用法。
 
 ### ① 整形 int / short / long / byte
 
@@ -91,6 +91,34 @@ if(Double.isNaN(x))
 ```
 
 > 🚨 **浮点数值不适用于无法接受舍入误差的金融计算中**。 例如，命令 `System.out.println ( 2.0-1.1 ) `将打印出 0.8999999999999999, 而不是人们想象的 0.9。<u>这种舍入误差的主要原因是浮点数值采用二进制系统表示， 而在二进制系统中无法精确地表示分数 1/10</u>。这 就好像十进制无法精确地表示分数 1/3 —样。**如果在数值计算中不允许有任何舍入误差， 就应该使用 `BigDecimal` 类**， 本章稍后将介绍这个类。
+
+✍ **练习：编写一个计算速度的程序，它所使用的距离和时间都是浮点型**
+
+```java
+public class ex4 {
+    public static void main(String[] args){
+        float distance = 100;
+        float time = 20;
+        float velocity = distance/time;
+        System.out.println(velocity);
+    }
+}
+```
+
+✍ **练习：分别显示用 float 和 double 指数记数法所能表示的最大和最小的数字。**
+
+```java
+public class ex9 {
+    public static void main(String[] args) {
+        System.out.println("Float.MAX_VALUE = "+Float.MAX_VALUE);
+        System.out.println("Float.MIN_VALUE = "+Float.MIN_VALUE);
+        System.out.println("Double.MAX_VALUE = "+Double.MAX_VALUE);
+        System.out.println("Double.MIN_VALUE = "+Double.MIN_VALUE);
+    }
+}
+```
+
+![](https://gitee.com/veal98/images/raw/master/img/20200712143340.png)
 
 ### ③ char 类型
 
@@ -315,14 +343,24 @@ int nx = (int) Math.round(x); // nx = 10
 
 现在， 变量 nx 的值为 10。 **当调用 `round `的时候， 仍然需要使用强制类型转换 。其原因是 `round `方法返回的结果为 `long `类型**，由于存在信息丢失的可能性，所以只有使用显式的强制类型转换才能够将 `long `类型转换成 `int `类型。
 
-### ④ 结合赋值和运算符
+### ④ 赋值 =
+
+#### Ⅰ 基本数据类型的赋值
 
 ```java
 int x = 1;
 x += 4 // 等价于 x = x + 4
 ```
 
-**如果运算符得到一个值， 其类型与左侧操作数的类型不同， 就会发生强制类型转换**。 
+🚨 需要注意的是，`=` 的左值必须是要给明确的，已命名的变量。也就说，**常数不能作为左值**。比如：
+
+```java
+4 = a; // error
+```
+
+上述赋值语句是错误的。
+
+另外，**如果运算符得到一个值， 其类型与左侧操作数的类型不同， 就会发生强制类型转换**。 
 
 例如：
 
@@ -330,6 +368,76 @@ x += 4 // 等价于 x = x + 4
 int x = 1;
 x += 3.5; // 等价于 x = (int)(x+3.5)
 ```
+
+对于基本数据类型的赋值是简单的，基本类型存储了实际的数值，而非指向一个对象的引用，所以在为其赋值的时候，是直接将一个地方的内容复制到了另一个地方。例如：
+
+```java
+int a = 1;
+int b = 2;
+a = b;
+System.out.println(a); // a = 2
+
+a = 3;
+System.out.println(a); // a = 3
+System.out.println(b); // b = 2
+```
+
+`b` 的内容复制给了 `a`。接着又修改了 `a`，但 `b` 并不会受到影响。
+
+#### Ⅱ 对象的赋值
+
+但是**在为对象赋值的时候，我们真正操作的是对象的引用**。所以如果将一个对象赋值给另一个对象，实际上是将引用从一个地方复制到另一个地方。比如：
+
+```java
+String s1 = "abc";
+String s2 = "def";
+s1 = s2;
+```
+
+🔺 **`s1` 和 `s2` 都指向原本只有 `s1` 指向的那个对象**。
+
+✍ **练习：创建一个包含一个 float 域的类。并用这个类来展示对象之间的赋值。**
+
+```java
+public class ex2 {
+
+    public static void main(String[] args) {
+        Integral integral1 = new Integral();
+        Integral integral2 = new Integral();
+        integral1.f = 9f;
+        integral2.f = 47f;
+        System.out.println("1:integral1.f=" + integral1.f + ",integral2.f=" + integral2.f); // 9.0  47.0
+        integral1 = integral2;
+        System.out.println("2:integral1.f=" + integral1.f + ",integral2.f=" + integral2.f); // 47.0 47.0
+        integral1.f = 27f;
+        System.out.println("3:integral1.f=" + integral1.f + ",integral2.f=" + integral2.f); // 27.0 27.0
+
+    }
+
+}
+
+class Integral {
+    float f;
+}
+```
+
+> OK，了解这两种赋值情况后，我们就可以明白 Java 为啥是按值调用了，详见下文 👇  <u>6.方法参数（按值调用）</u>
+
+#### Ⅲ 使用 = 操作符时常犯的错误
+
+一个特别常见的错误如下：
+
+```java
+while(x = y){
+	......
+}
+```
+
+在 C/C++ 中，如果 `y` 是一个非 0 值，那么这种赋值的结果肯定是 `true`，这样便会得到一个无穷循环。
+
+在 Java 中，由于 Java 不会自动的将 `int `转换成 `boolean `类型，所以在编译时就会抛出一个编译时错误，从而阻止我们进一步去运行程序。
+
+![](https://gitee.com/veal98/images/raw/master/img/20200718151637.png)
 
 ### ⑤ 自增与自减运算符
 
@@ -402,7 +510,99 @@ int b = 2 * n++ // b = 14 n = 8
 
 `a += b += c` = `a += (b += c)`
 
-## 6. 输入输出
+## 6. 方法参数（按值调用）
+
+首先回顾一下在程序设计语言中有关将参数传递给方法（或函数）的一些专业术语。
+
+- **按值调用 （call by value )** 表示方法接收的是调用者提供的值。
+- **按引用调用 （ call by reference )** 表示方法接收的是调用者提供的变量地址。一个方法可以修改传递引用所对应的变量值，而不能修改传递值调用所对应的变量值。
+
+⭐ **Java 程序设计语言总是采用<u>按值调用</u>。也就是说，方法得到的是所有参数值的一个拷贝，方法不能修改传递给它的任何参数变量的内容。**
+
+假定一个方法试图将一个参数值增加至 3 倍：
+
+```java
+public static void tripleValue(double x){
+	 x *= 3;
+}
+--------------------------
+double percent = 10;
+tripleValue(percent);
+```
+
+<u>调用这个方法之后，`percent` 的值还是 10</u>。下面看一下具体的执行过程：
+
+- x 被初始化为 `percent ` 值的一个拷贝（也就 是 10 ) 
+- x 被乘以 3 后等于 30。 但是 `percent `仍然是 10 
+- 这个方法结束之后，参数变量 x 不再使用。
+
+![](https://gitee.com/veal98/images/raw/master/img/20200618152649.png)
+
+👇 方法参数共有两种类型： 
+
+- 基本数据类型（int、bool 等）
+- 对象引用
+
+**已经看到，一个方法不可能修改一个基本数据类型的参数。而对象引用作为参数就不同了**，可以很容易地利用下面这个方法实现提高雇员薪金的操作：
+
+```java
+public static void tripleSalary (Employee x) {
+	x.raiseSalary(200);
+}
+--------------------------
+harry = new Emplyee(...);
+tipleSalary(harry);
+```
+
+具体的执行过程为： 
+
+- x 被初始化为 `harry `值的拷贝，这里是一个对象的引用。 
+- `raiseSalary `方法应用于这个对象引用。x 和 `harry `同时引用的那个 `Employee `对象的薪金提高了 200。 
+- 方法结束后，参数变量 x 不再使用。当然，对象变量 `harry `继续引用那个薪金增加 200 的对象。
+
+![](https://gitee.com/veal98/images/raw/master/img/20200618153148.png)
+
+📩 下面总结一下 Java 中方法参数的使用情况： 
+
+- 一个方法不能修改一个基本数据类型的参数（即数值型或布尔型）。 
+- 一个方法可以改变一个对象参数的状态。 
+- 一个方法不能让对象参数引用一个新的对象。
+
+> 📜 C++ 有值调用和引用调用。 引用参数标有 `&` 符号。 例如， 可以轻松地实现 `void tripleValue(double& x)` 方法或` void swap(Employee& x, Employee& y)` 方法实现修改它们的引用参数的目的。
+>
+> ```java
+> int swap(int &a, int &b){
+>      int temp = a;
+>      a = b;
+>      b = temp;
+> }
+> ```
+>
+> 这种在 C++ 中的常见写法在 Java 中是错误的
+
+✍ **练习：创建一个包含一个 float 域的类。并用这个类来展示对象引用作为方法参数时的调用机制**
+
+```java
+public class ex3 {
+    static void func(Integral y){
+        y.f = 1.0f;
+    } 
+    public static void main(String[] args){
+        Integral x = new Integral();
+        x.f = 2.0f;
+        System.out.println("1:x.f=" + x.f); // 2.0
+        func(x);
+        System.out.println("2:x.f=" + x.f); // 1.0
+
+    }
+}
+
+class Integral {
+    float f;
+}
+```
+
+## 7. 输入输出
 
 ### ① 读取输入 Scanner
 
@@ -478,7 +678,7 @@ PrintWriter out = new PrintWriter("file.txt","UTF-8");
 
 ![](https://gitee.com/veal98/images/raw/master/img/20200617113401.png)
 
-## 7. 控制流程
+## 8. 控制流程
 
 > 📜 Java 的控制流程结构与 C 和 C++ 的控制流程结构一样， 只有很少的例外情 况。没有 goto 语句，但 break 语句可以带标签， 可以利用它实现从内层循环跳出的目的 (这种情况 C 语言采用 goto 语句实现) 。另外，还有一种变形的 for 循环， 在 C 或 C++ 中 没有这类循环。它有点类似于 C# 中的 foreach 循环。
 
@@ -538,7 +738,33 @@ else{
 }
 ```
 
-### ③ 循环 while
+✍ **练习：一个斐波那契数列由数字1、1、2、3、5、8、13、21、34等等组成的，其中每个数字（第三个数字起）都是前两个数字的之和。创建一个方法，接受一个整数参数，并显示从第一个元素开始总共由该参数指定的个数所构成的所有斐波那契数字**
+
+```java
+import java.util.Scanner;
+
+public class ex9 {
+    static int fib(int n){
+        if(n <= 2)
+            return 1;
+        else
+            return fib(n-1) + fib(n-2);
+    }
+
+    public static void main(String[] args){
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        for(int i = 0; i < n; i++)
+            System.out.print(fib(i) + " ");
+    }
+}
+```
+
+🏃‍ 运行结果如下：
+
+![](https://gitee.com/veal98/images/raw/master/img/20200713195101.png)
+
+### ③ 循环 while / do-while
 
 ```java
 while(conditon){
@@ -565,7 +791,81 @@ for(int i = 0; i < 10;i ++)
 	System.out.println(i);
 ```
 
-### ⑤ 多重选择（开关）：switch
+✍ **练习： 吸血鬼数字是指位数为偶数的数字，可以由一对数字相乘而得到，而这对数字包含乘积一半位数的数字，其中从最初的数字中选取的数字可以任意排序。以两个0结尾的数字是不允许的，例如，下列数字就是“吸血鬼”数字：**
+
+**1260 = 21 x 60；1827 = 21 x 87；2187 = 27 x 81**
+
+**写一个程序，找出4位数的所有吸血鬼数字。**
+
+```java
+public class ex10 {
+    static int a(int i){
+        return i / 1000; // 表示这个四位数的千位数
+    }
+    static int b(int i){
+        return (i%1000)/100; // 表示这个四位数的百位数
+    }
+    static int c(int i) {
+        return ((i % 1000) % 100) / 10; // 表示这个四位数的十位数
+    }
+    static int d(int i) {
+        return ((i % 1000) % 100) % 10; // 表示这个四位数的个位数
+    }
+
+    static int com(int num1, int num2){
+        return (num1 * 10) + num2; // 表示两个一位数组合成一个两位数
+    }
+
+    /**
+     * 判断是否是吸血鬼数
+     * 
+     * @param i 待判断的4位数
+     * @param m 从这4位数的4个数字中挑选出来随机组合的一个两位数
+     * @param n 从这4位数的4个数字中挑选出来随机组合的另一个两位数
+     */
+    static void productTest(int i, int m, int n){
+        if(m * n == i)
+            System.out.println(i + "=" + m + "*" + n);
+    }
+    public static void main(String[] args){
+        // 找出所有 4 位数的吸血鬼数
+        for(int i = 1001; i < 9999; i++){
+            productTest(i, com(a(i), b(i)), com(c(i), d(i)));
+            productTest(i, com(a(i), c(i)), com(b(i), d(i)));
+            productTest(i, com(a(i), c(i)), com(d(i), b(i)));
+            productTest(i, com(a(i), d(i)), com(b(i), c(i)));
+            productTest(i, com(a(i), d(i)), com(c(i), b(i)));
+            productTest(i, com(b(i), a(i)), com(c(i), d(i)));
+            productTest(i, com(b(i), a(i)), com(d(i), c(i)));
+            productTest(i, com(b(i), c(i)), com(d(i), a(i)));
+            productTest(i, com(b(i), d(i)), com(c(i), a(i)));
+            productTest(i, com(c(i), a(i)), com(d(i), b(i)));
+            productTest(i, com(c(i), b(i)), com(d(i), a(i)));
+        }
+    }
+}
+```
+
+🏃‍ 运行结果如下：
+
+![](https://gitee.com/veal98/images/raw/master/img/20200713201043.png)
+
+### ⑤ 增强 for（for each）
+
+Java SE 5 引入了一种新的更加简洁的 `for `语法用于**数组**和**集合**：
+
+```java
+Random rand = new Random(47);
+float f[] = new float[10];
+for(int i = 0; i < 10; i++)
+    f[i] = rand.nextFloat();
+
+for(float x: f){
+    System.out.println(x);
+}
+```
+
+### ⑥ 多重选择（开关）：switch
 
 ```java
 import java.util.*;
@@ -604,7 +904,7 @@ case 标签可以是：
 
 > 🚨 有可能触发多个 case 分支。 **如果在 case 分支语句的末尾没有 break 语句， 那么就会接着执行下一个 case 分支语句**。这种情况相当危险， 常常会引发错误。 为此，我们在 程序中很少使用 switch 语句
 
-### ⑥ 中断控制流程语句 break / continue
+### ⑦ 中断控制流程语句 break / continue
 
 - **不带标签的 break**
 
@@ -681,8 +981,84 @@ case 标签可以是：
   ```
 
   **如果 n < 0, 则 continue 语句跳到 count++ 语句**。
+  
+  > 💡 `break `和 `continue `本身都只能中断最内层的循环
 
-## 8. 大数类 BigInteger / BigDecimal
+### ⑧ 标签
+
+Java 中没有 `goto`，然而也能完成一些类似于跳转的操作，通过标签和 `break/continue` 实现。
+
+标签是后面跟有冒号的标识符，比如 `label1:`
+
+在 Java 中，标签起作用的**唯一**地方就是在循环语句之前。将  `break/continue` 随同标签一起使用，它们就会中断循环，直到标签所在的地方：
+
+```java
+label1:
+	外循环{
+    	内循环{
+        	......
+            break; // (1)
+            ......
+            continue; // (2)
+            ......
+            continue label1; // (3)
+            ......
+            break label1; // (4)
+        }
+    }
+```
+
+- 在（1）中，`break `中断内部迭代，回到外部迭代。
+- 在（2）中，`continue `使执行点回到内部迭代的起始处。
+- 在（3）中，`continue label1` 同时中断内部迭代以及外部迭代，直接转到 `label1 `处，随后继续迭代过程。
+- 在（4）中，`break label1` 也会中断所有迭代，并回到 `label1 `处，但并不重新进入迭代过程。实际上就是完全终止了两个迭代。
+
+💬 下面是标签用于 for 循环的例子：
+
+```java
+public class demo {
+    public static void main(String[] args){
+        int i = 0;
+        outer:
+        for(;true;){
+            inner:
+            for(; i < 10; i ++){
+                System.out.println("i = " + i);
+                if(i == 2){
+                    System.out.println("continue");
+                    continue; // 跳转到 inner
+                }
+                if(i == 3){
+                    System.out.println("break");
+                    i ++; // 由于 break 会直接中断循环，导致 for 循环上的递增语句无法执行，所以此处我们手动执行递增语句
+                    break; // 中断内循环
+                }
+                if(i == 7){
+                    System.out.println("continue outer");
+                    i ++; // 同理，continue outer 跳到循环顶部，导致 for 循环上的递增语句无法执行，所以此处我们手动执行递增语句
+                    continue outer; // 跳转到 outer 并继续循环
+                }
+                if(i == 8){
+                    System.out.println("break outer");
+                    break outer; // 跳转到 outer 并终止所有循环
+                }
+                for(int k = 0; k < 5; k++){
+                    if (k == 3){
+                        System.out.println("continue inner");
+                        continue inner; // 跳转到 inner 并继续循环
+                    }
+                }
+            }
+        }
+    }
+}
+```
+
+![](https://gitee.com/veal98/images/raw/master/img/20200718110232.png)
+
+🚨 要记住的重点是：在 Java 里需要使用标签的唯一理由就是因为有循环嵌套的存在，而且想从多层嵌套中 `break `或 `continue`
+
+## 9. 大数类 BigInteger / BigDecimal
 
 如果基本的整数和浮点数精度不能够满足需求， 那么可以使用 `java.math` 包中的两个很有用的类：`Biglnteger` 和 `BigDecimal` 这两个类可以处理包含任意长度数字序列的数值。 **`Biglnteger` 类实现了任意精度的整数运算，` BigDecimal` 实现了任意精度的浮点数运算。**
 
@@ -704,65 +1080,6 @@ Biglnteger d = c.multiply(b.add(Biglnteger.valueOf(2))); // d = c * (b + 2)
 👇 API 如下：
 
 ![](https://gitee.com/veal98/images/raw/master/img/20200617142617.png)
-
-## 9. 可变参数
-
-在**JDK1.5**之后，如果我们定义一个方法需要接受多个参数，并且**多个参数类型一致**，我们可以对其简化成如下格式：
-
-```java
-修饰符 返回值类型 方法名(参数类型... 形参名){  }
-```
-
-其实这个书写完全等价与
-
-```java
-修饰符 返回值类型 方法名(参数类型[] 形参名){  }
-```
-
-只是后面这种定义，在调用时必须传递数组，而前者可以直接传递数据即可。
-
-🚩 **JDK1.5** 以后。出现了简化操作。**`...` 用在参数上，称之为可变参数，它表明这个方法可以接收任意数量的对象。**
-
-**同样是代表数组，但是在调用这个带有可变参数的方法时，不用创建数组(这就是简单之处)，直接将数组中的元素作为实际参数进行传递**，其实编译成的class文件，将这些元素先封装到一个数组中，在进行传递。这些动作都在编译.class文件时，自动完成了。
-
-代码演示：    
-
-```java
-public class ChangeArgs {
-    public static void main(String[] args) {
-        int[] arr = { 1, 4, 62, 431, 2 };
-        int sum = getSum(arr);
-        System.out.println(sum);
-        //  6  7  2  12  2121
-        // 求这几个元素和 6  7  2  12  2121
-        int sum2 = getSum(6, 7, 2, 12, 2121);
-        System.out.println(sum2);
-    }
-
-    /*
-     * 所有元素的求和的原始写法
-     
-      public static int getSum(int[] arr){
-        int sum = 0;
-        for(int a : arr){
-            sum += a;
-        }
-        
-        return sum;
-      }
-    */
-    //可变参数写法
-    public static int getSum(int... arr) {
-        int sum = 0;
-        for (int a : arr) {
-            sum += a;
-        }
-        return sum;
-    }
-}
-```
-
-> 🚨 注意：如果在方法书写时，这个方法拥有多参数，参数中包含可变参数，**可变参数一定要写在参数列表的末尾位置。**
 
 ## 📚 References
 
