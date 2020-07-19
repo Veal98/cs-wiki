@@ -19,7 +19,7 @@
 
 <br>
 
-<div style = "font-weight: 100; font-size: 1.0rem; 
+<div style = "font-weight: 100; font-size: 1.2rem; 
     color: #eee; text-align: center;
     text-shadow: 0.3rem 0.3rem 0.4rem rgba(0,0,0,.15);
     line-height: 1.2;">
@@ -28,15 +28,16 @@
 
 <br>
 
-<!-- <span id="busuanzi_container_site_pv" style='display:none'>
-    👀 本站总访问量：<span id="busuanzi_value_site_pv"></span> 次
+<span id="busuanzi_container_site_pv" style='display:none; color:#eee'>
+    👀 总访问量：<span id="busuanzi_value_site_pv"></span> 次
 </span>
-<span id="busuanzi_container_site_uv" style='display:none'>
-    | 🙎‍♂️ 本站总访客数：<span id="busuanzi_value_site_uv"></span> 人
+
+<span id="busuanzi_container_site_uv" style='display:none; color:#eee' >
+    | 🏃‍ 总访客数：<span id="busuanzi_value_site_uv"></span> 人
 </span>
 
 <br> 
-<br> -->
+<br>
 
 <!-- <a href="https://github.com/Veal98/CS-Wiki" target="_blank">
     <img src="https://badgen.net/github/stars/Veal98/CS-Wiki?icon=github&amp;color=4ab8a1" data-origin="https://badgen.net/github/stars/Veal98/CS-Wiki?icon=github&amp;color=4ab8a1" alt="stars">

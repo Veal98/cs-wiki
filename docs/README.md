@@ -31,7 +31,6 @@
 - ⚡ 如果 Github 加载太慢的话可以使用 Gitee，在线阅读地址 <u>[https://veal98.gitee.io/cs-wiki](https://veal98.gitee.io/cs-wiki)</u>，保持同步更新。Tip: 有时候可能需要刷新几下才能看见更新内容
 - 🙏 由于本人水平有限，仓库中的知识点来自本人原创、视频、书籍、博客等，非原创均已标明出处（或在参考资料中列出），如有遗漏或发现文章错误及排版问题，请 issue 提出  [🚀 传送门](https://github.com/Veal98/CS-Wiki/issues)
 </details>
-
 ---
 
 ## 📑 计算机基础
