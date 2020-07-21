@@ -21,7 +21,6 @@
     .markdown-section{
       padding: 30px 30px 40px 30px !important;
     }
-
 </style>
 
 <details>
@@ -103,8 +102,8 @@
 - [2 - 对象与类](Java/Java基础/2-对象与类.md)
 - [3 - 组合与继承](Java/Java基础/3-组合与继承.md)
 - [4 - 接口](Java/Java基础/4-接口.md)
-- [5 - lambda表达式](Java/Java基础/5-lambda表达式.md)
-- [6 - 内部类](Java/Java基础/6-内部类.md)
+- [5 - 内部类](Java/Java基础/5-内部类.md)
+- [6 - lambda表达式](Java/Java基础/6-lambda表达式.md)
 - [7 - 异常 + 断言 + 日志](Java/Java基础/7-异常+断言+日志.md)
 - [8 - 字符串](Java/Java基础/8-字符串.md)
 - [9 - 反射](Java/Java基础/9-反射.md)
@@ -139,6 +138,7 @@
 - [1 - NoSQL 概述](Java/Redis/1-NoSQL概述.md)
 - [2 - Redis 入门](Java/Redis/2-Redis入门.md)
 - [3 - Redis 五大数据类型](Java/Redis/3-五大数据类型.md)
+- [4 - 三种特殊数据类型](Java/Redis/4-三种特殊数据类型.md)
 
 ---
 
