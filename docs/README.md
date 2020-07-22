@@ -139,6 +139,8 @@
 - [2 - Redis 入门](Java/Redis/2-Redis入门.md)
 - [3 - Redis 五大数据类型](Java/Redis/3-五大数据类型.md)
 - [4 - 三种特殊数据类型](Java/Redis/4-三种特殊数据类型.md)
+- [5 - 事务](Java/Redis/5-事务.md)
+- [6 - Java 使用 Redis — Jedis](Java/Redis/6-Java使用Redis.md)
 
 ---
 
