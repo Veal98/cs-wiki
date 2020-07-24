@@ -97,12 +97,18 @@
     }
     /* 侧边栏字体颜色 */
     .sidebar ul li a {
+       color: rgb(222, 222, 222);
+       font-weight: 600;
+       font-size:16px;
+    }
+    .sidebar ul ul li a {
        color: rgb(184, 191, 198);
+       font-weight:400 !important;
+       font-size:14px !important;
     }
     
-    
     .sidebar ul li.active > a {
-        font-size: 16px;
+        color: rgb(66, 185, 163);
     } 
 
     /* 侧边栏标题 */
@@ -260,7 +266,7 @@
   <div id="app" >🏃‍🏃‍🏃‍💨加载中</div>
   <script>
     window.$docsify = {
-      name: '📖 CS Wiki',
+      name: 'CS Wiki',
       nameLink: 'https://veal98.gitee.io/cs-wiki/#/',
       logo: '',
       // repo: 'https://github.com/Veal98/CS-Wiki',
