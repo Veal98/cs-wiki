@@ -128,10 +128,12 @@
   - [3 - 自定义 starter](Java/SpringBoot/3-自定义starter.md)
   - [4 - 日志](Java/SpringBoot/4-日志.md)
   - [5 - Web 开发](Java/SpringBoot/5-Web开发.md)
-  - [6 - Web开发 - 实战案例](Java/SpringBoot/6-Web开发-实战案例.md)
+  - [6 - Web 开发 - 实战案例](Java/SpringBoot/6-Web开发-实战案例.md)
   - [7 - SpringBoot 与数据访问](Java/SpringBoot/7-SpringBoot与数据访问.md)
   - [8 - 集成 Spring Security](Java/SpringBoot/8-集成SpringSecurity.md)
   - [9 - 异步、定时、邮件任务](Java/SpringBoot/9-异步定时邮件任务.md)
+  - [10 - 集成 Redis（Lettuce）](Java/SpringBoot/10-集成Redis.md)
+  - [🚀 SpringBoot + Vue 前后端分离项目实战](Java/SpringBoot+Vue项目/index.md)
 
 ### 📠 Redis
 
@@ -154,6 +156,8 @@
 ### 🍏 Vue
 
 - [1 - Vue.js 入门](前端/Vue/1-入门.md)
+- [2 - 安装](前端/Vue/2-安装.md)
+- [3 - Vue-Cli 3+搭建的项目目录结构](前端/Vue/3-目录结构.md)
 
 ---
 
