@@ -99,8 +99,6 @@ IPython还支持执行任意代码块（通过一个华丽的复制-粘贴方法
 
 然后Jupyter会自动打开网页`http://localhost:8888/tree`，如下图所示：
 
-> 笔记：许多人使用Jupyter作为本地的计算环境，但它也可以部署到服务器上远程访问。这里不做介绍，如果需要的话，请自行到网上学习。
-
 ![](https://gitee.com/veal98/images/raw/master/img/20200607100205.png)
 
 要新建一个notebook，点击按钮 New，选择“Python3”或“conda\[默认项\]”。输入一行Python代码。然后按**Shift-Enter** 执行。
