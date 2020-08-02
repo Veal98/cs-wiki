@@ -40,3 +40,5 @@
 - [3 - ElementUI优化界面](Java/SpringBoot+Vue项目/3-ElementUI优化界面.md)
 - [4 - 登录拦截器](Java/SpringBoot+Vue项目/4-登录拦截器.md)
 - [5 - 导航栏和图书管理界面](Java/SpringBoot+Vue项目/5-导航栏和图书管理界面.md)
+- [6 - 数据库设计与增删改查](Java/SpringBoot+Vue项目/6-数据库设计与增删改查.md)
+- [7 - 增删改查的前端界面](Java/SpringBoot+Vue项目/7-增删改查的前端界面.md)
