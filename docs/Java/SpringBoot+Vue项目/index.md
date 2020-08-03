@@ -42,3 +42,4 @@
 - [5 - 导航栏和图书管理界面](Java/SpringBoot+Vue项目/5-导航栏和图书管理界面.md)
 - [6 - 数据库设计与增删改查](Java/SpringBoot+Vue项目/6-数据库设计与增删改查.md)
 - [7 - 增删改查的前端界面](Java/SpringBoot+Vue项目/7-增删改查的前端界面.md)
+- [8 - 图片上传](Java/SpringBoot+Vue项目/8-图片上传.md)
