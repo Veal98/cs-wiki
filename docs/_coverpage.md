@@ -23,7 +23,7 @@
     color: #eee; text-align: center;
     text-shadow: 0.3rem 0.3rem 0.4rem rgba(0,0,0,.15);
     line-height: 1.2;">
-    他山之石，可以攻玉
+    双修 Java 和 AI，努力奔跑在全栈的路上 🏃‍
 </div>
 
 <br>
@@ -45,7 +45,7 @@
 <!-- <img src="https://img.shields.io/badge/author-小牛肉-yellow.svg" data-origin="https://img.shields.io/badge/author-小牛肉-yellow.svg" alt=""> 
 <img src="https://img.shields.io/badge/license-GPL-blue.svg" data-origin="https://img.shields.io/badge/license-GPL-blue.svg" alt=""> -->
 
-[<i class="fa fa-github-alt fa-spin"></i> GitHub](https://github.com/Veal98/CS-Wiki)
+[<i class="fa fa-github-alt fa-1x"></i> GitHub](https://github.com/Veal98/CS-Wiki)
 [<i class="fa fa-spinner fa-spin"></i> 开始阅读](README.md)
 
 <!-- 背景图片 -->

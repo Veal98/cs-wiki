@@ -480,7 +480,12 @@ Logistic 回归的目的是寻找一个非线性函数 Sigmoid 的最佳拟合�
 ## 📚 References
 
 - 《Machine Learning in Action》
+
+  <img src="https://gitee.com/veal98/images/raw/master/img/20200804111716.png" style="zoom:80%;" />
+
 - [Github - AiLearning](https://github.com/apachecn/AiLearning/)
+
 - [【机器学习笔记1】Logistic回归总结](https://blog.csdn.net/achuo/article/details/51160101)
+
 - [《机器学习实战笔记--第一部分 分类算法：logistic回归1》](https://blog.csdn.net/qq_41635352/article/details/80625370)
 

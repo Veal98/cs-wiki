@@ -376,5 +376,8 @@ def generateRules(L, supportData, minConf=0.7):
 
 ## 📚 References
 
-- 《Machine Learning in Action》
+- 《Machine Learning in Action
+
+  <img src="https://gitee.com/veal98/images/raw/master/img/20200804111716.png" style="zoom:80%;" />
+
 - [Github - AiLearning](https://github.com/apachecn/AiLearning/)

@@ -402,7 +402,13 @@ def svdEst(dataMat, user, simMeas, item):
 ## 📚 References
 
 - 《Machine Learning in Action》
+
+  <img src="https://gitee.com/veal98/images/raw/master/img/20200804111716.png" style="zoom:80%;" />
+
 - 《机器学习 — 周志华》
+
 - [Github - AiLearning](https://github.com/apachecn/AiLearning/)
+
 - [如何让奇异值分解(SVD)变得不“奇异”？](https://redstonewill.com/1529/)
+
 - [机器学习-奇异值分解](https://zhuanlan.zhihu.com/p/100771413)

@@ -339,6 +339,11 @@ def mineTree(inTree, headerTable, minSup, preFix, freqItemList):
 ## 📚 References
 
 - 《Machine Learning in Action》
+
+  <img src="https://gitee.com/veal98/images/raw/master/img/20200804111716.png" style="zoom:80%;" />
+
 - [Github - AiLearning](https://github.com/apachecn/AiLearning/)
+
 - [FpGrowth 算法](https://www.jianshu.com/p/82940f9463d4)
+
 - [机器学习之使用FP-growth算法来高效发现频繁项集](https://blog.csdn.net/qq_37608890/article/details/79224297)
