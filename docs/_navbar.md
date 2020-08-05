@@ -6,7 +6,7 @@
     * [数据库](README?id=数据库)
     * [软件工程](README?id=软件工程)
 * [<i class="fa fa-coffee fa-1x"></i> Java](README?id=🍵-java)
-    * [Java 基础](README?id=java-基础)
+    * [Java 基础](README?id=java-8-基础)
     * [SSM](README?id=SSM)
     * [SpringBoot 2.x](README?id=spring-boot-2x)
     * [Redis](README?id=redis)
