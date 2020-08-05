@@ -2,35 +2,7 @@
 
 ---
 
-## 1. 安全简介 
-
-在 Web 开发中，安全一直是非常重要的一个方面。安全虽然属于应用的非功能性需求，但是应该在应用开发的初期就考虑进来。如果在应用开发的后期才考虑安全的问题，就可能陷入一个两难的境地：一方面，应用存在严重的安全漏洞，无法满足用户的要求，并可能造成用户的隐私数据被攻击者窃取；另一方面，应用的基本架构已经确定，要修复安全漏洞，可能需要对系统的架构做出比较重大的调整，因而需要更多的开发时间，影响应用的发布进程。因此，**从应用开发的第一天就应该把安全相关的因素考虑进来，并应用在整个开发过程中**。
-
-市面上存在比较有名的：**Shiro**，**Spring Security**
-
-> 💡 本节我们只学习 Spring Security，Shiro 虽然简单且能满足大部分需求，但是 Spring Security 更加健壮，没有必要付出学习两个框架的成本~
-
-这里需要阐述一下的是，每一个框架的出现都是为了解决某一问题而产生了，<u>❓ 那么 Spring Security 框架的出现是为了解决什么问题呢？</u>
-
-🏠 首先我们看下它的官网介绍：
-
-Spring Security is a powerful and highly customizable authentication and access-control framework. It is the de-facto standard for securing Spring-based applications.
-
-Spring Security is a framework that focuses on providing both authentication and authorization to Java applications. Like all Spring projects, the real power of Spring Security is found in how easily it can be extended to meet custom requirements
-
-<u>Spring Security是一个功能强大且高度可定制的身份验证和访问控制框架。它实际上是保护基于 Spring 的应用程序的标准。</u>
-
-Spring Security是一个框架，侧重于为Java应用程序提供身份验证和授权。与所有Spring项目一样，Spring安全性的真正强大之处在于它可以轻松地扩展以满足定制需求
-
-从官网的介绍中可以知道这是一个权限框架。想我们之前做项目是没有使用框架是怎么控制权限的？对于权限 一般会细分为功能权限，访问权限，和菜单权限。代码会写的非常的繁琐，冗余。
-
-<u>为了解决之前写权限代码繁琐，冗余的问题，一些主流框架就应运而生，而 Spring Scecurity 就是其中的一种。</u>
-
-Spring 是一个非常流行和成功的 Java 应用开发框架。Spring Security 基于 Spring 框架，提供了一套 Web 应用安全性的完整解决方案。一般来说，Web 应用的安全性包括**用户认证（Authentication）**和**用户授权（Authorization）**两个部分。用户认证指的是验证某个用户是否为系统中的合法主体，也就是说用户能否访问该系统。用户认证一般要求用户提供用户名和密码。系统通过校验用户名和密码来完成认证过程。用户授权指的是验证某个用户是否有权限执行某个操作。在一个系统中，不同用户所具有的权限是不同的。比如对一个文件来说，有的用户只能进行读取，而有的用户可以进行修改。一般来说，系统会为不同的用户分配不同的角色，而每个角色则对应一系列的权限。
-
-对于上面提到的两种应用情景，Spring Security 框架都有很好的支持。在用户认证方面，Spring Security 框架支持主流的认证方式，包括 HTTP 基本认证、HTTP 表单验证、HTTP 摘要认证、OpenID 和 LDAP 等。在用户授权方面，Spring Security 提供了基于角色的访问控制和访问控制列表（Access Control List，ACL），可以对应用中的领域对象进行细粒度的控制。
-
-## 2. SpringSecurity 简介
+## 1. SpringSecurity 简介
 
 Spring Security 是针对Spring项目的安全框架，也是Spring Boot底层安全模块默认的技术选型，他可以实现强大的Web安全控制，对于安全控制，我们仅需要引入 `spring-boot-starter-security` 模块，进行少量的配置，即可实现强大的安全管理。
 
@@ -54,7 +26,7 @@ Spring Security的两个主要目标是 “认证” 和 “授权”（访问�
 
 这个概念是通用的，而不是只在Spring Security 中存在。
 
-## 3. 实例测试
+## 2. 实例测试
 
 > 😊 代码比较简单，就不贴源码了，坑的地方都指出来了，跟着一步步来就没问题，前端素材放在下面了
 

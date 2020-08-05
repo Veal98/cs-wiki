@@ -35,11 +35,19 @@
 
 ## 4. 开发流程
 
-- [1 - 前后端交互测试](Java/SpringBoot+Vue项目/1-前后端交互测试.md)
+### ① 登录注册
+
+- [1 - 前后端交互测试 / 用户登录](Java/SpringBoot+Vue项目/1-前后端交互测试.md)
 - [2 - 引入数据库 MySQL](Java/SpringBoot+Vue项目/2-引入数据库.md)
 - [3 - ElementUI优化界面](Java/SpringBoot+Vue项目/3-ElementUI优化界面.md)
 - [4 - 登录拦截器](Java/SpringBoot+Vue项目/4-登录拦截器.md)
-- [5 - 导航栏和图书管理界面](Java/SpringBoot+Vue项目/5-导航栏和图书管理界面.md)
-- [6 - 数据库设计与增删改查](Java/SpringBoot+Vue项目/6-数据库设计与增删改查.md)
-- [7 - 增删改查的前端界面](Java/SpringBoot+Vue项目/7-增删改查的前端界面.md)
-- [8 - 图片上传](Java/SpringBoot+Vue项目/8-图片上传.md)
+- [5 - 用户注册](Java/SpringBoot+Vue项目/5-用户注册.md)
+
+### ② 图书馆 / 图书管理
+
+- [6 - 导航栏和图书管理界面](Java/SpringBoot+Vue项目/6-导航栏和图书管理界面.md)
+- [7 - 数据库设计与增删改查](Java/SpringBoot+Vue项目/7-数据库设计与增删改查.md)
+- [8 - 增删改查的前端界面](Java/SpringBoot+Vue项目/8-增删改查的前端界面.md)
+- [9 - 图片上传](Java/SpringBoot+Vue项目/9-图片上传.md)
+
+### ③ 管理员模块

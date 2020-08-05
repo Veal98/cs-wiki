@@ -27,9 +27,11 @@
 
 - 🎓 博主东南大学研一在读，双修 Java 和 AI，奔跑在全栈的路上。本仓库用于记录学习过程中的所思所想，并力图构建一个完善的知识体系，便于复习巩固
 
-- 🙏 由于本人水平有限，仓库中的知识点来自本人原创、视频、书籍、博客等，非原创均已标明出处（或在参考资料中列出），如有遗漏或发现文章错误及排版问题，请 issue 提出  [🚀 传送门](https://github.com/Veal98/CS-Wiki/issues)
+- 🙏 由于本人水平有限，仓库中的知识点来自本人原创、视频、书籍、博客等，非原创均已标明出处（或在参考资料中列出），如有遗漏或发现文章错误及排版问题，请 issue 提出  [传送门](https://github.com/Veal98/CS-Wiki/issues)
 
-- ⚡ [Gitee 在线阅读（国内访问速度较快）](https://veal98.gitee.io/cs-wiki) 🔮 [Github 在线阅读](https://veal98.github.io/CS-Wiki/) 
+- ⚡ [Gitee 在线阅读（国内访问速度较快）](https://veal98.gitee.io/cs-wiki) 
+
+- 🔮 [Github 在线阅读](https://veal98.github.io/CS-Wiki/) 
 
 ---
 
@@ -147,6 +149,12 @@
 - [9 - Redis 发布订阅](Java/Redis/9-Redis发布订阅.md)
 - [10 - Redis 主从复制](Java/Redis/10-Redis主从复制.md)
 - [11 - Redis 缓存穿透和雪崩](Java/Redis/11-Redis缓存穿透和雪崩.md)
+
+### Spring Security
+
+- [1 - Spring Security 概述](Java/SpringSecurity/1-概述.md)
+- [2 - Spring Boot + Spring Security 初体验](Java/SpringSecurity/2-初体验.md)
+- [3 - 基于内存的认证信息和用户授权](Java/SpringSecurity/3-基于内存的认证和授权.md)
 
 ---
 
