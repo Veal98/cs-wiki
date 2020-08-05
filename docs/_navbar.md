@@ -13,7 +13,7 @@
     * [Spring Security](README?id=spring-security)
 * [<i class="fa fa-camera-retro fa-1x"></i> 前端](README?id=🎨-前端)
     * [Vue](README?id=vue)
-* [<i class="fa fa-camera-retro fa-1x"></i> Python](README?id=🚀-python)
+* [<i class="fa fa-rocket fa-1x"></i> Python](README?id=🚀-python)
     * [Python 3 基础](README?id=python-3-基础)
     * [Python 数据分析](README?id=python-数据分析)
 * [<i class="fa fa-user-secret fa-1x"></i> 机器学习](README?id=🎮-机器学习)
