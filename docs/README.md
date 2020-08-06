@@ -154,7 +154,9 @@
 
 - [1 - Spring Security 概述](Java/SpringSecurity/1-概述.md)
 - [2 - Spring Boot + Spring Security 初体验](Java/SpringSecurity/2-初体验.md)
-- [3 - 基于内存的认证信息和用户授权](Java/SpringSecurity/3-基于内存的认证和授权.md)
+- [3 - 基于内存的认证和授权](Java/SpringSecurity/3-基于内存的认证和授权.md)
+- [4 - 基于内存数据库的认证和授权](Java/SpringSecurity/4-基于内存数据库的认证和授权.md)
+- [5 - 基于 Mysql 数据库的认证和授权](Java/SpringSecurity/5-基于Mysql数据库的认证和授权.md)
 
 ---
 
