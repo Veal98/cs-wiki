@@ -6,7 +6,7 @@
     * [数据库](README?id=数据库)
     * [软件工程](README?id=软件工程)
 * [<i class="fa fa-coffee fa-1x"></i> Java](README?id=🍵-java)
-    * [Java 基础](README?id=java-8-基础)
+    * [Java 8 基础](README?id=java-8-基础)
     * [SSM](README?id=SSM)
     * [SpringBoot 2.x](README?id=spring-boot-2x)
     * [Redis](README?id=redis)
@@ -19,3 +19,4 @@
 * [<i class="fa fa-user-secret fa-1x"></i> 机器学习](README?id=🎮-机器学习)
     * [吴恩达机器学习课程笔记](README?id=吴恩达机器学习课程笔记) 
     * [机器学习实战](README?id=机器学习实战) 
+    * [统计学习方法](README?id=统计学习方法) 

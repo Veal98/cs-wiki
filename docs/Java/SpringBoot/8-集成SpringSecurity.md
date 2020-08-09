@@ -2,6 +2,8 @@
 
 ---
 
+> 🔈 该篇仅为快速入门版，详细请看 Spring Security 章节
+
 ## 1. SpringSecurity 简介
 
 Spring Security 是针对Spring项目的安全框架，也是Spring Boot底层安全模块默认的技术选型，他可以实现强大的Web安全控制，对于安全控制，我们仅需要引入 `spring-boot-starter-security` 模块，进行少量的配置，即可实现强大的安全管理。
@@ -186,7 +188,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     // 认证规则
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-         //在内存中定义，也可以在jdbc中去拿
+         //  内存数据库
         auth.inMemoryAuthentication()
                 .withUser("smallbeef").password("12345").roles("vip1")
                 .and()
