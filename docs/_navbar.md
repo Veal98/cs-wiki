@@ -11,6 +11,7 @@
     * [SpringBoot 2.x](README?id=spring-boot-2x)
     * [Redis](README?id=redis)
     * [Spring Security](README?id=spring-security)
+    * [Shiro](README?id=shiro)
 * [<i class="fa fa-camera-retro fa-1x"></i> 前端](README?id=🎨-前端)
     * [Vue](README?id=vue)
 * [<i class="fa fa-rocket fa-1x"></i> Python](README?id=🚀-python)

@@ -152,7 +152,7 @@
 
 ### Spring Security
 
-> 📣 本篇旨在 `Spring Boot` 的基础上使用 `Spring Security`
+> 📣 本篇旨在 Spring Boot 的基础上使用 Spring Security
 
 - [1 - Spring Security 概述](Java/SpringSecurity/1-概述.md)
 - [2 - Spring Boot + Spring Security 初体验](Java/SpringSecurity/2-初体验.md)
@@ -162,6 +162,13 @@
 - [6 - 自定义登录页面和构建主页](Java/SpringSecurity/6-自定义登录页面和构建主页.md)
 - [7 - 登出处理和自定义 403 界面](Java/SpringSecurity/7-登出处理和自定义403界面.md)
 - [8 - 从数据库中动态加载角色](Java/SpringSecurity/8-从数据库中动态加载角色.md)
+- 断更，有缘再学 😒
+
+### Shiro
+
+> 📣 本篇旨在 Spring Boot 的基础上使用 Shiro
+
+- [1 - Shiro 概述](Java/Shiro/1-概述.md)
 
 ---
 
