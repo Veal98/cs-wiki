@@ -150,7 +150,7 @@
 - [10 - Redis 主从复制](Java/Redis/10-Redis主从复制.md)
 - [11 - Redis 缓存穿透和雪崩](Java/Redis/11-Redis缓存穿透和雪崩.md)
 
-### Spring Security
+### Spring Security 5.x
 
 > 📣 本篇旨在 Spring Boot 的基础上使用 Spring Security
 
@@ -162,6 +162,8 @@
 - [6 - 自定义登录页面和构建主页](Java/SpringSecurity/6-自定义登录页面和构建主页.md)
 - [7 - 登出处理和自定义 403 界面](Java/SpringSecurity/7-登出处理和自定义403界面.md)
 - [8 - 从数据库中动态加载角色](Java/SpringSecurity/8-从数据库中动态加载角色.md)
+- [9 - 原理分析](Java/SpringSecurity/9-原理分析.md)
+- [10 - 记住我](Java/SpringSecurity/10-记住我.md)
 
 ---
 
