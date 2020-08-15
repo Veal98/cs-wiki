@@ -505,20 +505,17 @@ In [73]: df.plot.barh(stacked=True, alpha=0.5)
 > 👇 tips 表中的部分数据：
 >
 > total_bill,tip,smoker,day,time,size
+> 
 > 16.99,1.01,No,Sun,Dinner,2
+> 
 > 10.34,1.66,No,Sun,Dinner,3
+> 
 > 21.01,3.5,No,Sun,Dinner,3
+> 
 > 14.78,3.23,No,Sun,Dinner,2
+> 
 > 10.27,1.71,No,Sun,Dinner,2
-> 35.26,5.0,No,Sun,Dinner,4
-> 15.42,1.57,No,Sun,Dinner,2
-> 17.92,4.08,No,Sat,Dinner,2
-> 20.29,2.75,No,Sat,Dinner,2
-> 15.77,2.23,No,Sat,Dinner,2
-> 39.42,7.58,No,Sat,Dinner,4
-> 19.82,3.18,No,Sat,Dinner,2
-> 17.81,2.34,No,Sat,Dinner,4
-> 13.37,2.0,No,Sat,Dinner,2
+> 
 
 ```python
 In [75]: tips = pd.read_csv('examples/tips.csv')
