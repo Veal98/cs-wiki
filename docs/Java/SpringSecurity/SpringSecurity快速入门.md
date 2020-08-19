@@ -1,8 +1,6 @@
-# 🔒 集成 Spring Security
+# 🔒 SpringBoot + Spring Security 一篇文章快速入门
 
 ---
-
-> 🔈 该篇仅为快速入门版，详细请看 Spring Security 章节
 
 ## 1. SpringSecurity 简介
 

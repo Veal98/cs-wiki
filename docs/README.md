@@ -84,7 +84,6 @@
 - [8 - 事务处理 - 数据库恢复技术](计算机基础/数据库/8-事务处理-数据库恢复技术)
 - [9 - 事务处理 - 并发控制](计算机基础/数据库/9-事务处理-并发控制)
 - [10 - 数据库编程](计算机基础/数据库/10-数据库编程.md)
-- [  ✍ LeetCode 数据库部分题目](计算机基础/数据库/LeetCode.md)
 - [  🔥 数据库面试指南](计算机基础/数据库/面试指南.md)
 
 
@@ -131,9 +130,8 @@
   - [5 - Web 开发](Java/SpringBoot/5-Web开发.md)
   - [6 - Web 开发 - 实战案例](Java/SpringBoot/6-Web开发-实战案例.md)
   - [7 - SpringBoot 与数据访问](Java/SpringBoot/7-SpringBoot与数据访问.md)
-  - [8 - 集成 Spring Security](Java/SpringBoot/8-集成SpringSecurity.md)
-  - [9 - 异步、定时、邮件任务](Java/SpringBoot/9-异步定时邮件任务.md)
-  - [10 - 集成 Redis（Lettuce）](Java/SpringBoot/10-集成Redis.md)
+  - [8 - 异步、定时、邮件任务](Java/SpringBoot/8-异步定时邮件任务.md)
+  - [9 - 集成 Redis（Lettuce）](Java/SpringBoot/9-集成Redis.md)
   - [🚀 SpringBoot + Vue 前后端分离项目实战](Java/SpringBoot+Vue项目/index.md)
 
 ### Redis
@@ -150,9 +148,19 @@
 - [10 - Redis 主从复制](Java/Redis/10-Redis主从复制.md)
 - [11 - Redis 缓存穿透和雪崩](Java/Redis/11-Redis缓存穿透和雪崩.md)
 
+### Shiro
+
+**迅速入门：**
+
+- [🔥 SpringBoot + Shiro 一篇文章快速入门](Java/Shiro/Shiro快速入门.md)
+
 ### Spring Security 5.x
 
-> 📣 本篇旨在 Spring Boot 的基础上使用 Spring Security
+**迅速入门：**
+
+- [🔥 SpringBoot + SpringSecurity 一篇文章快速入门](Java/SpringSecurity/SpringSecurity快速入门.md)
+
+**深入学习：**
 
 - [1 - Spring Security 概述](Java/SpringSecurity/1-概述.md)
 - [2 - Spring Boot + Spring Security 初体验](Java/SpringSecurity/2-初体验.md)
@@ -261,6 +269,7 @@
   - [1 - 统计学习及监督学习概论](人工智能/机器学习/统计学习方法/1-统计学习及监督学习概论.md)
   - [2 - 感知机](人工智能/机器学习/统计学习方法/2-感知机.md)
   - [3 - k 近邻算法](人工智能/机器学习/统计学习方法/3-k近邻算法.md)
+  - [4 - 朴素贝叶斯算法](人工智能/机器学习/统计学习方法/4-朴素贝叶斯算法.md)
 - 【第二部分：无监督学习】
 
 ---
