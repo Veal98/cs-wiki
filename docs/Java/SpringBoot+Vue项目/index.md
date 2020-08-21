@@ -50,4 +50,8 @@
 - [8 - 增删改查的前端界面](Java/SpringBoot+Vue项目/8-增删改查的前端界面.md)
 - [9 - 图片上传](Java/SpringBoot+Vue项目/9-图片上传.md)
 
-### ③ 管理员模块
+### ③ 安全模块
+
+- [10 - 使用 Shiro 实现密码加密和登录认证](Java/SpringBoot+Vue项目/10-使用Shiro实现密码加密和登录认证.md)
+- [11 - 使用 Shiro 实现登出和登录拦截](Java/SpringBoot+Vue项目/11-使用Shiro实现登出和登录拦截.md)
+- [12 - 使用 Shiro 实现记住我](Java/SpringBoot+Vue项目/12-使用Shiro实现记住我.md)

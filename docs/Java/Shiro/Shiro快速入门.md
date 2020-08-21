@@ -508,7 +508,7 @@ public class MyRealm extends AuthorizingRealm {
 
 - **doGetAuthenticationInfo 获取身份验证相关信息**：
 
-  其中参数 `AuthenticationToken` 用于收集用户提交的身份（如用户名）及凭据（如密码）：
+  其中<u>参数 `AuthenticationToken` 用于收集用户提交的身份（如用户名）及凭据（如密码）</u>：
 
   ![](https://gitee.com/veal98/images/raw/master/img/20200817213827.png)
 
@@ -585,6 +585,10 @@ public void testCustomRealm(){
 在 Shiro 框架中，对于这样的操作提供了简单的代码实现：
 
 ```java
+import org.apache.shiro.crypto.SecureRandomNumberGenerator;
+
+...
+    
 String password = "123456";
 String salt = new SecureRandomNumberGenerator().nextBytes().toString(); // 随机生成盐
 int times = 2;  // 定义多次加密次数：2
@@ -597,9 +601,7 @@ System.out.printf("原始密码是 %s , 盐是： %s, 运算次数是： %d, 运
 
 输出 ：
 
-> ```
 > 原始密码是 123456 , 盐是： f5GQZsuWjnL9z585JjLrbQ==, 运算次数是： 2, 运算出来的密文是：55fee80f73537cefd6b3c9a920993c25 
-> ```
 
 ## 6. SpringBoot + Shiro 简单实例
 

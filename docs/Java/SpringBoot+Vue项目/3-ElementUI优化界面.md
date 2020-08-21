@@ -35,10 +35,10 @@ Vue.use(ElementUI);
 
 ```vue
 <template>
-  <body class = "bg">
+  <body class = "bg_login">
     <div class="login-container">
-      <el-form  :model="loginForm" status-icon="true" :rules="rules" ref="loginForm" label-width="80px"  
-        hide-required-asterisk="true" class="demo-loginForm">
+      <el-form  :model="loginForm" :status-icon="true" :rules="rules" ref="loginForm" label-width="80px"  
+        :hide-required-asterisk="true" class="demo-loginForm">
           <h3 class="login_title">登 录</h3>
           <el-form-item prop="username">
             <el-input placeholder = "用户名" v-model="loginForm.username" autocomplete="off"></el-input>
@@ -87,8 +87,10 @@ Vue.use(ElementUI);
           .then(successResponse => {
             if (successResponse.data.code === 200) {
                 this.$router.replace({path: '/index'})
-            } else {
-                this.responseResult = successResponse.data.code;
+            } else{
+              this.$alert('用户名或者密码错误', '提示', {
+                confirmButtonText: '确定'
+              })
             }
           })
           .catch(failResponse => {
@@ -119,8 +121,8 @@ Vue.use(ElementUI);
     font-size: 22px;
   }
    /* 背景图片 */
-  .bg{
-    background:url("../assets/bg.jpg") no-repeat;
+  .bg_login{
+    background:url("../assets/bg_login.jpg") no-repeat;
     background-position: center;
     height: 100%;
     width: 100%;
