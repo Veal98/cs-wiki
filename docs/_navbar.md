@@ -9,6 +9,7 @@
     * [Java 8 基础](README?id=java-8-基础)
     * [SSM](README?id=SSM)
     * [SpringBoot 2.x](README?id=spring-boot-2x)
+    * [JPA](README?id=jpa)
     * [Redis](README?id=redis)
     * [Shiro](README?id=shiro)
     * [Spring Security 5.x](README?id=spring-security-5x)

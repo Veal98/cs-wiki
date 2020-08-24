@@ -447,7 +447,7 @@ If you want to take complete control of Spring MVC, you can add your own @Config
 
 我们来仔细对照，看一下它怎么实现的，它告诉我们 SpringBoot 已经帮我们自动配置好了 SpringMVC，然后自动配置了哪些东西呢？
 
-### ① **ContentNegotiatingViewResolver 内容协商视图解析器** 
+### ① ContentNegotiatingViewResolver 内容协商视图解析器
 
 自动配置了 `ViewResolver`，就是我们之前学习的 SpringMVC 的视图解析器；
 

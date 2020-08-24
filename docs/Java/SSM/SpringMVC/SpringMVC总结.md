@@ -1,20 +1,26 @@
-
-
-
-
-<img src="https://gitee.com/veal98/images/raw/master/img/20200517230217.png" style="zoom:80%;" />
-
-> - SpringMVC 是一种基于 Java 的实现 MVC 设计模型的请求驱动类型的轻量级 Web 框架，属于 Spring FrameWork 的后续产品，已经融合在 Spring Web Flow 里面。
-> - Spring 框架提供了构建 Web 应用程序的全功 能 MVC 模块。使用 Spring 可插入的 MVC 架构，从而在使用 Spring 进行 WEB 开发时，可以选择使用 Spring 的 Spring MVC 框架或集成其他 MVC 开发框架，如 Struts1(现在一般不用)，Struts2 等。
-> - SpringMVC 已经成为目前最主流的 MVC 框架之一，并且随着 Spring3.0 的发布，全面超越 Struts2，成 为最优秀的 MVC 框架。 它通过一套注解，让一个简单的 Java 类成为处理请求的控制器，而无须实现任何接口。同时它还支持 RESTful 编程风格的请求。
-
-![](https://gitee.com/veal98/images/raw/master/img/20200517221650.png)
+# 概述
 
 ---
 
 
 
+<img src="https://gitee.com/veal98/images/raw/master/img/20200517230217.png" style="zoom:80%;" />
+
+- SpringMVC 是一种基于 Java 的实现 MVC 设计模型的请求驱动类型的轻量级 Web 框架，属于 Spring FrameWork 的后续产品，已经融合在 Spring Web Flow 里面。
+- Spring 框架提供了构建 Web 应用程序的全功 能 MVC 模块。使用 Spring 可插入的 MVC 架构，从而在使用 Spring 进行 WEB 开发时，可以选择使用 Spring 的 Spring MVC 框架或集成其他 MVC 开发框架，如 Struts1(现在一般不用)，Struts2 等。
+- SpringMVC 已经成为目前最主流的 MVC 框架之一，并且随着 Spring3.0 的发布，全面超越 Struts2，成 为最优秀的 MVC 框架。 它通过一套注解，让一个简单的 Java 类成为处理请求的控制器，而无须实现任何接口。同时它还支持 RESTful 编程风格的请求。
+
+![](https://gitee.com/veal98/images/raw/master/img/20200517221650.png)
+
+<br>
+
+
+
 # 一、SpringMVC 入门案例
+
+---
+
+
 
 入门案例的需求：实现 jsp 界面点击超链接，发送请求，成功转发到指定的 jsp 界面
 
@@ -212,11 +218,15 @@ public class HelloController {
 
 
 
----
+<br>
 
 
 
 # 二、案例的执行过程及相关组件
+
+---
+
+
 
 ## 1. 执行过程
 
@@ -270,12 +280,15 @@ View Resolver 负责将处理结果生成 View 视图 ，View Resolver 首先根
 
 因为使用 `< mvc:annotation-driven >` 就会自动加载 RequestMappingHandlerMapping （处理映射器）和 RequestMappingHandlerAdapter （ 处 理 适 配 器 ） ， 可在 SpringMVC.xml 配 置 文 件 中 使 用 < mvc:annotation-driven > 替代处理器和适配器的配置。
 
----
-
+<br>
 
 
 
 # 三、@RequestMapping 详解 
+
+---
+
+
 
 ## 1. 作用
 
@@ -333,11 +346,15 @@ public class AccountController {
 
 - `headers`  发送的请求中必须包含的请求头
 
----
+<br>
 
 
 
 # 四、ModelAndView 详解
+
+---
+
+
 
 ## 1. 概述
 
@@ -425,11 +442,15 @@ public ModelMap addAllAttributes(Map<String, ?> attributes){...}
 
 同样在 jsp 界面通过 EL 表达式获取传值
 
----
+<br>
 
 
 
 # 五、Controller 的返回值
+
+---
+
+
 
 ## 1. 返回 ModelAndView
 
@@ -575,11 +596,15 @@ jsp 界面通过 EL 表达式取值
 
   
 
----
+<br>
 
 
 
 # 六、请求参数的绑定
+
+---
+
+
 
 ## 1. 绑定基本数据类型
 
@@ -853,13 +878,15 @@ public String testServletAPI(HttpServletRequest request,
 
 <img src="https://gitee.com/veal98/images/raw/master/img/20200518221216.png" style="zoom:80%;" />
 
-
-
----
+<br>
 
 
 
 # 七、配置解决中文乱码的过滤器
+
+---
+
+
 
 在 web.xml中 配置过滤器
 
@@ -881,11 +908,15 @@ public String testServletAPI(HttpServletRequest request,
   </filter-mapping>
 ```
 
----
+<br>
 
 
 
 # 八、常用注解
+
+---
+
+
 
 ## 1. RequestParam
 
@@ -1217,11 +1248,15 @@ public class SessionAttributeController {
 }	 
 ```
 
----
+<br>
 
 
 
 # 九、RESTful
+
+---
+
+
 
 >  REST 风格 URL 
 
@@ -1283,13 +1318,13 @@ public void add(){	// POst
 
 所有方法的路径都是一样的，通过发送的请求方式 get/post/delete/put 来确定使用哪个方法，如果两个方法的请求方式是相同的，则根据所带参数来判断调用哪个方法，比如上述代码中的 findAll 和 findById 方法
 
-
-
----
+<br>
 
 
 
 # 十、@ResponseBody 响应 json 数据 
+
+---
 
 需求：  使用@ResponseBody 注解实现将 controller 方法返回对象转换为 json 响应给客户端
 
@@ -1406,11 +1441,15 @@ public class HelloController {
 }
 ```
 
----
+<br>
 
 
 
 # 十一、文件上传
+
+---
+
+
 
 ## 1. 传统方式的文件上传
 
@@ -1686,9 +1725,15 @@ OK，至此，图片服务器 fileupload 的配置完毕，接下来开始应用
 
 ![img](https://img-blog.csdnimg.cn/20200325121428874.png)
 
----
+<br>
+
+
 
 # 📚 References
+
+---
+
+
 
 - 🐟 [视频 - SpringMVC教程IDEA版-3天-2018黑马SSM-03](https://www.bilibili.com/video/av47953244/)
 

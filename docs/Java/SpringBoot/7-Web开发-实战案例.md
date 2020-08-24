@@ -28,6 +28,20 @@ Thymeleaf 取值语法：
 
 ![](https://gitee.com/veal98/images/raw/master/img/20200705161106.png)
 
+**添加依赖**：
+
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+</dependency>
+
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-thymeleaf</artifactId>
+</dependency>
+```
+
 **实体类**：
 
 - `Department` 部门类

@@ -128,11 +128,16 @@
   - [3 - 自定义 starter](Java/SpringBoot/3-自定义starter.md)
   - [4 - 日志](Java/SpringBoot/4-日志.md)
   - [5 - Web 开发](Java/SpringBoot/5-Web开发.md)
-  - [6 - Web 开发 - 实战案例](Java/SpringBoot/6-Web开发-实战案例.md)
-  - [7 - SpringBoot 与数据访问](Java/SpringBoot/7-SpringBoot与数据访问.md)
-  - [8 - 异步、定时、邮件任务](Java/SpringBoot/8-异步定时邮件任务.md)
-  - [9 - 集成 Redis（Lettuce）](Java/SpringBoot/9-集成Redis.md)
+  - [7 - Web 开发 - 实战案例](Java/SpringBoot/7-Web开发-实战案例.md)
+  - [6 - SpringBoot 前后端数据交互的几种常用方式 ⭐ ](Java/SpringBoot/6-SpringBoot前后端数据交互.md)
+  - [8 - SpringBoot 与数据访问](Java/SpringBoot/8-SpringBoot与数据访问.md)
+  - [9 - 异步、定时、邮件任务](Java/SpringBoot/9-异步定时邮件任务.md)
+  - [10 - 集成 Redis（Lettuce）](Java/SpringBoot/10-集成Redis.md)
   - [🚀 SpringBoot + Vue 前后端分离项目实战](Java/SpringBoot+Vue项目/index.md)
+
+### JPA
+
+- [🔥 Spring Boot + Spring Data JPA 一篇文章快速入门](Java/JPA/SpringBoot+SpringDataJPA快速入门.md)
 
 ### Redis
 
@@ -150,18 +155,11 @@
 
 ### Shiro
 
-**迅速入门：**
-
 - [🔥 SpringBoot + Shiro 一篇文章快速入门](Java/Shiro/Shiro快速入门.md)
 
 ### Spring Security 5.x
 
-**迅速入门：**
-
 - [🔥 SpringBoot + SpringSecurity 一篇文章快速入门](Java/SpringSecurity/SpringSecurity快速入门.md)
-
-**深入学习：**
-
 - [1 - Spring Security 概述](Java/SpringSecurity/1-概述.md)
 - [2 - Spring Boot + Spring Security 初体验](Java/SpringSecurity/2-初体验.md)
 - [3 - 基于内存的认证和授权](Java/SpringSecurity/3-基于内存的认证和授权.md)

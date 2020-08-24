@@ -25,7 +25,7 @@
 </style>
 ```
 
-![](https://gitee.com/veal98/CS-Wiki/raw/master/img/20200821163115.png)
+![](https://gitee.com/veal98/images/raw/master/img/20200822100437.png)
 
 在 methods 中编写 `logout()` 方法：
 
@@ -91,8 +91,6 @@ window.localStorage.setItem('user', JSON.stringify({"username":"hello", "passwor
 ```
 
 的命令来绕过前端的 “全局前置守卫”（`router.beforeEach`）。
-
-![](https://gitee.com/veal98/CS-Wiki/raw/master/img/20200821170655.png)
 
 输入完毕后，我们无须登录，可以直接访问任意 url。
 

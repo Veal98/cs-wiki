@@ -17,8 +17,6 @@
 
 首先，我们要在数据库的 user 表中添加 salt 字段，并相应地在实体类 User 中添加 salt 属性与 get、set 方法：
 
-![](https://gitee.com/veal98/CS-Wiki/raw/master/img/20200820232550.png)
-
 ```java
 String salt;
 
@@ -89,7 +87,7 @@ public class RegisterController {
 
 这样就完成了注册时的加密。
 
-![](https://gitee.com/veal98/CS-Wiki/raw/master/img/20200821114028.png)
+![](https://gitee.com/veal98/images/raw/master/img/20200822100132.png)
 
 当然，我们还需要对用户登录认证的逻辑进行相应的修改 👇 
 

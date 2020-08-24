@@ -217,7 +217,9 @@ public class TestShiro {
 
 ## 4. Realm 详解
 
-从上面我们了解到实际进行权限信息验证的是我们的 Realm，Shiro 框架内部默认提供了两种实现，一种是查询`.ini`文件的`IniRealm`，另一种是查询数据库的`JdbcRealm`。当然，我们还可以自定义 Realm。接下来进行详细解释：👇
+⭐ 在认证、授权内部实现机制中都有提到，最终处理都将交给 Realm 进行处理。因为**在 Shiro 中，最终是通过 Realm 来获取应用程序中的用户、角色及权限信息的**。通常情况下，**在 Realm中 会直接从我们的数据源中获取 Shiro 需要的验证信息。可以说，Realm 是专用于安全框架的DAO**。
+
+Shiro 框架内部默认提供了两种 Realm 的实现，一种是查询`.ini`文件的`IniRealm`，另一种是查询数据库的`JdbcRealm`。当然，我们还可以自定义 Realm。接下来进行详细解释：👇
 
 ### ① Shiro 默认提供的 Realm
 
@@ -233,186 +235,9 @@ public class TestShiro {
 
 - **org.apache.shiro.realm.jdbc.JdbcRealm**：通过 sql 查询相应的信息，如 `select password from users where username = ?` 获取用户密码，`select password, password_salt from users where username = ?` 获取用户密码及盐；`select role_name from user_roles where username = ?` 获取用户角色；`select permission from roles_permissions where role_name = ?` 获取角色对应的权限信息；也可以调用相应的 api 进行自定义 sql
 
-#### Ⅰ 基于 IniRealm 的身份认证实例
-
-构建一个 Maven 项目，添加如下依赖：
-
-```xml
-<dependencies>
-    <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <version>4.12</version>
-    </dependency>
-    <dependency>
-        <groupId>commons-logging</groupId>
-        <artifactId>commons-logging</artifactId>
-        <version>1.2</version>
-    </dependency>
-    <dependency>
-        <groupId>org.apache.shiro</groupId>
-        <artifactId>shiro-core</artifactId>
-        <version>1.4.0</version>
-    </dependency>
-</dependencies>
-```
-
-首先在 `resources` 文件夹下新建一个 `shiro.ini` 文件，用来模拟数据库中的数据，内容如下：
-
-```ini
-# 定义用户
-[users]
-# 用户名 zhang  密码是 123
-zhang = 123
-wang = 123
-```
-
-测试用例：
-
-```java
-import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.AuthenticationException;
-import org.apache.shiro.authc.UsernamePasswordToken;
-import org.apache.shiro.config.IniSecurityManagerFactory;
-import org.apache.shiro.mgt.SecurityManager;
-import org.apache.shiro.subject.Subject;
-import org.junit.Assert;
-
-public class TestShiro {
-    public static void main(String[] args) {
-        // 1. 获取SecurityManager工厂，此处使用Ini配置文件初始化SecurityManager
-        IniSecurityManagerFactory iniSecurityManagerFactory = new IniSecurityManagerFactory("classpath:shiro.ini");
-        // 2. 获取SecurityManager实例 并绑定给SecurityUtils
-        SecurityManager securityManager = iniSecurityManagerFactory.getInstance();
-        SecurityUtils.setSecurityManager(securityManager);
-        // 3. 获取当前主体 Subject 并创建用户名/密码，得到身份凭证Token
-        Subject subject = SecurityUtils.getSubject();
-        UsernamePasswordToken token = new UsernamePasswordToken("zhang", "123");
-
-        try{
-            // 4. 登录，即身份验证
-            subject.login(token);
-        } catch (AuthenticationException e){
-            // 5. 身份验证失败
-        }
-
-        Assert.assertEquals(true, subject.isAuthenticated()); // 断言用户已经登录
-        // 6. 退出
-        subject.logout();
-    }
-
-}
-```
-
-上述代码中我们的用户数据是硬编码在 ini 配置文件中的，接下来我们将其改成存储在数据库中 👇
-
-#### Ⅱ 基于 JdbcRealm 的身份认证实例
-
-首先添加依赖：
-
-```java
-<dependency>
-    <groupId>mysql</groupId>
-    <artifactId>mysql-connector-java</artifactId>
-    <version>5.1.47</version>
-</dependency>
-<dependency>
-    <groupId>com.alibaba</groupId>
-    <artifactId>druid</artifactId>
-    <version>0.2.26</version>
-</dependency>
-```
-
-新建数据库 shiro 以及三张表 users（用户名 / 密码）、user_roles（用户 / 角色）、roles_permissions（角色 / 权限）：
-
-```sql
-drop database if exists shiro;
-create database shiro;
-use shiro;
-
-create table users (
-  id bigint auto_increment,
-  username varchar(100),
-  password varchar(100),
-  password_salt varchar(100),
-  constraint pk_users primary key(id)
-) charset=utf8 ENGINE=InnoDB;
-create unique index idx_users_username on users(username);
-
-create table user_roles(
-  id bigint auto_increment,
-  username varchar(100),
-  role_name varchar(100),
-  constraint pk_user_roles primary key(id)
-) charset=utf8 ENGINE=InnoDB;
-create unique index idx_user_roles on user_roles(username, role_name);
-
-create table roles_permissions(
-  id bigint auto_increment,
-  role_name varchar(100),
-  permission varchar(100),
-  constraint pk_roles_permissions primary key(id)
-) charset=utf8 ENGINE=InnoDB;
-create unique index idx_roles_permissions on roles_permissions(role_name, permission);
-
-insert into users(username,password)values('zhang','123');
-```
-
-配置文件（`shiro-jdbc-realm.ini`）：
-
-```ini
-jdbcRealm=org.apache.shiro.realm.jdbc.JdbcRealm
-dataSource=com.alibaba.druid.pool.DruidDataSource
-dataSource.driverClassName=com.mysql.jdbc.Driver
-dataSource.url=jdbc:mysql://localhost:3306/shiro
-dataSource.username=root
-dataSource.password=root
-jdbcRealm.dataSource=$dataSource
-# 定义使用的 Realm
-securityManager.realms=$jdbcRealm 
-```
-
-测试代码和之前基本一样，只不过需要在退出之前将 Subject 从当前线程解绑：
-
-```java
-@Test
-public void testJDBCRealm() {
-    //1、获取SecurityManager工厂，此处使用Ini配置文件初始化SecurityManager
-    IniSecurityManagerFactory iniSecurityManagerFactory =
-            new IniSecurityManagerFactory("classpath:shiro-jdbc-realm.ini");
-
-    //2、得到SecurityManager实例 并绑定给SecurityUtils
-    SecurityManager securityManager = iniSecurityManagerFactory.getInstance();
-    SecurityUtils.setSecurityManager(securityManager);
-
-    // 3. 获取当前主体 Subject 并创建用户名/密码，得到身份凭证Token
-    Subject subject = SecurityUtils.getSubject();
-    UsernamePasswordToken token = new UsernamePasswordToken("zhang", "123");
-
-    try {
-        //4、登录，即身份验证
-        subject.login(token);
-    } catch (AuthenticationException e) {
-        //5、身份验证失败
-        e.printStackTrace();
-    }
-
-    Assert.assertEquals(true, subject.isAuthenticated()); //断言用户已经登录
-
-    //6、退出
-    subject.logout();
-}
-
-
-@After
-public void tearDown() throws Exception {
-    ThreadContext.unbindSubject();//退出时请解除绑定Subject到线程 否则对下次测试造成影响
-}
-```
-
 ### ② 自定义 Realm
 
-上面两种方法比较简单，接下里我们着重解释自定义实现的 Realm 
+主流是自定义实现的 Realm ：
 
 ⭐ **一般来说当我们自定义 Realm 的时候，继承 `AuthorizingRealm` 类并实现默认的两个方法 `获取授权信息 doGetAuthorizationInfo`，`获取身份认证信息 doGetAuthenticationInfo` 即可**：
 
@@ -659,9 +484,11 @@ spring.jpa.database-platform=org.hibernate.dialect.MySQL5InnoDBDialect
 spring.jpa.properties.hibernate.dialect=com.smallbeef.shiro_demo.config.MySQLConfig
 ```
 
-### ② 实体类
+### ② 实体类 —— RBAC
 
-新建一个 `entity` 包，在下面创建以下实体：
+⭐ RBAC 是**基于角色的访问控制**（Role-Based Access Control ）。在 RBAC 中，**权限与角色相关联，用户通过成为适当角色的成员而得到这些角色的权限**。这就极大地简化了权限的管理。这样管理都是层级相互依赖的，权限赋予给角色，而把角色又赋予用户，这样的权限设计很清楚，管理起来很方便。
+
+采用 JPA 技术来自动生成基础表格，新建一个 `entity` 包，在下面创建以下实体：
 
 **用户信息 UserInfo**：
 
@@ -793,7 +620,7 @@ public class MySQLConfig extends MySQL5InnoDBDialect {
 
 **MyShiroRealm：**
 
-自定义的 Realm ，方法跟上面的认证授权过程一致
+自定义的 Realm ，方法跟上面的认证授权过程一致。编写结束后，注**意将自定义的 Realm 注入到securityManager 中**
 
 ```java
 public class MyShiroRealm extends AuthorizingRealm {
@@ -801,7 +628,7 @@ public class MyShiroRealm extends AuthorizingRealm {
     private UserInfoService userInfoService;
 	
     
-    // 获取授权信息
+    // 获取授权信息(对已认证用户进行授予权限和角色)
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
         // 能进入这里说明用户已经通过验证了
@@ -816,7 +643,7 @@ public class MyShiroRealm extends AuthorizingRealm {
         return simpleAuthorizationInfo;
     }
 	
-    // 获取身份认证信息
+    // 获取身份认证信息（认证用户是否存在于数据库中）
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
         // 获取用户输入的账户
@@ -895,8 +722,8 @@ public class ShiroConfig {
         return myShiroRealm;
     }
 
-
-    @Bean
+	// 将自定义的 Realm 注入到securityManager中
+    @Bean	
     public SecurityManager securityManager() {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
         securityManager.setRealm(myShiroRealm());
@@ -917,18 +744,7 @@ public class ShiroConfig {
         return authorizationAttributeSourceAdvisor;
     }
 
-    @Bean(name = "simpleMappingExceptionResolver")
-    public SimpleMappingExceptionResolver createSimpleMappingExceptionResolver() {
-        SimpleMappingExceptionResolver r = new SimpleMappingExceptionResolver();
-        Properties mappings = new Properties();
-        mappings.setProperty("DatabaseException", "databaseError"); // 数据库异常处理
-        mappings.setProperty("UnauthorizedException", "403");
-        r.setExceptionMappings(mappings);  // None by default
-        r.setDefaultErrorView("error");    // No default
-        r.setExceptionAttribute("ex");     // Default is "exception"
-        //r.setWarnLogCategory("example.MvcLogger");     // No default
-        return r;
-    }
+   
 }
 
 ```
@@ -993,6 +809,8 @@ public class UserInfoServiceImpl implements UserInfoService {
 
 **HomeController：**
 
+**登录过程其实只是处理异常的相关信息，具体的登录验证交给 Shiro 来处理**
+
 ```java
 @Controller
 public class HomeController {
@@ -1041,7 +859,9 @@ public class HomeController {
 
 这里边的地址对应我们在 Shiro 配置类 `ShiroConfig` 设置的地址
 
-**UserInfoController：**
+**UserInfoController：哪里需要权限，哪里写注解 `@RequirePermission` 就行**：
+
+> 这种方式直观，但是，真正项目开发的时候，这种方式就很有局限性了，当权限配置关系发生变化，每次都要修改代码，编译打包重启系统，这肯定是不能够被接受的。最好的方式，就是通过动态配置，给不同的用户配置不同的角色，权限，修改之后立马生效这种方式。 为了实现这个效果，就需要**基于URL配置权限**的方式来做了，详见该系列其他文章
 
 ```java
 @RestController

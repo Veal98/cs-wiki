@@ -9,6 +9,18 @@
 在 Shiro 配置类 `ShiroConfig` 中添加两个方法：
 
 ```java
+.......
+
+@Bean
+public SecurityManager securityManager(){
+    DefaultWebSecurityManager defaultWebSecurityManager = new DefaultWebSecurityManager();
+    defaultWebSecurityManager.setRealm(getMyRealm());
+    defaultWebSecurityManager.setRememberMeManager(rememberMeManager());
+    return defaultWebSecurityManager;
+}
+
+.......
+
 // cookie
 @Bean
 public SimpleCookie simpleCookie(){
@@ -62,7 +74,7 @@ public CookieRememberMeManager rememberMeManager(){
 </script>
 ```
 
-![](https://gitee.com/veal98/CS-Wiki/raw/master/img/20200821220018.png)
+![](https://gitee.com/veal98/images/raw/master/img/20200822100305.png)
 
 ## 3. 后端接受参数
 
@@ -143,13 +155,15 @@ public class LoginInterceptor implements HandlerInterceptor {
 
 测试一下，当正常登录时，控制台的输出为：
 
-![](https://gitee.com/veal98/CS-Wiki/raw/master/img/20200821215507.png)
+> true
+>
+> false
 
 关闭浏览器并重新进入任一界面比如 `index`，不会受到拦截：
 
-![](https://gitee.com/veal98/CS-Wiki/raw/master/img/20200821215621.png)
-
-
+> false
+>
+> true
 
 ## 📚 References
 
