@@ -1,0 +1,243 @@
+a {
+    text-decoration: none;
+}
+body{
+    font-family: "Helvetica Neue",Helvetica,"Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;   
+    word-spacing:1px; /*更改默认的词间距*/
+    letter-spacing:1px;/*更改默认的字符间距*/ 
+    /* background:rgb(255, 255, 255); */
+
+}
+/* 置顶插件 */
+.to-top {
+    display: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    color: #fff;
+    border-radius: 10px;
+    background-color: rgb(102, 126, 233);
+}
+/* 首页a标签置顶,不然无法点击 */
+section.cover .cover-main {
+    z-index:10 !important;
+}
+/* 导航栏 */
+/* .app-nav {
+    margin: 20px 60px 0 0 !important;
+} */
+/* 导航栏字体颜色 */
+/* .app-nav ul, .app-nav li {
+    color: #eee !important;
+} */
+/* 导航栏下拉框背景 */
+/* .app-nav li ul {
+    background-color: rgb(68, 68, 68) !important;
+} */
+/* 内容居中和宽度 */
+.content{
+    width:1000px;
+    margin: 0 auto;
+    padding-top: 70px !important;
+}
+/* 内容区域的字体颜色和背景 */
+.markdown-section{
+    /* background:rgb(247, 247, 247); */
+    /* color: rgb(184, 191, 198); */
+    color: black;
+    max-width: 90% !important;
+    padding: 30px 30px 40px 30px !important;
+    border-radius: 20px;
+}
+/* 行代码块 */
+.markdown-section code {
+    font-size: 14px;
+    font-family: Consolas, monospace, serif;
+    white-space: nowrap;
+    padding: 0 4px;
+    border-radius: 3px;
+    background: rgb(247, 247, 247);
+    white-space: normal;
+    color: rgb(173, 141, 229);
+    
+}
+/* 搜索框 */
+/* .search {
+    border-bottom: 1px solid rgb(68,68,68) !important;
+}
+.search input {
+    background:rgb(51, 51, 51);
+    color: rgb(184, 191, 198)
+}
+.search a {
+    color: rgb(184, 191, 198) !important;
+} */
+
+/* 侧边栏背景颜色 */
+/* .sidebar{
+    background:rgb(51, 51, 51);
+} */
+/* 侧边栏字体颜色 */
+.sidebar ul li a {
+    /* color: rgb(222, 222, 222); */
+    font-weight: 600;
+    font-size:16px;
+}
+.sidebar ul ul li a {
+    /* color: rgb(184, 191, 198); */
+    font-weight:400 !important;
+    font-size:14px !important;
+}
+
+.sidebar ul li.active > a {
+    color: rgb(66, 185, 163);
+} 
+
+/* 侧边栏标题 */
+.sidebar > h1 a{
+    color: black
+}
+/* 侧边栏和内容分界线 */
+.sidebar {
+    border-right: 1px solid rgb(247, 247, 247);
+}
+
+/* .sidebar-toggle{
+    background-color: rgb(68,68,68) !important;
+} */
+h1
+{
+    font-weight: bold !important;
+    color:#ffffff !important;
+}
+h1 span{
+    display:inline-block;
+    background: rgb(102, 126, 233);
+    color:#ffffff !important;
+    padding:  10px  16px;
+    border-radius:5px;
+    box-shadow: 2px 2px 5px rgb(216, 216, 216);
+}
+.markdown-section hr {
+    border: none;
+    border-bottom: 2px solid rgb(247, 247, 247) !important;
+    margin: 2em 0;
+}
+/* 标题颜色 */
+.markdown-section h2 span, .markdown-section h3 span, .markdown-section h4 span,.markdown-section h5 span{
+    /* color: rgb(222, 222, 222); */
+    font-weight: bold;
+}
+
+
+/* 封面半透明遮盖 */
+section.cover.has-mask .mask {
+    background-color: #fff;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+
+/* 加粗 */
+.markdown-section strong {
+    color: rgb(115, 143, 205);
+}
+/* a 标签 */
+.markdown-section a {
+    color: rgb(66, 185, 163);
+    font-weight: 500;
+}
+/* 表格 */
+.markdown-section tr:nth-child(2n) {
+    background-color: rgb(51, 51, 51);
+}
+/* 引用块 */
+.markdown-section blockquote{
+    background: rgb(220, 220, 255);
+    padding:10px;
+    border-radius:10px;
+}
+/* 代码块 */
+/* .markdown-section pre {
+    box-shadow: 2px 2px 20px 6px #ddd !important;
+} */
+
+/* 代码块 */
+.markdown-section pre:before {
+    content: '';
+    display: block;
+    background: url(https://my-wechat.mdnice.com/point.png);
+    height: 30px;
+    width: 100%;
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-color: #282c34;
+    margin-bottom: -7px;
+    margin-top: 10px;
+    margin-left: -3px;
+    border-radius: 5px;
+    background-position: 10px 10px;
+}
+/* 代码块 */
+.markdown-section pre>code {
+    color: #c0c3c1 !important;
+    font-family: 'Inconsolata', consolas,"PingFang SC", "Microsoft YaHei", monospace !important;
+    background-color: #282c34 !important;    
+    font-size: 15px !important;
+    white-space: pre !important;
+    line-height: 1.5 !important;
+    -moz-tab-size: 4 !important;
+    -o-tab-size: 4 !important;
+    tab-size: 4 !important;
+
+}
+/* 代码块 */
+markdown-section code, .markdown-section pre {
+    background-color: #282c34;
+}
+.token.directive.keyword{
+    color: #4faee2 !important;
+}
+
+.token.keyword{
+    color: #c678dd !important;
+}
+
+.token.comment{
+    color: #737c8b !important;
+}
+
+.token.tag{
+    color: #a589ad !important;
+}
+
+
+.token.attr-name{
+    color: #de916c !important;
+}
+.token.attr-value{
+    color: #4faee2 !important;
+}
+
+.token.macro.property{
+    color: #4faee2 !important;
+}
+
+.token.function{
+    color: #e6b456 !important;
+}
+.token.string{
+    color: #98b755 !important;
+}
+.token.punctuation{
+    color: #c0c3c1 !important;
+}
+
+.token.number{
+    color:#c0c3c1  !important;
+}
+
+img, pre {
+    border-radius: 8px;
+}
