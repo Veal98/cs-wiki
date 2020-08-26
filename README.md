@@ -1,22 +1,21 @@
 # <center>CS 📚 Wiki</center>
 ---
 
-
 💡 **「关于」**
 
 - 🎓 博主东南大学研一在读，双修 Java 和 AI，奔跑在全栈的路上。本仓库用于记录学习过程中的所思所想，并力图构建一个完善的知识体系，便于复习巩固
 
 - 🙏 由于本人水平有限，仓库中的知识点来自本人原创、视频、书籍、博客等，非原创均已标明出处（或在参考资料中列出），如有遗漏或发现文章错误及排版问题，请 issue 提出  [传送门](https://github.com/Veal98/CS-Wiki/issues)
 
-- ⚡ [Gitee 在线阅读（国内访问速度较快）](https://veal98.gitee.io/cs-wiki) 
+- ⚡ [Gitee 在线阅读（国内访问速度较快）](https://veal98.gitee.io/cs-wiki) | [Gitee 仓库地址（推荐）](https://gitee.com/veal98/CS-Wiki)
 
-- 🔮 [Github 在线阅读](https://veal98.github.io/CS-Wiki/) 
+- 🔮 [Github 在线阅读](https://veal98.github.io/CS-Wiki/) | [Github 仓库地址](https://github.com/Veal98/CS-Wiki)
 
 ---
 
 ## 📑 计算机基础
 
-### 数据结构
+### 数据结构 DS
 - [参考资料](计算机基础/数据结构/参考资料.md)
 - [1 - 线性表](计算机基础/数据结构/1-线性表.md)
 - [2 - 栈和队列](计算机基础/数据结构/2-栈和队列.md)
@@ -26,11 +25,11 @@
 - [6 - 排序](计算机基础/数据结构/6-排序.md)
 - [🔥 数据结构面试指南](计算机基础/数据结构/面试指南)
 
-### 算法
+### 算法 Algorithm
 
 - [剑指 Offer 题解 — Java / C++](计算机基础/算法/剑指Offer/index.md)
 
-### 计算机网络
+### 计算机网络 Net
 - [参考资料](计算机基础/计算机网络/参考资料.md)
 - [1 - 计算机网络相关概念](计算机基础/计算机网络/1-计算机网络相关概念.md)
 - [2 - 物理层](计算机基础/计算机网络/2-物理层.md)
@@ -41,7 +40,7 @@
 - [7 - 网络管理和网络安全](计算机基础/计算机网络/7-网络管理和网络安全.md)
 - [🔥 计算机网络面试指南](计算机基础/计算机网络/面试指南.md)
 
-### 操作系统
+### 操作系统 OS
 - [参考资料](计算机基础/操作系统/参考资料.md)
 - [1 - 操作系统概述](计算机基础/操作系统/1-操作系统概述.md)
 - [2 - 进程、线程、死锁](计算机基础/操作系统/2-进程、线程、死锁.md)
@@ -51,7 +50,7 @@
 - [🔥 操作系统面试指南](计算机基础/操作系统/面试指南.md)
 
 
-### 数据库
+### 数据库 DB
 - [参考资料](计算机基础/数据库/参考资料.md)
 - [1-数据库系统概述](计算机基础/数据库/1-数据库系统概述.md)
 - [2 - 关系数据库](计算机基础/数据库/2-关系数据库.md)
@@ -63,11 +62,10 @@
 - [8 - 事务处理 - 数据库恢复技术](计算机基础/数据库/8-事务处理-数据库恢复技术)
 - [9 - 事务处理 - 并发控制](计算机基础/数据库/9-事务处理-并发控制)
 - [10 - 数据库编程](计算机基础/数据库/10-数据库编程.md)
-- [  ✍ LeetCode 数据库部分题目](计算机基础/数据库/LeetCode.md)
 - [  🔥 数据库面试指南](计算机基础/数据库/面试指南.md)
 
 
-### 软件工程
+### 软件工程 SE
 
 - [参考资料](计算机基础/软件工程/参考资料.md)
 - [软件工程重点知识总结](计算机基础/软件工程/软件工程重点知识总结.md)
@@ -108,12 +106,18 @@
   - [3 - 自定义 starter](Java/SpringBoot/3-自定义starter.md)
   - [4 - 日志](Java/SpringBoot/4-日志.md)
   - [5 - Web 开发](Java/SpringBoot/5-Web开发.md)
-  - [6 - Web 开发 - 实战案例](Java/SpringBoot/6-Web开发-实战案例.md)
-  - [7 - SpringBoot 与数据访问](Java/SpringBoot/7-SpringBoot与数据访问.md)
-  - [8 - 集成 Spring Security](Java/SpringBoot/8-集成SpringSecurity.md)
+  - [7 - Web 开发 - 实战案例](Java/SpringBoot/7-Web开发-实战案例.md)
+  - [6 - SpringBoot 前后端数据交互的几种常用方式 ⭐ ](Java/SpringBoot/6-SpringBoot前后端数据交互.md)
+  - [8 - SpringBoot 与数据访问](Java/SpringBoot/8-SpringBoot与数据访问.md)
   - [9 - 异步、定时、邮件任务](Java/SpringBoot/9-异步定时邮件任务.md)
   - [10 - 集成 Redis（Lettuce）](Java/SpringBoot/10-集成Redis.md)
   - [🚀 SpringBoot + Vue 前后端分离项目实战](Java/SpringBoot+Vue项目/index.md)
+
+### JPA
+
+- [🔥 Spring Boot + Spring Data JPA 一篇文章快速入门](Java/JPA/SpringBoot+SpringDataJPA快速入门.md)
+- [1 - 实体类映射到数据库表的基本注解](Java/JPA/1-实体类映射到数据库表的基本注解.md)
+- [2 - 表之间的映射关系](Java/JPA/2-表之间的映射关系.md)
 
 ### Redis
 
@@ -129,8 +133,13 @@
 - [10 - Redis 主从复制](Java/Redis/10-Redis主从复制.md)
 - [11 - Redis 缓存穿透和雪崩](Java/Redis/11-Redis缓存穿透和雪崩.md)
 
-### Spring Security
+### Shiro
 
+- [🔥 SpringBoot + Shiro 一篇文章快速入门](Java/Shiro/Shiro快速入门.md)
+
+### Spring Security 5.x
+
+- [🔥 SpringBoot + SpringSecurity 一篇文章快速入门](Java/SpringSecurity/SpringSecurity快速入门.md)
 - [1 - Spring Security 概述](Java/SpringSecurity/1-概述.md)
 - [2 - Spring Boot + Spring Security 初体验](Java/SpringSecurity/2-初体验.md)
 - [3 - 基于内存的认证和授权](Java/SpringSecurity/3-基于内存的认证和授权.md)
@@ -138,6 +147,9 @@
 - [5 - 基于 Mysql 数据库的认证和授权](Java/SpringSecurity/5-基于Mysql数据库的认证和授权.md)
 - [6 - 自定义登录页面和构建主页](Java/SpringSecurity/6-自定义登录页面和构建主页.md)
 - [7 - 登出处理和自定义 403 界面](Java/SpringSecurity/7-登出处理和自定义403界面.md)
+- [8 - 从数据库中动态加载角色](Java/SpringSecurity/8-从数据库中动态加载角色.md)
+- [9 - 原理分析](Java/SpringSecurity/9-原理分析.md)
+- [10 - 记住我](Java/SpringSecurity/10-记住我.md)
 
 ---
 
@@ -233,6 +245,9 @@
 
 - 【第一部分：监督学习】
   - [1 - 统计学习及监督学习概论](人工智能/机器学习/统计学习方法/1-统计学习及监督学习概论.md)
+  - [2 - 感知机](人工智能/机器学习/统计学习方法/2-感知机.md)
+  - [3 - k 近邻算法](人工智能/机器学习/统计学习方法/3-k近邻算法.md)
+  - [4 - 朴素贝叶斯算法](人工智能/机器学习/统计学习方法/4-朴素贝叶斯算法.md)
 - 【第二部分：无监督学习】
 
 ---

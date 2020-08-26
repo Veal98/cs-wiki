@@ -26,9 +26,6 @@
     双修 Java 和 AI，努力奔跑在全栈的路上 🏃‍
 </div>
 
-
-<br>
-
 <!-- <span id="busuanzi_container_site_pv" style='display:none; color:#eee'>
     👀 总访问量：<span id="busuanzi_value_site_pv"></span> 次
 </span>
@@ -37,16 +34,16 @@
     | 🏃‍ 总访客数：<span id="busuanzi_value_site_uv"></span> 人
 </span> -->
 
+
 <br> 
 <br>
+<br> 
 
-<!-- <a href="https://github.com/Veal98/CS-Wiki" target="_blank">
-    <img src="https://badgen.net/github/stars/Veal98/CS-Wiki?icon=github&amp;color=4ab8a1" data-origin="https://badgen.net/github/stars/Veal98/CS-Wiki?icon=github&amp;color=4ab8a1" alt="stars">
-</a> -->
-<!-- <img src="https://img.shields.io/badge/author-小牛肉-yellow.svg" data-origin="https://img.shields.io/badge/author-小牛肉-yellow.svg" alt=""> 
-<img src="https://img.shields.io/badge/license-GPL-blue.svg" data-origin="https://img.shields.io/badge/license-GPL-blue.svg" alt=""> -->
+![](https://svg.hamm.cn/gitee.svg?user=veal98&project=CS-Wiki&type=star&color=6cb54e&radius=3) &nbsp;&nbsp;&nbsp;
+![]( https://svg.hamm.cn/badge.svg?key=author&value=小牛肉&color=5d71ca&radius=3)
 
-[<i class="fa fa-github-alt fa-1x"></i> GitHub](https://github.com/Veal98/CS-Wiki)
+
+[<i class="fa fa-github-alt fa-1x"></i> Gitee](https://gitee.com/veal98/CS-Wiki)
 [<i class="fa fa-spinner fa-spin"></i> 开始阅读](README.md)
 
 <!-- 背景图片 -->
