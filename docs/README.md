@@ -27,7 +27,7 @@
 
 - 🎓 博主东南大学研一在读，双修 Java 和 AI，奔跑在全栈的路上。本仓库用于记录学习过程中的所思所想，并力图构建一个完善的知识体系，便于复习巩固
 
-- 🙏 由于本人水平有限，仓库中的知识点来自本人原创、视频、书籍、博客等，非原创均已标明出处（或在参考资料中列出），如有遗漏或发现文章错误及排版问题，请 issue 提出  [传送门](https://github.com/Veal98/CS-Wiki/issues)
+- 🙏 由于本人水平有限，仓库中的知识点来自本人原创、视频、书籍、博客等，非原创均已标明出处（或在参考资料中列出），如有遗漏或发现文章错误及排版问题，请提 issue 或 PR
 
 - ⚡ [Gitee 在线阅读（国内访问速度较快）](https://veal98.gitee.io/cs-wiki) | [Gitee 仓库地址（推荐）](https://gitee.com/veal98/CS-Wiki)
 
@@ -140,6 +140,8 @@
 - [🔥 Spring Boot + Spring Data JPA 一篇文章快速入门](Java/JPA/SpringBoot+SpringDataJPA快速入门.md)
 - [1 - 实体类映射到数据库表的基本注解](Java/JPA/1-实体类映射到数据库表的基本注解.md)
 - [2 - 表之间的映射关系](Java/JPA/2-表之间的映射关系.md)
+- [3 - Spring Data JPA 的四种查询方式](Java/JPA/3-SpringDataJPA的四种查询方式.md)
+- [4 - Spring Data JPA 的更新方式详解](Java/JPA/4-SpringDataJPA的更新方式详解.md)
 
 ### Redis
 

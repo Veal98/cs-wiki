@@ -4,9 +4,9 @@
 
 ### ① 定义
 
-🔵 **Arthur Samuel (1959)**：Machine Learning : Field of study that gives computers the ability to learn without being explicitly programmed. 在没有明确设置的情况下，使计算机具有学习能力的研究领域。
+🔵 **Arthur Samuel（1959）**：Machine Learning : Field of study that gives computers the ability to learn without being explicitly programmed. 在没有明确设置的情况下，使计算机具有学习能力的研究领域。
 
-⭐ **Tom Mitchell (1998)**：Well-posed Learning Problem：A computer program is said to learn from experience E with respect to some task T and some performance measure P，if its performance on T，as measured by P，improves with experience E. 一个适当的学习问题定义如下：计算机程序从经验 E （程序与自己下上万次跳棋）中学习，解决某一任务 T （玩跳棋），进行某一性能度量 P （与新对手玩跳棋时赢的概率），通过 P 测定在 T 上的表现因经验 E 而提高。
+⭐ **Tom Mitchell（1998）**：Well-posed Learning Problem：A computer program is said to learn from experience E with respect to some task T and some performance measure P，if its performance on T，as measured by P，improves with experience E. 一个适当的学习问题定义如下：计算机程序从经验 E （程序与自己下上万次跳棋）中学习，解决某一任务 T （玩跳棋），进行某一性能度量 P （与新对手玩跳棋时赢的概率），通过 P 测定在 T 上的表现因经验 E 而提高。
 
 🍉 更通俗来说：机器学习所研究的主要内容，是关于在计算机上从数据中产生 “**模型**” 的算法，即 “**学习算法**” 。有了学习算法，我们把经验数据提供给它，它就能基于这些数据产生模型；在面对新的情况时（例如看到一个没剖开的西瓜），模型会给我们提供相应的判断（例如好瓜）。
 
