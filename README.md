@@ -7,6 +7,8 @@
 
 - 🙏 由于本人水平有限，仓库中的知识点来自本人原创、视频、书籍、博客等，非原创均已标明出处（或在参考资料中列出），如有遗漏或发现文章错误及排版问题，请提 issue 或 PR
 
+- 🎯 **仓库中 README 的链接并未修改无法访问，仅作为仓库概览，详细内容请各位看官点击下方地址进入在线阅读**
+
 - ⚡ [Gitee 在线阅读（国内访问速度较快）](https://veal98.gitee.io/cs-wiki) | [Gitee 仓库地址（推荐）](https://gitee.com/veal98/CS-Wiki)
 
 - 🔮 [Github 在线阅读](https://veal98.github.io/CS-Wiki/) | [Github 仓库地址](https://github.com/Veal98/CS-Wiki)
