@@ -120,6 +120,8 @@
 - [🔥 Spring Boot + Spring Data JPA 一篇文章快速入门](Java/JPA/SpringBoot+SpringDataJPA快速入门.md)
 - [1 - 实体类映射到数据库表的基本注解](Java/JPA/1-实体类映射到数据库表的基本注解.md)
 - [2 - 表之间的映射关系](Java/JPA/2-表之间的映射关系.md)
+- [3 - Spring Data JPA 的四种查询方式](Java/JPA/3-SpringDataJPA的四种查询方式.md)
+- [4 - Spring Data JPA 的更新方式详解](Java/JPA/4-SpringDataJPA的更新方式详解.md)
 
 ### Redis
 

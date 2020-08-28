@@ -2,7 +2,7 @@
 
 ---
 
-> 该项目参考大佬的教程： [Vue + Spring Boot 项目实战 — 白卷](https://blog.csdn.net/Neuf_Soleil/article/details/88925013) ，在该基础上对未提到的知识点、项目架构等做出了部分修改和润色，暂时先用着大佬画的架构图，等项目结束之后再做修改~
+> 🔊 该项目参考大佬的教程： [Vue + Spring Boot 项目实战 — 白卷](https://blog.csdn.net/Neuf_Soleil/article/details/88925013) ，在该基础上对未提到的知识点、项目架构等做出了部分修改和润色，暂时先用着大佬画的架构图，等项目结束之后再做修改~
 
 ## 1. 总体目标 
 
@@ -57,7 +57,8 @@
 - [10 - 使用 Shiro 实现密码加密和登录认证](Java/SpringBoot+Vue项目/10-使用Shiro实现密码加密和登录认证.md)
 - [11 - 使用 Shiro 实现登出和登录拦截](Java/SpringBoot+Vue项目/11-使用Shiro实现登出和登录拦截.md)
 - [12 - 使用 Shiro 实现记住我](Java/SpringBoot+Vue项目/12-使用Shiro实现记住我.md)
+- [13 - 动态加载后台菜单](Java/SpringBoot+Vue项目/13-动态加载后台菜单.md)
+- [14 - 使用 Shiro 实现基于URL的动态权限控制](Java/SpringBoot+Vue项目/14-使用Shiro实现基于URL的动态权限控制.md)
 
 ### ④ 后台管理模块
 
-- [13 - 动态加载后台菜单](Java/SpringBoot+Vue项目/13-动态加载后台菜单.md)
