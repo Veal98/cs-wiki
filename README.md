@@ -4,8 +4,8 @@
 
 <div align="center">
 
-[![star](https://gitee.com/monksoul/Fur/badge/star.svg?theme=white)](https://gitee.com/monksoul/Fur/stargazers) &nbsp;&nbsp;&nbsp;
-[![fork](https://gitee.com/monksoul/Fur/badge/fork.svg?theme=white)](https://gitee.com/monksoul/Fur/members) &nbsp;&nbsp;&nbsp;
+[![star](https://gitee.com/veal98/CS-Wiki/badge/star.svg?theme=white)](https://gitee.com/veal98/CS-Wiki/stargazers) &nbsp;&nbsp;&nbsp;
+[![fork](https://gitee.com/veal98/CS-Wiki/badge/fork.svg?theme=white)](https://gitee.com/veal98/CS-Wiki/members) &nbsp;&nbsp;&nbsp;
 
 </div>
 
