@@ -1,4 +1,20 @@
-# <center>CS 📚 Wiki</center>
+<p align="center">
+    <img width="320px" src="https://gitee.com/veal98/images/raw/master/img/20200707092532.png" >
+</p>
+
+<div align="center">
+
+[![star](https://gitee.com/monksoul/Fur/badge/star.svg?theme=white)](https://gitee.com/monksoul/Fur/stargazers) &nbsp;&nbsp;&nbsp;
+[![fork](https://gitee.com/monksoul/Fur/badge/fork.svg?theme=white)](https://gitee.com/monksoul/Fur/members) &nbsp;&nbsp;&nbsp;
+
+</div>
+
+<div align="center">
+
+<strong>CS-Wiki</strong> 旨在记录学习过程中的所思所想，摒弃传统博客形式，构建便于阅读的完善知识体系
+
+</div>
+
 ---
 
 💡 **「关于」**
