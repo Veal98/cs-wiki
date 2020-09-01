@@ -10,7 +10,6 @@
 </div>
 
 <div align="center">
-
 <strong>CS-Wiki</strong> 旨在记录学习过程中的所思所想，摒弃传统博客形式，构建便于阅读的完善知识体系
 
 </div>

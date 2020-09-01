@@ -57,8 +57,9 @@
 - [10 - 使用 Shiro 实现密码加密和登录认证](Java/SpringBoot+Vue项目/10-使用Shiro实现密码加密和登录认证.md)
 - [11 - 使用 Shiro 实现登出和登录拦截](Java/SpringBoot+Vue项目/11-使用Shiro实现登出和登录拦截.md)
 - [12 - 使用 Shiro 实现记住我](Java/SpringBoot+Vue项目/12-使用Shiro实现记住我.md)
-- [13 - 动态加载后台菜单](Java/SpringBoot+Vue项目/13-动态加载后台菜单.md)
-- [14 - 使用 Shiro 实现基于URL的动态权限控制](Java/SpringBoot+Vue项目/14-使用Shiro实现基于URL的动态权限控制.md)
 
 ### ④ 后台管理模块
 
+- [13 - 动态加载后台菜单](Java/SpringBoot+Vue项目/13-动态加载后台菜单.md)
+- [14 - 使用 Shiro 实现基于 URL 的动态权限控制](Java/SpringBoot+Vue项目/14-使用Shiro实现基于URL的动态权限控制.md)
+- [15 - 后台界面完善](Java/SpringBoot+Vue项目/15-后台界面完善.md)
