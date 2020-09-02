@@ -63,3 +63,7 @@
 - [13 - 动态加载后台菜单](Java/SpringBoot+Vue项目/13-动态加载后台菜单.md)
 - [14 - 使用 Shiro 实现基于 URL 的动态权限控制](Java/SpringBoot+Vue项目/14-使用Shiro实现基于URL的动态权限控制.md)
 - [15 - 后台界面完善](Java/SpringBoot+Vue项目/15-后台界面完善.md)
+
+### ⑤ 博客模块
+
+- [16 - 博客功能开发](Java/SpringBoot+Vue项目/16-博客功能开发.md)
