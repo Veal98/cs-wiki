@@ -2,10 +2,11 @@ a {
     text-decoration: none;
 }
 body{
-    font-family: "Helvetica Neue",Helvetica,"Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;   
     word-spacing:1px; /*更改默认的词间距*/
     letter-spacing:1px;/*更改默认的字符间距*/ 
     background:rgb(51, 51, 51);
+    font-family: "Helvetica Neue",Helvetica,"Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;   
+    line-height: 1.5;
 
 }
 /* 置顶插件 */
