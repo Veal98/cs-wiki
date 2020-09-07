@@ -7,7 +7,7 @@
     * [软件工程 SE](README?id=软件工程-se)
 * [<i class="fa fa-coffee fa-1x"></i> Java](README?id=🍵-java)
     * [Java 8 基础](README?id=java-8-基础)
-    * [深入理解Java虚拟机](README?id=深入理解-java-虚拟机)
+    * [Java 虚拟机](README?id=java-虚拟机)
     * [SSM](README?id=SSM)
     * [SpringBoot 2.x](README?id=spring-boot-2x)
     * [JPA](README?id=jpa)

@@ -1,16 +1,16 @@
+<br>
+<br>
+
 <p align="center">
-    <img width="320px" src="https://gitee.com/veal98/images/raw/master/img/20200707092532.png" >
+    <img width="220px" src="https://gitee.com/veal98/images/raw/master/img/LogoMakr_7iKG43.png" >
 </p>
 
-<div align="center">
-
-[![star](https://gitee.com/veal98/CS-Wiki/badge/star.svg?theme=white)](https://gitee.com/veal98/CS-Wiki/stargazers) &nbsp;&nbsp;&nbsp;
-[![fork](https://gitee.com/veal98/CS-Wiki/badge/fork.svg?theme=white)](https://gitee.com/veal98/CS-Wiki/members) &nbsp;&nbsp;&nbsp;
-
-</div>
 
 <div align="center">
-<strong>CS-Wiki</strong> 旨在记录学习过程中的所思所想，摒弃传统博客形式，构建便于阅读的完善知识体系
+
+![](https://svg.hamm.cn/gitee.svg?user=veal98&project=CS-Wiki&type=star&color=5d71ca&radius=3) &nbsp;&nbsp;&nbsp;
+![](https://svg.hamm.cn/gitee.svg?user=veal98&project=CS-Wiki&type=fork&color=5d71ca&radius=3) &nbsp;&nbsp;&nbsp;
+![]( https://svg.hamm.cn/badge.svg?key=author&value=小牛肉&color=6cb54e&radius=3)
 
 </div>
 
@@ -137,9 +137,10 @@
 - [14 - 枚举类型](Java/Java基础/14-枚举类型.md)
 - [15 - 并发](Java/Java基础/15-并发.md)
 
-### 深入理解 Java 虚拟机
+### Java 虚拟机
 
 - [1 - Java 内存区域与内存溢出异常](Java/JVM/1-Java内存区域与内存溢出异常.md)
+- [2 - 垃圾收集器与内存分配策略](Java/JVM/2-垃圾收集器与内存分配策略.md)
 
 ### SSM
 
