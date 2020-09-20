@@ -1,5 +1,7 @@
 # 🍖 Introduction
 
+---
+
 ## 1. 什么是机器学习 Machine Learning
 
 ### ① 定义
@@ -246,11 +248,7 @@ Which of these is a reasonable definition of machine learning?
 
 
 
----
-
-
-
-# 📚 References
+## 📚 References
 
 - 🤖 [吴恩达机器学习经典名课【中英字幕】](https://www.bilibili.com/video/BV164411S78V?p=2)
 

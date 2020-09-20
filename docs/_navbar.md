@@ -24,3 +24,5 @@
     * [机器学习入门](README?id=机器学习入门) 
     * [常见算法 Python 实现](README?id=常见算法-python-实现) 
     * [常见算法公式推导](README?id=常见算法公式推导) 
+* [<i class="fa fa-cogs fa-1x"></i> 深度学习](README?id=🌺-深度学习)
+    * [深度学习入门](README?id=深度学习入门)
