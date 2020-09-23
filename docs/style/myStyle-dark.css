@@ -25,6 +25,7 @@ section.cover .cover-main {
 /* 导航栏 */
 .app-nav {
     margin: 20px 60px 0 0 !important;
+    /* position: fixed; */
 }
 /* 导航栏字体颜色 */
 .app-nav ul, .app-nav li {
