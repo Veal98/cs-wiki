@@ -80,6 +80,10 @@ public interface CrudRepository<T, ID> extends Repository<T, ID> {
 
 可以直接方便的利用 `save` 方法进行插入，`saveAll` 进行批量插入
 
+注意：``JpaRepository` 其实也继承了 `CrudRepository`，所以我们直接对接口继承 `JpaRepository`  也可使用 `save` 方法
+
+<img src="https://gitee.com/veal98/images/raw/master/img/20200925121457.png" style="zoom:50%;" />
+
 ### ② 原生 SQL 语句
 
 🚨 **JPQL 只支持 `select` 语句**，所以我们只能使用原生 SQL 语句进行更新操作。
