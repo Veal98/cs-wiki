@@ -177,7 +177,7 @@
   - [8 - SpringBoot 与数据访问](Java/SpringBoot/8-SpringBoot与数据访问.md)
   - [9 - 异步、定时、邮件任务](Java/SpringBoot/9-异步定时邮件任务.md)
   - [10 - 集成 Redis（Lettuce）](Java/SpringBoot/10-集成Redis.md)
-  - [🚀 SpringBoot + Vue 前后端分离项目实战](Java/SpringBoot+Vue项目/index.md)
+  - [🚀 SpringBoot + Vue 前后端分离项目实战](http://veal98.gitee.io/project-cswiki)
 
 ### JPA
 
