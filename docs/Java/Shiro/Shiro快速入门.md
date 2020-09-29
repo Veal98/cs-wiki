@@ -241,6 +241,8 @@ Shiro 框架内部默认提供了两种 Realm 的实现，一种是查询`.ini`�
 
 ⭐ **一般来说当我们自定义 Realm 的时候，继承 `AuthorizingRealm` 类并实现默认的两个方法 `获取授权信息 doGetAuthorizationInfo`，`获取身份认证信息 doGetAuthenticationInfo` 即可**：
 
+<img src="https://gitee.com/veal98/images/raw/master/img/20200928211156.png" style="zoom: 67%;" />
+
 ```java
 /**
  * 自定义 Realm
@@ -301,7 +303,8 @@ public class MyRealm extends AuthorizingRealm {
         String password = getPasswordByUsername(username);
         if(password == null)
             return null;
-
+        
+		// 3. 将从数据库中查到的信息封装近 SimpleAuthenticationInfo
         SimpleAuthenticationInfo simpleAuthenticationInfo = new SimpleAuthenticationInfo(username, password, "myRealm");
         return simpleAuthenticationInfo;
     }
@@ -309,7 +312,9 @@ public class MyRealm extends AuthorizingRealm {
 
 ```
 
-- **doGetAuthorizationInfo 获取授权信息****：
+⭐ **我们只需要获取授权和身份信息即可，信息的匹配即认证工作由 Shiro 的 `assertCredentialsMatch` 来做。**
+
+- **doGetAuthorizationInfo 获取授权信息**：
 
   其中参数`PrincipalCollection` 是一个身份集合，因为我们现在就一个 Realm，所以直接调用 `getPrimaryPrincipal` 得到之前传入的用户名即可；然后根据用户名调用相应方法获取角色及权限信息。
 
@@ -967,3 +972,4 @@ index - 首页
 ## 📚 References
 
 - [我没有三颗心脏 — Shiro安全框架【快速入门】](https://www.cnblogs.com/wmyskxz/p/10229148.html)
+- [shiro框架整合spring boot及登录身份认证源码分析](https://blog.csdn.net/swhuan007/article/details/108442928?utm_medium=distribute.pc_relevant.none-task-blog-title-2&spm=1001.2101.3001.4242)
