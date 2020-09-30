@@ -207,6 +207,7 @@
 ### Shiro
 
 - [🔥 SpringBoot + Shiro 一篇文章快速入门](Java/Shiro/Shiro快速入门.md)
+- [Shiro 登录认证过程源码详解](Java/Shiro/Shiro登录认证过程源码详解.md)
 
 ### Spring Security 5.x
 
