@@ -7,7 +7,6 @@
 
 
 <div align="center">
-
 ![](https://svg.hamm.cn/gitee.svg?user=veal98&project=CS-Wiki&type=star&color=5d71ca&radius=3) &nbsp;&nbsp;&nbsp;
 ![](https://svg.hamm.cn/gitee.svg?user=veal98&project=CS-Wiki&type=fork&color=5d71ca&radius=3) &nbsp;&nbsp;&nbsp;
 ![]( https://svg.hamm.cn/badge.svg?key=author&value=小牛肉&color=6cb54e&radius=3)
@@ -327,6 +326,7 @@
   - [13 - 目标检测](人工智能/深度学习/入门/13-目标检测.md)
   - [14 - CNN 的特殊应用：人脸识别和神经风格转换](人工智能/深度学习/入门/14-特殊应用-人脸识别和神经风格转换.md)
 - 【第五部分：序列模型】
+  - [15 - 循环神经网络 RNN](人工智能/深度学习/入门/15-循环神经网络.md)
 
 ---
 
