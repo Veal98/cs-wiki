@@ -121,7 +121,7 @@ Q-Learning 的步骤如下：
 🚨 **Tips:**
 
 - π ′ 不包含额外的参数，它只取决于 Q
-- **对于连续的动作不适用**
+- **对于连续的动作不适用**（下文会讲解如何解决该问题）
 
 ### ② Target Network
 
@@ -255,6 +255,36 @@ Distributional Q-function 认为可以输出Q值的分布，当具有相同的�
 **把刚才所有的方法都综合起来就变成 rainbow 。**给刚才每一个方法赋予一种自己的颜色，把所有的颜色通通都合起来，就变成 rainbow，它把原来的 DQN 也算是一种方法，故有 7 色。
 
 ![](https://gitee.com/veal98/images/raw/master/img/20201028220108.png)
+
+## 8. 连续动作下的 Q-Learning
+
+**连续动作：**
+
+在某些情况下，action 是一个**连续向量**。在这种情况下，Q-Learning 并不是一个用来寻找最佳 action 的好方法
+
+我们玩 Atari 的游戏，你的 agent 只需要决定比如说上下左右，这种 action 是分离（discrete）的 。但很多时候你的 action 是连续（continuous）的。举例来说假设你的 agent 要做的事情是开自驾车，它要决定方向盘要左转几度， 右转几度，这是连续的。再比如假设 agent 是一个机器人，它身上有 50 个 关节，它的每一个 action 就对应到它身上的这 50 个关节的角度。而那些角度也是连续的。
+
+如果 action 是连续的，做 Q-learning 就会有困难。因为在做 Q-learning 里面一个很重要的一步是你要能够解这个 最优化问题。你评估出 Q-function Q(s,a) 以后，必须要找到一个 a，它可以让 Q(s,a) 最大。假设 a 是分离的，那 a 的可能性都是有限的。但假如 a 是连续的，你无法穷举所有可能的动作。
+
+**解决方式一：**
+
+因为 a 是没有办法穷举的。我们**抽样**出 N 个 可能的 a，一个一个带到 Q-function 里面，看谁能获得最大的 Q 值
+
+**解决方式二：**
+
+把 a 当作是 parameter，我们的目的是要找一组 a 去最大化 Q-function，可以使用**梯度上升**不断更新 a 的值（具有较高的计算成本）
+
+**解决方式三：**
+
+设计一个网络来使得这个优化过程更简单
+
+<img src="https://gitee.com/veal98/images/raw/master/img/20201029111242.png" style="zoom: 22%;" />
+
+**解决方式四：**
+
+**第 4 招就是不要用 Q-learning。**用 Q-learning 处理 continuous action 还是比较麻烦。
+
+我们讲了 policy-based 的方法 PPO 和 value-based 的方法 Q-learning，这两者其实是可以结合在一起的， 也就是 **Actor-Critic** 的方法。见下一章 👇
 
 ## 📚 References
 
