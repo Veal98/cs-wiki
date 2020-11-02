@@ -273,6 +273,135 @@ grad
 
 在构建深度神经网络时，TensorFlow 可以说提供了你一切想要的组件，从不同形状的张量、激活函数、神经网络层，到优化器、数据集等，一应俱全。
 
+## 6. Keras 
+
+Keras 是一个用于构建和训练深度学习模型的高阶 API。它可用于快速设计原型、高级研究和生产。
+
+keras 的 3 个优点： 方便用户使用、模块化和可组合、易于扩展
+
+tensorflow 2 推荐使用 keras 构建网络，常见的神经网络都包含在 `keras.layer` 中(最新的 `tf.keras` 的版本可能和 `keras` 不同)
+
+```python
+import tensorflow as tf
+from tensorflow.keras import layers
+print(tf.__version__)
+print(tf.keras.__version__)
+```
+
+<img src="https://gitee.com/veal98/images/raw/master/img/20201102214336.png" style="zoom:75%;" />
+
+### ① 构建简单模型
+
+最常见的模型类型是层的堆叠：`tf.keras.Sequential` 模型
+
+```python
+model = tf.keras.Sequential()
+model.add(layers.Dense(32, activation='relu'))
+model.add(layers.Dense(32, activation='relu'))
+model.add(layers.Dense(10, activation='softmax'))
+```
+
+- 🔹 `layers.Dense `：全连接层。相当于添加一个层
+
+- 🔹 `layers.Flatten`：Convolution 卷积层之后是无法直接连接 Dense 全连接层的，需要把 Convolution 层的数据压平（Flatten），然后就可以直接加 Dense 层了。
+
+- 🔹 `layers.Dropout`：dropout 是指在深度学习网络的训练过程中，对于神经网络单元，按照一定的概率将其暂时从网络中丢弃，可以用来防止过拟合。
+
+`tf.keras.layers` 中网络配置：
+
+- `activation`：设置层的激活函数。此参数由内置函数的名称指定，或指定为可调用对象。默认情况下，系统不会应用任何激活函数。
+
+- `kernel_initializer` 和 `bias_initializer`：创建层权重（核和偏差）的初始化方案。此参数是一个名称或可调用对象，默认为 "Glorot uniform" 初始化器。
+
+- `kernel_regularizer` 和 `bias_regularizer`：应用层权重（核和偏差）的正则化方案，例如 L1 或 L2 正则化。默认情况下，系统不会应用正则化函数。
+
+```python
+layers.Dense(32, activation='sigmoid')
+layers.Dense(32, activation=tf.sigmoid)
+layers.Dense(32, kernel_initializer='orthogonal')
+layers.Dense(32, kernel_initializer=tf.keras.initializers.glorot_normal)
+layers.Dense(32, kernel_regularizer=tf.keras.regularizers.l2(0.01))
+layers.Dense(32, kernel_regularizer=tf.keras.regularizers.l1(0.01))
+```
+
+### ② 训练和评估
+
+构建好模型后，通过调用 `compile` 方法配置该模型的学习流程：
+
+```python
+model = tf.keras.Sequential()
+model.add(layers.Dense(32, activation='relu'))
+model.add(layers.Dense(32, activation='relu'))
+model.add(layers.Dense(10, activation='softmax'))
+model.compile(optimizer=tf.keras.optimizers.Adam(0.001), # 优化器
+             loss=tf.keras.losses.categorical_crossentropy, # 损失函数
+             metrics=[tf.keras.metrics.categorical_accuracy]) # 评价函数
+```
+
+**训练模型 `model.fit`**：
+
+```python
+import numpy as np
+
+train_x = np.random.random((1000, 72))
+train_y = np.random.random((1000, 10))
+
+val_x = np.random.random((200, 72))
+val_y = np.random.random((200, 10))
+
+model.fit(train_x, train_y, epochs=10, batch_size=100,
+          validation_data=(val_x, val_y))
+```
+
+`model.fit` 参数：
+
+- `x`: 训练数据的 Numpy 数组（如果模型只有一个输入）， 或者是 Numpy 数组的列表（如果模型有多个输入）。 如果模型中的输入层被命名，你也可以传递一个字典，将输入层名称映射到 Numpy 数组。 如果从本地框架张量馈送（例如 TensorFlow 数据张量）数据，x 可以是 None（默认）。
+
+- `y`: 目标（标签）数据的 Numpy 数组（如果模型只有一个输出）， 或者是 Numpy 数组的列表（如果模型有多个输出）。 如果模型中的输出层被命名，你也可以传递一个字典，将输出层名称映射到 Numpy 数组。 如果从本地框架张量馈送（例如 TensorFlow 数据张量）数据，y 可以是 None（默认）。
+
+- `batch_size`: 整数或 `None`。每次梯度更新的样本数。如果未指定，默认为 32。
+
+- `epochs`: 训练模型迭代轮次（整数）。一个轮次是在整个 x 和 y 上的一轮迭代。 请注意，与 initial_epoch 一起，epochs 被理解为 「最终轮次」。**模型并不是训练了 epochs 轮，而是到第 epochs 轮停止训练**。
+
+- `validation_data`: 元组  `(x_val，y_val)` 或元组 `(x_val，y_val，val_sample_weights)`， **用来评估损失**，以及在每轮结束时的任何模型度量指标。 模型将不会在这个数据上进行训练。这个参数会覆盖 `validation_split`。
+
+### ③ 图片分类实例
+
+载入并准备好 [MNIST 数据集](http://yann.lecun.com/exdb/mnist/)。将样本从整数转换为浮点数：
+
+```python
+mnist = tf.keras.datasets.mnist
+
+(x_train, y_train), (x_test, y_test) = mnist.load_data()
+x_train, x_test = x_train / 255.0, x_test / 255.0
+```
+
+将模型的各层堆叠起来，以搭建 [`tf.keras.Sequential`](https://tensorflow.google.cn/api_docs/python/tf/keras/Sequential?hl=zh_cn) 模型。为训练选择优化器和损失函数：
+
+```python
+model = tf.keras.models.Sequential([
+  tf.keras.layers.Flatten(input_shape=(28, 28)),
+  tf.keras.layers.Dense(128, activation='relu'),
+  tf.keras.layers.Dropout(0.2),
+  tf.keras.layers.Dense(10, activation='softmax')
+])
+
+model.compile(optimizer='adam', # 优化器
+              loss='sparse_categorical_crossentropy', # 损失函数
+              metrics=['accuracy']) # 评价指标
+```
+
+训练并验证模型：
+
+```python
+model.fit(x_train, y_train, epochs=5)
+model.evaluate(x_test,  y_test, verbose=2)
+```
+
+<img src="https://gitee.com/veal98/images/raw/master/img/20201102223621.png" style="zoom:80%;" />
+
+现在，这个照片分类器的准确度已经达到 98%
+
 ## 📚 References
 
 - [《纯小白 》win10 安装 tensorflow，并运行在 jupyter notebook 上](https://blog.csdn.net/weixin_41640583/article/details/86534358?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.add_param_isCf&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.add_param_isCf)

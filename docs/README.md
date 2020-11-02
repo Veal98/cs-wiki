@@ -358,7 +358,7 @@
 - [2 - 强化学习方法汇总](人工智能/强化学习/入门/2-强化学习方法汇总.md)
 - [3 - Q-Learning](人工智能/强化学习/入门/3-Q-Learning.md)
 - [4 - Sarsa](人工智能/强化学习/入门/4-Sarsa.md)
-- 5 - Deep Q Network（DQN）
+- [5 - Deep Q Network（DQN）](人工智能/强化学习/入门/5-DQN.md)
 - 6 - 策略梯度 Policy Gradient
 - 7 - 演员-评论员算法 Actor-Critic
 - [8 - 模仿学习 Imitation Learning](人工智能/强化学习/入门/8-模仿学习.md)
