@@ -369,6 +369,8 @@ model.fit(train_x, train_y, epochs=10, batch_size=100,
 
 载入并准备好 [MNIST 数据集](http://yann.lecun.com/exdb/mnist/)。将样本从整数转换为浮点数：
 
+> 💡 [MNIST 数据集](http://yann.lecun.com/exdb/mnist/) 常被用作计算机视觉机器学习程序的 “Hello, World”。MNIST 数据集包含手写数字（0、1、2 等）的图像
+
 ```python
 mnist = tf.keras.datasets.mnist
 
