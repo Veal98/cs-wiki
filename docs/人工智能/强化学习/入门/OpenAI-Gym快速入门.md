@@ -18,17 +18,47 @@ pip install gym
 
 <img src="https://gitee.com/veal98/images/raw/master/img/20201102113908.png" style="zoom:67%;" />
 
-## 2. 基础
+## 2. 核心概念
 
-在强化学习中有两个基本概念：环境（即外部世界）和 agent（即您正在编写的算法）。 代理将操作发送到环境，竝且环境以观察和奖励（即得分）进行响应。
+我们先对 OpenAI 的 gym 库的几个核心概念作个简单介绍。
 
-`Gym` 的核心接口是 `Env`，这是统一的环境接口。 没有 agent 的接口。 那部分留给你。 以下是您应该知道的 Env 方法：
+想象一下你在玩贪吃蛇，你需要分析当前游戏的`状态(State)`，例如你所处的位置，周围的障碍物等，才能够决定下一步的`动作(Action)`，上下左右。那你每走一步，就会得到一个`奖励(Reward)`。这个奖励可能是正向奖励(Positive Reward)，也可能是负向奖励(Negative Reward)，比如撞到了障碍物。重复N次这样的过程，直到游戏`结束(Done)`。
 
-- ``reset（self）`：重置环境的状态。 返回观察值。
+从整个例子中，可以总结出几个重要的概念，接下来的示例将会使用 OpenAI gym 库提供的 **CartPole Game** 环境，一起来熟悉CartPole 游戏中的这几个概念的含义吧。先直接给一个可以运行看效果的示例，这个示例中，Action 是随机选择的。
 
-  步骤（自我，行动）：一步一步地完成环境的调整。 返回观察，奖励，完成，信息。
+`Gym` 的核心接口是 `Env`，这是统一的环境接口。
 
-- `render（self，mode ='human'）`：渲染环境的一帧。 默认模式将执行一些人性化的操作，例如弹出一个窗口。
+```python
+# try_gym.py
+# https://geektutu.com
+import gym  # 0.12.5
+import random
+import time
+
+env = gym.make("CartPole-v0")  # 加载游戏环境
+
+state = env.reset() # 重置环境的状态
+score = 0
+while True:
+    time.sleep(0.1)
+    env.render()   # 显示画面(渲染环境的一帧)
+    action = random.randint(0, 1)  # 随机选择一个动作 0 或 1
+    state, reward, done, _ = env.step(action)  # 执行这个动作
+    score += reward     # 每回合的得分
+    if done:       # 游戏结束
+        print('score: ', score)  # 打印分数
+        break
+env.close()
+```
+
+| 概念   | 解释                                         | 示例                  |
+| :----- | :------------------------------------------- | :-------------------- |
+| State  | list：状态，[车位置, 车速度, 杆角度, 杆速度] | 0.02,0.95,-0.07,-1.53 |
+| Action | int：动作(0向左/1向右)                       | 1                     |
+| Reward | float：奖励(每走一步得1分)                   | 1.0                   |
+| Done   | bool：是否结束(True/False)，上限200回合      | False                 |
+
+游戏上限是200回合，但是如果是随机选择 Action，就只得了14分，游戏就结束了。
 
 ## 📚 References
 

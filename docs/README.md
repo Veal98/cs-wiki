@@ -58,6 +58,7 @@
 - [3 - 分治](计算机基础/算法/3-分治.md)
 - [4 - 二分查找](计算机基础/算法/4-二分查找.md)
 - [5 - 动态规划](计算机基础/算法/5-动态规划.md)
+- [6 - 贪心算法](计算机基础/算法/6-贪心算法.md)
 - [🔥 LeetCode 分模块刷题指南](计算机基础/算法/LeetCode/刷题指南.md)
 
 ### 计算机网络 Net
@@ -361,7 +362,7 @@
 - [3 - Q-Learning](人工智能/强化学习/入门/3-Q-Learning.md)
 - [4 - Sarsa](人工智能/强化学习/入门/4-Sarsa.md)
 - [5 - Deep Q Network（DQN）](人工智能/强化学习/入门/5-DQN.md)
-- 6 - 策略梯度 Policy Gradient
+- [6 - 策略梯度 Policy Gradient](人工智能/强化学习/入门/6-Policy-Gradient.md)
 - 7 - 演员-评论员算法 Actor-Critic
 - [8 - 模仿学习 Imitation Learning](人工智能/强化学习/入门/8-模仿学习.md)
 
