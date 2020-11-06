@@ -57,7 +57,7 @@ Policy gradient 同样也要接受环境信息 (observation), **不同的是他�
 import matplotlib.pyplot as plt
 import gym
 import numpy as np
-import tensorflow as tf
+import tensorflow as tf # tensorflow 2.x
 from tensorflow import keras
 ```
 

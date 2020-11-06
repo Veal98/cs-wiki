@@ -32,8 +32,6 @@ Critic 通过学习环境和奖励之间的关系, 能看到现在所处状态�
 
 ## 3. Actor-Critic 代码实现
 
-在普通的 Policy gradient 算法上进行修改即可
-
 > ✅ TODO
 
 ## 4. Deep Deterministic Policy Gradient（DDPG）
