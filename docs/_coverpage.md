@@ -43,9 +43,10 @@
 <br>
 <br>
 
-![](https://svg.hamm.cn/gitee.svg?user=veal98&project=CS-Wiki&type=star&color=5d71ca&radius=3) &nbsp;&nbsp;&nbsp;
-![](https://svg.hamm.cn/gitee.svg?user=veal98&project=CS-Wiki&type=fork&color=5d71ca&radius=3) &nbsp;&nbsp;&nbsp;
-![]( https://svg.hamm.cn/badge.svg?key=author&value=小牛肉&color=6cb54e&radius=3)
+[![star](https://gitee.com/veal98/CS-Wiki/badge/star.svg?theme=dark)](https://gitee.com/veal98/CS-Wiki/stargazers)
+[![fork](https://gitee.com/veal98/CS-Wiki/badge/fork.svg?theme=dark)](https://gitee.com/veal98/CS-Wiki/members)
+[![GitHub stars](https://img.shields.io/github/stars/Veal98/CS-Wiki?logo=github)](https://github.com/Veal98/CS-Wiki/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/Veal98/CS-Wiki?logo=github)](https://github.com/Veal98/CS-Wiki/network)
 
 
 [<i class="fa fa-github-alt fa-1x"></i> Gitee](https://gitee.com/veal98/CS-Wiki)

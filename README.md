@@ -7,10 +7,10 @@
 
 
 <div align="center">
-
-![](https://svg.hamm.cn/gitee.svg?user=veal98&project=CS-Wiki&type=star&color=5d71ca&radius=3) &nbsp;&nbsp;&nbsp;
-![](https://svg.hamm.cn/gitee.svg?user=veal98&project=CS-Wiki&type=fork&color=5d71ca&radius=3) &nbsp;&nbsp;&nbsp;
-![]( https://svg.hamm.cn/badge.svg?key=author&value=小牛肉&color=6cb54e&radius=3)
+[![star](https://gitee.com/veal98/CS-Wiki/badge/star.svg?theme=dark)](https://gitee.com/veal98/CS-Wiki/stargazers)
+[![fork](https://gitee.com/veal98/CS-Wiki/badge/fork.svg?theme=dark)](https://gitee.com/veal98/CS-Wiki/members)
+[![GitHub stars](https://img.shields.io/github/stars/Veal98/CS-Wiki?logo=github)](https://github.com/Veal98/CS-Wiki/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/Veal98/CS-Wiki?logo=github)](https://github.com/Veal98/CS-Wiki/network)
 
 </div>
 
@@ -345,6 +345,7 @@
 - 【Keras 机器学习基础知识】
   - [1 - 基本图像分类](人工智能/深度学习/TensorFlow2/Keras机器学习基础知识/1-基本图像分类.md)
   - [2 - 基本文本分类](人工智能/深度学习/TensorFlow2/Keras机器学习基础知识/2-基本文本分类.md)
+  - [3 - 回归](人工智能/深度学习/TensorFlow2/Keras机器学习基础知识/3-回归.md)
 
 ---
 
@@ -353,13 +354,14 @@
 ### 强化学习入门
 
 - [1 - 强化学习概述](人工智能/强化学习/入门/1-概述.md)
-- [2 - 强化学习方法汇总](人工智能/强化学习/入门/2-强化学习方法汇总.md)
-- [3 - Q-Learning](人工智能/强化学习/入门/3-Q-Learning.md)
-- [4 - Sarsa](人工智能/强化学习/入门/4-Sarsa.md)
-- 5 - Deep Q Network（DQN）
-- 6 - 策略梯度 Policy Gradient
-- 7 - 演员-评论员算法 Actor-Critic
-- [8 - 模仿学习 Imitation Learning](人工智能/强化学习/入门/8-模仿学习.md)
+- [2 - 马尔可夫决策过程](人工智能/强化学习/入门/2-马尔可夫决策过程.md)
+- [3 - 强化学习方法汇总](人工智能/强化学习/入门/3-强化学习方法汇总.md)
+- [4 - Q-Learning](人工智能/强化学习/入门/4-Q-Learning.md)
+- [5 - Sarsa](人工智能/强化学习/入门/5-Sarsa.md)
+- [6 - Deep Q Network（DQN）](人工智能/强化学习/入门/6-DQN.md)
+- [7 - 策略梯度 Policy Gradient](人工智能/强化学习/入门/7-Policy-Gradient.md)
+- 8 - 演员-评论员算法 Actor-Critic
+- [9 - 模仿学习 Imitation Learning](人工智能/强化学习/入门/9-模仿学习.md)
 
 ---
 
