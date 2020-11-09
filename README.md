@@ -23,8 +23,6 @@
 
 - 🙏 由于本人水平有限，仓库中的知识点来自本人原创、视频、书籍、博客等，非原创均已标明出处（或在参考资料中列出），如有遗漏或发现文章错误及排版问题，请提 issue 或 PR
 
-- 🎯 **仓库中 README 的链接并未修改无法访问，仅作为仓库概览，详细内容请各位看官点击下方地址进入在线阅读**
-
 - ⚡ [Gitee 在线阅读（国内访问速度较快）](https://veal98.gitee.io/cs-wiki) | [Gitee 仓库地址（推荐）](https://gitee.com/veal98/CS-Wiki)
 
 - 🔮 [Github 在线阅读](https://veal98.github.io/CS-Wiki/) | [Github 仓库地址](https://github.com/Veal98/CS-Wiki)
@@ -36,6 +34,7 @@
 > 😃 该部分内容是仓库刚起步阶段所做，格式和内容并不完善，日后会抽出时间重新进行总结，也欢迎大家提 issue 和 PR~
 
 ### 数据结构 DS
+
 - [参考资料](计算机基础/数据结构/参考资料.md)
 - [1 - 线性表](计算机基础/数据结构/1-线性表.md)
 - [2 - 栈和队列](计算机基础/数据结构/2-栈和队列.md)
@@ -43,7 +42,7 @@
 - [4 - 图](计算机基础/数据结构/4-图.md)
 - [5 - 查找](计算机基础/数据结构/5-查找.md)
 - [6 - 排序](计算机基础/数据结构/6-排序.md)
-- [🔥 数据结构面试指南](计算机基础/数据结构/面试指南)
+- [📒 数据结构面试指南](计算机基础/数据结构/面试指南)
 
 ### 算法 Algorithm
 
@@ -59,6 +58,7 @@
 - [🔥 LeetCode 分模块刷题指南](计算机基础/算法/LeetCode/刷题指南.md)
 
 ### 计算机网络 Net
+
 - [参考资料](计算机基础/计算机网络/参考资料.md)
 - [1 - 计算机网络相关概念](计算机基础/计算机网络/1-计算机网络相关概念.md)
 - [2 - 物理层](计算机基础/计算机网络/2-物理层.md)
@@ -67,19 +67,21 @@
 - [5 - 传输层](计算机基础/计算机网络/5-传输层.md)
 - [6 - 应用层](计算机基础/计算机网络/6-应用层.md)
 - [7 - 网络管理和网络安全](计算机基础/计算机网络/7-网络管理和网络安全.md)
-- [🔥 计算机网络面试指南](计算机基础/计算机网络/面试指南.md)
+- [📒 计算机网络面试指南](计算机基础/计算机网络/面试指南.md)
 
 ### 操作系统 OS
+
 - [参考资料](计算机基础/操作系统/参考资料.md)
 - [1 - 操作系统概述](计算机基础/操作系统/1-操作系统概述.md)
 - [2 - 进程、线程、死锁](计算机基础/操作系统/2-进程、线程、死锁.md)
 - [3 - 内存管理](计算机基础/操作系统/3-内存管理.md)
 - [4 - 文件管理](计算机基础/操作系统/4-文件管理.md)
 - [5 - 设备管理](计算机基础/操作系统/5-设备管理.md)
-- [🔥 操作系统面试指南](计算机基础/操作系统/面试指南.md)
+- [📒 操作系统面试指南](计算机基础/操作系统/面试指南.md)
 
 
 ### 数据库 DB
+
 - [参考资料](计算机基础/数据库/参考资料.md)
 - [1-数据库系统概述](计算机基础/数据库/1-数据库系统概述.md)
 - [2 - 关系数据库](计算机基础/数据库/2-关系数据库.md)
@@ -91,7 +93,7 @@
 - [8 - 事务处理 - 数据库恢复技术](计算机基础/数据库/8-事务处理-数据库恢复技术)
 - [9 - 事务处理 - 并发控制](计算机基础/数据库/9-事务处理-并发控制)
 - [10 - 数据库编程](计算机基础/数据库/10-数据库编程.md)
-- [  🔥 数据库面试指南](计算机基础/数据库/面试指南.md)
+- [📒 数据库面试指南](计算机基础/数据库/面试指南.md)
 
 
 ### 软件工程 SE
@@ -177,11 +179,11 @@
   - [8 - SpringBoot 与数据访问](Java/SpringBoot/8-SpringBoot与数据访问.md)
   - [9 - 异步、定时、邮件任务](Java/SpringBoot/9-异步定时邮件任务.md)
   - [10 - 集成 Redis（Lettuce）](Java/SpringBoot/10-集成Redis.md)
-  - [🚀 SpringBoot + Vue 前后端分离项目实战](http://veal98.gitee.io/project-cswiki)
+  - [💪 SpringBoot + Vue 前后端分离项目实战](http://veal98.gitee.io/project-cswiki)
 
 ### JPA
 
-- [🔥 Spring Boot + Spring Data JPA 一篇文章快速入门](Java/JPA/SpringBoot+SpringDataJPA快速入门.md)
+- [🛫 Spring Boot + Spring Data JPA 一篇文章快速入门](Java/JPA/SpringBoot+SpringDataJPA快速入门.md)
 - [1 - 实体类映射到数据库表的基本注解](Java/JPA/1-实体类映射到数据库表的基本注解.md)
 - [2 - 表之间的映射关系](Java/JPA/2-表之间的映射关系.md)
 - [3 - Spring Data JPA 的四种查询方式](Java/JPA/3-SpringDataJPA的四种查询方式.md)
@@ -203,11 +205,12 @@
 
 ### Shiro
 
-- [🔥 SpringBoot + Shiro 一篇文章快速入门](Java/Shiro/Shiro快速入门.md)
+- [🛫 SpringBoot + Shiro 一篇文章快速入门](Java/Shiro/Shiro快速入门.md)
+- [Shiro 登录认证过程源码详解](Java/Shiro/Shiro登录认证过程源码详解.md)
 
 ### Spring Security 5.x
 
-- [🔥 SpringBoot + SpringSecurity 一篇文章快速入门](Java/SpringSecurity/SpringSecurity快速入门.md)
+- [🛫 SpringBoot + SpringSecurity 一篇文章快速入门](Java/SpringSecurity/SpringSecurity快速入门.md)
 - [1 - Spring Security 概述](Java/SpringSecurity/1-概述.md)
 - [2 - Spring Boot + Spring Security 初体验](Java/SpringSecurity/2-初体验.md)
 - [3 - 基于内存的认证和授权](Java/SpringSecurity/3-基于内存的认证和授权.md)
@@ -266,7 +269,7 @@
 
 ### 机器学习入门
 
-> 📣 本节是根据吴恩达老师的《Machine Learning》课程做的笔记和总结，并未涉及复杂的数学推导和代码，可用来对机器学习做一个初步的认识和了解。
+> 📣 本节基于吴恩达老师的《Machine Learning》课程，并未涉及复杂的数学推导和代码，可用来对机器学习做一个初步的认识和了解。
 
   - [1 - Introduction to Machine Learning](人工智能/机器学习/吴恩达/1-Introduction.md)
   - [2 - 模型评估与选择](人工智能/机器学习/吴恩达/2-模型评估与选择.md)
@@ -281,7 +284,7 @@
 
 ### 常见算法 Python 实现
 
-> 📣 本节基于《Machine Learning in Action》，旨在使用原生 Python 实现常见的机器学习算法，并利用该算法解决某些小问题。本节并不涉及完备的算法公式推导，如有无法理解的公式或步骤，可参考下节 - 常见算法公式推导。
+> 📣 本节基于《Machine Learning in Action》，旨在使用原生 Python 实现常见的机器学习算法。本节并不涉及完备的算法公式推导，如有无法理解的公式或步骤，可参考下节 - [ 常见算法公式推导 ]。
 
 - 【第一部分：分类 】
   - [1 - k-近邻算法](人工智能/机器学习/机器学习实战/1-k-近邻算法.md)
@@ -343,11 +346,20 @@
 
 ### TensorFlow 2
 
-- [TensorFlow 2 快速入门](人工智能/深度学习/TensorFlow2/TensorFlow2快速入门.md)
+- [🛫 TensorFlow 2 快速入门](人工智能/深度学习/TensorFlow2/TensorFlow2快速入门.md)
 - 【Keras 机器学习基础知识】
   - [1 - 基本图像分类](人工智能/深度学习/TensorFlow2/Keras机器学习基础知识/1-基本图像分类.md)
   - [2 - 基本文本分类](人工智能/深度学习/TensorFlow2/Keras机器学习基础知识/2-基本文本分类.md)
   - [3 - 回归](人工智能/深度学习/TensorFlow2/Keras机器学习基础知识/3-回归.md)
+- 【图像分类】
+  - [1 - 使用卷积神经网络 CNN 进行图像分类](TensorFlow2/图像分类/1-使用CNN进行图像分类)
+  - 2 - 使用 TF-Hub 进行迁移学习
+- 【文本分类】
+  - [1 - 使用循环神经网络 RNN 进行文本分类](TensorFlow2/文本分类/1-使用RNN进行文本分类)
+- 【自定义】
+  - 1 - 张量 tensor
+  - 2 - 自定义层
+  - 3 - 自定义训练
 
 ---
 
@@ -358,12 +370,17 @@
 - [1 - 强化学习概述](人工智能/强化学习/入门/1-概述.md)
 - [2 - 马尔可夫决策过程](人工智能/强化学习/入门/2-马尔可夫决策过程.md)
 - [3 - 强化学习方法汇总](人工智能/强化学习/入门/3-强化学习方法汇总.md)
-- [4 - Q-Learning](人工智能/强化学习/入门/4-Q-Learning.md)
-- [5 - Sarsa](人工智能/强化学习/入门/5-Sarsa.md)
-- [6 - Deep Q Network（DQN）](人工智能/强化学习/入门/6-DQN.md)
-- [7 - 策略梯度 Policy Gradient](人工智能/强化学习/入门/7-Policy-Gradient.md)
-- 8 - 演员-评论员算法 Actor-Critic
-- [9 - 模仿学习 Imitation Learning](人工智能/强化学习/入门/9-模仿学习.md)
+- 【基于价值的强化学习 `Value-Based`】
+  - [4 - Q-Learning](人工智能/强化学习/入门/4-Q-Learning.md)
+  - [5 - Sarsa](人工智能/强化学习/入门/5-Sarsa.md)
+  - [6 - Deep Q Network（DQN）](人工智能/强化学习/入门/6-DQN.md)
+- 【基于策略的强化学习 `Policy-Based`】
+  - [7 - 策略梯度 Policy Gradient](人工智能/强化学习/入门/7-Policy-Gradient.md)
+- 【演员-评论员算法系列 `Actor-Critic`】
+  - 8 - Advantage Actor-Critic，A2C
+  - 9 - Deep Deterministic Policy Gradient，DDPG
+  - 10 - Asynchronous Advantage Actor-Critic，A3C
+- [11 - 模仿学习 Imitation Learning](人工智能/强化学习/入门/11-模仿学习.md)
 
 ---
 

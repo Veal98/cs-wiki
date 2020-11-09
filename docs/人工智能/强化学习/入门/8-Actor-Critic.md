@@ -2,7 +2,7 @@
 
 ---
 
-今天我们来说说强化学习中的一种结合体 Actor Critic (演员评判家), **它合并了 以值为基础 (比如 Q learning) 和 以动作概率为基础 (比如 Policy Gradients) 两类强化学习算法**.
+⭐ 今天我们来说说强化学习中的一种结合体 Actor Critic (演员评判家), **它合并了 以值为基础 (比如 Q learning) 和 以动作概率为基础 (比如 Policy Gradients) 两类强化学习算法**.
 
 ## 1. Actor 和 Critic
 
@@ -21,6 +21,8 @@ Critic 通过学习环境和奖励之间的关系, 能看到现在所处状态�
 🔸 **一句话概括 Actor Critic 方法**:
 
 结合了 Policy Gradient (Actor) 和 值函数近似 Function Approximation (Critic) 的方法. ⭐ **`Actor` 基于概率选行为, `Critic` 基于 `Actor` 的行为评判行为的得分, `Actor` 根据 `Critic` 的评分修改选行为的概率**.
+
+<img src="https://gitee.com/veal98/images/raw/master/img/20201109214234.png" style="zoom:50%;" />
 
 > 💡 **`Actor` 修改行为时就像蒙着眼睛一直向前开车, `Critic` 就是那个扶方向盘改变 `Actor` 开车方向的.**
 >

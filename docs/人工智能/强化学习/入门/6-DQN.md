@@ -108,6 +108,8 @@
 
 维基百科上有一个**万能近似定理(Universal approximation theorem)**，[Universal approximation theorem](https://en.wikipedia.org/wiki/Universal_approximation_theorem)定理表明：<u>前馈神经网络，只需具备单层隐含层和有限个神经单元，就能以任意精度拟合任意复杂度的函数</u>。
 
+> 💡 DQN 在比较简单的游戏，比如 **CartPole-v0** 能够取得较好的效果，但在 **MountainCar-v0** 这个游戏中，如果只使用 DQN 很难找到最优解，所以我们使用 Double DQN
+
 ### ① 搭建神经网络模型
 
 我们的输入是一维向量 1x2（位置 position，速度 velocity），输出是一维向量  1x3（0 向左推，1 不动，2 向右推）
@@ -148,7 +150,7 @@ class DQN(object):
         # 刚开始时，加一点随机成分，产生更多的状态
         if np.random.uniform() < epsilon - self.step * 0.0002:
             return np.random.choice([0,1,2])
-        return np.argmax(self.model.predict(np.array([s]))[0])
+        return np.argmax(self.model.predict(np.array([s]))[0])s
     
     def save_model(self, file_path='MountainCar-v0-dqn.h5'):
         """保存训练好的模型"""

@@ -47,7 +47,7 @@
 - [4 - 图](计算机基础/数据结构/4-图.md)
 - [5 - 查找](计算机基础/数据结构/5-查找.md)
 - [6 - 排序](计算机基础/数据结构/6-排序.md)
-- [🔥 数据结构面试指南](计算机基础/数据结构/面试指南)
+- [📒 数据结构面试指南](计算机基础/数据结构/面试指南)
 
 ### 算法 Algorithm
 
@@ -71,7 +71,7 @@
 - [5 - 传输层](计算机基础/计算机网络/5-传输层.md)
 - [6 - 应用层](计算机基础/计算机网络/6-应用层.md)
 - [7 - 网络管理和网络安全](计算机基础/计算机网络/7-网络管理和网络安全.md)
-- [🔥 计算机网络面试指南](计算机基础/计算机网络/面试指南.md)
+- [📒 计算机网络面试指南](计算机基础/计算机网络/面试指南.md)
 
 ### 操作系统 OS
 - [参考资料](计算机基础/操作系统/参考资料.md)
@@ -80,7 +80,7 @@
 - [3 - 内存管理](计算机基础/操作系统/3-内存管理.md)
 - [4 - 文件管理](计算机基础/操作系统/4-文件管理.md)
 - [5 - 设备管理](计算机基础/操作系统/5-设备管理.md)
-- [🔥 操作系统面试指南](计算机基础/操作系统/面试指南.md)
+- [📒 操作系统面试指南](计算机基础/操作系统/面试指南.md)
 
 
 ### 数据库 DB
@@ -95,7 +95,7 @@
 - [8 - 事务处理 - 数据库恢复技术](计算机基础/数据库/8-事务处理-数据库恢复技术)
 - [9 - 事务处理 - 并发控制](计算机基础/数据库/9-事务处理-并发控制)
 - [10 - 数据库编程](计算机基础/数据库/10-数据库编程.md)
-- [  🔥 数据库面试指南](计算机基础/数据库/面试指南.md)
+- [📒 数据库面试指南](计算机基础/数据库/面试指南.md)
 
 
 ### 软件工程 SE
@@ -181,11 +181,11 @@
   - [8 - SpringBoot 与数据访问](Java/SpringBoot/8-SpringBoot与数据访问.md)
   - [9 - 异步、定时、邮件任务](Java/SpringBoot/9-异步定时邮件任务.md)
   - [10 - 集成 Redis（Lettuce）](Java/SpringBoot/10-集成Redis.md)
-  - [🚀 SpringBoot + Vue 前后端分离项目实战](http://veal98.gitee.io/project-cswiki)
+  - [💪 SpringBoot + Vue 前后端分离项目实战](http://veal98.gitee.io/project-cswiki)
 
 ### JPA
 
-- [🔥 Spring Boot + Spring Data JPA 一篇文章快速入门](Java/JPA/SpringBoot+SpringDataJPA快速入门.md)
+- [🛫 Spring Boot + Spring Data JPA 一篇文章快速入门](Java/JPA/SpringBoot+SpringDataJPA快速入门.md)
 - [1 - 实体类映射到数据库表的基本注解](Java/JPA/1-实体类映射到数据库表的基本注解.md)
 - [2 - 表之间的映射关系](Java/JPA/2-表之间的映射关系.md)
 - [3 - Spring Data JPA 的四种查询方式](Java/JPA/3-SpringDataJPA的四种查询方式.md)
@@ -207,12 +207,12 @@
 
 ### Shiro
 
-- [🔥 SpringBoot + Shiro 一篇文章快速入门](Java/Shiro/Shiro快速入门.md)
+- [🛫 SpringBoot + Shiro 一篇文章快速入门](Java/Shiro/Shiro快速入门.md)
 - [Shiro 登录认证过程源码详解](Java/Shiro/Shiro登录认证过程源码详解.md)
 
 ### Spring Security 5.x
 
-- [🔥 SpringBoot + SpringSecurity 一篇文章快速入门](Java/SpringSecurity/SpringSecurity快速入门.md)
+- [🛫 SpringBoot + SpringSecurity 一篇文章快速入门](Java/SpringSecurity/SpringSecurity快速入门.md)
 - [1 - Spring Security 概述](Java/SpringSecurity/1-概述.md)
 - [2 - Spring Boot + Spring Security 初体验](Java/SpringSecurity/2-初体验.md)
 - [3 - 基于内存的认证和授权](Java/SpringSecurity/3-基于内存的认证和授权.md)
@@ -348,11 +348,20 @@
 
 ### TensorFlow 2
 
-- [TensorFlow 2 快速入门](人工智能/深度学习/TensorFlow2/TensorFlow2快速入门.md)
+- [🛫 TensorFlow 2 快速入门](人工智能/深度学习/TensorFlow2/TensorFlow2快速入门.md)
 - 【Keras 机器学习基础知识】
   - [1 - 基本图像分类](人工智能/深度学习/TensorFlow2/Keras机器学习基础知识/1-基本图像分类.md)
   - [2 - 基本文本分类](人工智能/深度学习/TensorFlow2/Keras机器学习基础知识/2-基本文本分类.md)
   - [3 - 回归](人工智能/深度学习/TensorFlow2/Keras机器学习基础知识/3-回归.md)
+- 【图像分类】
+  - [1 - 使用卷积神经网络 CNN 进行图像分类](TensorFlow2/图像分类/1-使用CNN进行图像分类)
+  - 2 - 使用 TF-Hub 进行迁移学习
+- 【文本分类】
+  - [1 - 使用循环神经网络 RNN 进行文本分类](TensorFlow2/文本分类/1-使用RNN进行文本分类)
+- 【自定义】
+  - 1 - 张量 tensor
+  - 2 - 自定义层
+  - 3 - 自定义训练
 
 ---
 
@@ -363,12 +372,17 @@
 - [1 - 强化学习概述](人工智能/强化学习/入门/1-概述.md)
 - [2 - 马尔可夫决策过程](人工智能/强化学习/入门/2-马尔可夫决策过程.md)
 - [3 - 强化学习方法汇总](人工智能/强化学习/入门/3-强化学习方法汇总.md)
-- [4 - Q-Learning](人工智能/强化学习/入门/4-Q-Learning.md)
-- [5 - Sarsa](人工智能/强化学习/入门/5-Sarsa.md)
-- [6 - Deep Q Network（DQN）](人工智能/强化学习/入门/6-DQN.md)
-- [7 - 策略梯度 Policy Gradient](人工智能/强化学习/入门/7-Policy-Gradient.md)
-- 8 - 演员-评论员算法 Actor-Critic
-- [9 - 模仿学习 Imitation Learning](人工智能/强化学习/入门/9-模仿学习.md)
+- 【基于价值的强化学习 Value-Based】
+  - [4 - Q-Learning](人工智能/强化学习/入门/4-Q-Learning.md)
+  - [5 - Sarsa](人工智能/强化学习/入门/5-Sarsa.md)
+  - [6 - Deep Q Network（DQN）](人工智能/强化学习/入门/6-DQN.md)
+- 【基于策略的强化学习 Policy-Based】
+  - [7 - 策略梯度 Policy Gradient](人工智能/强化学习/入门/7-Policy-Gradient.md)
+- 【演员-评论员算法系列 Actor-Critic】
+  - 8 - Advantage Actor-Critic，A2C
+  - 9 - Deep Deterministic Policy Gradient，DDPG
+  - 10 - Asynchronous Advantage Actor-Critic，A3C
+- [11 - 模仿学习 Imitation Learning](人工智能/强化学习/入门/11-模仿学习.md)
 
 ---
 
