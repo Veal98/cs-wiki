@@ -56,15 +56,55 @@
 
 ![](https://gitee.com/veal98/images/raw/master/img/20201028100853.png)
 
-### ② ε-greedy
+### ② 策略改进：ε-greedy
 
-`ε-greedy` 是用在决策上的一种策略, 比如 epsilon = 0.9 时, 就说明有 90% 的情况我会按照 Q 表的最优值选择行为, 10% 的时间使用随机选行为
+`ε-greedy` 是用在决策上的一种策略改进方法, 比如 epsilon = 0.9 时, 就说明有 90% 的情况我会按照 Q 表的最优值选择行为, 10% 的时间使用随机选行为
+
+<img src="https://gitee.com/veal98/images/raw/master/img/20201110210918.png" style="zoom:50%;" />
 
 ### ③ 学习率 α
 
 α 是学习率, 来**决定这次的误差有多少是要被学习的**, α 是一个小于1 的数
 
-## 5. Q-Learning 实例
+### ④ 举例
+
+💬 举个例子：
+
+**Step 1**：初始化Q矩阵，比如都设置为0
+
+<img src="https://gitee.com/veal98/images/raw/master/img/20201110214543.png" style="zoom: 50%;" />
+
+**Step 2**：开始实验。根据当前Q矩阵及$\epsilon-greedy$方法获取动作。比如当前处在状态s1，那么在s1一列每一个Q值都是0，那么这个时候随便选择都可以。
+
+假设我们选择 a2 动作，然后得到的 reward 是 1，并且进入到 s3 状态，接下来我们要根据
+
+<img src="https://gitee.com/veal98/images/raw/master/img/20201110214634.png" style="zoom: 80%;" />
+
+> 🚨 上图中应该是 $Q_{S_{t+1},A_{t+1}}$，懒得改了，兄弟们知道就好
+
+来更新Q值，这里我们假设 $α = 1，λ = 1$，也就是每一次都把目标Q值赋给Q。那么这里公式变成：
+
+<img src="https://gitee.com/veal98/images/raw/master/img/20201110214810.png" style="zoom: 80%;" />
+
+所以在这里，就是
+
+<img src="https://gitee.com/veal98/images/raw/master/img/20201110214940.png" style="zoom:80%;" />
+
+那么对应的s3状态，最大值是0，所以<img src="https://gitee.com/veal98/images/raw/master/img/20201110214954.png" style="zoom:80%;" />,Q表格就变成：
+
+<img src="https://gitee.com/veal98/images/raw/master/img/20201110215009.png" style="zoom:80%;" />
+
+**Step 3**：接下来就是进入下一次动作，这次的状态是s3，假设选择动作a3，然后得到1的reward，状态变成s1，那么我们同样进行更新：
+
+<img src="https://gitee.com/veal98/images/raw/master/img/20201110215027.png" style="zoom:80%;" />
+
+所以Q的表格就变成：
+
+<img src="https://gitee.com/veal98/images/raw/master/img/20201110215043.png" style="zoom:80%;" />
+
+**Step 4**： 反复上面的方法。就是这样，Q值在试验的同时反复更新。直到收敛。
+
+## 5. Q-Learning 代码实例
 
 我们来说一个更具体的例子. 让探索者学会走迷宫. 黄色的是天堂 (reward 1), 黑色的地狱 (reward -1). 
 
@@ -183,11 +223,11 @@ class QLearningTable:
     # 学习更新参数(s_ 表示下一个状态）
     def learn(self, s, a, r, s_):
         self.check_state_exist(s_)  # 检测 q_table 中是否存在 s_ 
-        q_predict = self.q_table.loc[s, a]
-        if s_ != 'terminal':
-            q_target = r + self.gamma * self.q_table.loc[s_, :].max()  # 下个 state 不是 终止符
-        else:
-            q_target = r  # 下个 state 是终止符
+        q_predict = self.q_table.loc[s, a] # q 估计
+        if s_ != 'terminal': # 下个 state 不是 终止符
+            q_target = r + self.gamma * self.q_table.loc[s_, :].max() # q 现实
+        else: # 下个 state 是终止符
+            q_target = r  
         self.q_table.loc[s, a] += self.alpha * (q_target - q_predict)  # 更新对应的 state-action 值
     
     # 检测 state 是否存在于 Q-Table 中，如果没有就加入
