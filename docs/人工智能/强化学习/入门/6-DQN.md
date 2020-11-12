@@ -64,17 +64,29 @@ f可以是任意类型的函数，比如线性函数：
 
 <u>以上并不是 DQN 会玩电动的根本原因. 还有两大因素支撑着 DQN 使得它变得无比强大. 这两大因素就是 `经验回放 Experience replay` 和 `冻结目标网络 Fixed Target Newtwork`</u>.
 
+### ① 经验回放 Experienced Replay
+
 `Experience replay` 简单来说, DQN 有一个记忆库用于学习之前的经历. **每次训练时，将最新策略产生的数据对 $(s,a,r,s')$ 存入记忆库**。（在之前的简介影片中提到过, Q learning 是一种 off-policy 离线学习法, 它能学习当前经历着的, 也能学习过去经历过的, 甚至是学习别人的经历. ）**每次 DQN 更新的时候, 我们从记忆库中【随机抽取】一些之前的经历进行学习. 随机抽取这种做法打乱了经历之间的相关性, 也使得神经网络更新更有效率**. 
 
-`Fixed Q-targets` 也是一种打乱相关性的机理, **计算 Q 现实的目标网络 $Q(s')$ 计算 Q 估计的网络 $Q(s)$ 都来自同一网络，但是计算 Q 估计的神经网络具备最新的参数, 而计算 Q 现实 / 目标 Q 值的神经网络使用的参数则是很久以前的，相当于在 $Q(s')$ 未更新时处于冻结状态**。有了这两种提升手段, DQN 才能在一些游戏中超越人类
+#### 优先经验回放 Prioritized Experience Replay
+
+**【优先经验回放 `Prioritized Experience Replay`】**：在训练的过程中，对于在经验 buffer 里面的样本，那些具有更好的 **TD 误差（ Q现实 - Q估计）**的样本会有更高的概率被采样，这样可以加快训练速度。
+
+<img src="https://gitee.com/veal98/images/raw/master/img/20201028213309.png" style="zoom:45%;" />
+
+在这个过程中，参数更新的过程也会有相应的更改。
+
+### ② 冻结目标网络 Fixed Target Newtwork
+
+`Fixed Target Newtwork` 也是一种打乱相关性的机理, **计算 Q 现实的目标网络 $Q(s')$ 计算 Q 估计的网络 $Q(s)$ 都来自同一网络，但是计算 Q 估计的神经网络具备最新的参数, 而计算 Q 现实 / 目标 Q 值的神经网络使用的参数则是很久以前的，相当于在 $Q(s')$ 未更新时处于冻结状态**。有了这两种提升手段, DQN 才能在一些游戏中超越人类
 
 ## 4. DQN 整体算法
 
 <img src="https://gitee.com/veal98/images/raw/master/img/20201110222224.png" style="zoom: 50%;" />
 
-为了使用 Tensorflow 来实现 DQN, 比较推荐的方式是**搭建两个神经网络**, `target_net` 用于预测 Q 现实 `q_target` , 他不会及时更新参数. `eval_net` 用于预测 Q 估计 `q_eval`, 这个神经网络拥有最新的神经网络参数. 不过这两个神经网络结构是完全一样的, 只是里面的参数不一样. 
+为了使用 Tensorflow 来实现 DQN, 比较推荐的方式是**搭建两个神经网络**, 一个用于预测 Q 现实 , 他不会及时更新参数. 另一个用于预测 Q 估计, 这个神经网络拥有最新的神经网络参数. 不过这两个神经网络结构是完全一样的, 只是里面的参数不一样. 
 
-⭐ **两个神经网络是为了固定住一个神经网络 (`target_net`) 的参数, `target_net` 是 `eval_net` 的一个历史版本, 拥有 `eval_net` 很久之前的一组参数, 而且这组参数被固定一段时间, 然后再被 `eval_net` 的新参数所替换. 而 `eval_net` 是不断在被提升的, 所以是一个可以被训练的网络 `trainable=True`. 而 `target_net` 的 `trainable=False`**.
+⭐ **两个神经网络是为了固定住一个神经网络 (Q 现实) 的参数, Q 现实 是 Q 估计 的一个历史版本, 拥有 Q 估计 很久之前的一组参数, 而且这组参数被固定一段时间, 然后再被 Q 估计 的新参数所替换. 而 Q 估计 的参数是不断在更新的**.
 
 > ❓ **DQN 和 Q-learning 有什么不同？**
 >
@@ -89,224 +101,23 @@ f可以是任意类型的函数，比如线性函数：
 
 <img src="https://gitee.com/veal98/images/raw/master/img/20201101121041.png" style="zoom: 42%;" />
 
-我们知道 DQN 的神经网络部分可以看成一个 `最新的神经网络` + `老神经网络`, 他们有相同的结构, 但内部的参数更新却有时差. 而它的 `Q现实` 部分是这样的:
+我们知道 DQN 的神经网络部分可以看成一个 `最新的神经网络` + `老神经网络`, 他们有相同的结构, 但内部的参数更新却有时差. 它的 `Q现实/目标Q值` 部分是这样的:
 
 ![](https://gitee.com/veal98/images/raw/master/img/20201101121807.png)
 
-因为我们的神经网络预测 `Qmax` 本来就有误差, 每次也向着最大误差的 `Q现实` 改进神经网络, 就是因为这个 `Qmax` 导致了 overestimate. 所以 Double DQN 的想法就是引入另一个神经网络来打消一些最大误差的影响. 而 DQN 中本来就有两个神经网络, 我们何不利用一下优势呢.：
+因为我们的神经网络预测 `Qmax` 本来就有误差, 每次也向着最大误差的 `Q现实` 改进神经网络, 就是因为这个 `Qmax` 导致了 overestimate.
 
- **一个 Q-network 用来选择行动 action（Q 估计，最新参数），另外一个 Q-network 用来根据这个 action 计算 Q 值（Q 现实，参数较老）**，我们用 `Q估计` 的神经网络估计 `Q现实` 中 `Qmax(s', a')` 的最大动作值. 然后用这个被 `Q估计` 估计出来的动作来选择 `Q现实` 中的 `Q(s')`. 
+Double DQN 的想法就是引入另一个神经网络来打消一些最大误差的影响. 而 DQN 中本来就有两个神经网络, 我们何不利用一下优势呢.：
 
-![](https://gitee.com/veal98/images/raw/master/img/20201101121725.png)
+ **一个 Q-network（$\hat Q$） 用来计算 Q 估计（最新参数），另外一个 Q-network 用来计算 Q 现实（参数较老）**，我们用 `Q估计` 的神经网络估计 `Q现实` 中 `Qmax(s', a')` 的最大动作值. 然后用这个被 `Q估计` 估计出来的动作来选择 `Q现实` 中的 `Q(s')`. 
 
-假设第一个 Q-function 高估了它现在选出来的 action a，那没关系，因为我们并不采用第一个 Q-network 的 Q 值，只要第二个 Q-function Q' 没有高估这个 action a 的 Q 值，那你算出来的就还是正常的值。假设反过来是 Q' 高估了某一个 action 的 Q 值，那也没关系，只要第一个 Q-network 不要选这个 action 就没事了。
+<img src="https://gitee.com/veal98/images/raw/master/img/20201111093036.png" style="zoom:67%;" />
 
-## 6. 基于 Mountain Car 的 Double DQN 实现
+即 Double DQN 的损失函数为：
 
-我们先介绍 Mountain Car 关键的概念：
+<img src="https://gitee.com/veal98/images/raw/master/img/20201111092624.png" style="zoom:50%;" />
 
-| 概念   | 解释                                        | 示例        |
-| :----- | :------------------------------------------ | :---------- |
-| State  | list: 状态，[位置 position，速度 velocity]  | [0.5,-0.01] |
-| Action | int: 动作(0向左推，1不动，2向右推)          | 2           |
-| Reward | float: 每回合-1分                           | -1          |
-| Done   | bool: 是否爬到山顶(True/False)，上限200回合 | -1          |
-
-如果`200回合`还没到达山顶，说明游戏失败，-200是最低分。每个回合得 -1，分数越高，说明尝试回合数越少，意味着越早地到达山顶。比如得分-100分，表示仅经过了 100 回合就到达了山顶。
-
-如果有如下这样一张表，告诉我在某个状态(State)下， 执行每一个动作(Action)产生的价值(Value)，那就可以通过查询表格，选择产生价值最大的动作了。
-
-| State         | Action 0 | Action 1 | Action 2 |
-| :------------ | :------- | :------- | :------- |
-| [0.2, -0.01]  | 10       | -20      | -30      |
-| [-0.3, 0.01]  | 100      | 0        | 0        |
-| [-0.1, -0.01] | 0        | -10      | 20       |
-
-价值(Value)怎么计算呢？游戏的最终目标是爬到山顶，爬到山顶前的每一个动作都为最终的目标贡献了价值，因此每一个动作的价值计算，和最终的结果，也就是与未来(Future)有关。这就是强化学习的经典算法 `Q-Learning` 设计的核心。`Q-Learning`中的`Q`，代表的是 **Action-Value**，也可以理解为 **Quality**。而上面这张表，就称之为 `Q表(Q-Table)`。`Q-Learning`的目的是创建`Q-Table`。有了`Q-Table`，自然能知道选择哪一个Action了。
-
-接下来，我们将借助`TensorFlow 2.0`中的`keras`库，搭建深度神经网络(Deep Netural Network, DNN)，替代`Q-Table`，即**深度Q网络(Deep Q-Learning Network, DQN)**，实现Q值的计算。
-
-我们将神经网络比作一个函数，神经网络代替`Q-Table`其实就是在做 **函数拟合**，也可以称为**值函数近似(Value Function Approximation)**。
-
-维基百科上有一个**万能近似定理(Universal approximation theorem)**，[Universal approximation theorem](https://en.wikipedia.org/wiki/Universal_approximation_theorem)定理表明：<u>前馈神经网络，只需具备单层隐含层和有限个神经单元，就能以任意精度拟合任意复杂度的函数</u>。
-
-> 💡 DQN 在比较简单的游戏，比如 **CartPole-v0** 能够取得较好的效果，但在 **MountainCar-v0** 这个游戏中，如果只使用 DQN 很难找到最优解，所以我们使用 Double DQN
-
-### ① 搭建神经网络模型
-
-我们的输入是一维向量 1x2（位置 position，速度 velocity），输出是一维向量  1x3（0 向左推，1 不动，2 向右推）
-
-```python
-import tensorflow as tf
-from tensorflow import keras # tensorflow 2.x
-import gym
-import numpy as np
-import random
-from collections import deque
-```
-
-```python
-class DQN(object):
-    def __init__(self):
-        self.step = 0
-        self.update_freq = 200  # 模型更新频率
-        self.replay_size = 2000  # 训练集大小
-        self.replay_queue = deque(maxlen=self.replay_size) # experience buffer
-        self.model = self.create_model() # 用于选择 action 的 model，Q 估计，最新参数
-        self.target_model = self.create_model() # 用于根据 action 计算 Q 值的 model，Q 现实，参数较老
-        
-    def create_model(self):
-        """创建一个隐藏层为100的神经网络"""
-        STATE_DIM = 2
-        ACTION_DIM = 3
-        model = keras.models.Sequential([
-            keras.layers.Dense(100, input_dim = STATE_DIM, activation = 'relu'),
-            keras.layers.Dense(ACTION_DIM, activation = 'linear')
-        ])
-        model.compile(loss = 'mean_squared_error',
-                      optimizer = 'adam')
-        return model
-    
-    def act(self, s, epsilon = 0.1):
-        """预测动作"""
-        # 刚开始时，加一点随机成分，产生更多的状态
-        if np.random.uniform() < epsilon - self.step * 0.0002:
-            return np.random.choice([0,1,2])
-        return np.argmax(self.model.predict(np.array([s]))[0])s
-    
-    def save_model(self, file_path='MountainCar-v0-dqn.h5'):
-        """保存训练好的模型"""
-        print('model saved')
-        self.model.save(file_path)
-```
-
-### ② 经验回放和冻结目标网络
-
-```python
-class DQN(object):    
-    
-    def remember(self, s, a, next_s, reward):
-        """记忆库。当 position >= 0.4 时给额外的reward，快速收敛"""
-        if next_s[0] >= 0.4:
-            reward += 1
-        self.replay_queue.append((s, a, next_s, reward)) # 存入 experience buffer
-
-    def train(self, batch_size=64, alpha = 1, discount_factor=0.95):
-        """训练模型"""
-        # 当经验库满了后再开始训练
-        if len(self.replay_queue) < self.replay_size:
-            return
-        self.step += 1
-        # 每 update_freq = 200 步，target_model 的参数才更新一次（将 model 的权重/参数赋值给 target_model）
-        if self.step % self.update_freq == 0:
-            self.target_model.set_weights(self.model.get_weights())
-        
-        # 每次从 experience buffer 中选择 batch_size = 64 个数据进行训练
-        replay_batch = random.sample(self.replay_queue, batch_size)
-        state_batch = np.array([replay[0] for replay in replay_batch])
-        next_state_batch = np.array([replay[2] for replay in replay_batch])
-
-        Q = self.model.predict(state_batch) # Q 估计
-        Q_next = self.target_model.predict(next_state_batch) # Q 现实
-
-        # 使用公式更新训练集中的Q值
-        for i, replay in enumerate(replay_batch):
-            _, a, _, reward = replay
-            Q[i][a] = (1 - alpha) * Q[i][a] + alpha * (reward + discount_factor * np.amax(Q_next[i]))
-        
-        # 传入网络进行训练
-        self.model.fit(state_batch, Q, verbose=0)
-```
-
-整个结构如下图所示：
-
-![](https://gitee.com/veal98/images/raw/master/img/20201106105915.png)
-
-我们在训练时，是以**batch**为单位进行训练的，也就是说很多训练数据对应的是之前状态的 model，而不是频繁更新值的`model`，因此，我们使用更新频率低的`target_model`来计算`next_s`的Q值。
-
-`target_model`每训练update_freq(200)次，参数才更新一次（将 `model `的权重/参数赋值给 `target_model`）
-
-那为什么在`Q-Table`中，可以用单步的数据来进行更新，但换作了神经网络，就需要以**batch**为单位来进行训练呢？简单说，如果单步训练，即**batch**为1，每次朝着单步的梯度方向修正，横冲直撞各自为政，难以收敛。如果**batch**过大，容易过拟合。而且`DQN`是强化学习算法，前面的训练数据质量较差，随着训练的进行，产生的动作价值越来越高，强化学习更为看重后面的训练数据，所以**batch**也不宜过大。
-
-而这一点，也是`replay_queue`的最大容量设置为**2000**的原因。队列有先进先出的特性，当后面的数据加进来后，如果数据条数超过2000，前面的数据就会从队列中移除。后面的训练数据对于强化学习更重要。
-
-### ③ 可改动的 Reward
-
-代码中还有这么一个细节：
-
-```python
-if next_s[0] >= 0.4:
-    reward += 1
-```
-
-`MountainCar-v0`这个游戏中，`State`由2个值构成 (位置 position, 速度 velocity)。山顶的位置是**0.5**，因此当**position**大于**0.4**时，给`Reward`额外加**1**。这么做，是希望加快神经网络的收敛，更快地达到预期结果。每一步的`Reward`其实都是可以调整的，怎么做会让训练效果更好，可以动动脑，尝试尝试
-
-### ④ 主循环 / 训练模型
-
-```python
-env = gym.make('MountainCar-v0')
-episodes = 1000  # 训练1000次
-score_list = []  # 记录所有分数
-agent = DQN()
-for i in range(episodes):
-    s = env.reset()
-    score = 0
-    while True:
-        a = agent.act(s) # 预测动作
-        next_s, reward, done, _ = env.step(a)
-        agent.remember(s, a, next_s, reward) # 存入记忆库
-        agent.train()
-        score += reward
-        s = next_s
-        if done:
-            score_list.append(score)
-            print('episode:', i, 'score:', score, 'max:', max(score_list))
-            break
-    # 最后10次的平均分大于 -160 时，停止并保存模型
-    if np.mean(score_list[-10:]) > -160:
-        agent.save_model()
-        break
-env.close()
-```
-
-<img src="https://gitee.com/veal98/images/raw/master/img/20201106112210.png" style="zoom: 67%;" />
-
-### ⑤ 使用训练好的模型进行测试
-
-```python
-import time
-import gym
-import numpy as np
-import tensorflow as tf
-from tensorflow import keras
-```
-
-```python
-env = gym.make('MountainCar-v0')
-model = keras.models.load_model('MountainCar-v0-dqn.h5')
-s = env.reset()
-score = 0
-while True:
-    env.render()
-    time.sleep(0.01)
-    a = np.argmax(model.predict(np.array([s]))[0])
-    s, reward, done, _ = env.step(a)
-    score += reward
-    if done:
-        print('score:', score)
-        break
-env.close()
-```
-
-## 7. 优先经验回放 Prioritized Experience Replay
-
-**【优先经验回放】**：简单地说，在训练的过程中，对于在经验 buffer 里面的样本，那些具有更好的 **TD 误差（ Q现实 - Q估计）**的样本会有更高的概率被采样，这样可以加快训练速度。
-
-<img src="https://gitee.com/veal98/images/raw/master/img/20201028213309.png" style="zoom:45%;" />
-
-在这个过程中，参数更新的过程也会有相应的更改。
-
-## 8. Dueling DQN
+## 6. Dueling DQN
 
 只要稍稍修改 DQN 中神经网络的结构, 就能大幅提升学习效果, 加速收敛. 这种新方法叫做 Dueling DQN. 用一句话来概括 Dueling DQN 就是. 它将每个动作的 Q 拆分成了 state 的 Value 加上 每个动作的 Advantage.
 
@@ -318,6 +129,181 @@ env.close()
 
 <img src="https://gitee.com/veal98/images/raw/master/img/20201028211522.png" style="zoom: 22%;" />
 
+## 7. 基于 CartPole 的 DQN 实现
+
+```python
+import tensorflow
+from tensorflow import keras
+import wandb # 在线模型可视化工具
+import gym
+import argparse # argparse是一个Python模块：命令行选项、参数和子命令解析器。
+import numpy as np
+from collections import deque
+import random
+```
+
+> 💡 wandb 是一款在线模型可视化工具，参见 [wandb.com](https://www.wandb.com/)
+
+```python
+wandb.init(name='DQN', project="rl_tf2")
+```
+
+> 💡 `argparse `是一个Python模块：命令行选项、参数和子命令解析器. <u>我们可以利用该模块定义常用参数, 使程序易读</u>
+
+```python
+parser = argparse.ArgumentParser()
+
+parser.add_argument('--gamma', type = float, default = 0.95) # 折扣系数
+parser.add_argument('--lr', type = float, default = 0.005) # 学习率
+parser.add_argument('--batch_size', type=int, default = 32) # 每次训练/采样的数据量
+parser.add_argument('--buffer_limit', type=int, default = 10000) # 经验回放池存储的最大数据量
+parser.add_argument('--epsilon', type=float, default = 1.0) # ε-greedy
+# epsilon 概率会从 100% 到 1% 衰减，越到后面越使用 Q 值最大的动作
+parser.add_argument('--epsilon_decay', type=float, default = 0.995) # ε的衰减速率
+parser.add_argument('--epsilon_min', type=float, default = 0.01) # ε最小值
+
+args = parser.parse_known_args()[0] # 获取参数
+# parser.parse_args() 出错了，不知道为啥
+```
+
+
+
+```python
+# 经验回放池
+class ReplayBuffer:
+    def __init__(self):
+        # 双向队列,利用 ReplayBuffer 类中的 Deque 对象来实现经验回放池的功能
+        self.buffer = deque(maxlen = args.buffer_limit)
+        
+    # 将最新数据(s,a,r,s',done)存入回放池
+    # done 表示游戏是否结束
+    def put(self, state, action, reward, next_state, done):
+        self.buffer.append([ state, action, reward, next_state, done])
+    
+    # 从回放池中随机抽样
+    def sample(self):
+        # 从回放池随机采样 batch_size = 32 个 5 元组
+        sample = random.sample(self.buffer, args.batch_size)
+        states, actions, rewards, next_states, done = map(np.asarray, zip(*sample))
+        states = np.array(states).reshape(args.batch_size, -1)
+        next_states = np.array(next_states).reshape(args.batch_size, -1)
+        return states, actions, rewards, next_states, done
+    
+    # 回放池中的数据量
+    def size(self):
+        return len(self.buffer)
+```
+
+
+
+
+
+```python
+# 构建模型
+class Model:
+    def __init__(self, state_dim, action_dim):
+        self.state_dim  = state_dim
+        self.action_dim = action_dim
+        self.epsilon = args.epsilon
+        self.model = self.create_model() # 构建模型
+    
+    # 构建模型
+    def create_model(self):
+        model = keras.models.Sequential([
+            keras.layers.Input((self.state_dim, )), # 输入层
+            keras.layers.Dense(32, activation = 'relu'), # 隐藏层
+            keras.layers.Dense(16, activation = 'relu'), # 隐藏层
+            keras.layers.Dense(self.action_dim) # 输出层
+        ])
+        model.compile(loss='mse', optimizer = keras.optimizers.Adam(args.lr))
+        return model
+    
+    # 预测(输出的是当前状态下对应每个动作的Q值）
+    def predict(self, state):
+        return self.model.predict(state)
+    
+    # 根据当前状态下的最大 Q 值选取动作（ε-greedy)
+    def get_action(self, state):
+        state = np.reshape(state, [1, self.state_dim])
+        self.epsilon *= args.epsilon_decay # epsilon 不断衰减
+        self.epsilon = max(self.epsilon, args.epsilon_min)
+        q_value = self.predict(state)[0] 
+        if np.random.random() < self.epsilon:
+            # 有 epsilon 的概率随机选择动作
+            return random.randint(0, self.action_dim - 1)
+        return np.argmax(q_value)
+    
+    # 训练模型（利用 Q 现实来训练网络)
+    def train(self, states, targets):
+        self.model.fit(states, targets, epochs = 1, verbose = 0)
+```
+
+
+
+```python
+class Agent:
+    def __init__(self, env):
+        self.env = env
+        self.state_dim = self.env.observation_space.shape[0] # 状态表示，神经网络的输入个数
+        self.action_dim = self.env.action_space.n # 动作个数，神经网络的输出个数
+        
+        self.model = Model(self.state_dim, self.action_dim) # Q 估计
+        self.target_model = Model(self.state_dim, self.action_dim) # Q 现实
+        self.target_update() # 将 Q 估计网络的参数赋给 Q 现实）
+        
+        self.buffer = ReplayBuffer()
+    
+    # 将 Q 估计网络的参数赋给 Q 现实
+    def target_update(self):
+        weights = self.model.model.get_weights()
+        self.target_model.model.set_weights(weights)
+    
+    # 训练网络 ，更新 Q 估计参数
+    def replay(self):
+        for _ in range(10):
+            states, actions, rewards, next_states, done = self.buffer.sample() # 从回放池采样
+            targets = self.target_model.predict(states) # Q 估计
+            next_q_values = self.target_model.predict(next_states).max(axis=1) 
+            targets[range(args.batch_size), actions] = rewards + (1-done) * args.gamma * next_q_values  # Q 现实
+            self.model.train(states, targets)
+    
+    def train(self, max_episodes=1000):
+        # 最多训练 1000 次
+        for episode in range(max_episodes):
+            done, total_reward = False, 0
+            state = self.env.reset()
+            while not done:
+                action = self.model.get_action(state)
+                next_state, reward, done, _ = self.env.step(action)
+                self.buffer.put(state, action, reward*0.01, next_state, done)
+                total_reward += reward
+                state = next_state
+                
+            # 当经验池中大于 32 条数据时再进行训练
+            if self.buffer.size() >= args.batch_size:
+                self.replay()
+                
+            self.target_update() # 将 Q 估计网络的参数赋给 Q 现实
+            
+            print('Episode{} EpisodeReward={}'.format(episode, total_reward))
+            wandb.log({'Reward': total_reward})
+            
+```
+
+运行程序：
+
+```python
+def main():
+    env = gym.make('CartPole-v1')
+    agent = Agent(env)
+    agent.train(max_episodes=1000)
+
+if __name__ == "__main__":
+    main()
+```
+
+
+
 ## 📚 References
 
 - [Bilibili - 李宏毅《深度强化学习》](https://www.bilibili.com/video/BV1MW411w79n)
@@ -325,3 +311,6 @@ env.close()
 - [CSDN - 李宏毅深度强化学习笔记 - jessie](https://blog.csdn.net/cindy_1102/article/details/87904928)
 - [强化学习纲要](https://github.com/zhoubolei/introRL)
 - [莫烦 Python — 强化学习](https://mofanpy.com/tutorials/machine-learning/reinforcement-learning/intro-RL-methods/)
+- [DQN从入门到放弃5 深度解读DQN算法](https://zhuanlan.zhihu.com/p/21421729)
+- 👍 [Github - Deep-Learning-with-TensorFlow-book](https://github.com/dragen1860/Deep-Learning-with-TensorFlow-book)
+- [Github - DeepRL-TensorFlow2](https://github.com/marload/DeepRL-TensorFlow2) - 🐋 Simple implementations of various popular Deep Reinforcement Learning algorithms using TensorFlow2
