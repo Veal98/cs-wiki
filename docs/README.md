@@ -51,7 +51,7 @@
 
 ### 算法 Algorithm
 
-> 🍋 本节的每个知识点都配备对应的 LeetCode 题目，知其然而知其所以然，**拒绝无脑刷题**。目前尚在更新中，对应的 LeetCode 会逐渐添加进去。不需要看知识点的小伙伴可直接进入 [LeetCode 分模块刷题指南](计算机基础/算法/LeetCode/index.md)，所有题目会在此处分类汇总。
+> 🍋 本节的每个知识点都配备对应的 LeetCode 题目，知其然而知其所以然，**拒绝无脑刷题**。目前尚在更新中，对应的 LeetCode 会逐渐添加进去。不需要看知识点的小伙伴可直接进入 [LeetCode 分模块刷题指南](计算机基础/算法/LeetCode/index.md)，所有题目会在此处分类汇总，现已包含 `60` 道题目。
 
 - [1 - 算法基础](计算机基础/算法/1-算法基础.md)
 - [2 - 递归](计算机基础/算法/2-递归.md)
@@ -373,17 +373,16 @@
 - [1 - 强化学习概述](人工智能/强化学习/入门/1-概述.md)
 - [2 - 马尔可夫决策过程](人工智能/强化学习/入门/2-马尔可夫决策过程.md)
 - [3 - 强化学习方法汇总](人工智能/强化学习/入门/3-强化学习方法汇总.md)
-- 【基于价值的强化学习 Value-Based】
+- 【基于价值的强化学习 `Value-Based`】
   - [4 - Q-Learning](人工智能/强化学习/入门/4-Q-Learning.md)
   - [5 - Sarsa](人工智能/强化学习/入门/5-Sarsa.md)
   - [6 - Deep Q Network（DQN）](人工智能/强化学习/入门/6-DQN.md)
-- 【基于策略的强化学习 Policy-Based】
+- 【基于策略的强化学习 `Policy-Based`】
   - [7 - 策略梯度 Policy Gradient](人工智能/强化学习/入门/7-Policy-Gradient.md)
-- 【演员-评论员算法系列 Actor-Critic】
-  - 8 - Advantage Actor-Critic，A2C
-  - 9 - Deep Deterministic Policy Gradient，DDPG
-  - 10 - Asynchronous Advantage Actor-Critic，A3C
-- [11 - 模仿学习 Imitation Learning](人工智能/强化学习/入门/11-模仿学习.md)
+- 【演员-评论员算法系列 `Actor-Critic`】
+  - [8 - A2C，A3C](人工智能/强化学习/入门/8-Actor-Critic.md)
+  - [9 - Deep Deterministic Policy Gradient，DDPG](人工智能/强化学习/入门/9.DDPG.md)
+- [10 - 模仿学习 Imitation Learning](人工智能/强化学习/入门/10-模仿学习.md)
 
 ---
 

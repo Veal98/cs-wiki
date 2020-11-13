@@ -46,7 +46,7 @@
 
 ### 算法 Algorithm
 
-> 🍋 本节的每个知识点都配备对应的 LeetCode 题目，知其然而知其所以然，**拒绝无脑刷题**。目前尚在更新中，对应的 LeetCode 会逐渐添加进去。不需要看知识点的小伙伴可直接进入 [LeetCode 分模块刷题指南](计算机基础/算法/LeetCode/index.md)，所有题目会在此处分类汇总。
+> 🍋 本节的每个知识点都配备对应的 LeetCode 题目，知其然而知其所以然，**拒绝无脑刷题**。目前尚在更新中，对应的 LeetCode 会逐渐添加进去。不需要看知识点的小伙伴可直接进入 [LeetCode 分模块刷题指南](计算机基础/算法/LeetCode/index.md)，所有题目会在此处分类汇总，现已包含 `60` 道题目。
 
 - [1 - 算法基础](计算机基础/算法/1-算法基础.md)
 - [2 - 递归](计算机基础/算法/2-递归.md)
@@ -55,6 +55,7 @@
 - [5 - 动态规划](计算机基础/算法/5-动态规划.md)
 - [6 - 贪心算法](计算机基础/算法/6-贪心算法.md)
 - [7 - 回溯法](计算机基础/算法/7-回溯法.md)
+- [8 - 双指针](计算机基础/算法/8-双指针.md)
 - [🔥 LeetCode 分模块刷题指南](计算机基础/算法/LeetCode/刷题指南.md)
 
 ### 计算机网络 Net
@@ -377,10 +378,9 @@
 - 【基于策略的强化学习 `Policy-Based`】
   - [7 - 策略梯度 Policy Gradient](人工智能/强化学习/入门/7-Policy-Gradient.md)
 - 【演员-评论员算法系列 `Actor-Critic`】
-  - 8 - Advantage Actor-Critic，A2C
-  - 9 - Deep Deterministic Policy Gradient，DDPG
-  - 10 - Asynchronous Advantage Actor-Critic，A3C
-- [11 - 模仿学习 Imitation Learning](人工智能/强化学习/入门/11-模仿学习.md)
+  - [8 - A2C，A3C](人工智能/强化学习/入门/8-Actor-Critic.md)
+  - [9 - Deep Deterministic Policy Gradient，DDPG](人工智能/强化学习/入门/9.DDPG.md)
+- [10 - 模仿学习 Imitation Learning](人工智能/强化学习/入门/10-模仿学习.md)
 
 ---
 
