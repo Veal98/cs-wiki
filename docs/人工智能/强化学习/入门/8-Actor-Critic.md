@@ -8,13 +8,13 @@
 
 <img src="https://gitee.com/veal98/images/raw/master/img/20201113160456.png" style="zoom:50%;" />
 
-- Actor-Critic 中的 **【Actor】** 的前身是 Policy Gradients, 这能让它毫不费力地在连续动作中选取合适的动作.
+- 💛 **策略网络** - Actor-Critic 中的 **【Actor】** ：前身是 Policy Gradients, 这能让它毫不费力地在连续动作中选取合适的动作.
 
   对于 Actor 网络 $𝜋_𝜃$，目标是最大化回报期望，通过 $𝜕𝐽(𝜃) / 𝜕𝜃$ 偏导数来更新策略网络的参数 𝜃：
 
   <img src="https://gitee.com/veal98/images/raw/master/img/20201113160646.png" style="zoom: 50%;" />
 
-- Actor Critic 中的 **【Critic】** 的前身是 Q-learning 或者其他的 Value-Based 的学习法 , 用于评估当前状态的好坏。能进行单步更新, 而传统的 Policy Gradients 则是回合更新, 这降低了学习效率.
+- 💛 **价值网络** - Actor Critic 中的 **【Critic】** ：前身是 Q-learning 或者其他的 Value-Based 的学习法 , 用于评估当前状态的好坏。能进行单步更新, 而传统的 Policy Gradients 则是回合更新, 这降低了学习效率.
 
   对于 Critic 网络 $𝑉_𝜙^𝜋$，目标是在通过 MC 方法或者 TD 方法获得准确的 $𝑉_𝜙^𝜋(𝑠𝑡)$ 值函数估计：
 

@@ -38,6 +38,8 @@
 
 ## 2. 神经网络的监督学习(Supervised Learning with Neural Networks)
 
+<img src="https://gitee.com/veal98/images/raw/master/img/20201117150407.png" style="zoom:67%;" />
+
 目前为止，由神经网络模型创造的价值基本上都是基于监督式学习（Supervised Learning）的。监督式学习与非监督式学习本质区别就是是否已知训练样本的输出y。在实际应用中，机器学习解决的大部分问题都属于监督式学习，神经网络模型也大都属于监督式学习。下面我们来看几个监督式学习在神经网络中应用的例子。
 
 首先，第一个例子还是**房屋价格预测**。根据训练样本的输入x和输出y，训练神经网络模型，预测房价。
