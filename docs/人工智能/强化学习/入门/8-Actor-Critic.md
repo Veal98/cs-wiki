@@ -24,6 +24,8 @@
 
 结合了 Policy Gradient (Actor) 和 值函数近似 Function Approximation (Critic) 的方法. ⭐ **`Actor` 基于概率选行为, `Critic` 基于 `Actor` 的行为评判行为的得分, `Actor` 根据 `Critic` 的评分修改选行为的概率**.
 
+<img src="https://gitee.com/veal98/images/raw/master/img/20201119110417.png" style="zoom: 55%;" />
+
 > 💡 **`Actor` 修改行为时就像蒙着眼睛一直向前开车, `Critic` 就是那个扶方向盘改变 `Actor` 开车方向的.**
 >
 > 或者说详细点, 就是 `Actor` 在运用 Policy Gradient 的方法进行 Gradient ascent 的时候, 由 `Critic` 来告诉他, 这次的 Gradient ascent 是不是一次正确的 ascent, 如果这次的得分不好, 那么就不要 ascent 那么多.

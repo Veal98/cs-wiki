@@ -6,6 +6,10 @@
 
 对比起以值为基础的方法, Policy Gradients 根据概率直接输出动作的最大好处就是, **它能在一个连续区间内挑选动作**, 而 Value-Based 的比如 Q-learning 无法很好的处理连续动作
 
+🚨 基于策略梯度的方法，根据策略是随机策略还是确定性策略，分为经典的 `策略梯度方法（Policy Gradient,PG）` 与 `确定性策略梯度方法（Deterministic Policy Gradient, DPG）`。
+
+本节只介绍 PG 👇
+
 ## 1. Policy Gradient 核心思想
 
 如图所示, 观测的信息通过神经网络分析, 选出了左边的行为, 我们直接进行反向传递, 使之下次被选的可能性增加, 但是奖惩信息却告诉我们, 这次的行为是不好的, 那我们的动作可能性增加的幅度 随之被减低. 这样就能**靠奖励来左右我们的神经网络反向传递**. 
@@ -32,9 +36,9 @@
 
 <img src="https://gitee.com/veal98/images/raw/master/img/20201110160153.png" style="zoom: 62%;" />
 
-## 3. Policy Gradient 基础算法 — REINFORCE 算法
+## 3. REINFORCE 算法
 
-policy gradient 的基础算法是一种基于 **整条回合数据** 的更新, 也叫 **蒙特卡罗策略梯度 reinforce 算法**. 这种方法是 policy gradient 的最基本方法。也就是说<u>当我们选择一个动作以后，其实并不知道动作的优劣，而只有最终游戏结束得到结果的时候，若这一系列行为导致了好的结果，则这一系列行为全是好的行为，反之若导致了坏的结果，这这一系列行为全是坏的行为</u>
+policy gradient 的基础算法是一种基于 **整条回合数据** 的更新, 即 **蒙特卡罗策略梯度算法**，也称为 **Reinforce 算法**。 这种方法是 policy gradient 的最基本方法。也就是说<u>当我们选择一个动作以后，其实并不知道动作的优劣，而只有最终游戏结束得到结果的时候，若这一系列行为导致了好的结果，则这一系列行为全是好的行为，反之若导致了坏的结果，这这一系列行为全是坏的行为</u>
 
 <img src="https://gitee.com/veal98/images/raw/master/img/20201108212847.png" style="zoom: 50%;" />
 
