@@ -76,6 +76,10 @@ section.cover .cover-main {
 /* .sidebar{
     background:rgb(51, 51, 51);
 } */
+
+.sidebar ul {
+    margin: 0 0 0 25px !important;
+}
 /* 侧边栏字体颜色 */
 .sidebar ul li a {
     /* color: rgb(222, 222, 222); */
@@ -87,7 +91,6 @@ section.cover .cover-main {
     font-weight:400 !important;
     font-size:14px !important;
 }
-
 .sidebar ul li.active > a {
     color: rgb(66, 185, 163);
 } 
