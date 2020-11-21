@@ -153,8 +153,12 @@ section.cover.has-mask .mask {
 }
 /* 表格 */
 .markdown-section tr:nth-child(2n) {
-    background-color: rgb(51, 51, 51);
+    background-color: rgb(248, 248, 248);
 }
+.markdown-section thead{
+    background: rgb(248, 248, 248) !important;
+}
+
 /* 引用块 */
 .markdown-section blockquote{
     background: rgb(220, 220, 255);
