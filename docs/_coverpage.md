@@ -52,4 +52,6 @@
 [<i class="fa fa-github-alt fa-1x"></i> Gitee](https://gitee.com/veal98/CS-Wiki)
 [<i class="fa fa-spinner fa-spin"></i> 开始阅读](README.md)
 
-![color](#fff)
+<!-- background image -->
+
+![](https://www.recoluan.com/assets/img/bg.2cfdbb33.svg)
