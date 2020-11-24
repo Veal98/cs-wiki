@@ -91,6 +91,7 @@
 - [4 - 文件管理](计算机基础/操作系统/4-文件管理.md)
 - [5 - 设备管理](计算机基础/操作系统/5-设备管理.md)
 - <u>[📒 操作系统面试指南](计算机基础/操作系统/面试指南.md)</u>
+- **Linux** 必备基础知识
 
 
 ### 数据库 DB
@@ -119,8 +120,9 @@
 
 ### 必备基础知识
 
-- [1 - JSON 详解](前端/必备基础/JSON详解.md)
-- [2 - AJAX 详解](前端/必备基础/AJAX详解.md)
+- 1 - HTML / CSS / JS 速览
+- [2 - JSON 详解](前端/必备基础/JSON详解.md)
+- [3 - AJAX 详解](前端/必备基础/AJAX详解.md)
 
 ### Vue 2.x
 
@@ -246,6 +248,8 @@
 #### ① 分布式理论基础
 
 - [1 - 分布式相关概念](系统设计/分布式/分布式理论基础/1-分布式相关概念.md)
+- 2 - 分布式锁
+- [3 - 分布式事务](系统设计/分布式/分布式理论基础/3-分布式事务.md)
 
 #### ② 搜索引擎 — Elasticsearch
 
@@ -258,6 +262,8 @@
 #### ⑥ Zookeeper
 
 ### 高并发
+
+👉 如何设计一个高并发系统
 
 #### ① 缓存
 
@@ -277,6 +283,10 @@
 
 #### ② 消息队列 MQ
 
+- [1 - 消息队列相关概念](系统设计/高并发/消息队列/1-消息队列相关概念.md)
+- [2 - RabbitMQ入门](系统设计/高并发/消息队列/2-RabbitMQ入门.md)
+- 3 - SpringBoot + RabbitMQ 简单实例
+
 #### ③ 读写分离
 
 - 如何实现 MySQL 的读写分离（主从复制）
@@ -287,23 +297,19 @@
 
 #### ⑤ 负载均衡
 
-- [负载均衡算法与实现负载均衡的技术](系统设计/高并发/负载均衡/负载均衡算法与实现负载均衡的技术.md)
+- [1 - 负载均衡算法与实现负载均衡的技术](系统设计/高并发/负载均衡/1-负载均衡算法与实现负载均衡的技术.md)
+- [2 - 集群下的 Session 管理](系统设计/高并发/负载均衡/2-集群下的Session管理.md)
+- [3 - 集群、分布式、负载均衡的区别](系统设计/高并发/负载均衡/3-集群+分布式+负载均衡的区别.md)
 
 ### 高可用
 
-- 如何实现高可用（限流，降级，熔断，排队，集群，超时和重试机制）
+👉 如何设计一个高可用系统
 
 #### ① 限流
 
 #### ② 降级
 
 #### ③ 熔断
-
-#### ④ 排队
-
-#### ⑤ 集群
-
-#### ⑥ 超时和重试机制
 
 ### 微服务
 
@@ -483,5 +489,24 @@
 
 ---
 
+### Git
+
+### Docker
+
+### 其他
+
 - [Snipaste + PicGo+ Gitee 图床一键上传](工具/图床一键上传.md)
+
 - [LaTeX 常用语法](工具/LaTeX常用语法.md)
+
+- 👍 优质 [开源教程类项目] 推荐：
+
+  |                          🎪 项目地址                          | 🔋 类别 |
+  | :----------------------------------------------------------: | :----: |
+  | [Github - CS-Notes](http://cyc2018.gitee.io/cs-notes/#/notes/分布式?id=一、分布式锁) |  Java  |
+  | [Github - JavaGuide](https://snailclimb.gitee.io/javaguide/#/docs/system-design/distributed-system/分布式?id=二-分布式事务) |  Java  |
+  | [Github - Advanced Java](https://doocs.gitee.io/advanced-java/#/./docs/distributed-system/distributed-system-interview) |  Java  |
+  | [Gitbook - labuladong 的算法小抄](https://labuladong.gitbook.io/algo/) |  算法  |
+  |      [莫烦 Python (mofanpy.com)](https://mofanpy.com/)       |   AI   |
+  | [红色石头的个人博客 (redstonewill.com)](https://redstonewill.com/category/machinelearning/) |   AI   |
+  |       [极客兔兔 (geektutu.com)](https://geektutu.com/)       |   AI   |
