@@ -8,4 +8,5 @@
     * [🎮 机器学习](README?id=🎮-机器学习)
     * [🌺 深度学习](README?id=🌺-深度学习)
     * [💊 强化学习](README?id=💊-强化学习)
+    * [🔨 Tools](README?id=🔨-tools)
 * [<i class="fa fa-calendar-o fa-1x"></i> 看板](https://gitee.com/veal98/CS-Wiki/board?fullscreen=1)
