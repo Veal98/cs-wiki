@@ -126,9 +126,9 @@
 ## 🔨 Tools
 
 
-| 🔨 Tools |                            🔗 链接                            |
-| :-----: | :----------------------------------------------------------: |
-|   Git   |     [💫](https://veal98.gitee.io/cs-wiki/#/README?id=git)     |
-| Docker  |   [💫](https://veal98.gitee.io/cs-wiki/#/README?id=docker)    |
-|  其他   | [🌐]([Git (gitee.io)](https://veal98.gitee.io/cs-wiki/#/README?id=其他)) |
+| 🔨 Tools |                         🔗 链接                          |
+| :-----: | :-----------------------------------------------------: |
+|   Git   |  [💫](https://veal98.gitee.io/cs-wiki/#/README?id=git)   |
+| Docker  | [💫](https://veal98.gitee.io/cs-wiki/#/README?id=docker) |
+|  其他   |  [🌐](https://veal98.gitee.io/cs-wiki/#/README?id=其他)  |
 
