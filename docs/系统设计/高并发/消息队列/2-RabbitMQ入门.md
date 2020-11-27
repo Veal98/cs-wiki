@@ -141,3 +141,8 @@ headers 类型的交换器性能会很差，而且也不实用，基本上不会
 下图展示了生产者将消息存入 RabbitMQ Broker,以及消费者从Broker中消费数据的整个流程：
 
 ![](https://gitee.com/veal98/images/raw/master/img/20201124221531.png)
+
+## 📚 References
+
+- [Github - Advanced Java](https://doocs.gitee.io/advanced-java/#/./docs/distributed-system/distributed-system-interview)
+- [Github - JavaGuide](https://snailclimb.gitee.io/javaguide/#/docs/system-design/distributed-system/分布式?id=二-分布式事务)
