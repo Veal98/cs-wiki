@@ -1,4 +1,4 @@
-# 🙃 Dubbo 重要概念详解
+# 🙃 Dubbo 架构及工作原理
 
 ---
 
@@ -133,78 +133,6 @@ Dubbo 架构具有以下几个特点，分别是连通性、健壮性、伸缩�
 - 第十层：**serialize层**，数据序列化层，网络传输需要
 
 ![](https://gitee.com/veal98/images/raw/master/img/20201127115243.png)
-
-## 4. Dubbo 的负载均衡策略
-
-### ① Dubbo 提供的负载均衡策略
-
-在集群负载均衡时，Dubbo 提供了多种均衡策略，默认为 `random` 随机调用。可以自行扩展负载均衡策略，参见：[负载均衡扩展](https://dubbo.gitbooks.io/dubbo-dev-book/content/impls/load-balance.html)。
-
-#### Random LoadBalance 基于权重的随机负载均衡机制，默认
-
-**对 provider 不同实例设置不同的权重，按照权重来负载均衡，权重越大分配流量越高**
-
-假设有一组服务器 servers = `[A, B, C]`，他们对应的权重为 weights = `[5, 3, 2]`，权重总和为 10。现在把这些权重值平铺在一维坐标值上，`[0, 5)` 区间属于服务器 A，`[5, 8)` 区间属于服务器 B，`[8, 10)` 区间属于服务器 C。接下来通过随机数生成器生成一个范围在 `[0, 10)` 之间的随机数，然后计算这个随机数会落到哪个区间上。比如数字 3 会落到服务器 A 对应的区间上，此时返回服务器 A 即可。权重越大的机器，在坐标轴上对应的区间范围就越大，因此随机数生成器生成的数字就会有更大的概率落到此区间内。
-
-#### RoundRobin LoadBalance 基于权重的轮询负载均衡机制，不推荐
-
-RoundRobin LoadBalance 根据权重分配负载，权重小的机器分配的负载就小
-
-![](https://gitee.com/veal98/images/raw/master/img/20201127120840.png)
-
-存在慢的提供者累积请求的问题，比如：第二台机器很慢，但没挂，当请求调到第二台时就卡在那，久而久之，所有请求都卡在调到第二台上。
-
-#### LeastActive LoadBalance 最小活跃数负载均衡
-最小活跃数负载均衡算法的基本思想是这样的：
-
-每个服务提供者会对应着一个活跃数 active。初始情况下，所有服务提供者的 active 均为 0。**每当收到一个请求，对应的服务提供者的 active 会加 1，处理完请求后，active 会减 1**。所以，**如果服务提供者性能较好，处理请求的效率就越高，那么 active 也会下降的越快。因此可以给这样的服务提供者优先分配请求**。
-
-当然，除了最小活跃数，LeastActive LoadBalance 在实现上还引入了权重值。所以准确的来说，LeastActive  LoadBalance 是基于加权最小活跃数算法实现的。
-
-#### ConsistentHash LoadBalance
-
-一致性 Hash 算法，**相同参数的请求一定分发到一个 provider 上去**，provider 挂掉的时候，会基于虚拟节点均匀分配剩余的流量，抖动不会太大。**如果你需要的不是随机负载均衡**，是要一类请求都到一个节点，那就走这个一致性 Hash 策略。
-
-### ② 配置负载均衡策略
-
-#### xml 方式
-
-服务端服务级别
-
-```java
-<dubbo:service interface="..." loadbalance="roundrobin" />
-```
-
-客户端服务级别
-
-```java
-<dubbo:reference interface="..." loadbalance="roundrobin" />
-```
-
-服务端方法级别
-
-```java
-<dubbo:service interface="...">
-    <dubbo:method name="..." loadbalance="roundrobin"/>
-</dubbo:service>
-```
-
-客户端方法级别
-
-```java
-<dubbo:reference interface="...">
-    <dubbo:method name="..." loadbalance="roundrobin"/>
-</dubbo:reference>
-```
-
-#### 注解方式
-
-消费方基于基于注解的服务级别配置方式：
-
-```java
-@Reference(loadbalance = "roundrobin")
-HelloService helloService;
-```
 
 ## 📚 References
 
