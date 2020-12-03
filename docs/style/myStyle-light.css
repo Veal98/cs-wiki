@@ -24,17 +24,9 @@ section.cover .cover-main {
     z-index:10 !important;
 }
 /* 导航栏 */
-/* .app-nav {
-    margin: 20px 60px 0 0 !important;
-} */
-/* 导航栏字体颜色 */
-/* .app-nav ul, .app-nav li {
-    color: #eee !important;
-} */
-/* 导航栏下拉框背景 */
-/* .app-nav li ul {
-    background-color: rgb(68, 68, 68) !important;
-} */
+.app-nav {
+    position: fixed !important;
+}
 /* 内容居中和宽度 */
 .content{
     width:1000px;
