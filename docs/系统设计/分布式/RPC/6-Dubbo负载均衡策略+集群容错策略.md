@@ -68,7 +68,7 @@ RoundRobin LoadBalance 根据权重分配负载，权重小的机器分配的负
 
 #### 注解方式
 
-消费方基于基于注解的服务级别配置方式：
+消费方基于基于注解的服务端服务级别配置方式：
 
 ```java
 @Reference(loadbalance = "roundrobin")
@@ -76,6 +76,10 @@ HelloService helloService;
 ```
 
 ## 2. Dubbo 的集群容错策略
+
+在集群调用失败时，Dubbo 提供了多种容错方案，默认为 failover 重试。
+
+![](https://gitee.com/veal98/images/raw/master/img/20201205224850.png)
 
 ### ① Failover Cluster 模式，默认
 

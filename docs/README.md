@@ -30,7 +30,7 @@
 
 - 🙏 由于本人水平有限，仓库中的知识点来自本人原创、视频、书籍、博客等，非原创均已标明出处（或在参考资料中列出），如有遗漏或发现文章错误及排版问题，请提 issue 或 PR
 
-- ⚡ [Gitee 在线阅读（国内访问速度较快）](https://veal98.gitee.io/cs-wiki) | [Gitee 仓库地址（推荐）](https://gitee.com/veal98/CS-Wiki)
+- ⚡ [Gitee 在线阅读（国内访问速度较快）](https://veal98.gitee.io/cs-wiki) | [Gitee 仓库地址](https://gitee.com/veal98/CS-Wiki) <span data-v-73ca276e="" class="badge recommendation" style="vertical-align: top;">推荐</span>
 
 - 🔮 [Github 在线阅读](https://veal98.github.io/CS-Wiki/) | [Github 仓库地址](https://github.com/Veal98/CS-Wiki)
 
@@ -54,7 +54,7 @@
 ### 算法 Algorithm
 
 > [!TIP]
-> 本节的每个知识点都配备对应的 LeetCode 题目，知其然而知其所以然，**拒绝无脑刷题**。目前尚在更新中，对应的 LeetCode 会逐渐添加进去。不需要看知识点的小伙伴可直接进入 <u>[LeetCode 分模块刷题指南](计算机基础/算法/LeetCode/index.md)</u>，所有题目会在此处分类汇总，现已包含 `79` 道题目。
+> 本节的每个知识点都配备对应的 LeetCode 题目，知其然而知其所以然，**拒绝无脑刷题**。目前尚在更新中，对应的 LeetCode 会逐渐添加进去。不需要看知识点的小伙伴可直接进入 <u>[LeetCode 分模块刷题指南](计算机基础/算法/LeetCode/刷题指南.md)</u>，所有题目会在此处分类汇总，现已包含 `79` 道题目。
 
 - [1 - 算法基础](计算机基础/算法/1-算法基础.md)
 - 【算法思想系列】
@@ -80,9 +80,9 @@
 - [1 - 计算机网络相关概念](计算机基础/计算机网络/1-计算机网络相关概念.md)
 - [2 - 物理层](计算机基础/计算机网络/2-物理层.md)
 - [3 - 数据链路层](计算机基础/计算机网络/3-数据链路层.md)
-- [4 - 网络层](计算机基础/计算机网络/4-网络层.md)
-- [5 - 传输层](计算机基础/计算机网络/5-传输层.md)
-- [6 - 应用层](计算机基础/计算机网络/6-应用层.md)
+- [4 - 网络层](计算机基础/计算机网络/4-网络层.md) <span data-v-73ca276e="" class="badge tip" style="vertical-align: top;">Important</span>
+- [5 - 传输层](计算机基础/计算机网络/5-传输层.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: top;">Vital</span>
+- [6 - 应用层](计算机基础/计算机网络/6-应用层.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: top;">Vital</span>
 - [7 - 网络管理和网络安全](计算机基础/计算机网络/7-网络管理和网络安全.md)
 - <u>[🎯 计算机网络面试指南](计算机基础/计算机网络/面试指南.md)</u>
 
@@ -92,7 +92,7 @@
 
 - [参考资料](计算机基础/操作系统/参考资料.md)
 - [1 - 操作系统概述](计算机基础/操作系统/1-操作系统概述.md)
-- [2 - 进程、线程、死锁](计算机基础/操作系统/2-进程、线程、死锁.md)
+- [2 - 进程、线程、死锁](计算机基础/操作系统/2-进程、线程、死锁.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: top;">Vital</span>
 - [3 - 内存管理](计算机基础/操作系统/3-内存管理.md)
 - [4 - 文件管理](计算机基础/操作系统/4-文件管理.md)
 - [5 - 设备管理](计算机基础/操作系统/5-设备管理.md)
@@ -110,8 +110,8 @@
 - [5 - 关系数据库设计理论](计算机基础/数据库/5-关系数据库设计理论)
 - [6 - 数据库设计之 E-R 图](计算机基础/数据库/6-数据库设计之E-R图)
 - [7 - 查询处理和优化](计算机基础/数据库/7-查询处理和优化)
-- [8 - 事务处理 - 数据库恢复技术](计算机基础/数据库/8-事务处理-数据库恢复技术)
-- [9 - 事务处理 - 并发控制](计算机基础/数据库/9-事务处理-并发控制)
+- [8 - 事务处理 - 数据库恢复技术](计算机基础/数据库/8-事务处理-数据库恢复技术) <span data-v-73ca276e="" class="badge tip" style="vertical-align: top;">Important</span>
+- [9 - 事务处理 - 并发控制](计算机基础/数据库/9-事务处理-并发控制) <span data-v-73ca276e="" class="badge warning" style="vertical-align: top;">Vital</span>
 - [10 - 数据库编程](计算机基础/数据库/10-数据库编程.md)
 - <u>[🎯 数据库面试指南](计算机基础/数据库/面试指南.md)</u>
 
@@ -154,7 +154,10 @@
 
 ---
 
-### Java 8 基础
+### Java 基础
+
+> [!TIP]
+> 所有笔记和项目均基于 **Java 8** 版本
 
 - [1 - Java 的基本程序设计结构](Java/Java基础/1-Java的基本程序设计结构.md)
 - [2 - 对象与类](Java/Java基础/2-对象与类.md)
@@ -168,13 +171,22 @@
 - [10 - 动态代理](Java/Java基础/10-动态代理.md)
 - [11 - 泛型](Java/Java基础/11-泛型.md)
 - [12 - 数组](Java/Java基础/12-数组.md)
-- [13 - 集合](Java/Java基础/13-集合.md)
-- [14 - 重要集合源码分析](Java/Java基础/14-重要集合源码分析.md)
-- [15 - 枚举类型](Java/Java基础/15-枚举类型.md)
-- [16 - 并发](Java/Java基础/16-并发.md)
-- [17 - I/O](Java/Java基础/17-IO.md)
-- Java 8 新特性
-- Java 9 - Java 14 新特性
+- 13 - **集合** <span data-v-73ca276e="" class="badge tip" style="vertical-align: top;">Important</span>
+  - [13.1 - 集合知识点全览](Java/Java基础/13.1-集合知识点全览.md)
+  - [13.2 - ArrayList 源码 + 扩容机制分析](Java/Java基础/13.2-ArrayList源码分析.md)
+  - [13.3 - LinkedList 源码分析](Java/Java基础/13.3-LinkedList源码分析.md)
+  - [13.4 - HashMap (JDK 1.8) 源码 + 底层数据结构分析](Java/Java基础/13.4-HashMap源码分析.md)
+  - 13.4 - ConcurrentHashMap (JDK 1.8) 源码 + 底层数据结构分析
+- [14 - 枚举类型](Java/Java基础/14-枚举类型.md)
+- 15 - **并发** <span data-v-73ca276e="" class="badge warning" style="vertical-align: top;">Vital</span>
+  - [15.1 - 并发知识点全览](Java/Java基础/15.1-并发知识点全览.md)
+- 16 - **I/O**
+  - [16.1 - Java I/O 知识点全览](Java/Java基础/16.1-IO知识点全览.md)
+  - 16.2 - BIO / NIO / AIO 总结
+- [17 - Java 网络编程 — Socket 编程](Java/Java基础/17-Socket编程.md)
+- 18 - **新特性**
+  - 18.1 - Java 8 新特性
+  - 18.2 - Java 9 - Java 14 新特性
 
 ### Java 虚拟机
 
@@ -185,7 +197,9 @@
 
 ### 设计模式
 
-### SSM
+### 常用框架
+
+#### ① SSM
 
 - [1 - Spring 总结](Java/SSM/Spring/Spring总结.md)
 - [2 - Spring MVC 总结](Java/SSM/SpringMVC/SpringMVC总结.md)
@@ -194,7 +208,7 @@
 - <u>🎯 Spring + Spring MVC 面试指南</u>
 - <u>🎯 MyBatis 面试指南</u>
 
-### Spring Boot 2.x
+#### ② Spring Boot 2.x
 
   - [1 - Spring Boot 入门](Java/SpringBoot/1-SpringBoot入门.md)
   - [2 - 配置文件](Java/SpringBoot/2-配置文件.md)
@@ -215,7 +229,7 @@
   - [💪 SpringBoot + Vue 前后端分离项目实战](http://veal98.gitee.io/project-cswiki)
   - <u>🎯 SpringBoot 面试指南</u>
 
-### Netty
+#### ③ Netty
 
 ## 👷 系统设计
 
@@ -271,7 +285,7 @@
 > 网站性能优化第一定律：优先考虑使用缓存
 
 - 1 - 缓存的相关概念
-- 2 - 内存数据库：**Redis**
+- 2 - 内存数据库：**Redis** <span data-v-73ca276e="" class="badge warning" style="vertical-align: top;">Vital</span>
   - [2.1 - NoSQL 概述](系统设计/高并发/缓存/Redis/1-NoSQL概述.md)
   - [2.2 - Redis 入门](系统设计/高并发/缓存/Redis/2-Redis入门.md)
   - [2.3 - Redis 五大数据类型](系统设计/高并发/缓存/Redis/3-五大数据类型.md)
@@ -296,6 +310,7 @@
   - [2.2 - SpringBoot + RabbitMQ 简单实例](系统设计/高并发/消息队列/3-SpringBoot+RabbitMQ简单实例.md)
 - 3 - 消息队列中间件：**Kafka**
 - 4 - 消息队列的缺点以及解决方案
+- 5 - 如何设计一个消息队列
 
 #### ③ 读写分离
 
@@ -317,6 +332,7 @@
 
 - [1 - 分库分表相关概念](系统设计/高并发/分库分表/1-分库分表相关概念.md)
 - 2 - 分库分表中间件
+- [3 - 如何将单库单表系统迁移到分库分表](系统设计/高并发/分库分表/3-如何将单库单表系统迁移到分库分表.md)
 
 #### ⑤ 负载均衡
 
@@ -363,21 +379,21 @@
 
 #### ① 分布式理论基础
 
-- [1 - 分布式相关概念](系统设计/分布式/分布式理论基础/1-分布式相关概念.md)
-- [2 - 分布式事务](系统设计/分布式/分布式理论基础/2-分布式事务.md)
+- [1 - 分布式相关概念](系统设计/分布式/分布式理论基础/1-分布式相关概念.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: top;">Vital</span>
+- [2 - 分布式事务](系统设计/分布式/分布式理论基础/2-分布式事务.md) <span data-v-73ca276e="" class="badge tip" style="vertical-align: top;">Important</span>
 - [3 - 分布式 Session](系统设计/分布式/分布式理论基础/3-分布式Session.md)
-- 4 - 分布式锁
+- [4 - 分布式锁](系统设计/分布式/分布式理论基础/4-分布式锁.md)
 
 #### ② 分布式 ID
 
 > [!NOTE]
 > 分库分表后需要一个**全局唯一的 ID（分布式 ID）**来标识一条数据或消息，数据库的自增 ID 显然不能满足需求（表之间很有可能出现 ID 冲突）
 
-- 分布式 ID 的生成方案
+- [分布式 ID 的生成方案](系统设计/分布式/分布式ID/分布式ID的生成方案.md)
 
 #### ③ RPC 框架 — Dubbo
 
-- [1 - 什么是 RPC 及其原理](系统设计/分布式/RPC/1-什么是RPC及其原理.md)
+- [1 - 什么是 RPC 及其原理](系统设计/分布式/RPC/1-什么是RPC及其原理.md) <span data-v-73ca276e="" class="badge tip" style="vertical-align: top;">Important</span>
 
 > [!Danger]
 > **Dubbo 与 Spring Cloud 并不是竞争关系**，**Dubbo** 作为成熟的 RPC 框架（分布式服务框架），其易用性、扩展性和健壮性已得到业界的认可。而 **Spring Cloud** 是一整个微服务生态，目前 **Dubbo** 已经成为 **Spring Cloud Alibaba** 的 RPC 组件，与 **Spring Cloud** 原生的 **Feign** 以及 **RestTemplate** 进行无缝整合，实现“零”成本迁移。
@@ -385,12 +401,13 @@
 > 💌 <u>[阿里巴巴中间件 独家解读：Dubbo Ecosystem - 从微服务框架到微服务生态](https://mp.weixin.qq.com/s/iNVctXw7tUGHhnF0hV84ww)</u>
 
 - 2 - RPC 框架：**Apache Dubbo**
-  - [2.1 - Dubbo 架构及工作原理](系统设计/分布式/RPC/2-Dubbo架构及工作原理.md)
+  - [2.1 - Dubbo 架构及工作原理](系统设计/分布式/RPC/2-Dubbo架构及工作原理.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: top;">Vital</span>
   - [2.2 - SpringBoot 2 + Dubbo + Zookeeper 搭建一个简单的分布式服务](系统设计/分布式/RPC/3-SpringBoot+Dubbo+Zookeeper搭建一个简单的分布式服务.md)
-  - 2.3 - Dubbo 支持哪些通信协议和序列化协议
-  - [2.4 - Dubbo 负载均衡策略 + 集群容错策略](系统设计/分布式/RPC/5-Dubbo负载均衡策略+集群容错策略.md)
-  - 2.5 - Dubbo 动态代理策略（SPI 思想）
-- 3 - 如何设计一个 RPC 框架
+  - [2.3 - Dubbo 三种连接方式](系统设计/分布式/RPC/4-Dubbo三种连接方式.md)
+  - [2.4 - Dubbo 通信协议与序列化](系统设计/分布式/RPC/5-Dubbo通信协议与序列化.md)
+  - [2.5 - Dubbo 负载均衡策略 + 集群容错策略](系统设计/分布式/RPC/6-Dubbo负载均衡策略+集群容错策略.md)
+  - 2.6 - Dubbo 动态代理策略（SPI 思想）
+- 3 - 💪 从零开始设计一个 RPC 框架
 
 #### ④ API 网关
 
@@ -405,7 +422,7 @@
 > [!NOTE]
 > 所谓**分布式协调服务**就是**将各个分布式组件协调起来**，减少各个系统之间的耦合度、处理分布式事务、配置整个分布式系统等等
 
-- [1 - Zookeeper 重要概念详解](系统设计/分布式/Zookeeper/1-Zookeeper重要概念详解.md)
+- [1 - Zookeeper 重要概念详解](系统设计/分布式/Zookeeper/1-Zookeeper重要概念详解.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: top;">Vital</span>
 - [2 - Zookeeper 安装与基本使用](系统设计/分布式/Zookeeper/2-Zookeeper安装与基本使用.md)
 
 ### 微服务架构 — Spring Cloud

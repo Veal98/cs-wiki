@@ -2,7 +2,111 @@
 
 ---
 
-## 1. 启动Zookeeper 环境
+## 1. dubbo-spring-boot-starter
+
+---
+
+### ① 如何发布 Dubbo 服务
+
+首先我们需要在 SpringBoot 项目中导入如下依赖：
+
+```xml
+<!--引入dubbo的依赖-->
+<dependency>
+    <groupId>com.alibaba.spring.boot</groupId>
+    <artifactId>dubbo-spring-boot-starter</artifactId>
+    <version>2.0.0</version>
+</dependency>
+```
+
+👉 阿里开发的 starter：[alibaba/dubbo-spring-boot-starter: Dubbo Spring Boot Starter (github.com)](https://github.com/alibaba/dubbo-spring-boot-starter)
+
+也可以使用 Dubbo 官方的 starter [apache/dubbo-spring-boot-project](https://github.com/dubbo/dubbo-spring-boot-project)
+
+在 `application.properties` 添加 Dubbo 的相关配置信息，样例配置如下:
+
+```properties
+# 当前服务/应用名称
+spring.dubbo.application.name = dubbo-provider
+
+# 注册中心的地址
+spring.dubbo.registry.address = zookeeper://127.0.0.1:2181
+
+# 指定通信协议
+spring.dubbo.protocol.name = dubbo
+# 指定通信端口，把服务暴露在 dubbo 的 20880 端口
+spring.dubbo.protocol.port = 20880
+```
+
+注：这个配置只针对服务提供端，消**费端不用指定协议**，它自己会根据服务端的地址信息和 `@Reference` 注解去解析协议
+
+接下来在 Spring Boot Application 的上添加 `@EnableDubboConfiguration`，表示要开启 Dubbo功能. (Dubbo provider服务可以使用或者不使用web容器)
+
+```java
+@SpringBootApplication
+@EnableDubboConfiguration
+public class DubboProviderLauncher {
+  //...
+}
+```
+
+编写你的 Dubbo 服务，只需要在发布的服务实现上添加`@Service`（`import com.alibaba.dubbo.config.annotation.Service`）注解，用于**暴露该服务**
+
+```java
+@Service
+@Component
+public class HelloServiceImpl implements IHelloService {
+  //...
+}
+```
+
+### ② 如何消费 Dubbo 服务
+
+添加依赖:
+
+```xml
+    <dependency>
+        <groupId>com.alibaba.spring.boot</groupId>
+        <artifactId>dubbo-spring-boot-starter</artifactId>
+        <version>2.0.0</version>
+    </dependency>
+```
+
+在 `application.properties` 添加dubbo的相关配置信息，样例配置如下:
+
+```properties
+# 当前服务/应用名称
+spring.dubbo.application.name = dubbo-consumer
+
+# 注册中心的地址
+spring.dubbo.registry.address = zookeeper://127.0.0.1:2181
+
+```
+
+开启`@EnableDubboConfiguration`
+
+```java
+@SpringBootApplication
+@EnableDubboConfiguration
+public class DubboConsumerLauncher {
+  //...
+}
+```
+
+通过 `@Reference` 注入需要使用的接口.
+
+```java
+@Component
+public class HelloConsumer {
+  @Reference
+  private IHelloService iHelloService;
+  
+}
+```
+
+OK，介绍至此，接下来我们利用这个 Starter 开发一个分布式小 Demo 👇
+
+## 2. 启动 Zookeeper 环境
 
 安装好 Zookeeper 后，运行 `zKServer.cmd`
 
@@ -10,7 +114,7 @@
 
 > 🚨 **不要**运行客户端`zkCli.cmd`
 
-## 2. 服务接口 Interface
+## 3. 服务接口 Interface
 
 新建一个文件夹 springboot-dubbo 并用 IDEA  打开。
 
@@ -30,7 +134,7 @@ public interface HelloService {
 
 <img src="https://gitee.com/veal98/images/raw/master/img/20201129104051.png" style="zoom: 67%;" />
 
-## 3. 服务提供者 Provider
+## 4. 服务提供者 Provider
 
 New Module，创建一个 SpringBoot 模块 dubbo-provider，添加 Web 依赖：
 
@@ -72,7 +176,7 @@ server.port = 8333
 spring.dubbo.application.name = dubbo-provider
 
 # 注册中心的地址
-spring.dubbo.application.registry = zookeeper://127.0.0.1:2181
+spring.dubbo.registry.address = zookeeper://127.0.0.1:2181
 ```
 
 ### ③ 实现接口
@@ -85,7 +189,7 @@ import com.smallbeef.service.HelloService;
 import org.springframework.stereotype.Component;
 
 @Component
-@Service
+@Service // Dubbo 的服务暴露
 public class HelloServiceImpl implements HelloService {
     @Override
     public String sayHello(String name) {
@@ -112,7 +216,7 @@ public class DubboProviderApplication {
 }
 ```
 
-## 4. 服务消费者 Consumer
+## 5. 服务消费者 Consumer
 
 同 dubbo-provider，创建一个添加 Web、Dubbo、Zookeeper 依赖的 SpringBoot 模块 dubbo-consumer
 
@@ -128,7 +232,7 @@ server.port = 8330
 spring.dubbo.application.name = dubbo-consumer
 
 # 注册中心的地址
-spring.dubbo.application.registry = zookeeper://127.0.0.1:2181
+spring.dubbo.registry.address = zookeeper://127.0.0.1:2181
 ```
 
 ### ② 编写一个简单 Controller 调用远程服务
@@ -176,7 +280,7 @@ public class DubboConsumerApplication {
 }
 ```
 
-## 5. 运行测试
+## 6. 运行测试
 
 运行 Zookeeper 后，**先运行服务提供者，再运行服务消费者**，浏览器访问 http://localhost:8330/hello 页面返回 Hello world，控制台输出 Hello CS-Wiki。🎉 一个简单的分布式服务实验成功
 

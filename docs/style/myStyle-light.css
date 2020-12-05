@@ -2,6 +2,24 @@ a {
     text-decoration: none;
     color: #3eaf7c
 }
+.badge.green[data-v-73ca276e], .badge.tip[data-v-73ca276e], .badge[data-v-73ca276e] {
+    background-color: #42b983;
+}
+.badge.warn[data-v-73ca276e], .badge.warning[data-v-73ca276e], .badge.yellow[data-v-73ca276e] {
+    background-color: #e7c000;
+}
+.badge.recommendation[data-v-73ca276e] {
+    background-color: #dd4a82;
+}
+.badge[data-v-73ca276e] {
+    display: inline-block;
+    font-size: 14px;
+    height: 18px;
+    line-height: 18px;
+    border-radius: 3px;
+    padding: 0 6px;
+    color: #fff;
+}
 body{
     /* font-family: "Helvetica Neue",Helvetica,"Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;    */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
@@ -139,6 +157,7 @@ section.cover.has-mask .mask {
 /* 加粗 */
 .markdown-section strong {
     color: rgb(115, 143, 205);
+    font-weight: bolder;
 }
 /* a 标签 */
 .markdown-section a {
