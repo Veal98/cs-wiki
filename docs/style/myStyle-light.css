@@ -171,6 +171,14 @@ section.cover.has-mask .mask {
 .markdown-section thead{
     background: rgb(248, 248, 248) !important;
 }
+.markdown-section table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 1rem;
+    display: table !important;
+    overflow: auto;
+    width: 100%;
+}
 
 /* 引用块 */
 .markdown-section blockquote{
