@@ -72,6 +72,7 @@ section.cover .cover-main {
     color: rgb(173, 141, 229);
     
 }
+
 /* 搜索框 */
 /* .search {
     border-bottom: 1px solid rgb(68,68,68) !important;
@@ -142,6 +143,20 @@ h1 span{
     /* color: rgb(222, 222, 222); */
     font-weight: bold;
 }
+
+/* 无序列表 */
+/* .markdown-section ul {
+    list-style-type:none;
+    padding:0px;
+    margin:0px;
+}
+.markdown-section ul li {
+    background-image:url("https://gitee.com/veal98/images/raw/master/img/圆点.png");
+    background-size: 12px 12px;
+	background-repeat:no-repeat;
+	background-position:0px 8px; 
+	padding-left:20px;
+} */
 
 
 /* 封面半透明遮盖 */
