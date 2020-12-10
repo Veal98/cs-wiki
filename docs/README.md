@@ -14,6 +14,23 @@
       box-shadow: 2px 2px 5px rgb(216, 216, 216);
       
     }
+    h3:before {
+        /* font-size: 0.9rem !important; */
+        /* position: absolute; */
+        top: calc(50% - .35rem);
+        left: 0;
+        /* right: 10px !important; */
+        padding-right: 5px;
+        color: #f47466;
+        content: "\f0c1";
+        font: normal normal normal 18px/1 FontAwesome !important;
+        font-size: .9rem;
+        -webkit-transition: all .2s ease-out;
+        -moz-transition: all .2s ease-out;
+        -o-transition: all .2s ease-out;
+        -ms-transition: all .2s ease-out;
+        transition: all .2s ease-out;
+    }
     /* .content{
       width:1000px;
       margin: 0 auto;
@@ -100,6 +117,16 @@
 
 #### ② Linux
 
+- 1 - Linux 简介
+- 2 - Linux 系统启动过程 + 系统目录结构
+- 3 - 如何远程登录 Linux 服务器
+- 4 - Linux 磁盘管理
+- 5 - Linux 文件与目录管理
+- 6 - Linux 用户和用户组管理
+- 7 - Linux 管道指令 + 正则表达式
+- 8 - Linux 进程管理
+- 9 - Vim 常用操作
+
 
 ### 数据库 DB
 - [参考资料](计算机基础/数据库/参考资料.md)
@@ -120,6 +147,74 @@
 
 - [参考资料](计算机基础/软件工程/参考资料.md)
 - [软件工程重点知识总结](计算机基础/软件工程/软件工程重点知识总结.md)
+
+### 设计模式
+
+> [!NOTE]
+> 设计模式是**解决问题的方案**，学习现有的设计模式可以做到经验复用。拥有设计模式词汇，在沟通时就能用更少的词汇来讨论，并且不需要了解底层细节。
+
+#### ① 七大原则
+
+- 设计模式七大原则
+
+#### ② 二十三种设计模式
+
+- **【创建型模式 Creational Pattern】**
+
+  ✨ 创建型模式对类的实例化过程进行了抽象，能够**将软件模块中对象的创建和对象的使用分离**。为了使软件的结构更加清晰，外界对于这些对象只需要知道它们共同的接口，而不清楚其具体的实现细节，使整个系统的设计更加符合单一职责原则。
+
+  | 序号 |                             图稿                             |                             模式                             | 🏆 重要性 |
+  | :--: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----: |
+  |      |                                                              | 简单工厂模式 (Simple Factory) <br>/ 静态工厂方法模式 (Static Factory Method) |   4    |
+  |  1   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206212655.png" style="zoom:67%;" /> |                工厂方法模式 (Factory Method)                 | 5  |
+  |  2   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206212930.png" style="zoom:67%;" /> |                   抽象工厂模式 (Abstract)                    |   5    |
+  |  3   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206212713.png" style="zoom:67%;" /> |                     建造者模式 (Builder)                     |   2    |
+  |  4   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206212723.png" style="zoom:67%;" /> |                     原型模式 (Prototype)                     |   1    |
+  |  5   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206212734.png" style="zoom:67%;" /> |                     单例模式 (Singleton)                     |   4    |
+
+- **【结构型模式 Structural Pattern】**
+
+  ✨ 结构型模式描述如何**将类或者对象结合在一起形成更大的结构**，就像搭积木，可以通过简单积木的组合形成复杂的、功能更为强大的结构。
+
+  结构型模式可以分为类结构型模式和对象结构型模式：
+
+  **类结构型模式**：关心类的组合，由多个类可以组合成一个更大的系统，在类结构型模式中一般只存在继承关系和实现关系。
+
+  **对象结构型模式**：关心类与对象的组合，通过关联关系使得在一 个类中定义另一个类的实例对象，然后通过该对象调用其方法。 根据“合成复用原则”，在系统中尽量使用关联关系来替代继承关系，因此大部分结构型模式都是对象结构型模式。
+
+  | 序号 |                             图稿                             |         模式         | 🏆 重要性 |
+  | :--: | :----------------------------------------------------------: | :------------------: | :------: |
+  |  1   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214000.png" style="zoom:67%;" /> | 适配器模式 (Adapter) |    4     |
+  |  2   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214020.png" style="zoom:67%;" /> |  桥接模式 (Bridge)   |    3     |
+  |  3   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214031.png" style="zoom:67%;" /> | 组合模式 (Composite) |    4     |
+  |  4   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214051.png" style="zoom:67%;" /> | 装饰模式 (Decorator) |    3     |
+  |  5   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214107.png" style="zoom:67%;" /> |  外观模式 (Facade)   |    5     |
+  |  6   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214116.png" style="zoom:67%;" /> | 享元模式 (Flyweight) |    1     |
+  |  7   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214125.png" style="zoom:67%;" /> |   代理模式 (Proxy)   |    4     |
+
+- **【行为型模式 Behavioral Pattern】**
+
+  ✨ 行为型模式是对**在不同的对象之间划分责任和算法**的抽象化。不仅仅关注类和对象的结构，而且重点关注类和对象之间的相互作用。
+
+  行为型模式分为类行为型模式和对象行为型模式两种：
+
+  **类行为型模式**：类的行为型模式使用继承关系在几个类之间分配行为，类行为型模式主要通过多态等方式来分配父类与子类的职责。
+
+  **对象行为型模式**：对象的行为型模式则使用对象的聚合关联关系来分配行为，对象行为型模式主要是通过对象关联等方式来分配两个或多个类的职责。根据“合成复用原则”，系统中要尽量使用关联关系来取代继承关系，因此大部分行为型设计模式都属于对象行为型设计模式。
+
+  | 序号 |                             图稿                             |                 模式                 | 🏆 重要性 |
+  | :--: | :----------------------------------------------------------: | :----------------------------------: | :------: |
+  |  1   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214241.png" style="zoom:67%;" /> | 职责链模式 (Chain of Responsibility) |    3     |
+  |  2   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214249.png" style="zoom:67%;" /> |          命令模式 (Command)          |    4     |
+  |  3   |                                                              |       解释器模式 (Interpreter)       |    1     |
+  |  4   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214316.png" style="zoom:67%;" /> |        迭代器模式 (Iterator)         |    5     |
+  |  5   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214327.png" style="zoom:67%;" /> |        中介者模式 (Mediator)         |    2     |
+  |  6   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214340.png" style="zoom:67%;" /> |         备忘录模式 (Memento)         |    2     |
+  |  7   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214348.png" style="zoom:67%;" /> |        观察者模式 (Observer)         |    5     |
+  |  8   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214407.png" style="zoom:67%;" /> |           状态模式 (State)           |    3     |
+  |  9   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214416.png" style="zoom:67%;" /> |         策略模式 (Strategy)          |    4     |
+  |  10  | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214426.png" style="zoom:67%;" /> |    模板方法模式 (Template Method)    |    3     |
+  |  11  | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214437.png" style="zoom:67%;" /> |         访问者模式 (Visitor)         |    1     |
 
 ## 🎨 前端
 
@@ -182,8 +277,9 @@
   - 15.0 - 多线程与并发学习指南
   - [15.1 - 并发知识点全览](Java/Java基础/15.1-并发知识点全览.md)
 - 16 - I/O
-  - [16.1 - Java I/O 知识点全览](Java/Java基础/16.1-IO知识点全览.md)
-  - 16.2 - BIO / NIO / AIO 总结 <span data-v-73ca276e="" class="badge tip" style="vertical-align: top;">Important</span>
+  - [16.1 - 底层：Linux 五种 I/O 模型详解](Java/Java基础/16.1-底层-Linux五种IO模型详解.md)
+  - [16.2 - Java I/O 知识点全览](Java/Java基础/16.1-IO知识点全览.md)
+  - 16.3 - Java 中的 BIO / NIO / AIO 总结 <span data-v-73ca276e="" class="badge tip" style="vertical-align: top;">Important</span>
 - [17 - Java 网络编程 — Socket 编程](Java/Java基础/17-Socket编程.md)
 - 19 - 新特性
   - 19.1 - Java 8 新特性
@@ -197,68 +293,6 @@
 - [2 - 垃圾收集器与内存分配策略](Java/JVM/2-垃圾收集器与内存分配策略.md)
 - [3 - 类文件结构](Java/JVM/3-类文件结构.md)
 - [4 - 类加载机制](Java/JVM/4-类加载机制.md)
-
-### 设计模式
-
-> [!NOTE]
-> 设计模式是**解决问题的方案**，学习现有的设计模式可以做到经验复用。拥有设计模式词汇，在沟通时就能用更少的词汇来讨论，并且不需要了解底层细节。
-
-- **【创建型模式 Creational Pattern】**
-
-  ✨ 创建型模式对类的实例化过程进行了抽象，能够**将软件模块中对象的创建和对象的使用分离**。为了使软件的结构更加清晰，外界对于这些对象只需要知道它们共同的接口，而不清楚其具体的实现细节，使整个系统的设计更加符合单一职责原则。
-
-  | 序号 |                             图稿                             |             模式              |
-  | :--: | :----------------------------------------------------------: | :---------------------------: |
-  |  1   |                                                              | 简单工厂模式 (Simple Factory) |
-  |  2   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206212655.png" style="zoom:67%;" /> | 工厂方法模式 (Factory Method) |
-  |  3   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206212930.png" style="zoom:67%;" /> |    抽象工厂模式 (Abstract)    |
-  |  4   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206212713.png" style="zoom:67%;" /> |     建造者模式 (Builder)      |
-  |  5   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206212723.png" style="zoom:67%;" /> |     原型模式 (Prototype)      |
-  |  6   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206212734.png" style="zoom:67%;" /> |     单例模式 (Singleton)      |
-
-- **【结构型模式 Structural Pattern】**
-
-  ✨ 结构型模式描述如何**将类或者对象结合在一起形成更大的结构**，就像搭积木，可以通过简单积木的组合形成复杂的、功能更为强大的结构。
-
-  结构型模式可以分为类结构型模式和对象结构型模式：
-
-  **类结构型模式**：关心类的组合，由多个类可以组合成一个更大的系统，在类结构型模式中一般只存在继承关系和实现关系。
-
-  **对象结构型模式**：关心类与对象的组合，通过关联关系使得在一 个类中定义另一个类的实例对象，然后通过该对象调用其方法。 根据“合成复用原则”，在系统中尽量使用关联关系来替代继承关系，因此大部分结构型模式都是对象结构型模式。
-
-  | 序号 |                             图稿                             |         模式         |
-  | :--: | :----------------------------------------------------------: | :------------------: |
-  |  1   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214000.png" style="zoom:67%;" /> | 适配器模式 (Adapter) |
-  |  2   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214020.png" style="zoom:67%;" /> |  桥接模式 (Bridge)   |
-  |  3   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214031.png" style="zoom:67%;" /> | 组合模式 (Composite) |
-  |  4   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214051.png" style="zoom:67%;" /> | 装饰模式 (Decorator) |
-  |  5   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214107.png" style="zoom:67%;" /> |  外观模式 (Facade)   |
-  |  6   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214116.png" style="zoom:67%;" /> | 享元模式 (Flyweight) |
-  |  7   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214125.png" style="zoom:67%;" /> |   代理模式 (Proxy)   |
-
-- **【行为型模式 Behavioral Pattern】**
-
-  ✨ 行为型模式是对**在不同的对象之间划分责任和算法**的抽象化。不仅仅关注类和对象的结构，而且重点关注类和对象之间的相互作用。
-  
-  行为型模式分为类行为型模式和对象行为型模式两种：
-  
-  **类行为型模式**：类的行为型模式使用继承关系在几个类之间分配行为，类行为型模式主要通过多态等方式来分配父类与子类的职责。
-  
-  **对象行为型模式**：对象的行为型模式则使用对象的聚合关联关系来分配行为，对象行为型模式主要是通过对象关联等方式来分配两个或多个类的职责。根据“合成复用原则”，系统中要尽量使用关联关系来取代继承关系，因此大部分行为型设计模式都属于对象行为型设计模式。
-  
-  | 序号 |                             图稿                             |                 模式                 |
-  | :--: | :----------------------------------------------------------: | :----------------------------------: |
-  |  1   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214241.png" style="zoom:67%;" /> | 职责链模式 (Chain of Responsibility) |
-  |  2   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214249.png" style="zoom:67%;" /> |          命令模式 (Command)          |
-  |  3   |                                                              |       解释器模式 (Interpreter)       |
-  |  4   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214316.png" style="zoom:67%;" /> |        迭代器模式 (Iterator)         |
-  |  5   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214327.png" style="zoom:67%;" /> |        中介者模式 (Mediator)         |
-  |  6   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214340.png" style="zoom:67%;" /> |         备忘录模式 (Memento)         |
-  |  7   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214348.png" style="zoom:67%;" /> |        观察者模式 (Observer)         |
-  |  8   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214407.png" style="zoom:67%;" /> |           状态模式 (State)           |
-  |  9   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214416.png" style="zoom:67%;" /> |         策略模式 (Strategy)          |
-  |  10  | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214426.png" style="zoom:67%;" /> |    模板方法模式 (Template Method)    |
-  |  11  | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214437.png" style="zoom:67%;" /> |         访问者模式 (Visitor)         |
 
 ### 常用框架
 
@@ -296,6 +330,12 @@
 
 > [!Note]
 > Netty 是目前 **Java 网络编程**最热门的框架，很多开源项目涉及到**网络通信**的部分都是基于 Netty 来做的，比如 Dubbo、RocketMQ、ElasticSearch 等。**学习 Netty 前请务必掌握 Java I/O 的相关知识**
+
+- [1 - 从 BIO、NIO 到 Netty](Java/Netty/1-从BIONIO到Netty.md)
+- [2 - 第一个 Netty 应用](Java/Netty/2-第一个Netty应用.md)
+- 3 - Netty 架构设计与特性
+- [4 - Netty 核心组件总览](Java/Netty/4-Netty核心组件总览.md)
+- 5 - Netty Reactor 线程模型
 
 ## 👷 系统设计
 

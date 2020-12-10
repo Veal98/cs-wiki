@@ -241,4 +241,4 @@ hessian 是一个比较老的序列化实现了，而且它是**跨语言**的�
 - [Apache Dubbo 官方文档](http://dubbo.apache.org/zh/docs/v2.7/user/preface/requirements/)
 - [dubbo-dev-book (gitbooks.io)](https://dubbo.gitbooks.io/dubbo-dev-book/content/design.html)
 - [Github - Advanced Java](https://doocs.gitee.io/advanced-java/#/./docs/distributed-system/dubbo-operating-principle)
-- [Dubbo通信协议、序列化及反序列化_凡是过往，皆为序章-CSDN博客](https://blog.csdn.net/l18848956739/article/details/96316038?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-2.not_use_machine_learn_pai&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-2.not_use_machine_learn_pai#二 序列化)
+- [Dubbo通信协议、序列化及反序列化](https://blog.csdn.net/l18848956739/article/details/96316038?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-2.not_use_machine_learn_pai&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-2.not_use_machine_learn_pai#%E4%BA%8C)
