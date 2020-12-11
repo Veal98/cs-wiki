@@ -8,7 +8,23 @@
 
 <img src="https://gitee.com/veal98/images/raw/master/img/20201210132102.png" style="zoom:67%;" />
 
-## 1. 服务端
+## 1. 导入 Netty 依赖
+
+新建一个 Maven 项目，并导入 Netty 4.x 依赖：
+
+```xml
+<dependencies>
+    <dependency>
+        <groupId>io.netty</groupId>
+        <artifactId>netty-all</artifactId>
+        <version>4.1.42.Final</version>
+    </dependency>
+</dependencies>
+```
+
+详细可见官网 👉 [https://netty.io/downloads.html](https://netty.io/downloads.html)
+
+## 2. 服务端
 
 我们可以通过 `ServerBootstrap` 来引导我们启动一个简单的 Netty 服务端，为此，你必须要为其指定下面三类属性：
 
@@ -133,7 +149,7 @@ public class HelloServerHandler extends ChannelInboundHandlerAdapter {
 1. `channelRead()` ：服务端接收客户端发送数据调用的方法
 2. `exceptionCaught()` ：处理客户端消息发生异常的时候被调用
 
-## 2. 客户端
+## 3. 客户端
 
 ### ① 创建客户端
 
@@ -279,7 +295,7 @@ public class HelloClientHandler extends ChannelInboundHandlerAdapter {
 2. `channelRead` : 客户端接收服务端发送数据调用的方法
 3. `exceptionCaught` : 处理消息发生异常的时候被调用
 
-## 3. 运行程序
+## 4. 运行程序
 
 **首先运行服务端 ，然后再运行客户端**。
 
