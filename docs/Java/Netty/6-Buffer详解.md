@@ -372,3 +372,4 @@ Netty提供了两种`ByteBufAllocator`的实现： `PooledByteBufAllocator`和`U
 
 - [Essential Netty in Action 《Netty 实战(精髓)》](https://waylau.com/essential-netty-in-action/GETTING%20STARTED/A%20Closer%20Look%20at%20ChannelHandlers.html)
 - [framework-learning](https://qsjzwithguang19forever.gitee.io/framework-learning/gitbook_doc/netty-learning/ByteBuf%E5%AE%B9%E5%99%A8.html)
+

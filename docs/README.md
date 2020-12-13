@@ -47,7 +47,7 @@
 
 - 🙏 由于本人水平有限，仓库中的知识点来自本人原创、视频、书籍、博客等，非原创均已标明出处（或在参考资料中列出），如有遗漏或发现文章错误及排版问题，请提 issue 或 PR
 
-- ⚡ [Gitee 在线阅读（国内访问速度较快）](https://veal98.gitee.io/cs-wiki) | [Gitee 仓库地址](https://gitee.com/veal98/CS-Wiki) <span data-v-73ca276e="" class="badge recommendation" style="vertical-align: top;">推荐</span>
+- ⚡ [Gitee 在线阅读（国内访问速度较快）](https://veal98.gitee.io/cs-wiki) | [Gitee 仓库地址](https://gitee.com/veal98/CS-Wiki) <span data-v-73ca276e="" class="badge recommendation" style="vertical-align: base-line;">推荐</span>
 
 - 🔮 [Github 在线阅读](https://veal98.github.io/CS-Wiki/) | [Github 仓库地址](https://github.com/Veal98/CS-Wiki)
 
@@ -97,9 +97,9 @@
 - [1 - 计算机网络相关概念](计算机基础/计算机网络/1-计算机网络相关概念.md)
 - [2 - 物理层](计算机基础/计算机网络/2-物理层.md)
 - [3 - 数据链路层](计算机基础/计算机网络/3-数据链路层.md)
-- [4 - 网络层](计算机基础/计算机网络/4-网络层.md) <span data-v-73ca276e="" class="badge tip" style="vertical-align: top;">Important</span>
-- [5 - 传输层](计算机基础/计算机网络/5-传输层.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: top;">Vital</span>
-- [6 - 应用层](计算机基础/计算机网络/6-应用层.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: top;">Vital</span>
+- [4 - 网络层](计算机基础/计算机网络/4-网络层.md) <span data-v-73ca276e="" class="badge tip" style="vertical-align: base-line;">Important</span>
+- [5 - 传输层](计算机基础/计算机网络/5-传输层.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: base-line;">Vital</span>
+- [6 - 应用层](计算机基础/计算机网络/6-应用层.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: base-line;">Vital</span>
 - [7 - 网络管理和网络安全](计算机基础/计算机网络/7-网络管理和网络安全.md)
 - <u>[🎯 计算机网络面试指南](计算机基础/计算机网络/面试指南.md)</u>
 
@@ -109,7 +109,7 @@
 
 - [参考资料](计算机基础/操作系统/参考资料.md)
 - [1 - 操作系统概述](计算机基础/操作系统/1-操作系统概述.md)
-- [2 - 进程、线程、死锁](计算机基础/操作系统/2-进程、线程、死锁.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: top;">Vital</span>
+- [2 - 进程、线程、死锁](计算机基础/操作系统/2-进程、线程、死锁.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: base-line;">Vital</span>
 - [3 - 内存管理](计算机基础/操作系统/3-内存管理.md)
 - [4 - 文件管理](计算机基础/操作系统/4-文件管理.md)
 - [5 - 设备管理](计算机基础/操作系统/5-设备管理.md)
@@ -137,8 +137,8 @@
 - [5 - 关系数据库设计理论](计算机基础/数据库/5-关系数据库设计理论)
 - [6 - 数据库设计之 E-R 图](计算机基础/数据库/6-数据库设计之E-R图)
 - [7 - 查询处理和优化](计算机基础/数据库/7-查询处理和优化)
-- [8 - 事务处理 - 数据库恢复技术](计算机基础/数据库/8-事务处理-数据库恢复技术) <span data-v-73ca276e="" class="badge tip" style="vertical-align: top;">Important</span>
-- [9 - 事务处理 - 并发控制](计算机基础/数据库/9-事务处理-并发控制) <span data-v-73ca276e="" class="badge warning" style="vertical-align: top;">Vital</span>
+- [8 - 事务处理 - 数据库恢复技术](计算机基础/数据库/8-事务处理-数据库恢复技术) <span data-v-73ca276e="" class="badge tip" style="vertical-align: base-line;">Important</span>
+- [9 - 事务处理 - 并发控制](计算机基础/数据库/9-事务处理-并发控制) <span data-v-73ca276e="" class="badge warning" style="vertical-align: base-line;">Vital</span>
 - [10 - 数据库编程](计算机基础/数据库/10-数据库编程.md)
 - <u>[🎯 数据库面试指南](计算机基础/数据库/面试指南.md)</u>
 
@@ -266,26 +266,27 @@
 - [10 - 静态代理 + JDK / CGLIB / Javassit 动态代理](Java/Java基础/10-代理.md)
 - [11 - 泛型](Java/Java基础/11-泛型.md)
 - [12 - 数组](Java/Java基础/12-数组.md)
-- 13 - 集合 / 容器 <span data-v-73ca276e="" class="badge warning" style="vertical-align: top;">Vital</span>
+- 13 - 集合 / 容器 <span data-v-73ca276e="" class="badge warning" style="vertical-align: base-line;">Vital</span>
   - [13.1 - 集合知识点全览](Java/Java基础/13.1-集合知识点全览.md)
   - [13.2 - ArrayList 源码 + 扩容机制分析](Java/Java基础/13.2-ArrayList源码分析.md)
   - [13.3 - LinkedList 源码分析](Java/Java基础/13.3-LinkedList源码分析.md)
   - [13.4 - HashMap (JDK 1.8) 源码 + 底层数据结构分析](Java/Java基础/13.4-HashMap源码分析.md)
   - 13.4 - ConcurrentHashMap (JDK 1.8) 源码 + 底层数据结构分析
 - [14 - 枚举类型 Enum](Java/Java基础/14-枚举类型.md)
-- 15 - 多线程与并发 <span data-v-73ca276e="" class="badge warning" style="vertical-align: top;">Vital</span>
+- 15 - 多线程与并发 <span data-v-73ca276e="" class="badge warning" style="vertical-align: base-line;">Vital</span>
   - 15.0 - 多线程与并发学习指南
   - [15.1 - 并发知识点全览](Java/Java基础/15.1-并发知识点全览.md)
 - 16 - I/O
   - [16.1 - 底层：Linux 五种 I/O 模型详解](Java/Java基础/16.1-底层-Linux五种IO模型详解.md)
-  - [16.2 - Java I/O 知识点全览](Java/Java基础/16.1-IO知识点全览.md)
-  - 16.3 - Java 中的 BIO / NIO / AIO 总结 <span data-v-73ca276e="" class="badge tip" style="vertical-align: top;">Important</span>
+  - [16.2 - 底层：三种线程模型详解](Java/Java基础/16.2-底层-线程模型详解.md)
+  - [16.3 - Java I/O 知识点全览](Java/Java基础/16.3-IO知识点全览.md)
+  - 16.2 - Java 中的 BIO / NIO / AIO 总结 <span data-v-73ca276e="" class="badge tip" style="vertical-align: base-line;">Important</span>
 - [17 - Java 网络编程 — Socket 编程](Java/Java基础/17-Socket编程.md)
-- 19 - 新特性
-  - 19.1 - Java 8 新特性
-  - 19.2 - Java 9 - Java 14 新特性
-- 20 - Java 常见关键字总结
+- 18 - Java 常见关键字总结
 - [高级：Java 中的 SPI 机制](Java/Java基础/SPI机制.md)
+- 新特性
+  - Java 8 新特性
+  - Java 9 - Java 14 新特性
 
 ### Java 虚拟机
 
@@ -295,6 +296,19 @@
 - [4 - 类加载机制](Java/JVM/4-类加载机制.md)
 
 ### 常用框架
+
+> [!WARNING|label:注意区分下数据库和 ORM 框架！]
+> 
+>**数据库**：存储数据。常见的数据库如：
+> 
+>- MySQL
+> - Oracle
+> 
+>**ORM 框架**：`Object Relational Mapping` 对象关系映射，将实体类对象持久化到数据库中。可以简单的认为 ORM 框架就是用来操作数据库的。常见的 ORM 框架如：
+> 
+>- JDBC
+> - MyBatis （常见组合为 <u>Spring + SpringMVC</u> / Spring Boot + MyBatis + 数据库）
+> - Hibernate（常见组合为 Spring Boot + Hibernate + Spring Data JPA + 数据库）
 
 #### ① SSM
 
@@ -316,11 +330,11 @@
   - [6 - SpringBoot 前后端数据交互的几种常用方式 ⭐ ](Java/SpringBoot/6-SpringBoot前后端数据交互.md)
   - [8 - SpringBoot 与数据访问](Java/SpringBoot/8-SpringBoot与数据访问.md)
   - 9 - **Spring Data JPA**
-    - [🛫 Spring Boot + Spring Data JPA 一篇文章快速入门](Java/JPA/SpringBoot+SpringDataJPA快速入门.md)
-    - [9.1 - 实体类映射到数据库表的基本注解](Java/JPA/1-实体类映射到数据库表的基本注解.md)
-    - [9.2 - 表之间的映射关系](Java/JPA/2-表之间的映射关系.md)
-    - [9.3 - Spring Data JPA 的四种查询方式](Java/JPA/3-SpringDataJPA的四种查询方式.md)
-    - [9.4 - Spring Data JPA 的更新方式详解](Java/JPA/4-SpringDataJPA的更新方式详解.md)
+    - [🛫 Spring Boot + Spring Data JPA 一篇文章快速入门](Java/SpringBoot/SpringDataJPA/SpringBoot+SpringDataJPA快速入门.md)
+    - [9.1 - 实体类映射到数据库表的基本注解](Java/SpringBoot/SpringDataJPA/1-实体类映射到数据库表的基本注解.md)
+    - [9.2 - 表之间的映射关系](Java/SpringBoot/SpringDataJPA/2-表之间的映射关系.md)
+    - [9.3 - Spring Data JPA 的四种查询方式](Java/SpringBoot/SpringDataJPA/3-SpringDataJPA的四种查询方式.md)
+    - [9.4 - Spring Data JPA 的更新方式详解](Java/SpringBoot/SpringDataJPA/4-SpringDataJPA的更新方式详解.md)
   - [10 - 异步、定时、邮件任务](Java/SpringBoot/10-异步定时邮件任务.md)
   - [11 - 集成 Redis（Lettuce）](Java/SpringBoot/11-集成Redis.md)
   - [💪 SpringBoot + Vue 前后端分离项目实战](http://veal98.gitee.io/project-cswiki)
@@ -332,14 +346,17 @@
 > Netty 是目前 **Java 网络编程**最热门的框架，很多开源项目涉及到**网络通信**的部分都是基于 Netty 来做的，比如 Dubbo、RocketMQ、ElasticSearch 等。**学习 Netty 前请务必掌握 Java I/O 的相关知识**。并请注意 **Netty 5 已被官方废弃**，本笔记基于 Netty 4.x
 
 - [1 - 从 BIO、NIO 到 Netty](Java/Netty/1-从BIONIO到Netty.md)
-- [2 - 第一个 Netty 应用](Java/Netty/2-第一个Netty应用.md)
+- [2 - 第一个 Netty 应用：HelloWorld](Java/Netty/2-第一个Netty应用.md)
 - [3 - Netty 架构设计与特性](Java/Netty/3-Netty架构设计与特性.md)
 - [4 - Netty 核心组件总览](Java/Netty/4-Netty核心组件总览.md)
 - [5 - Transport（传输）详解](Java/Netty/5-Transport详解.md)
 - [6 - Buffer（缓冲/字节容器）详解](Java/Netty/6-Buffer详解.md)
-- 7 - EventLoop（事件循环）与 Netty 线程模型详解
-- 8 - Bootstrap（引导）详解
-- 9 - Codec（编码与解码）详解
+- [7 - ChannelHandler（消息处理器）与 ChannelPipeline 详解](Java/Netty/7-ChannelHandler与ChannelPipeline详解.md)
+- [8 - Netty Reactor 线程模型与 EventLoop（事件循环）详解](Java/Netty/8-EventLoop与线程模型详解.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: base-line;">Vital</span>
+- 9 - Bootstrap（引导）详解
+- 10 - Codec（编码与解码）详解
+- 实例 1：Netty 实现聊天功能
+- 实例 2：Netty 实现 WebSocket 聊天功能
 
 ## 👷 系统设计
 
@@ -395,7 +412,7 @@
 > 网站性能优化第一定律：优先考虑使用缓存
 
 - 1 - 缓存的相关概念
-- 2 - 内存数据库：**Redis** <span data-v-73ca276e="" class="badge warning" style="vertical-align: top;">Vital</span>
+- 2 - 内存数据库：**Redis** <span data-v-73ca276e="" class="badge warning" style="vertical-align: base-line;">Vital</span>
   - [2.1 - NoSQL 概述](系统设计/高并发/缓存/Redis/1-NoSQL概述.md)
   - [2.2 - Redis 入门](系统设计/高并发/缓存/Redis/2-Redis入门.md)
   - [2.3 - Redis 五大数据类型](系统设计/高并发/缓存/Redis/3-五大数据类型.md)
@@ -489,21 +506,15 @@
 
 #### ① 分布式理论基础
 
-- [1 - 分布式相关概念](系统设计/分布式/分布式理论基础/1-分布式相关概念.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: top;">Vital</span>
-- [2 - 分布式事务](系统设计/分布式/分布式理论基础/2-分布式事务.md) <span data-v-73ca276e="" class="badge tip" style="vertical-align: top;">Important</span>
+- [1 - 分布式相关概念](系统设计/分布式/分布式理论基础/1-分布式相关概念.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: base-line;">Vital</span>
+- [2 - 分布式事务](系统设计/分布式/分布式理论基础/2-分布式事务.md) <span data-v-73ca276e="" class="badge tip" style="vertical-align: base-line;">Important</span>
 - [3 - 分布式 Session](系统设计/分布式/分布式理论基础/3-分布式Session.md)
-- [4 - 分布式锁](系统设计/分布式/分布式理论基础/4-分布式锁.md)
+- [4 - 分布式锁](系统设计/分布式/分布式理论基础/4-分布式锁.md) <span data-v-73ca276e="" class="badge tip" style="vertical-align: base-line;">Important</span>
+- [5 - 分布式 ID](系统设计/分布式/分布式理论基础/5-分布式ID.md)
 
-#### ② 分布式 ID
+#### ② RPC 框架 — Dubbo
 
-> [!NOTE]
-> 分库分表后需要一个**全局唯一的 ID（分布式 ID）**来标识一条数据或消息，数据库的自增 ID 显然不能满足需求（表之间很有可能出现 ID 冲突）
-
-- [分布式 ID 的生成方案](系统设计/分布式/分布式ID/分布式ID的生成方案.md)
-
-#### ③ RPC 框架 — Dubbo
-
-- [1 - 什么是 RPC 及其原理](系统设计/分布式/RPC/1-什么是RPC及其原理.md) <span data-v-73ca276e="" class="badge tip" style="vertical-align: top;">Important</span>
+- [1 - 什么是 RPC 及其原理](系统设计/分布式/RPC/1-什么是RPC及其原理.md) <span data-v-73ca276e="" class="badge tip" style="vertical-align: base-line;">Important</span>
 
 > [!Danger]
 > **Dubbo 与 Spring Cloud 并不是竞争关系**，**Dubbo** 作为成熟的 RPC 框架（分布式服务框架），其易用性、扩展性和健壮性已得到业界的认可。而 **Spring Cloud** 是一整个微服务生态，目前 **Dubbo** 已经成为 **Spring Cloud Alibaba** 的 RPC 组件，与 **Spring Cloud** 原生的 **Feign** 以及 **RestTemplate** 进行无缝整合，实现“零”成本迁移。
@@ -511,7 +522,7 @@
 > 💌 <u>[阿里巴巴中间件 独家解读：Dubbo Ecosystem - 从微服务框架到微服务生态](https://mp.weixin.qq.com/s/iNVctXw7tUGHhnF0hV84ww)</u>
 
 - 2 - RPC 框架：**Apache Dubbo**
-  - [2.1 - Dubbo 架构及工作原理](系统设计/分布式/RPC/2-Dubbo架构及工作原理.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: top;">Vital</span>
+  - [2.1 - Dubbo 架构及工作原理](系统设计/分布式/RPC/2-Dubbo架构及工作原理.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: base-line;">Vital</span>
   - [2.2 - SpringBoot 2 + Dubbo + Zookeeper 搭建一个简单的分布式服务](系统设计/分布式/RPC/3-SpringBoot+Dubbo+Zookeeper搭建一个简单的分布式服务.md)
   - [2.3 - Dubbo 三种连接方式](系统设计/分布式/RPC/4-Dubbo三种连接方式.md)
   - [2.4 - Dubbo 通信协议与序列化](系统设计/分布式/RPC/5-Dubbo通信协议与序列化.md)
@@ -519,21 +530,21 @@
   - [2.6 - Dubbo 动态代理 + SPI 机制](系统设计/分布式/RPC/7-Dubbo动态代理+SPI机制.md)
 - 3 - 💪 从零开始设计一个 RPC 框架
 
-#### ④ API 网关
+#### ③ API 网关
 
 - 1 - API 网关相关概念
 - 2 - 网关中间件：**Netflix Zuul**（已停更）
 - 3 - 网关中间件：**Gateway**（推荐使用）
 - 4 - 如何设计一个网关
 
-#### ⑤ 分布式搜索引擎 — Elasticsearch
+#### ④ 分布式搜索引擎 — Elasticsearch
 
-#### ⑥ 分布式协调服务 — Zookeeper
+#### ⑤ 分布式协调服务 — Zookeeper
 
 > [!NOTE]
 > 所谓**分布式协调服务**就是**将各个分布式组件协调起来**，减少各个系统之间的耦合度、处理分布式事务、配置整个分布式系统等等
 
-- [1 - Zookeeper 重要概念详解](系统设计/分布式/Zookeeper/1-Zookeeper重要概念详解.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: top;">Vital</span>
+- [1 - Zookeeper 重要概念详解](系统设计/分布式/Zookeeper/1-Zookeeper重要概念详解.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: base-line;">Vital</span>
 - [2 - Zookeeper 安装与基本使用](系统设计/分布式/Zookeeper/2-Zookeeper安装与基本使用.md)
 
 ### 微服务架构 — Spring Cloud
@@ -735,12 +746,17 @@
 - [LaTeX 常用语法](工具/LaTeX常用语法.md)
 - 优质 [开源教程类项目/博客] 推荐 👍：
 
-|                          🎪 项目地址                          | 🔋 类别 |
-| :----------------------------------------------------------: | :----: |
-| [Github - CS-Notes](http://cyc2018.gitee.io/cs-notes/#/notes/分布式?id=一、分布式锁) |  Java  |
-| [Github - JavaGuide](https://snailclimb.gitee.io/javaguide/#/docs/system-design/distributed-system/分布式?id=二-分布式事务) |  Java  |
-| [Github - Advanced Java](https://doocs.gitee.io/advanced-java/#/./docs/distributed-system/distributed-system-interview) |  Java  |
-| [Gitbook - labuladong 的算法小抄](https://labuladong.gitbook.io/algo/) |  算法  |
-|      [莫烦 Python (mofanpy.com)](https://mofanpy.com/)       |   AI   |
-| [红色石头的个人博客 (redstonewill.com)](https://redstonewill.com/category/machinelearning/) |   AI   |
-|       [极客兔兔 (geektutu.com)](https://geektutu.com/)       |   AI   |
+|                          🎪 项目地址                          |                            📑 描述                            | 🔋 类别 |
+| :----------------------------------------------------------: | :----------------------------------------------------------: | :----: |
+| [Github - CS-Notes](http://cyc2018.gitee.io/cs-notes/#/notes/分布式?id=一、分布式锁) | 技术面试必备基础知识、Leetcode、计算机操作系统、计算机网络、系统设计、Java、Python、C++ |  Java  |
+| [Github - JavaGuide](https://snailclimb.gitee.io/javaguide/#/docs/system-design/distributed-system/分布式?id=二-分布式事务) | 「Java学习+面试指南」一份涵盖大部分 Java 程序员所需要掌握的核心知识。 |  Java  |
+| [Github - Advanced Java](https://doocs.gitee.io/advanced-java/#/./docs/distributed-system/distributed-system-interview) |              互联网 Java 工程师进阶知识完全扫盲              |  Java  |
+| [Gitbook - framework-learning](https://qsjzwithguang19forever.gitee.io/framework-learning/) |           学习计算机相关知识的过程中整理的一些资料           |  Java  |
+|         [纯洁的微笑-博客](http://www.ityouknow.com/)         |                      分享技术，品味人生                      |  Java  |
+| [Github - JavaFamily](https://github.com/AobingJava/JavaFamily) | 「Java面试+Java学习指南」 一份涵盖大部分Java程序员所需要掌握的核心知识 |  Java  |
+| [Gitbook - labuladong 的算法小抄](https://labuladong.gitbook.io/algo/) | 本网站目前可以手把手带你解决 150 道 LeetCode 算法问题，而且在不断更新，全部基于 LeetCode 的题目，涵盖了所有题型和技巧 |  算法  |
+|          [五分钟学算法](https://www.cxyxiaowu.com/)          |                      一个不错的算法网站                      |  算法  |
+|      [莫烦 Python (mofanpy.com)](https://mofanpy.com/)       |                           个人博客                           |   AI   |
+| [红色石头的个人博客 (redstonewill.com)](https://redstonewill.com/category/machinelearning/) |                           个人博客                           |   AI   |
+|       [极客兔兔 (geektutu.com)](https://geektutu.com/)       |                           个人博客                           |   AI   |
+|        [ApacheCN-文档社区](http://docs.apachecn.org/)        |                  AI 相关书籍的在线阅读网站                   |   AI   |

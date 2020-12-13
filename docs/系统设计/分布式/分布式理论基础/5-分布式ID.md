@@ -1,14 +1,22 @@
-# 📝 分布式 ID 的生成方案
+# 📝 分布式 ID
 
 ---
 
 > 🔊 原文来自掘金博主 1点25 -  [大型互联网公司分布式ID方案总结](https://juejin.cn/post/6844903935296176141#heading-0)，本文稍做修改
 
-ID 是数据的唯一标识，传统的做法是利用 UUID 和数据库的自增 ID，在互联网企业中，大部分公司使用的都是Mysql，并且因为需要事务支持，所以通常会使用Innodb存储引擎，**UUID 太长以及无序，所以并不适合在 Innodb 中来作为主键**。自增 ID 比较合适，但是随着公司的业务发展，数据量将越来越大，需要对数据进行**分库分表**，而分库分表后，每个表中的数据都会按自己的节奏进行自增，很有可能出现 **ID 冲突**。这时就需要一个单独的机制来负责生成唯一 ID，生成出来的 ID 叫做**分布式ID**，或 **全局ID**。下面来分析各个生成分布式 ID 的机制。
+## 1. 什么是分布式 ID
+
+ID 是数据的唯一标识，传统的做法是利用 UUID 和数据库的自增 ID，在互联网企业中，大部分公司使用的都是Mysql，并且因为需要事务支持，所以通常会使用Innodb存储引擎，**UUID 太长以及无序，所以并不适合在 Innodb 中来作为主键**。
+
+自增 ID 比较合适，但是随着公司的业务发展，数据量将越来越大，需要对数据进行**分库分表**，而分库分表后，每个表中的数据都会按自己的节奏进行自增，很有可能出现 **ID 冲突**。这时就需要一个单独的机制来负责生成唯一 ID，生成出来的 ID 叫做**分布式ID**，或 **全局ID**。
+
+## 2. 分布式 ID 的生成方案
+
+下面来分析各个生成分布式 ID 的机制。
 
 <img src="https://gitee.com/veal98/images/raw/master/img/20201204104929.png" style="zoom: 50%;" />
 
-## 1. 数据库自增 ID
+### ① 数据库自增 ID
 
 第一种方案仍然还是基于数据库的自增ID，需要**单独使用一个数据库实例**，在这个实例中新建一个单独的表：
 
@@ -40,7 +48,7 @@ commit;
 
 为了解决数据库可靠性问题，我们可以使用第二种分布式 ID 生成方案。
 
-## 2. 数据库多主模式
+### ② 数据库多主模式
 
 如果我们两个数据库组成一个**主从模式**集群，正常情况下可以解决数据库可靠性问题，但是<u>如果主库挂掉后，数据没有及时同步到从库，这个时候会出现 ID 重复的现象</u>。我们可以使用**双主模式**集群，也就是**两个 Mysql 实例都能单独的生产自增 ID**，这样能够提高效率，但是<u>如果不经过其他改造的话，这两个 Mysql 实例很可能会生成同样的ID。需要单独**给每个 Mysql 实例配置不同的起始值和自增步长**</u>。
 
@@ -76,7 +84,7 @@ set @@auto_increment_increment = 2;  -- 步长
 
 为了解决上面的问题，以及能够进一步提高DistributIdService的性能，如果使用第三种生成分布式ID机制。
 
-## 3. 号段模式
+### ③ 号段模式
 
 我们可以使用号段的方式来获取自增ID，**号段可以理解成批量获取**，比如DistributIdService从数据库获取ID时，如果能**批量获取多个ID并缓存在本地**的话，那样将大大提供业务应用获取ID的效率。
 
@@ -111,7 +119,7 @@ update id_generator set current_max_id=#{newMaxId}, version=version+1 where vers
 
 在TinyId中还增加了一步来提高效率，在上面的实现中，ID 自增的逻辑是在DistributIdService中实现的，而实际上可以把自增的逻辑转移到业务应用本地，这样对于业务应用来说只需要获取号段，每次自增时不再需要请求调用DistributIdService了。
 
-## 4. 雪花算法 snowflake
+### ④ 雪花算法 snowflake
 
 上面的三种方法总的来说是基于自增思想的，而接下来就介绍比较著名的**雪花算法 snowflake**。
 
@@ -134,7 +142,7 @@ snowflake 算法实现起来并不难，提供一个github上用 Java 实现的�
 
 在大厂里，其实并没有直接使用 snowflake，而是进行了改造，因为 **snowflake 算法中最难实践的就是工作机器  id，原始的 snowflake 算法需要人工去为每台机器去指定一个机器 id，并配置在某个地方从而让 snowflake 从此处获取机器 id**。<u>但是在大厂里，机器是很多的，人力成本太大且容易出错，所以大厂对 snowflake 进行了改造。</u>
 
-### 百度（uid-generator）
+#### 百度（uid-generator）
 
 github地址：[uid-generator](https://github.com/baidu/uid-generator)
 
@@ -146,7 +154,7 @@ uid-generator中的workId是由uid-generator自动生成的，并且考虑到了
 
 具体可参考[github.com/baidu/uid-g…](https://github.com/baidu/uid-generator/blob/master/README.zh_cn.md)
 
-### 美团（Leaf）
+#### 美团（Leaf）
 
 github地址：[Leaf](https://github.com/Meituan-Dianping/Leaf)
 
@@ -154,7 +162,7 @@ github地址：[Leaf](https://github.com/Meituan-Dianping/Leaf)
 
 Leaf中的snowflake模式和原始snowflake算法的不同点，也主要在workId的生成，Leaf中workId是基于ZooKeeper的顺序Id来生成的，每个应用在使用Leaf-snowflake时，在启动时都会都在Zookeeper中生成一个顺序Id，相当于一台机器对应一个顺序节点，也就是一个workId。
 
-## 5. Redis
+### ⑤ Redis
 
 这里额外再介绍一下使用Redis来生成分布式ID，其实和利用Mysql自增ID类似，可以利用Redis中的 `incr` 命令来实现原子性的自增与返回，比如：
 
