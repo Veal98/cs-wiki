@@ -70,7 +70,7 @@
 ### 算法 Algorithm
 
 > [!TIP]
-> 本节的每个知识点都配备对应的 LeetCode 题目，知其然而知其所以然，**拒绝无脑刷题**。目前尚在更新中，对应的 LeetCode 会逐渐添加进去。不需要看知识点的小伙伴可直接进入 <u>[LeetCode 分模块刷题指南](计算机基础/算法/LeetCode/刷题指南.md)</u>，所有题目会在此处分类汇总，现已包含 `82` 道题目。
+> 本节的每个知识点都配备对应的 LeetCode 题目，知其然而知其所以然，**拒绝无脑刷题**。目前尚在更新中，对应的 LeetCode 会逐渐添加进去。不需要看知识点的小伙伴可直接进入 <u>[LeetCode 分模块刷题指南](计算机基础/算法/LeetCode/刷题指南.md)</u>，所有题目会在此处分类汇总，现已包含 `83` 道题目。
 
 - [1 - 算法基础](计算机基础/算法/1-算法基础.md)
 - [2 - NP 完全性理论与近似算法](计算机基础/算法/2-NP完全性理论与近似算法.md)
@@ -353,8 +353,8 @@
 - [6 - Buffer（缓冲/字节容器）详解](Java/Netty/6-Buffer详解.md)
 - [7 - ChannelHandler（消息处理器）与 ChannelPipeline 详解](Java/Netty/7-ChannelHandler与ChannelPipeline详解.md)
 - [8 - Netty Reactor 线程模型与 EventLoop（事件循环）详解](Java/Netty/8-EventLoop与线程模型详解.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: base-line;">Vital</span>
-- 9 - Bootstrap（引导）详解
-- 10 - Codec（编码与解码）详解
+- [9 - Bootstrap（引导）详解](Java/Netty/9-Bootstrap详解.m)
+- [10 - Codec（编码与解码）详解](Java/Netty/10-Codec详解.m)
 - 实例 1：Netty 实现聊天功能
 - 实例 2：Netty 实现 WebSocket 聊天功能
 
