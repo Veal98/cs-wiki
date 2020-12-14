@@ -32,11 +32,11 @@ Channel 的生命周期如下图所示，**当这些状态发生改变时，将�
 
 `ChannelHandler` 接口定义了其生命周期中的操作，当`ChanelHandler`被添加到`ChannelPipeline `或从`ChannelPipeline`中移除时，会调用这些操作，`ChannelHandler`的生命周期如下：
 
-| 方法            | 描述                                                         |
-| :-------------- | :----------------------------------------------------------- |
-| handlerAdded    | 当把 ChannelHandler 添加到 ChannelPipeline 中时调用此方法    |
-| handlerRemoved  | 当把 ChannelHandler 从 ChannelPipeline 中移除的时候会调用此方法 |
-| exceptionCaught | 当 ChannelHandler 在处理数据的过程中发生异常时会调用此方法   |
+| 方法              | 描述                                                         |
+| :---------------- | :----------------------------------------------------------- |
+| `handlerAdded`    | 当把 ChannelHandler 添加到 ChannelPipeline 中时调用此方法    |
+| `handlerRemoved`  | 当把 ChannelHandler 从 ChannelPipeline 中移除的时候会调用此方法 |
+| `exceptionCaught` | 当 ChannelHandler 在处理数据的过程中发生异常时会调用此方法   |
 
 ### ③  ChannelHanler 子接口
 
@@ -53,10 +53,10 @@ Netty 提供2个重要的 ChannelHandler 子接口：
 | :------------------------ | :----------------------------------------------------------- |
 | ChannelRegistered         | 当Channel被注册到EventLoop且能够处理IO事件时会调用此方法     |
 | ChannelUnregistered       | 当Channel从EventLoop注销且无法处理任何IO事件时会调用此方法   |
-| ChannelActive             | 当Channel已经连接到远程节点(或者已绑定本地address)且处于活动状态时会调用此方法 |
-| ChannelInactive           | 当Channel与远程节点断开，不再处于活动状态时调用此方法        |
+| `ChannelActive`           | 当Channel已经连接到远程节点(或者已绑定本地address)且处于活动状态时会调用此方法 |
+| `ChannelInactive`         | 当Channel与远程节点断开，不再处于活动状态时调用此方法        |
 | ChannelReadComplete       | 当Channel的某一个读操作完成时调用此方法                      |
-| ChannelRead               | 当Channel有数据可读时调用此方法                              |
+| `ChannelRead`             | 当Channel有数据可读时调用此方法                              |
 | ChannelWritabilityChanged | 当Channel的可写状态发生改变时调用此方法，可以调用Channel的isWritable方法检测Channel的可写性，还可以通过ChannelConfig来配置write操作相关的属性 |
 | userEventTriggered        | 当ChannelInboundHandler的fireUserEventTriggered方法被调用时才调用此方法。 |
 
@@ -78,6 +78,89 @@ public class SimpleDiscardHandler extends SimpleChannelInboundHandler<Object> {
 
 }
 ```
+
+💡 注意：**`SimpleChannelInboundHandler<Object>` 中的泛型表示要处理的入站数据的类型**
+
+##### ChannelInitializer
+
+回顾一下我们在第一个 Netty 应用章节的服务端代码：
+
+```java
+public final class HelloServer {
+
+    ......
+
+    private void start() throws InterruptedException {
+        // 1.bossGroup 线程用于接收连接，workerGroup 线程用于具体的处理
+        EventLoopGroup bossGroup = new NioEventLoopGroup(1);
+        EventLoopGroup workerGroup = new NioEventLoopGroup();
+        try {
+            // 2.创建服务端启动引导/辅助类：ServerBootstrap
+            ServerBootstrap b = new ServerBootstrap();
+            // 3.给引导类配置两大线程组,确定了线程模型
+            b.group(bossGroup, workerGroup)
+                    // (非必备)打印日志
+                    .handler(new LoggingHandler(LogLevel.INFO))
+                    // 4.指定 IO 模型为 NIO
+                    .channel(NioServerSocketChannel.class)
+                    .childHandler(new ChannelInitializer<SocketChannel>() {
+                        @Override
+                        public void initChannel(SocketChannel ch) {
+                            ChannelPipeline p = ch.pipeline();
+                            // 5.可以自定义客户端消息的业务处理逻辑
+                            p.addLast(new HelloServerHandler());
+                        }
+                    });
+            ......
+        }
+    }
+    ......
+
+}
+```
+
+其中加入 `ServerBootstrap` 中处理的 channel 是一个 `ChannelInitializer `，这是怎么回事呢，不是应该相应的`ChannelHandler` 吗？我们来看一下`Channelnitializer`源代码：
+
+```java
+public abstract class ChannelInitializer<C extends Channel> extends ChannelInboundHandlerAdapter {
+ 
+    private static final InternalLogger logger = InternalLoggerFactory.getInstance(ChannelInitializer.class);
+ 
+    /**
+     * 这个方法会在Channle被注册时候调用，在方法返回之后，这个实例会在Channel对应的ChannelPipeline中删除
+     *
+     * @param ch            the {@link Channel} which was registered.
+     * @throws Exception    is thrown if an error occurs. In that case the {@link Channel} will be closed.
+     */
+    protected abstract void initChannel(C ch) throws Exception;
+ 
+    @SuppressWarnings("unchecked")
+    @Override
+    public final void channelRegistered(ChannelHandlerContext ctx)
+            throws Exception {
+        boolean removed = false;
+        boolean success = false;
+        try {
+            initChannel((C) ctx.channel());
+            ctx.pipeline().remove(this);
+            removed = true;
+            ctx.fireChannelRegistered();
+            success = true;
+        } catch (Throwable t) {
+            logger.warn("Failed to initialize a channel. Closing: " + ctx.channel(), t);
+        } finally {
+            if (!removed) {
+                ctx.pipeline().remove(this);
+            }
+            if (!success) {
+                ctx.close();
+            }
+        }
+    }
+}
+```
+
+从上面可以看出**`ChannelInitializer`其实也是一个`ChannelHandler`**，只是`ChannelInitializer`的主要任务不是对IO进行处理，而更多的负责对注册到`EventGroup`的`Channel`进行 init 处理，其中大多是进行加入 Handler 的处理
 
 #### Ⅱ ChannelOutboundHandler接口
 

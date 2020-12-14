@@ -353,10 +353,10 @@
 - [6 - Buffer（缓冲/字节容器）详解](Java/Netty/6-Buffer详解.md)
 - [7 - ChannelHandler（消息处理器）与 ChannelPipeline 详解](Java/Netty/7-ChannelHandler与ChannelPipeline详解.md)
 - [8 - Netty Reactor 线程模型与 EventLoop（事件循环）详解](Java/Netty/8-EventLoop与线程模型详解.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: base-line;">Vital</span>
-- [9 - Bootstrap（引导）详解](Java/Netty/9-Bootstrap详解.m)
-- [10 - Codec（编码与解码）详解](Java/Netty/10-Codec详解.m)
-- 实例 1：Netty 实现聊天功能
-- 实例 2：Netty 实现 WebSocket 聊天功能
+- [9 - Bootstrap（引导）详解](Java/Netty/9-Bootstrap详解.md)
+- [10 - Codec（编码与解码）详解](Java/Netty/10-Codec详解.md)
+- [11 - Netty 是如何解决 TCP 粘包/拆包问题的](Java/Netty/11-Netty解决TCP粘包拆包问题.md)
+- [12 - 实例：Netty 实现聊天功能](Java/Netty/12-实例-Netty实现聊天功能.md)
 
 ## 👷 系统设计
 

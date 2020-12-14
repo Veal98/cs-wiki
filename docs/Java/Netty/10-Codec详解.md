@@ -11,6 +11,8 @@
 
 编写一个网络应用程序需要实现某种 **codec (编解码器)，codec 由两部分组成：decoder (解码器) 和 encoder （编码器）**
 
+> 💡 其实就是序列化和反序列化
+
 在Netty中，编码解码器实际上是 `ChannelOutboundHandler` 和 `ChannelInboundHandler` 的实现， 因为编码和解码都属于对数据的处理，由此看来，编码解码器被设计为 `ChannelHandler` 也就无可厚非。
 
 ## 2. 解码器
