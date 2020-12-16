@@ -2,6 +2,8 @@
 
 ---
 
+> 🔊 关于 Netty 的 TCP 粘包/拆包以及 TCP 心跳机制在本代码中有相关体现，大家先按照代码敲下来或者直接去掉就行，并不影响整体逻辑，后续文章会详细解释。先做个项目对于后续内容大家才能更直观感受
+
 本项目基于：
 
 - Java 8
@@ -176,6 +178,8 @@ public class SimpleChatServerHandler extends SimpleChannelInboundHandler<String>
 
 ### ③ SimpleChatServerInitializer
 
+`ChannelInitializer`这个类中，我们注意到有一个泛型参数 `SocketChannel`，这个类就是 Netty 对 NIO 类型的连接的抽象
+
 ```java
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
@@ -195,11 +199,11 @@ public class SimpleChatServerInitializer extends ChannelInitializer<SocketChanne
         ChannelPipeline pipeline = socketChannel.pipeline();
         // DelimiterBasedFrameDecoder 分隔符解码器，解决 TCP 粘包/拆包问题
         pipeline.addLast("framer", new DelimiterBasedFrameDecoder(8192, Delimiters.lineDelimiter()));
-        // 解码器
+        // 解码器 将前一步解码得到的数据转码为字符串
         pipeline.addLast("decoder", new StringDecoder());
         // 编码器
         pipeline.addLast("encoder", new StringEncoder());
-        // Handler
+        // Handler 最终的数据处理
         pipeline.addLast("handler", new SimpleChatServerHandler());
 
         System.out.println("SimpleChatClient: " + socketChannel.remoteAddress() + " 已连接");
@@ -243,7 +247,8 @@ public class SimpleChatServer {
                     .channel(NioServerSocketChannel.class)
                     .childHandler(new SimpleChatServerInitializer())
                     .option(ChannelOption.SO_BACKLOG, 128)
-                    .childOption(ChannelOption.SO_KEEPALIVE, true);
+                    // 使用 TCP 协议层面的 keepalive 机制（心跳检测）
+                    .childOption(ChannelOption.SO_KEEPALIVE, true); 
             System.out.println("SimpleChatServer 已启动");
 
             // 绑定端口，开始接收客户端连接
@@ -269,6 +274,59 @@ public class SimpleChatServer {
 }
 
 ```
+
+#### 👍 服务端启动流程详解
+
+- 首先看到，我们创建了两个`NioEventLoopGroup`，这两个对象可以看做是传统IO编程模型的两大线程组，`bossGroup`表示监听端口并接收新连接的线程组，`workerGroup`表示处理每一条连接的数据读写的线程组。用生活中的例子来讲就是，一个工厂要运作，必然要有一个老板负责从外面接活，然后有很多员工，负责具体干活，老板就是`bossGroup`，员工们就是`workerGroup`，`bossGroup`接收完连接，扔给`workerGroup`去处理。
+- 接下来 我们创建了一个引导类 `ServerBootstrap`，这个类将引导我们进行服务端的启动工作
+- 我们通过`.group(bossGroup, workerGroup)`给引导类配置两大线程组，这个引导类的线程模型也就定型了。
+- 然后，我们指定我们服务端的 IO 模型为`NIO`，我们通过`.channel(NioServerSocketChannel.class)`来指定 IO 模型，当然，这里也有其他的选择，如果你想指定 IO 模型为 BIO，那么这里配置上`OioServerSocketChannel.class`类型即可，当然通常我们也不会这么做，因为 Netty 的优势就在于NIO。
+- 接着，我们调用`childHandler()`方法，给这个引导类创建一个`ChannelInitializer`，这里主要就是定义后续每条连接的数据读写，业务处理逻辑。
+
+以上服务端启动还包含其他方法：
+
+- **`childOption()` 方法**
+
+  ```java
+  serverBootstrap
+          .childOption(ChannelOption.SO_KEEPALIVE, true)
+          .childOption(ChannelOption.TCP_NODELAY, true)
+  ```
+
+  `childOption()`可以给每条连接设置一些 TCP 底层相关的属性，比如上面，我们设置了两种TCP属性，其中
+
+  - `ChannelOption.SO_KEEPALIVE` 表示是否开启TCP底层心跳机制，true为开启
+  - `ChannelOption.TCP_NODELAY` 表示是否开启Nagle算法，true表示关闭，false表示开启，通俗地说，如果要求高实时性，有数据发送时就马上发送，就关闭，如果需要减少发送次数减少网络交互，就开启。
+
+  其他的参数这里就不一一讲解，有兴趣的同学可以去这个类里面自行研究。=
+
+- **`option()` 方法**
+
+  除了给每个连接设置这一系列属性之外，我们还可以给服务端 channel 设置一些属性，最常见的就是so_backlog，如下设置
+
+  ```java
+  serverBootstrap.option(ChannelOption.SO_BACKLOG, 1024)
+  ```
+
+  表示系统用于临时存放已完成三次握手的请求的队列的最大长度，如果连接建立频繁，服务器处理创建新连接较慢，可以适当调大这个参数
+
+- **`attr()` 方法**
+
+  ```java
+  serverBootstrap.attr(AttributeKey.newInstance("serverName"), "nettyServer")
+  ```
+
+  `attr()`方法可以给服务端的 channel，也就是`NioServerSocketChannel`指定一些自定义属性，然后我们可以通过`channel.attr()`取出这个属性，比如，上面的代码我们指定我们服务端channel的一个`serverName`属性，属性值为`nettyServer`，其实说白了就是给`NioServerSocketChannel`维护一个 map 而已，通常情况下，我们也用不上这个方法。
+
+  那么，当然，除了可以给服务端 channel `NioServerSocketChannel`指定一些自定义属性之外，我们还可以给每一条连接指定自定义属性
+
+- **`childAttr()` 方法**
+
+  ```java
+  serverBootstrap.childAttr(AttributeKey.newInstance("clientKey"), "clientValue")
+  ```
+
+  上面的`childAttr`可以给每一条连接指定自定义属性，然后后续我们可以通过`channel.attr()`取出该属性。
 
 ## 3. 客户端
 
@@ -324,11 +382,11 @@ public class SimpleChatClientInitializer extends ChannelInitializer<SocketChanne
         ChannelPipeline pipeline = socketChannel.pipeline();
         // DelimiterBasedFrameDecoder 分隔符解码器，解决 TCP 粘包/拆包问题
         pipeline.addLast("framer", new DelimiterBasedFrameDecoder(8192, Delimiters.lineDelimiter()));
-        // 解码器
+        // 将前一步解码得到的数据转码为字符串
         pipeline.addLast("decoder", new StringDecoder());
         // 编码器
         pipeline.addLast("encoder", new StringEncoder());
-        // Handler
+        // Handler 最终的数据处理
         pipeline.addLast("handler", new SimpleChatClientHandler());
     }
 }
@@ -374,6 +432,7 @@ public class SimpleChatClient {
             // 获取用户输入
             BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
             while (true){
+                // 客户端在每条信息的末尾使用固定的分隔符 比如 \r\n, 防止 TCP 粘包/拆包
                 channel.writeAndFlush(in.readLine() + "\r\n");
             }
         } catch (IOException e) {
