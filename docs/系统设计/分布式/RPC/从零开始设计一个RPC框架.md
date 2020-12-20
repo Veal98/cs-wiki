@@ -103,7 +103,7 @@ RPC 的主要目的就是让我们调用远程方法像调用本地方法一样�
 
 ## 🔮 需要的技术储备
 
-本项目基于 Netty + Kryo + Spring + Zookeeper 实现，学习本项目，你需要下面这些技术储备：
+本项目基于 Netty + Protostuff + Spring + Zookeeper 实现，学习本项目，你需要下面这些技术储备：
 
 - 🔸 **Java 基础**
 
@@ -438,13 +438,40 @@ public class HelloClient {
 
 ## 🎨 完整教程
 
-关于本框架的详细教程放在 CSDN 的专栏里，**从零开始，手把手教你如何开发本框架**。目前尚在更新中...
+**小白专属**，大佬勿喷，逻辑并不难，对 Netty 和 RPC 较熟悉的大 🔥 直接上手撸代码就行
+
+关于本框架的详细教程放在 CSDN 的专栏里，**从零开始，手把手教你如何开发本框架**。
 
 <img src="https://gitee.com/veal98/images/raw/master/img/20201219223230.png" style="zoom:67%;" />
 
-地址在此：<u>[飞天小牛肉 - 👊 从零开始设计一个轻量级的分布式 RPC 框架 - CSDN 专栏 ](https://blog.csdn.net/qq_41133986/category_10674495.html)</u>
+🔗 地址在此：<u>[飞天小牛肉 - 👊 从零开始设计一个轻量级的分布式 RPC 框架 - CSDN 专栏 ](https://blog.csdn.net/qq_41133986/category_10674495.html)</u>
 
-**小白专属**，大佬勿喷，逻辑并不难，对 Netty 和 RPC 较熟悉的大 🔥 直接上手撸代码就行
+🔗 地址在此：<u>[飞天小牛肉 - 👊 从零开始设计一个轻量级的分布式 RPC 框架 - CSDN 专栏 ](https://blog.csdn.net/qq_41133986/category_10674495.html)</u>
+
+🔗 地址在此：<u>[飞天小牛肉 - 👊 从零开始设计一个轻量级的分布式 RPC 框架 - CSDN 专栏 ](https://blog.csdn.net/qq_41133986/category_10674495.html)</u>
+
+📋 整个教程的目录大致如下，按顺序阅读即可。**目前尚在更新中**：
+
+> 🔊 其实各个模块的知识点远不止这些，比如 Java I/O 和 Netty，它们属于一个非常庞大的知识体系，如果真要细致入微的去讲解每个细节，😆 真的写不完，大 🔥 看完本专栏后还有不熟悉的可以去我的学习笔记网站 [🎪 CS-Wiki（Gitee 推荐项目）](https://gitee.com/veal98/CS-Wiki) 做进一步的学习。不需要看知识点的各位可直接看框架代码分析部分的文章。
+
+- [x] 📖 前置知识点：什么是 RPC 及其原理
+- [x] 📖 前置知识点：Dubbo 架构及工作原理
+- [x] 📖 前置知识点：SpringBoot + Dubbo + Zookeeper 搭建一个简单的分布式服务
+- [x] 📖 前置知识点：Zookeeper 重要概念详解
+- [x] 📖 前置知识点：Zookeeper 安装与基本使用
+- [x] 🌈 框架代码分析：Zookeeper 实现服务注册与发现
+- [x] 📖 前置知识点：Java 反射
+- [x] 📖 前置知识点：序列化介绍以及常见序列化协议对比
+- [x] 📖 前置知识点：序列化协议 Protostuff 详解
+- [x] 🌈 框架代码分析：网络传输实体类与序列化
+- [ ] 📖 前置知识点：Java I/O
+- [ ] 📖 前置知识点：Java 网络编程（Socket 编程）
+- [ ] 📖 前置知识点：Netty 4.x 从入门到实战
+- [ ] 📖 前置知识点：Netty 4.x 从入门到实战
+- [ ] 📖 前置知识点：Spring (Framework) 之 IoC 详解
+- [ ] 🌈 框架代码分析：Netty / RPC 服务端
+- [ ] 📖 前置知识点：静态代理 + JDK / CGLIB / Javassit 动态代理
+- [ ] 🌈 框架代码分析：Netty / RPC 客户端
 
 ## 📚 参考资料
 

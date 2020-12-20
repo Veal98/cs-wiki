@@ -513,7 +513,7 @@
   - [2.4 - Dubbo 通信协议与序列化](系统设计/分布式/RPC/5-Dubbo通信协议与序列化.md)
   - [2.5 - Dubbo 负载均衡策略 + 集群容错策略](系统设计/分布式/RPC/6-Dubbo负载均衡策略+集群容错策略.md)
   - [2.6 - Dubbo 动态代理 + SPI 机制](系统设计/分布式/RPC/7-Dubbo动态代理+SPI机制.md)
-- [🏆 从零开始设计一个 RPC 框架](系统设计/分布式/RPC/从零开始设计一个RPC框架) <span data-v-73ca276e="" class="badge recommendation" style="vertical-align: base-line;">项目经验首选</span>
+- [🏆 从零开始设计一个轻量级分布式 RPC 框架](系统设计/分布式/RPC/从零开始设计一个RPC框架) <span data-v-73ca276e="" class="badge recommendation" style="vertical-align: base-line;">项目经验首选</span>
 
 #### ③ API 网关
 

@@ -4,8 +4,6 @@
 
 ## 1. dubbo-spring-boot-starter
 
----
-
 ### ① 如何发布 Dubbo 服务
 
 首先我们需要在 SpringBoot 项目中导入如下依赖：
