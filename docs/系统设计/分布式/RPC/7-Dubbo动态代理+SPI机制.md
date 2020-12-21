@@ -6,7 +6,7 @@
 
 ## 1. Dubbo 支持的动态代理机制
 
-在 Dubbo 中，没有使用 CGLib 进行代理，而是使用 JDK 和 Javassist 动态代理机制（**默认使用 Javassist 动态代理机制**）
+在 Dubbo 中，没有使用 CGLib 进行代理，而是使用 JDK 和 Javassist 动态代理机制（**默认使用 Javassist 动态代理机制**，原因很简单，**Javassist 快，且字节码生成方便**。ASM 比 Javassist 更快，但是没有快一个数量级，而Javassist 只需用字符串拼接就可以生成字节码，而 ASM 需要手工生成，成本较高，比较麻烦。）
 
 ```xml
 <dubbo:provider proxy="jdk" />

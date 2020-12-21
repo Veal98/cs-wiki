@@ -115,6 +115,7 @@ RPC 的主要目的就是让我们调用远程方法像调用本地方法一样�
   - Java 网络编程（Socket 编程）
   - Java 并发/多线程
   - Java 反射
+  - Java 注解
   - ..........
 
 - 🔸 **Netty 4.x**：使 NIO 编程更加容易，屏蔽了 Java 底层的 NIO 细节
@@ -236,7 +237,7 @@ public interface HelloService {
 实现该接口：
 
 ```java
-@RpcService(HelloService.class) // 指定远程接口
+@RpcService(HelloService.class) // 指定暴露服务的接口类型
 public class HelloServiceImple implements HelloService {
     
     @Override
@@ -248,7 +249,22 @@ public class HelloServiceImple implements HelloService {
 
 使用 `RpcService` 注解定义在服务接口的实现类上表示暴露该服务
 
+> 💡 这里的**服务**其实指的就是**被暴露的实现类**，大 🔥 别被这点名词整懵了
+
 🚨 若 RPC 接口拥有多个实现类，则需要在 RpcService 注解中指定 version 属性加以区分
+
+```java
+/**
+ * HelloService 接口实现类 2（暴露该服务，需要指明 version）
+ */
+@RpcService(value = HelloService.class, version = "helloServiceImpl2") // 指定暴露服务的接口类型和版本
+public class HelloServiceImpl2 implements HelloService {
+    @Override
+    public String hello(String name) {
+        return "Hello! " + name + ", I am helloServiceImpl2";
+    }
+}
+```
 
 #### ③ 配置 RPC 服务端
 
@@ -423,13 +439,26 @@ public class HelloClient {
     public static void main(String[] args) throws Exception {
         // 加载 Spring 配置文件
         ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-        // 获取 RpcProxy 对象
-        RpcProxy rpcProxy = context.getBean(RpcProxy.class); 
+        // 获取 RpcProxy 动态代理对象
+        RpcProxy rpcProxy = context.getBean(RpcProxy.class);
+
+        /**
+         * 测试 HelloService 接口的实现类 1
+         */
         // 调用 RpcProxy 对象的 create 方法来创建 RPC 代理接口
         HelloService helloService = rpcProxy.create(HelloService.class);
         // 调用 RPC 代理接口的方法(调用远程接口方法就像调用本地方法一样简单）
         String result = helloService.hello("World");
         System.out.println(result);
+
+
+        /**
+         * 测试 HelloService 接口的实现类 2
+         */
+        HelloService helloServiceImpl2 = rpcProxy.create(HelloService.class, "helloServiceImpl2");
+        String result2 = helloServiceImpl2.hello("Java");
+        System.out.println(result2);
+
 
         System.exit(0);
     }
@@ -464,13 +493,14 @@ public class HelloClient {
 - [x] 📖 前置知识点：序列化介绍以及常见序列化协议对比
 - [x] 📖 前置知识点：序列化协议 Protostuff 详解
 - [x] 🌈 框架代码分析：网络传输实体类与序列化
-- [ ] 📖 前置知识点：Java I/O
-- [ ] 📖 前置知识点：Java 网络编程（Socket 编程）
-- [ ] 📖 前置知识点：Netty 4.x 从入门到实战
-- [ ] 📖 前置知识点：Netty 4.x 从入门到实战
-- [ ] 📖 前置知识点：Spring (Framework) 之 IoC 详解
-- [ ] 🌈 框架代码分析：Netty / RPC 服务端
-- [ ] 📖 前置知识点：静态代理 + JDK / CGLIB / Javassit 动态代理
+- [x] 📖 前置知识点：Java 网络编程（Socket 编程）
+- [x] 📖 前置知识点：从 BIO、NIO 到 Netty
+- [x] 📖 前置知识点：Netty 实战之实现聊天功能
+- [x] 📖 前置知识点：Netty 是如何实现 TCP 心跳机制的
+- [x] 📖 前置知识点：Spring (Framework) 之 IoC 详解
+- [x] 📖 前置知识点：Java 注解
+- [x] 🌈 框架代码分析：Netty / RPC 服务端
+- [x] 📖 前置知识点：静态代理 + JDK / CGLIB / Javassit 动态代理
 - [ ] 🌈 框架代码分析：Netty / RPC 客户端
 
 ## 📚 参考资料
