@@ -329,7 +329,6 @@
     - [9.4 - Spring Data JPA 的更新方式详解](Java/SpringBoot/SpringDataJPA/4-SpringDataJPA的更新方式详解.md)
   - [10 - 异步、定时、邮件任务](Java/SpringBoot/10-异步定时邮件任务.md)
   - [11 - 集成 Redis（Lettuce）](Java/SpringBoot/11-集成Redis.md)
-  - [💪 SpringBoot + Vue 前后端分离项目实战](http://veal98.gitee.io/project-cswiki)
   - <u>🎯 SpringBoot 面试指南</u>
 
 #### ③ Netty 4.x
@@ -351,7 +350,7 @@
 - [12 - Netty 是如何解决 TCP 粘包/拆包问题的](Java/Netty/12-Netty解决TCP粘包拆包问题.md)
 - [13 - Netty 是如何实现 TCP 心跳机制与断线重连的](Java/Netty/13-Netty实现心跳机制.md)
 - [14 - 实例及分析：Netty + Kryo 序列化传输对象](Java/Netty/14-实例-Netty+Kryo序列化传输对象.md)
-- <u>🎯 Netty 面试指南</u>
+- <u>[🎯 Netty 面试指南](Java/Netty/Netty面试指南.md)</u>
 
 ## 👷 系统设计
 
@@ -746,20 +745,3 @@
 
 - [Snipaste + PicGo+ Gitee 图床一键上传](工具/图床一键上传.md)
 - [LaTeX 常用语法](工具/LaTeX常用语法.md)
-- 优质 [开源教程类项目/博客] 推荐 👍：
-
-|                          🎪 项目地址                          |                            📑 描述                            | 🔋 类别 |
-| :----------------------------------------------------------: | :----------------------------------------------------------: | :----: |
-| [Github - CS-Notes](http://cyc2018.gitee.io/cs-notes/#/notes/分布式?id=一、分布式锁) | 技术面试必备基础知识、Leetcode、计算机操作系统、计算机网络、系统设计、Java、Python、C++ |  Java  |
-| [Github - JavaGuide](https://snailclimb.gitee.io/javaguide/#/docs/system-design/distributed-system/分布式?id=二-分布式事务) | 「Java学习+面试指南」一份涵盖大部分 Java 程序员所需要掌握的核心知识。 |  Java  |
-| [Github - Advanced Java](https://doocs.gitee.io/advanced-java/#/./docs/distributed-system/distributed-system-interview) |              互联网 Java 工程师进阶知识完全扫盲              |  Java  |
-| [Github - Java Core Sprout](https://crossoverjie.top/JCSprout/#/?id=introduction) |                处于萌芽阶段的 Java 核心知识库                |  Java  |
-| [Gitbook - framework-learning](https://qsjzwithguang19forever.gitee.io/framework-learning/) |           学习计算机相关知识的过程中整理的一些资料           |  Java  |
-|         [纯洁的微笑-博客](http://www.ityouknow.com/)         |                      分享技术，品味人生                      |  Java  |
-| [Github - JavaFamily](https://github.com/AobingJava/JavaFamily) | 「Java面试+Java学习指南」 一份涵盖大部分Java程序员所需要掌握的核心知识 |  Java  |
-| [Gitbook - labuladong 的算法小抄](https://labuladong.gitbook.io/algo/) | 本网站目前可以手把手带你解决 150 道 LeetCode 算法问题，而且在不断更新，全部基于 LeetCode 的题目，涵盖了所有题型和技巧 |  算法  |
-|          [五分钟学算法](https://www.cxyxiaowu.com/)          |                      一个不错的算法网站                      |  算法  |
-|      [莫烦 Python (mofanpy.com)](https://mofanpy.com/)       |                           个人博客                           |   AI   |
-| [红色石头的个人博客 (redstonewill.com)](https://redstonewill.com/category/machinelearning/) |                           个人博客                           |   AI   |
-|       [极客兔兔 (geektutu.com)](https://geektutu.com/)       |                           个人博客                           |   AI   |
-|        [ApacheCN-文档社区](http://docs.apachecn.org/)        |                  AI 相关书籍的在线阅读网站                   |   AI   |
