@@ -696,8 +696,8 @@
 - [🛫 TensorFlow 2 快速入门](人工智能/深度学习/TensorFlow2/TensorFlow2快速入门.md)
 - 【TensorFlow 2 基础知识】
   - 1 - 即刻执行 Eager Execution
-  - [2 - 张量 tensor](人工智能/深度学习/TensorFlow2/自定义/1-张量.md)
-  - [3 - 自动微分](人工智能/深度学习/TensorFlow2/自定义/3-自动微分.md)
+  - [2 - 张量 tensor](人工智能/深度学习/TensorFlow2/TensorFlow2基础知识/2-张量.md)
+  - [3 - 自动微分](人工智能/深度学习/TensorFlow2/TensorFlow2基础知识/3-自动微分.md)
 - 【Keras 机器学习基础知识】
   - [1 - Sequential 顺序模型](人工智能/深度学习/TensorFlow2/Keras机器学习基础知识/4-Sequential顺序模型.md)
   - [2 - 使用函数式 API 的 Model 类模型](人工智能/深度学习/TensorFlow2/Keras机器学习基础知识/2-使用函数式API的Model类模型.md)
@@ -719,7 +719,7 @@
 
 ### 强化学习入门
 
-- [1 - 强化学习概述](人工智能/强化学习/入门/1-概述.md)
+- [1 - 强化学习概述](人工智能/强化学习/入门/1-强化学习概述.md)
 - [2 - 马尔可夫决策过程](人工智能/强化学习/入门/2-马尔可夫决策过程.md)
 - [3 - 强化学习方法汇总](人工智能/强化学习/入门/3-强化学习方法汇总.md)
 - 【基于价值的强化学习 `Value-Based`】
@@ -730,7 +730,7 @@
   - [7 - 策略梯度 Policy Gradient](人工智能/强化学习/入门/7-Policy-Gradient.md)
 - 【演员-评论员算法系列 `Actor-Critic`】
   - [8 - A2C，A3C](人工智能/强化学习/入门/8-Actor-Critic.md)
-  - [9 - Deep Deterministic Policy Gradient，DDPG](人工智能/强化学习/入门/9.DDPG.md)
+  - [9 - Deep Deterministic Policy Gradient，DDPG](人工智能/强化学习/入门/9-DDPG.md)
 - [10 - 模仿学习 Imitation Learning](人工智能/强化学习/入门/10-模仿学习.md)
 
 ## 🔨 工具
