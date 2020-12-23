@@ -139,28 +139,33 @@ RPC 的主要目的就是让我们调用远程方法像调用本地方法一样�
 
 ## ✅ 功能列表
 
-- [x] 🍎 使用 Spring 提供依赖注入与参数配置（集成 Spring 通过注解注册服务）
+欢迎有兴趣的小伙伴提 PR 😊 ~
+
+- [x] 🍎 使用 Spring 提供依赖注入与参数配置
+- [ ] 🍎 集成 Spring 通过注解注册服务
+- [ ] 🍎 集成 Spring 通过注解消费服务
 - [x] 🍎 使用 Netty 进行网络传输
   - [x] 🍑 基于 开源的序列化框架 Protostuff 实现消息对象的序列化/反序列化
-    - [ ] 🍋 可优化：用户通过配置文件指定序列化方式
+    - [ ] 🍋 可优化：用户通过配置文件指定序列化方式，避免硬编码
   - [x] 🍑 自定义编解码器
-  - [x] 🍑 Netty / TCP 心跳机制
+  - [x] 🍑 TCP 心跳机制
     - [ ] 🍋 可优化：自定义应用层的 Netty 心跳机制
   - [x] 🍑 使用 JDK 动态代理机制调用远程方法
-    - [ ] 🍋 可优化：使用 CGLIB 动态代理调用远程方法
+    - [x] 🍋 可优化：使用 CGLIB 动态代理调用远程方法
 - [x] 🍎 使用 Zookeeper（ZkClient 客户端）实现服务注册和发现
+  - [ ] 🍋 可优化：用户通过配置文件指定注册与发现中心的实现方式，避免硬编码
+  - [x] 🍑 客户端调用远程服务的时候进行负载均衡 ：调用服务的时候，从很多服务地址中根据相应的负载均衡策略选取一个服务地址。目前使用的策略为随机负载均衡
 
 ## 🎃 项目模块概览
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201217221624.png" style="zoom: 85%;" />
+<img src="https://gitee.com/veal98/images/raw/master/img/20201223205427.png" style="zoom:67%;" />
 
 💧 **本框架的核心功能模块**：
 
 - `rpc-common`：包含封装 <u>RPC 请求与响应</u>（网络传输）的实体类/消息体 `entity`，Netty 编解码器 `codec` 以及序列化/反序列 `serialize`
 - `rpc-server`：Netty / RPC 服务端，处理并响应客户端的请求 / 消息体）
 - `rpc-client`：Netty / RPC 客户端，向服务端发送请求 / 消息体 + 接收服务端的响应
-- `rpc-registry`：定义服务注册与发现行为的接口
-- `rpc-registry-zookeeper`：基于 Zookeeper 及其客户端 ZkClient 实现服务的注册与发现
+- `rpc-registry`：定义服务注册与发现行为的接口，以及接口的实现（基于 Zookeeper 及其客户端 ZkClient 实现服务的注册与发现）
 
 💧 **下述这三个模块展示了如何使用本框架**：
 
@@ -237,7 +242,7 @@ public interface HelloService {
 实现该接口：
 
 ```java
-@RpcService(HelloService.class) // 指定暴露服务的接口类型
+@RpcService(interfaceName = HelloService.class) // 指定暴露服务的接口类型
 public class HelloServiceImple implements HelloService {
     
     @Override
@@ -255,9 +260,9 @@ public class HelloServiceImple implements HelloService {
 
 ```java
 /**
- * HelloService 接口实现类 2（暴露该服务，需要指明 version）
+ * HelloService 接口实现类 2（暴露该服务，需要指明 serviceVersion）
  */
-@RpcService(value = HelloService.class, version = "helloServiceImpl2") // 指定暴露服务的接口类型和版本
+@RpcService(interfaceName = HelloService.class, serviceVersion = "helloServiceImpl2") // 指定暴露服务的接口类型和版本
 public class HelloServiceImpl2 implements HelloService {
     @Override
     public String hello(String name) {
@@ -282,22 +287,23 @@ public class HelloServiceImpl2 implements HelloService {
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <!--对 rpc.sample.server 这个包进行扫描，也就是说在这个包中去寻找客户端请求的方法-->
+    <!--对 rpc.sample.server 这个包进行扫描-->
     <context:component-scan base-package="com.cswiki.rpc.sample.server"></context:component-scan>
 
     <!--服务器配置参数-->
     <context:property-placeholder location="classpath:rpc.properties"></context:property-placeholder>
 
-    <!--配置服务注册组件 Zookeeper, 需提供 ZooKeeper 地址、系统名、实例号-->
-    <bean id = "serviceRegistry" class="com.cswiki.rpc.registry.zookeeper.ZooKeeperServiceRegistry">
+    <!--配置服务注册组件 Zookeeper-->
+    <bean id = "serviceRegistry" class="com.cswiki.rpc.registry.zookeeper.ZookeeperServiceRegistry">
+        <!--注册中心地址 127.0.0.1:2181-->
         <constructor-arg name="zkAddress" value="${rpc.registry_address}"></constructor-arg>
     </bean>
 
-    <!--配置 RPC 服务器, 用于发布 RPC 服务，需要提供服务器端口-->
+    <!--配置 RPC 服务器-->
     <bean id = "rpcServer" class="com.cswiki.rpc.server.RpcServer">
         <!--服务地址 127.0.0.1:8000-->
         <constructor-arg name = "serviceAddress" value="${rpc.service_address}"></constructor-arg>
-        <!--注册中心地址 127.0.0.1:2181-->
+        <!--注册中心 Zookeeper-->
         <constructor-arg name= "serviceRegistry" ref = "serviceRegistry"></constructor-arg>
     </bean>
 
@@ -403,10 +409,12 @@ public class RpcBootstrap {
 
     <context:property-placeholder location="classpath:rpc.properties"/>
 
-    <bean id="serviceDiscovery" class="com.cswiki.rpc.registry.zookeeper.ZooKeeperServiceDiscovery">
+    <!--服务发现组件-->
+    <bean id="serviceDiscovery" class="com.cswiki.rpc.registry.zookeeper.ZookeeperServiceDiscovery">
         <constructor-arg name="zkAddress" value="${rpc.registry_address}"/>
     </bean>
 
+    <!--RPC 客户端动态代理-->
     <bean id="rpcProxy" class="com.cswiki.rpc.client.RpcProxy">
         <constructor-arg name="serviceDiscovery" ref="serviceDiscovery"/>
     </bean>
