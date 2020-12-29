@@ -2,6 +2,17 @@ a {
     text-decoration: none;
     color: #3eaf7c
 }
+.advertisement {
+    position: fixed;
+    right: 20px;
+    top: 100px;
+    width: 110px;
+    box-shadow: -1px 0 2px 0px #c5ebda;
+    padding: 10px;
+    z-index: 99;
+    background-color: #fff;
+    text-align: center;
+}
 .badge.green[data-v-73ca276e], .badge.tip[data-v-73ca276e], .badge[data-v-73ca276e] {
     background-color: #42b983;
 }
