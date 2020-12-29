@@ -39,10 +39,10 @@
 ---
 
 > [!WARNING]
-> 该部分内容是仓库刚起步阶段所做，格式和内容并不完善，日后会抽出时间重新进行总结，也欢迎大家提 issue 和 PR~
+> 该部分内容是仓库刚起步阶段所做，格式和内容并不完善，重构已提上日程，会陆续更新至图解数据结构系列
 
 ### 数据结构 DS
-- [1 - 线性表](计算机基础/数据结构/1-线性表.md)
+- [图解数据结构：1 - 线性表](计算机基础/数据结构/1-线性表.md)
 - [2 - 栈和队列](计算机基础/数据结构/2-栈和队列.md)
 - [3 - 树](计算机基础/数据结构/3-树.md)
 - [4 - 图](计算机基础/数据结构/4-图.md)
@@ -254,37 +254,23 @@
 #### ② Spring Boot 2.x
 
   - [1 - Spring Boot 入门](Java/SpringBoot/1-SpringBoot入门.md)
-
   - [2 - 配置文件](Java/SpringBoot/2-配置文件.md)
-
   - [3 - 自定义 starter](Java/SpringBoot/3-自定义starter.md)
-
   - [4 - 日志](Java/SpringBoot/4-日志.md)
-
   - [5 - Web 开发](Java/SpringBoot/5-Web开发.md)
-
   - [7 - Web 开发 - 实战案例](Java/SpringBoot/7-Web开发-实战案例.md)
-
   - [6 - SpringBoot 前后端数据交互的几种常用方式 ⭐ ](Java/SpringBoot/6-SpringBoot前后端数据交互.md)
-
   - [8 - SpringBoot 与数据访问](Java/SpringBoot/8-SpringBoot与数据访问.md)
-
   - 9 - **Spring Data JPA**
     - [🛫 Spring Boot + Spring Data JPA 一篇文章快速入门](Java/SpringBoot/SpringDataJPA/SpringBoot+SpringDataJPA快速入门.md)
     - [9.1 - 实体类映射到数据库表的基本注解](Java/SpringBoot/SpringDataJPA/1-实体类映射到数据库表的基本注解.md)
     - [9.2 - 表之间的映射关系](Java/SpringBoot/SpringDataJPA/2-表之间的映射关系.md)
     - [9.3 - Spring Data JPA 的四种查询方式](Java/SpringBoot/SpringDataJPA/3-SpringDataJPA的四种查询方式.md)
     - [9.4 - Spring Data JPA 的更新方式详解](Java/SpringBoot/SpringDataJPA/4-SpringDataJPA的更新方式详解.md)
-    
   - [10 - 异步、定时、邮件任务](Java/SpringBoot/10-异步定时邮件任务.md)
-
   - [11 - 集成 Redis（Lettuce）](Java/SpringBoot/11-集成Redis.md)
-
   - <u>🎯 SpringBoot 面试指南</u>
-
-  - 🌌 Geek 极客社区（尚在开发中） <span data-v-73ca276e="" class="badge recommendation" style="vertical-align: base-line;">项目经验首选</span>
-
-    一款基于 SpringBoot +SpringMVC + MySQL + MyBaits + ... 实现的开源社区，附详细开发文档
+  - 💬 Geek 极客社区 (尚在开发中) ：一款基于 SpringBoot +SpringMVC + MySQL + MyBaits + ... 实现的开源社区，附详细开发文档 <span data-v-73ca276e="" class="badge recommendation" style="vertical-align: base-line;">项目经验首选</span>
 
 #### ③ Netty 4.x
 
