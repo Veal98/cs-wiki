@@ -35,7 +35,7 @@
 
 - 💬 在此推广一下我的**公众号【飞天小牛肉】**，2020/12/29 日第一次开通，由于网页端阅读不适合随拿随取，而微信公众号具有天然的携带优势，所以会陆续在公众号上更新重要的核心知识点及面试指南，尽量不涉及大量代码，便于碎片时间利用和移动端阅读
 
-  <img src="https://gitee.com/veal98/images/raw/master/img/20201229161228.png" style="zoom:60%;" />
+  <img src="https://gitee.com/veal98/images/raw/master/img/20210102110856.png" style="zoom:70%;" />
 
 
 ## 📑 计算机基础
