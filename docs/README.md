@@ -27,9 +27,9 @@
 
 💡 **「关于」**
 
-- 🎓 博主东南大学研一在读，双修 Java 和 AI，奔跑在全栈的路上。本仓库用于记录学习过程中的所思所想，并力图构建一个完善的知识体系，便于复习巩固
+- 🎓 博主东南大学研一在读，算法岗诸神黄昏已人尽皆知，遂决定深耕 Java，致力全栈。本仓库用于记录学习过程中的所思所想，并力图构建一个完善的知识体系，便于复习巩固
 
-- 🙏 由于本人水平有限，仓库中的知识点来自本人原创、视频、书籍、博客等，非原创均已标明出处（或在参考资料中列出），如有遗漏或发现文章错误及排版问题，请提 issue 或 PR
+- 🙏 由于本人水平有限，仓库中的知识点来自本人原创、视频、书籍、博客等，非原创均已标明出处，如有遗漏或发现文章错误及排版问题，请提 issue 或 PR
 
 - ⚡ [Gitee 在线阅读（国内访问速度较快）](https://veal98.gitee.io/cs-wiki) | [Gitee 仓库地址](https://gitee.com/veal98/CS-Wiki) <span data-v-73ca276e="" class="badge recommendation" style="vertical-align: base-line;">推荐</span>
 
@@ -80,7 +80,7 @@
 - <u>[🔥 LeetCode 分模块刷题指南](计算机基础/算法/LeetCode/刷题指南.md)</u>
 
 ### 计算机网络 Net
-- [👍 一文读懂两台计算机之间是如何通信的](https://mp.weixin.qq.com/s/oZtmmRYkYdtU7OX0k1CAuA)
+- 👍导读：[一文读懂两台计算机之间是如何通信的](https://mp.weixin.qq.com/s/oZtmmRYkYdtU7OX0k1CAuA)
 - [1 - 计算机网络相关概念](计算机基础/计算机网络/1-计算机网络相关概念.md)
 - [2 - 物理层](计算机基础/计算机网络/2-物理层.md)
 - [3 - 数据链路层](计算机基础/计算机网络/3-数据链路层.md)
@@ -274,6 +274,7 @@
   - [10 - 异步、定时、邮件任务](Java/SpringBoot/10-异步定时邮件任务.md)
   - [11 - 集成 Redis（Lettuce）](Java/SpringBoot/11-集成Redis.md)
   - <u>🎯 SpringBoot 面试指南</u>
+  - [使用 PageHelper 前先学会手写一个分页查询吧](https://mp.weixin.qq.com/s/oswUUWBpkF5_F98X8m4ipg)
   - 💬 Geek 极客社区 (尚在开发中) ：一款基于 SpringBoot +SpringMVC + MySQL + MyBaits + ... 实现的开源社区，附详细开发文档 <span data-v-73ca276e="" class="badge recommendation" style="vertical-align: base-line;">项目经验首选</span>
 
 #### ③ Netty 4.x

@@ -9,7 +9,7 @@
     color: #eee; text-align: center;
     text-shadow: 0.3rem 0.3rem 0.4rem rgba(0,0,0,.15);
     line-height: 1.2;">
-    双修 Java 和 AI，努力奔跑在全栈的路上 🏃‍
+    进击的 Javaer，努力奔跑在全栈的路上 🏃‍
 </div>
 
 <br>
@@ -32,12 +32,11 @@
 
 <img width="220px" src="https://gitee.com/veal98/images/raw/master/img/LogoMakr_7iKG43.png">
 
-
 <div style = "font-weight: 100; font-size: 1.2rem; 
     color: rgb(60, 60, 60); text-align: center;
     text-shadow: 0.3rem 0.3rem 0.4rem rgba(0,0,0,.15);
     line-height: 1.2;">
-    双修 Java 和 AI，努力奔跑在全栈的路上 🏃‍
+    进击的 Javaer，努力奔跑在全栈的路上 🏃‍
 </div>
 
 <br>
