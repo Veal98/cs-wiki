@@ -35,7 +35,7 @@
 
 - 🔮 [Github 在线阅读](https://veal98.github.io/CS-Wiki/) | [Github 仓库地址](https://github.com/Veal98/CS-Wiki)
 
-- 💬 在此推广一下我的**公众号【飞天小牛肉】**，2020/12/29 日第一次开通，本仓库文章会陆续同步更新在公众号，以便小伙伴即时了解文章更新进度，也方便在移动端利用碎片时间阅读。希望大家多多支持哦，共同见证小牛肉的成长
+- 💬 在此推广一下我的**公众号【飞天小牛肉】**，2020/12/29 日第一次开通，主要用于同步更新本仓库的高频知识点，冷门的知识点就不会在公众号上更新了（比如计算机网络的物理层），这种虽然是我们完整知识体系的一部分，但是作为面试和日常开发来说并非重点。本公众号的目的就是**让大家可以快速掌握重点知识，有的放矢**。希望大家多多支持哦，共同见证小牛肉的成长
 
   <img src="https://gitee.com/veal98/images/raw/master/img/20210102110856.png" style="zoom:70%;" />
 
@@ -46,7 +46,7 @@
 > [!WARNING]
 > 该部分内容是仓库刚起步阶段所做，格式和内容并不完善，重构已提上日程，会陆续更新至图解数据结构系列
 
-- [图解数据结构：1 - 线性表](计算机基础/数据结构/1-线性表.md)
+- [图解数据结构 · 第 1 篇《线性表》](计算机基础/数据结构/图解数据结构·第1篇《线性表》.md)
 - [2 - 栈和队列](计算机基础/数据结构/2-栈和队列.md)
 - [3 - 树](计算机基础/数据结构/3-树.md)
 - [4 - 图](计算机基础/数据结构/4-图.md)
@@ -276,7 +276,7 @@
   - [10 - 异步、定时、邮件任务](Java/SpringBoot/10-异步定时邮件任务.md)
   - [11 - 集成 Redis（Lettuce）](Java/SpringBoot/11-集成Redis.md)
   - <u>🎯 SpringBoot 面试指南</u>
-  - [使用 PageHelper 前先学会手写一个分页查询吧](https://mp.weixin.qq.com/s/oswUUWBpkF5_F98X8m4ipg)
+  - [使用 PageHelper 前先学会手写一个分页查询吧](Java/SpringBoot/手写分页查询.md)
   - 💬 Geek 极客社区 (尚在开发中) ：一款基于 SpringBoot +SpringMVC + MySQL + MyBaits + ... 实现的开源社区，附详细开发文档 <span data-v-73ca276e="" class="badge recommendation" style="vertical-align: base-line;">项目经验首选</span>
 
 #### ③ Netty 4.x
