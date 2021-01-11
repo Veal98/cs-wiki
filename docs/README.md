@@ -44,15 +44,9 @@
 ### 数据结构 DS
 
 > [!WARNING]
-> 该部分内容是仓库刚起步阶段所做，格式和内容并不完善，重构已提上日程，会陆续更新至图解数据结构系列
+> 该部分内容目前正在重构中，会陆续更新至图解数据结构系列
 
-- [图解数据结构 · 第 1 篇《线性表》](计算机基础/数据结构/图解数据结构·第1篇《线性表》.md)
-- [2 - 栈和队列](计算机基础/数据结构/2-栈和队列.md)
-- [3 - 树](计算机基础/数据结构/3-树.md)
-- [4 - 图](计算机基础/数据结构/4-图.md)
-- [5 - 查找](计算机基础/数据结构/5-查找.md)
-- [6 - 排序](计算机基础/数据结构/6-排序.md)
-- <u>[🎯 数据结构面试指南](计算机基础/数据结构/面试指南)</u>
+- [图解数据结构 · 第 1 篇《线性表》](https://mp.weixin.qq.com/s/AxVkAeqN-a34O4rOFNV0IA)
 
 ### 算法 Algorithm
 
@@ -88,6 +82,7 @@
 - [5 - 传输层](计算机基础/计算机网络/5-传输层.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: base-line;">Vital</span>
 - [6 - 应用层](计算机基础/计算机网络/6-应用层.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: base-line;">Vital</span>
 - [7 - 网络管理和网络安全](计算机基础/计算机网络/7-网络管理和网络安全.md)
+- [8 - 网站攻击技术](计算机基础/计算机网络/8-网站攻击技术.md)
 - <u>[🎯 计算机网络面试指南](计算机基础/计算机网络/面试指南.md)</u>
 
 ### 操作系统 OS
@@ -178,45 +173,12 @@
 
 ### Java 基础
 
-> [!TIP]
+> [!TIP] 
 > 所有笔记和代码均基于 **Java 8** 版本，基本包含 Java 语言的全部核心知识点。目前正在重构中，将陆续更新至《Java 小白成长记》系列
 
-- [Java 小白成长记 · 第 1 篇《万物皆对象》](Java/Java基础/Java小白成长记·第1篇《万物皆对象》.md)
-- [Java 小白成长记 · 第 2 篇《Hello World》](Java/Java基础/Java小白成长记·第2篇《HelloWorld》.md)
-- [1 - Java 的基本程序设计结构](Java/Java基础/1-Java的基本程序设计结构.md)
-- [2 - 对象与类](Java/Java基础/2-对象与类.md)
-- [3 - 组合与继承](Java/Java基础/3-组合与继承.md)
-- [4 - 抽象类与接口](Java/Java基础/4-接口.md)
-- [5 - 内部类](Java/Java基础/5-内部类.md)
-- [6 - 函数式编程 (lambda 表达式)](Java/Java基础/6-函数式编程.md)
-- [7 - 异常 + 断言 + 日志](Java/Java基础/7-异常+断言+日志.md)
-- [8 - 字符串](Java/Java基础/8-字符串.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: base-line;">Vital</span>
-- [9 - 彻底读懂 Java 反射](Java/Java基础/9-反射.md) <span data-v-73ca276e="" class="badge tip" style="vertical-align: base-line;">Important</span> 
-- [10 - 静态代理 + JDK / CGLIB / Javassit 动态代理](Java/Java基础/10-代理.md) <span data-v-73ca276e="" class="badge tip" style="vertical-align: base-line;">Important</span>
-- [11 - 泛型](Java/Java基础/11-泛型.md)
-- [12 - 数组](Java/Java基础/12-数组.md)
-- 13 - 集合 / 容器 <span data-v-73ca276e="" class="badge warning" style="vertical-align: base-line;">Vital</span>
-  - [13.1 - 集合知识点全览](Java/Java基础/13.1-集合知识点全览.md)
-  - [13.2 - ArrayList 源码 + 扩容机制分析](Java/Java基础/13.2-ArrayList源码分析.md)
-  - [13.3 - LinkedList 源码分析](Java/Java基础/13.3-LinkedList源码分析.md)
-  - [13.4 - HashMap (JDK 1.8) 源码 + 底层数据结构分析](Java/Java基础/13.4-HashMap源码分析.md)
-  - 13.4 - ConcurrentHashMap (JDK 1.8) 源码 + 底层数据结构分析
-- [14 - 你真的了解枚举吗](Java/Java基础/14-枚举类型.md)（待重构）
-- 15 - 多线程与并发 <span data-v-73ca276e="" class="badge warning" style="vertical-align: base-line;">Vital</span>
-  - 15.0 - 多线程与并发学习指南
-  - [15.1 - 并发知识点全览](Java/Java基础/15.1-并发知识点全览.md)
-- 16 - I/O <span data-v-73ca276e="" class="badge tip" style="vertical-align: base-line;">Important</span>
-  - [16.1 - 底层：Linux 五种 I/O 模型详解](Java/Java基础/16.1-底层-Linux五种IO模型详解.md)
-  - [16.2 - 底层：三种线程模型详解](Java/Java基础/16.2-底层-线程模型详解.md)
-  - [16.3 - Java I/O 知识点全览](Java/Java基础/16.3-IO知识点全览.md)
-  - 16.2 - Java 中的 BIO / NIO / AIO 总结
-- [17 - Java 网络编程 — Socket 编程](Java/Java基础/17-Socket编程.md)
-- [18 - Java 注解](Java/Java基础/18-Java注解.md)
-- Java 常见关键字总结 <span data-v-73ca276e="" class="badge tip" style="vertical-align: base-line;">Important</span> 
-- [高级：Java 中的 SPI 机制](Java/Java基础/SPI机制.md)
-- 新特性
-  - Java 8 新特性
-  - Java 9 - Java 14 新特性
+- [Java 小白成长记 · 第 1 篇《万物皆对象》](https://mp.weixin.qq.com/s/W3KrCirgCrqrSiOQ8P3tAQ)
+- [Java 小白成长记 · 第 2 篇《Hello World》](https://mp.weixin.qq.com/s/JAc0QQpYI5xlG4A50ycjfQ)
+- [Java 小白成长记 · 第 3 篇《运算符与控制流》](https://mp.weixin.qq.com/s/b5fG-sTgQBFrFl1ZEdXbXg)
 
 ### Java 虚拟机
 
@@ -254,6 +216,7 @@
   - <u>🎯 SpringMVC 面试指南</u>
 - 3 - **MyBatis**
   - [MyBatis 知识点全解](Java/SSM/Mybatis/Mybatis知识点全解.md)
+  - [使用 PageHelper 前先学会手写一个分页查询吧（SpringBoot 版）](Java/SpringBoot/手写分页查询.md)
   - <u>🎯 MyBatis 面试指南</u>
 - [4 - SSM 框架整合实例](Java/SSM/SSM框架整合.md)
 
@@ -276,7 +239,6 @@
   - [10 - 异步、定时、邮件任务](Java/SpringBoot/10-异步定时邮件任务.md)
   - [11 - 集成 Redis（Lettuce）](Java/SpringBoot/11-集成Redis.md)
   - <u>🎯 SpringBoot 面试指南</u>
-  - [使用 PageHelper 前先学会手写一个分页查询吧](Java/SpringBoot/手写分页查询.md)
   - 💬 Geek 极客社区 (尚在开发中) ：一款基于 SpringBoot +SpringMVC + MySQL + MyBaits + ... 实现的开源社区，附详细开发文档 <span data-v-73ca276e="" class="badge recommendation" style="vertical-align: base-line;">项目经验首选</span>
 
 #### ③ Netty 4.x
@@ -309,7 +271,6 @@
 - [1 - 大型网站核心架构要素](系统设计/系统设计基础/1-大型网站核心架构要素.md)
 - 2 - Web 前端性能优化
 - 3 - 应用服务器性能优化
-- [4 - 网站攻击技术](系统设计/系统设计基础/4-网站攻击技术.md)
 
 ### 编码之道
 
