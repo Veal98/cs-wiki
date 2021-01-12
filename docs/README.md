@@ -35,16 +35,16 @@
 
 - 🔮 [Github 在线阅读](https://veal98.github.io/CS-Wiki/) | [Github 仓库地址](https://github.com/Veal98/CS-Wiki)
 
-- 💬 在此推广一下我的**公众号【飞天小牛肉】**，2020/12/29 日第一次开通，主要用于同步更新本仓库的高频知识点，冷门的知识点就不会在公众号上更新了（比如计算机网络的物理层），这种虽然是我们完整知识体系的一部分，但是作为面试和日常开发来说并非重点。本公众号的目的就是**让大家可以快速掌握重点知识，有的放矢**。希望大家多多支持哦，共同见证小牛肉的成长
+- 💬 在此推广一下我的**公众号『 飞天小牛肉 』**，2020/12/29 日第一次开通，专注于分享计算机基础（数据结构 + 算法 + 计算机网络 + 数据库 + 操作系统 + Linux）、Java 基础和面试指南的相关原创技术好文。本公众号的目的就是**让大家可以快速掌握重点知识，有的放矢**。希望大家多多支持哦，共同见证小牛肉的成长
 
-  <img src="https://gitee.com/veal98/images/raw/master/img/20210102110856.png" style="zoom:70%;" />
+  <img src="https://gitee.com/veal98/images/raw/master/img/Snipaste_2021-01-12_17-50-52.jpg" style="zoom:60%;" />
 
 ## 📑 计算机基础
 
 ### 数据结构 DS
 
 > [!WARNING]
-> 该部分内容目前正在重构中，会陆续更新至图解数据结构系列
+> 该部分内容目前正在重构中，会陆续更新至 『 图解数据结构 』系列
 
 - [图解数据结构 · 第 1 篇《线性表》](https://mp.weixin.qq.com/s/AxVkAeqN-a34O4rOFNV0IA)
 
@@ -74,16 +74,14 @@
 - <u>[🔥 LeetCode 分模块刷题指南](计算机基础/算法/LeetCode/刷题指南.md)</u>
 
 ### 计算机网络 Net
-- 👍 导读：[一文读懂两台计算机之间是如何通信的](https://mp.weixin.qq.com/s/oZtmmRYkYdtU7OX0k1CAuA) 
-- [1 - 计算机网络相关概念](计算机基础/计算机网络/1-计算机网络相关概念.md)
-- [2 - 物理层](计算机基础/计算机网络/2-物理层.md)
-- [3 - 数据链路层](计算机基础/计算机网络/3-数据链路层.md)
-- [4 - 网络层](计算机基础/计算机网络/4-网络层.md) <span data-v-73ca276e="" class="badge tip" style="vertical-align: base-line;">Important</span>
-- [5 - 传输层](计算机基础/计算机网络/5-传输层.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: base-line;">Vital</span>
-- [6 - 应用层](计算机基础/计算机网络/6-应用层.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: base-line;">Vital</span>
-- [7 - 网络管理和网络安全](计算机基础/计算机网络/7-网络管理和网络安全.md)
-- [8 - 网站攻击技术](计算机基础/计算机网络/8-网站攻击技术.md)
-- <u>[🎯 计算机网络面试指南](计算机基础/计算机网络/面试指南.md)</u>
+
+> [!WARNING]
+> 该部分内容目前正在重构中，会陆续更新至『 图解计算机网络 』系列
+
+- [图解计算机网络 · 第 1 篇《一文读懂两台计算机之间是如何通信的》](https://mp.weixin.qq.com/s/oZtmmRYkYdtU7OX0k1CAuA) 
+- [图解计算机网络 · 第 2 篇《网络基础扫盲 | 数据传输方式和交换方式》](https://mp.weixin.qq.com/s/8rjgpE6Q-fbGb9tXKxxnWw)
+- [图解计算机网络 · 第 3 篇《关于 TCP 三次握手和四次挥手，满分回答在此》](https://mp.weixin.qq.com/s/u56NcMs68sgi6uDpzJ61yw)
+- [图解计算机网络 · 第 4 篇《原来 TCP 为了保证可靠传输做了这么多》](https://mp.weixin.qq.com/s/AwdxuP5nJSnkyvXRKnqdOg)
 
 ### 操作系统 OS
 
@@ -173,8 +171,8 @@
 
 ### Java 基础
 
-> [!TIP] 
-> 所有笔记和代码均基于 **Java 8** 版本，基本包含 Java 语言的全部核心知识点。目前正在重构中，将陆续更新至《Java 小白成长记》系列
+> [!WARNING]
+> 所有笔记和代码均基于 **Java 8** 版本，基本包含 Java 语言的全部核心知识点。目前正在重构中，将陆续更新至『 Java 小白成长记 』系列
 
 - [Java 小白成长记 · 第 1 篇《万物皆对象》](https://mp.weixin.qq.com/s/W3KrCirgCrqrSiOQ8P3tAQ)
 - [Java 小白成长记 · 第 2 篇《Hello World》](https://mp.weixin.qq.com/s/JAc0QQpYI5xlG4A50ycjfQ)
@@ -216,7 +214,7 @@
   - <u>🎯 SpringMVC 面试指南</u>
 - 3 - **MyBatis**
   - [MyBatis 知识点全解](Java/SSM/Mybatis/Mybatis知识点全解.md)
-  - [使用 PageHelper 前先学会手写一个分页查询吧（SpringBoot 版）](Java/SpringBoot/手写分页查询.md)
+  - [使用 PageHelper 前先学会手写一个分页查询吧（SpringBoot 版）](Java/Mybatis/手写分页查询.md)
   - <u>🎯 MyBatis 面试指南</u>
 - [4 - SSM 框架整合实例](Java/SSM/SSM框架整合.md)
 
