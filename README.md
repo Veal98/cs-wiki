@@ -84,4 +84,4 @@
 
 有什么问题也可以添加我的微信，记得备注来意：格式 <u>（学校或公司 - 姓名或昵称 - 来意）</u>
 
-<img src="https://gitee.com/veal98/images/raw/master/img/微信图片_20210105121328.jpg" style="zoom:40%;" />
+<img src="https://gitee.com/veal98/images/raw/master/img/微信图片_20210105121328.jpg" style="height:350px" />
