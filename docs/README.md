@@ -35,11 +35,13 @@
 
 - 🔮 [Github 在线阅读](https://veal98.github.io/CS-Wiki/) | [Github 仓库地址](https://github.com/Veal98/CS-Wiki)
 
-- 💬 在此推广一下我的**公众号『 飞天小牛肉 』**，2020/12/29 日第一次开通，专注于分享计算机基础（数据结构 + 算法 + 计算机网络 + 数据库 + 操作系统 + Linux）、Java 基础和面试指南的相关原创技术好文。本公众号的目的就是**让大家可以快速掌握重点知识，有的放矢**。希望大家多多支持哦，共同见证小牛肉的成长
+- 💖 在此推广一下我的**公众号『 飞天小牛肉 』**，2020/12/29 日第一次开通，专注于分享计算机基础（数据结构 + 算法 + 计算机网络 + 数据库 + 操作系统 + Linux）、Java 基础和面试指南的相关原创技术好文。本公众号的目的就是**让大家可以快速掌握重点知识，有的放矢**。希望大家多多支持哦，和小牛肉一起成长
 
   <img src="https://gitee.com/veal98/images/raw/master/img/Snipaste_2021-01-12_17-50-52.jpg" style="zoom:60%;" />
 
 ## 📑 计算机基础
+
+---
 
 ### 数据结构 DS
 
@@ -80,8 +82,9 @@
 
 - [图解计算机网络 · 第 1 篇《一文读懂两台计算机之间是如何通信的》](https://mp.weixin.qq.com/s/oZtmmRYkYdtU7OX0k1CAuA) 
 - [图解计算机网络 · 第 2 篇《网络基础扫盲 | 数据传输方式和交换方式》](https://mp.weixin.qq.com/s/8rjgpE6Q-fbGb9tXKxxnWw)
-- [图解计算机网络 · 第 3 篇《关于 TCP 三次握手和四次挥手，满分回答在此》](https://mp.weixin.qq.com/s/u56NcMs68sgi6uDpzJ61yw)
-- [图解计算机网络 · 第 4 篇《原来 TCP 为了保证可靠传输做了这么多》](https://mp.weixin.qq.com/s/AwdxuP5nJSnkyvXRKnqdOg)
+- [图解计算机网络 · 第 3 篇《别再恐惧 IP 协议，万字长文 | 多图预警》](https://mp.weixin.qq.com/s/NO9RDt1A3T1rz-Q4_Y0gPw)
+- [图解计算机网络 · 第 4 篇《关于 TCP 三次握手和四次挥手，满分回答在此》](https://mp.weixin.qq.com/s/u56NcMs68sgi6uDpzJ61yw)
+- [图解计算机网络 · 第 5 篇《原来 TCP 为了保证可靠传输做了这么多》](https://mp.weixin.qq.com/s/AwdxuP5nJSnkyvXRKnqdOg)
 
 ### 操作系统 OS
 
@@ -136,35 +139,6 @@
 - [设计模式七大原则](计算机基础/设计模式/七大原则.md)
 - [二十三种设计模式](计算机基础/设计模式/二十三种设计模式/guide.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: base-line;">Vital</span>
 
-## 🎨 前端
-
----
-
-### 必备基础知识
-
-- 1 - HTML / CSS / JS 速览
-- [2 - JSON 详解](前端/必备基础/JSON详解.md)
-- [3 - AJAX 详解](前端/必备基础/AJAX详解.md)
-
-### Vue 2.x
-
-- [1 - Vue.js 入门](前端/Vue/1-入门.md)
-- [2 - 安装](前端/Vue/2-安装.md)
-- [3 - Vue-Cli 3+搭建的项目目录结构](前端/Vue/3-目录结构.md)
-- [4 - 模板语法](前端/Vue/4-模板语法.md)
-- [5 - 条件语句](前端/Vue/5-条件语句.md)
-- [6 - 循环语句](前端/Vue/6-循环语句.md)
-- [7 - 计算属性](前端/Vue/7-计算属性.md)
-- [8 - 监听属性](前端/Vue/8-监听属性.md)
-- [9 - 样式绑定](前端/Vue/9-样式绑定.md)
-- [10 - 事件处理器](前端/Vue/10-事件处理器.md)
-- [11 - 表单](前端/Vue/11-表单.md)
-- [12 - 组件](前端/Vue/12-组件.md)
-- [13 - 自定义指令](前端/Vue/13-自定义指令.md)
-- [14 - 路由详解](前端/Vue/14-路由.md)
-- [15 - Axios 详解](前端/Vue/15-axios.md)
-- [16 - 生命周期钩子](前端/Vue/16-生命周期钩子.md)
-
 ## 🍵 Java
 
 ---
@@ -185,7 +159,9 @@
 - [3 - 类文件结构](Java/JVM/3-类文件结构.md)
 - [4 - 类加载机制](Java/JVM/4-类加载机制.md)
 
-### 常用框架
+## 🔥 必备框架
+
+---
 
 > [!WARNING|label:注意区分下数据库和 ORM 框架！]
 > 
@@ -200,65 +176,65 @@
 > - MyBatis （常见组合为 <u>Spring + SpringMVC</u> / Spring Boot + MyBatis + 数据库）
 > - Hibernate（常见组合为 Spring Boot + Hibernate + Spring Data JPA + 数据库）
 
-#### ① SSM
+### SSM
 
 - 1 - **Spring (Framework)**
-  - [1.1 - Spring 简介 + Spring IoC 详解](Java/SSM/Spring/1-Spring简介+IoC详解.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: base-line;">Vital</span>
-  - [1.2 - Spring IoC 容器源码分析](Java/SSM/Spring/2-SpringIoC容器源码分析.md)
-  - [1.3 - Spring AOP 详解](Java/SSM/Spring/3-AOP详解.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: base-line;">Vital</span>
+  - [1.1 - Spring 简介 + Spring IoC 详解](必备框架/SSM/Spring/1-Spring简介+IoC详解.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: base-line;">Vital</span>
+  - [1.2 - Spring IoC 容器源码分析](必备框架/SSM/Spring/2-SpringIoC容器源码分析.md)
+  - [1.3 - Spring AOP 详解](必备框架/SSM/Spring/3-AOP详解.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: base-line;">Vital</span>
   - 1.4 - Spring AOP 源码分析
   - 1.4 - Spring 事务控制
   - <u>🎯 Spring 面试指南</u>
 - 2 - **SpringMVC**
-  - [Spring MVC 知识点全解](Java/SSM/SpringMVC/SpringMVC知识点全解.md)
+  - [Spring MVC 知识点全解](必备框架/SSM/SpringMVC/SpringMVC知识点全解.md)
   - <u>🎯 SpringMVC 面试指南</u>
 - 3 - **MyBatis**
-  - [MyBatis 知识点全解](Java/SSM/Mybatis/Mybatis知识点全解.md)
-  - [使用 PageHelper 前先学会手写一个分页查询吧（SpringBoot 版）](Java/Mybatis/手写分页查询.md)
+  - [MyBatis 知识点全解](必备框架/SSM/Mybatis/Mybatis知识点全解.md)
+  - [使用 PageHelper 前先学会手写一个分页查询吧（SpringBoot 版）](必备框架/SSM/Mybatis/手写分页查询.md)
   - <u>🎯 MyBatis 面试指南</u>
-- [4 - SSM 框架整合实例](Java/SSM/SSM框架整合.md)
+- [4 - SSM 框架整合实例](必备框架/SSM/SSM框架整合.md)
 
-#### ② Spring Boot 2.x
+### Spring Boot 2.x
 
-  - [1 - Spring Boot 入门](Java/SpringBoot/1-SpringBoot入门.md)
-  - [2 - 配置文件](Java/SpringBoot/2-配置文件.md)
-  - [3 - 自定义 starter](Java/SpringBoot/3-自定义starter.md)
-  - [4 - 日志](Java/SpringBoot/4-日志.md)
-  - [5 - Web 开发](Java/SpringBoot/5-Web开发.md)
-  - [7 - Web 开发 - 实战案例](Java/SpringBoot/7-Web开发-实战案例.md)
-  - [6 - SpringBoot 前后端数据交互的几种常用方式 ⭐ ](Java/SpringBoot/6-SpringBoot前后端数据交互.md)
-  - [8 - SpringBoot 与数据访问](Java/SpringBoot/8-SpringBoot与数据访问.md)
+  - [1 - Spring Boot 入门](必备框架/SpringBoot/1-SpringBoot入门.md)
+  - [2 - 配置文件](必备框架/SpringBoot/2-配置文件.md)
+  - [3 - 自定义 starter](必备框架/SpringBoot/3-自定义starter.md)
+  - [4 - 日志](必备框架/SpringBoot/4-日志.md)
+  - [5 - Web 开发](必备框架/SpringBoot/5-Web开发.md)
+  - [7 - Web 开发 - 实战案例](必备框架/SpringBoot/7-Web开发-实战案例.md)
+  - [6 - SpringBoot 前后端数据交互的几种常用方式 ⭐ ](必备框架/SpringBoot/6-SpringBoot前后端数据交互.md)
+  - [8 - SpringBoot 与数据访问](必备框架/SpringBoot/8-SpringBoot与数据访问.md)
   - 9 - **Spring Data JPA**
-    - [🛫 Spring Boot + Spring Data JPA 一篇文章快速入门](Java/SpringBoot/SpringDataJPA/SpringBoot+SpringDataJPA快速入门.md)
-    - [9.1 - 实体类映射到数据库表的基本注解](Java/SpringBoot/SpringDataJPA/1-实体类映射到数据库表的基本注解.md)
-    - [9.2 - 表之间的映射关系](Java/SpringBoot/SpringDataJPA/2-表之间的映射关系.md)
-    - [9.3 - Spring Data JPA 的四种查询方式](Java/SpringBoot/SpringDataJPA/3-SpringDataJPA的四种查询方式.md)
-    - [9.4 - Spring Data JPA 的更新方式详解](Java/SpringBoot/SpringDataJPA/4-SpringDataJPA的更新方式详解.md)
-  - [10 - 异步、定时、邮件任务](Java/SpringBoot/10-异步定时邮件任务.md)
-  - [11 - 集成 Redis（Lettuce）](Java/SpringBoot/11-集成Redis.md)
+    - [🛫 Spring Boot + Spring Data JPA 一篇文章快速入门](必备框架/SpringBoot/SpringDataJPA/SpringBoot+SpringDataJPA快速入门.md)
+    - [9.1 - 实体类映射到数据库表的基本注解](必备框架/SpringBoot/SpringDataJPA/1-实体类映射到数据库表的基本注解.md)
+    - [9.2 - 表之间的映射关系](必备框架/SpringBoot/SpringDataJPA/2-表之间的映射关系.md)
+    - [9.3 - Spring Data JPA 的四种查询方式](必备框架/SpringBoot/SpringDataJPA/3-SpringDataJPA的四种查询方式.md)
+    - [9.4 - Spring Data JPA 的更新方式详解](必备框架/SpringBoot/SpringDataJPA/4-SpringDataJPA的更新方式详解.md)
+  - [10 - 异步、定时、邮件任务](必备框架/SpringBoot/10-异步定时邮件任务.md)
+  - [11 - 集成 Redis（Lettuce）](必备框架/SpringBoot/11-集成Redis.md)
   - <u>🎯 SpringBoot 面试指南</u>
   - 💬 Geek 极客社区 (尚在开发中) ：一款基于 SpringBoot +SpringMVC + MySQL + MyBaits + ... 实现的开源社区，附详细开发文档 <span data-v-73ca276e="" class="badge recommendation" style="vertical-align: base-line;">项目经验首选</span>
 
-#### ③ Netty 4.x
+### Netty 4.x
 
 > [!Note]
 > Netty 是目前 **Java 网络编程**最热门的框架，很多开源项目涉及到**网络通信**的部分都是基于 Netty 来做的，比如 Dubbo、RocketMQ、ElasticSearch 等。**学习 Netty 前请务必掌握 Java I/O 的相关知识**。并请注意 **Netty 5 已被官方废弃**，本笔记基于 Netty 4.x
 
-- [1 - 从 BIO、NIO 到 Netty](Java/Netty/1-从BIONIO到Netty.md)
-- [2 - 第一个 Netty 应用：HelloWorld](Java/Netty/2-第一个Netty应用.md)
-- [3 - Netty 架构设计与特性](Java/Netty/3-Netty架构设计与特性.md)
-- [4 - Netty 核心组件总览](Java/Netty/4-Netty核心组件总览.md)
-- [5 - Transport（传输）详解](Java/Netty/5-Transport详解.md)
-- [6 - Buffer（缓冲/字节容器）详解](Java/Netty/6-Buffer详解.md)
-- [7 - ChannelHandler（消息处理器）与 ChannelPipeline 详解](Java/Netty/7-ChannelHandler与ChannelPipeline详解.md)
-- [8 - Netty Reactor 线程模型与 EventLoop（事件循环）详解](Java/Netty/8-EventLoop与线程模型详解.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: base-line;">Vital</span>
-- [9 - Bootstrap（引导）详解](Java/Netty/9-Bootstrap详解.md)
-- [10 - Codec（编码与解码）详解](Java/Netty/10-Codec详解.md)
-- [11 - 实例及分析：Netty 实现聊天功能](Java/Netty/11-实例-Netty实现聊天功能.md)
-- [12 - Netty 是如何解决 TCP 粘包/拆包问题的](Java/Netty/12-Netty解决TCP粘包拆包问题.md)
-- [13 - Netty 是如何实现 TCP 心跳机制与断线重连的](Java/Netty/13-Netty实现心跳机制.md)
-- [14 - 实例及分析：Netty + Kryo 序列化传输对象](Java/Netty/14-实例-Netty+Kryo序列化传输对象.md)
-- <u>[🎯 Netty 面试指南](Java/Netty/Netty面试指南.md)</u>
+- [1 - 从 BIO、NIO 到 Netty](必备框架/Netty/1-从BIONIO到Netty.md)
+- [2 - 第一个 Netty 应用：HelloWorld](必备框架/Netty/2-第一个Netty应用.md)
+- [3 - Netty 架构设计与特性](必备框架/Netty/3-Netty架构设计与特性.md)
+- [4 - Netty 核心组件总览](必备框架/Netty/4-Netty核心组件总览.md)
+- [5 - Transport（传输）详解](必备框架/Netty/5-Transport详解.md)
+- [6 - Buffer（缓冲/字节容器）详解](必备框架/Netty/6-Buffer详解.md)
+- [7 - ChannelHandler（消息处理器）与 ChannelPipeline 详解](必备框架/Netty/7-ChannelHandler与ChannelPipeline详解.md)
+- [8 - Netty Reactor 线程模型与 EventLoop（事件循环）详解](必备框架/Netty/8-EventLoop与线程模型详解.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: base-line;">Vital</span>
+- [9 - Bootstrap（引导）详解](必备框架/Netty/9-Bootstrap详解.md)
+- [10 - Codec（编码与解码）详解](必备框架/Netty/10-Codec详解.md)
+- [11 - 实例及分析：Netty 实现聊天功能](必备框架/Netty/11-实例-Netty实现聊天功能.md)
+- [12 - Netty 是如何解决 TCP 粘包/拆包问题的](必备框架/Netty/12-Netty解决TCP粘包拆包问题.md)
+- [13 - Netty 是如何实现 TCP 心跳机制与断线重连的](必备框架/Netty/13-Netty实现心跳机制.md)
+- [14 - 实例及分析：Netty + Kryo 序列化传输对象](必备框架/Netty/14-实例-Netty+Kryo序列化传输对象.md)
+- <u>[🎯 Netty 面试指南](必备框架/Netty/Netty面试指南.md)</u>
 
 ## 👷 系统设计
 
@@ -472,174 +448,6 @@
 
 #### ③ Spring Cloud Alibaba
 
-## 🚀 Python
-
----
-
-### Python 3 基础
-
-  - [1 - Python基础](人工智能/Python/Python入门学习笔记/1-Python基础.md)
-  - [2 - 函数](人工智能/Python/Python入门学习笔记/2-函数.md)
-  - [3 - 高级特性](人工智能/Python/Python入门学习笔记/3-高级特性.md)
-  - [4 - 函数式编程](人工智能/Python/Python入门学习笔记/4-函数式编程.md)
-  - [5 - 模块](人工智能/Python/Python入门学习笔记/5-模块.md)
-  - [6 - 面向对象编程](人工智能/Python/Python入门学习笔记/6-面向对象编程.md)
-  - [7 - 面向对象高级编程](人工智能/Python/Python入门学习笔记/7-面向对象高级编程.md)
-  - [8 - 错误、调试和测试](人工智能/Python/Python入门学习笔记/8-错误、调试和测试.md)
-  - [9 - IO 编程](人工智能/Python/Python入门学习笔记/9-IO编程.md)
-  - [10 - 进程和线程](人工智能/Python/Python入门学习笔记/10-进程和线程.md)
-  - [11 - 正则表达式](人工智能/Python/Python入门学习笔记/11-正则表达式.md)
-
-### Python 数据分析
-
-  - [1 - 准备工作](人工智能/Python/Python数据分析/1-准备工作.md)
-  - [2 - IPython 和 Jupyter NoteBook](人工智能/Python/Python数据分析/2-IPython和Jupyter-Notebook.md)
-  - [3 - Python 语法基础、数据结构、函数、文件](人工智能/Python/Python数据分析/3-Python语法基础+数据结构+函数+文件.md)
-  - [4 - Numpy 基础](人工智能/Python/Python数据分析/4-Numpy基础.md)
-  - [✍ Numpy：练习题 100 题](人工智能/Python/Python数据分析/4.1-Numpy练习题100题.md)
-  - [5 - pandas：入门](人工智能/Python/Python数据分析/5-pandas入门.md)
-  - [6 - pandas：数据加载、存储与文件格式](人工智能/Python/Python数据分析/6-pandas数据加载、存储与文件格式.md)
-  - [7 - pandas：数据清洗和准备](人工智能/Python/Python数据分析/7-pandas数据清洗和准备.md)
-  - [8 - pandas：数据规整 - 聚合、合并和重塑](人工智能/Python/Python数据分析/8-pandas数据规整：聚合、合并和重塑.md)
-  - [9 - matplotlib：绘图和可视化](人工智能/Python/Python数据分析/9-matplotlib绘图和可视化.md)
-  - [10 - pandas：数据聚合与分组运算](人工智能/Python/Python数据分析/10-pandas数据聚合与分组运算.md)
-
-## 🌋 MATLAB
-
----
-
-- [1 - 矩阵和数组](人工智能/MATLAB/1-矩阵和数组.md)
-- [2 - 脚本和函数](人工智能/MATLAB/2-脚本和函数.md)
-- [3 - 图形](人工智能/MATLAB/3-图形.md)
-- [4 - 数据分析](人工智能/MATLAB/4-数据分析.md)
-
-## 🎮 机器学习
-
----
-
-### 机器学习入门
-
-> [!TIP]
-> 本节基于吴恩达老师的《Machine Learning》课程，并未涉及复杂的数学推导和代码，可用来对机器学习做一个初步的认识和了解。
-
-  - [1 - Introduction to Machine Learning](人工智能/机器学习/吴恩达/1-Introduction.md)
-  - [2 - 模型评估与选择](人工智能/机器学习/吴恩达/2-模型评估与选择.md)
-  - [3 - 线性回归](人工智能/机器学习/吴恩达/3-线性回归.md)
-  - [4 - 逻辑回归 + 正则化](人工智能/机器学习/吴恩达/4-逻辑回归+正则化.md)
-  - [5 - 神经网络](人工智能/机器学习/吴恩达/5-神经网络.md)
-  - [6 - 支持向量机 SVM](人工智能/机器学习/吴恩达/6-支持向量机SVM.md)
-  - [7 - 聚类 (K-means 算法) + 降维 (PCA 算法)](人工智能/机器学习/吴恩达/7-聚类+降维.md)
-  - [8 - 异常检测 + 推荐系统](人工智能/机器学习/吴恩达/8-异常检测+推荐系统.md)
-  - [9 - 大规模机器学习+图片文字识别](人工智能/机器学习/吴恩达/9-大规模机器学习+图片文字识别.md)
-  - [✍ 吴恩达 Coursera 机器学习 — 编程作业 — Python 实现](人工智能/机器学习/吴恩达/吴恩达编程作业.md)
-
-### 常见算法 Python 实现
-
-> [!TIP]
-> 本节基于《Machine Learning in Action》，旨在使用原生 Python 实现常见的机器学习算法。本节并不涉及完备的算法公式推导，如有无法理解的公式或步骤，可参考下节 - [ 常见算法公式推导 ]。
-
-- 【第一部分：分类 】
-  - [1 - k-近邻算法](人工智能/机器学习/机器学习实战/1-k-近邻算法.md)
-  - [2 - 决策树](人工智能/机器学习/机器学习实战/2-决策树.md)
-  - [3 - 朴素贝叶斯](人工智能/机器学习/机器学习实战/3-朴素贝叶斯.md)
-  - [4 - Logistic 回归](人工智能/机器学习/机器学习实战/4-Logistic回归.md)
-  - [5 - 支持向量机 SVM](人工智能/机器学习/机器学习实战/5-支持向量机.md)
-  - [6 - 集成方法 + 非均衡分类问题](人工智能/机器学习/机器学习实战/6-集成方法.md)
-- 【第二部分：回归】
-  - [7 - 线性回归](人工智能/机器学习/机器学习实战/7-线性回归.md)
-  - [8 - 树回归](人工智能/机器学习/机器学习实战/8-树回归.md)
-- 【第三部分：无监督学习】
-  - [ 9 - K-均值算法](人工智能/机器学习/机器学习实战/9-K-均值算法.md)
-  - [10 - 使用 Apriori 算法进行关联分析](人工智能/机器学习/机器学习实战/10-使用Apriori算法进行关联分析.md)
-  - [11 - 使用 FP-growth 算法来高效发现频繁项集](人工智能/机器学习/机器学习实战/11-FP-growth算法.md)
-- 【第四部分：其他工具】
-  - [12 - 利用 PCA 简化数据](人工智能/机器学习/机器学习实战/12-利用PCA简化数据.md)
-  - [13 - 利用 SVD 简化数据](人工智能/机器学习/机器学习实战/13-利用SVD简化数据.md)
-
-### 常见算法公式推导
-
-> [!TIP]
-> 本节基于《统计学习方法 -  第 2 版》并综合上面两节的内容，摒弃不加思考的笔记记录，从无到有，包含算法的公式推导以及对应的代码解析，力求完善机器学习的知识体系，夯实基础。
-
-- 【第一部分：监督学习】
-  - [1 - 统计学习及监督学习概论](人工智能/机器学习/统计学习方法/1-统计学习及监督学习概论.md)
-  - [2 - 感知机](人工智能/机器学习/统计学习方法/2-感知机.md)
-  - [3 - k 近邻算法](人工智能/机器学习/统计学习方法/3-k近邻算法.md)
-  - [4 - 朴素贝叶斯算法](人工智能/机器学习/统计学习方法/4-朴素贝叶斯算法.md)
-- 【第二部分：无监督学习】
-
-## 🌺 深度学习
-
----
-
-### 深度学习入门
-
-> [!TIP]
-> 本节基于吴恩达老师的《deeplearning.ai》课程。
-
-- 【第一部分：神经网络与深度学习】
-  - [1 - Introduction to Deep Learning](人工智能/深度学习/入门/1-Introduction.md)
-  - [2 - 神经网络基础之逻辑回归](人工智能/深度学习/入门/2-神经网络基础之逻辑回归.md)
-  - [3 - 神经网路基础之 Python 与向量化](人工智能/深度学习/入门/3-神经网路基础之Python与向量化.md)
-  - [4 - 浅层神经网络](人工智能/深度学习/入门/4-浅层神经网络.md)
-  - [5 - 深层神经网络](人工智能/深度学习/入门/5-深层神经网络.md)
-- 【第二部分：优化深度神经网络】
-  - [6 - 深度学习的实用层面](人工智能/深度学习/入门/6-深度学习的实用层面.md)
-  - [7 - 优化算法](人工智能/深度学习/入门/7-优化算法.md)
-  - [8 - 超参数调试 + Batch 正则化 + Softmax 回归](人工智能/深度学习/入门/8-超参数调试+Batch正则化+Softmax回归.md)
-- 【第三部分：构建机器学习项目】
-  - [9 - 机器学习策略 (上)](人工智能/深度学习/入门/9-机器学习策略上.md)
-  - [10 - 机器学习策略 (下)](人工智能/深度学习/入门/10-机器学习策略下.md)
-- 【第四部分：卷积神经网络 CNN】
-  - [11 - 卷积神经网络基础](人工智能/深度学习/入门/11-卷积神经网络基础.md)
-  - [12 - 深度卷积网络：实例探究](人工智能/深度学习/入门/12-深度卷积网络-实例探究.md)
-  - [13 - 目标检测](人工智能/深度学习/入门/13-目标检测.md)
-  - [14 - CNN 的特殊应用：人脸识别和神经风格转换](人工智能/深度学习/入门/14-特殊应用-人脸识别和神经风格转换.md)
-- 【第五部分：序列模型】
-  - [15 - 循环神经网络 RNN](人工智能/深度学习/入门/15-循环神经网络.md)
-
-### TensorFlow 2
-
-- [🛫 TensorFlow 2 快速入门](人工智能/深度学习/TensorFlow2/TensorFlow2快速入门.md)
-- 【TensorFlow 2 基础知识】
-  - 1 - 即刻执行 Eager Execution
-  - [2 - 张量 tensor](人工智能/深度学习/TensorFlow2/TensorFlow2基础知识/2-张量.md)
-  - [3 - 自动微分](人工智能/深度学习/TensorFlow2/TensorFlow2基础知识/3-自动微分.md)
-- 【Keras 机器学习基础知识】
-  - [1 - Sequential 顺序模型](人工智能/深度学习/TensorFlow2/Keras机器学习基础知识/4-Sequential顺序模型.md)
-  - [2 - 使用函数式 API 的 Model 类模型](人工智能/深度学习/TensorFlow2/Keras机器学习基础知识/2-使用函数式API的Model类模型.md)
-  - [3 - Keras 网络层](人工智能/深度学习/TensorFlow2/Keras机器学习基础知识/3-Keras网络层.md)
-  - [4 - 自定义层和模型](人工智能/深度学习/TensorFlow2/Keras机器学习基础知识/4-自定义层和模型.md)
-  - [5 - 防止过拟合](人工智能/深度学习/TensorFlow2/Keras机器学习基础知识/5-防止过拟合.md)
-  - [实例：1 - 基本图像分类](人工智能/深度学习/TensorFlow2/Keras机器学习基础知识/实例1-基本图像分类.md)
-  - [实例：2 - 基本文本分类](人工智能/深度学习/TensorFlow2/Keras机器学习基础知识/实例2-基本文本分类.md)
-  - [实例：3 - 回归](人工智能/深度学习/TensorFlow2/Keras机器学习基础知识/实例3-回归.md)
-- 【图像分类】
-  - [1 - 使用卷积神经网络 CNN 进行图像分类](人工智能/深度学习/TensorFlow2/图像分类/1-使用CNN进行图像分类.md)
-  - 2 - 使用 TF-Hub 进行迁移学习
-- 【文本分类】
-  - [1 - 使用循环神经网络 RNN 进行文本分类](人工智能/深度学习/TensorFlow2/文本分类/1-使用RNN进行文本分类.md)
-
-## 💊 强化学习
-
----
-
-### 强化学习入门
-
-- [1 - 强化学习概述](人工智能/强化学习/入门/1-强化学习概述.md)
-- [2 - 马尔可夫决策过程](人工智能/强化学习/入门/2-马尔可夫决策过程.md)
-- [3 - 强化学习方法汇总](人工智能/强化学习/入门/3-强化学习方法汇总.md)
-- 【基于价值的强化学习 `Value-Based`】
-  - [4 - Q-Learning](人工智能/强化学习/入门/4-Q-Learning.md)
-  - [5 - Sarsa](人工智能/强化学习/入门/5-Sarsa.md)
-  - [6 - Deep Q Network（DQN）](人工智能/强化学习/入门/6-DQN.md)
-- 【基于策略的强化学习 `Policy-Based`】
-  - [7 - 策略梯度 Policy Gradient](人工智能/强化学习/入门/7-Policy-Gradient.md)
-- 【演员-评论员算法系列 `Actor-Critic`】
-  - [8 - A2C，A3C](人工智能/强化学习/入门/8-Actor-Critic.md)
-  - [9 - Deep Deterministic Policy Gradient，DDPG](人工智能/强化学习/入门/9-DDPG.md)
-- [10 - 模仿学习 Imitation Learning](人工智能/强化学习/入门/10-模仿学习.md)
-
 ## 🔨 工具
 
 ---
@@ -648,7 +456,53 @@
 
 ### Docker
 
-### 其他
+## 🎨 前端
 
-- [Snipaste + PicGo+ Gitee 图床一键上传](工具/图床一键上传.md)
-- [LaTeX 常用语法](工具/LaTeX常用语法.md)
+---
+
+### 必备基础知识
+
+- 1 - HTML / CSS / JS 速览
+- [2 - JSON 详解](前端/必备基础/JSON详解.md)
+- [3 - AJAX 详解](前端/必备基础/AJAX详解.md)
+
+### Vue 2.x
+
+- [1 - Vue.js 入门](前端/Vue/1-入门.md)
+- [2 - 安装](前端/Vue/2-安装.md)
+- [3 - Vue-Cli 3+搭建的项目目录结构](前端/Vue/3-目录结构.md)
+- [4 - 模板语法](前端/Vue/4-模板语法.md)
+- [5 - 条件语句](前端/Vue/5-条件语句.md)
+- [6 - 循环语句](前端/Vue/6-循环语句.md)
+- [7 - 计算属性](前端/Vue/7-计算属性.md)
+- [8 - 监听属性](前端/Vue/8-监听属性.md)
+- [9 - 样式绑定](前端/Vue/9-样式绑定.md)
+- [10 - 事件处理器](前端/Vue/10-事件处理器.md)
+- [11 - 表单](前端/Vue/11-表单.md)
+- [12 - 组件](前端/Vue/12-组件.md)
+- [13 - 自定义指令](前端/Vue/13-自定义指令.md)
+- [14 - 路由详解](前端/Vue/14-路由.md)
+- [15 - Axios 详解](前端/Vue/15-axios.md)
+- [16 - 生命周期钩子](前端/Vue/16-生命周期钩子.md)
+
+## 🎉 其他
+
+---
+
+### 写作相关
+
+- [Snipaste + PicGo+ Gitee 图床一键上传](其他/图床一键上传.md)
+- [LaTeX 常用语法](其他/LaTeX常用语法.md)
+- 作图软件推荐（draw.io / ProcessOn）
+
+### 公众号
+
+我的公众号：**飞天小牛肉**，2020/12/29 日第一次开通，专注于分享计算机基础（数据结构 + 算法 + 计算机网络 + 数据库 + 操作系统 + Linux）、Java 基础和面试指南的相关原创技术好文。本公众号的目的就是**让大家可以快速掌握重点知识，有的放矢**。希望大家多多支持哦，和小牛肉一起成长
+
+<img src="https://gitee.com/veal98/images/raw/master/img/Snipaste_2021-01-12_17-50-52.jpg" style="zoom:60%;" />
+
+### 联系我
+
+有什么问题也可以添加我的微信，记得备注来意：格式 <u>（学校或公司 - 姓名或昵称 - 来意）</u>
+
+<img src="https://gitee.com/veal98/images/raw/master/img/微信图片_20210105121328.jpg" style="zoom:40%;" />

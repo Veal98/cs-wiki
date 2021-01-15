@@ -15,9 +15,9 @@
 
 <br>
 
-|                          计算机基础                          |                          前端                           |                          Java                           |                          系统设计                           |                          Python                           |                          MATLAB                           |                          机器学习                           |                          深度学习                           |                          强化学习                           |                          Tools                          |
-| :----------------------------------------------------------: | :-----------------------------------------------------: | :-----------------------------------------------------: | :---------------------------------------------------------: | :-------------------------------------------------------: | :-------------------------------------------------------: | :---------------------------------------------------------: | :---------------------------------------------------------: | :---------------------------------------------------------: | :-----------------------------------------------------: |
-| [📑](https://veal98.gitee.io/cs-wiki/#/README?id=📑-计算机基础) | [🎨](https://veal98.gitee.io/cs-wiki/#/README?id=🎨-前端) | [🍵](https://veal98.gitee.io/cs-wiki/#/README?id=🍵-java) | [👷](https://veal98.gitee.io/cs-wiki/#/README?id=👷-系统设计) | [🚀](https://veal98.gitee.io/cs-wiki/#/README?id=🚀-python) | [🌋](https://veal98.gitee.io/cs-wiki/#/README?id=🌋-matlab) | [🎮](https://veal98.gitee.io/cs-wiki/#/README?id=🎮-机器学习) | [🌺](https://veal98.gitee.io/cs-wiki/#/README?id=🌺-深度学习) | [💊](https://veal98.gitee.io/cs-wiki/#/README?id=💊-强化学习) | [🔨](https://veal98.gitee.io/cs-wiki/#/README?id=🔨-工具) |
+|                          计算机基础                          |                          前端                           |                          Java                           |                          必备框架                           |                          系统设计                           |                          工具                           |                          其他                           |
+| :----------------------------------------------------------: | :-----------------------------------------------------: | :-----------------------------------------------------: | :---------------------------------------------------------: | :---------------------------------------------------------: | :-----------------------------------------------------: | :-----------------------------------------------------: |
+| [📑](https://veal98.gitee.io/cs-wiki/#/README?id=📑-计算机基础) | [🎨](https://veal98.gitee.io/cs-wiki/#/README?id=🎨-前端) | [🍵](https://veal98.gitee.io/cs-wiki/#/README?id=🍵-java) | [🔥](https://veal98.gitee.io/cs-wiki/#/README?id=🔥-必备框架) | [👷](https://veal98.gitee.io/cs-wiki/#/README?id=👷-系统设计) | [🔨](https://veal98.gitee.io/cs-wiki/#/README?id=🔨-工具) | [🎉](https://veal98.gitee.io/cs-wiki/#/README?id=🎉-其他) |
 
 </div>
 
@@ -33,9 +33,6 @@
 
 - 🔮 [Github 在线阅读](https://veal98.github.io/CS-Wiki/) | [Github 仓库地址](https://github.com/Veal98/CS-Wiki)
 
-- 💬 在此推广一下我的**公众号『 飞天小牛肉 』**，2020/12/29 日第一次开通，专注于分享计算机基础（数据结构 + 算法 + 计算机网络 + 数据库 + 操作系统 + Linux）、Java 基础和面试指南的相关原创技术好文。本公众号的目的就是**让大家可以快速掌握重点知识，有的放矢**。希望大家多多支持哦，共同见证小牛肉的成长
-
-  <img src="https://gitee.com/veal98/images/raw/master/img/Snipaste_2021-01-12_17-50-52.jpg" style="zoom:60%;" />
 
 
 ## 📑 计算机基础
@@ -47,15 +44,13 @@
 - [数据库 DB](https://veal98.gitee.io/cs-wiki/#/README?id=%e6%95%b0%e6%8d%ae%e5%ba%93-db)
 - [软件工程 SE](https://veal98.gitee.io/cs-wiki/#/README?id=%e8%bd%af%e4%bb%b6%e5%b7%a5%e7%a8%8b-se)
 
-## 🎨 前端
-
-- [必备基础知识](https://veal98.gitee.io/cs-wiki/#/README?id=%e5%bf%85%e5%a4%87%e5%9f%ba%e7%a1%80%e7%9f%a5%e8%af%86)
-- [Vue 2.x](https://veal98.gitee.io/cs-wiki/#/README?id=vue-2x)
-
 ## 🍵 Java
 
 - [Java 8 基础](https://veal98.gitee.io/cs-wiki/#/README?id=java-8-%e5%9f%ba%e7%a1%80)
 - [Java 虚拟机](https://veal98.gitee.io/cs-wiki/#/README?id=java-%e8%99%9a%e6%8b%9f%e6%9c%ba)
+
+## 🔥 必备框架
+
 - [SSM](https://veal98.gitee.io/cs-wiki/#/README?id=ssm)
 - [Spring Boot 2.x](https://veal98.gitee.io/cs-wiki/#/README?id=spring-boot-2x)
 - [Netty 4.x](https://veal98.gitee.io/cs-wiki/#/README?id=%e2%91%a2-netty-4x)
@@ -69,32 +64,24 @@
 - [高可用](https://veal98.gitee.io/cs-wiki/#/README?id=%e9%ab%98%e5%8f%af%e7%94%a8)
 - [微服务](https://veal98.gitee.io/cs-wiki/#/README?id=%e5%be%ae%e6%9c%8d%e5%8a%a1)
 
-## 🚀 Python
-
-- [Python 3 基础](https://veal98.gitee.io/cs-wiki/#/README?id=python-3-%e5%9f%ba%e7%a1%80)
-- [Python 数据分析](https://veal98.gitee.io/cs-wiki/#/README?id=python-%e6%95%b0%e6%8d%ae%e5%88%86%e6%9e%90)
-
-## 🌋 MATLAB
-
-- [MATLAB](https://veal98.gitee.io/cs-wiki/#/README?id=%f0%9f%8c%8b-matlab)
-
-## 🎮 机器学习
-
-- [机器学习入门](https://veal98.gitee.io/cs-wiki/#/README?id=%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0%e5%85%a5%e9%97%a8)
-- [常见算法 Python 实现](https://veal98.gitee.io/cs-wiki/#/README?id=%e5%b8%b8%e8%a7%81%e7%ae%97%e6%b3%95-python-%e5%ae%9e%e7%8e%b0)
-- [常见算法公式推导](https://veal98.gitee.io/cs-wiki/#/README?id=%e5%b8%b8%e8%a7%81%e7%ae%97%e6%b3%95%e5%85%ac%e5%bc%8f%e6%8e%a8%e5%af%bc)
-
-## 🌺 深度学习
-
-- [深度学习入门](https://veal98.gitee.io/cs-wiki/#/README?id=%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0%e5%85%a5%e9%97%a8)
-- [TensorFlow 2](https://veal98.gitee.io/cs-wiki/#/README?id=tensorflow-2)
-
-## 💊 强化学习
-
-- [强化学习入门](https://veal98.gitee.io/cs-wiki/#/README?id=%e5%bc%ba%e5%8c%96%e5%ad%a6%e4%b9%a0%e5%85%a5%e9%97%a8)
-
-## 🔨 Tools
+## 🔨 工具
 
 - [Git](https://veal98.gitee.io/cs-wiki/#/README?id=git)
 - [Docker](https://veal98.gitee.io/cs-wiki/#/README?id=docker)
-- [其他](https://veal98.gitee.io/cs-wiki/#/README?id=其他)
+
+## 🎨 前端
+
+- [必备基础知识](https://veal98.gitee.io/cs-wiki/#/README?id=%e5%bf%85%e5%a4%87%e5%9f%ba%e7%a1%80%e7%9f%a5%e8%af%86)
+- [Vue 2.x](https://veal98.gitee.io/cs-wiki/#/README?id=vue-2x)
+
+## 💬 公众号
+
+我的公众号：**飞天小牛肉**，2020/12/29 日第一次开通，专注于分享计算机基础（数据结构 + 算法 + 计算机网络 + 数据库 + 操作系统 + Linux）、Java 基础和面试指南的相关原创技术好文。本公众号的目的就是**让大家可以快速掌握重点知识，有的放矢**。希望大家多多支持哦，和小牛肉一起成长
+
+<img src="https://gitee.com/veal98/images/raw/master/img/Snipaste_2021-01-12_17-50-52.jpg" style="zoom:60%;" />
+
+## 📞 联系我
+
+有什么问题也可以添加我的微信，记得备注来意：格式 <u>（学校或公司 - 姓名或昵称 - 来意）</u>
+
+<img src="https://gitee.com/veal98/images/raw/master/img/微信图片_20210105121328.jpg" style="zoom:40%;" />
