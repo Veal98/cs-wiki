@@ -7,17 +7,12 @@
 
 
 <div align="center">
-
 [![star](https://gitee.com/veal98/CS-Wiki/badge/star.svg?theme=dark)](https://gitee.com/veal98/CS-Wiki/stargazers)
 [![fork](https://gitee.com/veal98/CS-Wiki/badge/fork.svg?theme=dark)](https://gitee.com/veal98/CS-Wiki/members)
 [![GitHub stars](https://img.shields.io/github/stars/Veal98/CS-Wiki?logo=github)](https://github.com/Veal98/CS-Wiki/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/Veal98/CS-Wiki?logo=github)](https://github.com/Veal98/CS-Wiki/network)
 
-<br>
 
-|                          计算机基础                          |                          前端                           |                          Java                           |                          必备框架                           |                          系统设计                           |                          工具                           |                          其他                           |
-| :----------------------------------------------------------: | :-----------------------------------------------------: | :-----------------------------------------------------: | :---------------------------------------------------------: | :---------------------------------------------------------: | :-----------------------------------------------------: | :-----------------------------------------------------: |
-| [📑](https://veal98.gitee.io/cs-wiki/#/README?id=📑-计算机基础) | [🎨](https://veal98.gitee.io/cs-wiki/#/README?id=🎨-前端) | [🍵](https://veal98.gitee.io/cs-wiki/#/README?id=🍵-java) | [🔥](https://veal98.gitee.io/cs-wiki/#/README?id=🔥-必备框架) | [👷](https://veal98.gitee.io/cs-wiki/#/README?id=👷-系统设计) | [🔨](https://veal98.gitee.io/cs-wiki/#/README?id=🔨-工具) | [🎉](https://veal98.gitee.io/cs-wiki/#/README?id=🎉-其他) |
 
 </div>
 
@@ -79,9 +74,3 @@
 我的公众号：**飞天小牛肉**，2020/12/29 日第一次开通，专注于分享计算机基础（数据结构 + 算法 + 计算机网络 + 数据库 + 操作系统 + Linux）、Java 基础和面试指南的相关原创技术好文。本公众号的目的就是**让大家可以快速掌握重点知识，有的放矢**。希望大家多多支持哦，和小牛肉一起成长
 
 <img src="https://gitee.com/veal98/images/raw/master/img/Snipaste_2021-01-12_17-50-52.jpg" style="zoom:60%;" />
-
-## 📞 联系我
-
-有什么问题也可以添加我的微信，记得备注来意：格式 <u>（学校或公司 - 姓名或昵称 - 来意）</u>
-
-<img src="https://gitee.com/veal98/images/raw/master/img/微信图片_20210105121328.jpg" style="height:350px" />
