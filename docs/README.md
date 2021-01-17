@@ -151,6 +151,7 @@
 - [Java 小白成长记 · 第 1 篇《万物皆对象》](https://mp.weixin.qq.com/s/W3KrCirgCrqrSiOQ8P3tAQ)
 - [Java 小白成长记 · 第 2 篇《Hello World》](https://mp.weixin.qq.com/s/JAc0QQpYI5xlG4A50ycjfQ)
 - [Java 小白成长记 · 第 3 篇《运算符与控制流》](https://mp.weixin.qq.com/s/b5fG-sTgQBFrFl1ZEdXbXg)
+- [Java 小白成长记 · 第 4 篇《对象的初始化和清理》](https://mp.weixin.qq.com/s/24wLXIr3FYCqdXwuW7vdsA)
 
 ### Java 虚拟机
 

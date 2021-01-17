@@ -1,0 +1,547 @@
+# 💣 Java 小白成长记 · 第 4 篇《对象的初始化和清理》
+
+---
+
+## 0. 前言
+
+这是一个技术疯狂迭代的时代，各种框架层出不穷，然而底层基础才是核心竞争力。博主（小牛肉）在现有的知识基础上，以上帝视角对 Java 语言基础进行复盘，汇总《Java 小白成长记》系列，力争从 0 到 1，全文无坑。
+
+> 🔊 "不安全"的编程是造成编程代价昂贵的罪魁祸首之一。有两个安全性问题：初始化和清理。
+>
+> C 语言中很多的 bug 都是因为程序员忘记初始化导致的。尤其是很多类库的使用者不知道如何初始化类库组件，甚至他们必须得去初始化。
+>
+> 清理则是另一个特殊的问题，因为当你使用一个元素做完事后就不会去关心这个元素，所以你很容易忘记清理它。这样就造成了元素使用的资源滞留不会被回收，直到程序消耗完所有的资源（特别是内存）。
+>
+> Java 采用了**构造器/构造函数**的概念，另外还使用了**垃圾收集器**（Garbage Collector, GC）去自动回收不再被使用的对象所占的资源。本章将讨论初始化和清理的问题，以及在 Java 中对它们的支持。
+
+## 1. 构造函数概述
+
+关于初始化问题，你可能会这样觉得：为每个函数定义一个初始化方法，然后用户在使用该类的时候先去调用这个方法初始化这个类不就行了。
+
+确实是这样，然而不幸的是，你无法保证用户一定记得去调用这个初始化方法。
+
+为此，Java 就会在用户使用对象之前（即对象刚创建完成）帮助用户自动地去调用对象的这个初始化方法，从而保证初始化，而这个能被 Java 自动调用的初始化方法就是**构造函数/构造器**。
+
+![](https://gitee.com/veal98/images/raw/master/img/20210117211102.png)
+
+当然，并不是随便什么方法都能称为构造函数/构造器，它有相关的规定。💬 以下面这个类为例：
+
+```java
+class Test{
+    private int birthday;
+    private String sex;
+
+    public Test(){ // 无参构造函数
+
+    }
+
+    public Test(int birthday, String sex){ // 有参构造函数
+        this.birthday = birthday;
+        this.sex = sex;
+    }
+
+   
+}
+public class Demo {
+
+    public static void main(String[] args){
+        Test test = new Test(18,"male");
+    }
+}
+```
+
+可以看到， **构造函数与类同名且没有返回值**。在构造 `Test `类的对象时， 构造函数会运行，以便将实例域初始化为所希望的状态。
+
+构造函数与其他的方法有一个重要的不同。**构造函数总是伴随着 `new` 操作符的执行被调用， 而不能对一个已经存在的对象调用构造函数来达到重新设置实例域的目的。**
+
+🚩 现阶段对于构造函数我们需要记住以下几点：
+
+- 构造函数与类同名 
+- 每个类可以有一个以上的构造函数
+- 构造函数可以有 0 个、1 个或多个参数 
+- 构造函数没有返回值
+- 构造函数总是伴随着 `new` 操作一起调用
+
+## 2. 方法重载
+
+### ① 什么是方法重载
+
+任何编程语言中都具备的一项重要特性就是**命名**。当你创建一个对象时，就会给此对象分配的内存空间命名。一个方法就是一种行为的命名。你通过名字指代所有的对象，属性和方法。良好命名的系统易于理解和修改。
+
+将人类语言细微的差别映射到编程语言中会产生一个问题：对于人类来说，相同的词可以表达多种不同的含义 —— 也就是说它们被"重载"了：
+
+- 比如 "画一个三角形"、"画一个圆形" 和 "画一个正方形"。对于人来说，一个画的动作就可以描述画这三种甚至更多的图形
+
+- 而对于计算机来说，如果没有重载，我们需要为每个图形都定义一个特殊的 “画” 方法："以画三角形的方式画三角形"、"以画圆形的方式画圆形" 和 "以画正方形的方式画正方形"。显然这样非常愚蠢，因为听众根本不需要区分行为的动作
+
+  ![](https://gitee.com/veal98/images/raw/master/img/20210116223138.png)
+
+在 Java中，还有一个因素也促使了必须使用方法重载：构造函数。因为构造函数方法名肯定是与类名相同的，所以一个类中的构造函数名只有一个。那么你怎么通过不同的方式创建一个对象呢？
+
+例如，你想创建一个类，这个类的初始化方式有两种：一种是标准化方式，另一种是从文件中读取信息的方式。你需要两个构造器：无参构造器和有一个 String 类型参数的构造函数，该参数传入文件名。两个构造器具有相同的名字。<u>因此，方法重载是必要的，它允许方法具有相同的方法名但接收的参数不同</u>。
+
+当然，除了对于构造函数的重载，我们可以对任何方法进行重载。
+
+⭐ 下面我们给出**方法重载 Overloading** 的准确定义：如果多个方法有**相同的名字、 不同的参数**，便产生了重载。编译器必须挑选出具体执行哪个方法，它通过用各个方法给出的参数类型与特定方法调用所使用的值类型进行匹配来挑选出相应的方法。如果编译器找不到匹配的参数， 就会产生编译时错误，因为根本不存在匹配， 或者没有一个比其他的更好。这个过程被称为**重载解析**（overloading resolution)。
+
+> C 语言要求为每个方法提供一个独一无二的标识符。所以，你不能有一个 `print()` 函数既能打印整型，也能打印浮点型 —— 每个函数名都必须不同。
+
+❓ 看完上面的定义，大家可能会有这样的疑惑：**为什么只能通过方法名和参数列表区分方法，不能通过方法名和返回值区分方法呢**？例如以下两个方法，它们有相同的命名和参数，返回值不同，但是也很容易区分啊：
+
+```java
+void f(){
+    
+}
+int f() {
+    return 1;
+}
+```
+
+诚然，有些情况下，编译器很容易就可以从上下文准确推断出该调用哪个方法，比如：
+
+```java
+public static void main(String[] args){
+    int x = f();
+}
+```
+
+上述代码中我们为其标注了准确的返回值类型。💡 但是，我们还可以直接调用一个方法并且忽略返回值，这叫做调用一个函数的**副作用**，因为你不在乎返回值，只是想利用方法做些事。所以如果你直接调用 `f()`：
+
+```java
+public static void main(String[] args){
+    f();
+}
+```
+
+Java 编译器就不知道你想调用哪个方法，阅读者也不明所以。因为不能根据返回值类型区分重载的方法。
+
+### ② 重载代码示例
+
+下例展示了如何重载构造器和方法：
+
+- 一个 `Tree` 对象既可以是一颗树苗，使用无参构造器创建，也可以是一颗已长大的树，已经有一定高度，这时候，就需要使用有参构造器创建。
+- 你也许想以多种方式调用 `info()` 方法。比如，如果你想打印额外的消息，就可以使用 `info(String)` 方法。如果你无话可说，就可以使用 `info()` 方法。
+
+```java
+class Tree {
+    
+    int height;
+    
+    Tree() {
+        System.out.println("Planting a seedling");
+        height = 0;
+    }
+    
+    Tree(int initialHeight) {
+        height = initialHeight;
+        System.out.println("Creating new Tree that is " + height + " feet tall");
+    }
+    
+    void info() {
+        System.out.println("Tree is " + height + " feet tall");
+    }
+    
+    @Overload // 该注解写与不写 JVM 都能自动识别方法重载。写上有助于 JVM 检查错误
+    void info(String s) {
+        System.out.println(s + ": Tree is " + height + " feet tall");
+    }
+    
+}
+
+public class Overloading {
+    public static void main(String[] args) {
+        for (int i = 0; i < 5; i++) {
+            Tree t = new Tree(i);
+            t.info();
+            t.info("overloaded method");
+        }
+        new Tree(); 
+    }
+}
+```
+
+### ③ 涉及基本类型的重载
+
+在前面的文章 [Java 小白成长记 · 第 3 篇《运算符与控制流》](https://mp.weixin.qq.com/s/b5fG-sTgQBFrFl1ZEdXbXg) 我们已经说过，基本类型能从一个 ''较小'' 的类型自动提升至一个 ''较大'' 的类型，不过此过程一旦牵涉到重载，可能会造成一些混淆。
+
+💧 1）第一种情况：传入的实际参数 **小于** 方法中声明的形参
+
+```java
+class PrimitiveOverloading{
+    
+    void f1(char x) {System.out.println("f1(char)");}
+    void f1(int x) {System.out.println("f1(int)");}
+
+    void f2(int x) {System.out.println("f2(int)");}
+
+    void f3(long x) {System.out.println("f3(long)");}
+
+    void testConstVal(){
+        System.out.println("5: ");
+        f1(5);
+        f2(5);
+        f3(5);
+    }
+
+    void testChar(){
+        System.out.println("char: ");
+        f1('a');
+        f2('a');
+        f3('a');
+    }
+}
+
+public class demo {
+    public static void main(String[] args){
+        PrimitiveOverloading p = new PrimitiveOverloading();
+        p.testConstVal();
+        p.testChar();
+    }
+}
+```
+
+结果如下：
+
+```
+5：
+f1(int)
+f2(int)
+f3(long)
+
+char:
+f1(char)
+f2(int)
+f3(long)
+```
+
+显然，常数值 `5` 首先被作为 `int `类型进行处理，如果有某个方法接收 `int ` 型参数，它就会被调用，比如 f1 和 f2。
+
+但是如果实参类型 `int `小于形参类型（比如 `long`），那么实参类型就会被提升，比如 f3(long)：对于 `int` 来说，f3 中没有接收 `int`类型参数的方法，实参类型`int` 被直接提升至 `long` 型。
+
+💧 2）第二种情况：传入的实际参数 **大于** 方法中声明的形参
+
+这种情况下我们必须首先做下**强制类型转换**
+
+```java
+class PrimitiveOverloading{
+    
+    void f1(char x) {System.out.println("f1(char)");}
+    void f1(int x) {System.out.println("f1(int)");}
+
+    void f2(int x) {System.out.println("f2(int)");}
+    void f2(char x) {System.out.println("f2(char)");}
+
+    void f3(long x) {System.out.println("f3(long)");}
+
+    void testDouble(){
+        double x = 0;
+        System.out.println("double: ");
+        f1((int)x);
+        f2((char)x);
+        f3((long)x);
+    }
+
+}
+
+public class demo {
+    public static void main(String[] args){
+        PrimitiveOverloading p = new PrimitiveOverloading();
+        p.testDouble();
+    }
+}
+```
+
+结果如下：
+
+```
+double:
+f1(int)
+f2(char)
+f3(long)
+```
+
+🚨 如果不进行强制类型转换的话，编译器就会报错：
+
+![](https://gitee.com/veal98/images/raw/master/img/20200718160437.png)
+
+## 3. 无参构造函数（默认构造函数）
+
+如前文所说，一个无参构造器就是不接收任何参数的构造器，用来创建一个"默认的对象"。如果你创建一个类，**类中没有构造器，那么编译器就会自动为你创建一个无参构造器**。例如：
+
+```java
+class Bird {
+    
+}
+
+public class DefaultConstructor {
+    public static void main(String[] args) {
+        Bird bird = new Bird(); // 默认构造函数
+    }
+}
+```
+
+表达式 `new Bird()` 创建了一个新对象，调用了无参构造器，尽管在 `Bird` 类中并没有显式的定义无参构造器。毕竟如果一个构造器都没有，我们如何创建一个对象呢。
+
+🚨 但是！！！此处一定要注意：**一旦你显式地定义了构造器（无论有参还是无参），编译器就不会自动为你创建无参构造器**。形象点来说，如果类中有构造器，编译器会觉得 "你已经写了构造器了，所以肯定知道你在做什么，你没有创建默认构造器，说明你本来就不需要"。
+
+## 4. this 关键字
+
+### ① this 初探
+
+❓ 假设某个类中有一个方法 `peel` 且没有重载，如果我们使用了相同的构造函数创建了该类的两个对象 a 和 b，并且分别都调用了 `peel` 方法。那么我们怎么知道调用的是对象 a 的 `peel()`方法还是对象 b 的 `peel()` 方法呢？
+
+```java
+class Banana {
+    void peel(int i) {
+        /*...*/
+    }
+}
+public class BananaPeel {
+    public static void main(String[] args) {
+        Banana a = new Banana(), b = new Banana();
+        a.peel(1);
+        b.peel(2);
+    }
+}
+```
+
+实际上，编译器做了一些底层工作，`peel()` 方法中其实还有一个**隐式参数**，该参数隐密地传入了一个指向调用该方法对象的引用。**也就是说谁调用了这个方法，这个方法的隐式参数就指向谁**。因此，上述例子中的方法调用像下面这样：
+
+```java
+Banana.peel(a, 1)
+Banana.peel(b, 2)
+```
+
+这是在内部实现的，你不可以直接这么编写代码，编译器不会接受，我这样写只是为了让大家明白隐式参数的意义。
+
+假设现在在方法内部，你想获得调用该方法的当前对象的引用。但是，对象引用是被秘密地传达给编译器的，并不在参数列表中。为此，Java 中的关键字 `this` 就派上用场了 。
+
+**`this` 关键字只能在非静态方法内部使用**。当你调用一个对象的方法时，`this` 生成了一个对象引用。你可以像对待其他引用一样对待这个引用。<u>如果你在一个类的方法里调用该类的其他方法，不需要使用 `this`，直接调用即可，`this` 自动地应用于其他方法上了</u>。因此你可以像这样：
+
+```java
+public class Apricot {
+    void pick() {
+        /* ... */
+    }
+
+    void pit() {
+        pick();
+        /* ... */
+    }
+}
+```
+
+在 `pit()` 方法中，你可以使用 `this.pick()`，但是没有必要。编译器自动为你做了这些。<u>`this` 关键字只用在一些必须显式使用当前对象引用的特殊场合</u>。例如，用在 `return` 语句中返回对当前对象的引用：
+
+```java
+public class Leaf {
+
+    int i = 0;
+
+    Leaf increment() {
+        i++;
+        return this;
+    }
+
+    void print() {
+        System.out.println("i = " + i);
+    }
+
+    public static void main(String[] args) {
+        Leaf x = new Leaf();
+        x.increment().increment().increment().print();
+    }
+}
+```
+
+`increment() `方法通过 `this` 关键字返回当前对象的引用，因此在相同的对象上可以轻易地执行多次操作。
+
+> 💡 如果你了解了 `this` 的用法，想必你也就能理解为什么在 `static` 方法中不会出现 `this`。因为 `static` 是为类而创建的，不需要任何对象。事实上，这就是静态方法的主要目的，这使得静态方法看起来就像全局方法一样。
+
+### ② 在构造函数中调用另一个构造函数
+
+关键字 `this` 还有另外一个含义。 **如果构造函数的第一个语句形如 `this(...)`， 这个构造函数将调用同一个类的另一个构造函数**，这样可以避免代码重复。下面是一个典型的例子：
+
+```java
+public class Flower {
+    int petalCount = 0;
+    String s = "initial value";
+
+    Flower(int petals) {
+        petalCount = petals;
+        System.out.println("Constructor w/ int arg only, petalCount = " + petalCount);
+    }
+
+    Flower(String s, int petals) {
+        this(petals);
+        //- this(s); // Can't call two!
+        this.s = s; // Another use of "this"
+        System.out.println("String & int args");
+    }
+```
+
+🚨 尽管可以用 `this `调用一个构造器，但是**不能**调用两个。此外，**必须将构造函数调用至于最起始处即第一行**，否则编译器会报错。并且，编译器**不允许**你在一个构造器之外的方法里调用构造器。
+
+另外，这个例子展示了 `this` 的另一个用法。参数列表中的变量名 `s` 和成员变量名 `s` 相同，会引起混淆。**你可以通过 `this.s` 表明你指的是成员变量 `s`，从而避免重复**。
+
+## 5. 成员初始化
+
+### ① 自动初始化
+
+Java 尽量保证所有变量在使用前都能得到恰当的初始化。对于方法的局部变量，这种保证会以编译时错误的方式呈现，所以如果写成：
+
+```java
+void f() {
+    int i;
+    i++;
+}
+```
+
+👍 你会得到一条错误信息，告诉你 **i** 可能尚未初始化。编译器可以为 **i** 赋一个默认值，但是**未初始化的局部变量**更有可能是程序员的疏忽，所以采用默认值反而会掩盖这种失误。强制程序员提供一个初始值，往往能帮助找出程序里的 bug。
+
+![](https://gitee.com/veal98/images/raw/master/img/20200717212156.png)
+
+不过，如果这个变量不是在方法中，而是在类中，并且是基本类型，情况就会变得有些不同。正如我们在第一章 "万物皆对象" 中所看到的，**类的每个基本类型数据成员保证都会有一个初始值**。如果我们没有显式地给域/成员变量赋予初值，那么就会被自动地赋为默认值： 
+
+| 基本类型 | 默认值        |
+| -------- | ------------- |
+| boolean  | false         |
+| char     | \u0000 (null) |
+| byte     | (byte) 0      |
+| short    | (short) 0     |
+| int      | 0             |
+| long     | 0L            |
+| float    | 0.0f          |
+| double   | 0.0d          |
+
+当然，只有缺少程序设计经验的人才会这样做。如果不明确地对域进行初始化，就会影响程序代码的可读性。
+
+### ② 指定初始化
+
+通过重载类的构造函数方法，可以采用多种形式设置类的实例域的初始状态。确保不管怎样调用构造函数，每个实例域都可以被设置为一个有意义的初值，这是一种很好的设计习惯。 可以在类定义中， 直接将一个值赋给任何域。例如：
+
+```java
+class Test{
+ 	private String name = "Jack";
+}
+```
+
+**在执行构造函数之前，先执行赋值操作**。当一个类的所有构造函数都希望把相同的值赋予某个特定的实例域时，这种方式特别有用。
+
+### ③ 构造函数初始化
+
+众所周知，构造函数天生就是用于进行初始化的，这种方式给了我们更大的灵活性。🚨 **但是，这无法阻止自动初始化的进行，自动初始化会在构造器被调用之前发生**。因此，如果使用如下代码：
+
+```java
+class Counter {
+    int i;
+    Counter() {
+        i = 7;
+    }
+}
+
+public static void main(String[] args) {
+    Counter counter = new Counter();
+}
+```
+
+**i** 首先会被初始化为 **0**，然后再变为 **7**。
+
+### ④ 初始化块
+
+#### Ⅰ 非静态初始化块
+
+前面我们已经讲过三种初始化类的成员变量的方法：
+
+- 自动初始化
+- 指定初始化（在声明中赋值）
+- 构造函数初始化
+
+实际上，Java 还有另一种机制， 称为**初始化块（initialization block)**。在一个类的声明中， 可以包含多个初始化代码块，只要使用构造函数构造类的对象，这些初始化块就会被执行。也就是说，**非静态初始化块每调用一次构造函数就会被执行一次**。例如：
+
+```java
+class Employee{
+    private static int nextld;
+    private int id;
+    private String name;
+    private double salary;
+    // object initialization block
+    {
+        id = nextld;
+        nextld ++;
+    }
+    public Employee(String n, double s){
+        name = n;
+    	salary = s;
+    }
+    public Employee(){
+        name = "Jack";
+        salary = 0;
+    }
+	...
+}
+```
+
+在这个示例中，无论使用哪个构造函数构造对象，id 域都在对象初始化块中被初始化。**首先运行初始化块，然后才运行构造函数的主体部分**。
+
+这种机制不是必需的，也不常见。<u>通常会直接将初始化代码放在构造函数中</u>。
+
+#### Ⅱ 静态初始化块
+
+静态初始化就非常常见了：**使用 `static  `定义代码块，只有当类装载到系统时执行一次，之后不再执行。注意：在静态初始化块中仅能初始化 `static  `修饰的数据成员**。
+
+注意，<u>如果静态初始化块被调用，那么它会在非静态初始化块之前被调用</u>，也就是说，代码块的调用顺序为：
+
+1. 静态初始化块
+2. 非静态初始化块
+3. 构造函数
+
+举个例子：
+
+```java
+class Root {
+    
+    // 静态初始化块
+    static{
+        System.out.println("Root的静态初始化块");
+    }
+	// 非静态初始化块
+    {
+        System.out.println("Root的普通初始化块");
+    }
+    
+    public Root(){
+        System.out.println("Root的无参构造器");
+    }
+}
+public class Test {
+    public static void main(String[] args) {
+        new Leaf();
+    }
+
+}
+```
+
+输出：
+
+```
+Root的静态初始化块
+Root的普通初始化块
+Root的无参构造器
+```
+
+## 6. 垃圾回收器
+
+有些面向对象的程序设计语言，特别是 C++, 有显式的析构器方法，其中放置一些当对象不再使用时需要执行的清理代码。在析构器中， 最常见的操作是回收分配给对象的存储空 间。**由于 Java 有自动的垃圾回收器，不需要人工回收内存， 所以 Java 不支持析构器** 。
+
+当然，某些对象使用了内存之外的其他资源， 例如，文件或使用了系统资源的另一个对 象的句柄。在这种情况下，当资源不再需要时， 将其回收和再利用将显得十分重要。 可以为任何一个类添加 `finalize` 方法。当垃圾收集器认为没有指向对象实例的引用时，会在销毁该对象之前调用 `finalize()` 方法。**该方法最常见的作用是确保释放实例占用的全部资源**。 
+
+不过，<u>在实际应用中，不要依赖于使用 `finalize `方法回收任何短缺的资源， 这是因为 **Java 并不保证定时为对象实例调用该方法，甚至不保证方法会被调用**，所以该方法不应该用于正常内存处理。</u>
+
+关于 Java 的垃圾回收器的内容会在 JVM 系列连载，本系列大家知道 Java 中有个自动的垃圾回收机制就 OK 了。
+
+![](https://gitee.com/veal98/images/raw/master/img/20210117211528.png)
+
+## 总结
+
+其实关于初始化的内容并没有完全说完，漏掉了一个知识点，就是 **静态域的初始化**，因为考虑到 `static` 关键字的内容过多，这个章节说一点那个章节说一点有违这个系列文章的逻辑。所以静态域初始化会作为 `static` 关键字的内容放在 『Java 常见关键字汇总』 这篇文章一并讲解。
