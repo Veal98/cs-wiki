@@ -14,6 +14,13 @@
 [![GitHub forks](https://img.shields.io/github/forks/Veal98/CS-Wiki?logo=github)](https://github.com/Veal98/CS-Wiki/network)
 
 
+<br>
+
+
+|                          计算机基础                          |                          Java                           |                          必备框架                           |                          系统设计                           |                          工具                           | 前端                                                    |                          Python                           |                          机器学习                           |                          深度学习                           |                          强化学习                           |                          其他                           |
+| :----------------------------------------------------------: | :-----------------------------------------------------: | :---------------------------------------------------------: | :---------------------------------------------------------: | :-----------------------------------------------------: | ------------------------------------------------------- | :-------------------------------------------------------: | :---------------------------------------------------------: | :---------------------------------------------------------: | :---------------------------------------------------------: | :-----------------------------------------------------: |
+| [📑](https://veal98.gitee.io/cs-wiki/#/README?id=📑-计算机基础) | [🍵](https://veal98.gitee.io/cs-wiki/#/README?id=🍵-java) | [🔥](https://veal98.gitee.io/cs-wiki/#/README?id=🔥-必备框架) | [👷](https://veal98.gitee.io/cs-wiki/#/README?id=👷-系统设计) | [🔨](https://veal98.gitee.io/cs-wiki/#/README?id=🔨-工具) | [🎨](https://veal98.gitee.io/cs-wiki/#/README?id=🎨-前端) | [🐍](https://veal98.gitee.io/cs-wiki/#/README?id=🐍-python) | [🤖](https://veal98.gitee.io/cs-wiki/#/README?id=🤖-机器学习) | [🌺](https://veal98.gitee.io/cs-wiki/#/README?id=🌺-深度学习) | [🎮](https://veal98.gitee.io/cs-wiki/#/README?id=🎮-强化学习) | [🎉](https://veal98.gitee.io/cs-wiki/#/README?id=🎉-其他) |
+
 
 </div>
 
@@ -44,6 +51,7 @@
 
 - [Java 8 基础](https://veal98.gitee.io/cs-wiki/#/README?id=java-8-%e5%9f%ba%e7%a1%80)
 - [Java 虚拟机](https://veal98.gitee.io/cs-wiki/#/README?id=java-%e8%99%9a%e6%8b%9f%e6%9c%ba)
+- [设计模式](https://veal98.gitee.io/cs-wiki/#/README?id=设计模式)
 
 ## 🔥 必备框架
 
@@ -69,6 +77,26 @@
 
 - [必备基础知识](https://veal98.gitee.io/cs-wiki/#/README?id=%e5%bf%85%e5%a4%87%e5%9f%ba%e7%a1%80%e7%9f%a5%e8%af%86)
 - [Vue 2.x](https://veal98.gitee.io/cs-wiki/#/README?id=vue-2x)
+
+## 🐍 Python
+
+- [Python 3 基础](https://veal98.gitee.io/cs-wiki/#/README?id=python-3-基础)
+- [Python 数据分析](https://veal98.gitee.io/cs-wiki/#/README?id=python-数据分析)
+
+## 🤖 机器学习
+
+- [机器学习入门](https://veal98.gitee.io/cs-wiki/#/README?id=机器学习入门)
+- [常见算法 Python 实现](https://veal98.gitee.io/cs-wiki/#/README?id=常见算法-python-实现)
+
+## 🌺 深度学习
+
+- [深度学习入门](https://veal98.gitee.io/cs-wiki/#/README?id=深度学习入门)
+- [TensorFlow 2](https://veal98.gitee.io/cs-wiki/#/README?id=tensorflow-2)
+
+## 🎮 强化学习
+
+- [强化学习入门](https://veal98.gitee.io/cs-wiki/#/README?id=强化学习入门)
+- [matlab](https://veal98.gitee.io/cs-wiki/#/README?id=matlab)
 
 ## 💬 公众号
 
