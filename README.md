@@ -96,7 +96,7 @@
 ## 🎮 强化学习
 
 - [强化学习入门](https://veal98.gitee.io/cs-wiki/#/README?id=强化学习入门)
-- [matlab](https://veal98.gitee.io/cs-wiki/#/README?id=matlab)
+- [MATLAB](https://veal98.gitee.io/cs-wiki/#/README?id=matlab)
 
 ## 💬 公众号
 
