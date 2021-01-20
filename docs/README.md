@@ -37,7 +37,7 @@
 
 - 💖 在此推广一下我的**公众号『 飞天小牛肉 』**，2020/12/29 日第一次开通，专注于分享计算机基础（数据结构 + 算法 + 计算机网络 + 数据库 + 操作系统 + Linux）、Java 基础和面试指南的相关原创技术好文。本公众号的目的就是**让大家可以快速掌握重点知识，有的放矢**。希望大家多多支持哦，和小牛肉一起成长
 
-  <img src="https://gitee.com/veal98/images/raw/master/img/Snipaste_2021-01-12_17-50-52.jpg" style="zoom:60%;" />
+  <img src="https://gitee.com/veal98/images/raw/master/img/公众号二维码.png" style="zoom:67%;" />
 
 
 
@@ -655,7 +655,7 @@
 
 我的公众号：**飞天小牛肉**，2020/12/29 日第一次开通，专注于分享计算机基础（数据结构 + 算法 + 计算机网络 + 数据库 + 操作系统 + Linux）、Java 基础和面试指南的相关原创技术好文。本公众号的目的就是**让大家可以快速掌握重点知识，有的放矢**。希望大家多多支持哦，和小牛肉一起成长
 
-<img src="https://gitee.com/veal98/images/raw/master/img/Snipaste_2021-01-12_17-50-52.jpg" style="zoom:60%;" />
+<img src="https://gitee.com/veal98/images/raw/master/img/公众号二维码.png" style="zoom:67%;" />
 
 ### 联系我
 
