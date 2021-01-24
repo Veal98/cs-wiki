@@ -24,22 +24,19 @@
     }
 </style>
 
-
 💡 **「关于」**
 
 - 🎓 博主东南大学研一在读，算法岗诸神黄昏已人尽皆知，遂决定深耕 Java，致力全栈。本仓库用于记录学习过程中的所思所想，并力图构建一个完善的知识体系，便于复习巩固
 
-- 🙏 由于本人水平有限，仓库中的知识点来自本人原创、视频、书籍、博客等，非原创均已标明出处，如有遗漏或发现文章错误及排版问题，请提 issue 或 PR
+- 🙏 由于本人水平有限，仓库中的知识点来自本人原创、视频、书籍、博客等，非原创均已标明出处（或在参考资料中列出），如有遗漏或发现文章错误及排版问题，请提 issue 或 PR
 
-- ⚡ [Gitee 在线阅读（国内访问速度较快）](https://veal98.gitee.io/cs-wiki) | [Gitee 仓库地址](https://gitee.com/veal98/CS-Wiki) <span data-v-73ca276e="" class="badge recommendation" style="vertical-align: base-line;">推荐</span>
+- ⚡ **[Gitee 在线阅读（国内访问速度较快）](https://veal98.gitee.io/cs-wiki)** | [Gitee 仓库地址（推荐）](https://gitee.com/veal98/CS-Wiki)
 
 - 🔮 [Github 在线阅读](https://veal98.github.io/CS-Wiki/) | [Github 仓库地址](https://github.com/Veal98/CS-Wiki)
 
-- 💖 在此推广一下我的**公众号『 飞天小牛肉 』**，2020/12/29 日第一次开通，专注于分享计算机基础（数据结构 + 算法 + 计算机网络 + 数据库 + 操作系统 + Linux）、Java 基础和面试指南的相关原创技术好文。本公众号的目的就是**让大家可以快速掌握重点知识，有的放矢**。希望大家多多支持哦，和小牛肉一起成长
+- 我的公众号：**飞天小牛肉**，2020/12/29 日开通，专注于分享计算机基础（数据结构 + 算法 + 计算机网络 + 数据库 + 操作系统 + Linux）、Java 基础和面试指南的相关原创技术好文。本公众号的目的就是**让大家可以快速掌握重点知识，有的放矢**。希望大家多多支持哦，和小牛肉一起成长
 
   <img src="https://gitee.com/veal98/images/raw/master/img/公众号二维码.png" style="zoom:67%;" />
-
-
 
 
 ## 📑 计算机基础
@@ -86,13 +83,12 @@
 - [图解计算机网络 · 第 1 篇《一文读懂两台计算机之间是如何通信的》](https://mp.weixin.qq.com/s/oZtmmRYkYdtU7OX0k1CAuA) 
 - [图解计算机网络 · 第 2 篇《网络基础扫盲 | 数据传输方式和交换方式》](https://mp.weixin.qq.com/s/8rjgpE6Q-fbGb9tXKxxnWw)
 - [图解计算机网络 · 第 3 篇《别再恐惧 IP 协议，万字长文 | 多图预警》](https://mp.weixin.qq.com/s/NO9RDt1A3T1rz-Q4_Y0gPw)
-- [图解计算机网络 · 第 4 篇《关于 TCP 三次握手和四次挥手，满分回答在此》](https://mp.weixin.qq.com/s/u56NcMs68sgi6uDpzJ61yw)
-- [图解计算机网络 · 第 5 篇《原来 TCP 为了保证可靠传输做了这么多》](https://mp.weixin.qq.com/s/AwdxuP5nJSnkyvXRKnqdOg)
-- [图解计算机网络 · 第 6 篇《超详细 DNS 协议解析》](https://mp.weixin.qq.com/s/AfVqL7lEsbRE-YLOPZ4gDQ)
+- [图解计算机网络 · 第 4 篇《5 幅图拿下 ARP 协议》](https://mp.weixin.qq.com/s/HkcMdiZbfsV52IW7xhfdqg)
+- [图解计算机网络 · 第 5 篇《关于 TCP 三次握手和四次挥手，满分回答在此》](https://mp.weixin.qq.com/s/u56NcMs68sgi6uDpzJ61yw)
+- [图解计算机网络 · 第 6 篇《原来 TCP 为了保证可靠传输做了这么多》](https://mp.weixin.qq.com/s/AwdxuP5nJSnkyvXRKnqdOg)
+- [图解计算机网络 · 第 7 篇《超详细 DNS 协议解析》](https://mp.weixin.qq.com/s/AfVqL7lEsbRE-YLOPZ4gDQ)
 
 ### 操作系统 OS
-
-#### ① 操作系统基础
 
 - [参考资料](计算机基础/操作系统/参考资料.md)
 - [1 - 操作系统概述](计算机基础/操作系统/1-操作系统概述.md)
@@ -102,7 +98,7 @@
 - [5 - 设备管理](计算机基础/操作系统/5-设备管理.md)
 - <u>[🎯 操作系统面试指南](计算机基础/操作系统/面试指南.md)</u>
 
-#### ② Linux
+### Linux
 
 - 1 - Linux 简介
 - 2 - Linux 系统启动过程 + 系统目录结构
@@ -161,8 +157,8 @@
 > [!NOTE]
 > 设计模式是**解决问题的方案**，学习现有的设计模式可以做到经验复用。拥有设计模式词汇，在沟通时就能用更少的词汇来讨论，并且不需要了解底层细节。
 
-- [设计模式七大原则](计算机基础/设计模式/七大原则.md)
-- [二十三种设计模式](计算机基础/设计模式/二十三种设计模式/guide.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: base-line;">Vital</span>
+- [设计模式七大原则](Java/设计模式/七大原则.md)
+- [二十三种设计模式](Java/设计模式/二十三种设计模式/guide.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: base-line;">Vital</span>
 
 ## 🔥 必备框架
 
@@ -218,7 +214,7 @@
   - [10 - 异步、定时、邮件任务](必备框架/SpringBoot/10-异步定时邮件任务.md)
   - [11 - 集成 Redis（Lettuce）](必备框架/SpringBoot/11-集成Redis.md)
   - <u>🎯 SpringBoot 面试指南</u>
-  - 💬 Echo（开源社区系统，尚在开发中）：基于 SpringBoot + MySQL + MyBaits + Redis + Elasticsearch + ... 实现的开源社区，附详细开发文档 <span data-v-73ca276e="" class="badge recommendation" style="vertical-align: base-line;">项目经验首选</span>
+  - 💬 Echo（开源社区系统，尚在开发中）：基于 SpringBoot + MySQL + MyBaits + Redis + Elasticsearch + Kafka + Spring Security + ... 实现的开源社区，附详细开发文档 <span data-v-73ca276e="" class="badge recommendation" style="vertical-align: base-line;">项目经验首选</span>
 
 ### Netty 4.x
 
