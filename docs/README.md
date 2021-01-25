@@ -144,6 +144,7 @@
 - [Java 小白成长记 · 第 2 篇《Hello World》](https://mp.weixin.qq.com/s/JAc0QQpYI5xlG4A50ycjfQ)
 - [Java 小白成长记 · 第 3 篇《运算符与控制流》](https://mp.weixin.qq.com/s/b5fG-sTgQBFrFl1ZEdXbXg)
 - [Java 小白成长记 · 第 4 篇《对象的初始化和清理》](https://mp.weixin.qq.com/s/24wLXIr3FYCqdXwuW7vdsA)
+- [Java 小白成长记 · 第 5 篇《Java 是如何实现封装的 — 图解访问修饰符》](https://mp.weixin.qq.com/s/cLRUI9DcxFwACDgzZibW7w)
 
 ### Java 虚拟机
 

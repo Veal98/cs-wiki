@@ -31,7 +31,7 @@
 
 🚨 停更很久了，因为 **Redis 都是推荐在 Linux 服务器上搭建**。
 
-具体安装教程见此：👉 [Redis在windows下安装过程](https://www.cnblogs.com/M-LittleBird/p/5902850.html)
+具体安装教程见此：👉 [Redis 在 windows 下安装过程](https://www.cnblogs.com/M-LittleBird/p/5902850.html)
 
 ## 3. Linux 安装（Ubuntu）
 
