@@ -87,6 +87,7 @@
 - [图解计算机网络 · 第 5 篇《关于 TCP 三次握手和四次挥手，满分回答在此》](https://mp.weixin.qq.com/s/u56NcMs68sgi6uDpzJ61yw)
 - [图解计算机网络 · 第 6 篇《原来 TCP 为了保证可靠传输做了这么多》](https://mp.weixin.qq.com/s/AwdxuP5nJSnkyvXRKnqdOg)
 - [图解计算机网络 · 第 7 篇《超详细 DNS 协议解析》](https://mp.weixin.qq.com/s/AfVqL7lEsbRE-YLOPZ4gDQ)
+- [图解计算机网络 · 第 8 篇《HTTP 协议的前世今生》](https://mp.weixin.qq.com/s/98FtlAy0mAtf6tGplQMDqA)
 
 ### 操作系统 OS
 
