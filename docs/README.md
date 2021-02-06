@@ -148,6 +148,7 @@
 - [Java 小白成长记 · 第 4 篇「对象的初始化和清理」](https://mp.weixin.qq.com/s/24wLXIr3FYCqdXwuW7vdsA)
 - [Java 小白成长记 · 第 5 篇「Java 是如何实现封装的 — 图解访问修饰符」](https://mp.weixin.qq.com/s/cLRUI9DcxFwACDgzZibW7w)
 - [Java 小白成长记 · 第 6 篇「为什么说要慎用继承，优先使用组合」](https://mp.weixin.qq.com/s/NO3yoP5v5S7k725KlrN1Ig)
+- [Java 小白成长记 · 第 7 篇「区分重载和重写，轻松掌握 Java 多态」](https://mp.weixin.qq.com/s/QPyxHTWjLfqx8Qjrg3NRJw)
 
 ### Java 虚拟机
 

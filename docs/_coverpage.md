@@ -36,7 +36,7 @@
     color: rgb(60, 60, 60); text-align: center;
     text-shadow: 0.3rem 0.3rem 0.4rem rgba(0,0,0,.15);
     line-height: 1.2;">
-    进击的 Javaer，努力奔跑在全栈的路上 🏃‍
+    致力打造完善的 Java 后端知识体系，不仅仅帮助各位小伙伴快速且系统的准备面试(秋招/社招)，更指引学习的方向
 </div>
 
 <br>
