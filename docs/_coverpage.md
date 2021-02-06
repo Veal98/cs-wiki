@@ -36,7 +36,7 @@
     color: rgb(60, 60, 60); text-align: center;
     text-shadow: 0.3rem 0.3rem 0.4rem rgba(0,0,0,.15);
     line-height: 1.2;">
-    致力打造完善的 Java 后端知识体系，不仅仅帮助各位小伙伴快速且系统的准备面试(秋招/社招)，更指引学习的方向
+    快速且系统的掌握面试必备的知识点
 </div>
 
 <br>
@@ -48,8 +48,8 @@
 [![GitHub forks](https://img.shields.io/github/forks/Veal98/CS-Wiki?logo=github)](https://github.com/Veal98/CS-Wiki/network)
 
 
-[<i class="fa fa-github-alt fa-1x"></i> Gitee](https://gitee.com/veal98/CS-Wiki)
-[<i class="fa fa-spinner fa-spin"></i> 开始阅读](README.md)
+[Gitee](https://gitee.com/veal98/CS-Wiki)
+[开始阅读](README.md)
 
 <!-- background image -->
 
