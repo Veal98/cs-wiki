@@ -36,7 +36,7 @@
     color: rgb(60, 60, 60); text-align: center;
     text-shadow: 0.3rem 0.3rem 0.4rem rgba(0,0,0,.15);
     line-height: 1.2;">
-    快速且系统的掌握面试必备的知识点
+    快速且系统的掌握面试必备知识点
 </div>
 
 <br>

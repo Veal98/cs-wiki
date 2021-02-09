@@ -89,6 +89,7 @@
 - [图解计算机网络 · 第 7 篇「超详细 DNS 协议解析」](https://mp.weixin.qq.com/s/AfVqL7lEsbRE-YLOPZ4gDQ)
 - [图解计算机网络 · 第 8 篇「HTTP 协议的前世今生」](https://mp.weixin.qq.com/s/98FtlAy0mAtf6tGplQMDqA)
 - [图解计算机网络 · 第 9 篇「从崩溃的选课系统，论为什么更安全的 HTTPS 协议没有被全面采用」](https://mp.weixin.qq.com/s/NTZlUzu4R3xyWB5T6qWo9w)
+- [图解计算机网络 · 第 10 篇「经典面试题：在浏览器地址栏输入一个 URL 后回车，背后发生了什么」](https://mp.weixin.qq.com/s/9vGRSkUNgRQWO6tVmUisOw)
 
 ### 操作系统 OS
 

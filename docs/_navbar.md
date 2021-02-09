@@ -1,4 +1,4 @@
-* [<i class="fa fa-paper-plane-o fa-1x"></i> 主页](https://veal98.gitee.io/cs-wiki/#/README)
+* [主页](https://veal98.gitee.io/cs-wiki/#/README)
     * [📑 计算机基础](README?id=📑-计算机基础)
     * [🍵 Java](README?id=🍵-java)
     * [🔥 必备框架](README?id=🔥-必备框架)
@@ -10,5 +10,5 @@
     * [🌺 深度学习](README?id=🌺-深度学习)
     * [🎮 强化学习](README?id=🎮-强化学习)
     * [🎉 其他](README?id=🎉-其他)
-* [<i class="fa fa-wechat fa-1x"></i> 公众号](README?id=公众号)
-* [<i class="fa fa-calendar-o fa-1x"></i> 看板](https://gitee.com/veal98/CS-Wiki/board?fullscreen=1)
+* [公众号](README?id=公众号)
+* [看板](https://gitee.com/veal98/CS-Wiki/board?fullscreen=1)
