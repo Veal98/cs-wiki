@@ -218,7 +218,7 @@
   - [10 - 异步、定时、邮件任务](必备框架/SpringBoot/10-异步定时邮件任务.md)
   - [11 - 集成 Redis（Lettuce）](必备框架/SpringBoot/11-集成Redis.md)
   - <u>🎯 SpringBoot 面试指南</u>
-  - 🦄 [开源社区系统 — Echo](https://gitee.com/veal98/Echo)：基于 SpringBoot + MyBatis + MySQL + Redis + Kafka + Elasticsearch + Spring Security + ... 并提供详细的开发文档和配套教程 <span data-v-73ca276e="" class="badge recommendation" style="vertical-align: base-line;">项目经验首选</span>
+  - 🦄 [开源社区系统 — Echo](https://github.com/Veal98/Echo)：基于 SpringBoot + MyBatis + MySQL + Redis + Kafka + Elasticsearch + Spring Security + ... 并提供详细的开发文档和配套教程 <span data-v-73ca276e="" class="badge recommendation" style="vertical-align: base-line;">项目经验首选</span>
 
 ### Netty 4.x
 
