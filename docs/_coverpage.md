@@ -30,7 +30,8 @@
 
 <br>
 
-<img width="220px" src="https://gitee.com/veal98/images/raw/master/img/LogoMakr_7iKG43.png">
+<img width="280px" src="https://gitee.com/veal98/images/raw/master/img/20210212163625.png
+">
 
 <div style = "font-weight: 100; font-size: 1.2rem; 
     color: rgb(60, 60, 60); text-align: center;

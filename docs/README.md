@@ -77,19 +77,18 @@
 
 ### 计算机网络 Net
 
-> [!WARNING]
-> 该部分内容目前正在八百里加急重构中，会陆续更新至『 图解计算机网络 』系列
+关注公众号 — 飞天小牛肉，订阅[『 计算机网络那些事儿 』](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzI0NDc3ODE5OQ==&action=getalbum&album_id=1677418448106143748&scene=173&from_msgid=2247483833&from_itemidx=1&count=3#wechat_redirect) 话题，第一时间获取本系列更新
 
-- [图解计算机网络 · 第 1 篇「一文读懂两台计算机之间是如何通信的」](https://mp.weixin.qq.com/s/oZtmmRYkYdtU7OX0k1CAuA) 
-- [图解计算机网络 · 第 2 篇「网络基础扫盲 | 数据传输方式和交换方式」](https://mp.weixin.qq.com/s/8rjgpE6Q-fbGb9tXKxxnWw)
-- [图解计算机网络 · 第 3 篇「别再恐惧 IP 协议，万字长文 | 多图预警」](https://mp.weixin.qq.com/s/NO9RDt1A3T1rz-Q4_Y0gPw)
-- [图解计算机网络 · 第 4 篇「5 幅图拿下 ARP 协议」](https://mp.weixin.qq.com/s/HkcMdiZbfsV52IW7xhfdqg)
-- [图解计算机网络 · 第 5 篇「关于 TCP 三次握手和四次挥手，满分回答在此」](https://mp.weixin.qq.com/s/u56NcMs68sgi6uDpzJ61yw)
-- [图解计算机网络 · 第 6 篇「原来 TCP 为了保证可靠传输做了这么多」](https://mp.weixin.qq.com/s/AwdxuP5nJSnkyvXRKnqdOg)
-- [图解计算机网络 · 第 7 篇「超详细 DNS 协议解析」](https://mp.weixin.qq.com/s/AfVqL7lEsbRE-YLOPZ4gDQ)
-- [图解计算机网络 · 第 8 篇「HTTP 协议的前世今生」](https://mp.weixin.qq.com/s/98FtlAy0mAtf6tGplQMDqA)
-- [图解计算机网络 · 第 9 篇「从崩溃的选课系统，论为什么更安全的 HTTPS 协议没有被全面采用」](https://mp.weixin.qq.com/s/NTZlUzu4R3xyWB5T6qWo9w)
-- [图解计算机网络 · 第 10 篇「经典面试题：在浏览器地址栏输入一个 URL 后回车，背后发生了什么」](https://mp.weixin.qq.com/s/9vGRSkUNgRQWO6tVmUisOw)
+- [计算机网络那些事儿 · 第 1 篇「一文读懂两台计算机之间是如何通信的」](https://mp.weixin.qq.com/s/oZtmmRYkYdtU7OX0k1CAuA) 
+- [计算机网络那些事儿 · 第 2 篇「网络基础扫盲 | 数据传输方式和交换方式」](https://mp.weixin.qq.com/s/8rjgpE6Q-fbGb9tXKxxnWw)
+- [计算机网络那些事儿 · 第 3 篇「别再恐惧 IP 协议，万字长文 | 多图预警」](https://mp.weixin.qq.com/s/NO9RDt1A3T1rz-Q4_Y0gPw)
+- [计算机网络那些事儿 · 第 4 篇「5 幅图拿下 ARP 协议」](https://mp.weixin.qq.com/s/HkcMdiZbfsV52IW7xhfdqg)
+- [计算机网络那些事儿 · 第 5 篇「关于 TCP 三次握手和四次挥手，满分回答在此」](https://mp.weixin.qq.com/s/u56NcMs68sgi6uDpzJ61yw)
+- [计算机网络那些事儿 · 第 6 篇「原来 TCP 为了保证可靠传输做了这么多」](https://mp.weixin.qq.com/s/AwdxuP5nJSnkyvXRKnqdOg)
+- [计算机网络那些事儿 · 第 7 篇「超详细 DNS 协议解析」](https://mp.weixin.qq.com/s/AfVqL7lEsbRE-YLOPZ4gDQ)
+- [计算机网络那些事儿 · 第 8 篇「HTTP 协议的前世今生」](https://mp.weixin.qq.com/s/98FtlAy0mAtf6tGplQMDqA)
+- [计算机网络那些事儿 · 第 9 篇「从崩溃的选课系统，论为什么更安全的 HTTPS 协议没有被全面采用」](https://mp.weixin.qq.com/s/NTZlUzu4R3xyWB5T6qWo9w)
+- [计算机网络那些事儿 · 第 10 篇「经典面试题：在浏览器地址栏输入一个 URL 后回车，背后发生了什么」](https://mp.weixin.qq.com/s/9vGRSkUNgRQWO6tVmUisOw)
 
 ### 操作系统 OS
 
@@ -140,8 +139,7 @@
 
 ### Java 基础
 
-> [!WARNING]
-> 所有笔记和代码均基于 **Java 8** 版本，基本包含 Java 语言的全部核心知识点。目前正在重构中，将陆续更新至『 Java 小白成长记 』系列
+关注公众号 — 飞天小牛肉，订阅[『爪哇小白成长记』](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzI0NDc3ODE5OQ==&action=getalbum&album_id=1683346627601743872&scene=173&from_msgid=2247483982&from_itemidx=1&count=3#wechat_redirect) 话题，第一时间获取本系列更新
 
 - [Java 小白成长记 · 第 1 篇「万物皆对象」](https://mp.weixin.qq.com/s/W3KrCirgCrqrSiOQ8P3tAQ)
 - [Java 小白成长记 · 第 2 篇「Hello World」](https://mp.weixin.qq.com/s/JAc0QQpYI5xlG4A50ycjfQ)
