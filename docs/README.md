@@ -77,8 +77,6 @@
 
 ### 计算机网络 Net
 
-关注公众号 — 飞天小牛肉，订阅[『 计算机网络那些事儿 』](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzI0NDc3ODE5OQ==&action=getalbum&album_id=1677418448106143748&scene=173&from_msgid=2247483833&from_itemidx=1&count=3#wechat_redirect) 话题，第一时间获取本系列更新
-
 - [计算机网络那些事儿 · 第 1 篇「一文读懂两台计算机之间是如何通信的」](https://mp.weixin.qq.com/s/oZtmmRYkYdtU7OX0k1CAuA) 
 - [计算机网络那些事儿 · 第 2 篇「网络基础扫盲 | 数据传输方式和交换方式」](https://mp.weixin.qq.com/s/8rjgpE6Q-fbGb9tXKxxnWw)
 - [计算机网络那些事儿 · 第 3 篇「别再恐惧 IP 协议，万字长文 | 多图预警」](https://mp.weixin.qq.com/s/NO9RDt1A3T1rz-Q4_Y0gPw)
@@ -92,13 +90,7 @@
 
 ### 操作系统 OS
 
-- [参考资料](计算机基础/操作系统/参考资料.md)
-- [1 - 操作系统概述](计算机基础/操作系统/1-操作系统概述.md)
-- [2 - 进程、线程、死锁](计算机基础/操作系统/2-进程、线程、死锁.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: base-line;">Vital</span>
-- [3 - 内存管理](计算机基础/操作系统/3-内存管理.md)
-- [4 - 文件管理](计算机基础/操作系统/4-文件管理.md)
-- [5 - 设备管理](计算机基础/操作系统/5-设备管理.md)
-- <u>[🎯 操作系统面试指南](计算机基础/操作系统/面试指南.md)</u>
+- [操作系统那些事儿 · 第 1 篇「了解操作系统的那些事儿，从这篇文章开始」](https://mp.weixin.qq.com/s/SHALDyqqR0-B0VD63Qp9gg)
 
 ### Linux
 
