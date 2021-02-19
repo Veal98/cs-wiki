@@ -131,8 +131,6 @@
 
 ### Java 基础
 
-关注公众号 — 飞天小牛肉，订阅[『爪哇小白成长记』](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzI0NDc3ODE5OQ==&action=getalbum&album_id=1683346627601743872&scene=173&from_msgid=2247483982&from_itemidx=1&count=3#wechat_redirect) 话题，第一时间获取本系列更新
-
 - [Java 小白成长记 · 第 1 篇「万物皆对象」](https://mp.weixin.qq.com/s/W3KrCirgCrqrSiOQ8P3tAQ)
 - [Java 小白成长记 · 第 2 篇「Hello World」](https://mp.weixin.qq.com/s/JAc0QQpYI5xlG4A50ycjfQ)
 - [Java 小白成长记 · 第 3 篇「运算符与控制流」](https://mp.weixin.qq.com/s/b5fG-sTgQBFrFl1ZEdXbXg)
@@ -140,6 +138,7 @@
 - [Java 小白成长记 · 第 5 篇「Java 是如何实现封装的 — 图解访问修饰符」](https://mp.weixin.qq.com/s/cLRUI9DcxFwACDgzZibW7w)
 - [Java 小白成长记 · 第 6 篇「为什么说要慎用继承，优先使用组合」](https://mp.weixin.qq.com/s/NO3yoP5v5S7k725KlrN1Ig)
 - [Java 小白成长记 · 第 7 篇「区分重载和重写，轻松掌握 Java 多态」](https://mp.weixin.qq.com/s/QPyxHTWjLfqx8Qjrg3NRJw)
+- [Java 小白成长记 · 第 8 篇「如何理解 Java 中接口存在的意义」](https://mp.weixin.qq.com/s/Sye1Mj2TEmTCqqzJFLNU3g)
 
 ### Java 虚拟机
 
