@@ -46,9 +46,7 @@
 ### 数据结构 DS
 
 > [!WARNING]
-> 该部分内容目前正在重构中，会陆续更新至 『 图解数据结构 』系列
-
-- [图解数据结构 · 第 1 篇《线性表》](https://mp.weixin.qq.com/s/AxVkAeqN-a34O4rOFNV0IA)
+> 该部分内容目前正在重构中，会陆续更新至 『 大话数据结构 』系列
 
 ### 算法 Algorithm
 
@@ -91,6 +89,7 @@
 ### 操作系统 OS
 
 - [操作系统那些事儿 · 第 1 篇「了解操作系统的那些事儿，从这篇文章开始」](https://mp.weixin.qq.com/s/SHALDyqqR0-B0VD63Qp9gg)
+- [操作系统那些事儿 · 第 2 篇「五分钟扫盲：进程与线程基础必知」](https://mp.weixin.qq.com/s/C-73K5vmA17GovidFInsaA)
 
 ### Linux
 
