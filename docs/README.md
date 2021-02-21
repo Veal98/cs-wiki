@@ -63,14 +63,13 @@
   - [7 - 贪心算法](计算机基础/算法/7-贪心算法.md)
   - [8 - 回溯法](计算机基础/算法/8-回溯法.md)
   - [9 - 双指针](计算机基础/算法/9-双指针.md)
-  - [10 - 随机化算法](计算机基础/算法/10-随机化算法.md)
 - 【数据结构系列】
-  - 11 - 数组（不包含上述算法思想的数组题）
-  - 12 - 链表（不包含上述算法思想的链表题）
-  - 13 - 栈和队列
-  - 14 - 哈希表
-  - [15 - 树](计算机基础/算法/14-树.md)
-  - 16 - 图
+  - 10 - 数组（不包含上述算法思想的数组题）
+  - 11 - 链表（不包含上述算法思想的链表题）
+  - 12 - 栈和队列
+  - 13 - 哈希表
+  - [14 - 树](计算机基础/算法/14-树.md)
+  - 15 - 图
 - <u>[🔥 LeetCode 分模块刷题指南](计算机基础/算法/LeetCode/刷题指南.md)</u>
 
 ### 计算机网络 Net
@@ -138,6 +137,7 @@
 - [Java 小白成长记 · 第 6 篇「为什么说要慎用继承，优先使用组合」](https://mp.weixin.qq.com/s/NO3yoP5v5S7k725KlrN1Ig)
 - [Java 小白成长记 · 第 7 篇「区分重载和重写，轻松掌握 Java 多态」](https://mp.weixin.qq.com/s/QPyxHTWjLfqx8Qjrg3NRJw)
 - [Java 小白成长记 · 第 8 篇「如何理解 Java 中接口存在的意义」](https://mp.weixin.qq.com/s/Sye1Mj2TEmTCqqzJFLNU3g)
+- [Java 小白成长记 · 第 9 篇「面试常备，字符串三剑客 String、StringBuffer、StringBuilder」](https://mp.weixin.qq.com/s/4fXP9ahIPtcsKqlZwdOQJg)
 
 ### Java 虚拟机
 
