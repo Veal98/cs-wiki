@@ -36,17 +36,13 @@
 
 - 🔮 [Github 在线阅读](https://veal98.github.io/CS-Wiki/) | [Github 仓库地址](https://github.com/Veal98/CS-Wiki)
 
-
-
 ## 📑 计算机基础
 
-- [数据结构 DS](https://veal98.gitee.io/cs-wiki/#/README?id=数据结构-ds)
-- [算法 Algorithm](https://veal98.gitee.io/cs-wiki/#/README?id=%e7%ae%97%e6%b3%95-algorithm)
-- [计算机网络 Net](https://veal98.gitee.io/cs-wiki/#/README?id=%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%bd%91%e7%bb%9c-net)
-- [操作系统 OS](https://veal98.gitee.io/cs-wiki/#/README?id=%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-os)
+- [数据结构与算法](https://veal98.gitee.io/cs-wiki/#/README?id=数据结构与算法)
+- [计算机网络](https://veal98.gitee.io/cs-wiki/#/README?id=计算机网络)
+- [操作系统](https://veal98.gitee.io/cs-wiki/#/README?id=操作系统)
 - [Linux](https://veal98.gitee.io/cs-wiki/#/README?id=linux)
-- [数据库 DB](https://veal98.gitee.io/cs-wiki/#/README?id=%e6%95%b0%e6%8d%ae%e5%ba%93-db)
-- [软件工程 SE](https://veal98.gitee.io/cs-wiki/#/README?id=%e8%bd%af%e4%bb%b6%e5%b7%a5%e7%a8%8b-se)
+- [数据库](https://veal98.gitee.io/cs-wiki/#/README?id=数据库)
 
 ## 🍵 Java
 
