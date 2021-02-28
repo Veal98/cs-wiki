@@ -46,7 +46,7 @@
 ### 数据结构与算法
 
 > [!TIP]
-> 本节的每个知识点都配备对应的 LeetCode 题目，知其然而知其所以然，**拒绝无脑刷题**。目前尚在更新中，对应的 LeetCode 会逐渐添加进去。不需要看知识点的小伙伴可直接进入 <u>[LeetCode 分模块刷题指南](计算机基础/算法/LeetCode/刷题指南.md)</u>，所有题目会在此处分类汇总，现已包含 `83` 道题目。
+> 本节的每个知识点都配备对应的 LeetCode 题目，知其然而知其所以然，**拒绝无脑刷题**。目前尚在更新中，对应的 LeetCode 会逐渐添加进去。不需要看知识点的小伙伴可直接进入 <u>[LeetCode 分模块刷题指南](计算机基础/算法/LeetCode/刷题指南.md)</u>，所有题目会在此处分类汇总，现已包含 `91` 道题目。
 
 - [1 - 算法基础](计算机基础/算法/1-算法基础.md)
 - [2 - NP 完全性理论与近似算法](计算机基础/算法/2-NP完全性理论与近似算法.md)
@@ -58,11 +58,11 @@
   - [7 - 贪心算法](计算机基础/算法/7-贪心算法.md)
   - [8 - 回溯法](计算机基础/算法/8-回溯法.md)
   - [9 - 双指针](计算机基础/算法/9-双指针.md)
-- 【数据结构系列】
-  - 10 - 数组（不包含上述算法思想的数组题）
-  - 11 - 链表（不包含上述算法思想的链表题）
+- 【数据结构系列】— 不包含上述算法思想的数据结构题
+  - 10 - 数组
+  - [11 - 链表](计算机基础/算法/11-链表.md)
   - 12 - 栈和队列
-  - 13 - 哈希表
+  - [13 - 哈希表](计算机基础/算法/13-哈希表.md)
   - [14 - 树](计算机基础/算法/14-树.md)
   - 15 - 图
 - <u>[🔥 LeetCode 分模块刷题指南](计算机基础/算法/LeetCode/刷题指南.md)</u>
@@ -86,6 +86,7 @@
 - [操作系统那些事儿 · 第 2 篇「五分钟扫盲：进程与线程基础必知」](https://mp.weixin.qq.com/s/C-73K5vmA17GovidFInsaA)
 - [操作系统那些事儿 · 第 3 篇「图解经典的进程调度算法」](https://mp.weixin.qq.com/s/CEntVZvo_f3VPw5-mjxbqw)
 - [操作系统那些事儿 · 第 4 篇「看完了进程同步与互斥机制，我终于彻底理解了 PV 操作」](https://mp.weixin.qq.com/s/vvjhbzsWQNRkU7-b_dURlQ)
+- [操作系统那些事儿 · 第 5 篇「高频考点，六大进程通信机制总结」](https://mp.weixin.qq.com/s/kxxV_yy5eesHiHHLPO0mWg)
 
 ### Linux
 
@@ -130,6 +131,7 @@
 - [Java 小白成长记 · 第 8 篇「如何理解 Java 中接口存在的意义」](https://mp.weixin.qq.com/s/Sye1Mj2TEmTCqqzJFLNU3g)
 - [Java 小白成长记 · 第 9 篇「面试常备，字符串三剑客 String、StringBuffer、StringBuilder」](https://mp.weixin.qq.com/s/4fXP9ahIPtcsKqlZwdOQJg)
 - [Java 小白成长记 · 第 10 篇「读懂框架设计的灵魂 — Java 反射机制」](https://mp.weixin.qq.com/s/Z4L1y-NbStBDSWYVK28kbA)
+- [Java 小白成长记 · 第 11 篇「深入理解 Java 数组」](https://mp.weixin.qq.com/s/zSyQFzjlVDN2rhplDpTX5w)
 
 ### Java 虚拟机
 
@@ -200,7 +202,7 @@
   - [10 - 异步、定时、邮件任务](必备框架/SpringBoot/10-异步定时邮件任务.md)
   - [11 - 集成 Redis（Lettuce）](必备框架/SpringBoot/11-集成Redis.md)
   - <u>🎯 SpringBoot 面试指南</u>
-  - 🦄 [开源社区系统 — Echo](https://github.com/Veal98/Echo)：基于 SpringBoot + MyBatis + MySQL + Redis + Kafka + Elasticsearch + Spring Security + ... 并提供详细的开发文档和配套教程 <span data-v-73ca276e="" class="badge recommendation" style="vertical-align: base-line;">项目经验首选</span>
+  - 🦄 [开源社区系统 — Echo (Gitee 官方推荐项目)](https://github.com/Veal98/Echo)：基于 SpringBoot + MyBatis + MySQL + Redis + Kafka + Elasticsearch + Spring Security + ... 并提供详细的开发文档和配套教程 <span data-v-73ca276e="" class="badge recommendation" style="vertical-align: base-line;">项目经验首选</span>
 
 ### Netty 4.x
 
