@@ -42,7 +42,7 @@ Netty 的 `Buffer` API 提供了几个优势：
 
 ⭐ 调用 `ByteBuf `的 "`read`" 或 "`write`" 开头的任何方法都会提升 相应的索引。另一方面，<u>"`set`" 、 "`get`"操作字节将不会移动索引位置，他们只会操作相关的通过参数传入方法的相对索引</u>。
 
-可以给 `ByteBuf` 指定一个最大容量值，这个值限制着 `ByteBuf` 的容量。任何尝试将写入索引超过这个值的行为都将导致抛出异常。``ByteBuf` 的默认最大容量限制是 `Integer.MAX_VALUE`。
+可以给 `ByteBuf` 指定一个最大容量值，这个值限制着 `ByteBuf` 的容量。任何尝试将写入索引超过这个值的行为都将导致抛出异常。`ByteBuf` 的默认最大容量限制是 `Integer.MAX_VALUE`。
 
 `ByteBuf `类似于一个字节数组，最大的区别是读和写的索引可以用来控制对缓冲区数据的访问。下图显示了一个容量为16的空的 `ByteBuf ` 的布局和状态，`writerIndex ` 和 `readerIndex ` 都在索引位置 0 ：
 

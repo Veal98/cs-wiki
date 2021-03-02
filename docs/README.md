@@ -132,6 +132,7 @@
 - [Java 小白成长记 · 第 9 篇「面试常备，字符串三剑客 String、StringBuffer、StringBuilder」](https://mp.weixin.qq.com/s/4fXP9ahIPtcsKqlZwdOQJg)
 - [Java 小白成长记 · 第 10 篇「读懂框架设计的灵魂 — Java 反射机制」](https://mp.weixin.qq.com/s/Z4L1y-NbStBDSWYVK28kbA)
 - [Java 小白成长记 · 第 11 篇「深入理解 Java 数组」](https://mp.weixin.qq.com/s/zSyQFzjlVDN2rhplDpTX5w)
+- [Java 小白成长记 · 第 12 篇「Java 中为什么设计了包装类」](https://mp.weixin.qq.com/s/qmlNXlPj4gPeVvLOdYLbUA)
 
 ### Java 虚拟机
 
