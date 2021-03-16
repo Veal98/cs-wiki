@@ -247,7 +247,7 @@ ZooKeeper 规定所有有效的投票都必须在同一轮次中。每个服务�
 
 **选票 PK**：
 
-选票 PK是基于 `(self_id, self_zxid)` 与 `(vote_id, vote_zxid)` 的对比：
+选票 PK 是基于 `(self_id, self_zxid)` 与 `(vote_id, vote_zxid)` 的对比：
 
 - 先对比二者的 `vote_zxid`，若外部投票的 `vote_zxid` 比较大，则将自己的票中的 `vote_zxid` 与 `vote_myid` 更新为收到的票中的 `vote_zxid` 与 `vote_myid` 并广播出去，另外将收到的票及自己更新后的票放入自己的票箱。如果票箱内已存在 `(self_myid, self_zxid)` 相同的选票，则直接覆盖
 - 若二者 `vote_zxid` 一致，则比较二者的 `vote_myid`，若外部投票的 `vote_myid` 比较大，则将自己的票中的 `vote_myid` 更新为收到的票中的 `vote_myid` 并广播出去，另外将收到的票及自己更新后的票放入自己的票箱
