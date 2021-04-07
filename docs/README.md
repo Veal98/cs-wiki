@@ -113,8 +113,8 @@
 - [5 - 关系数据库设计理论](计算机基础/数据库/5-关系数据库设计理论)
 - [6 - 数据库设计之 E-R 图](计算机基础/数据库/6-数据库设计之E-R图)
 - [7 - 查询处理和优化](计算机基础/数据库/7-查询处理和优化)
-- [8 - 事务处理 - 数据库恢复技术](计算机基础/数据库/8-事务处理-数据库恢复技术) <span data-v-73ca276e="" class="badge tip" style="vertical-align: base-line;">Important</span>
-- [9 - 事务处理 - 并发控制](计算机基础/数据库/9-事务处理-并发控制) <span data-v-73ca276e="" class="badge warning" style="vertical-align: base-line;">Vital</span>
+- [8 - 事务处理 - 数据库恢复技术](计算机基础/数据库/8-事务处理-数据库恢复技术)
+- [9 - 事务处理 - 并发控制](计算机基础/数据库/9-事务处理-并发控制)
 - [10 - 数据库编程](计算机基础/数据库/10-数据库编程.md)
 - <u>[🎯 数据库面试指南](计算机基础/数据库/面试指南.md)</u>
 
@@ -133,13 +133,15 @@
 - [Java 小白成长记 · 第 7 篇「区分重载和重写，轻松掌握 Java 多态」](https://mp.weixin.qq.com/s/QPyxHTWjLfqx8Qjrg3NRJw)
 - [Java 小白成长记 · 第 8 篇「如何理解 Java 中接口存在的意义」](https://mp.weixin.qq.com/s/Sye1Mj2TEmTCqqzJFLNU3g)
 - [Java 小白成长记 · 第 9 篇「面试常备，字符串三剑客 String、StringBuffer、StringBuilder」](https://mp.weixin.qq.com/s/4fXP9ahIPtcsKqlZwdOQJg)
-- [Java 小白成长记 · 第 10 篇「读懂框架设计的灵魂 — Java 反射机制」](https://mp.weixin.qq.com/s/Z4L1y-NbStBDSWYVK28kbA)
-- [Java 小白成长记 · 第 11 篇「从头捋了一遍 Java 代理机制，收获颇丰」](https://mp.weixin.qq.com/s/HI32MA5lsyzgMnqJQi4F6A)
-- [Java 小白成长记 · 第 12 篇「深入理解 Java 数组」](https://mp.weixin.qq.com/s/zSyQFzjlVDN2rhplDpTX5w)
-- [Java 小白成长记 · 第 13 篇「Java 中为什么设计了包装类」](https://mp.weixin.qq.com/s/qmlNXlPj4gPeVvLOdYLbUA)
-- [Java 小白成长记 · 第 14 篇「Java 集合框架体系总览」](https://mp.weixin.qq.com/s/en852DX-aCYocqqOIOxxOw)
-- [Java 小白成长记 · 第 15 篇「送分题，ArrayList 的扩容机制了解吗？」](https://mp.weixin.qq.com/s/2Oc5vLAr3yygB3fR4-3pTg)
-- [Java 小白成长记 · 第 16 篇「HashMap 这套八股，不得背个十来遍？」](https://mp.weixin.qq.com/s/JuwcUAfvxVQmJdhEBAekUw)
+- [Java 小白成长记 · 第 10 篇「String 的不可变真的是因为 final 吗？」](https://mp.weixin.qq.com/s/MXsICUiBkei-69B0CIMVVA)
+- [Java 小白成长记 · 第 11 篇「读懂框架设计的灵魂 — Java 反射机制」](https://mp.weixin.qq.com/s/Z4L1y-NbStBDSWYVK28kbA)
+- [Java 小白成长记 · 第 12 篇「从头捋了一遍 Java 代理机制，收获颇丰」](https://mp.weixin.qq.com/s/HI32MA5lsyzgMnqJQi4F6A)
+- [Java 小白成长记 · 第 13 篇「深入理解 Java 数组」](https://mp.weixin.qq.com/s/zSyQFzjlVDN2rhplDpTX5w)
+- [Java 小白成长记 · 第 14 篇「Java 中为什么设计了包装类」](https://mp.weixin.qq.com/s/qmlNXlPj4gPeVvLOdYLbUA)
+- [Java 小白成长记 · 第 15 篇「Java 集合框架体系总览」](https://mp.weixin.qq.com/s/en852DX-aCYocqqOIOxxOw)
+- [Java 小白成长记 · 第 16 篇「送分题，ArrayList 的扩容机制了解吗？」](https://mp.weixin.qq.com/s/2Oc5vLAr3yygB3fR4-3pTg)
+- [Java 小白成长记 · 第 17 篇「HashMap 这套八股，不得背个十来遍？」](https://mp.weixin.qq.com/s/JuwcUAfvxVQmJdhEBAekUw)
+- [Java 小白成长记 · 第 18 篇「Hashtable 渐渐被人们遗忘了，只有面试官还记得，感动」](https://mp.weixin.qq.com/s/3CqgvC8ek1H9SvPbL_FTDQ)
 
 ### Java 虚拟机
 
@@ -154,7 +156,7 @@
 > 设计模式是**解决问题的方案**，学习现有的设计模式可以做到经验复用。拥有设计模式词汇，在沟通时就能用更少的词汇来讨论，并且不需要了解底层细节。
 
 - [设计模式七大原则](Java/设计模式/七大原则.md)
-- [二十三种设计模式](Java/设计模式/二十三种设计模式/guide.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: base-line;">Vital</span>
+- [二十三种设计模式](Java/设计模式/二十三种设计模式/guide.md)
 
 ## 🔥 必备框架
 
@@ -176,9 +178,9 @@
 ### SSM
 
 - 1 - **Spring (Framework)**
-  - [1.1 - Spring 简介 + Spring IoC 详解](必备框架/SSM/Spring/1-Spring简介+IoC详解.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: base-line;">Vital</span>
+  - [1.1 - Spring 简介 + Spring IoC 详解](必备框架/SSM/Spring/1-Spring简介+IoC详解.md)
   - [1.2 - Spring IoC 容器源码分析](必备框架/SSM/Spring/2-SpringIoC容器源码分析.md)
-  - [1.3 - Spring AOP 详解](必备框架/SSM/Spring/3-AOP详解.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: base-line;">Vital</span>
+  - [1.3 - Spring AOP 详解](必备框架/SSM/Spring/3-AOP详解.md)
   - 1.4 - Spring AOP 源码分析
   - 1.4 - Spring 事务控制
   - <u>🎯 Spring 面试指南</u>
@@ -197,8 +199,8 @@
   - [3 - 自定义 starter](必备框架/SpringBoot/3-自定义starter.md)
   - [4 - 日志](必备框架/SpringBoot/4-日志.md)
   - [5 - Web 开发](必备框架/SpringBoot/5-Web开发.md)
+  - [6 - SpringBoot 前后端数据交互的几种常用方式 ](必备框架/SpringBoot/6-SpringBoot前后端数据交互.md)
   - [7 - Web 开发 - 实战案例](必备框架/SpringBoot/7-Web开发-实战案例.md)
-  - [6 - SpringBoot 前后端数据交互的几种常用方式 ⭐ ](必备框架/SpringBoot/6-SpringBoot前后端数据交互.md)
   - [8 - SpringBoot 与数据访问](必备框架/SpringBoot/8-SpringBoot与数据访问.md)
   - 9 - **Spring Data JPA**
     - [🛫 Spring Boot + Spring Data JPA 一篇文章快速入门](必备框架/SpringBoot/SpringDataJPA/SpringBoot+SpringDataJPA快速入门.md)
@@ -223,7 +225,7 @@
 - [5 - Transport（传输）详解](必备框架/Netty/5-Transport详解.md)
 - [6 - Buffer（缓冲/字节容器）详解](必备框架/Netty/6-Buffer详解.md)
 - [7 - ChannelHandler（消息处理器）与 ChannelPipeline 详解](必备框架/Netty/7-ChannelHandler与ChannelPipeline详解.md)
-- [8 - Netty Reactor 线程模型与 EventLoop（事件循环）详解](必备框架/Netty/8-EventLoop与线程模型详解.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: base-line;">Vital</span>
+- [8 - Netty Reactor 线程模型与 EventLoop（事件循环）详解](必备框架/Netty/8-EventLoop与线程模型详解.md)
 - [9 - Bootstrap（引导）详解](必备框架/Netty/9-Bootstrap详解.md)
 - [10 - Codec（编码与解码）详解](必备框架/Netty/10-Codec详解.md)
 - [11 - 实例及分析：Netty 实现聊天功能](必备框架/Netty/11-实例-Netty实现聊天功能.md)
@@ -395,7 +397,7 @@
 > 💌 <u>[阿里巴巴中间件 独家解读：Dubbo Ecosystem - 从微服务框架到微服务生态](https://mp.weixin.qq.com/s/iNVctXw7tUGHhnF0hV84ww)</u>
 
 - 2 - RPC 框架：**Apache Dubbo**
-  - [2.1 - Dubbo 架构及工作原理](系统设计/分布式/RPC/2-Dubbo架构及工作原理.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: base-line;">Vital</span>
+  - [2.1 - Dubbo 架构及工作原理](系统设计/分布式/RPC/2-Dubbo架构及工作原理.md)
   - [2.2 - SpringBoot 2 + Dubbo + Zookeeper 搭建一个简单的分布式服务](系统设计/分布式/RPC/3-SpringBoot+Dubbo+Zookeeper搭建一个简单的分布式服务.md)
   - [2.3 - Dubbo 三种连接方式](系统设计/分布式/RPC/4-Dubbo三种连接方式.md)
   - [2.4 - Dubbo 通信协议与序列化](系统设计/分布式/RPC/5-Dubbo通信协议与序列化.md)
@@ -424,7 +426,7 @@
 > [!NOTE]
 > 所谓**分布式协调服务**就是**将各个分布式组件协调起来**，减少各个系统之间的耦合度、处理分布式事务、配置整个分布式系统等等
 
-- [1 - Zookeeper 重要概念详解](系统设计/分布式/Zookeeper/1-Zookeeper重要概念详解.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: base-line;">Vital</span>
+- [1 - Zookeeper 重要概念详解](系统设计/分布式/Zookeeper/1-Zookeeper重要概念详解.md)
 - [2 - Zookeeper 安装与基本使用](系统设计/分布式/Zookeeper/2-Zookeeper安装与基本使用.md)
 
 ### 微服务架构 — Spring Cloud
