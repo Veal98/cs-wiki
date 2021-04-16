@@ -71,6 +71,7 @@
 - [操作系统那些事儿 · 第 3 篇「图解经典的进程调度算法」](https://mp.weixin.qq.com/s/CEntVZvo_f3VPw5-mjxbqw)
 - [操作系统那些事儿 · 第 4 篇「看完了进程同步与互斥机制，我终于彻底理解了 PV 操作」](https://mp.weixin.qq.com/s/vvjhbzsWQNRkU7-b_dURlQ)
 - [操作系统那些事儿 · 第 5 篇「高频考点，六大进程通信机制总结」](https://mp.weixin.qq.com/s/kxxV_yy5eesHiHHLPO0mWg)
+- [操作系统那些事儿 · 第 6 篇「五分钟扫盲：程序在计算机中是如何运行起来的」](https://mp.weixin.qq.com/s/qBrIp2vxCx_AYH8BVZB4bw)
 
 ### Linux
 
