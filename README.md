@@ -29,12 +29,10 @@
 💡 **「关于」**
 
 - 🎓 博主东南大学研一在读，算法岗诸神黄昏已人尽皆知，遂决定深耕 Java，致力全栈。本仓库用于记录学习过程中的所思所想，并力图构建一个完善的知识体系，便于复习巩固
-
 - 🙏 由于本人水平有限，仓库中的知识点来自本人原创、视频、书籍、博客等，非原创均已标明出处（或在参考资料中列出），如有遗漏或发现文章错误及排版问题，请提 issue 或 PR
-
 - ⚡ **[Gitee 在线阅读（国内访问速度较快）](https://veal98.gitee.io/cs-wiki)** | [Gitee 仓库地址（推荐）](https://gitee.com/veal98/CS-Wiki)
-
 - 🔮 [Github 在线阅读](https://veal98.github.io/CS-Wiki/) | [Github 仓库地址](https://github.com/Veal98/CS-Wiki)
+- 另外，如果各位小伙伴春招秋招没有拿得出手的项目的话，可以参考这个 [「开源社区系统 Echo」Gitee 官方推荐项目，目前已累计 700+ star](https://gitee.com/veal98/Echo)，基于 SpringBoot + MyBatis + MySQL + Redis + Kafka + Elasticsearch + Spring Security + ... 并提供详细的开发文档和配套教程。公众号后台回复 Echo 可以获取配套教程，目前尚在更新中
 
 ## 📑 计算机基础
 

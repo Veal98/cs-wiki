@@ -37,6 +37,8 @@
 - 我的公众号：**飞天小牛肉**，2020/12/29 日开通，专注于分享计算机基础（数据结构 + 算法 + 计算机网络 + 数据库 + 操作系统 + Linux）和 Java 相关技术栈的原创技术好文。本公众号的目的就是**让大家可以快速掌握重点知识，有的放矢**。希望大家多多支持哦，和小牛肉一起成长
 
   <img src="https://gitee.com/veal98/images/raw/master/img/公众号二维码.png" style="zoom:67%;" />
+  
+-  另外，如果各位小伙伴春招秋招没有拿得出手的项目的话，可以参考这个 [「开源社区系统 Echo」Gitee 官方推荐项目，目前已累计 700+ star](https://gitee.com/veal98/Echo)，基于 SpringBoot + MyBatis + MySQL + Redis + Kafka + Elasticsearch + Spring Security + ... 并提供详细的开发文档和配套教程。公众号后台回复 Echo 可以获取配套教程，目前尚在更新中
 
 
 ## 📑 计算机基础
@@ -50,6 +52,7 @@
 
 - [Code Interview Guide · 第 1 篇「栈和队列」](计算机基础/算法/程序员代码面试指南/1-栈和队列.md)
 - [Code Interview Guide · 第 2 篇「链表问题」](计算机基础/算法/程序员代码面试指南/2-链表问题.md)
+- [Code Interview Guide · 第 3 篇「二叉树问题」](计算机基础/算法/程序员代码面试指南/3-二叉树问题.md)
 
 ### 计算机网络
 
@@ -125,6 +128,7 @@
 - [Java 小白成长记 · 第 17 篇「HashMap 这套八股，不得背个十来遍？」](https://mp.weixin.qq.com/s/JuwcUAfvxVQmJdhEBAekUw)
 - [Java 小白成长记 · 第 18 篇「Hashtable 渐渐被人们遗忘了，只有面试官还记得，感动」](https://mp.weixin.qq.com/s/3CqgvC8ek1H9SvPbL_FTDQ)
 - [Java 小白成长记 · 第 19 篇「【重磅开篇】形成完善的多线程世界观」](https://mp.weixin.qq.com/s/YcUucEZ4sBWeZTzCnfGxDQ)
+- [Java 小白成长记 · 第 20 篇「Java 线程和操作系统的线程有啥区别？」](https://mp.weixin.qq.com/s/VmE1nrov2CCq9jvluxSXVg)
 
 ### Java 虚拟机
 
