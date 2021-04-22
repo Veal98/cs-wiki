@@ -26,7 +26,7 @@
 
 💡 **「关于」**
 
-- 🎓 博主东南大学研一在读，算法岗诸神黄昏已人尽皆知，遂决定深耕 Java，致力全栈。本仓库用于记录学习过程中的所思所想，并力图构建一个完善的知识体系，便于复习巩固
+- 🎓 博主东南大学研一在读，携程 Java 后台开发暑期实习生，热爱健身与篮球。本仓库于我考研时建立并维护至今两年有已，旨在用于记录学习过程中的所思所想，并力图构建一个完善的知识体系
 
 - 🙏 由于本人水平有限，仓库中的知识点来自本人原创、视频、书籍、博客等，非原创均已标明出处（或在参考资料中列出），如有遗漏或发现文章错误及排版问题，请提 issue 或 PR
 
@@ -34,11 +34,11 @@
 
 - 🔮 [Github 在线阅读](https://veal98.github.io/CS-Wiki/) | [Github 仓库地址](https://github.com/Veal98/CS-Wiki)
 
-- 我的公众号：**飞天小牛肉**，2020/12/29 日开通，专注于分享计算机基础（数据结构 + 算法 + 计算机网络 + 数据库 + 操作系统 + Linux）和 Java 相关技术栈的原创技术好文。本公众号的目的就是**让大家可以快速掌握重点知识，有的放矢**。希望大家多多支持哦，和小牛肉一起成长
+- 💬 我的公众号：**飞天小牛肉**，2020/12/29 日开通，专注于分享计算机基础（数据结构 + 算法 + 计算机网络 + 数据库 + 操作系统 + Linux）和 Java 相关技术栈的原创技术好文，**让大家可以快速掌握重点知识，有的放矢**。下方扫码关注第一时间获取干货更新：
 
   <img src="https://gitee.com/veal98/images/raw/master/img/公众号二维码.png" style="zoom:67%;" />
   
--  另外，如果各位小伙伴春招秋招没有拿得出手的项目的话，可以参考这个 [「开源社区系统 Echo」Gitee 官方推荐项目，目前已累计 700+ star](https://gitee.com/veal98/Echo)，基于 SpringBoot + MyBatis + MySQL + Redis + Kafka + Elasticsearch + Spring Security + ... 并提供详细的开发文档和配套教程。公众号后台回复 Echo 可以获取配套教程，目前尚在更新中
+-  🦄 另外，如果各位小伙伴春招秋招没有拿得出手的项目的话，可以参考这个 [「开源社区系统 Echo」Gitee 官方推荐项目，目前已累计 700+ star](https://gitee.com/veal98/Echo)，基于 SpringBoot + MyBatis + MySQL + Redis + Kafka + Elasticsearch + Spring Security + ... 并提供详细的开发文档和配套教程。公众号后台回复 `Echo` 可以获取配套手把手教程，目前尚在更新中
 
 
 ## 📑 计算机基础
@@ -181,6 +181,8 @@
 
 ### Spring Boot 2.x
 
+墙烈推荐一个项目：[「开源社区系统 Echo」Gitee 官方推荐项目，目前已累计 700+ star](https://gitee.com/veal98/Echo)：基于 SpringBoot + MyBatis + MySQL + Redis + Kafka + Elasticsearch + Spring Security + ... 并提供详细的开发文档和配套教程 <span data-v-73ca276e="" class="badge recommendation" style="vertical-align: base-line;">项目经验首选</span>
+
   - [1 - Spring Boot 入门](必备框架/SpringBoot/1-SpringBoot入门.md)
   - [2 - 配置文件](必备框架/SpringBoot/2-配置文件.md)
   - [3 - 自定义 starter](必备框架/SpringBoot/3-自定义starter.md)
@@ -190,7 +192,7 @@
   - [7 - Web 开发 - 实战案例](必备框架/SpringBoot/7-Web开发-实战案例.md)
   - [8 - SpringBoot 与数据访问](必备框架/SpringBoot/8-SpringBoot与数据访问.md)
   - 9 - **Spring Data JPA**
-    - [🛫 Spring Boot + Spring Data JPA 一篇文章快速入门](必备框架/SpringBoot/SpringDataJPA/SpringBoot+SpringDataJPA快速入门.md)
+    - [Spring Boot + Spring Data JPA 一篇文章快速入门](必备框架/SpringBoot/SpringDataJPA/SpringBoot+SpringDataJPA快速入门.md)
     - [9.1 - 实体类映射到数据库表的基本注解](必备框架/SpringBoot/SpringDataJPA/1-实体类映射到数据库表的基本注解.md)
     - [9.2 - 表之间的映射关系](必备框架/SpringBoot/SpringDataJPA/2-表之间的映射关系.md)
     - [9.3 - Spring Data JPA 的四种查询方式](必备框架/SpringBoot/SpringDataJPA/3-SpringDataJPA的四种查询方式.md)
@@ -198,7 +200,6 @@
   - [10 - 异步、定时、邮件任务](必备框架/SpringBoot/10-异步定时邮件任务.md)
   - [11 - 集成 Redis（Lettuce）](必备框架/SpringBoot/11-集成Redis.md)
   - <u>🎯 SpringBoot 面试指南</u>
-  - 🦄 [开源社区系统 — Echo (Gitee 官方推荐项目)](https://github.com/Veal98/Echo)：基于 SpringBoot + MyBatis + MySQL + Redis + Kafka + Elasticsearch + Spring Security + ... 并提供详细的开发文档和配套教程 <span data-v-73ca276e="" class="badge recommendation" style="vertical-align: base-line;">项目经验首选</span>
 
 ### Netty 4.x
 
@@ -368,15 +369,15 @@
 
 #### ① 分布式理论基础
 
-- [1 - 分布式相关概念](系统设计/分布式/分布式理论基础/1-分布式相关概念.md) <span data-v-73ca276e="" class="badge warning" style="vertical-align: base-line;">Vital</span>
-- [2 - 分布式事务](系统设计/分布式/分布式理论基础/2-分布式事务.md) <span data-v-73ca276e="" class="badge tip" style="vertical-align: base-line;">Important</span>
+- [1 - 分布式相关概念](系统设计/分布式/分布式理论基础/1-分布式相关概念.md)
+- [2 - 分布式事务](系统设计/分布式/分布式理论基础/2-分布式事务.md)
 - [3 - 分布式 Session](系统设计/分布式/分布式理论基础/3-分布式Session.md)
-- [4 - 分布式锁](系统设计/分布式/分布式理论基础/4-分布式锁.md) <span data-v-73ca276e="" class="badge tip" style="vertical-align: base-line;">Important</span>
+- [4 - 分布式锁](系统设计/分布式/分布式理论基础/4-分布式锁.md)
 - [5 - 分布式 ID](系统设计/分布式/分布式理论基础/5-分布式ID.md)
 
 #### ② RPC 框架 — Dubbo
 
-- [1 - 什么是 RPC 及其原理](系统设计/分布式/RPC/1-什么是RPC及其原理.md) <span data-v-73ca276e="" class="badge tip" style="vertical-align: base-line;">Important</span>
+- [1 - 什么是 RPC 及其原理](系统设计/分布式/RPC/1-什么是RPC及其原理.md)
 
 > [!Danger]
 > **Dubbo 与 Spring Cloud 并不是竞争关系**，**Dubbo** 作为成熟的 RPC 框架（分布式服务框架），其易用性、扩展性和健壮性已得到业界的认可。而 **Spring Cloud** 是一整个微服务生态，目前 **Dubbo** 已经成为 **Spring Cloud Alibaba** 的 RPC 组件，与 **Spring Cloud** 原生的 **Feign** 以及 **RestTemplate** 进行无缝整合，实现“零”成本迁移。
@@ -397,7 +398,7 @@
     - Dubbo 的服务引用过程
     - Dubbo 的服务调用过程
   - <u>🎯 Dubbo 面试指南</u>
-- [🏆 从零开始设计一个轻量级分布式 RPC 框架](https://github.com/Veal98/RPC-FromScratch) <span data-v-73ca276e="" class="badge recommendation" style="vertical-align: base-line;">项目经验首选</span>
+- [🏆 从零开始设计一个轻量级分布式 RPC 框架](https://github.com/Veal98/RPC-FromScratch)
 
 #### ③ API 网关
 
@@ -450,25 +451,6 @@
 - 1 - HTML / CSS / JS 速览
 - [2 - JSON 详解](前端/必备基础/JSON详解.md)
 - [3 - AJAX 详解](前端/必备基础/AJAX详解.md)
-
-### Vue 2.x
-
-- [1 - Vue.js 入门](前端/Vue/1-入门.md)
-- [2 - 安装](前端/Vue/2-安装.md)
-- [3 - Vue-Cli 3+搭建的项目目录结构](前端/Vue/3-目录结构.md)
-- [4 - 模板语法](前端/Vue/4-模板语法.md)
-- [5 - 条件语句](前端/Vue/5-条件语句.md)
-- [6 - 循环语句](前端/Vue/6-循环语句.md)
-- [7 - 计算属性](前端/Vue/7-计算属性.md)
-- [8 - 监听属性](前端/Vue/8-监听属性.md)
-- [9 - 样式绑定](前端/Vue/9-样式绑定.md)
-- [10 - 事件处理器](前端/Vue/10-事件处理器.md)
-- [11 - 表单](前端/Vue/11-表单.md)
-- [12 - 组件](前端/Vue/12-组件.md)
-- [13 - 自定义指令](前端/Vue/13-自定义指令.md)
-- [14 - 路由详解](前端/Vue/14-路由.md)
-- [15 - Axios 详解](前端/Vue/15-axios.md)
-- [16 - 生命周期钩子](前端/Vue/16-生命周期钩子.md)
 
 ## 🐍 Python
 
