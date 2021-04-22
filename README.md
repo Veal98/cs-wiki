@@ -38,7 +38,7 @@
 
 - 💬 我的公众号：**飞天小牛肉**，2020/12/29 日开通，专注于分享计算机基础（数据结构 + 算法 + 计算机网络 + 数据库 + 操作系统 + Linux）和 Java 相关技术栈的原创技术好文，**让大家可以快速掌握重点知识，有的放矢**。下方扫码关注第一时间获取干货更新：
 
-  <img src="https://gitee.com/veal98/images/raw/master/img/公众号二维码.png" style="zoom:67%;" />
+  <img src="https://gitee.com/veal98/images/raw/master/img/公众号二维码.png" width="250px" />
 
 - 🦄 另外，如果各位小伙伴春招秋招没有拿得出手的项目的话，可以参考这个 [「开源社区系统 Echo」Gitee 官方推荐项目，目前已累计 700+ star](https://gitee.com/veal98/Echo)，基于 SpringBoot + MyBatis + MySQL + Redis + Kafka + Elasticsearch + Spring Security + ... 并提供详细的开发文档和配套教程。公众号后台回复 `Echo` 可以获取配套手把手教程，目前尚在更新中
 
