@@ -30,7 +30,7 @@
 
 - 🎓 博主东南大学研一在读，携程 Java 后台开发暑期实习生，热爱健身与篮球。本仓库于我考研时建立并维护至今两年有已，旨在用于记录学习过程中的所思所想，并力图构建一个完善的知识体系
 
-- 🙏 由于本人水平有限，仓库中的知识点来自本人原创、视频、书籍、博客等，非原创均已标明出处（或在参考资料中列出），如有遗漏或发现文章错误及排版问题，请提 issue 或 PR·
+- 🙏 由于本人水平有限，仓库中的知识点来自本人原创、视频、书籍、博客等，非原创均已标明出处（或在参考资料中列出），如有遗漏或发现文章错误及排版问题，请提 issue 或 PR
 
 - ⚡ **[Gitee 在线阅读（国内访问速度较快）](https://veal98.gitee.io/cs-wiki)** | [Gitee 仓库地址（推荐）](https://gitee.com/veal98/CS-Wiki)
 
@@ -99,6 +99,10 @@
 
 - [强化学习入门](https://veal98.gitee.io/cs-wiki/#/README?id=强化学习入门)
 - [MATLAB](https://veal98.gitee.io/cs-wiki/#/README?id=matlab)
+
+## 📖 读书笔记
+
+- [万历十五年，到底意难平](https://mp.weixin.qq.com/s/xvRe1bNKDliwIB3jz9kJHw)
 
 ## 📞 联系我
 

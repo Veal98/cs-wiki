@@ -63,9 +63,10 @@
 - [计算机网络那些事儿 · 第 5 篇「关于 TCP 三次握手和四次挥手，满分回答在此」](https://mp.weixin.qq.com/s/u56NcMs68sgi6uDpzJ61yw)
 - [计算机网络那些事儿 · 第 6 篇「原来 TCP 为了保证可靠传输做了这么多」](https://mp.weixin.qq.com/s/AwdxuP5nJSnkyvXRKnqdOg)
 - [计算机网络那些事儿 · 第 7 篇「超详细 DNS 协议解析」](https://mp.weixin.qq.com/s/AfVqL7lEsbRE-YLOPZ4gDQ)
-- [计算机网络那些事儿 · 第 8 篇「HTTP 协议的前世今生」](https://mp.weixin.qq.com/s/98FtlAy0mAtf6tGplQMDqA)
-- [计算机网络那些事儿 · 第 9 篇「从崩溃的选课系统，论为什么更安全的 HTTPS 协议没有被全面采用」](https://mp.weixin.qq.com/s/NTZlUzu4R3xyWB5T6qWo9w)
-- [计算机网络那些事儿 · 第 10 篇「经典面试题：在浏览器地址栏输入一个 URL 后回车，背后发生了什么」](https://mp.weixin.qq.com/s/9vGRSkUNgRQWO6tVmUisOw)
+- [计算机网络那些事儿 · 第 8 篇「为什么 DNS 协议使用 UDP？只使用了 UDP 吗？」](https://mp.weixin.qq.com/s/3QieSeqbuU2fmqYRqj6GaQ)
+- [计算机网络那些事儿 · 第 9 篇「HTTP 协议的前世今生」](https://mp.weixin.qq.com/s/98FtlAy0mAtf6tGplQMDqA)
+- [计算机网络那些事儿 · 第 10 篇「从崩溃的选课系统，论为什么更安全的 HTTPS 协议没有被全面采用」](https://mp.weixin.qq.com/s/NTZlUzu4R3xyWB5T6qWo9w)
+- [计算机网络那些事儿 · 第 11 篇「经典面试题：在浏览器地址栏输入一个 URL 后回车，背后发生了什么」](https://mp.weixin.qq.com/s/9vGRSkUNgRQWO6tVmUisOw)
 
 ### 操作系统
 
@@ -606,6 +607,10 @@
 ## 🎉 其他
 
 ---
+
+### 读书笔记
+
+- [万历十五年，到底意难平](https://mp.weixin.qq.com/s/xvRe1bNKDliwIB3jz9kJHw)
 
 ### 写作相关
 
