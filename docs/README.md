@@ -132,6 +132,7 @@
 - [Java 小白成长记 · 第 19 篇「【重磅开篇】形成完善的多线程世界观」](https://mp.weixin.qq.com/s/YcUucEZ4sBWeZTzCnfGxDQ)
 - [Java 小白成长记 · 第 20 篇「Java 线程和操作系统的线程有啥区别？」](https://mp.weixin.qq.com/s/VmE1nrov2CCq9jvluxSXVg)
 - [Java 小白成长记 · 第 21 篇「30 张图，以 DEBUG 方式深入理解线程的底层运行原理」](https://mp.weixin.qq.com/s/YLjWKZ12VVcIvc9S1-wrCA)
+- [Java 小白成长记 · 第 22 篇「【跬步千里】详解 Java 内存模型与原子性、可见性、有序性」](https://mp.weixin.qq.com/s/2hKZ-iNhSkUiUmxeVPHXCw)
 
 ### Java 虚拟机
 
