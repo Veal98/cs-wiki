@@ -133,6 +133,8 @@
 - [Java 小白成长记 · 第 20 篇「Java 线程和操作系统的线程有啥区别？」](https://mp.weixin.qq.com/s/VmE1nrov2CCq9jvluxSXVg)
 - [Java 小白成长记 · 第 21 篇「30 张图，以 DEBUG 方式深入理解线程的底层运行原理」](https://mp.weixin.qq.com/s/YLjWKZ12VVcIvc9S1-wrCA)
 - [Java 小白成长记 · 第 22 篇「【跬步千里】详解 Java 内存模型与原子性、可见性、有序性」](https://mp.weixin.qq.com/s/2hKZ-iNhSkUiUmxeVPHXCw)
+- [Java 小白成长记 · 第 23 篇「JMM 最最最核心的概念：Happens-before 原则](https://mp.weixin.qq.com/s/VfpRu1Tk6VLolpE9Yfn-hg)
+- [Java 小白成长记 · 第 24 篇「【有点收获】三种基本方法创建线程」](https://mp.weixin.qq.com/s/IjiAARga2EfKe1h37ksOkg)
 
 ### Java 虚拟机
 
