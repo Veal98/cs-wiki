@@ -53,6 +53,7 @@
 - [Code Interview Guide · 第 1 篇「栈和队列」](计算机基础/算法/程序员代码面试指南/1-栈和队列.md)
 - [Code Interview Guide · 第 2 篇「链表问题」](计算机基础/算法/程序员代码面试指南/2-链表问题.md)
 - [Code Interview Guide · 第 3 篇「二叉树问题」](计算机基础/算法/程序员代码面试指南/3-二叉树问题.md)
+- [Code Interview Guide · 第 4 篇「递归和动态规划」](计算机基础/算法/程序员代码面试指南/4-递归和动态规划.md)
 
 ### 计算机网络
 
@@ -77,6 +78,9 @@
 - [操作系统那些事儿 · 第 4 篇「看完了进程同步与互斥机制，我终于彻底理解了 PV 操作」](https://mp.weixin.qq.com/s/vvjhbzsWQNRkU7-b_dURlQ)
 - [操作系统那些事儿 · 第 5 篇「高频考点，六大进程通信机制总结」](https://mp.weixin.qq.com/s/kxxV_yy5eesHiHHLPO0mWg)
 - [操作系统那些事儿 · 第 6 篇「五分钟扫盲：程序在计算机中是如何运行起来的」](https://mp.weixin.qq.com/s/qBrIp2vxCx_AYH8BVZB4bw)
+- [操作系统那些事儿 · 第 7 篇「你看到的所有地址都不是真的 | 虚拟地址与物理地址」](https://mp.weixin.qq.com/s/c4S371GfB2ve3liDqiGN8w)
+- [操作系统那些事儿 · 第 8 篇「内存管理两部曲之物理内存管理」](https://mp.weixin.qq.com/s/DJ5K_HJ5pn3K3W52_dURsw)
+- 操作系统那些事儿 · 第 9 篇「内存管理两部曲之虚拟内存管理」
 
 ### Linux
 
@@ -616,6 +620,7 @@
 ### 读书笔记
 
 - [万历十五年，到底意难平](https://mp.weixin.qq.com/s/xvRe1bNKDliwIB3jz9kJHw)
+- [世上的人遍地都是，说的着的人千里难寻](https://mp.weixin.qq.com/s/j8r4CXbMgWw-Yo5xPdex5Q)
 
 ### 写作相关
 
