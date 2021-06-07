@@ -47,8 +47,7 @@
 - [数据结构与算法](https://veal98.gitee.io/cs-wiki/#/README?id=数据结构与算法)
 - [计算机网络](https://veal98.gitee.io/cs-wiki/#/README?id=计算机网络)
 - [操作系统](https://veal98.gitee.io/cs-wiki/#/README?id=操作系统)
-- [Linux](https://veal98.gitee.io/cs-wiki/#/README?id=linux)
-- [数据库](https://veal98.gitee.io/cs-wiki/#/README?id=数据库)
+- [数据库 MySQL](https://veal98.gitee.io/cs-wiki/#/README?id=数据库-mysql)
 
 ## 🍵 Java
 
