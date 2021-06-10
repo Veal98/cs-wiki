@@ -92,13 +92,13 @@
 
 ### Java 基础
 
-- [Java 小白成长记 · 第 1 篇「万物皆对象」](https://mp.weixin.qq.com/s/W3KrCirgCrqrSiOQ8P3tAQ)
-- [Java 小白成长记 · 第 2 篇「Hello World」](https://mp.weixin.qq.com/s/JAc0QQpYI5xlG4A50ycjfQ)
-- [Java 小白成长记 · 第 3 篇「运算符与控制流」](https://mp.weixin.qq.com/s/b5fG-sTgQBFrFl1ZEdXbXg)
-- [Java 小白成长记 · 第 4 篇「对象的初始化和清理」](https://mp.weixin.qq.com/s/24wLXIr3FYCqdXwuW7vdsA)
-- [Java 小白成长记 · 第 5 篇「Java 是如何实现封装的 — 图解访问修饰符」](https://mp.weixin.qq.com/s/cLRUI9DcxFwACDgzZibW7w)
-- [Java 小白成长记 · 第 6 篇「为什么说要慎用继承，优先使用组合」](https://mp.weixin.qq.com/s/NO3yoP5v5S7k725KlrN1Ig)
-- [Java 小白成长记 · 第 7 篇「区分重载和重写，轻松掌握 Java 多态」](https://mp.weixin.qq.com/s/QPyxHTWjLfqx8Qjrg3NRJw)
+- [Java 小白成长记 · 第 1 篇「万物皆对象」](Java/Java基础/Java小白成长记-第1篇-万物皆对象.md)
+- [Java 小白成长记 · 第 2 篇「Hello World」](Java/Java基础/Java小白成长记-第2篇-HelloWorld.md)
+- [Java 小白成长记 · 第 3 篇「运算符与控制流」](Java/Java基础/Java小白成长记-第3篇-运算符与控制流.md)
+- [Java 小白成长记 · 第 4 篇「对象的初始化和清理」](Java/Java基础/Java小白成长记-第4篇-对象的初始化和清理.md)
+- [Java 小白成长记 · 第 5 篇「Java 是如何实现封装的 — 图解访问修饰符」](Java/Java基础/Java小白成长记-第5篇-Java是如何实现封装的-图解访问修饰符.md)
+- [Java 小白成长记 · 第 6 篇「为什么说要慎用继承，优先使用组合」](Java/Java基础/Java小白成长记-第6篇-为什么说要慎用继承优先使用组合.md)
+- [Java 小白成长记 · 第 7 篇「区分重载和重写，轻松掌握 Java 多态」](Java/Java基础/Java小白成长记-第7篇-区分重载和重写轻松掌握Java多态.md)
 - [Java 小白成长记 · 第 8 篇「如何理解 Java 中接口存在的意义」](https://mp.weixin.qq.com/s/Sye1Mj2TEmTCqqzJFLNU3g)
 - [Java 小白成长记 · 第 9 篇「面试常备，字符串三剑客 String、StringBuffer、StringBuilder」](https://mp.weixin.qq.com/s/4fXP9ahIPtcsKqlZwdOQJg)
 - [Java 小白成长记 · 第 10 篇「String 的不可变真的是因为 final 吗？」](https://mp.weixin.qq.com/s/MXsICUiBkei-69B0CIMVVA)
