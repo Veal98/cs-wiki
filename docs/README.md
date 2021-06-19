@@ -69,6 +69,7 @@
 - [计算机网络那些事儿 · 第 10 篇「HTTP 协议的前世今生」](https://mp.weixin.qq.com/s/98FtlAy0mAtf6tGplQMDqA)
 - [计算机网络那些事儿 · 第 11 篇「从崩溃的选课系统，论为什么更安全的 HTTPS 协议没有被全面采用」](https://mp.weixin.qq.com/s/NTZlUzu4R3xyWB5T6qWo9w)
 - [计算机网络那些事儿 · 第 12 篇「经典面试题：在浏览器地址栏输入一个 URL 后回车，背后发生了什么」](https://mp.weixin.qq.com/s/9vGRSkUNgRQWO6tVmUisOw)
+- [计算机网络那些事儿 · 第 13 篇「DHCP：IP 并非与生俱来」](https://mp.weixin.qq.com/s/omblcnd6w9Y5D9aJNe1j8A)
 
 ### 操作系统
 
