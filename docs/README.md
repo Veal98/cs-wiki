@@ -38,7 +38,7 @@
 
   <img src="https://gitee.com/veal98/images/raw/master/img/公众号二维码.png" style="zoom:67%;" />
   
--  🦄 另外，如果各位小伙伴春招秋招没有拿得出手的项目的话，可以参考这个 [「开源社区系统 Echo」Gitee 官方推荐项目，目前已累计 700+ star](https://gitee.com/veal98/Echo)，基于 SpringBoot + MyBatis + MySQL + Redis + Kafka + Elasticsearch + Spring Security + ... 并提供详细的开发文档和配套教程。公众号后台回复 `Echo` 可以获取配套手把手教程，目前尚在更新中
+-  🦄 另外，如果各位小伙伴春招秋招没有拿得出手的项目的话，可以参考这个 [「开源社区系统 Echo」Gitee 官方推荐项目，目前已累计 900+ star](https://gitee.com/veal98/Echo)，基于 SpringBoot + MyBatis + MySQL + Redis + Kafka + Elasticsearch + Spring Security + ... 并提供详细的开发文档和配套教程。公众号后台回复 `Echo` 可以获取配套手把手教程，目前尚在更新中
 
 
 ## 📑 计算机基础
@@ -54,6 +54,7 @@
 - [Code Interview Guide · 第 2 篇「链表问题」](计算机基础/算法/程序员代码面试指南/2-链表问题.md)
 - [Code Interview Guide · 第 3 篇「二叉树问题」](计算机基础/算法/程序员代码面试指南/3-二叉树问题.md)
 - [Code Interview Guide · 第 4 篇「递归和动态规划」](计算机基础/算法/程序员代码面试指南/4-递归和动态规划.md)
+- [Code Interview Guide · 第 5 篇「字符串问题」](计算机基础/算法/程序员代码面试指南/5-字符串问题.md)
 
 ### 计算机网络
 
@@ -86,6 +87,7 @@
 
 ### 数据库 MySQL
 - [MySQL 必知必会 · 第 1 篇「一文读懂一条 SQL 查询语句是如何执行的」](https://mp.weixin.qq.com/s/SkhHqQ1a77xmfzaF9KSK9A)
+- [MySQL 必知必会 · 第 2 篇「携程二面：讲讲 MySQL 中的 WAL 策略和 CheckPoint 技术」](https://mp.weixin.qq.com/s/cwfDsLVqkhWXH-lLe64Okg)
 
 ## 🍵 Java
 

@@ -102,6 +102,7 @@
 ## 📖 读书笔记
 
 - [万历十五年，到底意难平](https://mp.weixin.qq.com/s/xvRe1bNKDliwIB3jz9kJHw)
+- [世上的人遍地都是，说的着的人千里难寻](https://mp.weixin.qq.com/s/j8r4CXbMgWw-Yo5xPdex5Q)
 
 ## 📞 联系我
 
