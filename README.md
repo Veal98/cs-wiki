@@ -1,28 +1,19 @@
-<style>
-    h2
-    {
-      margin-bottom:50px;
-      font-size: 1em;
+<br>
 
-    }
-    h2 span{
-      display:inline-block;
-      background: rgb(102, 126, 233);
-      color:#ffffff !important;
-      padding:  10px  16px;
-      border-radius:5px;
-      box-shadow: 2px 2px 5px rgb(216, 216, 216);
-      
-    }
-    /* .content{
-      width:1000px;
-      margin: 0 auto;
-      padding-top: 30px;
-    } */
-    .markdown-section{
-      padding: 30px 30px 40px 30px !important;
-    }
-</style>
+<p align="center">
+    <img width="280px" src="https://gitee.com/veal98/images/raw/master/img/20210212163625.png" >
+</p>
+
+
+<div align="center">
+
+[![star](https://gitee.com/veal98/CS-Wiki/badge/star.svg?theme=dark)](https://gitee.com/veal98/CS-Wiki/stargazers)
+[![fork](https://gitee.com/veal98/CS-Wiki/badge/fork.svg?theme=dark)](https://gitee.com/veal98/CS-Wiki/members)
+[![GitHub stars](https://img.shields.io/github/stars/Veal98/CS-Wiki?logo=github)](https://github.com/Veal98/CS-Wiki/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/Veal98/CS-Wiki?logo=github)](https://github.com/Veal98/CS-Wiki/network)
+
+
+<br>
 
 💡 **「关于」**
 
