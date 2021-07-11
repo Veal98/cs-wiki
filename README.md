@@ -1,5 +1,3 @@
-<br>
-
 <p align="center">
     <img width="280px" src="https://gitee.com/veal98/images/raw/master/img/20210212163625.png" >
 </p>
@@ -12,8 +10,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/Veal98/CS-Wiki?logo=github)](https://github.com/Veal98/CS-Wiki/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/Veal98/CS-Wiki?logo=github)](https://github.com/Veal98/CS-Wiki/network)
 
-
-<br>
+</div>
 
 💡 **「关于」**
 
