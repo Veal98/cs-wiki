@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CS Wiki</title>
+
+  <!-- 解除其他平台的防盗链 -->
+  <meta name="referrer" content="never">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="致力打造完善的 Java 后端知识体系，不仅仅帮助各位小伙伴快速且系统的准备面试(秋招/社招)，更指引学习的方向">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/vue.css">
+  <link rel="stylesheet" type="text/css" href="style/myStyle-light.css"/>
+  <!-- alert -->
+  <link rel="stylesheet" href="https://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.css" type='text/css' media='all' />
+  <!-- latex -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
+  <!--网页标题左侧显示-->
+  <link rel="icon" href="https://gitee.com/veal98/images/raw/master/img/20210212163801.png" type="image/x-icon">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <!--收藏夹显示图标-->
+  <link rel="shortcut icon" href="https://gitee.com/veal98/images/raw/master/img/20210212163801.png" type="image/x-icon">
+
+</head>
+<body background="" style=" background-repeat:no-repeat ;background-size:100% 100%;background-attachment: fixed;">
+  <div id="app" >🏃‍🏃‍🏃‍💨加载中</div>
+  <a class="to-top">Top</a>
+  
+  <script>
+    
+    window.$docsify = {
+      name: 'CS Wiki',
+      nameLink: 'https://veal98.gitee.io/cs-wiki/#/',
+      logo: '',
+      // repo: 'https://github.com/Veal98/CS-Wiki',
+      themeColor: 'rgb(102, 126, 233)',
+      loadNavbar: true,
+      auto2top:true,
+      coverpage: true,
+      onlyCover: true,
+      topMargin: 140,
+     
+      search: {
+        paths: 'auto',
+        placeholder: '🔍 搜索',
+        noData: '😒 找不到结果',
+        // Headline depth, 1 - 6
+        depth: 6,
+        maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+      },//增加搜索框
+   
+      footer: {
+        copy: 'Copyright &copy; 2019 💖 </span>',
+        auth: ' <strong>飞天小牛肉</strong>',
+        pre: '<hr/>',
+        style: 'text-align: center;',
+      },
+
+      copyCode: {
+          buttonText: 'Copy',
+          errorText: 'Error',
+          successText: 'OK!'
+      },
+
+      'flexible-alerts': {
+        style: 'flat'
+      }
+
+       
+    }
+  </script>
+ 
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+  <script src="//cdn.jsdelivr.net/docsify/lib/plugins/zoom-image.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
+
+  <script src="https://cdn.bootcss.com/docsify/4.5.9/plugins/search.min.js"></script>
+
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-bash.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-java.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-cpp.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-c.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-javascript.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-css.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-powershell.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-sql.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-yaml.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-properties.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/matlab.min.js"></script>
+
+  <!-- CDN files for docsify-katex -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
+  
+  <script src="//unpkg.com/docsify-footer-enh/dist/docsify-footer-enh.min.js"></script>
+  
+  <!-- 复制提醒 -->
+  <script src="https://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.js"></script>
+  <script>
+    document.body.oncopy = function () { 
+      swal("复制成功 🎉", 
+        "若要转载或引用请务必保留原文链接，并申明来源。如果你觉得本仓库不错，那就来 Github 给个 star 吧 😊", 
+        "success"); };
+  </script>
+
+  <!-- PWA 离线化 -->
+  <script>
+    if (typeof navigator.serviceWorker !== 'undefined') {
+      navigator.serviceWorker.register('pwa.js')
+    }
+  </script>
+  
+  <!-- 访问量统计 -->
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <!-- 置顶插件 -->
+  <script src="style/jquery-1.11.3.min.js"></script>
+  <script src="style/jquery.toTop.min.js"></script>
+  <script>
+    $('.to-top').toTop();
+  </script>
+
+  <!-- Markdown 引用样式美化 -->
+  <script src="https://unpkg.com/docsify-plugin-flexible-alerts"></script>
+
+
+</body>
+</html>
