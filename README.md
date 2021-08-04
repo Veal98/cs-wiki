@@ -78,6 +78,7 @@
 - [MySQL 必知必会 · 第 1 篇「一文读懂一条 SQL 查询语句是如何执行的」](计算机基础/数据库MySQL/1-一条SQL查询语句是如何执行的.md)
 - [MySQL 必知必会 · 第 2 篇「携程二面：讲讲 MySQL 中的 WAL 策略和 CheckPoint 技术」](计算机基础/数据库MySQL/2-携程二面-讲讲MySQL中的WAL策略和CheckPoint技术.md)
 - [MySQL 必知必会 · 第 3 篇「三分钟入门 InnoDB 存储引擎中的表锁和行锁](计算机基础/数据库MySQL/3-三分钟入门InnoDB存储引擎中的表锁和行锁.md)
+- [MySQL 必知必会 · 第 4 篇「InnoDB 存储引擎中行锁的三种算法](计算机基础/数据库MySQL/4-InnoDB存储引擎中行锁的三种算法.md)
 
 ## 🍵 Java
 
