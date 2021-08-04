@@ -122,7 +122,7 @@ unlock tables; # 释放表级锁
 
 另外，需要注意的是，InnoDB 存储引擎的行级锁是基于索引的（这个下篇文章会详细解释），也就是说**当索引失效或者说根本没有用索引的时候，行锁就会升级成表锁**。
 
-举个例子（这里就以比较典型的索引失效情况 “使用 `or`" 来举例），有数据库如下，id 是主键索引：
+举个例子，有数据库如下，id 是主键索引：
 
 ```sql
 CREATE TABLE `test` (
@@ -132,11 +132,10 @@ CREATE TABLE `test` (
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 ```
 
-新建两个事务，先执行事务 T1 的前两行，也就是不要执行 rollback 也不要 commit：
+新建两个事务，**先执行事务 T1 的前两行，也就是不要执行 commit**。我们试图使用 `select ... for update` 给 username = "user_three" 的记录行加上记录锁，但是由于 username 并非主键也并非索引，所以实际上这里事务 T1 锁住的是整张表：
 
-![](https://gitee.com/veal98/images/raw/master/img/20210717231013.png)
+![image-20210801220807603](https://gitee.com/veal98/images/raw/master/img/20210801220807.png)
 
-这个时候事务 T1 没有释放锁，并且由于索引失效事务 T1 其实是锁住了整张表，此时再来执行事务 2，你会发现事务 T2 会卡住，最后超时关闭事务：
+由于没有执行 commit，所以这个时候事务 T1 没有释放锁，并且锁住了整张表。此时再来执行事务 2 试图申请 id = 5 的记录锁，你会发现事务 T2 会卡住，最后超时关闭事务：
 
-![](https://gitee.com/veal98/images/raw/master/img/20210717231202.png)
-
+![image-20210801221604790](https://gitee.com/veal98/images/raw/master/img/20210801221604.png)
