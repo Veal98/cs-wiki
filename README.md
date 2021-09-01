@@ -4,11 +4,13 @@
 
 
 <div align="center">
-
 [![star](https://gitee.com/veal98/CS-Wiki/badge/star.svg?theme=dark)](https://gitee.com/veal98/CS-Wiki/stargazers)
 [![fork](https://gitee.com/veal98/CS-Wiki/badge/fork.svg?theme=dark)](https://gitee.com/veal98/CS-Wiki/members)
 [![GitHub stars](https://img.shields.io/github/stars/Veal98/CS-Wiki?logo=github)](https://github.com/Veal98/CS-Wiki/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/Veal98/CS-Wiki?logo=github)](https://github.com/Veal98/CS-Wiki/network)
+
+<a href="#公众号"><img src="https://img.shields.io/badge/公众号-飞天小牛肉-orange" alt="交流群"></a>
+<a href="https://gitee.com/veal98/Echo"><img src="https://img.shields.io/badge/备战校招-开源社区项目-blueviolet" alt="配套教程"></a>
 
 </div>
 
@@ -26,7 +28,7 @@
 
   <img width = 240px src="https://gitee.com/veal98/images/raw/master/img/公众号二维码.png" />
   
--  🦄 另外，如果各位小伙伴春招秋招没有拿得出手的项目的话，可以参考这个 [「开源社区系统 Echo」Gitee 官方推荐项目，目前已累计 900+ star](https://gitee.com/veal98/Echo)，基于 SpringBoot + MyBatis + MySQL + Redis + Kafka + Elasticsearch + Spring Security + ... 并提供详细的开发文档和配套教程。公众号后台回复 `Echo` 可以获取配套手把手教程，目前尚在更新中
+-  🦄 另外，如果各位小伙伴春招秋招没有拿得出手的项目的话，可以参考这个 [「开源社区系统 Echo」Gitee 官方推荐项目，目前已累计 1.1k+ star](https://gitee.com/veal98/Echo)，基于 SpringBoot + MyBatis + MySQL + Redis + Kafka + Elasticsearch + Spring Security + ... 并提供详细的开发文档和配套教程。公众号后台回复 `Echo` 可以获取配套手把手教程，目前尚在更新中
 
 
 ## 📑 计算机基础
@@ -80,6 +82,7 @@
 - [MySQL 必知必会 · 第 3 篇「三分钟入门 InnoDB 存储引擎中的表锁和行锁](计算机基础/数据库MySQL/3-三分钟入门InnoDB存储引擎中的表锁和行锁.md)
 - [MySQL 必知必会 · 第 4 篇「InnoDB 存储引擎中行锁的三种算法](计算机基础/数据库MySQL/4-InnoDB存储引擎中行锁的三种算法.md)
 - [MySQL 必知必会 · 第 5 篇「Are You OK？主键、聚集索引、辅助索引](计算机基础/数据库MySQL/5-主键+聚集索引+辅助索引.md)
+- [MySQL 必知必会 · 第 6 篇「心态崩了，我怎么知道实际生产环境的 B+ 树索引有多少层？](计算机基础/数据库MySQL/5-主键+聚集索引+辅助索引.md)
 
 ## 🍵 Java
 
@@ -435,6 +438,7 @@
 ## 🤡 萌新入职第一课
 
 - [当我们谈论中台的时候，我们在谈些什么（转载）](萌新入职第一课/转载-当我们谈论中台的时候-我们在谈些什么.md)
+- [萌新指南-SOA和微服务有什么区别](萌新入职第一课/萌新指南-SOA和微服务有什么区别.md)
 
 ## 📘 读书笔记
 
@@ -444,6 +448,7 @@
 
 ### 文学
 
+- [呐喊](读书笔记/3-呐喊.md)
 - [世上的人遍地都是，说的着的人千里难寻](读书笔记/2-世上的人遍地都是-说的着的人千里难寻.md)
 
 ## 🙋‍ 联系我
