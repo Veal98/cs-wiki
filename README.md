@@ -85,7 +85,7 @@
 - [MySQL 必知必会 · 第 4 篇「InnoDB 存储引擎中行锁的三种算法」](计算机基础/数据库MySQL/4-InnoDB存储引擎中行锁的三种算法.md)
 - [MySQL 必知必会 · 第 5 篇「Are You OK？主键、聚集索引、辅助索引」](计算机基础/数据库MySQL/5-主键+聚集索引+辅助索引.md)
 - [MySQL 必知必会 · 第 6 篇「心态崩了，我怎么知道实际生产环境的 B+ 树索引有多少层？」](计算机基础/数据库MySQL/6-B+树一般多少层.md)
-- [MySQL 必知必会 · 第 7 篇「你的 SQL 还在回表查询吗？快给它安排上覆盖索引」](计算机基础/数据库MySQL/7-你的 SQL 还在回表查询吗-快给它安排覆盖索引.md)
+- [MySQL 必知必会 · 第 7 篇「你的 SQL 还在回表查询吗？快给它安排上覆盖索引」](计算机基础/数据库MySQL/7-你的SQL还在回表查询吗-快给它安排覆盖索引.md.md)
 
 ## 🍵 Java
 
@@ -153,8 +153,6 @@
 - [4 - SSM 框架整合实例](必备框架/SSM/SSM框架整合.md)
 
 ### Spring Boot 2.x
-
-墙烈推荐一个项目：[「开源社区系统 Echo」Gitee 官方推荐项目，目前已累计 700+ star](https://gitee.com/veal98/Echo)：基于 SpringBoot + MyBatis + MySQL + Redis + Kafka + Elasticsearch + Spring Security + ... 并提供详细的开发文档和配套教程 <span data-v-73ca276e="" class="badge recommendation" style="vertical-align: base-line;">项目经验首选</span>
 
   - [1 - Spring Boot 入门](必备框架/SpringBoot/1-SpringBoot入门.md)
   - [2 - 配置文件](必备框架/SpringBoot/2-配置文件.md)
