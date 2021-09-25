@@ -10,8 +10,9 @@
 [![GitHub stars](https://img.shields.io/github/stars/Veal98/CS-Wiki?logo=github)](https://github.com/Veal98/CS-Wiki/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/Veal98/CS-Wiki?logo=github)](https://github.com/Veal98/CS-Wiki/network)
 
-<a href="#公众号"><img src="https://img.shields.io/badge/公众号-飞天小牛肉-orange" alt="交流群"></a>
+<a href="#公众号"><img src="https://img.shields.io/badge/公众号-飞天小牛肉-orange" alt="公众号"></a>
 <a href="https://gitee.com/veal98/Echo"><img src="https://img.shields.io/badge/备战校招-开源社区项目-blueviolet" alt="配套教程"></a>
+<a href="https://gitee.com/veal98/LeetCode-Offer"><img src="https://img.shields.io/badge/冲刺大厂-刷题打卡-brightgreen" alt="LeetCode-Offer"></a>
 
 </div>
 
@@ -21,15 +22,15 @@
 
 - 🙏 由于本人水平有限，仓库中的知识点来自本人原创、视频、书籍、博客等，非原创均已标明出处（或在参考资料中列出），如有遗漏或发现文章错误及排版问题，请提 issue 或 PR
 
-- ⚡ **[Gitee 在线阅读（国内访问速度较快）](https://veal98.gitee.io/cs-wiki)** | [Gitee 仓库地址（推荐）](https://gitee.com/veal98/CS-Wiki)
-
-- 🔮 [Github 在线阅读](https://veal98.github.io/CS-Wiki/) | [Github 仓库地址](https://github.com/Veal98/CS-Wiki)
+- ⚡ [Gitee 仓库地址 (推荐)](https://gitee.com/veal98/CS-Wiki) | **[Gitee 在线阅读 (国内访问速度较快)](https://veal98.gitee.io/cs-wiki)** | [Github 仓库地址](https://github.com/Veal98/CS-Wiki) | [Github 在线阅读](https://veal98.github.io/CS-Wiki/)
 
 - 💬 我的公众号：**飞天小牛肉**，2020/12/29 日开通，专注于分享计算机基础（数据结构 + 算法 + 计算机网络 + 数据库 + 操作系统 + Linux）和 Java 相关技术栈的原创技术好文，**让大家可以快速掌握重点知识，有的放矢**。下方扫码关注第一时间获取干货更新：
 
   <img width = 240px src="https://gitee.com/veal98/images/raw/master/img/公众号二维码.png" />
   
--  🦄 另外，如果各位小伙伴春招秋招没有拿得出手的项目的话，可以参考这个 [「开源社区系统 Echo」Gitee 官方推荐项目，目前已累计 1.1k+ star](https://gitee.com/veal98/Echo)，基于 SpringBoot + MyBatis + MySQL + Redis + Kafka + Elasticsearch + Spring Security + ... 并提供详细的开发文档和配套教程。公众号后台回复 `Echo` 可以获取配套手把手教程，目前尚在更新中
+- ✍ 刷题网站 LeetCode-Offer：[LeetCode-Offer 仓库地址](https://gitee.com/veal98/LeetCode-Offer) | [LeetCode-Offer 在线阅读](https://veal98.github.io/LeetCode-Offer/)，主要分享自己的算法模板和刷题顺序，由于正在准备校招，所以每天都会刷题，大伙儿可以点开仓库的 Issue 跟我一起刷题打卡进大厂呀！
+
+- 🦄 另外，如果各位小伙伴春招秋招没有拿得出手的项目的话，可以参考这个 [「开源社区系统 Echo」Gitee 官方推荐项目，目前已累计 1.1k+ star](https://gitee.com/veal98/Echo)，基于 SpringBoot + MyBatis + MySQL + Redis + Kafka + Elasticsearch + Spring Security + ... 并提供详细的开发文档和配套教程。公众号后台回复 `Echo` 可以获取配套手把手教程，目前尚在更新中
 
 ## 🎨 代码之外
 
@@ -48,6 +49,17 @@
 ## 📑 计算机基础
 
 ---
+
+### 数据结构与算法
+
+秉着先理论后刷题的理念，上线了一个刷题网站：
+
+- 仓库地址：[LeetCode-Offer: LeetCode + 剑指 Offer = 💰 (gitee.com)](https://gitee.com/veal98/LeetCode-Offer)
+- 在线观看：[LeetCode-Offer (veal98.github.io)](https://veal98.github.io/LeetCode-Offer/)
+
+![](https://gitee.com/veal98/images/raw/master/img/20210925095905.png)
+
+因为之前刷题总是找不到方法和体系，所以经常半途而废，开这个仓库的目的也是为了督促自己能够每日刷题，同时分享一下自己的刷题套路和经验，大伙儿可以跟我一起每天 [在 Gitee 仓库的 Issue 区](https://gitee.com/veal98/LeetCode-Offer/issues) 进行打卡，一起刷题进大厂！
 
 ### 计算机网络
 
@@ -85,7 +97,9 @@
 - [MySQL 必知必会 · 第 4 篇「InnoDB 存储引擎中行锁的三种算法」](计算机基础/数据库MySQL/4-InnoDB存储引擎中行锁的三种算法.md)
 - [MySQL 必知必会 · 第 5 篇「Are You OK？主键、聚集索引、辅助索引」](计算机基础/数据库MySQL/5-主键+聚集索引+辅助索引.md)
 - [MySQL 必知必会 · 第 6 篇「心态崩了，我怎么知道实际生产环境的 B+ 树索引有多少层？」](计算机基础/数据库MySQL/6-B+树一般多少层.md)
-- [MySQL 必知必会 · 第 7 篇「你的 SQL 还在回表查询吗？快给它安排上覆盖索引」](计算机基础/数据库MySQL/7-你的SQL还在回表查询吗-快给它安排覆盖索引.md.md)
+- [MySQL 必知必会 · 第 7 篇「你的 SQL 还在回表查询吗？快给它安排上覆盖索引」](计算机基础/数据库MySQL/7-你的SQL还在回表查询吗-快给它安排覆盖索引.md)
+- [MySQL 必知必会 · 第 8 篇「三分钟小短文：一致性非锁定读与一致性锁定读」](计算机基础/数据库MySQL/8-三分钟小短文-一致性非锁定读与一致性锁定读.md)
+- [MySQL 必知必会 · 第 9 篇「三分钟图解 MVC，看一遍就懂」](计算机基础/数据库MySQL/9-三分钟图解MVCC+看一遍就懂.md)
 
 ## 🍵 Java
 
