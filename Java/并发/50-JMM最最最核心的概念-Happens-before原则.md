@@ -114,7 +114,7 @@ int c = a + b;	// C
 
 ```java
 synchronized (this) { // 此处自动加锁
-	if (x < 1) {
+	if (x > 1) {
         x = 1;
     }      
 } // 此处自动解锁
