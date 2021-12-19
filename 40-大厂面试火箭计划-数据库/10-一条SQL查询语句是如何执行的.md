@@ -35,7 +35,6 @@ MySQL 的逻辑架构图如下，参考《高性能 MySQL - 第 3 版》：
 MySQL 5.7 的官方文档中，是这样描述连接器的：
 
 >MySQL Connectors provide connectivity to the MySQL server for client programs. 
->
 
 **MySQL 连接器为客户端程序提供到 MySQL 服务器的连接**。 说得更细节一点的话，连接器其实会做两个事情，一个是管理 MySQL 连接，一个是权限验证。我们依次来解释下。
 
