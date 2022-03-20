@@ -10,7 +10,7 @@ module.exports = {
   title: "CS-Wiki",
   description: '致力打造完善的 Java 后端知识体系. Not only an Interview-Guide, but also a Learning-Direction.',
   // base: '/', // 默认'/'。如果你想将你的网站部署到如 https://foo.github.io/bar/，那么 base 应该被设置成 "/bar/",（否则页面将失去样式等文件）
-  base : '/CS-Wiki/',
+  base : '/cs-wiki/',
   head: [ // 注入到页面<head> 中的标签，格式[tagName, { attrName: attrValue }, innerHTML?]
     ['link', { rel: 'icon', href: '/img/favicon.ico' }], //favicons，资源放在public文件夹
     ['meta', { name: 'keywords', content: 'java,algorithm,interview' }],
@@ -97,7 +97,7 @@ module.exports = {
       createYear: 2019, // 博客创建年份
       copyrightInfo: '小牛肉 | 心之所愿，素履以往', // 博客版权信息，支持a标签
     },
-    // htmlModules, // 广告
+    htmlModules, // 广告
   },
 
   // 插件

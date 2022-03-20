@@ -10,45 +10,41 @@
  *   pageTshowMode: string, 页面顶部-显示方式：未配置默认全局；'article' => 仅文章页①； 'custom' => 仅自定义页①
  *   pageBshowMode: string, 页面底部-显示方式：未配置默认全局；'article' => 仅文章页①； 'custom' => 仅自定义页①
  *
- *   windowLB: htmlString, 全局左下角②
- *   windowRB: htmlString, 全局右下角②
+ *   windowLB: htmlString, 全局窗口左下角②
+ *   windowRB: htmlString, 全局窗口右下角②
  * }
  *
  * ①注：在.md文件front matter配置`article: false`的页面是自定义页，未配置的默认是文章页（首页除外）。
- * ②注：windowLB 和 windowRB：1.展示区块最大宽高200px*400px。2.请给自定义元素定一个不超过200px*400px的宽高。3.在屏幕宽度小于960px时无论如何都不会显示。
+ * ②注：windowLB 和 windowRB：1.展示区块宽高最大是200*200px。2.请给自定义元素定一个不超过200px的固定宽高。3.在屏宽小于960px时无论如何都不会显示。
  */
 
-
-module.exports = {
-  // 万维广告
-  pageB: `
-  <div class="wwads-cn wwads-horizontal pageB" data-id="136" style="width:100%;max-height:80px;min-height:auto;"></div>
-  <style>
-    .pageB img{width:80px!important;}
-    .wwads-horizontal .wwads-text, .wwads-content .wwads-text{line-height:1;}
-  </style>
-  `,
-  windowRB: `
-    <div class="wwads-cn wwads-vertical windowRB" data-id="136" style="max-width:160px;
-    min-width: auto;min-height:auto;"></div>
-    <style>
-      .windowRB{ padding: 0;}
-      .windowRB .wwads-img{margin-top: 10px;}
-      .windowRB .wwads-content{margin: 0 10px 10px 10px;}
-      .custom-html-window-rb .close-but{
-        display: none;
-      }
-    </style>
-  `
+ module.exports = {
+  // homeSidebarB:
+  //   `<div style="padding: 0.95rem">
+  //   <p style="
+  //     color: var(--textColor);
+  //     opacity: 0.9;
+  //     font-size: 20px;
+  //     font-weight: bold;
+  //     margin: 0 0 8px 0;
+  //   ">🎁 公众号</p>
+  //   <img src="https://gitee.com/veal98/images/raw/master/img/20210915114831.png"  style="width:100%;" />
+  //   <p>
+  //   长风破浪会有时，各位小伙伴大家好呀，叫我小牛肉就行，目前在读东南大学硕士，豚厂实习的一只小蝼蚁，上方扫码关注公众号「飞天小牛肉」，与你分享我的成长历程与技术感悟~
+  //   </p>
+  //   </div>`,
+  pageB:
+    `<div style="padding: 0.00rem">
+    <p style="
+      color: var(--textColor);
+      opacity: 0.9;
+      font-size: 20px;
+      font-weight: bold;
+      margin: 0 0 8px 0;
+    ">🎁 公众号</p>
+    <img src="https://gitee.com/veal98/images/raw/master/img/20210915114831.png"  style="width:30%;" />
+    <p>
+    各位小伙伴大家好呀，叫我小牛肉就行，目前在读东南大学硕士，上方扫码关注公众号「飞天小牛肉」，与你分享我的成长历程与技术感悟~
+    </p>
+    </div>`,
 }
-
-
-// module.exports = {
-//   homeSidebarB: `<div style="width:100%;height:100px;color:#fff;background: #eee;">自定义模块测试</div>`,
-//   sidebarT: `<div style="width:100%;height:100px;color:#fff;background: #eee;">自定义模块测试</div>`,
-//   sidebarB: `<div style="width:100%;height:100px;color:#fff;background: #eee;">自定义模块测试</div>`,
-//   pageT: `<div style="width:100%;height:100px;color:#fff;background: #eee;">自定义模块测试</div>`,
-//   pageB: `<div style="width:100%;height:100px;color:#fff;background: #eee;">自定义模块测试</div>`,
-//   windowLB: `<div style="width:100%;height:100px;color:#fff;background: #eee;">自定义模块测试</div>`,
-//   windowRB: `<div style="width:100%;height:100px;color:#fff;background: #eee;">自定义模块测试</div>`,
-// }

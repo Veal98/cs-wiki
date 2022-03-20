@@ -34,19 +34,6 @@
 
 - 🦄 [「开源社区系统 Echo」Gitee 官方推荐项目，目前已累计 1.1k+ star](https://gitee.com/veal98/Echo)，基于 SpringBoot + MyBatis + MySQL + Redis + Kafka + Elasticsearch ... 并提供详细的开发文档和配套教程。公众号后台回复 `Echo` 可以获取配套手把手教程
 
+- 😉 有什么问题也可以添加我的微信，记得备注来意：格式 <u>（学校或公司 - 姓名或昵称 - 来意）</u>
 
-## 😉 联系我
-
----
-
-### 公众号
-
-我的公众号：**飞天小牛肉**，专注于分享计算机基础（数据结构 + 算法 + 计算机网络 + 数据库 + 操作系统 + Linux）、Java 基础和面试指南的相关原创技术好文。本公众号的目的就是**让大家可以快速掌握重点知识，有的放矢**。下方扫码关注**第一时间获取干货更新**：
-
-<img width = 240px src="https://gitee.com/veal98/images/raw/master/img/公众号二维码.png"  />
-
-### WeChat
-
-有什么问题也可以添加我的微信，记得备注来意：格式 <u>（学校或公司 - 姓名或昵称 - 来意）</u>
-
-<img width = 240px src="https://gitee.com/veal98/images/raw/master/img/微信图片_20210105121328.jpg"  />
+  <img width = 240px src="https://gitee.com/veal98/images/raw/master/img/微信图片_20210105121328.jpg"  />
