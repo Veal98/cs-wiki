@@ -88,27 +88,35 @@ OK，然后我们来逐个分析下每个区域都是用来存储什么的。当
 
 右边的 Variables 就是该栈帧存储的局部变量表，可以看到现在 main 栈帧中只有一个局部变量，也就是方法参数 args。
 
-接下来 DEBUG 进入下一步，我们先来看看 DEBUG 界面上的每个按钮都是啥意思，总共五个按钮（已经了解的各位可以跳过这里），视频配合下方文字食用更佳：
-
-<video src="./DEBUG.mp4" width="800px" height="600px" controls="controls"></video>
+接下来 DEBUG 进入下一步，我们先来看看 DEBUG 界面上的每个按钮都是啥意思，总共五个按钮（已经了解的各位可以跳过这里）：
 
 1）`Step Over`：F8
+
+![](https://mmbiz.qpic.cn/mmbiz_png/PocakShgoGFDHqoUpAlibIqvMVkXHcicqz8KZVctGkZkLuwGQhTl0gvmqiaW638UDrX3wMHgQbfqGymeeGV4ZaM8Q/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
 
 程序向下执行一行，如果当前行有方法调用，这个方法将被执行完毕并返回，然后到下一行
 
 2）`Step Into`：F7
 
+![图片](https://mmbiz.qpic.cn/mmbiz_png/PocakShgoGFDHqoUpAlibIqvMVkXHcicqzmbrfw7Acn8frb7OqX7ibFbOLHKaqQW00JtGK3H9xTNCbG3t1UsUv0lg/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
+
 程序向下执行一行，如果该行有自定义方法，则运行进入自定义方法（不会进入官方类库的方法）
 
 3）`Force Step Into`：Alt + Shift + F7
+
+![图片](https://mmbiz.qpic.cn/mmbiz_png/PocakShgoGFDHqoUpAlibIqvMVkXHcicqzZeKQficDY6NibiaciadUOniblPvDTeKn6NzVWpz7ehMj7c2qeazN4d2vH8w/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
 
 程序向下执行一行，如果该行有自定义方法或者官方类库方法，则运行进入该方法（也就是可以进入任何方法）
 
 4）`Step Out`：Shift + F8
 
+![图片](https://mmbiz.qpic.cn/mmbiz_png/PocakShgoGFDHqoUpAlibIqvMVkXHcicqzYT5xSflqoibiah5KiaM8w6uo5hFk9sicoMQcKz8eibZyaFDN8bnMSkPpaEQ/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
+
 如果在调试的时候你进入了一个方法，并觉得该方法没有问题，你就可以使用 Step Out 直接执行完该方法并跳出，返回到该方法被调用处的下一行语句。
 
 5）Drop frame
+
+![图片](https://mmbiz.qpic.cn/mmbiz_png/PocakShgoGFDHqoUpAlibIqvMVkXHcicqzNnQbz4BmBbqDqtMTBYoSzl0blTH0hKNfJWQhtz0gKiccq34yYGnQ8kQ/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
 
 点击该按钮后，你将返回到当前方法的调用处重新执行，并且所有上下文变量的值也回到那个时候。只要调用链中还有上级方法，可以跳到其中的任何一个方法。
 
@@ -146,29 +154,43 @@ OK，然后我们来逐个分析下每个区域都是用来存储什么的。当
 
 ![](https://gitee.com/veal98/images/raw/master/img/20210424221234.png)
 
-随后整体的执行流程是这样的，各位可以配合下方视频和文字解析一同食用：
+主线程调用 main 方法，于是为该方法生成一个 main 栈帧：
 
-<video src="./线程运行原理.mp4" width="800px" height="600px" controls="controls"></video>
+![图片](https://mmbiz.qpic.cn/mmbiz_png/PocakShgoGFDHqoUpAlibIqvMVkXHcicqzk0d7Ty1pcgoXpCJ0qktC5GFuiavCIxsUjxTGGic2lxYVIZsynYxq97Gw/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
 
-① 主线程调用 main 方法，于是为该方法生成一个 main 栈帧；
+那么这个参数 args 的值从哪里来呢？没错，就是从堆中 new 出来的：
 
-② 那么 main 方法的参数 args 的值从哪里来呢？没错，就是从堆中 new 出来的。而 main 方法的返回地址就是程序的退出地址；
+![图片](https://mmbiz.qpic.cn/mmbiz_png/PocakShgoGFDHqoUpAlibIqvMVkXHcicqzwHG3uPY1IicQ4RJeSkaZzmfPApGITGb7aSJ8gGDiaibibMzdAYHaic5Y44g/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
 
-③ 再来看程序计数器，如果线程正在执行的是一个 Java 方法，程序计数器中记录的就是正在执行的虚拟机字节码指令的地址，也就是说**此时 `method1(10)` 对应的字节码指令的地址会被放入程序计数器**
+而 main 方法的返回地址就是程序的退出地址。
 
-④ CPU 根据程序计数器的指示，进入 method1 方法，于是 method1 栈帧就被创建出来了；
+再来看程序计数器，上文说过，如果线程正在执行的是一个 Java 方法，程序计数器中记录的就是正在执行的虚拟机字节码指令的地址，也就是说**此时 `method1(10)` 对应的字节码指令的地址会被放入程序计数器**，图片中我们仍然以具体的代码代替哈，大家知道就好：
 
-⑤ 局部变量表和方法返回地址安顿好后，就可以开始具体的方法调用了，首先 10 会被传给 x，然后走到 `int y = x + 1` 这步，也就是程序计数器会被修改成这步代码对应的字节码指令的地址；
+![图片](https://mmbiz.qpic.cn/mmbiz_png/PocakShgoGFDHqoUpAlibIqvMVkXHcicqzZThfnwHUehKVDQQTPmeUzBaI6NiajDBniaY0s01EP4JwmSgkc16brvIw/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
 
-⑥ 走到 `Object m = method2()` 这一步的时候，又会创建一个 method2 栈帧；
+OK，CPU 根据程序计数器的指示，进入 method1 方法，自然，method1 栈帧就被创建出来了：
 
-⑦ 可以看到，method2 方法的第一行代码 `Object n = new Object` 会在堆中创建一个 Object 对象；
+![图片](https://mmbiz.qpic.cn/mmbiz_png/PocakShgoGFDHqoUpAlibIqvMVkXHcicqzshh7IWEljhVUbzhiaqHQ3Tz28icLRNo8ZmM9kIwe15rnkGoqDzu8uTgA/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
 
-⑧ 随后，走到 method2 方法中的最后一条 `return n` 语句，n 指向的堆中的地址就会被返回给 method1 中的 m，并且，满足栈后进先出的原则，method2 栈帧会从虚拟机栈内存中被销毁；
+局部变量表和方法返回地址安顿好后，就可以开始具体的方法调用了，首先 10 会被传给 x，然后走到 y 被赋值成 x + 1 这步，也就是程序计数器会被修改成这步代码对应的字节码指令的地址：
 
-⑨ 根据 method2 栈帧指向的方法返回地址，我们接着执行 method1 方法中的最后一条语句 `System.out.println(m.toString())` ，执行完后，method1 栈帧也被销毁了；
+![图片](https://mmbiz.qpic.cn/mmbiz_png/PocakShgoGFDHqoUpAlibIqvMVkXHcicqzHwLqrNoictq3zl2zBJsfIZxaAc9X4QEMmVAZjOQKTPLk5oDjA5PfgtA/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
 
-⑩ 再根据 method1 栈帧指向的方法返回地址，发现我们的程序已走到了生命的尽头，于是 main 栈帧也被销毁了。
+走到 `Object m = method2();` 这一步的时候，又会创建一个 method2 栈帧：
+
+![图片](https://mmbiz.qpic.cn/mmbiz_png/PocakShgoGFDHqoUpAlibIqvMVkXHcicqzS3IicZNoEqNebicvIfgPVX0qnYxkxvZoRShPquzcdu9RhibgnialaCLctw/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
+
+可以看到，method2 方法的第一行代码会在堆中创建一个 Object 对象：
+
+![图片](https://mmbiz.qpic.cn/mmbiz_png/PocakShgoGFDHqoUpAlibIqvMVkXHcicqzKVRaSQCL5k9EEoXWuoQpKLBV6y0KG3Gr1LuIs1wpcoU8fqWIrHTe6Q/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
+
+随后，走到 method2 方法中的 `return n;` 语句，n 指向的堆中的地址就会被返回给 method1 中的 m，并且，满足栈后进先出的原则，method2 栈帧会从虚拟机栈内存中被销毁：
+
+![图片](https://mmbiz.qpic.cn/mmbiz_png/PocakShgoGFDHqoUpAlibIqvMVkXHcicqzKicwrYjgx8jP4ib2Inb6KJu1GbZibCq4IFMkGfuL3xrc7U2YS1ZC5XHRA/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)根据 method2 栈帧指向的方法返回地址，我们接着执行 `System.out.println(m.toString())` 这条输出语句，执行完后，method1 栈帧也被销毁了：
+
+![图片](https://mmbiz.qpic.cn/mmbiz_png/PocakShgoGFDHqoUpAlibIqvMVkXHcicqz4zlkeWT6fIFibzNutHBbhUrTTWyo2yqhemCkVH9dRoKF3QiaS9f8ZCag/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
+
+再根据 method1 栈帧指向的方法返回地址，发现我们的程序已走到了生命的尽头，main 栈帧于是也被销毁了，就不再贴图了。
 
 ## 用 DEBUG 的方式看多线程运行原理
 
