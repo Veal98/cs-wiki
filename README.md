@@ -5,10 +5,10 @@
 
 <div align="center">
 
-[![star](https://gitee.com/veal98/CS-Wiki/badge/star.svg?theme=dark)](https://gitee.com/veal98/CS-Wiki/stargazers)
-[![fork](https://gitee.com/veal98/CS-Wiki/badge/fork.svg?theme=dark)](https://gitee.com/veal98/CS-Wiki/members)
-[![GitHub stars](https://img.shields.io/github/stars/Veal98/CS-Wiki?logo=github)](https://github.com/Veal98/CS-Wiki/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/Veal98/CS-Wiki?logo=github)](https://github.com/Veal98/CS-Wiki/network)
+[![star](https://gitee.com/veal98/cs-wiki/badge/star.svg?theme=dark)](https://gitee.com/veal98/CS-Wiki/stargazers)
+[![fork](https://gitee.com/veal98/cs-wiki/badge/fork.svg?theme=dark)](https://gitee.com/veal98/CS-Wiki/members)
+[![GitHub stars](https://img.shields.io/github/stars/Veal98/cs-wiki?logo=github)](https://github.com/Veal98/CS-Wiki/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/Veal98/cs-wiki?logo=github)](https://github.com/Veal98/CS-Wiki/network)
 
 <a href="#公众号"><img src="https://img.shields.io/badge/公众号-飞天小牛肉-orange" alt="公众号"></a>
 <a href="https://gitee.com/veal98/Echo"><img src="https://img.shields.io/badge/备战校招-开源社区项目-blueviolet" alt="配套教程"></a>
