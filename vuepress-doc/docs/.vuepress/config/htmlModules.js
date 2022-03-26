@@ -28,7 +28,7 @@
   //     font-weight: bold;
   //     margin: 0 0 8px 0;
   //   ">🎁 公众号</p>
-  //   <img src="https://gitee.com/veal98/images/raw/master/img/20210915114831.png"  style="width:100%;" />
+  //   <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20210915114831.png"  style="width:100%;" />
   //   <p>
   //   长风破浪会有时，各位小伙伴大家好呀，叫我小牛肉就行，目前在读东南大学硕士，豚厂实习的一只小蝼蚁，上方扫码关注公众号「飞天小牛肉」，与你分享我的成长历程与技术感悟~
   //   </p>
@@ -42,7 +42,7 @@
       font-weight: bold;
       margin: 0 0 8px 0;
     ">🎁 公众号</p>
-    <img src="https://gitee.com/veal98/images/raw/master/img/20210915114831.png"  style="width:30%;" />
+    <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20210915114831.png"  style="width:30%;" />
     <p>
     各位小伙伴大家好呀，叫我小牛肉就行，目前在读东南大学硕士，上方扫码关注公众号「飞天小牛肉」，与你分享我的成长历程与技术感悟~
     </p>
