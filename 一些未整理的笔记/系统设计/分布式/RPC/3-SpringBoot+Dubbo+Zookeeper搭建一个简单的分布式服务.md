@@ -108,7 +108,7 @@ OK，介绍至此，接下来我们利用这个 Starter 开发一个分布式小
 
 安装好 Zookeeper 后，运行 `zKServer.cmd`
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201129122149.png" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201129122149.png" style="zoom:67%;" />
 
 > 🚨 **不要**运行客户端`zkCli.cmd`
 
@@ -130,13 +130,13 @@ public interface HelloService {
 
 点击右边的 Maven 然后选择 **install** ，这样 jar 包就打好了：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201129104051.png" style="zoom: 67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201129104051.png" style="zoom: 67%;" />
 
 ## 4. 服务提供者 Provider
 
 New Module，创建一个 SpringBoot 模块 dubbo-provider，添加 Web 依赖：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201129104539.png" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201129104539.png" style="zoom:67%;" />
 
 ### ① 导入依赖
 
@@ -218,7 +218,7 @@ public class DubboProviderApplication {
 
 同 dubbo-provider，创建一个添加 Web、Dubbo、Zookeeper 依赖的 SpringBoot 模块 dubbo-consumer
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201129110432.png" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201129110432.png" style="zoom:67%;" />
 
 ### ① 配置 Dubbo 相关信息
 

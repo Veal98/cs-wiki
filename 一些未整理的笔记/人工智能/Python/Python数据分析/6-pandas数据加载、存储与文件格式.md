@@ -12,7 +12,7 @@
 
 pandas提供了一些用于将表格型数据读取为DataFrame对象的函数。下表对它们进行了总结，其中 `read_csv` 和 `read_table` 可能会是你今后用得最多的。
 
-![](https://gitee.com/veal98/images/raw/master/img/20200612214245.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200612214245.png)
 
 我将大致介绍一下这些函数在将文本数据转换为 DataFrame 时所用到的一些技术。这些函数的选项可以划分为以下几个大类：
 
@@ -226,7 +226,7 @@ Out[32]:
 
 表6-2列出了pandas.read_csv和pandas.read_table常用的选项：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200612221122.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200612221122.png)
 
 ### 2. 逐块读取文本文件
 在处理很大的文件时，或找出大文件中的参数集以便于后续处理时，你可能只想读取文件的一小部分或逐块对文件进行迭代。
@@ -452,7 +452,7 @@ reader = csv.reader(f, delimiter='|')
 
 可用的选项（csv.Dialect的属性）及其功能如表6-3所示。
 
-![](https://gitee.com/veal98/images/raw/master/img/20200612223509.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200612223509.png)
 
 >🚩 **对于那些使用复杂分隔符或多字符分隔符的文件，csv模块就无能为力了。这种情况下，你就只能使用字符串的split方法或正则表达式方法re.split进行行拆分和其他整理工作了**。
 
@@ -1011,6 +1011,6 @@ Out[137]:
 
 - 📕  [《利用Python进行数据分析-第2版-中文译版》](https://www.jianshu.com/p/04d180d90a3f)
 
-  <img src="https://gitee.com/veal98/images/raw/master/img/20200607091609.png" style="zoom:50%;" />
+  <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200607091609.png" style="zoom:50%;" />
 
 - 🚝 [Gihub《Python数据分析》配套源码](https://github.com/wesm/pydata-book)

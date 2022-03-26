@@ -97,11 +97,11 @@ with open('Program_Python/test.txt','r') as f:
 
     如果我们的 txt 文件如下：
 
-    <img src="https://gitee.com/veal98/images/raw/master/img/20200605112608.png" style="zoom:80%;" />
+    <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200605112608.png" style="zoom:80%;" />
 
     那么上述代码输出：
 
-    <img src="https://gitee.com/veal98/images/raw/master/img/20200605112638.png" style="zoom:80%;" />
+    <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200605112638.png" style="zoom:80%;" />
 
 ### ② file-like Object
 
@@ -246,7 +246,7 @@ print(os.name) # nt
 print(os.environ)
 ```
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200605115929.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200605115929.png" style="zoom:50%;" />
 
 要获取某个环境变量的值，可以调用`os.environ.get('key')`：
 
@@ -254,7 +254,7 @@ print(os.environ)
 print(os.environ.get('PATH'))
 ```
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200605120023.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200605120023.png" style="zoom:50%;" />
 
 ### ② 操作文件和目录
 

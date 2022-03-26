@@ -4,7 +4,7 @@
 
 **Actor-Critic 涉及到了两个神经网络, 而且每次都是在连续状态中更新参数, 每次参数更新前后都存在相关性, 导致神经网络只能片面的看待问题, 甚至导致神经网络学不到东西**. 想想我们之前介绍的DQN是如何解决的这个问题的？就是建立了两个网络，一个Q目标网络，一个Q现实网络，同时使用了经验回放机制。那么如果在 `Actor-Critic` 网络结构中加入这两个机制，就得到了一种新的强化学习模型：`深度确定性策略梯度算法 Deep Deterministic Policy Gradient`，简称`DDPG`。可以说 **Actor-Critic + DQN = DDPG**。
 
-![](https://gitee.com/veal98/images/raw/master/img/20201102102711.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201102102711.png)
 
 ## 1. Deep 和 DQN
 
@@ -14,7 +14,7 @@ Deep 顾名思义, 就是通过神经网络走向更深层次
 
 不过 DDPG 的神经网络形式比 DQN 的要复杂一点点.
 
-![](https://gitee.com/veal98/images/raw/master/img/20201102102811.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201102102811.png)
 
 ## 2. Deterministic Policy Gradient
 
@@ -22,7 +22,7 @@ Deep 顾名思义, 就是通过神经网络走向更深层次
 
 Policy gradient 相比其他的强化学习方法, 它能被用来在连续动作上进行动作的筛选 . 而且筛选的时候是根据所学习到的动作分布随机进行筛选, 而 Deterministic 改变了输出动作的过程, 斩钉截铁的只在连续动作上输出一个动作值.
 
-![](https://gitee.com/veal98/images/raw/master/img/20201102105726.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201102105726.png)
 
 我们看一下 DDPG 关于此的概念定义：
 
@@ -34,7 +34,7 @@ Policy gradient 相比其他的强化学习方法, 它能被用来在连续动�
 
 <u>exploration 的目的是探索潜在的更优策略</u>，所以训练过程中，**我们为 action 的决策机制引入随机噪声，将action 的决策从确定性过程变为一个随机过程， 再从这个随机过程中采样得到确定的 action，下达给环境执行**。过程如下图所示：
 
-![](https://gitee.com/veal98/images/raw/master/img/20201113165016.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201113165016.png)
 
 上述这个策略叫做 behavior 策略，用 β 来表示, 这时 RL 的训练方式叫做 off-policy.
 
@@ -51,15 +51,15 @@ DDPG 中，使用 [Uhlenbeck-Ornstein随机过程](https://en.wikipedia.org/wiki
 - **【策略网络 Actor】**：同 DQN，由于我们使用了独立目标网络技术，所以我们的策略网络中需要维护两个网络参数：策略网络（online）参数，策略目标网络（target）参数。online 网络具有最新参数，而 target 网络不及时更新
 - **【Q 网络 Critic】**：同样的，我们的 Q 网络中需要维护两个网络参数：Q 网络（online）参数，Q 目标网络（target）参数。online 网络具有最新参数，而 target 网络不及时更新
 
-![](https://gitee.com/veal98/images/raw/master/img/20201102110538.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201102110538.png)
 
 ⭐ 我们采用了类似 DQN 的双网络结构，同样的我们<u>只需要训练 online 网络的参数，而 target 目标网络的参数则每隔一段时间再进行更新</u>。**不过 DDPG 中目标网络参数的更新不像DQN 算法采用的直接进行参数复制，而是使用了“ `soft update 软更新` ”的策略，以确保 $\theta^{Q'}$ 和 $\theta^{\mu'}$ 渐渐的逼近参数 $\theta^{Q}$ 和 $\theta^{\mu}$**：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201113165957.png" style="zoom: 80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201113165957.png" style="zoom: 80%;" />
 
 `soft update 软更新算法`：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201113170145.png" style="zoom: 80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201113170145.png" style="zoom: 80%;" />
 
 ## 4. DDPG 整体算法详解
 
@@ -67,7 +67,7 @@ DDPG 中，使用 [Uhlenbeck-Ornstein随机过程](https://en.wikipedia.org/wiki
 
 首先明确由经验回放池统一收集交互产生的经验数据。DDPG 在训练中的每次迭代时，经验回放池中随机采样一个小批量的样本进行经验回放和网络参数更新。训练时，每个 DDPG 都是采用的演员-评论家框架学习对应的子策略，其过程如图所示：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201119114532.png" style="zoom: 76%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201119114532.png" style="zoom: 76%;" />
 
 <u>每个DDPG 的训练过程分为了更新和交互两部分，更新部分进行网络参数的更新，交互部分则负责智能体和环境的交互，每次迭代时，DDPG 先完成交互部分，再完成更新部分。</u> 
 
@@ -79,7 +79,7 @@ DDPG 中，使用 [Uhlenbeck-Ornstein随机过程](https://en.wikipedia.org/wiki
 
 📜  **DDPG 算法如下**：
 
-![](https://gitee.com/veal98/images/raw/master/img/20201113170644.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201113170644.png)
 
 🚕 初始化 actor / critic 的 online 神经网络参数: $\theta^{Q}$ 和 $\theta^{\mu}$ ； 
 
@@ -95,7 +95,7 @@ DDPG 中，使用 [Uhlenbeck-Ornstein随机过程](https://en.wikipedia.org/wiki
 
   - actor 根据 behavior 策略选择一个 $a_t$ , 下达给环境执行该动作
 
-    <img src="https://gitee.com/veal98/images/raw/master/img/20201113171214.png" style="zoom:80%;" />
+    <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201113171214.png" style="zoom:80%;" />
 
     behavior策略是一个根据当前 online 策略 μ 和随机 UO 噪声生成的随机过程, 从这个随机过程采样获得 $a_{t}$ 的值。
 
@@ -108,11 +108,11 @@ DDPG 中，使用 [Uhlenbeck-Ornstein随机过程](https://en.wikipedia.org/wiki
   - 计算 online Q网络的梯度 gradient：
     Q 网络的 loss 定义：使用类似于监督式学习的方法，定义 loss为 MSE: mean squared error：
 
-    <img src="https://gitee.com/veal98/images/raw/master/img/20201113171548.png" style="zoom:80%;" />
+    <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201113171548.png" style="zoom:80%;" />
 
     其中， $y_{i}$  可以看做"标签"：
 
-    <img src="https://gitee.com/veal98/images/raw/master/img/20201113171622.png" style="zoom:80%;" />
+    <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201113171622.png" style="zoom:80%;" />
 
     基于标准的反向传播方法 back-propagation，就可以求得 L 针对  $\theta^{Q}$ 的梯度 gradient：$ \triangledown_{\theta^{Q}} L $ 。
 
@@ -129,22 +129,22 @@ DDPG 中，使用 [Uhlenbeck-Ornstein随机过程](https://en.wikipedia.org/wiki
 
   policy gradient的定义：表示 performance objective 的函数J  针对 $\theta^{\mu}$ 的 gradient。 根据 2015 D.Silver 的[DPG 论文](http://xueshu.baidu.com/s?wd=paperuri:(43a8642b81092513eb6bad1f3f5231e2)&filter=sc_long_sign&sc_ks_para=q=Deterministic policy gradient algorithms&sc_us=6855198342873463498&tn=SE_baiduxueshu_c1gjeupa&ie=utf-8)中的数学推导，在采用off-policy的训练方法时，policy gradient算法如下：
 
-  ![](https://gitee.com/veal98/images/raw/master/img/20201113172144.png)
+  ![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201113172144.png)
 
   根据 Monte-carlo 方法，使用 mini-batch 数据代入上述 policy gradient 公式，可以作为对上述期望值的一个无偏差估计 (un-biased estimate), 所以 policy gradient 可以改写为
 
-    <img src="https://gitee.com/veal98/images/raw/master/img/20201113172035.png" style="zoom: 67%;" />
+    <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201113172035.png" style="zoom: 67%;" />
 
   - 	update online 策略网络：采用 Adam optimizer更新 $\theta^{\mu}$ 
       
   - 	soft update target 网络 μ ′ 和 Q ′ ：
-      <img src="https://gitee.com/veal98/images/raw/master/img/20201113170145.png" style="zoom: 80%;" />
+      <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201113170145.png" style="zoom: 80%;" />
       
   - end for time step
 
 - 🚕 end for episode
 
-![](https://gitee.com/veal98/images/raw/master/img/20201113172444.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201113172444.png)
 
 ## 5. 代码实现
 

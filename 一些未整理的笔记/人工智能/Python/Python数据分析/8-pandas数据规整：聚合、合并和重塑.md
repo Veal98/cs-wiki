@@ -390,7 +390,7 @@ Out[44]:
 
 下表对这些选项进行了总结：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200615105416.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200615105416.png" style="zoom:50%;" />
 
 
 多对多的合并有些不直观。看下面的例子：
@@ -503,7 +503,7 @@ Out[55]:
 
 merge 函数的参数请参见下表：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200615105810.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200615105810.png)
 
 ### 2. 索引上的合并
 
@@ -888,7 +888,7 @@ c      4   5    7.0  8.0
 
 此外还有两个用于管理层次化索引创建方式的参数（参见下表）：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200615111121.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200615111121.png)
 
 举个例子，我们可以用names参数命名创建的轴级别：
 
@@ -1437,6 +1437,6 @@ Out[166]:
 
 - 📕  [《利用Python进行数据分析-第2版-中文译版》](https://www.jianshu.com/p/04d180d90a3f)
 
-  <img src="https://gitee.com/veal98/images/raw/master/img/20200607091609.png" style="zoom:50%;" />
+  <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200607091609.png" style="zoom:50%;" />
 
 - 🚝 [Gihub《Python数据分析》配套源码](https://github.com/wesm/pydata-book)

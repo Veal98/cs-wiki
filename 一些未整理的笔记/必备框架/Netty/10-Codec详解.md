@@ -50,7 +50,7 @@ public class ToIntegerDecoder extends ByteToMessageDecoder {
 
 `ReplayingDecoder`扩展了`ByteToMessageDecoder`，这使得我们不再需要检查`ByteBuf`，因为`ReplayingDecoder `自定义了`ByteBuf`的实现：`ReplayingDecoderByteBuf`，这个包装后的`ByteBuf`在内部会自动检查是否可读。以下是 `ReplayingDecoderByteBuf`的内部实现：
 
-![](https://gitee.com/veal98/images/raw/master/img/20201214112401.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201214112401.png)
 
 虽然`ReplayingDecoderByteBuf`可以自动检查可读性，但是对于某些操作并不支持，会抛出 `UnsupportedOperationException`异常。其编程模型如下：
 
@@ -123,7 +123,7 @@ public class ShortToByteEncoder extends MessageToByteEncoder<Short>{
 
 除了编码器和解码器，Netty还提供了**集编码与解码 于一身的编解码器** `ByteToMessageCodec` 和`MessageToMessageCodec`，它们同时实现了`ChannelInboundHandler`和`ChannelOutboundHandler`，其结构如下：
 
-![](https://gitee.com/veal98/images/raw/master/img/20201214113007.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201214113007.png)
 
 虽然使用编码解码器可以同时编码和解码数据，但这样不利于代码的可重用性。 相反，单独的编码器和解码器最大化了代码的可重用性和可扩展性，所以**我们应该优先考虑分开使用二者**
 

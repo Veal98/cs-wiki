@@ -10,7 +10,7 @@
 
 早期方案，在服务器之间进行 Session 同步操作，**每个服务器都存储所有用户的 Session 信息**，因此用户可以向任何一个服务器进行请求。
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201124111359.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201124111359.png" style="zoom:50%;" />
 
 缺点：
 
@@ -21,17 +21,17 @@
 
 `Session 绑定 `也称 `会话黏滞 Sticky Session`。利用负载均衡的源地址 Hash 算法实现，负载均衡服务器总是将来源于同一 IP 的请求分发到同一台服务器。这样**在整个会话期间，用户所有的请求都在同一台服务器上处理**，即 Session 被绑定在某台特定的服务器上。
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201124111834.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201124111834.png" style="zoom:50%;" />
 
 ## 3. 利用 Cookie 记录 Session
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201124112943.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201124112943.png" style="zoom:50%;" />
 
 ## 4. Session 服务器（Session Server）
 
 **使用一个单独的服务器（集群）存储 Session 数据**，可以使用传统的 MySQL，也使用 Redis 或者 Memcached 这种内存型数据库。
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201124113034.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201124113034.png" style="zoom:50%;" />
 
 优点：
 

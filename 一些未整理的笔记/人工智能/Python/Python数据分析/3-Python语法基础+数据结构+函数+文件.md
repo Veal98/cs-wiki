@@ -104,7 +104,7 @@ In [11]: b
 Out[11]: [1, 2, 3, 4]
 ```
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200607110401.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200607110401.png" style="zoom:50%;" />
 
 理解Python的引用的含义，数据是何时、如何、为何复制的，是非常重要的。尤其是当你用 Python 处理大的数据集时。
 
@@ -308,7 +308,7 @@ Out[34]: False
 
 下表列出了所有的二元运算符：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200608093822.png" style="zoom: 67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200608093822.png" style="zoom: 67%;" />
 
 要判断两个引用是否指向同一个对象，可以使用`is`方法。`is not`可以判断两个对象是不同的：
 
@@ -374,7 +374,7 @@ TypeError: 'tuple' object does not support item assignment
 
 Python 的标准库中有一些内建的类型，用于处理数值数据、字符串、布尔值，和日期时间。这些单值类型被称为**标量类型**，本书中称其为标量。下表列出了主要的标量。日期和时间处理会另外讨论，因为它们是标准库的`datetime`模块提供的。
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200608094430.png" style="zoom: 67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200608094430.png" style="zoom: 67%;" />
 
 ### 14. 数值类型
 
@@ -711,7 +711,7 @@ Out[109]: datetime.datetime(2009, 10, 31, 0, 0)
 
 👇 下表列出了所有的格式化命令：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200608102703.png" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200608102703.png" style="zoom:67%;" />
 
 当你聚类或对时间序列进行分组，替换 datetimes 的 time 字段有时会很有用。例如，用 0 替换分和秒：
 
@@ -914,7 +914,7 @@ for i in range(len(seq)):
 
 > 🚨 如果直接用 `len(seq)` 进行迭代会报错：**int 类型不是一个迭代器**
 >
-> ![](https://gitee.com/veal98/images/raw/master/img/20200608104508.png)
+> ![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200608104508.png)
 
 **可以使用 list 来存储 range 在其他数据结构中生成的所有整数**，默认的迭代器形式通常是你想要的。下面的代码对 0 到 99999 中 3 或 5 的倍数求和：
 
@@ -1358,7 +1358,7 @@ Out[80]: [6, 3, 5, 6]
 
 需要一段时间来熟悉使用切片，尤其是当你之前学的是R或MATLAB。下图展示了正整数和负整数的切片。在图中，指数标示在边缘以表明切片是在哪里开始哪里结束的。
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200608115548.png" style="zoom: 67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200608115548.png" style="zoom: 67%;" />
 
 **在第二个冒号后面使用``step``，可以隔 step 个取一个元素**：
 
@@ -1712,7 +1712,7 @@ Out[140]: {3, 4, 5}
 
 下表列出了常用的集合方法。
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200608123816.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200608123816.png" style="zoom:80%;" />
 
 所有逻辑集合操作都有另外的原地实现方法，可以直接用结果替代集合的内容。对于大的集合，这么做效率更高：
 
@@ -2272,7 +2272,7 @@ S ['Steven']
 
 下表列出了一些经常用到的 itertools 函数。建议参阅 Python 官方文档，进一步学习。
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200608204417.png" style="zoom: 80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200608204417.png" style="zoom: 80%;" />
 
 ### 10. 错误和异常处理
 优雅地处理Python的错误和异常是构建健壮程序的重要部分。在数据分析中，许多函数函数只用于部分输入。例如，Python 的 float 函数可以将字符串转换成浮点数，但输入有误时，有``ValueError``错误：
@@ -2445,7 +2445,7 @@ In [212]: with open(path) as f:
 
 👇 下表列出了所有的读/写模式：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200608205409.png" style="zoom: 67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200608205409.png" style="zoom: 67%;" />
 
 对于可读文件，一些常用的方法是 read、seek 和 tell。read 会从文件返回字符。字符的内容是由文件的编码决定的（如UTF-8），如果是二进制模式打开的就是原始字节：
 
@@ -2523,7 +2523,7 @@ Out[227]:
 
 👇 下表列出了一些最常用的文件方法：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200608205709.png" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200608205709.png" style="zoom:67%;" />
 
 ### ② 文件的字节和 Unicode
 Python 文件的默认操作是“文本模式”，也就是说，你需要处理Python的字符串（即Unicode）。它与“二进制模式”相对，文件模式加一个 b。我们来看上一节的文件（UTF-8编码、包含非ASCII字符）：
@@ -2617,7 +2617,7 @@ In [244]: f.close()
 
 - 📕  [《利用Python进行数据分析-第2版-中文译版》](https://www.jianshu.com/p/04d180d90a3f)
 
-  <img src="https://gitee.com/veal98/images/raw/master/img/20200607091609.png" style="zoom:50%;" />
+  <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200607091609.png" style="zoom:50%;" />
 
 - 🚝 [Gihub《Python数据分析》配套源码](https://github.com/wesm/pydata-book)
 

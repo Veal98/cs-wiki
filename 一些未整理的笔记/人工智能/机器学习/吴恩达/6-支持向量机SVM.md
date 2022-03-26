@@ -8,7 +8,7 @@
 
 为了描述支持向量机，👍 **我将会从逻辑回归开始，展示如何一点一点的修改来得到支持向量机**。
 
-![](https://gitee.com/veal98/images/raw/master/img/20200610212745.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200610212745.png)
 
 那么，在逻辑回归中我们已经熟悉了这里的假设函数形式，和右边的 Sigmod 激活函数。为了解释一些数学知识，我将用 $z$ 表示 $\theta^Tx$。
 
@@ -16,61 +16,61 @@
 
 进一步观察逻辑回归的代价函数：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200610213408.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200610213408.png" style="zoom:50%;" />
 
 考虑两种情况：
 
 - **y = 1：**在目标函数中只需有第一项起作用，因为$y=1$时，$(1-y)$项将等于0。因此，当在 $y=1$ 的样本中时，即在 $(x, y) $中 ，我们得到 $y=1$ $-\log(1-\frac{1}{1+e^{-z}})$这样一项。画出关于 z 的函数：
 
-  <img src="https://gitee.com/veal98/images/raw/master/img/20200610213602.png" style="zoom:50%;" />
+  <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200610213602.png" style="zoom:50%;" />
 
   当$z$ 增大时，也就是相当于$\theta^Tx$增大时，$z$ 对应的值会变的非常小。对整个代价函数而言，影响也非常小。这也就解释了，为什么逻辑回归在观察到正样本$y=1$时，试图将$\theta^Tx$设置得非常大。因为，在代价函数中的这一项会变的非常小。
 
   ⚡ **现在开始建立支持向量机**，我们从这个代价函数开始：也就是从$-\log(1-\frac{1}{1+e^{-z}})$ 一点一点的修改，取 $z=1$ 点，先画出将要用的代价函数：
 
-  ![](https://gitee.com/veal98/images/raw/master/img/20200610213855.png)
+  ![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200610213855.png)
 
   **新的代价函数是由两条线段组成**，即位于右边的水平部分和位于左边的直线部分，先别过多的考虑左边直线部分的斜率，这并不是很重要。**注意，这里我们将使用的新的代价函数，是在 $y=1$ 的前提下的。**你也许能想到，这应该能做同逻辑回归中类似的事情。
 
 - **y = 0：**代价函数只留下了第二项，因为第一项被消除了。所以上述表达式只留下了第二项。画出关于 z 的函数：
 
-  <img src="https://gitee.com/veal98/images/raw/master/img/20200610214201.png" style="zoom:50%;" />
+  <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200610214201.png" style="zoom:50%;" />
 
   我们用一个新的代价函数来代替：
 
-  ![](https://gitee.com/veal98/images/raw/master/img/20200610214234.png)
+  ![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200610214234.png)
 
 👇：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200610214310.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200610214310.png" style="zoom:50%;" />
 
 那么，现在让我给这两个方程命名，左边的函数，我称之为 ${\cos}t_1{(z)}$，同时，右边函数我称它为 ${\cos}t_0{(z)}$。这里的下标是指在代价函数中，对应的 $y=1$ 和 $y=0$ 的情况，拥有了这些定义后，现在，我们就开始构建支持向量机。
 
 下图是逻辑回归中使用的代价函数：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200610215208.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200610215208.png" style="zoom:50%;" />
 
 对于支持向量机而言，我们要将 $-logh_θ(x^{(i)})$ 替换为 ${\cos}t_1{(z)}$，也就是${\cos}t_1{(\theta^Tx)}$，同样地，将 $-log(1-h_θ(x^{(i)}))$ 这一项替换为 ${\cos}t_0{(z)}$，也就是 ${\cos}t_0{(\theta^Tx)}$。因此，对于支持向量机，我们得到了它的最小化问题（加上正则化参数），即：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200610215547.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200610215547.png" style="zoom:50%;" />
 
 > 💡 无论前面是否有$1/m$ 和 后面的 1/2m 这一项，最终所得到的最优值${{\theta }}$都是一样的，因为$1/m$ (1/2m)仅是个常量。
 >
-> <img src="https://gitee.com/veal98/images/raw/master/img/20200610221648.png" style="zoom:50%;" />
+> <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200610221648.png" style="zoom:50%;" />
 
 对于逻辑回归，在目标函数中，我们有两项：第一个是训练样本的代价，第二个是我们的正则化项，我们不得不去用正则化项来平衡。这就相当于我们想要最小化$A$加上正则化参数$\lambda$，然后乘以其他项$B$。$A$表示这里的第一项，同时我用**B**表示第二项（不包括 $\lambda$），<u>则逻辑回归的代价函数可表示为 $A+\lambda\times B$。**我们所做的是通过设置不同正则参数 $\lambda$ 达到优化 A 的目的**。</u>这样，我们就能够权衡对应的项，是使得训练样本拟合的更好。
 
-🚩 但对于支持向量机，我们将使用一个不同的参数替换这里使用的 $\lambda$ 来权衡这两项：$C×A+B$。 <img src="https://gitee.com/veal98/images/raw/master/img/20200610221934.png" style="zoom:50%;" />
+🚩 但对于支持向量机，我们将使用一个不同的参数替换这里使用的 $\lambda$ 来权衡这两项：$C×A+B$。 <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200610221934.png" style="zoom:50%;" />
 
 在逻辑回归中，如果给定$\lambda$，一个非常大的值，意味着给予$B$更大的权重。而在支持向量机中，将$C$ 设定为非常小的值意味着将会给$B$比给$A$更大的权重。<u>因此，这只是一种不同的方式来控制这种权衡的方法，即用参数来决定是更关心第一项的优化，还是更关心第二项的优化。</u>
 
 当然你也可以把这里的参数$C$ 考虑成$1/\lambda$，如果当 $C=1/\lambda$时，这两个优化目标应当得到相同的值，相同的最优值 ${{\theta }}$。那么，我现在删掉上述式子中的 $\lambda$，并且用常数 $C$ 来代替。因此，这就得到了在支持向量机中我们的整个优化目标函数。然后最小化这个目标函数，就得到了 **SVM** 学习到的参数$C$：
 
-⭐ <img src="https://gitee.com/veal98/images/raw/master/img/20200610221907.png" style="zoom:50%;" />
+⭐ <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200610221907.png" style="zoom:50%;" />
 
 ⭐ **有别于逻辑回归输出的概率，支持向量机的代价函数直接预测值等于1，还是等于0。**
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200610222202.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200610222202.png" style="zoom:50%;" />
 
 ✅ OK，以上就是支持向量机数学上的定义。在接下来的视频中，我们将从直观的角度看看SVM的优化目标会带来什么，以及SVM的假设函数是什么样的，同时也会谈谈如何做些许修改，学习更加复杂、非线性的函数。
 
@@ -78,7 +78,7 @@
 
 人们有时将支持向量机看作是**大间距分类器**。在这一部分，我将介绍其中的含义，这有助于我们直观理解 **SVM** 模型的假设是什么样的。
 
-![](https://gitee.com/veal98/images/raw/master/img/20200610223716.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200610223716.png)
 
 上图是支持向量机模型的代价函数，在左边这里画出了关于 $z$ 的代价函数${\cos}t_1{(z)}$，此函数用于正样本，而在右边这里画出了关于$z$的代价函数 ${\cos}t_0{(z)}$，横轴表示 $z$ 。
 
@@ -94,17 +94,17 @@
 
 💬 具体而言，如果你考察这样一个数据集，其中有正样本，也有负样本，可以看到这个数据集是线性可分的，即存在一条直线把正负样本分开。当然有多条不同的直线，可以把正样本和负样本完全分开。
 
-![](https://gitee.com/veal98/images/raw/master/img/20200610224112.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200610224112.png)
 
 支持向量机将会选择这个黑色的决策边界，相较于之前我用粉色或者绿色画的决策界。这条黑色的看起来好得多，黑线看起来是更稳健的决策界。在分离正样本和负样本上它显得的更好。数学上来讲，这是什么意思呢？这条黑线有更大的距离，这个距离叫做间距(**margin**)。
 
-![](https://gitee.com/veal98/images/raw/master/img/20200610224155.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200610224155.png)
 
 ⚪ 当画出这两条额外的蓝线，我们看到<u>黑色的决策界和训练样本之间有更大的最短距离</u>。然而粉线和蓝线离训练样本就非常近，在分离样本的时候就会比黑线表现差。因此，这个距离叫做支持向量机的间距，它努力用一个最大间距来分离样本。因此支持向量机有时被称为**大间距分类器**。
 
 🚨 最后，需要注意的是：当**你使用支持向量机的时候，你的学习算法会受到异常点（outlier）的影响**。比如我们加入一个额外的正样本：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200626095759.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200626095759.png)
 
 为了将样本用最大间距分开，也许我最终会得到一条类似粉色这样的决策界，仅仅基于一个异常值，仅仅基于一个样本，就将我的决策界从这条黑线变到这条粉线，这实在是不明智的。而如果正则化参数$C$，设置的非常大，这事实上正是支持向量机将会做的，它将决策界，从黑线变到了粉线。**但是如果$C$ 设置的小一点，则你最终会得到这条黑线，**当然数据如果不是线性可分的，如果你在这里有一些正样本或者你在这里有一些负样本，则支持向量机也会将它们恰当分开。
 
@@ -128,7 +128,7 @@
 
 回顾我们之前讨论过可以使用高阶的多项式模型来解决无法用直线进行分隔的分类问题：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200611161013.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200611161013.png)
 
 为了获得上图所示的判定边界，我们的模型可能是${{\theta }_{0}}+{{\theta }_{1}}{{x}_{1}}+{{\theta }_{2}}{{x}_{2}}+{{\theta }_{3}}{{x}_{1}}{{x}_{2}}+{{\theta }_{4}}x_{1}^{2}+{{\theta }_{5}}x_{2}^{2}+\cdots $的形式。
 
@@ -140,7 +140,7 @@
 
 > 🙂 下一节会讲解如何选取地标
 
-![](https://gitee.com/veal98/images/raw/master/img/20200611161148.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200611161148.png)
 
 例如：${{f}_{1}}=similarity(x,{{l}^{(1)}})=e(-\frac{{{|| x-{{l}^{(1)}} ||}^{2}}}{2{{\sigma }^{2}}})$
 
@@ -154,7 +154,7 @@
 
 假设我们的训练样本含有两个特征[$x_{1}$ $x{_2}$]，给定地标$l^{(1)}$与不同的 $\sigma$ （高斯核函数的参数值）值，见下图：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200611163032.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200611163032.png" style="zoom:50%;" />
 
 图中水平面的坐标为 $x_{1}$，$x_{2}$而垂直坐标轴代表$f$。可以看出，只有当$x$与$l^{(1)}$重合时$f$才具有最大值。<u>随着$x$的改变$f$值改变的速率受到$\sigma^2$的控制。</u>
 
@@ -162,7 +162,7 @@
 
 在下图中，当样本处于洋红色的点位置处，因为其离$l^{(1)}$更近，但是离$l^{(2)}$和$l^{(3)}$较远，因此$f_1$接近1，而$f_2$,$f_3$接近0。因此$h_θ(x)=θ_0+θ_1f_1+θ_2f_2+θ_1f_3>0$，因此预测$y=1$。同理可以求出，对于离$l^{(2)}$较近的绿色点，也预测$y=1$，但是对于蓝绿色的点，因为其离三个地标都较远，预测$y=0$。
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200611163318.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200611163318.png" style="zoom:50%;" />
 
 这样，**图中红色的封闭曲线所表示的范围，便是我们依据一个单一的训练样本和我们选取的地标所得出的判定边界，在预测时，我们采用的特征不是训练样本本身的特征，而是通过核函数计算出的新特征 $f_1,f_2,f_3$。**
 
@@ -172,9 +172,9 @@
 
 我们通常是根据训练集的数量选择地标的数量，即⭐ **如果训练集中有$m$个样本，则我们选取$m$个地标，并且令:$l^{(1)}=x^{(1)},l^{(2)}=x^{(2)},.....,l^{(m)}=x^{(m)}$。**这样做的好处在于：现在我们得到的新特征是建立在原有特征与训练集中所有其他特征之间距离的基础之上的，即：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200611164004.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200611164004.png)
 
-![](https://gitee.com/veal98/images/raw/master/img/20200611163951.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200611163951.png)
 
 下面我们将核函数运用到支持向量机中，修改我们的支持向量机假设为：
 
@@ -252,7 +252,7 @@ $n$为特征数，$m$为训练样本数。
 
 假设您使用训练了一个高斯内核的支持向量机，它在训练集上学习了以下决策边界：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200611201042.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200611201042.png)
 
 你觉得支持向量机欠拟合了，应该试着增加或减少 C 吗？或者增加或减少 $σ_2$ ？
 
@@ -274,22 +274,22 @@ $n$为特征数，$m$为训练样本数。
 
 下图显示了当$σ_2=1$时，$f_1 = \text{similarity}(x,l^{(1)})$ 的曲线图。
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200611202004.png" style="zoom: 67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200611202004.png" style="zoom: 67%;" />
 
 当 $σ^2=0.25$ 时，下列哪个是 f1 的曲线图？
 
-- A：<img src="https://gitee.com/veal98/images/raw/master/img/20200611202017.png" style="zoom: 67%;" />
-- B：<img src="https://gitee.com/veal98/images/raw/master/img/20200611202056.png" style="zoom: 67%;" />
+- A：<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200611202017.png" style="zoom: 67%;" />
+- B：<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200611202056.png" style="zoom: 67%;" />
 
-- C：<img src="https://gitee.com/veal98/images/raw/master/img/20200611202109.png" style="zoom: 67%;" />
+- C：<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200611202109.png" style="zoom: 67%;" />
 
-- ✅ D：<img src="https://gitee.com/veal98/images/raw/master/img/20200611202121.png" style="zoom: 67%;" />
+- ✅ D：<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200611202121.png" style="zoom: 67%;" />
 
 ### ③ 第 3 题
 
 支持向量机求解 $\min_\theta \space C \sum_{i=1}^m y^{(i)} \text{cost}_1(\theta^Tx^{(i)}) + (1-y^{(i)}) \text{cost}_0(\theta^Tx^{(i)})  + \sum_{j=1}^n \theta_j^2$，其中函数$cost_0(z)$和$cost_1(z)$图像如下：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200611202348.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200611202348.png" style="zoom:50%;" />
 
 目标中的第一项是：$C \sum_{i=1}^m y^{(i)} \text{cost}_1(\theta^Tx^{(i)}) +  (1-y^{(i)}) \text{cost}_0(\theta^Tx^{(i)}).$ 如果以下四个条件中有两个为真，则第一项为零。使这个项等于零的两个条件是什么？
 

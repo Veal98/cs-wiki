@@ -89,7 +89,7 @@ Model: "mnist_model" ___________________________________________________________
 keras.utils.plot_model(model, "my_first_model.png")
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20201117112612.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201117112612.png)
 
 并且，您还可以选择在绘制的计算图中显示每层的输入和输出形状：
 
@@ -97,7 +97,7 @@ keras.utils.plot_model(model, "my_first_model.png")
 keras.utils.plot_model(model, "my_first_model_with_shape_info.png", show_shapes=True)
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20201117112648.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201117112648.png)
 
 此图和代码几乎完全相同。在代码版本中，连接箭头由调用操作代替。
 
@@ -415,7 +415,7 @@ model = keras.Model(
 keras.utils.plot_model(model, "multi_input_and_output_model.png", show_shapes=True)
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20201117115129.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201117115129.png)
 
 编译此模型时，可以为每个输出分配不同的损失。甚至可以为每个损失分配不同的权重，以调整其对总训练损失的贡献。
 

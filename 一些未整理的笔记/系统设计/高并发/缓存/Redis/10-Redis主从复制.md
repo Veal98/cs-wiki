@@ -27,7 +27,7 @@ Master以写为主，Slave 以读为主。
 
 电商网站上的商品，一般都是一次上传，无数次浏览的，说专业点也就是"多读少写"。对于这种场景，我们可以使用如下架构：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200724121112.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200724121112.png)
 
 主从复制，读写分离。其实在 80% 的情况下都是在进行读操作，一般使用一主二从来减缓服务器的压力。
 
@@ -71,7 +71,7 @@ Master以写为主，Slave 以读为主。
 
 - 首先复制两份一样的文件夹在主节点（就是我们原先装的 Redis，port 6380）的同级目录下
 
-  ![](https://gitee.com/veal98/images/raw/master/img/20200724123944.png)
+  ![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200724123944.png)
 
 - 修改两份文件夹的配置文件 `redis.windows.conf`：
 
@@ -94,15 +94,15 @@ Master以写为主，Slave 以读为主。
 
 - 接下来，首先启动主节点，再启动从节点（从节点修改配置后需要按如下方式加载配置）
 
-  ![](https://gitee.com/veal98/images/raw/master/img/20200724123732.png)
+  ![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200724123732.png)
 
 - OK，接下来进入主节点 `info replication` 查看主从复制信息：
 
-  ![](https://gitee.com/veal98/images/raw/master/img/20200724144613.png)
+  ![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200724144613.png)
 
 - 登录从节点 6380 和 6381 
 
-  ![](https://gitee.com/veal98/images/raw/master/img/20200724145114.png)
+  ![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200724145114.png)
 
 OK，一主二从的环境配置结束，接下来进行测试 👇
 
@@ -114,15 +114,15 @@ OK，一主二从的环境配置结束，接下来进行测试 👇
 
 比如说，我们在主机添加数据：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200724145645.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200724145645.png" style="zoom:80%;" />
 
 从机可以读取主机上的数据，但不能进行写操作：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200724145751.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200724145751.png" style="zoom:80%;" />
 
 如果主机挂掉，丛机原地待命，主机回来依然照旧：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200724151255.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200724151255.png)
 
 ### ② 复制原理
 
@@ -138,7 +138,7 @@ Slave 启动成功连接到 master 后会发送一个 `sync `同步命令，Mast
 
 上一个 Slave （记为 A）可以是下一个 slave 的 Master（注意 A 在它的主节点面前仍然是从节点），A 同样可以接收其他 slaves 的连接和同步请求，那么 A 作为了链条中下一个的 master, 可以有效减轻 master 的写压力。
 
-![](https://gitee.com/veal98/images/raw/master/img/20200724152501.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200724152501.png)
 
 ### ④ 反客为主
 
@@ -154,7 +154,7 @@ Slave 启动成功连接到 master 后会发送一个 `sync `同步命令，Mast
 
 哨兵模式是一种特殊的模式，首先 Redis 提供了哨兵的命令，**哨兵是一个独立的进程**，作为进程，它会独立运行。其原理是哨兵通过发送命令，等待 Redis 服务器响应，从而监控运行的多个 Redis 实例。
 
-![](https://gitee.com/veal98/images/raw/master/img/20200724153208.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200724153208.png)
 
 这里的哨兵有两个作用：
 
@@ -163,7 +163,7 @@ Slave 启动成功连接到 master 后会发送一个 `sync `同步命令，Mast
 
 然而一个哨兵进程对 Redis 服务器进行监控，可能会出现问题，为此，我们可以使用多个哨兵进行监控。各个哨兵之间还会互相进行监控，这样就形成了**多哨兵模式**。
 
-![](https://gitee.com/veal98/images/raw/master/img/20200724153322.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200724153322.png)
 
 假设主服务器宕机，哨兵1先检测到这个结果，系统并不会马上进行 **failover** 过程，仅仅是哨兵1主观的认为主服务器不可用，这个现象成为**主观下线**。
 
@@ -173,7 +173,7 @@ Slave 启动成功连接到 master 后会发送一个 `sync `同步命令，Mast
 
 首先需要在主机 Redis 的目录下新建 `sentinel.conf` 文件
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200724162151.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200724162151.png" style="zoom:80%;" />
 
 文件内容如下
 
@@ -187,15 +187,15 @@ Slave 启动成功连接到 master 后会发送一个 `sync `同步命令，Mast
 redis-server.exe sentinel.conf --sentinel
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20200724155009.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200724155009.png)
 
 关闭主机服务后，哨兵将自动选取新的主机，**哨兵日志**如下：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200724155349.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200724155349.png)
 
 OK，可以看到，哨兵选择了 6380 为新的主机：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200724155604.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200724155604.png)
 
 🚩 **如果此时主机重新开启了，只能归并到新的主机下，当做从机**，这就是哨兵模式的规则
 

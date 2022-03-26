@@ -8,7 +8,7 @@
 
 随着互联网的发展，网站应用的规模不断扩大，常规的垂直应用架构已无法应对，**分布式服务架构以及流动计算架构势在必行**，亟需一个治理系统确保架构有条不紊的演进。
 
-![](https://gitee.com/veal98/images/raw/master/img/20201127110803.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201127110803.png)
 
 ### ① 单一应用架构
 
@@ -30,7 +30,7 @@
 
 ### ① 架构图
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201204170204.png" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201204170204.png" style="zoom:67%;" />
 
 ### ② 节点角色说明
 
@@ -59,7 +59,7 @@
 5. 服务消费者 从提供者地址列表中 基于软负载均衡算法 选一台提供者进行调用，如果调用失败，再选另一台调用。
 6. **服务消费者和提供者**，在内存中累计调用次数和调用时间，**定时每分钟发送一次统计数据到监控中心**。
 
-![](https://gitee.com/veal98/images/raw/master/img/20201127110649.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201127110649.png)
 
 ### ④ Dubbo 架构特点
 
@@ -94,7 +94,7 @@ Dubbo 架构具有以下几个特点，分别是连通性、健壮性、伸缩�
 
 当服务集群规模进一步扩大，带动IT治理结构进一步升级，需要实现动态部署，进行流动计算，现有分布式服务架构不会带来阻力。下图是未来可能的一种架构：
 
-![](https://gitee.com/veal98/images/raw/master/img/20201127112104.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201127112104.png)
 
 节点角色说明：
 
@@ -109,7 +109,7 @@ Dubbo 架构具有以下几个特点，分别是连通性、健壮性、伸缩�
 
 ## 3. Dubbo 工作原理
 
-![](https://gitee.com/veal98/images/raw/master/img/20201127114803.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201127114803.png)
 
 图中从下至上分为十层，**各层均为单向依赖**，右边的黑色箭头代表层之间的依赖关系，**每一层都可以剥离上层被复用**，其中，Service 和 Config 层为 API，其它各层均为 **SPI**（框架接口规范）。
 
@@ -132,7 +132,7 @@ Dubbo 架构具有以下几个特点，分别是连通性、健壮性、伸缩�
 - 第九层：**transport层**，网络传输层，抽象 mina 和 netty 为统一接口
 - 第十层：**serialize层**，数据序列化层，网络传输需要
 
-![](https://gitee.com/veal98/images/raw/master/img/20201127115243.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201127115243.png)
 
 ## 📚 References
 

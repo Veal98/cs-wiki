@@ -36,7 +36,7 @@ Out[14]: array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 In [15]: plt.plot(data)
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20200615114329.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200615114329.png)
 
 虽然seaborn这样的库和pandas的内置绘图函数能够处理许多普通的绘图任务，但如果需要自定义一些高级功能的话就必须学习 matplotlib API。
 
@@ -66,7 +66,7 @@ In [18]: ax2 = fig.add_subplot(2, 2, 2)
 In [19]: ax3 = fig.add_subplot(2, 2, 3)
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20200615115750.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200615115750.png)
 
 >🚩 使用Jupyter notebook有一点不同，即每个小窗重新执行后，图形会被重置。因此，对于复杂的图形，你必须将所有的绘图命令存在一个小窗里。
 
@@ -85,7 +85,7 @@ ax3 = fig.add_subplot(2, 2, 3)
 In [20]: plt.plot(np.random.randn(50).cumsum(), 'k--')
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20200615120003.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200615120003.png)
 
 `"k--"`是一个线型选项，用于告诉matplotlib绘制黑色虚线图。上面那些由 fig.add_subplot 所返回的对象是**AxesSubplot** 对象，直接调用它们的实例方法就可以在其它空着的格子里面画图了，如下图所示：
 
@@ -95,7 +95,7 @@ In [21]: ax1.hist(np.random.randn(100), bins=20, color='k', alpha=0.3) # hist �
 In [22]: ax2.scatter(np.arange(30), np.arange(30) + 3 * np.random.randn(30)) # scatter 散点图
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20200615120054.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200615120054.png)
 
 > 你可以在matplotlib的文档中找到各种图表类型。
 
@@ -117,7 +117,7 @@ array([[<matplotlib.axes._subplots.AxesSubplot object at 0x7fb626374048>,
 
 **这是非常实用的，因为可以轻松地对axes数组进行索引，就好像是一个二维数组一样，例如 `axes[0,1]`**。你还可以通过sharex和sharey指定subplot应该具有相同的X轴或Y轴。在比较相同范围的数据时，这也是非常实用的，否则，matplotlib会自动缩放各图表的界限。有关该方法的更多信息，请参见下表：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200615120151.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200615120151.png)
 
 ### 3. 调整subplot周围的间距 subplots_adjust
 
@@ -139,7 +139,7 @@ for i in range(2):
 plt.subplots_adjust(wspace=0, hspace=0)
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20200615120739.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200615120739.png)
 
 不难看出，其中的轴标签重叠了。matplotlib不会检查标签是否重叠，所以对于这种情况，你只能自己设定刻度位置和刻度标签。后面几节将会详细介绍该内容。
 
@@ -167,7 +167,7 @@ In [30]: from numpy.random import randn
 In [31]: plt.plot(randn(30).cumsum(), 'ko--')
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20200615121126.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200615121126.png)
 
 还可以将其写成更为明确的形式：
 
@@ -205,7 +205,7 @@ pyplot接口的设计目的就是交互式使用，含有诸如xlim、xticks和x
 
 - 调用时带参数，则设置参数值（例如，**`plt.xlim([0,10])` 会将X轴的范围设置为0到10**）。
 
-  ![](https://gitee.com/veal98/images/raw/master/img/20200615122243.png)
+  ![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200615122243.png)
 
 所有这些方法都是对当前或最近创建的AxesSubplot起作用的。它们各自对应subplot对象上的两个方法，以xlim为例，就是 `ax.get_xlim` 和 `ax.set_xlim`。我更喜欢使用subplot的实例方法（因为我喜欢明确的事情，而且在处理多个subplot时这样也更清楚一些）。当然你完全可以选择自己觉得方便的那个。
 
@@ -241,7 +241,7 @@ Out[42]: <matplotlib.text.Text at 0x7fb624d055f8>
 In [43]: ax.set_xlabel('Stages')
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20200615122658.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200615122658.png)
 
 **Y 轴的修改方式与此类似，只需将上述代码中的 x 替换为 y 即可**。轴的类有集合方法，可以批量设定绘图选项。前面的例子，也可以写为：
 
@@ -376,7 +376,7 @@ plot_data = buffer.getvalue()
 
 下表列出了savefig的其它选项：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200615124146.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200615124146.png)
 
 ### 10. matplotlib 配置
 
@@ -422,7 +422,7 @@ In [61]: s.plot()
 该Series对象的索引会被传给matplotlib，并用以绘制X轴。可以通过use_index=False禁用该功能。X轴的刻度和界限可以通过xticks和xlim选项进行调节，Y轴就用yticks和ylim。plot 参数的完整列表请参见下表：
 
 
-![](https://gitee.com/veal98/images/raw/master/img/20200615125234.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200615125234.png)
 
 
 
@@ -437,7 +437,7 @@ In [62]: df = pd.DataFrame(np.random.randn(10, 4).cumsum(0),
 In [63]: df.plot()
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20200615125434.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200615125434.png)
 
 plot属性包含一批不同绘图类型的方法。例如，`df.plot()`等价于`df.plot.line()`。后面会学习这些方法。
 
@@ -445,7 +445,7 @@ plot属性包含一批不同绘图类型的方法。例如，`df.plot()`等价�
 
 DataFrame还有一些用于对列进行灵活处理的选项，例如，是要将所有列都绘制到一个subplot中还是创建各自的subplot。详细信息请参见下表：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200615125504.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200615125504.png)
 
 >🚩 有关时间序列的绘图，请见第11章。
 
@@ -464,7 +464,7 @@ Out[66]: <matplotlib.axes._subplots.AxesSubplot at 0x7fb62493d470>
 In [67]: data.plot.barh(ax=axes[1], color='k', alpha=0.7)
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20200615130344.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200615130344.png)
 
 **`color='k'`和`alpha=0.7`设定了图形的颜色为黑色，并使用部分的填充透明度**。对于DataFrame，柱状图会将每一行的值分为一组，并排显示，如图所示：
 
@@ -486,7 +486,7 @@ six    0.601648  0.478576  0.205690  0.560547
 In [71]: df.plot.bar()
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20200615130328.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200615130328.png)
 
 注意，**DataFrame各列的名称"Genus"被用作了图例的标题**。
 
@@ -496,7 +496,7 @@ In [71]: df.plot.bar()
 In [73]: df.plot.barh(stacked=True, alpha=0.5)
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20200615130412.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200615130412.png)
 
 >🚩 柱状图有一个非常不错的用法：利用 value_counts 图形化显示Series中各值的出现频率，比如s.value_counts().plot.bar()。
 
@@ -553,7 +553,7 @@ Thur  0.827586  0.068966  0.086207  0.017241
 In [81]: party_pcts.plot.bar()
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20200615130718.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200615130718.png)
 
 于是，通过该数据集就可以看出，聚会规模在周末会变大。
 
@@ -576,7 +576,7 @@ Out[85]:
 In [86]: sns.barplot(x='tip_pct', y='day', data=tips, orient='h')
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20200615130825.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200615130825.png)
 
 **seaborn的绘制函数使用`data`参数，它可能是pandas的DataFrame**。其它的参数是关于列的名字。因为一天的每个值有多次观察，柱状图的值是tip_pct的平均值。绘制在柱状图上的黑线代表95%置信区间（可以通过可选参数配置）。
 
@@ -586,7 +586,7 @@ seaborn.barplot有颜色选项，使我们能够通过一个额外的值设置�
 In [88]: sns.barplot(x='tip_pct', y='day', hue='time', data=tips, orient='h')
 ```
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200615143220.png" style="zoom: 67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200615143220.png" style="zoom: 67%;" />
 
 注意，seaborn已经自动修改了图形的美观度：默认调色板，图形背景和网格线的颜色。你可以用seaborn.set在不同的图形外观之间切换：
 
@@ -601,14 +601,14 @@ In [90]: sns.set(style="whitegrid")
 In [92]: tips['tip_pct'].plot.hist(bins=50)
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20200615143736.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200615143736.png)
 
 与此相关的一种图表类型是密度图，它是通过计算“可能会产生观测数据的连续概率分布的估计”而产生的。一般的过程是将该分布近似为一组核（即诸如正态分布之类的较为简单的分布）。因此，密度图也被称作KDE（Kernel Density Estimate，核密度估计）图。使用 `plot.kde` 和标准混合正态分布估计即可生成一张密度图（见图9-22）：
 ```python
 In [94]: tips['tip_pct'].plot.density()
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20200615143800.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200615143800.png)
 
 seaborn的 `distplot` 方法绘制直方图和密度图更加简单，还可以同时画出直方图和连续密度估计图。作为例子，考虑一个双峰分布，由两个不同的标准正态分布组成（见图9-23）：
 
@@ -622,7 +622,7 @@ In [98]: values = pd.Series(np.concatenate([comp1, comp2]))
 In [99]: sns.distplot(values, bins=100, color='k')
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20200615143809.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200615143809.png)
 
 ### 4. 散布图或点图
 
@@ -654,7 +654,7 @@ Out[105]: <matplotlib.axes._subplots.AxesSubplot at 0x7fb613720be0>
 In [106]: plt.title('Changes in log %s versus log %s' % ('m1', 'unemp'))
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20200615143832.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200615143832.png)
 
 在探索式数据分析工作中，同时观察一组变量的散布图是很有意义的，这也被称为散布图矩阵（scatter plot matrix）。纯手工创建这样的图表很费工夫，所以seaborn提供了一个便捷的 `pairplot` 函数，它支持在对角线上放置每个变量的直方图或密度估计：
 
@@ -662,7 +662,7 @@ In [106]: plt.title('Changes in log %s versus log %s' % ('m1', 'unemp'))
 In [107]: sns.pairplot(trans_data, diag_kind='kde', plot_kws={'alpha': 0.2})
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20200615143859.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200615143859.png)
 
 你可能注意到了plot_kws参数。它可以让我们传递配置选项到非对角线元素上的图形使用。对于更详细的配置选项，可以查阅seaborn.pairplot文档字符串。
 
@@ -674,7 +674,7 @@ In [107]: sns.pairplot(trans_data, diag_kind='kde', plot_kws={'alpha': 0.2})
    .....:                kind='bar', data=tips[tips.tip_pct < 1])
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20200615150136.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200615150136.png)
 
 除了在分面中用不同的颜色按时间分组，我们还可以通过给每个时间值添加一行来扩展分面网格：
 
@@ -684,7 +684,7 @@ In [109]: sns.factorplot(x='day', y='tip_pct', row='time',
    .....:                kind='bar', data=tips[tips.tip_pct < 1])
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20200615150557.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200615150557.png)
 
 factorplot支持其它的绘图类型，你可能会用到。例如，**盒图 box**（它可以显示中位数，四分位数，和异常值）就是一个有用的可视化类型（见图9-28）：
 
@@ -693,7 +693,7 @@ In [110]: sns.factorplot(x='tip_pct', y='day', kind='box',
    .....:                data=tips[tips.tip_pct < 0.5])
 ```
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200615150633.png" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200615150633.png" style="zoom:67%;" />
 
 使用更通用的seaborn.FacetGrid类，你可以创建自己的分面网格。请查阅seaborn的文档（https://seaborn.pydata.org/）。
 
@@ -714,6 +714,6 @@ In [110]: sns.factorplot(x='tip_pct', y='day', kind='box',
 
 - 📕  [《利用Python进行数据分析-第2版-中文译版》](https://www.jianshu.com/p/04d180d90a3f)
 
-  <img src="https://gitee.com/veal98/images/raw/master/img/20200607091609.png" style="zoom:50%;" />
+  <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200607091609.png" style="zoom:50%;" />
 
 - 🚝 [Gihub《Python数据分析》配套源码](https://github.com/wesm/pydata-book)

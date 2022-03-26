@@ -58,7 +58,7 @@ IPython默认采用序号的格式`In [2]:`，与标准的`>>>`提示符不同�
 
 你可以用`ipython`在命令行打开IPython Shell，就像打开普通的Python解释器：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200607095619.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200607095619.png)
 
 你可以通过输入代码并按Return（或Enter），运行任意Python语句。当你只输入一个变量，它会显示代表的对象：
 
@@ -95,15 +95,15 @@ IPython还支持执行任意代码块（通过一个华丽的复制-粘贴方法
 
 **notebook 是 Jupyter 项目的重要组件之一，它是一个代码、文本（有标记或无标记）、数据可视化或其它输出的交互式文档**。Jupyter Notebook 需要与内核互动，内核是Jupyter与其它编程语言的交互编程协议。**Python的Jupyter内核是使用IPython**。**要启动Jupyter，在命令行中输入`jupyter notebook`**
 
-![](https://gitee.com/veal98/images/raw/master/img/20200607100109.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200607100109.png)
 
 然后Jupyter会自动打开网页`http://localhost:8888/tree`，如下图所示：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200607100205.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200607100205.png)
 
 要新建一个notebook，点击按钮 New，选择“Python3”或“conda\[默认项\]”。输入一行Python代码。然后按**Shift-Enter** 执行。
 
-![](https://gitee.com/veal98/images/raw/master/img/20200607100330.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200607100330.png)
 
 当保存notebook时（File目录下的Save and Checkpoint），会创建一个后缀名为`.ipynb`的文件。这是一个自包含文件格式，包含当前笔记本中的所有内容（包括所有已评估的代码输出）。可以被其它Jupyter用户加载和编辑。要加载存在的notebook，把它放到启动notebook进程的相同目录内。
 
@@ -148,7 +148,7 @@ datetime.datetime_CAPI datetime.time          datetime.tzinfo
 
 在Jupyter notebook和新版的IPython（5.0及以上），自动补全功能是下拉框的形式。
 
-![](https://gitee.com/veal98/images/raw/master/img/20200607101627.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200607101627.png)
 
 > 笔记：注意，默认情况下，IPython会隐藏下划线开头的方法和属性，比如魔术方法和内部的“私有”方法和属性，以避免混乱的显示（和让新手迷惑！）这些也可以tab补全，但是你必须首先键入一个下划线才能看到它们。如果你喜欢总是在tab补全中看到这样的方法，你可以IPython配置中进行设置。可以在IPython文档中查找方法。
 
@@ -168,7 +168,7 @@ datasets/movielens/ratings.dat   datasets/movielens/users.dat
 
 另外，tab补全可以补全函数的关键词参数（包括等于号=）。见图2-4。
 
-![](https://gitee.com/veal98/images/raw/master/img/20200607101905.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200607101905.png)
 
 后面会仔细地学习函数。
 
@@ -176,7 +176,7 @@ datasets/movielens/ratings.dat   datasets/movielens/users.dat
 
 🔵 **在变量前后使用问号？，可以显示对象的信息**：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200607102146.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200607102146.png)
 
 这可以作为对象的自省。如果对象是一个函数或实例方法，定义过的文档字符串，也会显示出信息。假设我们写了一个如下的函数：
 
@@ -340,7 +340,7 @@ Pasting code; enter '--' alone on the line to stop or use Ctrl-D.
 
 IPython 有许多键盘快捷键进行导航提示（类似Emacs文本编辑器或UNIX bash Shell）和交互shell的历史命令。下表总结了常见的快捷键。图2-5展示了一部分，如移动光标。
 
-![](https://gitee.com/veal98/images/raw/master/img/20200607102815.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200607102815.png)
 
 Jupyter notebooks有另外一套庞大的快捷键。因为它的快捷键比IPython的变化快，建议你参阅Jupyter notebook的帮助文档。
 
@@ -408,7 +408,7 @@ Out[24]: '/home/wesm/code/pydata-book'
 
 IPython的文档可以在shell中打开，我建议你用`%quickref`或`%magic`学习下所有特殊命令。表2-2列出了一些可以提高生产率的交互计算和Python开发的IPython指令。
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200607103251.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200607103251.png" style="zoom:80%;" />
 
 ### ⑩ 集成Matplotlib
 
@@ -427,7 +427,7 @@ Using matplotlib backend: Qt4Agg
 In [26]: %matplotlib inline
 ```
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200607104447.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200607104447.png" style="zoom:80%;" />
 
 
 
@@ -437,7 +437,7 @@ In [26]: %matplotlib inline
 
 - 📕  [《利用Python进行数据分析-第2版-中文译版》](https://www.jianshu.com/p/04d180d90a3f)
 
-  <img src="https://gitee.com/veal98/images/raw/master/img/20200607091609.png" style="zoom:50%;" />
+  <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200607091609.png" style="zoom:50%;" />
 
 - 🚝 [Gihub《Python数据分析》配套源码](https://github.com/wesm/pydata-book)
 

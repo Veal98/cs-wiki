@@ -23,7 +23,7 @@ AOP 实现的关键在于 AOP 框架自动创建的 AOP 代理，AOP 代理主�
 
 如下图所示：
 
-![](https://gitee.com/veal98/images/raw/master/img/20201221101337.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201221101337.png)
 
 🚨 **AOP 和 IoC 一样，都不是 Spring 独有的，Spring 只是支持 AOP / IoC 的框架之一**
 
@@ -51,7 +51,7 @@ AOP 实现的关键在于 AOP 框架自动创建的 AOP 代理，AOP 代理主�
 
 - 🔸 **切面（Aspect）** 切面由切点和增强组成，它既包括了横切逻辑的定义，也包括了连接点的定义，SpringAOP 就是将切面所定义的横切逻辑织入到切面所制定的连接点中。**通常来说切面是一个类（切面类），即对该类的某个方法进行增强**
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201221102543.png" style="zoom:75%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201221102543.png" style="zoom:75%;" />
 
 ## 4. 切入点表达式
 

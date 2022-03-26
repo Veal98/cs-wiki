@@ -6,25 +6,25 @@
 
 ## 1. Actor-Critic 方法（AC）
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201113160456.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201113160456.png" style="zoom:50%;" />
 
 - 💛 **策略网络** - Actor-Critic 中的 **【Actor】** ：前身是 Policy Gradients, 这能让它毫不费力地在连续动作中选取合适的动作.
 
   对于 Actor 网络 $𝜋_𝜃$，目标是最大化回报期望，通过 $𝜕𝐽(𝜃) / 𝜕𝜃$ 偏导数来更新策略网络的参数 𝜃：
 
-  <img src="https://gitee.com/veal98/images/raw/master/img/20201113160646.png" style="zoom: 50%;" />
+  <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201113160646.png" style="zoom: 50%;" />
 
 - 💛 **价值网络** - Actor Critic 中的 **【Critic】** ：前身是 Q-learning 或者其他的 Value-Based 的学习法 , 用于评估当前状态的好坏。能进行单步更新, 而传统的 Policy Gradients 则是回合更新, 这降低了学习效率.
 
   对于 Critic 网络 $𝑉_𝜙^𝜋$，目标是在通过 MC 方法或者 TD 方法获得准确的 $𝑉_𝜙^𝜋(𝑠𝑡)$ 值函数估计：
 
-  <img src="https://gitee.com/veal98/images/raw/master/img/20201113160851.png" style="zoom:50%;" />
+  <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201113160851.png" style="zoom:50%;" />
 
 🔸 **一句话概括 Actor Critic 方法**:
 
 结合了 Policy Gradient (Actor) 和 值函数近似 Function Approximation (Critic) 的方法. ⭐ **`Actor` 基于概率选行为, `Critic` 基于 `Actor` 的行为评判行为的得分, `Actor` 根据 `Critic` 的评分修改选行为的概率**.
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201119110417.png" style="zoom: 55%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201119110417.png" style="zoom: 55%;" />
 
 > 💡 **`Actor` 修改行为时就像蒙着眼睛一直向前开车, `Critic` 就是那个扶方向盘改变 `Actor` 开车方向的.**
 >
@@ -38,7 +38,7 @@
 
 上面介绍的通过计算优势值函数 $𝐴^𝜋(𝑠, 𝑎)$ 的 Actor Critic 算法称为 `Advantage Actor-Critic 算法`，它是目前使用 Actor Critic 思想的主流算法之一
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201113161620.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201113161620.png" style="zoom:50%;" />
 
 > 📜 其实 Actor Critic 系列算法不一定要使用优势值函数 $𝐴^𝜋(𝑠, 𝑎)$，还可以有其它变种
 
@@ -48,7 +48,7 @@ Reinforcement learning 有一个问题就是它很慢。那怎么增加训练的
 
 A3C 是 DeepMind 基于 Advantage Actor-Critic，A2C 算法提出来的异步版本，**将 Actor-Critic 网络部署在多个线程中同时进行训练，并通过全局网络来同步参数。这种异步训练的模式大大提升了训练效率，训练速度更快，并且算法性能也更好**。
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201113162317.png" style="zoom: 62%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201113162317.png" style="zoom: 62%;" />
 
 方法步骤：
 

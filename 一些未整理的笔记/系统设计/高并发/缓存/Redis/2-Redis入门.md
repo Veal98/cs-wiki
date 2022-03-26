@@ -27,7 +27,7 @@
 
 📥 下载地址：[https://github.com/MicrosoftArchive/redis/releases](https://github.com/MicrosoftArchive/redis/releases)
 
-![](https://gitee.com/veal98/images/raw/master/img/20200716201224.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200716201224.png)
 
 🚨 停更很久了，因为 **Redis 都是推荐在 Linux 服务器上搭建**。
 
@@ -48,7 +48,7 @@ $sudo apt-get install redis-server
 
 如果报错`无法获得锁`，可用如下方法解决：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200716205258.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200716205258.png)
 
 **启动 Redis**
 
@@ -56,7 +56,7 @@ $sudo apt-get install redis-server
 $ redis-server
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20200716205800.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200716205800.png)
 
 **查看 redis 是否启动？**
 
@@ -77,7 +77,7 @@ redis 127.0.0.1:6379> ping
 PONG
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20200716205816.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200716205816.png)
 
 以上说明我们已经成功安装了 redis 🎉。
 
@@ -87,7 +87,7 @@ PONG
 
 redis 性能测试工具可选参数如下：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200716210135.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200716210135.png)
 
 我们来简单测试下：
 
@@ -96,11 +96,11 @@ redis 性能测试工具可选参数如下：
 redis-benchmark -h localhost -p 6379 -c 100 -n 100000
 ```
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200716212127.png" style="zoom:88%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200716212127.png" style="zoom:88%;" />
 
 🔎 这些字段的含义：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200716212342.png" style="zoom:88%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200716212342.png" style="zoom:88%;" />
 
 ## 5. 基础知识
 
@@ -108,11 +108,11 @@ redis-benchmark -h localhost -p 6379 -c 100 -n 100000
 
 可以使用 `select `进行切换数据库：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200716212654.png" style="zoom: 88%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200716212654.png" style="zoom: 88%;" />
 
 查看数据库所有的 `key`：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200716212821.png" style="zoom:88%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200716212821.png" style="zoom:88%;" />
 
 可以看到， `4）name` 便是我们添加的 `key`。
 

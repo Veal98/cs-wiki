@@ -39,7 +39,7 @@
 3. 通过输入流获取服务器响应的信息
 4. 关闭相关资源
 
-![img](https://gitee.com/veal98/images/raw/master/img/20201205112802.png)
+![img](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201205112802.png)
 
 ### ② 代码示例
 
@@ -158,9 +158,9 @@ public class HelloServer {
 
 **首先运行服务端，然后再运行客户端，控制台输出如下：**
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201205153954.png" alt="img" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201205153954.png" alt="img" style="zoom:67%;" />
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201205154024.png" alt="img" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201205154024.png" alt="img" style="zoom:67%;" />
 
 #### 代码中存在的问题
 
@@ -168,7 +168,7 @@ public class HelloServer {
 
 很明显，上面演示的代码片段有一个很严重的问题：**只能同时处理一个客户端的连接，如果需要管理多个客户端的话，就需要为我们请求的客户端单独创建一个线程。** 如下图所示：
 
-![img](https://gitee.com/veal98/images/raw/master/img/20201205154226.png)
+![img](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201205154226.png)
 
 对应的Java代码可能是下面这样的：
 

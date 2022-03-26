@@ -24,7 +24,7 @@ Hadley Wickham（许多热门R语言包的作者）创造了一个用于表示�
 - 然后，将一个函数应用（apply）到各个分组并产生一个新值。
 - 最后，所有这些函数的执行结果会被合并（combine）到最终的结果对象中。结果对象的形式一般取决于数据上所执行的操作。下图大致说明了一个简单的分组聚合过程。
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200616100418.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200616100418.png" style="zoom:50%;" />
 
 分组键可以有多种形式，且类型不必相同：
 
@@ -258,9 +258,9 @@ b    one   0.281746
 
 ⭐ **这种索引操作所返回的对象是一个已分组的 DataFrame（如果传入的是列表或数组）或已分组的Series（如果传入的是标量形式的单个列名）**：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200616102829.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200616102829.png)
 
-![](https://gitee.com/veal98/images/raw/master/img/20200616102853.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200616102853.png)
 
 
 
@@ -409,7 +409,7 @@ cty  JP  US
 表 10 - 1：👇
 
 
-![](https://gitee.com/veal98/images/raw/master/img/20200616105416.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200616105416.png)
 
 你可以使用自己发明的聚合运算，还可以调用分组对象上已经定义好的任何方法。例如，`quantile` 可以计算Series或DataFrame列的样本分位数。
 
@@ -671,7 +671,7 @@ Out[73]:
 
 最通用的GroupBy方法是 `apply`，本节剩余部分将重点讲解它。如图所示，**apply 会将待处理的对象拆分成多个片段，然后对各片段调用传入的函数，最后尝试将各片段组合到一起**。
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200616111517.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200616111517.png" style="zoom:50%;" />
 
 回到之前那个小费数据集，假设你想要根据分组选出最高的 5 个 tip_pct 值。首先，编写一个选取指定列具有最大值的行的函数：
 ```python
@@ -790,9 +790,9 @@ Out[81]:
 172        7.25  5.15    Yes   Sun  Dinner     2  0.710345
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20200616112652.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200616112652.png)
 
-![](https://gitee.com/veal98/images/raw/master/img/20200616112706.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200616112706.png)
 
 ### 3. 分位数和桶分析
 
@@ -1298,7 +1298,7 @@ Lunch  1    No      0.000000  0.000000  0.000000  0.181728
 
 pivot_table 的参数说明请参见下表：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200616114027.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200616114027.png)
 
 ### 2. 交叉表 crosstab
 
@@ -1351,6 +1351,6 @@ All          151   93  244
 
 - 📕  [《利用Python进行数据分析-第2版-中文译版》](https://www.jianshu.com/p/04d180d90a3f)
 
-  <img src="https://gitee.com/veal98/images/raw/master/img/20200607091609.png" style="zoom:50%;" />
+  <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200607091609.png" style="zoom:50%;" />
 
 - 🚝 [Gihub《Python数据分析》配套源码](https://github.com/wesm/pydata-book)

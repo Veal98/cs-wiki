@@ -91,7 +91,7 @@ Kryo 共支持三种读写方式
 
 ### ④ 支持的序列化类型
 
-![](https://gitee.com/veal98/images/raw/master/img/20201215214220.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201215214220.png)
 
 这都是其默认支持的。
 
@@ -247,7 +247,7 @@ public class KryoSerializer {
 
 **我们首先定义两个对象，这两个对象是客户端与服务端进行交互的实体类。** 客户端将 `RequestMessage` 类型的对象发送到服务端，服务端进行相应的处理之后将得到结果 `ResponseMessage` 对象返回给客户端。
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201216192813.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201216192813.png" style="zoom:80%;" />
 
 ### ① 客户端请求
 
@@ -334,7 +334,7 @@ public class ResponseMessage {
 
 ## 4. 序列化与反序列
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201216192837.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201216192837.png" style="zoom:80%;" />
 
 ### ① 自定义序列化接口
 
@@ -450,7 +450,7 @@ public class KryoSerializer implements Serializer {
 
 ## 5. 自定义编解码器
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201216193242.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201216193242.png" style="zoom:80%;" />
 
 在自定义的编解码器中，我们需要注意**设计一个传输/通信协议**，定义需要传输哪些类型的数据， 并且还会规定每一种类型的数据应该占多少字节。这样我们在接收到二级制数据之后，就可以正确的解析出我们需要的数据。
 
@@ -578,7 +578,7 @@ public class NettyKryoDecoder extends ByteToMessageDecoder {
 
 ## 6. 服务端
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201216202216.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201216202216.png" style="zoom:80%;" />
 
 ### ① 自定义 ChannelHandler 处理客户端消息
 
@@ -758,7 +758,7 @@ public class NettyServer {
 
 ## 7. 客户端
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201216202205.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201216202205.png" style="zoom:80%;" />
 
 ### ① 自定义 ChannelHandler 处理服务端消息
 
@@ -835,7 +835,7 @@ channelHandlerContext.channel().attr(key).set(responseMessage); // 设置 key �
 
 `set` 方法是 `Attribute` 的方法：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201216200752.png" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201216200752.png" style="zoom:67%;" />
 
 当然，我们也能够通过 Channel 和 key 将数据读取出来：
 
@@ -991,9 +991,9 @@ public class NettyClient {
 
 服务端：
 
-![](https://gitee.com/veal98/images/raw/master/img/20201216192514.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201216192514.png)
 
 客户端（客户端发送 4 次消息给服务端）：
 
-![](https://gitee.com/veal98/images/raw/master/img/20201216192450.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201216192450.png)
 

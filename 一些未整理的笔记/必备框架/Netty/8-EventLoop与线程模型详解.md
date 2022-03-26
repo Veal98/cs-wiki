@@ -25,7 +25,7 @@ while (!terminated) {
 
 以下是`EventLoop`类层次结构图：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201212214912.png" style="zoom: 80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201212214912.png" style="zoom: 80%;" />
 
 > 💡 在早期的 Java 多线程编程中，我们使用线程的方式一般都是继承 `Thread` 或者实现`Runnable`以此创建新的`Thread`， 这是一种比较原始且浪费资源的处理线程的方式。JDK5之后引入了`Executor `API，其核心思想是使用池化技术来重用 `Thread`，以此达到提高线程响应速度和降低资源浪费的目的。
 
@@ -91,7 +91,7 @@ ScheduledFuture<?> future = ch.eventLoop().schedule(
 
 Netty 线程模型的卓越性能取决于当前执行任务的 Thread，我们看一张图就明白了：
 
-![](https://gitee.com/veal98/images/raw/master/img/20201212220248.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201212220248.png)
 
 如果处理`Chanel`任务的线程正是支撑`EventLoop`的线程，那么与`Channel`的任务会被直接执行。 否则`EventLoop`会将该任务放入任务队列之中稍后执行。 需要注意的是**每个`EventLoop`都有自己的任务队列，独立于其他`EventLoop`的任务队列**。
 
@@ -103,7 +103,7 @@ Netty 线程模型的卓越性能取决于当前执行任务的 Thread，我们�
 
 **非阻塞传输 NIO 即一个`EventLoop`处理多个`Channel`，**Netty这样设计的目的就是尽可能的通过少量`Thread`来支撑大量的`Channel`， 而不是每个`Channel`都分配一个`Thread`。
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201212220457.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201212220457.png" style="zoom:80%;" />
 
 `EventLoopGroup`负责为每个新创建的`Channel`分配一个`EventLoop`，一旦一个`Channel`被分配给`EventLoop`，它将在 整个生命周期中都使用这个`EventLoop`及其`Thread`处理事件和任务。
 
@@ -111,7 +111,7 @@ Netty 线程模型的卓越性能取决于当前执行任务的 Thread，我们�
 
 **阻塞传输即 OIO(BIO)，此种传输方式的`EventLoop`只会被分配一个`Channel`，**如下图：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201212220637.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201212220637.png" style="zoom:80%;" />
 
 这样带来的会是线程资源的巨大消耗，导致并发量降低。
 

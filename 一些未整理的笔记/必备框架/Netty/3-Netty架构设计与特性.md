@@ -6,7 +6,7 @@
 
 ## 1. Netty 架构
 
-![](https://gitee.com/veal98/images/raw/master/img/20201210212218.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201210212218.png)
 
 - 传输服务 支持 BIO 和 NIO
 - 容器集成 支持 OSGI、JBossMC、Spring、Guice 容器

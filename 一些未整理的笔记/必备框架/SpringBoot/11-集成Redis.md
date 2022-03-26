@@ -46,7 +46,7 @@ public StringRedisTemplate stringRedisTemplate(RedisConnectionFactory redisConne
 
 ### ① 导入依赖
 
-![](https://gitee.com/veal98/images/raw/master/img/20200725102121.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200725102121.png)
 
 或者手动导入依赖：
 
@@ -98,7 +98,7 @@ void contextLoads() {
 }
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20200725105227.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200725105227.png)
 
 🚨 报错：所有的对象都需要序列化。
 
@@ -112,7 +112,7 @@ OK！
 
 ## 5. 自定义 RedisTemplate
 
-![](https://gitee.com/veal98/images/raw/master/img/20200725105703.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200725105703.png)
 
 上示代码中 `RedisTemplate<Object,Object>` 泛型选用的是两个 `Object `类，通常情况下，对于 `key `值我们一般会选用 `String `类型，使得我们每次都要进行强制类型转换。而且 `RedisTemplate `类默认采用的是 jdk 的序列化方式，但在真实的开发中，我们一般使用 Json 来传递对象，接下来我们自定义一个 `RedisTemplate<String,Object>`（新建一个 configuration.`RedisConfig`类）：
 

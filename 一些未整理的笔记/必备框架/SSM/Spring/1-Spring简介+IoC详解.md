@@ -6,7 +6,7 @@
 
 **我们一般说 [Spring](https://spring.io/) 框架指的都是 Spring Framework，它是很多模块的集合，使用这些模块可以很方便地协助我们进行开发**。下图对应的是 Spring4.x 版本。目前最新的5.x版本中 Web 模块的 Portlet 组件已经被废弃掉，同时增加了用于异步响应式处理的 WebFlux 组件。
 
-![](https://gitee.com/veal98/images/raw/master/img/20201220215517.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201220215517.png)
 
 - **Spring Core：** 基础,可以说 Spring 其他所有的功能都需要依赖于该类库。主要提供 IoC 依赖注入功能。
 - **Spring Aspects** ： 该模块为与 AspectJ 的集成提供支持。

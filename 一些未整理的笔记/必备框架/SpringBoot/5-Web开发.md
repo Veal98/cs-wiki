@@ -26,7 +26,7 @@ public class ResourceProperties implements ResourceLoaderAware {
 
 SpringBoot 中，SpringMVC 的 web 配置都在 `WebMvcAutoConfiguration `这个配置类里面，其中有很多配置类方法：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200703145014.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200703145014.png)
 
 #### Ⅰ 静态资源映射规则
 
@@ -79,7 +79,7 @@ public void addResourceHandlers(ResourceHandlerRegistry registry) {
 
 导入完毕，查看 `webjars `目录结构，并访问 `Jquery.js`文件：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200703143112.png" style="zoom: 50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200703143112.png" style="zoom: 50%;" />
 
 访问：只要是静态资源，SpringBoot 就会去对应的路径寻找资源，我们可以在这里访问：`http://localhost:8080/webjars/jquery/3.4.1/jquery.js`
 
@@ -190,7 +190,7 @@ private Optional<Resource> getWelcomePage() {
 
 其实jsp就是一个模板引擎，还有用的比较多的 freemarker，包括 SpringBoot 给我们推荐的 Thymeleaf，模板引擎有非常多，但再多的模板引擎，他们的思想都是一样的：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200703150258.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200703150258.png)
 
 模板引擎的作用就是我们来写一个页面模板，比如我们写一些表达式获取动态的值。而这些值，从哪来呢？就是我们在后台封装的一些数据。然后把这个模板和这个数据交给我们模板引擎，模板引擎按照我们的数据解析表达式、填充到我们指定的位置，然后把这个数据最终生成一个我们想要的内容写出去，这就是模板引擎，不管是jsp还是其他模板引擎，都是这个思想。
 
@@ -269,11 +269,11 @@ public class TestController {
 }
 ```
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200703153356.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200703153356.png" style="zoom:80%;" />
 
 目录结构：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200703153229.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200703153229.png)
 
 ### ④ 语法规则
 
@@ -283,7 +283,7 @@ public class TestController {
 
 比如 `th:text`：改变当前元素里面的文本内容
 
-![](https://gitee.com/veal98/images/raw/master/img/20200703153740.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200703153740.png)
 
 #### Ⅱ 表达式
 
@@ -493,13 +493,13 @@ public View resolveViewName(String viewName, Locale locale) throws Exception {
 
 可以看到他是把所有的视图解析器拿来，进行 `while` 循环，挨个解析
 
-![](https://gitee.com/veal98/images/raw/master/img/20200703155430.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200703155430.png)
 
 所以得出结论：**`ContentNegotiatingViewResolver` 这个视图解析器就是用来组合所有的视图解析器的** 
 
 我们再去研究下`ContentNegotiatingViewResolver` 的组合逻辑，看到有个属性`viewResolvers`，看看它是在哪里进行赋值的：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200703155736.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200703155736.png)
 
 ```java
 protected void initServletContext(ServletContext servletContext) {
@@ -625,7 +625,7 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
 }
 ```
 
-> ![](https://gitee.com/veal98/images/raw/master/img/20200703162107.png)
+> ![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200703162107.png)
 
 🚩 **原理**：为什么 `@EnableWebMvc` 自动配置就失效了；
 

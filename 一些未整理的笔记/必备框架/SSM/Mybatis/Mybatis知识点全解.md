@@ -1112,7 +1112,7 @@ employee 中内嵌对象 dept 的属性通过 dept.id、dept.departmentName 等�
 </select>
 ```
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200523214039.png" style="zoom: 67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200523214039.png" style="zoom: 67%;" />
 
 
 
@@ -1908,7 +1908,7 @@ false：关闭缓存（二级缓存关闭）(一级缓存仍然可用)
 
 
 ## 4. Mybatis 的缓存原理
-![](https://gitee.com/veal98/images/raw/master/img/20200523223834.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200523223834.png)
 
 ## 5. 第三方缓存 EhCache 整合
  EhCache 是一个纯Java的进程内缓存框架，具有快速、精 干等特点，是Hibernate中默认的CacheProvider。

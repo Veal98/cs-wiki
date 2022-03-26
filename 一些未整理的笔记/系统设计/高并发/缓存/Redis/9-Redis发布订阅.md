@@ -10,7 +10,7 @@ Redis 客户端可以订阅任意数量的频道。
 
 订阅/发布消息图：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200724092858.png" style="zoom: 36%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200724092858.png" style="zoom: 36%;" />
 
 👨‍💼 三大角色：
 
@@ -21,12 +21,12 @@ Redis 客户端可以订阅任意数量的频道。
 下图展示了频道 channel1 ， 以及订阅这个频道的三个客户端 —— client2 、 client5 和 client1 之间的
 关系：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200724093026.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200724093026.png)
 
 当有新消息通过 `PUBLISH `命令发送给频道 channel1 时， 这个消息就会被发送给订阅它的三个客户
 端：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200724093107.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200724093107.png)
 
 ## 2. Redis 发布订阅命令
 
@@ -103,13 +103,13 @@ struct redisServer {
 
 比如说，在下图展示的这个 `pubsub_channels` 示例中， `client2` 、 `client5` 和 `client1` 就订阅了 `channel1` ， 而其他频道也分别被别的客户端所订阅：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200724095553.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200724095553.png" style="zoom:80%;" />
 
 当客户端调用 `SUBSCRIBE` 命令时， 程序就将客户端和要订阅的频道在 `pubsub_channels` 字典中关联起来。
 
 举个例子，如果客户端 `client10086` 执行命令 `SUBSCRIBE channel1 channel2 channel3` ，那么前面展示的 `pubsub_channels` 将变成下面这个样子：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200724095636.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200724095636.png)
 
 `SUBSCRIBE `命令的行为可以用伪代码表示如下：
 
@@ -131,7 +131,7 @@ def SUBSCRIBE(client, channels):
 
 比如说，对于以下这个 `pubsub_channels` 实例， 如果某个客户端执行命令 `PUBLISH channel1 "hello moto"` ，那么 `client2` 、 `client5` 和 `client1` 三个客户端都将接收到 `"hello moto"` 信息：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200724110749.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200724110749.png" style="zoom:80%;" />
 
 `PUBLISH `命令的实现可以用以下伪代码来描述：
 
@@ -155,15 +155,15 @@ def PUBLISH(channel, message):
 
 下图展示了一个带有频道和模式的例子， 其中 `tweet.shop.*` 模式匹配了 `tweet.shop.kindle` 频道和 `tweet.shop.ipad` 频道， 并且有不同的客户端分别订阅它们三个：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200724111256.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200724111256.png)
 
 当有信息发送到 `tweet.shop.kindle` 频道时， 信息除了发送给 `clientX` 和 `clientY` 之外， 还会发送给订阅 `tweet.shop.*` 模式的 `client123` 和 `client256` ：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200724111515.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200724111515.png)
 
 另一方面， 如果接收到信息的是频道 `tweet.shop.ipad` ， 那么 `client123` 和 `client256` 同样会收到信息：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200724111533.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200724111533.png)
 
 ### ⑤ 订阅模式
 
@@ -192,11 +192,11 @@ typedef struct pubsubPattern {
 
 作为例子，下图展示了一个包含两个模式的 `pubsub_patterns` 链表， 其中 `client123` 和 `client256` 都正在订阅 `tweet.shop.*` 模式：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200724111849.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200724111849.png" style="zoom:80%;" />
 
 如果这时客户端 `client10086` 执行 `PSUBSCRIBE broadcast.list.*` ， 那么 `pubsub_patterns` 链表将被更新成这样：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200724111930.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200724111930.png)
 
 通过遍历整个 `pubsub_patterns` 链表，程序可以检查所有正在被订阅的模式，以及订阅这些模式的客户端。
 
@@ -239,7 +239,7 @@ def PUBLISH(channel, message):
 
 举个例子，如果 Redis 服务器的 `pubsub_patterns` 状态如下：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200724112201.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200724112201.png)
 
 那么当某个客户端发送信息 `"Amazon Kindle, $69."` 到 `tweet.shop.kindle` 频道时， 除了所有订阅了 `tweet.shop.kindle` 频道的客户端会收到信息之外， 客户端 `client123` 和 `client256` 也同样会收到信息， 因为这两个客户端订阅的 `tweet.shop.*` 模式和 `tweet.shop.kindle` 频道匹配。
 

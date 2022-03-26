@@ -43,7 +43,7 @@ Shiro 到底能做些什么呢？
 
 Apache Shiro 是一个全面的、蕴含丰富功能的安全框架。下图为描述 Shiro 功能的框架图：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200816193331.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200816193331.png)
 
 ⭐ <u>Authentication（认证）, Authorization（授权）, Session Management（会话管理）, Cryptography（加密）被 Shiro 框架的开发团队称之为应用安全的四大基石</u>。那么就让我们来看看它们吧：
 
@@ -67,7 +67,7 @@ Apache Shiro 是一个全面的、蕴含丰富功能的安全框架。下图为�
 
 Shiro 的**外部架构**包含三个主要的理念：**Subject**, **SecurityManager** 和 **Realm**。下面的图展示了这些组件如何相互作用，我们将在下面依次对其进行描述。
 
-![](https://gitee.com/veal98/images/raw/master/img/20200816193913.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200816193913.png)
 
 - **Subject：**<u>当前用户</u>，Subject 可以是一个人，但也可以是第三方服务、守护进程帐户、时钟守护任务或者其它–当前和软件交互的任何事件。
 
@@ -82,7 +82,7 @@ Shiro 的**外部架构**包含三个主要的理念：**Subject**, **SecurityMa
 
 ### ④ Shiro 内部架构
 
-![](https://gitee.com/veal98/images/raw/master/img/20200817141836.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200817141836.png)
 
 - **Authenticator**：认证器，负责主体认证的，这是一个扩展点，如果用户觉得 Shiro 默认的不好，可以自定义实现；其需要认证策略（Authentication Strategy），即什么情况下算用户认证通过了；
 
@@ -100,7 +100,7 @@ Shiro 的**外部架构**包含三个主要的理念：**Subject**, **SecurityMa
 
 **Shiro 认证流程如下**：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200816194910.png" style="zoom: 55%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200816194910.png" style="zoom: 55%;" />
 
 上图展示了 Shiro 认证的一个重要的过程，为了加深我们的印象，我们来自己动手来写一个例子，来验证一下，首先我们新建一个 Maven 工程，然后在 pom.xml 中引入相关依赖：
 
@@ -169,11 +169,11 @@ public class TestShiro {
 
 运行之后可以看到预想中的效果，先输出 `isAuthenticated:true` 表示登录认证成功，然后再输出 `isAuthenticated:false` 表示认证失败退出登录。
 
-![](https://gitee.com/veal98/images/raw/master/img/20200817201952.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200817201952.png)
 
 ## 3. Shiro 授权过程
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200816195619.png" style="zoom: 55%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200816195619.png" style="zoom: 55%;" />
 
 跟认证过程大致相似，下面我们仍然通过代码来熟悉一下过程：
 
@@ -223,13 +223,13 @@ Shiro 框架内部默认提供了两种 Realm 的实现，一种是查询`.ini`�
 
 ### ① Shiro 默认提供的 Realm
 
-![](https://gitee.com/veal98/images/raw/master/img/20200817151918.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200817151918.png)
 
 ⭐ **一般来说当我们自定义 Realm 的时候，继承 `AuthorizingRealm` 即可**；它继承了 `AuthenticatingRealm`（即身份验证），而且也间接继承了 `CachingRealm`（带有缓存实现）。其中主要默认实现如下：
 
 - **org.apache.shiro.realm.text.IniRealm**：`[users]` 指定用户名 / 密码及其角色；`[roles]` 指定角色即权限信息。举例如下：
 
-  ![](https://gitee.com/veal98/images/raw/master/img/20200817152344.png)
+  ![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200817152344.png)
 
 - **org.apache.shiro.realm.text.PropertiesRealm**： `user.username=password,role1,role2` 指定用户名 / 密码及其角色；`role.role1=permission1,permission2` 指定角色及权限信息；
 
@@ -241,7 +241,7 @@ Shiro 框架内部默认提供了两种 Realm 的实现，一种是查询`.ini`�
 
 ⭐ **一般来说当我们自定义 Realm 的时候，继承 `AuthorizingRealm` 类并实现默认的两个方法 `获取授权信息 doGetAuthorizationInfo`，`获取身份认证信息 doGetAuthenticationInfo` 即可**：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200928211156.png" style="zoom: 67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200928211156.png" style="zoom: 67%;" />
 
 ```java
 /**
@@ -320,7 +320,7 @@ public class MyRealm extends AuthorizingRealm {
 
   该方法需要返回一个 `AuthorizationInfo` 类型的参数：
 
-  ![](https://gitee.com/veal98/images/raw/master/img/20200817214325.png)
+  ![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200817214325.png)
 
   <u>`AuthorizationInfo` 用于聚合授权信息</u>：
 
@@ -340,7 +340,7 @@ public class MyRealm extends AuthorizingRealm {
 
   其中<u>参数 `AuthenticationToken` 用于收集用户提交的身份（如用户名）及凭据（如密码）</u>：
 
-  ![](https://gitee.com/veal98/images/raw/master/img/20200817213827.png)
+  ![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200817213827.png)
 
   ```java
   public interface AuthenticationToken extends Serializable {
@@ -351,7 +351,7 @@ public class MyRealm extends AuthorizingRealm {
 
   该方法需要返回一个 `AuthenticationInfo` 类型的参数：
 
-  ![](https://gitee.com/veal98/images/raw/master/img/20200817214051.png)
+  ![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200817214051.png)
 
   一般返回 `SimpleAuthenticationInfo` 即可。
 
@@ -400,7 +400,7 @@ public void testCustomRealm(){
 
 在之前的学习中，我们在数据库中保存的密码都是明文的，一旦数据库数据泄露，那就会造成不可估算的损失，所以我们通常都会使用非对称加密，而 md5 加密算法就是符合这样的一种算法：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200816201916.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200816201916.png)
 
 如上面的 123456 用 Md5 加密后，得到的字符串：**e10adc3949ba59abbe56e057f20f883e**，就无法通过计算还原回 123456，我们把这个加密的字符串保存在数据库中，<u>等下次用户登录时我们把密码通过同样的算法加密后再从数据库中取出这个字符串进行比较，就能够知道密码是否正确了</u>，这样既保留了密码验证的功能又大大增加了安全性，**但是问题是：虽然无法直接通过计算反推回密码，但是我们仍然可以通过计算一些简单的密码加密后的 Md5 值进行比较，推算出原来的密码**
 
@@ -572,7 +572,7 @@ public class SysPermission {
 
 最终根据以上的代码会自动生成 user_info（用户信息表）、sys_role（角色表）、sys_permission（权限表）、sys_user_role（用户角色表）、sys_role_permission（角色权限表）这五张表：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200817222817.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200817222817.png)
 
 为了方便测试我们给这五张表插入一些初始化数据：
 
@@ -764,7 +764,7 @@ public class ShiroConfig {
 
 Shiro 内置的过滤器链：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200816211838.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200816211838.png)
 
 - `anon`: 所有url都都可以匿名访问
 - `authc`: 需要认证才能进行访问
@@ -965,7 +965,7 @@ index - 首页
 
 编写好程序后就可以启动，首先访问 [http://localhost:8080/userList?username=smallbeef](http://localhost:8080/userList?username=smallbeef) 路径，由于没有登录就会跳转到我们配置好的 [http://localhost:8080/login](http://localhost:8080/login) 路径。使用账号 smallbeef 密码 123 登陆之后就会看到正确返回的 JSON 数据，登录的时候会触发 `MyShiroRealm.doGetAuthenticationInfo()` 这个方法，也就是登录认证的方法。
 
-![](https://gitee.com/veal98/images/raw/master/img/20200817222845.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200817222845.png)
 
 登录之后，我们还能访问 [http://localhost:8080/userAdd](http://localhost:8080/userAdd) 页面，因为我们在数据库中提前配置好了权限，能够看到正确返回的数据，但是我们访问 [http://localhost:8080/userDelete](http://localhost:8080/userDelete) 时，由于该用户没有权限就会返回错误页面.
 

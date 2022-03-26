@@ -1,5 +1,6 @@
 <p align="center">
-    <img width="280px" src="https://gitee.com/veal98/images/raw/master/img/20210212163625.png" >
+    <img width="280px" src="
+https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20210212163625.png" >
 </p>
 
 
@@ -28,7 +29,7 @@
 
 - 💬 文章会第一时间发布在公众号 **飞天小牛肉**，并且会在上面分享我的成长经历，下方扫码关注第一时间获取干货更新：
 
-  <img width = 240px src="https://gitee.com/veal98/images/raw/master/img/公众号二维码.png" />
+  <img width = 240px src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/公众号二维码.png" />
   
 - 🎁 **春秋招交流群**：公众号后台回复 `春秋招` 免费进入交流群，大家一起吐槽信息共享
 
@@ -38,4 +39,4 @@
 
 - 😉 有什么问题也可以添加我的微信，记得备注来意：格式 <u>（学校或公司 - 姓名或昵称 - 来意）</u>
 
-  <img width = 240px src="https://gitee.com/veal98/images/raw/master/img/微信图片_20210105121328.jpg"  />
+  <img width = 240px src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/微信图片_20210105121328.jpg"  />

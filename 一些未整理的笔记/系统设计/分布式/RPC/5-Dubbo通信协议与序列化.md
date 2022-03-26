@@ -14,7 +14,7 @@ Dubbo支持dubbo、rmi、hessian、http、webservice、thrift、redis等多种�
 
   长连接，通俗点说，就是建立连接过后可以持续发送请求，无须再建立连接。
 
-  <img src="https://gitee.com/veal98/images/raw/master/img/20201204160601.png" style="zoom:50%;" />
+  <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201204160601.png" style="zoom:50%;" />
 
   而短连接，每次要发送请求之前，需要先重新建立一次连接。
 
@@ -60,7 +60,7 @@ Dubbo支持dubbo、rmi、hessian、http、webservice、thrift、redis等多种�
 
 > 💡 序列化协议属于 **OSI 七层协议模型的表示层**：
 >
-> <img src="https://gitee.com/veal98/images/raw/master/img/20201220103003.png" style="zoom: 50%;" />
+> <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201220103003.png" style="zoom: 50%;" />
 
 - 序列化： 将数据结构或对象转换成二进制串的过程
 - 反序列化：将在序列化过程中所生成的二进制串转换成数据结构或者对象的过程
@@ -106,7 +106,7 @@ public interface Serialization {
 
 下面是 Serialization 的类图：
 
-![](https://gitee.com/veal98/images/raw/master/img/20201204161311.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201204161311.png)
 
 Dubbo序列化支持 java、compactedjava、nativejava、fastjson、dubbo、fst、hessian2、kryo，默认**hessian2**。其中 java、compactedjava、nativejava 属于原生 java 的序列化。
 

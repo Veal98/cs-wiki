@@ -46,7 +46,7 @@ Netty 的 `Buffer` API 提供了几个优势：
 
 `ByteBuf `类似于一个字节数组，最大的区别是读和写的索引可以用来控制对缓冲区数据的访问。下图显示了一个容量为16的空的 `ByteBuf ` 的布局和状态，`writerIndex ` 和 `readerIndex ` 都在索引位置 0 ：
 
-![](https://gitee.com/veal98/images/raw/master/img/20201211212110.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201211212110.png)
 
 ### ② ByteBuf 使用模式
 
@@ -56,7 +56,7 @@ Netty 的 `Buffer` API 提供了几个优势：
 
 **最常用的模式是 `ByteBuf` 将数据存储在 JVM 的堆空间，实际上是通过数组存储数据， 所以这种模式被称为支撑数组（Backing Array ）**。堆缓冲区可以在没有使用池化的情况下快速分配和释放，非常适合用来处理遗留数据的。它还提供了直接访问数组的方法，通过 `ByteBuf.array()` 来获取 `byte[]` 数据。 
 
-![](https://gitee.com/veal98/images/raw/master/img/20201211212321.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201211212321.png)
 
 #### Ⅱ DIRECT BUFFER (直接缓冲区)
 
@@ -68,7 +68,7 @@ Netty 的 `Buffer` API 提供了几个优势：
 
 直接缓冲区的**缺点**也比较明显： <u>直接内存的分配和释放都较为昂贵，而且因为直接缓冲区的数据不是在堆区的，所以我们在某些时候可能需要将直接缓冲区的数据先拷贝一个副本到堆区， 再对这个副本进行操作</u>。 与支撑数组相比，直接缓冲区的工作可能更多，所以**如果事先知道数据会作为一个数组来被访问，那么我们应该使用堆内存**。
 
-![](https://gitee.com/veal98/images/raw/master/img/20201211212809.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201211212809.png)
 
 #### Ⅲ COMPOSITE BUFFER (复合缓冲区)
 
@@ -78,7 +78,7 @@ Netty 的 `Buffer` API 提供了几个优势：
 
 例如，一条消息由 header 和 body 两部分组成，将 header 和 body 组装成一条消息发送出去，可能 body 相同，只是 header 不同，使用 `CompositeByteBuf` 就不用每次都重新分配一个新的缓冲区。下图显示`CompositeByteBuf `组成 header 和 body：
 
-![](https://gitee.com/veal98/images/raw/master/img/20201211213241.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201211213241.png)
 
 下面代码显示了使用 **JDK 的 `ByteBuffer` 的一个实现**。两个 `ByteBuffer `的数组创建保存消息的组件，第三个创建用于保存所有数据的副本。
 
@@ -139,7 +139,7 @@ JDK 的 `ByteBuffer` 只有一个索引 position，所以当 `ByteBuffer` 在读
 
 当使用`readerIndex`读取字节，或使用`writerIndex`写入字节时，`ByteBuf `内部的分段大致如下：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201211214409.png" style="zoom: 55%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201211214409.png" style="zoom: 55%;" />
 
 ### ② ByteBuf 内部分段
 
@@ -149,7 +149,7 @@ JDK 的 `ByteBuffer` 只有一个索引 position，所以当 `ByteBuffer` 在读
 
 当`readerIndex`读取一部分字节后，之前读过的字节就属于已读字节，可以被丢弃了，通过调用 `ByteBuf`的`discardReadBytes`方法我们可以丢弃这个分段，**丢弃这个分段实际上是删除这个分段的已读字节， 然后回收这部分空间加入可写入字节**：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201211214652.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201211214652.png" style="zoom:50%;" />
 
 #### Ⅱ 可读取字节 Readable Bytes
 
@@ -165,11 +165,11 @@ JDK 的 `ByteBuffer` 只有一个索引 position，所以当 `ByteBuffer` 在读
 
 <u>我们还可以使用`clear`方法来将`readerIndex`和`writerIndex`重置为0，但是`clear`方法并不会清空`ByteBuf`的内容</u>，下面`clear`方法的实现：
 
-![](https://gitee.com/veal98/images/raw/master/img/20201211215131.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201211215131.png)
 
 其过程是这样的：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201211215154.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201211215154.png" style="zoom:50%;" />
 
 由于调用clear后，数据并没有被清空，但整个`ByteBuf`仍然是可写的，这比`discardReadBytes`轻量的多， `DiscardReadBytes`还要回收已读字节空间。
 
@@ -356,7 +356,7 @@ assert writerIndex != buf.writerIndex();
 
 我们可以通过`Channel`或`ChannelHandlerContext`的`alloc`方法获取到一个`ByteBufAllocator`
 
-![](https://gitee.com/veal98/images/raw/master/img/20201211222412.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201211222412.png)
 
 Netty提供了两种`ByteBufAllocator`的实现： `PooledByteBufAllocator`和`UnpooledByteBufAllocator`。 `PooledByteBufAllocator`池化了`ByteBuf`的实例以提高性能并最大限度的减少内存碎片，此实现的分配内存的方法 是使用 [jemalloc](https://people.freebsd.org/~jasone/jemalloc/bsdcan2006/jemalloc.pdf)，此种 方法分配内存的效率非常高，已被大量现代操作系统采用。 `UnpooledByteBufAllocator`则不会池化`ByteBuf`， Netty默认使用的是`PooledByteBufALlocator`。
 

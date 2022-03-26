@@ -130,11 +130,11 @@ public class SendMessageController {
 
 因为我们目前还没弄消费者 rabbitmq-consumer，消息没有被消费的，我们 去 rabbitMq 管理页面看看 [http://localhost:15672/#/](http://localhost:15672/#/)，是否推送成功：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201124231653.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201124231653.png" style="zoom:50%;" />
 
 再看看队列：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201124231754.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201124231754.png" style="zoom:50%;" />
 
 OK，消息已经推送到 rabbitMq 服务器上面了。
 
@@ -176,17 +176,17 @@ public class DirectReceiver {
 
 然后将 rabbitmq-consumer 项目运行起来，可以看到把之前推送的那条消息消费下来了：
 
-![](https://gitee.com/veal98/images/raw/master/img/20201125125112.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201125125112.png)
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201125125201.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201125125201.png" style="zoom:50%;" />
 
 然后可以再继续调用 rabbitmq-provider 项目的推送消息接口，可以看到消费者即时消费消息
 
-![](https://gitee.com/veal98/images/raw/master/img/20201125130756.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201125130756.png)
 
 既然直连交换机是一对一，那如果配置多台监听绑定到同一个直连交互的同一个队列，会怎么样？
 
-![](https://gitee.com/veal98/images/raw/master/img/20201125130825.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201125130825.png)
 
 可以看到是实现了轮询的方式对消息进行消费，而且不存在重复消费。
 
@@ -317,11 +317,11 @@ public class TopicTotalReceiver {
 
 然后把 rabbitmq-provider，rabbitmq-consumer 两个项目都跑起来，先调用 `/sendTopicMessage1` 接口，推送消息 `topic.man`。可以看到两个监听消费者 receiver 都成功消费到了消息，因为这两个 recevier 监听的队列的绑定键都能与这条消息携带的路由键匹配上：
 
-![](https://gitee.com/veal98/images/raw/master/img/20201125134624.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201125134624.png)
 
 接下来调用接口 `/sendTopicMessage2`，推送消息 `topic.woman`。可以看到两个监听消费者只有 TopicTotalReceiver 成功消费到了消息：
 
-![](https://gitee.com/veal98/images/raw/master/img/20201125134722.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201125134722.png)
 
 ## 3. 使用 Fanout 交换机
 
@@ -445,7 +445,7 @@ public class FanoutReceiverC {
 
 最后将 rabbitmq-provider 和 rabbitmq-consumer 项目都跑起来，调用下接口 `/sendFanoutMessage` , 看看 rabbitmq-consumer 项目的控制台情况：
 
-![](https://gitee.com/veal98/images/raw/master/img/20201125135257.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201125135257.png)
 
 由于三个队列都绑定这个扇形交换机，所以三个消息接收类都监听到了这条消息。
 
@@ -457,7 +457,7 @@ public class FanoutReceiverC {
 
 首先在 rabbitmq-provider 项目的 `application.yml` 文件上，加上消息确认的配置项：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201125140412.png" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201125140412.png" style="zoom:67%;" />
 
 然后是配置相关的**消息确认回调函数**，`RabbitConfig.java`：
 

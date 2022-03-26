@@ -23,11 +23,11 @@ pip install tensorflow -i https://pypi.tuna.tsinghua.edu.cn/simple/
 
 OK，这样安装成功后，我们**需要将 TensorFlow 添加进 Jupyter Notebook**，打开 **【Anaconda Navigator】**，搜索 `Jupyter ` 进行安装（numpy，Spyder ，ipython 等同理）：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201031195918.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201031195918.png" style="zoom:80%;" />
 
 安装完成后，在这个环境下打开 Jupyter：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201031200136.png" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201031200136.png" style="zoom:67%;" />
 
 验证下导入 tensorflow 是否报错：
 
@@ -43,7 +43,7 @@ import tensorflow as tf
 tf.__version__
 ```
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201031213605.png" style="zoom:75%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201031213605.png" style="zoom:75%;" />
 
 ## 2. 张量 Tensor
 
@@ -53,7 +53,7 @@ tf.__version__
 
 所以，如果现在重新描述向量和矩阵，就可以是：**零阶张量是标量，一阶张量是向量，二阶张量是矩阵，N 阶张量是 N 维数组**。
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201031205724.png" style="zoom: 55%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201031205724.png" style="zoom: 55%;" />
 
 后面将学习到的大多数深度学习框架都会使用张量的概念，这样做的好处是统一对数据的定义。NumPy 中，数据都使用 Ndarray 多维数组进行定义，TensorFlow 中，数据都会用张量进行表述。
 
@@ -61,11 +61,11 @@ tf.__version__
 
 其中，数据类型大致如下表所示：
 
-![](https://gitee.com/veal98/images/raw/master/img/20201031213342.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201031213342.png)
 
 另外，TensorFlow 通过三种符号约定来描述张量维度：阶，形状和维数。三者之间的关系如下：
 
-![](https://gitee.com/veal98/images/raw/master/img/20201031213356.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201031213356.png)
 
 ### ② 张量类型
 
@@ -190,7 +190,7 @@ array([[1, 2],
 c + c  # 加法计算
 ```
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201031215706.png" style="zoom: 80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201031215706.png" style="zoom: 80%;" />
 
 如果你接触过 1.x 版本的 TensorFlow，你要知道一个加法运算过程十分复杂。我们需要初始化全局变量 → 建立会话 → 执行计算，最终才能打印出张量的运算结果。
 
@@ -249,7 +249,7 @@ grad
 
 上面，我们演示了一个自动微分过程，它的数学求导过程如下：
 
-![](https://gitee.com/veal98/images/raw/master/img/20201031220048.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201031220048.png)
 
 所以，当 w 等于 1 时，计算结果为 2。
 
@@ -288,7 +288,7 @@ print(tf.__version__)
 print(tf.keras.__version__)
 ```
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201102214336.png" style="zoom:75%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201102214336.png" style="zoom:75%;" />
 
 ### ① 构建简单模型
 
@@ -400,7 +400,7 @@ model.fit(x_train, y_train, epochs=5)
 model.evaluate(x_test,  y_test, verbose=2)
 ```
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201102223621.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201102223621.png" style="zoom:80%;" />
 
 现在，这个照片分类器的准确度已经达到 98%
 

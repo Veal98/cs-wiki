@@ -8,23 +8,23 @@
 
 深度神经网络需要调试的**超参数（Hyperparameters）**较多，包括：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201003095446.png" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201003095446.png" style="zoom:67%;" />
 
 超参数之间也有重要性差异。**通常来说，学习因子 α  是最重要的超参数，也是需要重点调试的超参数**。动量梯度下降因子 β 、各隐藏层神经元个数 #hidden units 和 mini-batch size 的重要性仅次于 *α*。然后就是神经网络层数 #layers 和学习因子下降参数 learning rate decay。最后，Adam 算法的三个参数 *β*1, *β*2, *ε* 一般常设置为 0.9，0.999 和 $10^{-8}$，不需要反复调试。当然，这里超参数重要性的排名并不是绝对的，具体情况，具体分析。
 
 如何选择和调试超参数？**传统的机器学习中，我们对每个参数等距离选取任意个数的点，然后，分别使用不同点对应的参数组合进行训练，最后根据验证集上的表现好坏，来选定最佳的参数**。例如有两个待调试的参数，分别在每个参数上选取5个点，这样构成了 5×5=25 中参数组合，如下图所示：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201003095739.png" style="zoom: 80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201003095739.png" style="zoom: 80%;" />
 
 这种做法在参数比较少的时候效果较好。但是**在深度神经网络模型中，我们一般不采用这种均匀间隔取点的方法，比较好的做法是使用随机选择**。也就是说，对于上面这个例子，我们随机选择25个点，作为待调试的超参数，如下图所示：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201003095803.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201003095803.png" style="zoom:80%;" />
 
 <u>这种做法带来的另外一个好处就是对重要性不同的参数之间的选择效果更好</u>。假设 hyperparameter1 为 *α*，hyperparameter2 为 ε ，显然二者的重要性是不一样的。如果使用第一种均匀采样的方法，ε 的影响很小，相当于只选择了5个 *α* 值。而如果使用第二种随机采样的方法，ε 和 *α* 都有可能选择25种不同值。这大大增加了 *α* 调试的个数，更有可能选择到最优值。其实，在实际应用中完全不知道哪个参数更加重要的情况下，随机采样的方式能有效解决这一问题，但是均匀采样做不到这点。
 
 在经过随机采样之后，我们可能得到某些区域模型的表现较好。然而，为了得到更精确的最佳参数，我们应该继续对选定的区域进行由粗到细的采样（coarse to fine sampling scheme）。也就是**放大表现较好的区域，再对此区域做更密集的随机采样**。例如，对下图中右下角的方形区域再做25点的随机采样，以获得最佳参数：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201003100053.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201003100053.png" style="zoom:80%;" />
 
 
 
@@ -40,7 +40,7 @@
 
 一般解法是，如果线性区间为 [a, b]，令 m=log(a)，n=log(b)，则对应的 log 区间为 [m,n]。对 log 区间的 [m,n] 进行随机均匀采样，然后得到的采样值 r，最后反推到线性区间，即 $10^r$。$10^r$就是最终采样的超参数：
 
-![](https://gitee.com/veal98/images/raw/master/img/20201003101159.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201003101159.png)
 
 相应的 Python 语句为：
 
@@ -62,7 +62,7 @@ r = np.power(10,r)
 
 在训练深度神经网络时，一种情况是受计算能力所限，我们只能对一个模型进行训练，调试不同的超参数，使得这个模型有最佳的表现。我们称之为 **Babysitting one model**。另外一种情况是可以对多个模型同时进行训练，每个模型上调试不同的超参数，根据表现情况，选择最佳的模型。我们称之为 **Training many models in parallel**。
 
-![](https://gitee.com/veal98/images/raw/master/img/20201003103456.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201003103456.png)
 
 因为第一种情况只使用一个模型，所以类比做 **Panda approach**（**熊猫方式**。当熊猫有了孩子，他们的孩子非常少，一次通常只有一个，然后他们花费很多精力抚养熊猫宝宝以确保其能成活）
 
@@ -80,17 +80,17 @@ Sergey Ioffe 和 Christian Szegedy 两位学者提出了 Batch Normalization 方
 
 Batch Normalization 对第 $l$ 层隐藏层的输入 $Z^{[l-1]}$ 做如下标准化处理，忽略上标 $[l-1]$ ：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201003105909.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201003105909.png" style="zoom:80%;" />
 
 其中，**m 是单个 mini-batch 包含样本个数**， ε 是为了防止分母为零，可取值 $10^{-8}$。这样，使得该隐藏层的所有输入 $z^{(i)}$ 均值为 0，方差为 1。
 
 但是，大部分情况下并不希望所有的 $z^{(i)}$ 均值都为0，方差都为1，也不太合理。通常需要对 $z^{(i)}$ 进行进一步处理：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201003111239.png" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201003111239.png" style="zoom:67%;" />
 
 上式中，$\gamma$ 和 $\beta$ 是 learnable parameters，类似于 W 和 b 一样，可以通过梯度下降等算法求得。这里，$\gamma$ **和 $\beta$ 的作用是让 $\tilde z^{(i)}$ 的均值和方差为任意值**，只需调整其值就可以了。例如，令：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201003111911.png" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201003111911.png" style="zoom:67%;" />
 
 则 $\tilde z^{(i)}=z^{(i)}$，即identity function。可见，设置 $\gamma$ 和 $\beta$ 为不同的值，可以得到任意的均值和方差。
 
@@ -104,9 +104,9 @@ Batch Normalization 对第 $l$ 层隐藏层的输入 $Z^{[l-1]}$ 做如下标准
 
 对于 L 层神经网络，经过 Batch Norm 的作用，整体流程如下：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201003113355.png" style="zoom: 80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201003113355.png" style="zoom: 80%;" />
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201003114102.png" style="zoom: 50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201003114102.png" style="zoom: 50%;" />
 
 ## 6. Batch Norm 为什么奏效
 
@@ -114,7 +114,7 @@ Batch Normalization 对第 $l$ 层隐藏层的输入 $Z^{[l-1]}$ 做如下标准
 
 举个例子来说明，假如用一个浅层神经网络（类似逻辑回归）来训练识别猫的模型。如下图所示，提供的训练样本只有黑猫，而测试集拥有各种颜色的猫。测试的结果可能并不好。其原因是**训练样本不具有一般性**（即不是所有的猫都是黑猫），这种训练样本（黑猫）和测试样本（猫）分布的变化称之为 **Covariate shift**。
 
-![](https://gitee.com/veal98/images/raw/master/img/20201003114525.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201003114525.png)
 
 对于这种情况，如果实际应用的样本与训练样本分布不同，即发生了Covariate shift，则一般是要对模型重新进行训练的。在神经网络，尤其是深度神经网络中，Covariate shift 会导致模型预测效果变差，重新训练的模型各隐藏层的 $W^{[l]}$ 和 $B^{[l]}$ 均产生偏移、变化。
 
@@ -134,7 +134,7 @@ Batch Normalization 对第 $l$ 层隐藏层的输入 $Z^{[l-1]}$ 做如下标准
 
 首先，回顾一下训练过程中Batch Norm的主要过程：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201003115044.png" style="zoom: 50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201003115044.png" style="zoom: 50%;" />
 
 <u>其中， μ 和 $\sigma^2$ 是对单个mini-batch中所有m个样本求得的。在测试过程中，如果只有一个样本，求其均值和方差是没有意义的，就需要对 μ 和 $\sigma^2$ 进行估计</u>。
 
@@ -148,21 +148,21 @@ Batch Normalization 对第 $l$ 层隐藏层的输入 $Z^{[l-1]}$ 做如下标准
 
 对于多分类问题，用C表示种类个数，神经网络中输出层就有C个神经元，即 $n^{[L]}=C$ 。其中，每个神经元的输出依次对应属于该类的概率，即 $P(y=c|x)$ 。**为了处理多分类问题，我们一般使用 Softmax 回归模型**。Softmax 回归模型**输出层**的激活函数（**Softmax 激活函数**）如下所示：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201003145635.png" style="zoom: 50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201003145635.png" style="zoom: 50%;" />
 
-输出层每个神经元的输出 $a^{[L]}_i$ 对应属于该类的概率，满足：<img src="https://gitee.com/veal98/images/raw/master/img/20201003145702.png" style="zoom:50%;" />
+输出层每个神经元的输出 $a^{[L]}_i$ 对应属于该类的概率，满足：<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201003145702.png" style="zoom:50%;" />
 
 所有的 $a^{[L]}_i$ ，即 $\hat y$ ，维度为 (C, 1)。
 
 🚨 **Softmax 激活函数应用于多分类问题的<u>输出层</u>，将多个神经元的输出映射到（0,1）区间内，可以看成是当前输出是属于各个分类的概率，从而来进行多分类。**
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201003152055.png" style="zoom: 80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201003152055.png" style="zoom: 80%;" />
 
 > 💡 之前，我们的激活函数都是接受单行数值输入，例如 **Sigmoid** 和 **ReLu** 激活函数，输入一个**实数**，输出一个实数。**Softmax** 激活函数的特殊之处在于，因为需要将所有可能的输出归一化，就需要输入一个**向量**，最后输出一个向量。
 
 下面给出几个简单的线性多分类的例子：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201003145803.png" style="zoom: 80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201003145803.png" style="zoom: 80%;" />
 
 如果使用神经网络，特别是深层神经网络，可以得到更复杂、更精确的非线性模型。
 
@@ -172,27 +172,27 @@ Softmax classifier 的训练过程与我们之前介绍的二元分类问题有�
 
 先来看一下 **loss function**。举例来说，假如 C=4，某个样本的预测输出 $\hat y$ 和真实输出 *y* 为：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201003151030.png"  />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201003151030.png"  />
 
 从 $\hat y$ 值来看，$P(y=4|x)=0.4$ ，概率最大，而真实样本属于第 2 类，因此该预测效果不佳。我们定义 Softmax classifier 的 loss function 为：
 
-⭐ <img src="https://gitee.com/veal98/images/raw/master/img/20201003151141.png" style="zoom:50%;" />
+⭐ <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201003151141.png" style="zoom:50%;" />
 
 然而，由于只有当 $j=2$ 时，$y_2=1$ ，其它情况下，$y_j=0$ 。所以，上式中的 $L(\hat y,y)$ 可以简化为：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201003151254.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201003151254.png" style="zoom:50%;" />
 
 要让 $L(\hat y,y)$ 更小，就应该让 $\hat y_2$ 越大越好。$\hat y_2$ 反映的是概率，完全符合我们之前的定义。
 
 所有 m 个样本的 **cost function** 为：
 
-⭐ <img src="https://gitee.com/veal98/images/raw/master/img/20201003151414.png" style="zoom:50%;" />
+⭐ <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201003151414.png" style="zoom:50%;" />
 
 其预测输出向量 $A^{[L]}$ 即 $\hat Y$ 的维度为(4, m)。
 
 Softmax classifier 的反向传播过程仍然使用梯度下降算法，其推导过程与二元分类有一点点不一样。因为**只有输出层的激活函数不一样**，我们先推导 $dZ^{[L]}$ ：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201003151539.png" style="zoom:52%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201003151539.png" style="zoom:52%;" />
 
 可见 $dZ^{[L]}$ 的表达式与二元分类结果是一致的，虽然推导过程不太一样。然后就可以继续进行反向传播过程的梯度下降算法了，推导过程与二元分类神经网络完全一致。
 

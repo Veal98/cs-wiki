@@ -27,7 +27,7 @@ Spring Boot 出生名门，从一开始就站在一个比较高的起点，又�
 - 内嵌式容器简化Web项目
 - 没有冗余代码生成和XML配置的要求
 
-![](https://gitee.com/veal98/images/raw/master/img/20200528210455.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200528210455.png)
 
 
 
@@ -39,13 +39,13 @@ Spring Boot 出生名门，从一开始就站在一个比较高的起点，又�
 
 > **单体应用**：ALL IN ONE
 >
-> ![](https://gitee.com/veal98/images/raw/master/img/20200528211512.png)
+> ![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200528211512.png)
 
 
 
 **微服务：每一个功能元素最终都是一个可独立替换和独立升级的软件单元：**
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200528211629.png"  />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200528211629.png"  />
 
 
 
@@ -73,17 +73,17 @@ Spring Boot 出生名门，从一开始就站在一个比较高的起点，又�
 
 IDE 都支持使用 Spring 的<u>项目创建向导</u>快速创建一个 Spring Boot 项目；
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200529093821.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200529093821.png" style="zoom:80%;" />
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200630222558.png" style="zoom: 67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200630222558.png" style="zoom: 67%;" />
 
 OK，然后选择我们需要的模块，向导会联网自动创建 Spring Boot 项目；
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200529093907.png" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200529093907.png" style="zoom:67%;" />
 
 🎉 默认生成的 Spring Boot 项目目录结构如下：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200529094814.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200529094814.png)
 
 - 程序的**主启动类**
 
@@ -225,11 +225,11 @@ public class HelloController {
 
 打包：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200528220845.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200528220845.png)
 
 成功打包后该 `jar` 包会放在 `target `文件夹下：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200528220933.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200528220933.png)
 
 直接使用 `java -jar 包名` 的命令即可执行该 jar 包。
 
@@ -283,13 +283,13 @@ java -jar spring_boot-01-helloworld-1.0-SNAPSHOT.jar
 
 - `spring-boot-starter-web`：帮我们导入了 web 模块正常运行所依赖的组件：
 
-  ![](https://gitee.com/veal98/images/raw/master/img/20200528221854.png)
+  ![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200528221854.png)
 
 
 
 ⭐ Spring Boot将所有的功能场景都抽取出来，做成一个个的 starter（启动器），只需要在项目里面引入这些 starter ，相关场景的所有依赖都会导入进来。要用什么功能就导入什么场景的启动器
 
-![](https://gitee.com/veal98/images/raw/master/img/20200528222416.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200528222416.png)
 
 
 
@@ -471,15 +471,15 @@ public @interface EnableAutoConfiguration {
 
 ⭐ 在上面这段源码中，我们发现了一个多次出现的文件 `spring.factories`，在 <u>External Libraries</u> 中找到它：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200701105523.png" style="zoom:80%;" /> 
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200701105523.png" style="zoom:80%;" /> 
 
 其中包含了很多自动配置的文件（自动配置类 `xxxAutoConfiguration`），这就是**自动配置的根源所在**！
 
-![](https://gitee.com/veal98/images/raw/master/img/20200701105548.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200701105548.png)
 
 我们在上面的自动配置类随便找一个打开看看，比如 ：`WebMvcAutoConfiguration`
 
-![](https://gitee.com/veal98/images/raw/master/img/20200701105838.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200701105838.png)
 
 可以看到这些一个个的都是JavaConfig 配置类，而且都注入了一些 Bean。
 
@@ -548,7 +548,7 @@ public class SpringApplication {
 
 > 🔗 图片来源狂神说公众号
 
-![](https://gitee.com/veal98/images/raw/master/img/20200701111258.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200701111258.png)
 
 ## 📚 References
 

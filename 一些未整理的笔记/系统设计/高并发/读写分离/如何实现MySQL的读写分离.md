@@ -8,13 +8,13 @@
 
 其实很简单，就是基于 MySQL 自带的**主从复制**功能（不需要额外的第三方软件就可以实现），简单来说，就是搞一个主库，挂多个从库，然后我们就只需要写主库，主库会自动把数据给同步到从库上去。即从库用来读，主库用来写。
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201125212845.png" style="zoom: 67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201125212845.png" style="zoom: 67%;" />
 
 ## 2. MySQL 主从复制的原理
 
 💡 **MySQL 主从复制的原理**：
 
-![](https://gitee.com/veal98/images/raw/master/img/20201125213342.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201125213342.png)
 
 - 首先主库将变更写入 `Binlog` （**binary log 二进制日志文件**）
 - 从库连接到主库之后，从库有一个 **【IO 线程】**，将主库的 `Binlog` 拷贝到自己本地，写入一个 `Relay Log` （**中继日志**）中

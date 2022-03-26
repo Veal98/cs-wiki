@@ -87,11 +87,11 @@ Others：`Reinforcement learning` 强化学习，`recommender systems` 推荐系
 
 💬 举例来说，比如有个人想要卖房子，他需要结合自己房子的大小来评估房子能卖多少钱。此时我们已经有了一些正确的数据集（房子大小和房价的对应关系），如下图所示：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200525222706.png" style="zoom: 50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200525222706.png" style="zoom: 50%;" />
 
 那么学习算法能做到的一件事情就是用一条直线或者二次函数来拟合数据，从而预测出房子能卖多少钱。后面我们要讨论的问题就是选择使用直线拟合数据还是选用二次函数来拟合数据。
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200525222851.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200525222851.png" style="zoom:50%;" />
 
 
 
@@ -101,7 +101,7 @@ Others：`Reinforcement learning` 强化学习，`recommender systems` 推荐系
 
 💬 我们来看下一个例子：比如我们要预测乳腺癌是恶性的还是良性的，假设此时我们已有一些正确的数据集（肿瘤的大小 tumor size 和肿瘤良/恶性 malignant 的对应关系），如下图所示：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200525223553.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200525223553.png" style="zoom:50%;" />
 
 那么机器学习的目标就是根据肿瘤的大小估计出肿瘤是良性还是恶性的概率。用更专业的术语来讲，这就是**一个分类问题 Classification Problem**。
 
@@ -109,7 +109,7 @@ Others：`Reinforcement learning` 强化学习，`recommender systems` 推荐系
 
 在分类问题中，有另一种方法来绘制这些数据，如下图所示：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200525224714.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200525224714.png" style="zoom:50%;" />
 
 在这个例子中，我们只使用了一个特征或者说属性，即肿瘤的大小，来预测肿瘤是恶性的还是良性的。
 
@@ -117,11 +117,11 @@ Others：`Reinforcement learning` 强化学习，`recommender systems` 推荐系
 
 💬 假设我们不仅知道肿瘤的大小，还知道病人的年纪，我们所拥有的数据集用下图所示：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200525225228.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200525225228.png" style="zoom:50%;" />
 
 学习算法所需要做的就是在数据上拟合出一条直线将恶性肿瘤和良性肿瘤分隔开来，如下图所示：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200525225345.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200525225345.png" style="zoom:50%;" />
 
 显然，在现实生活中，我们所需要处理的特征远不止一个两个。对于某些学习问题来说，我们想要的不是使用三个还是五个特征，而是无穷多的特征、无穷多的属性，因此我们的学习算法需要使用很多的属性或特征或线索来做预测，那么如何来处理无穷多的特征呢？如何在计算机中存储无穷多数量的事物呢？
 
@@ -145,17 +145,17 @@ Others：`Reinforcement learning` 强化学习，`recommender systems` 推荐系
 
 在监督学习中，每个样本都被标明为（labled）阳性样本或者阴性样本，我们已被清楚的告知了什么是正确答案（即肿瘤是良性还是恶性）。
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200526101702.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200526101702.png" style="zoom:50%;" />
 
 🔴 而**对于无监督学习来说，我们的数据集没有任何标签**，或者说都具有相同的标签或者没有标签，即我们不知道什么是正确答案。我们拿到这个数据集，不知道要拿它做什么，也不知道每个数据点究竟是什么，我们只被告知这里有一个数据集，你能在其中找到某种结构来适配这些数据吗？
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200526101925.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200526101925.png" style="zoom:50%;" />
 
 ### ② 聚类算法 Clustering 
 
 对于给定的数据集，无监督学习算法可能将该数据集分成两个不同的簇，这就是**聚类算法 clustering algorithm**
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200526102330.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200526102330.png" style="zoom:50%;" />
 
 💬 一个应用聚类算法的典型例子就是**谷歌新闻**，谷歌新闻会搜索成千上万的新闻，然后自动的对它们进行分簇，有关同一主题的新闻被分在同一类，比如关于新冠病毒的新闻放在同一类。
 
@@ -163,11 +163,11 @@ Others：`Reinforcement learning` 强化学习，`recommender systems` 推荐系
 
 💬 下图是一个 **DNA 微阵列数据**，基本思想是给定一组不同的个体，对于每个个体，检测它们是否拥有某个特定的基因，也就是要检测，特定基因的表达程度。这些颜色红、绿、灰等展示了不同的个体拥有特定基因的程度。然后我们所能做的就是运行一个聚类算法，把不同的个体，归入不同的类，或归入不同类型的人。
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200526103404.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200526103404.png" style="zoom:50%;" />
 
 💬 聚类算法还被广泛应用于如下场合：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200526104043.png" style="zoom: 50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200526104043.png" style="zoom: 50%;" />
 
 <u>聚类只是无监督学习的一种，现在我们来介绍下一种：鸡尾酒会算法</u>
 
@@ -175,11 +175,11 @@ Others：`Reinforcement learning` 强化学习，`recommender systems` 推荐系
 
 🔵 首先介绍一下**鸡尾酒会问题 Cocktail party problem**：有一个宴会，一屋子的人，因为有许多人在同时说话，有许多声音混杂在一起，你几乎很难听清你面前的人说的话。假设一个鸡尾酒会只有两个人，同时说话，我们将两个麦克风放在房间里，且这两个麦克风与两个人的距离不同，每个麦克风记录了来自两人声音的不同组合。我们能做的就是把这两个录音交给一种无监督学习算法，称为 "**鸡尾酒会算法 cocktail party algorithm**"，让算法帮你找出数据的结构，该算法就会**分离出这两个被混叠在一起的声音**。
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200526105754.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200526105754.png" style="zoom:50%;" />
 
 鸡尾酒会算法的 Matlab 实现：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200526110514.png" style="zoom: 40%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200526110514.png" style="zoom: 40%;" />
 
 ### ④ 每节小问
 

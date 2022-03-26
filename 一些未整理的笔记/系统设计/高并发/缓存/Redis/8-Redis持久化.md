@@ -4,11 +4,11 @@
 
 Redis是一个内存数据库，数据保存在内存中，但是我们都知道内存的数据变化是很快的，也容易发生丢失。
 
-![](https://gitee.com/veal98/images/raw/master/img/20200723164654.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200723164654.png)
 
 为了避免内存中数据丢失，Redis提供了对持久化的支持，我们可以选择不同的方式将数据从内存中保存到硬盘当中，使数据可以持久化保存。
 
-![](https://gitee.com/veal98/images/raw/master/img/20200723164757.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200723164757.png)
 
 ## 1. 持久化流程
 
@@ -48,13 +48,13 @@ Redis是一个内存数据库，数据保存在内存中，但是我们都知道
 
 使用 `save `命令：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200723165922.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200723165922.png" style="zoom:80%;" />
 
 `SAVE `命令执行一个**同步保存**操作，将当前 Redis 实例的所有数据快照 (snapshot) 以 RDB 文件的形式保存到硬盘。
 
 该命令会阻塞当前Redis服务器，执行save命令期间，Redis不能处理其他命令，直到RDB过程完成为止。具体流程如下：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200723170133.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200723170133.png" style="zoom:80%;" />
 
 一般来说，在生产环境很少执行 `SAVE `操作，因为它会阻塞所有客户端，这种方式显然不可取。
 
@@ -66,11 +66,11 @@ Redis是一个内存数据库，数据保存在内存中，但是我们都知道
 
 在后台**异步(Asynchronously)**保存当前数据库的数据到磁盘。
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200723170524.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200723170524.png" style="zoom:80%;" />
 
 `bgsave` 命令执行之后立即返回 `OK` ，然后 Redis fork 出一个新子进程，原来的 Redis 进程(父进程)继续处理客户端请求，而子进程则负责将数据保存到磁盘，然后退出。
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200723170301.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200723170301.png" style="zoom:80%;" />
 
 具体操作是Redis进程执行fork操作创建子进程，RDB持久化过程由子进程负责，完成后自动结束。阻塞只发生在fork阶段，一般时间很短。基本上 Redis 内部所有的RDB操作都是采用 `bgsave `命令。
 
@@ -128,7 +128,7 @@ appendonly yes
 
 ### ① AOF 运行原理
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200723172621.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200723172621.png" style="zoom:80%;" />
 
 每当有一个写命令过来时，就直接保存在我们的AOF文件中。
 
@@ -136,11 +136,11 @@ appendonly yes
 
 **AOF 的方式也同时带来了另一个问题。持久化文件会变的越来越大**。
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200723173648.png" style="zoom: 67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200723173648.png" style="zoom: 67%;" />
 
 如果 aof 文件大于 64m， redis 提供了 `bgrewriteaof `命令，将内存中的数据以命令的方式保存到临时文件中，同时会 fork 出一条新进程来将文件重写。
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200723173122.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200723173122.png" style="zoom:80%;" />
 
 重写 AOF 文件的操作，并没有读取旧的 AOF 文件，而是将整个内存中的数据库内容用命令的方式重写了一个新的 AOF 文件，这点和快照有点类似。
 

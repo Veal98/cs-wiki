@@ -6,7 +6,7 @@
 
 Redis缓存的使用，极大的提升了应用程序的性能和效率，特别是数据查询方面。
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200724172310.png" style="zoom: 60%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200724172310.png" style="zoom: 60%;" />
 
 但同时，它也带来了一些问题。其中，最要害的问题，就是数据的一致性问题，从严格意义上讲，这个问题无解。如果对数据的一致性要求很高，那么就不能使用缓存。
 
@@ -24,13 +24,13 @@ Redis缓存的使用，极大的提升了应用程序的性能和效率，特别
 
 布隆过滤器是一种数据结构，对所有可能查询的参数以 hash 形式存储，在控制层先进行校验，不符合则丢弃，从而避免了对底层存储系统的查询压力
 
-![](https://gitee.com/veal98/images/raw/master/img/20200724172706.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200724172706.png)
 
 #### Ⅱ 缓存空对象
 
 当存储层不命中后，即使返回的空对象也将其缓存起来，同时会设置一个过期时间，之后再访问这个数据将会从缓存中获取，保护了后端数据源
 
-![](https://gitee.com/veal98/images/raw/master/img/20200724172758.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200724172758.png)
 
 但是这种方法会存在两个问题：
 
@@ -58,7 +58,7 @@ Redis缓存的使用，极大的提升了应用程序的性能和效率，特别
 
 分布式锁：**使用分布式锁，保证对于每个 key 同时只有一个线程去查询后端服务，其他线程没有获得分布式锁的权限，因此只需要等待即可**。这种方式将高并发的压力转移到了分布式锁，因此对分布式锁的考验很大。
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200724173112.png" style="zoom: 50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200724173112.png" style="zoom: 50%;" />
 
 ## 4. 缓存雪崩
 

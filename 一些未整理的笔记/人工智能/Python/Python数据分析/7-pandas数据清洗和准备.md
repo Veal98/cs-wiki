@@ -49,7 +49,7 @@ dtype: bool
 
 pandas项目中还在不断优化内部细节以更好处理缺失数据，像用户API功能，例如 `pandas.isnull`，去除了许多恼人的细节。下表列出了一些关于缺失数据处理的函数。
 
-![](https://gitee.com/veal98/images/raw/master/img/20200614212554.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200614212554.png)
 
 ### 2. 滤除缺失数据 dropna
 
@@ -271,7 +271,7 @@ dtype: float64
 ```
 下表列出了fillna的参数：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200614214201.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200614214201.png)
 
 ## 7.2 数据转换
 本章到目前为止介绍的都是数据的重排。另一类重要操作则是过滤、清理以及其他的转换工作。
@@ -1088,7 +1088,7 @@ Out[147]: 'ab  guido'
 
 表7-3列出了Python内置的字符串方法。这些运算大部分都能使用正则表达式实现。
 
-![](https://gitee.com/veal98/images/raw/master/img/20200614223506.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200614223506.png)
 
 ### 2. 正则表达式
 
@@ -1207,7 +1207,7 @@ Ryan Username: ryan, Domain: yahoo, Suffix: com
 
 Python中还有许多的正则表达式，但大部分都超出了本书的范围。表7-4是一个简要概括。
 
-![](https://gitee.com/veal98/images/raw/master/img/20200614225204.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200614225204.png)
 
 ### 3. pandas的矢量化字符串函数
 
@@ -1305,7 +1305,7 @@ dtype: object
 
 下表介绍了更多的pandas字符串方法：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200614225504.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200614225504.png)
 
 
  ## ✅ End
@@ -1318,6 +1318,6 @@ dtype: object
 
 - 📕  [《利用Python进行数据分析-第2版-中文译版》](https://www.jianshu.com/p/04d180d90a3f)
 
-  <img src="https://gitee.com/veal98/images/raw/master/img/20200607091609.png" style="zoom:50%;" />
+  <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200607091609.png" style="zoom:50%;" />
 
 - 🚝 [Gihub《Python数据分析》配套源码](https://github.com/wesm/pydata-book)

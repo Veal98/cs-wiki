@@ -52,7 +52,7 @@
 
   💬 举例如下：
 
-  <img src="https://gitee.com/veal98/images/raw/master/img/20200731112515.png" style="zoom: 67%;" />
+  <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200731112515.png" style="zoom: 67%;" />
 
   图书的直线 B 可以最大程度覆盖数据集，那么  直线 B 就是第一个主成分的方向。直线  C 垂直于 B，那么 直线 C 就是第二个主成分的方向。
 
@@ -76,7 +76,7 @@
 
 举例如下：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200731112956.png" style="zoom: 67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200731112956.png" style="zoom: 67%;" />
 
 ### ② 在 Numpy  中实现 PCA
 
@@ -134,7 +134,7 @@ def pca(dataMat,topNfeat = 9999999):
 dataMat = loadDataSet('testSet.txt')
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20200731120447.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200731120447.png)
 
 对数据 进行降维：
 
@@ -142,7 +142,7 @@ dataMat = loadDataSet('testSet.txt')
 lowDMat, = pca(dataMat,1)  # 降到一维
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20200731120523.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200731120523.png)
 
 👀 对原始数据集合降维后的数据集进行可视化：
 
@@ -158,12 +158,12 @@ ax.scatter(reconMat[:,0].flatten().A[0], reconMat[:,1].flatten().A[0],marker = '
 plt.show()
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20200731115916.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200731115916.png)
 
 ## 📚 References
 
 - 《Machine Learning in Action》
 
-  <img src="https://gitee.com/veal98/images/raw/master/img/20200804111716.png" style="zoom:80%;" />
+  <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200804111716.png" style="zoom:80%;" />
 
 - [Github - AiLearning](https://github.com/apachecn/AiLearning/)

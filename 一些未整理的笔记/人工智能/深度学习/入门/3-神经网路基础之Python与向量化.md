@@ -111,7 +111,7 @@ b = b - alpha * db
 
 简而言之，就是<u>python中可以对不同维度的矩阵进行四则混合运算，但至少保证有一个维度是相同的</u>。下面给出几个广播的例子，具体细节可参阅python的相关手册，这里就不赘述了。
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200921203116.png" style="zoom: 50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200921203116.png" style="zoom: 50%;" />
 
 值得一提的是，在 python 程序中为了保证矩阵运算正确，可以使用 `reshape()` 函数来对矩阵设定所需的维度。这是一个很好且有用的习惯：
 

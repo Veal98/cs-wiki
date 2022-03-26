@@ -18,7 +18,7 @@
 
 注意 JPA 中 Hibernate 的版本 与 MySQL 版本对应
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200806223003.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200806223003.png" style="zoom:80%;" />
 
 ## 2. 创建数据库
 
@@ -46,7 +46,7 @@ spring.jpa.hibernate.ddl-auto = create-drop
 
 启动应用程序，成功的话可以看到数据库已经自动添加了以下数据：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200806223407.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200806223407.png)
 
 按照之前的流程测试下，结果是一样的。至此，我们并没有做过多的编码，就轻松的从内存数据库转换到MySQL数据库，这就是框架给我们提供的便利。
 
@@ -123,7 +123,7 @@ public class CustomUserDetailService implements UserDetailsService{
 
  启动应用，查看数据库的用户信息：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200806223801.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200806223801.png)
 
 此时看到的数据库中的密码已经是加密的了，访问下如下的地址：
 

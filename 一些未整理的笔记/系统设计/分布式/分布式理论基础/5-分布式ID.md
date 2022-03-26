@@ -14,7 +14,7 @@ ID 是数据的唯一标识，传统的做法是利用 UUID 和数据库的自�
 
 下面来分析各个生成分布式 ID 的机制。
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201204104929.png" style="zoom: 50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201204104929.png" style="zoom: 50%;" />
 
 ### ① 数据库自增 ID
 
@@ -80,7 +80,7 @@ set @@auto_increment_increment = 2;  -- 步长
 - 第二：因为 mysql1 和 mysql2 是不停在自增的，对于 mysql3 的起始值我们可能要定得大一点，以给充分的时间去修改 mysql1，mysql2 的步长。 
 - 第三：在修改步长的时候很可能会出现重复 ID，要解决这个问题，可能需要停机才行。
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201204110839.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201204110839.png" style="zoom:50%;" />
 
 为了解决上面的问题，以及能够进一步提高DistributIdService的性能，如果使用第三种生成分布式ID机制。
 
@@ -129,7 +129,7 @@ snowflake 是 twitter 开源的分布式 ID 生成算法，**是一种算法**�
 
 核心思想是：分布式 ID 固定是一个 long 型的数字，一个 long 型占8个字节，也就是64个bit，原始snowflake算法中对于bit的分配如下图：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201204110029.png" style="zoom: 50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201204110029.png" style="zoom: 50%;" />
 
 - 第一个bit位是**标识部分**，在java中由于long的最高位是符号位，<u>正数是 0，负数是 1，一般生成的ID为正数，所以固定为 0</u>。
 - **时间戳**部分占 41 bit，这个是毫秒级的时间，一般实现上不会存储当前的时间戳，而是时间戳的差值（当前时间-固定的开始时间），这样可以使产生的ID从更小值开始；41位的时间戳可以使用69年，(1L << 41) / (1000L * 60 * 60 * 24 * 365) = 69年

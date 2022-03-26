@@ -25,7 +25,7 @@ JPA规范 是在充分吸收了现有 Hibernate、TopLink 等 ORM 框架的基�
 
 🔗 JPA 规范与 ORM 框架的关系如下图： 
 
-![](https://gitee.com/veal98/images/raw/master/img/20200822112719.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200822112719.png)
 
 👍 使用 JPA 规范的优势在于：**开发者面向 JPA 规范的接口，但底层的 JPA 实现可以任意切换**。这样开发者可以避免为使用 Hibernate 学习一套ORM框架，为使用 TopLink 又要再学习一套ORM框架。
 
@@ -136,7 +136,7 @@ public interface CategoryDAO extends JpaRepository<Category,Integer> {
 
 JpaRepository 提供了一些基本的数据操作方法，例如保存，更新，删除，分页查询等，开发者也可以在接口中自己声明相关的方法，只需要方法名称符合规范即可，**在 Spring Data 中，只要按照既定的规范命名方法，Spring Data Jpa 就知道你想干嘛，这样就不用我们手动写 SQL 了**，那么规范是什么呢？参考下图：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200822114451.png" style="zoom: 50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200822114451.png" style="zoom: 50%;" />
 
 当然，这种方法命名主要是针对查询，但是一些特殊需求，可能并不能通过这种方式解决，例如想要查询 id 最大的 Category，这时就需要开发者自定义查询 SQL 了：
 
@@ -178,7 +178,7 @@ public class CategoryController {
 
 新建如下目录，并添加 `listCategory.jsp`：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200822120746.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200822120746.png)
 
 ```html
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -213,7 +213,7 @@ insert into category_ values(null,'category 4');
 
 访问界面：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200822120950.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200822120950.png)
 
 ## 📚 References
 

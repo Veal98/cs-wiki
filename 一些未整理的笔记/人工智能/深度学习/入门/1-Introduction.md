@@ -10,11 +10,11 @@
 
 假设你有一个数据集，它包含了一些房子的信息（房屋面积)，并且知道房屋价格。这时，你可能会利用线性回归拟合一个根据房屋面积预测房价的函数：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200920145658.png" style="zoom: 67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200920145658.png" style="zoom: 67%;" />
 
 但是，我们知道价格永远不会是负数。因此，我们需要这个拟合直线最终在 0 结束：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200920145749.png" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200920145749.png" style="zoom:67%;" />
 
 > 💡 从趋近于零开始，然后变成一条直线。这个函数被称作 **ReLU 激活函数**，它的全称是 **Rectified Linear Unit 修正线性单元**。
 
@@ -22,23 +22,23 @@
 
 下图就是最简单的神经网络：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200920150141.png" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200920150141.png" style="zoom:67%;" />
 
 值得一提的是，上图神经元的预测函数（蓝色折线）在神经网络应用中比较常见。我们把这个函数称为 **ReLU 函数**，即**线性整流函数（Rectified Linear Unit）**，形如下图所示：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200920202332.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200920202332.png)
 
 上面讲的只是由单个神经元（输入x仅仅是房屋面积一个因素）组成的神经网络，而通常一个大型的神经网络往往由许多神经元组成，就像通过乐高积木搭建复杂物体（例如火车）一样。比如基于房屋面积和卧室数量，可以估算家庭人口，基于邮编，可以估测步行化程度或者学校的质量：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200920202121.png" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200920202121.png" style="zoom:67%;" />
 
 实际上，上面这个例子真正的神经网络模型结构如下所示：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200920202146.png" style="zoom: 67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200920202146.png" style="zoom: 67%;" />
 
 ## 2. 神经网络的监督学习(Supervised Learning with Neural Networks)
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201117150407.png" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201117150407.png" style="zoom:67%;" />
 
 目前为止，由神经网络模型创造的价值基本上都是基于监督式学习（Supervised Learning）的。监督式学习与非监督式学习本质区别就是是否已知训练样本的输出y。在实际应用中，机器学习解决的大部分问题都属于监督式学习，神经网络模型也大都属于监督式学习。下面我们来看几个监督式学习在神经网络中应用的例子。
 
@@ -54,7 +54,7 @@
 
 第六个例子是**自动驾驶**。通过输入一张图片或者汽车雷达信息，神经网络通过训练来告诉你相应的路况信息并作出相应的决策。至此，神经网络配合监督式学习，其应用是非常广泛的。
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200920203728.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200920203728.png" style="zoom:80%;" />
 
 我们应该知道，**根据不同的问题和应用场合，应该使用不同类型的神经网络模型**。例如上面介绍的几个例子中：
 
@@ -64,7 +64,7 @@
 
 - 而对于处理类似语音这样的序列信号时，则要使用**循环神经网络（Recurrent Neural Network）即 RNN**。还有其它的例如自动驾驶这样的复杂问题则需要更加复杂的混合神经网络模型。
 
-  ![](https://gitee.com/veal98/images/raw/master/img/20200920203839.png)
+  ![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200920203839.png)
 
 CNN 一般处理图像问题，RNN 一般处理语音信号。他们的结构是什么意思？如何实现 CNN 和 RNN 的结构？这些问题我们将在以后的课程中来深入分析并解决。
 
@@ -76,7 +76,7 @@ CNN 一般处理图像问题，RNN 一般处理语音信号。他们的结构是
 
 - **非结构化数据**是指比如音频，原始音频或者你想要识别的图像或文本中的内容。这里的特征可能是图像中的像素值或文本中的单个单词。
 
-  ![](https://gitee.com/veal98/images/raw/master/img/20200920203933.png)
+  ![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200920203933.png)
 
 从历史经验上看，处理非结构化数据是很难的，与结构化数据比较，让计算机理解非结构化数据很难，而人类进化得非常善于理解音频信号和图像，文本是一个更近代的发明，但是人类真的很擅长解读非结构化数据。
 
@@ -88,7 +88,7 @@ CNN 一般处理图像问题，RNN 一般处理语音信号。他们的结构是
 
 ❓ 深度学习为什么这么强大？下面我们用一张图来说明。如下图所示，横坐标 x 表示数据量（Amount of data），纵坐标 y 表示机器学习模型的性能表现（Performance）:
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200920204020.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200920204020.png" style="zoom:80%;" />
 
 上图共有4条曲线。其中：
 

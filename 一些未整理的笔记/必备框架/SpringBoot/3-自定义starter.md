@@ -24,33 +24,33 @@
 
 **1）在IDEA中新建一个空项目 spring-boot-starter-mydiy**  
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200711105910.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200711105910.png" style="zoom:80%;" />
 
 **2）在该项目中新建一个普通 Maven 模块：`smallbeef-spring-boot-starter` 启动器模块**
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200711110125.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200711110125.png" style="zoom:80%;" />
 
 
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200711103454.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200711103454.png" style="zoom:80%;" />
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200711103531.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200711103531.png" style="zoom:80%;" />
 
 **3）然后，再在该项目中新建一个 Springboot 模块：`smallbeef-spring-boot-starter-autoconfigure` 自动配置模块**
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200711103728.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200711103728.png" style="zoom:80%;" />
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200711110442.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200711110442.png" style="zoom:80%;" />
 
 **4）点击 Apply，基本结构如下：**
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200711110605.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200711110605.png" style="zoom:80%;" />
 
-![](https://gitee.com/veal98/images/raw/master/img/20200711110638.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200711110638.png)
 
 **5）在启动器 starter 模块中自动配置autoconfigure 模块的依赖**：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200711110712.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200711110712.png)
 
 ```xml
 <!-- 启动器 -->
@@ -66,9 +66,9 @@
 
 **6）将 autoconfigure 项目下多余的文件都删掉（包括 test 文件夹、配置文件、启动类等），pom.xml 中只留下一个 starter，这是所有的启动器基本配置**：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200711104800.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200711104800.png)
 
-![](https://gitee.com/veal98/images/raw/master/img/20200711104922.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200711104922.png)
 
 **7）在 autoconfigure 中编写一个自己的服务**：
 
@@ -128,7 +128,7 @@ public class HelloProperties {
 
 > 该文件有个警告
 >
-> ![](https://gitee.com/veal98/images/raw/master/img/20200711114538.png)
+> ![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200711114538.png)
 >
 > 不碍事~
 
@@ -173,7 +173,7 @@ com.smallbeef.HelloServiceAutoConfiguration
 
 > 🚨 注意先安装 autocongifure，因为启动器 starter 依赖于 autoconfigure
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200711111606.png"  />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200711111606.png"  />
 
 ## 3. 测试自定义启动器
 
@@ -217,7 +217,7 @@ smallbeef.hello.suffix="sss"
 
 5）启动项目进行测试：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200711115905.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200711115905.png" style="zoom:80%;" />
 
 ## 📚 References
 

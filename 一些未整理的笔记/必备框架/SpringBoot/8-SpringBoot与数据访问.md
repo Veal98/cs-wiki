@@ -16,7 +16,7 @@ Sping Data 官网：[https://spring.io/projects/spring-data](https://spring.io/p
 
 新建一个项目，导入以下模块：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200709122710.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200709122710.png)
 
 项目建好之后，发现自动帮我们导入了如下的启动器：
 
@@ -67,7 +67,7 @@ class JdbcDemoApplicationTests {
 }
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20200709123650.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200709123650.png)
 
 可以看到他默认给我们配置的数据源为 : `class com.zaxxer.hikari.HikariDataSource` ， 我们并没有手动配置。全局搜索一下 `Hikari`，找到数据源的所有自动配置都在 `DataSourceAutoConfiguration` 文件中：
 
@@ -81,7 +81,7 @@ protected static class PooledDataSourceConfiguration {
 
 这里导入的类都在 `DataSourceConfiguration `配置类下：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200709124410.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200709124410.png)
 
 💡 可以看出 **Spring Boot 2.2.5 默认使用 `HikariDataSource ` 数据源**，而以前版本，如 Spring Boot 1.5 默认使用 `org.apache.tomcat.jdbc.pool.DataSource` 作为数据源；
 
@@ -274,7 +274,7 @@ class JdbcDemoApplicationTests {
 }
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20200709153659.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200709153659.png)
 
 OK，数据源成功切换 😊
 
@@ -365,7 +365,7 @@ class JdbcDemoApplicationTests {
 }
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20200709154902.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200709154902.png)
 
 可见配置参数已经生效~
 
@@ -414,9 +414,9 @@ public class DruidConfig {
 
 配置完毕后，我们可以选择访问 ：[http://localhost:8080/druid/login.html](http://localhost:8080/druid/login.html)
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200709160550.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200709160550.png" style="zoom:80%;" />
 
-![](https://gitee.com/veal98/images/raw/master/img/20200709160605.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200709160605.png)
 
 **配置 Druid web 监控 filter 过滤器：**
 
@@ -469,7 +469,7 @@ public FilterRegistrationBean webStatFilter() {
 </dependency>
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20200709162203.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200709162203.png)
 
 👉 **创建JavaBean**：
 
@@ -555,7 +555,7 @@ public interface EmployeeMapper {
 </mapper>
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20200709170324.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200709170324.png)
 
 注意：直接写 `resultType="Employee"` 是无法识别的，需要在全局配置文件中配置别名，或者指定全类名也可：`resultType="com.smallbeef.jdbcdemo.Bean.Employee"`
 
@@ -612,7 +612,7 @@ public class EmployeeController {
 
 👉 **启动项目访问进行测试**：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200709170643.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200709170643.png)
 
 ## 📚 References
 

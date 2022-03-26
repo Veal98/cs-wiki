@@ -31,15 +31,15 @@ Logistic Regression和Linear Regression的原理是相似的，可以简单的�
 
 ## 2. 基于 Logistic 回归和 Sigmoid 函数的分类
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200710142548.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200710142548.png" style="zoom:80%;" />
 
 Sigmoid 函数具体的计算公式如下:
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200710142711.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200710142711.png" style="zoom:80%;" />
 
 下图给出了 Sigmoid 函数在不同坐标尺度下的两条曲线图。当 x 为 0 时，Sigmoid 函数值为 0.5 。随着 x 的增大，对应的 Sigmoid 值将逼近于 1 ; 而随着 x 的减小， Sigmoid 值将逼近于 0 。如果横坐标刻度足够大， Sigmoid 函数看起来很像一个阶跃函数。
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200710142730.png" style="zoom: 67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200710142730.png" style="zoom: 67%;" />
 
 ⭐ 因此，**为了实现 Logistic 回归分类器，我们可以在每个特征上都乘以一个回归系数，然后把所有结果值相加，将这个总和代入 Sigmoid 函数中，进而得到一个范围在 0~1 之间的数值。任何大于 0.5 的数据被分入 1 类，小于 0.5 即被归入 0 类。**所以，Logistic 回归也可以被看成是一种概率估计。
 
@@ -47,11 +47,11 @@ Sigmoid 函数具体的计算公式如下:
 
 Sigmoid 函数的输入记为 z ，由下面公式得到:
 
-⭐ <img src="https://gitee.com/veal98/images/raw/master/img/20200710142947.png" style="zoom:80%;" />（x0 一般置为 1）
+⭐ <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200710142947.png" style="zoom:80%;" />（x0 一般置为 1）
 
 如果采用向量的写法，上述公式可以写成 $z = w^T x$，它表示将这两个数值向量对应元素相乘然后全部加起来即得到 z 值。其中的向量组 x 是分类器的输入数据，**向量组 w 也就是我们要找到的最佳参数（系数）**，从而使得分类器尽可能地精确。
 
-![](https://gitee.com/veal98/images/raw/master/img/20200710154606.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200710154606.png)
 
 **为了寻找该最佳参数**，需要用到最优化理论的一些知识。**我们这里使用的是——梯度上升法（Gradient Ascent）**。
 
@@ -67,15 +67,15 @@ Sigmoid 函数的输入记为 z ，由下面公式得到:
 
 **要找到某函数的最大值，最好的方法是沿着该函数的梯度方向探寻**。如果梯度记为 ▽ ，则函数 f(x, y) 的梯度由下式表示：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200710144343.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200710144343.png" style="zoom:80%;" />
 
-这个梯度意味着要沿 x 的方向移动 <img src="https://gitee.com/veal98/images/raw/master/img/20200710144436.png" style="zoom:80%;" /> ，沿 y 的方向移动 <img src="https://gitee.com/veal98/images/raw/master/img/20200710144457.png" style="zoom:80%;" /> 。其中，函数 f(x, y) 必须要在待计算的点上有定义并且可微。下图是一个具体的例子。
+这个梯度意味着要沿 x 的方向移动 <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200710144436.png" style="zoom:80%;" /> ，沿 y 的方向移动 <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200710144457.png" style="zoom:80%;" /> 。其中，函数 f(x, y) 必须要在待计算的点上有定义并且可微。下图是一个具体的例子。
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200710144537.png" style="zoom: 67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200710144537.png" style="zoom: 67%;" />
 
 上图中的梯度上升算法沿梯度方向移动了一步。可以看到，梯度算子总是指向函数值增长最快的方向。这里所说的是移动方向，而未提到移动量的大小。该量值称为步长，记作 α 。用向量来表示的话，**梯度上升算法的参数迭代公式如下**:
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200710144737.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200710144737.png" style="zoom:80%;" />
 
 该公式将一直被迭代执行，直至达到某个停止条件为止，比如迭代次数达到某个指定值或者算法达到某个可以允许的误差范围。
 
@@ -85,7 +85,7 @@ Sigmoid 函数的输入记为 z ，由下面公式得到:
 
 只需要在迭代公式中的加法变成减法。因此，对应的公式可以写成
 
-![](https://gitee.com/veal98/images/raw/master/img/20200710145710.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200710145710.png)
 
 <u>对于参数的迭代公式，可以用通过向量化进行简化 👇</u>
 
@@ -93,39 +93,39 @@ Sigmoid 函数的输入记为 z ，由下面公式得到:
 
 先给出 **vectorization** 的结果为（公式为梯度下降，梯度上升只需要改为 `+`）：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200710155709.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200710155709.png" style="zoom:80%;" />
 
 下面进行推导：
 
 约定训练数据的矩阵形式如下，x 的每一行为一条训练样本，而每一列为不同的特称取值：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200710155415.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200710155415.png" style="zoom:80%;" />
 
 约定待求的参数**θ**（w）的矩阵形式为：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200710155427.png" style="zoom: 80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200710155427.png" style="zoom: 80%;" />
 
 先求 `x*θ`（`x*w`）并记为 A：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200710155354.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200710155354.png" style="zoom:80%;" />
 
 求 **hθ(x)-y** 并记为**E**（error）：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200710155542.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200710155542.png" style="zoom:80%;" />
 
 g(A) 的参数 A 为一列向量，所以实现 g 函数时要支持列向量作为参数，并返回列向量。由上式可知 hθ(x)-y 可以由 g(A)-y 一次计算求得。
 
 再来看一下vectorization 的**θ**更新过程，当 j=0 时：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200710155818.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200710155818.png" style="zoom:80%;" />
 
 同样的可以写出**θj**：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200710155902.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200710155902.png" style="zoom:80%;" />
 
 综合起来就是：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200710155926.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200710155926.png" style="zoom:80%;" />
 
 综上所述，vectorization 后θ更新的步骤如下：
 
@@ -137,7 +137,7 @@ g(A) 的参数 A 为一列向量，所以实现 g 函数时要支持列向量作
 
 也可以综合起来写成：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200710160501.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200710160501.png" style="zoom:80%;" />
 
 **1/m 是可以省略的**。
 
@@ -155,7 +155,7 @@ g(A) 的参数 A 为一列向量，所以实现 g 函数时要支持列向量作
 
 我们的数据集如下：100 行，3 列
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200710150458.png" style="zoom: 80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200710150458.png" style="zoom: 80%;" />
 
 Python 具体实现：
 
@@ -196,7 +196,7 @@ def gradAscent(dataMatIn, classLabels):
     return weights
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20200710195646.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200710195646.png)
 
 > `h = sigmoid(dataMatrix * weights)` 这行代码用来计算假设函数的值（0，1），变量 h 不是一个数而是一个列向量，dataMatrix：100 x 3，weights：3 x 1，也就是说，每次循环，该行代码都包含了 300 次的乘积计算 😰。
 
@@ -243,11 +243,11 @@ def plotBestFit(weights):
 
 🏃‍ 运行该代码：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200710203520.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200710203520.png)
 
 > 🚨 如果直接调用 `plotBestFit(weights)`会报错：
 >
-> ![](https://gitee.com/veal98/images/raw/master/img/20200710204056.png)
+> ![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200710204056.png)
 >
 > ❓ 为啥要将 `weights `转换成数组呢？
 >
@@ -322,11 +322,11 @@ def stocGradAscent0(dataMatrix, classLabels):
 
 运行代码：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200710211221.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200710211221.png)
 
 ⭐ **判断优化算法优劣的可靠方法是看它是否收敛，也就是说参数是否达到了稳定值，是否还会不断地变化**？下图展示了随机梯度上升算法在 200 次迭代过程中回归系数的变化情况。其中的系数 X2 只经过了 50 次迭代就达到了稳定值，但 😔 <u>系数 1 和 0 则需要大量次数的迭代才能达到稳定值，并且仍然有局部波动现象</u>。如下图所示：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200710211517.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200710211517.png)
 
 #### Ⅱ 改进的随机梯度上升算法
 
@@ -359,11 +359,11 @@ def stocGradAscent1(dataMatrix, classLabels, numIter=150):
 
 改进后的随机梯度上升算法的每次迭代时各个回归系数的变化情况：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200710212750.png" style="zoom: 67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200710212750.png" style="zoom: 67%;" />
 
 🏃‍ 该代码的分类效果：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200710212904.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200710212904.png)
 
 ## 4. 示例：从疝气病症预测病马的死亡率
 
@@ -406,7 +406,7 @@ def stocGradAscent1(dataMatrix, classLabels, numIter=150):
 
 这就是我们预处理数据时所需要做的两件事。处理后的数据集部分如下：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200711201630.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200711201630.png)
 
 OK，现在我们有了一个 “干净” 的数据。
 
@@ -467,7 +467,7 @@ def multiTest():
     print("after %d iterations the average error rate is: %f" % (numTests, errorSum/float(numTests)))
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20200711204657.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200711204657.png)
 
 从上面的结果可以看出，10 次迭代之后的平均错误率为 37%，而且这还是在 30% 数据缺失的情况下。
 
@@ -481,7 +481,7 @@ Logistic 回归的目的是寻找一个非线性函数 Sigmoid 的最佳拟合�
 
 - 《Machine Learning in Action》
 
-  <img src="https://gitee.com/veal98/images/raw/master/img/20200804111716.png" style="zoom:80%;" />
+  <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200804111716.png" style="zoom:80%;" />
 
 - [Github - AiLearning](https://github.com/apachecn/AiLearning/)
 

@@ -34,7 +34,7 @@ RabbitMQ 发展到今天，被越来越多的人认可，这和它在易用性�
 
 RabbitMQ 的整体模型架构如下：
 
-![](https://gitee.com/veal98/images/raw/master/img/20201124213040.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201124213040.png)
 
 接下来一一介绍上图中的概念：👇
 
@@ -56,7 +56,7 @@ RabbitMQ 的整体模型架构如下：
 
 Exchange(交换器) 示意图如下：
 
-![](https://gitee.com/veal98/images/raw/master/img/20201124213450.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201124213450.png)
 
 生产者将消息发给交换器的时候，一般会指定一个 `RoutingKey(路由键)`，用来指定这个消息的路由规则，而这个 `RoutingKey ` 需要与交换器类型和`绑定键(BindingKey)`联合使用才能最终生效。
 
@@ -64,7 +64,7 @@ Exchange(交换器) 示意图如下：
 
 🍉 Binding(绑定) 示意图：
 
-![](https://gitee.com/veal98/images/raw/master/img/20201124213805.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201124213805.png)
 
 ⭐ **生产者将消息发送给交换器时，需要一个 `RoutingKey`, 当 `BindingKey `和 `RoutingKey `相匹配时，消息会被路由到对应的队列中**。在绑定多个队列到同一个交换器的时候，这些绑定允许使用相同的 BindingKey。
 
@@ -86,7 +86,7 @@ RabbitMQ 常用的 Exchange Type 有 **fanout**、**direct**、**topic**、**hea
 
 `direct `类型的Exchange路由规则也很简单，它会**把消息路由到那些 Bindingkey 与 RoutingKey 完全匹配的 Queue 中**。
 
-![](https://gitee.com/veal98/images/raw/master/img/20201124221837.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201124221837.png)
 
 以上图为例:
 
@@ -106,7 +106,7 @@ direct 类型常用在处理有优先级的任务，根据任务的优先级把�
 - BindingKey 和 RoutingKey 一样也是点号 “`．`” 分隔的字符串；
 - **BindingKey 中可以存在两种特殊字符串 “`*`” 和 “ `#`”，用于做模糊匹配**，其中 “`*`” 用于匹配一个单词，“`#`” 用于匹配多个单词(可以是零个)。
 
-![](https://gitee.com/veal98/images/raw/master/img/20201124222245.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201124222245.png)
 
 以上图为例：
 
@@ -140,7 +140,7 @@ headers 类型的交换器性能会很差，而且也不实用，基本上不会
 
 下图展示了生产者将消息存入 RabbitMQ Broker,以及消费者从Broker中消费数据的整个流程：
 
-![](https://gitee.com/veal98/images/raw/master/img/20201124221531.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201124221531.png)
 
 ## 📚 References
 

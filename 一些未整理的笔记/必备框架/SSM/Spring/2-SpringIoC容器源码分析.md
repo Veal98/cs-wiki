@@ -128,7 +128,7 @@ BeanFactory，从名字上也很好理解，生产 bean 的工厂，它负责生
 
 总的来说，Spring IoC 的启动过程如下图：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201221100608.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201221100608.png" style="zoom:50%;" />
 
 下面将会是冗长的代码分析，记住，一定要自己打开源码来看，不然纯看是很累的。
 

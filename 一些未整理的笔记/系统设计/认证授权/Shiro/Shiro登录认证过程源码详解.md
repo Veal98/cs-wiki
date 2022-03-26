@@ -34,11 +34,11 @@ public class LoginController {
 
 点进 `login `方法，发现是 Subject 接口的方法：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200930195637.png" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200930195637.png" style="zoom:67%;" />
 
 💡 我们来看看该接口方法的到底在哪里实现了（在 `login` 方法上右键）：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200930210255.png" style="zoom: 67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200930210255.png" style="zoom: 67%;" />
 
 实际上是进入了 `Subject` 接口的实现类 `DelegatingSubject` 中：
 
@@ -91,13 +91,13 @@ public class DelegatingSubject implements Subject {
 
 注意这行 `Subject subject = this.securityManager.login(this, token);` 显然，主要还是用到了 `SecurityManager ` 安全管理器。点进 `login` 之后仍然是一个接口方法：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200930210534.png" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200930210534.png" style="zoom:67%;" />
 
 按照上面同样的操作，进入该方法的具体实现：
 
  `SecurityManager ` 的子类 `DefaultSecurityManager` 实现了其 `login` 方法（虚线表示实现接口，实线表示继承）：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200930202824.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200930202824.png)
 
 ```java
 public class DefaultSecurityManager extends SessionsSecurityManager {
@@ -168,9 +168,9 @@ public class ModularRealmAuthenticator extends AbstractAuthenticator {
 
 在这里才是刚才上面的那个 `authenticator` 方法的真正实现，从上述代码可以看出，根据 realms 集合是单个还是多个做了分别处理，我们分别点进去看看：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200930202141.png" style="zoom: 50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200930202141.png" style="zoom: 50%;" />
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200930202247.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200930202247.png" style="zoom:50%;" />
 
 显然，殊途同归，最终形式都是这样：
 
@@ -180,13 +180,13 @@ AuthenticationInfo info = realm.getAuthenticationInfo(token);
 
 点进 `getAuthenticationInfo`  方法，发现属于 Realm 接口：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200930205403.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200930205403.png" style="zoom:50%;" />
 
 按照前面说过的同样的方法查看该接口方法的具体实现：
 
 **`Realm` 的子类 `AuthenticatingRealm` 实现了 `getAuthenticationInfo` 方法**：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200930211131.png" style="zoom:55%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200930211131.png" style="zoom:55%;" />
 
 ```java
 public abstract class AuthenticatingRealm extends CachingRealm implements Initializable {
@@ -219,7 +219,7 @@ public abstract class AuthenticatingRealm extends CachingRealm implements Initia
 
 注意，重点来了 `info = this.doGetAuthenticationInfo(token)`，我们查看该方法的具体实现：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200930211318.png" style="zoom: 67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200930211318.png" style="zoom: 67%;" />
 
 其中就有我们自定义的 Realm。调用我们自定义 Realm 的 `getAuthenticationInfo` 方法（获取身份认证信息）：
 
@@ -262,7 +262,7 @@ OK，现在 Shiro 获取到用户信息了，接下来就是 Shiro 怎么去进�
 
 我们返回去看 `AuthenticatingRealm`：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200930205829.png" style="zoom: 50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200930205829.png" style="zoom: 50%;" />
 
 进入 `assertCredentialsMatch` 方法进行密码匹配：
 
@@ -289,7 +289,7 @@ public interface CredentialsMatcher {
 }
 ```
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200930210125.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200930210125.png" style="zoom:50%;" />
 
 ```java
 public boolean doCredentialsMatch(AuthenticationToken token, AuthenticationInfo info) {

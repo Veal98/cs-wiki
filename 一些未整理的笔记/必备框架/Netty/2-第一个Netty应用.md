@@ -6,7 +6,7 @@
 
 下图显示了连接到服务器的多个并发的客户端。在理论上，客户端可以支持的连接数只受限于使用的 JDK 版本中的制约：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201210132102.png" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201210132102.png" style="zoom:67%;" />
 
 ## 1. 导入 Netty 依赖
 

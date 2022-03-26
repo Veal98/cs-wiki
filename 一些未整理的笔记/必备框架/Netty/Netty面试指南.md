@@ -49,7 +49,7 @@ Netty 主要用来做**网络通信** :
 
 通过下面这张图你可以将我提到的这些 Netty 核心组件串联起来：
 
-![](https://gitee.com/veal98/images/raw/master/img/20201210152621.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201210152621.png)
 
 ### ① Bytebuf 字节容器
 
@@ -108,7 +108,7 @@ Netty 主要用来做**网络通信** :
 
 从上面的示例中，我们可以看出：
 
-![](https://gitee.com/veal98/images/raw/master/img/20201210221726.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201210221726.png)
 
 1. `Bootstrap` 通常使用 `connet()` 方法连接到远程的主机和端口，作为一个 Netty **TCP** 协议通信中的客户端。另外，`Bootstrap` 也可以通过 `bind()` 方法绑定本地的一个端口，作为 **UDP** 协议通信中的一端。
 2. `ServerBootstrap`通常使用 `bind()` 方法绑定本地的端口上，然后等待客户端的连接。
@@ -156,7 +156,7 @@ Netty 主要用来做**网络通信** :
 
 下图是 Netty **NIO** 模型对应的 `EventLoop` 模型。通过这个图应该可以将 `EventloopGroup`、`EventLoop`、 `Channel` 三者联系起来：
 
-![](https://gitee.com/veal98/images/raw/master/img/20201210213439.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201210213439.png)
 
 #### NioEventLoopGroup 默认的构造函数会起多少线程
 
@@ -288,7 +288,7 @@ ChannelFuture f = b.bind(port).sync();
 
 > **Reactor 模式**，是指将一个或多个输入同时传递给服务处理器 ServiceHandler 的服务请求的事件驱动处理模式。 **服务端程序将请求同步的分派给对应的处理线程**。
 >
-> ![img](https://gitee.com/veal98/images/raw/master/img/20201212204229.png)
+> ![img](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201212204229.png)
 >
 > Reactor 模式也叫 Dispatcher 模式，是编写高性能网络服务器的必备技术之一
 >
@@ -543,7 +543,7 @@ TCP 实际上自带的就有长连接选项，本身是也有心跳包机制，�
 
 在学习零拷贝技术之前先回顾一下普通的 IO 拷贝过程吧， 这里举个栗子： 我要使用一个程序将一个目录下的文件复制到另一个目录下， 在普通的 IO 中，其过程如下：
 
-![img](https://gitee.com/veal98/images/raw/master/img/20201211162947.png)
+![img](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201211162947.png)
 
 - 应用程序启动后，向内核发出 `read` 调用（用户态切换到内核态）
 - 操作系统收到调用请求后， 会检查文件是否已经缓存过了:

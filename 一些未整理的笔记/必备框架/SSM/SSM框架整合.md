@@ -4,7 +4,7 @@
 
 **整合说明**：使用 Spring 去整合另外两个框架，选择XML + 注解的方式 
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200524205211.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200524205211.png" style="zoom:80%;" />
 
 👣 **Outline**：
 
@@ -18,15 +18,15 @@
 
 项目包含学生信息的增删改查功能以及分页功能，最终效果如下图所示：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200527212652.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200527212652.png" style="zoom:80%;" />
 
-![](https://gitee.com/veal98/images/raw/master/img/20200527212729.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200527212729.png)
 
 **项目源码 + 目录结构**
 
 - 项目目录结构如下图所示：
 
-  <img src="https://gitee.com/veal98/images/raw/master/img/20200527212933.png"  />
+  <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200527212933.png"  />
 
 
 
@@ -36,7 +36,7 @@
 ### 1. 新建Maven的web工程
 main 文件夹下建立 java 和 src 文件夹，并分别设置为 Source root 和 Resources root
 
-![](https://gitee.com/veal98/images/raw/master/img/20200705214940.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200705214940.png)
 
 ### 2. pom导入依赖
 

@@ -6,7 +6,7 @@
 
 **1）单机 MySQL 的年代**
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200714152020.png" style="zoom: 80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200714152020.png" style="zoom: 80%;" />
 
 90年代，一个基本的网站访问量一般不会太大，单个数据库完全足够。那个时候，更多的去使用静态网页 Html，服务器根本没有太大的压力。
 
@@ -22,7 +22,7 @@
 
 发展过程： 优化数据结构和索引 --> 文件缓存（IO）--> Memcached（当时最热门的技术）
 
-![](https://gitee.com/veal98/images/raw/master/img/20200714152426.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200714152426.png)
 
 **3）分库分表 + 水平拆分 + MySQL 集群**
 
@@ -36,7 +36,7 @@
 
 慢慢的就开始使用分库分表来解决写的压力。 MySQL 推出了表分区，然而并没有多少公司使用。MySQL 的集群，很好满足了那个年代的所有需求。
 
-![](https://gitee.com/veal98/images/raw/master/img/20200714152744.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200714152744.png)
 
 **4）如今最近的年代**
 
@@ -141,7 +141,7 @@
 
 🍹 四者对比：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200714154901.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200714154901.png)
 
 ## 📚 References
 

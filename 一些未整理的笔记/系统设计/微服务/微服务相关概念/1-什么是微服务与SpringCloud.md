@@ -8,11 +8,11 @@
 
 另外，应当尽量避免统一的，集中式的服务管理机制。对具体的一个服务而言，应根据上下文，选择何时的语言、工具对其进行构建。
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201126211510.png" style="zoom: 50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201126211510.png" style="zoom: 50%;" />
 
 ⭐ 一个分布式微服务架构的系统，最起码需要包含如下组件：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201126212835.png" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201126212835.png" style="zoom:67%;" />
 
 ## 2. 什么是 Spring Cloud
 
@@ -20,13 +20,13 @@ Spring Cloud = **分布式微服务架构的一站式解决方案，是多种微
 
 简单来说，Spring Cloud 就是一些列微服务**技术的组合**
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201126212711.png" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201126212711.png" style="zoom:67%;" />
 
 Spring Cloud 集成/包含的相关技术：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201126213643.png" style="zoom: 67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201126213643.png" style="zoom: 67%;" />
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201126213704.png" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201126213704.png" style="zoom:67%;" />
 
 ## 3. 什么是 Spring Cloud Netflix / Alibaba
 

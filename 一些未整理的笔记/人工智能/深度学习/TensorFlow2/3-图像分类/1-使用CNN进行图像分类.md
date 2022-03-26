@@ -40,7 +40,7 @@ for i in range(25):
 plt.show()
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20201109175220.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201109175220.png)
 
 ## 3. 构造卷积神经网络模型
 
@@ -157,7 +157,7 @@ test_loss, test_acc = model.evaluate(test_images,  test_labels, verbose=2)
 313/313 - 1s - loss: 0.8524 - accuracy: 0.7204
 ```
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201109175624.png" style="zoom: 62%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201109175624.png" style="zoom: 62%;" />
 
 ## 📚 References
 

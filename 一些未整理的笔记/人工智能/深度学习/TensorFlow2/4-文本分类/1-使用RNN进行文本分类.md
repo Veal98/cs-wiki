@@ -110,13 +110,13 @@ def plot_graphs(history, metric):
 plot_graphs(history, 'accuracy')
 ```
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201109205410.png" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201109205410.png" style="zoom:67%;" />
 
 ```python
 plot_graphs(history, 'loss')
 ```
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201109205432.png" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201109205432.png" style="zoom:67%;" />
 
 ## 6. 堆叠两个或更多 LSTM 层
 
@@ -161,13 +161,13 @@ print(predictions)
 plot_graphs(history, 'accuracy')
 ```
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201109210626.png" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201109210626.png" style="zoom:67%;" />
 
 ```python
 plot_graphs(history, 'loss')
 ```
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201109210635.png" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201109210635.png" style="zoom:67%;" />
 
 ## 📚 References
 

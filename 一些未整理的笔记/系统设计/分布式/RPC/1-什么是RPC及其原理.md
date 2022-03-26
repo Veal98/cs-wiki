@@ -18,7 +18,7 @@
 
 **核心原理如下**：
 
-![](https://gitee.com/veal98/images/raw/master/img/20201126202743.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201126202743.png)
 
 1. 服务消费方（Client）以本地调用方式调用服务；
 2. Client Stub 接收到调用后，负责将方法、参数等组装成能够进行网络传输的消息体 `RpcRequest`（需要进行序列化）；
@@ -31,7 +31,7 @@
 
 时序图如下：
 
-![](https://gitee.com/veal98/images/raw/master/img/20201126202849.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201126202849.png)
 
 ## 3. 常见的 RPC 框架
 

@@ -4,13 +4,13 @@
 
 
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200517230217.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200517230217.png" style="zoom:80%;" />
 
 - SpringMVC 是一种基于 Java 的实现 MVC 设计模型的请求驱动类型的轻量级 Web 框架，属于 Spring FrameWork 的后续产品，已经融合在 Spring Web Flow 里面。
 - Spring 框架提供了构建 Web 应用程序的全功 能 MVC 模块。使用 Spring 可插入的 MVC 架构，从而在使用 Spring 进行 WEB 开发时，可以选择使用 Spring 的 Spring MVC 框架或集成其他 MVC 开发框架，如 Struts1(现在一般不用)，Struts2 等。
 - SpringMVC 已经成为目前最主流的 MVC 框架之一，并且随着 Spring3.0 的发布，全面超越 Struts2，成 为最优秀的 MVC 框架。 它通过一套注解，让一个简单的 Java 类成为处理请求的控制器，而无须实现任何接口。同时它还支持 RESTful 编程风格的请求。
 
-![](https://gitee.com/veal98/images/raw/master/img/20200517221650.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200517221650.png)
 
 <br>
 
@@ -230,7 +230,7 @@ public class HelloController {
 
 ## 1. 执行过程
 
-![](https://gitee.com/veal98/images/raw/master/img/20200517232439.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200517232439.png)
 
 ## 2. 相关组件
 
@@ -876,7 +876,7 @@ public String testServletAPI(HttpServletRequest request,
 } 
 ```
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200518221216.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200518221216.png" style="zoom:80%;" />
 
 <br>
 
@@ -1610,7 +1610,7 @@ public class FileController {
 <img src="https://img-blog.csdnimg.cn/20200325110124710.png" alt="在这里插入图片描述" style="zoom:80%;" />
 
 ## 3. SpringMVC 跨服务器方式的文件上传
-<img src="https://gitee.com/veal98/images/raw/master/img/20200518220308.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200518220308.png" style="zoom:80%;" />
 
 **此处我们用两个 Tomcat 服务器模拟应用服务器和图片服务器**
 

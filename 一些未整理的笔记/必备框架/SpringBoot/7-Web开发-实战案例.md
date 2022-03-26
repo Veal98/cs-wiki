@@ -12,21 +12,21 @@
 
 Thymeleaf 取值语法：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200705173227.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200705173227.png" style="zoom:80%;" />
 
 👇 案例的最终效果如下：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200707144408.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200707144408.png)
 
 📄 目录结构如下：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200707144736.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200707144736.png)
 
 ## 1. 准备工作
 
 准备工作包括静态资源导入，实体类编写，以及模拟数据库操作
 
-![](https://gitee.com/veal98/images/raw/master/img/20200705161106.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200705161106.png)
 
 **添加依赖**：
 
@@ -306,13 +306,13 @@ public class MyMvcConfig implements WebMvcConfigurer {
 
 创建完毕后，两个文件会自动合并成一个文件夹：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200705165012.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200705165012.png)
 
 右键可直接添加配置文件
 
-![](https://gitee.com/veal98/images/raw/master/img/20200705165036.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200705165036.png)
 
-![](https://gitee.com/veal98/images/raw/master/img/20200705165220.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200705165220.png)
 
 
 
@@ -320,11 +320,11 @@ public class MyMvcConfig implements WebMvcConfigurer {
 
 可点击 `Resource Bundle` 进行可视化配置：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200705165321.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200705165321.png" style="zoom:80%;" />
 
 添加如下配置：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200705165925.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200705165925.png)
 
 同时在全局配置文件中添加如下配置：
 
@@ -390,7 +390,7 @@ public class MyLocaleResolver implements LocaleResolver {
 
 参考`LocaleResolver `类（获取区域信息对象）的源码如下：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200705171737.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200705171737.png" style="zoom:80%;" />
 
 将我们自己写的国际化组件配置到 Spring 的容器中（`@Bean`），即注册国际化组件：
 
@@ -416,7 +416,7 @@ public class MyMvcConfig implements WebMvcConfigurer {
 
 效果如下：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200705173441.gif" style="zoom: 67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200705173441.gif" style="zoom: 67%;" />
 
 ## 4. 登陆
 
@@ -488,7 +488,7 @@ registry.addViewController("/main.html").setViewName("dashboard");
 
 效果如下：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200705200333.png" style="zoom: 67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200705200333.png" style="zoom: 67%;" />
 
 
 
@@ -550,13 +550,13 @@ public class MyMvcConfig implements WebMvcConfigurer {
 
 效果如下，如果我们未经登录直接访问 `main.html` 的话：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200705202134.png" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200705202134.png" style="zoom:67%;" />
 
 ### ③ 回显用户名
 
 在后台管理界面实现用户名回显：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200705204017.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200705204017.png)
 
 在前端界面从 session 中取出数据就行了：
 
@@ -593,7 +593,7 @@ URI：  /资源名称/资源标识  （HTTP请求方式区分对资源CRUD操作
 
 展示员工信息
 
-![](https://gitee.com/veal98/images/raw/master/img/20200705213428.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200705213428.png)
 
 点击员工管理后调用 `list `函数显示所有员工信息：
 
@@ -752,7 +752,7 @@ spring.mvc.format.date=yyyy-MM-dd
 
 **最终效果如下**：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200707104649.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200707104649.png)
 
 ## 9. CRUD - 员工修改
 
@@ -852,11 +852,11 @@ public String toDeleteEmp(@PathVariable("id")Integer id){
 
 兄弟萌，在创建员工信息的时候，一定要注意Map 的 key 要和后面的 Employee 对象的 id 一致，否则没办法通过 `getEmployeeById `查询到对应的员工信息。如下是错误的示范：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200707142639.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200707142639.png)
 
 ✅ 下面是正确的：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200707142252.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200707142252.png)
 
 ## 12. 登出
 

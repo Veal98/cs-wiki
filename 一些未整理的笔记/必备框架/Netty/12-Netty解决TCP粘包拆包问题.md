@@ -13,7 +13,7 @@
 
 如下图展示了 TCP 粘包和拆包的一个示意图：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201215103019.png" style="zoom: 40%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201215103019.png" style="zoom: 40%;" />
 
 上图中演示了 TCP 粘包和拆包的三种情况：
 
@@ -228,7 +228,7 @@ public class DelimiterBasedFrameEncoder extends MessageToByteEncoder<String> {
 
 - 💧 解码器：`LengthFieldBasedFrameDecoder`会按照参数指定的包长度偏移量数据对接收到的数据进行解码，从而得到目标消息体数据
 
-  <img src="https://gitee.com/veal98/images/raw/master/img/20201215110849.png" style="zoom:50%;" />
+  <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201215110849.png" style="zoom:50%;" />
 
   `LengthFieldBasedFrameDecoder` 的构造函数包含 5 个参数：
 
@@ -240,7 +240,7 @@ public class DelimiterBasedFrameEncoder extends MessageToByteEncoder<String> {
 
 - 🌞 编码器：`LengthFieldPrepender `则会在响应的数据前面添加指定的字节数据，这个字节数据中保存了当前消息体的整体字节数据长度
 
-  <img src="https://gitee.com/veal98/images/raw/master/img/20201215110919.png" style="zoom:50%;" />
+  <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201215110919.png" style="zoom:50%;" />
 
 #### Ⅱ 代码示例
 

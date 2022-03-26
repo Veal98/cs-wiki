@@ -4,7 +4,7 @@
 
 ## 1. 使用注册中心
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201204170204.png" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201204170204.png" style="zoom:67%;" />
 
 参见 [SpringBoot + Dubbo + Zookeeper 搭建一个简单的分布式服务](https://veal98.gitee.io/cs-wiki/#/系统设计/分布式/RPC/3-SpringBoot+Dubbo+Zookeeper搭建一个简单的分布式服务)
 

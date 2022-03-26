@@ -40,7 +40,7 @@ Spring Security的两个主要目标是 “认证” 和 “授权”（访问�
 
 提取码：rhl8
 
-![](https://gitee.com/veal98/images/raw/master/img/20200711150850.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200711150850.png)
 
 新建一个 controller 控制界面跳转：
 
@@ -76,7 +76,7 @@ public class RouterController {
 }
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20200711150910.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200711150910.png)
 
 > 🚨 注意先别导入 SpringSecurity 模块，否则会直接跳转到 Login 界面~
 
@@ -99,7 +99,7 @@ public class RouterController {
 
 参考官网 [Example 81. OAuth2 Login Configuration](https://docs.spring.io/spring-security/site/docs/5.3.0.RELEASE/reference/html5/#oauth2login-provide-websecurityconfigureradapter) 登录配置的例子：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200711152242.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200711152242.png)
 
 新建一个基础配置类：
 
@@ -135,7 +135,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 OK，测试一下，我们只能访问首页了，如果点击其他界面，会报错 403 Forbidden：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200711153154.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200711153154.png)
 
 **在 `configure(HttpSecurity http)` 方法中加入以下配置，开启自动配置的登录功能**：
 
@@ -164,7 +164,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 测试一下：发现，没有权限的时候，会跳转到登录的页面：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200711153530.png" style="zoom: 67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200711153530.png" style="zoom: 67%;" />
 
 > 🚩 注意，这个登录界面是 Spring Security 自带的默认登录界面` /login`， 不是我们自己的
 
@@ -206,9 +206,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 ❓ 测试之后会报错：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200711154400.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200711154400.png)
 
-![](https://gitee.com/veal98/images/raw/master/img/20200711154416.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200711154416.png)
 
 💡 **原因就是我们要将前端传过来的密码进行某种方式加密，否则就无法登录。Spring security 官方推荐的是使用 `bcrypt` 加密方式。**：
 
@@ -273,13 +273,13 @@ protected void configure(HttpSecurity http) throws Exception {
 </div>
 ```
 
-> ![](https://gitee.com/veal98/images/raw/master/img/20200711161315.png)
+> ![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200711161315.png)
 >
 > 跳转的` /login` 和 `/logout` 界面都是 Spring Security 自带的默认界面。
 
-![](https://gitee.com/veal98/images/raw/master/img/20200711160348.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200711160348.png)
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200711160502.png" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200711160502.png" style="zoom:67%;" />
 
 登录成功后点击注销，注销完毕会跳转到登录页面。
 
@@ -339,7 +339,7 @@ http.logout().logoutSuccessUrl("/");
 </div>
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20200711161832.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200711161832.png)
 
 OK，我们继续将下面的角色功能块认证完成：
 
@@ -391,7 +391,7 @@ OK，我们继续将下面的角色功能块认证完成：
 
 🏃‍ 运行代码：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200711162435.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200711162435.png)
 
 ### ④ Remember me
 
@@ -410,7 +410,7 @@ protected void configure(HttpSecurity http) throws Exception {
 
 我们再次启动项目测试一下，发现登录页多了一个记住我功能：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200711162724.png" style="zoom: 67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200711162724.png" style="zoom: 67%;" />
 
 > ⚠ 注意，这个记住我功能是基于 Spring Security 的默认登录界面的，如果是自定义登录界面，需要另行配置，详见下文。
 
@@ -418,7 +418,7 @@ protected void configure(HttpSecurity http) throws Exception {
 
 我们可以查看浏览器的 cookie，默认保留 14 天：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200711162938.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200711162938.png" style="zoom:80%;" />
 
 点击注销的时候，Spring security 删除了这个 cookie。
 
@@ -507,9 +507,9 @@ protected void configure(HttpSecurity http) throws Exception {
 
 运行代码：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200711165504.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200711165504.png)
 
-![](https://gitee.com/veal98/images/raw/master/img/20200711165520.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200711165520.png)
 
 #### Ⅲ 解决注销后 404
 

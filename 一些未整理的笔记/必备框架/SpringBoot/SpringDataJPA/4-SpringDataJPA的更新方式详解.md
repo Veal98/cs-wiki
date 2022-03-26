@@ -82,7 +82,7 @@ public interface CrudRepository<T, ID> extends Repository<T, ID> {
 
 注意：``JpaRepository` 其实也继承了 `CrudRepository`，所以我们直接对接口继承 `JpaRepository`  也可使用 `save` 方法
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200925121457.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200925121457.png" style="zoom:50%;" />
 
 ### ② 原生 SQL 语句
 
@@ -92,7 +92,7 @@ public interface CrudRepository<T, ID> extends Repository<T, ID> {
 
 **还需要添加 `@Transactional` 注解（`org.springframework.transaction.annotation.Transactional`）来表明这个事务并非是只读的，可以对其进行操作**：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200826211320.png"  />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200826211320.png"  />
 
 由上可见 `@Transactional` 注解的 `readOnly` 默认的属性的 `false`，即非只读，只有当一个事务是非只读事务的时候，我们才可以进行操作。
 

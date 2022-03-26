@@ -67,7 +67,7 @@ public class HelloController {
 
 比如说，前端发送过来的数据如下：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200822154522.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200822154522.png)
 
 假如说有个 `Person` 类的属性也是 `name`、`age`、`hobby`，那么就可以使用 `Person` 类接收该数据：
 
@@ -78,6 +78,8 @@ public void demo1(@RequestBody Person person) {
     System.out.println(person.getAge());
 }
 ```
+
+> @RequestBody 注解可以省略
 
 当然，也可以使用 `Map` 进行接收：
 
@@ -125,7 +127,7 @@ public void demo1(@RequestBody Map<String, String> map) {
 
 后端可以通过 `HttpServletRequest` 获取请求头的内容，如：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200822160034.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200822160034.png)
 
 ```java
 @GetMapping("/demo3")

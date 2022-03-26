@@ -99,13 +99,13 @@ public class DubboSPITest {
 
 我们就先看下 `getExtensionLoader()` 做了什么：
 
- ![](https://gitee.com/veal98/images/raw/master/img/20201209212044.png)
+ ![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201209212044.png)
 
 很简单，做了一些判断然后<u>从缓存里面找是否已经存在这个类型的 `ExtensionLoader` ，如果没有就新建一个塞入缓存</u>。最后返回接口类对应的 `ExtensionLoader` 。
 
 我们再来看一下  `getExtension()` 方法，这个方法就是从类对应的 `ExtensionLoader` 中通过名字找到实例化完的实现类：
 
-![](https://gitee.com/veal98/images/raw/master/img/20201209212150.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201209212150.png)
 
 重点就是 **`createExtension()` 通过反射创建实例** 👇
 
@@ -153,7 +153,7 @@ private T createExtension(String name) {
 
 ⭐ 到这步为止，画个图帮助大家理解：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201209212404.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201209212404.png" style="zoom:80%;" />
 
 那么 `getExtensionClasses()` 是怎么根据 `name` 找到对应类的呢？`injectExtension()` 到底是如何注入的呢（set 方法注入）？为什么需要包装类呢？👇
 
@@ -361,7 +361,7 @@ private void loadClass(Map<String, Class<?>> extensionClasses, java.net.URL reso
 
 ⭐ 至此对于**普通类**来说整个 SPI 过程完结了：
 
-![](https://gitee.com/veal98/images/raw/master/img/20201209213223.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201209213223.png)
 
 接下来我们分别看不是普通类的几种东西是干啥用的。
 
@@ -375,7 +375,7 @@ private void loadClass(Map<String, Class<?>> extensionClasses, java.net.URL reso
 
 因此就搞了个包装类，Dubbo 里帮你自动包装，只**要某个扩展类的构造函数只有一个参数，并且是扩展接口类型，就会被判定为包装类**，然后记录下来，用来包装别的实现类。
 
-![](https://gitee.com/veal98/images/raw/master/img/20201209221730.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201209221730.png)
 
 ### injectExtension（IoC)
 

@@ -12,23 +12,23 @@
 
 > 💡`深度强化学习 DRL`：将深度学习技术引入强化学习的框架中，使深度学习的抽象感知能力与强化学习的决策控制能力完美结合，实现了从原始高维数据的抽象感知到直接控制输出的**端到端 End-to-End** 系统框架
 >
-> <img src="https://gitee.com/veal98/images/raw/master/img/20201119110824.png" style="zoom:60%;" />
+> <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201119110824.png" style="zoom:60%;" />
 
 这种新型结构是为什么被提出来呢? 原来, 传统的表格形式的强化学习有这样一个瓶颈：**【维度灾难】** 👇
 
 我们使用表格（Q-Table）来存储每一个状态 state, 和在这个 state 每个行为 action 所拥有的 Q 值. <u>而当今问题实在太复杂, 如围棋的状态数共有约 $10^{170}$ 之多。如果全用表格来存储它们, 恐怕我们的计算机有再大的内存都不够, 而且每次在这么大的表格中搜索对应的状态也是一件很耗时的事</u>. 
 
-![](https://gitee.com/veal98/images/raw/master/img/20201031105420.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201031105420.png)
 
 所以我们有必要对状态的维度进行压缩，解决办法就是 **价值函数近似 Value Function Approximation** 👇
 
 什么是价值函数近似呢？说起来很简单，就是用一个函数来表示Q(s,a)。即
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201110220825.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201110220825.png" style="zoom:80%;" />
 
 f可以是任意类型的函数，比如线性函数：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201110220838.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201110220838.png" style="zoom:80%;" />
 
  其中 $w_1, w_2, b$ 是函数 f 的参数。
 
@@ -36,11 +36,11 @@ f可以是任意类型的函数，比如线性函数：
 
 如果我们用 w 来统一表示函数f的参数，那么就有
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201110221013.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201110221013.png" style="zoom:80%;" />
 
 为什么叫近似，因为我们并不知道Q值的实际分布情况，本质上就是用一个函数来近似Q值的分布，所以，也可以说是
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201110221028.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201110221028.png" style="zoom:80%;" />
 
 **DQN 就是将 Q-Learning 和神经网络相结合，用一个深度神经网络来表示这个函数 f（即 Q 函数的近似）**
 
@@ -56,13 +56,13 @@ f可以是任意类型的函数，比如线性函数：
 
 大家回想一下 Q-Learning 算法，Q 值的更新依靠什么？依靠的是利用 Reward 和 Q 计算出来的目标 Q 值 / Q 现实：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201110221728.png" style="zoom: 50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201110221728.png" style="zoom: 50%;" />
 
 因此，我们把目标Q值 / Q 现实 作为标签不就完了？我们的目标不就是让Q估计值趋近于目标Q值/Q现实值吗？
 
 因此，DQN 的损失函数就是
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201110222021.png" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201110222021.png" style="zoom:67%;" />
 
 > 💡 $s'，a'$ 即下一个状态和动作。这里用了David Silver的表示方式，看起来比较清晰。
 
@@ -80,7 +80,7 @@ f可以是任意类型的函数，比如线性函数：
 
 **【优先经验回放 `Prioritized Experience Replay`】**：在训练的过程中，对于在经验 buffer 里面的样本，那些具有更好的 **TD 误差（ Q现实 - Q估计）**的样本会有更高的概率被采样，这样可以加快训练速度。
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201028213309.png" style="zoom:45%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201028213309.png" style="zoom:45%;" />
 
 在这个过程中，参数更新的过程也会有相应的更改。
 
@@ -96,7 +96,7 @@ f可以是任意类型的函数，比如线性函数：
 
 ## 4. DQN 整体算法
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201110222224.png" style="zoom: 50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201110222224.png" style="zoom: 50%;" />
 
 为了使用 Tensorflow 来实现 DQN, 比较推荐的方式是**搭建两个神经网络**, 一个用于预测 Q 现实 , 他不会及时更新参数. 另一个用于预测 Q 估计, 这个神经网络拥有最新的神经网络参数. 不过这两个神经网络结构是完全一样的, 只是里面的参数不一样. 
 
@@ -113,11 +113,11 @@ f可以是任意类型的函数，比如线性函数：
 
 **由于 DQN 是基于 Q-learning 的， Q 值总是基于使得 Q 最大的 action 得出，因此 Q 值会趋向于被高估  (overestimate)，于是引入 double DQN**
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201101121041.png" style="zoom: 42%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201101121041.png" style="zoom: 42%;" />
 
 我们知道 DQN 的神经网络部分可以看成一个 `最新的神经网络` + `老神经网络`, 他们有相同的结构, 但内部的参数更新却有时差. 它的 `Q现实/目标Q值` 部分是这样的:
 
-![](https://gitee.com/veal98/images/raw/master/img/20201101121807.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201101121807.png)
 
 因为我们的神经网络预测 `Qmax` 本来就有误差, 每次也向着最大误差的 `Q现实` 改进神经网络, 就是因为这个 `Qmax` 导致了 overestimate.
 
@@ -125,23 +125,23 @@ Double DQN 的想法就是引入另一个神经网络来打消一些最大误差
 
  **一个 Q-network（$\hat Q$） 用来计算 Q 估计（最新参数），另外一个 Q-network 用来计算 Q 现实（参数较老）**，我们用 `Q估计` 的神经网络估计 `Q现实` 中 `Qmax(s', a')` 的最大动作值. 然后用这个被 `Q估计` 估计出来的动作来选择 `Q现实` 中的 `Q(s')`. 
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201111093036.png" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201111093036.png" style="zoom:67%;" />
 
 即 Double DQN 的损失函数为：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201111092624.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201111092624.png" style="zoom:50%;" />
 
 ## 6. Dueling DQN
 
 只要稍稍修改 DQN 中神经网络的结构, 就能大幅提升学习效果, 加速收敛. 这种新方法叫做 Dueling DQN. 用一句话来概括 Dueling DQN 就是. 它将每个动作的 Q 拆分成了 state 的 Value 加上 每个动作的 Advantage.
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201101122106.png" style="zoom:40%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201101122106.png" style="zoom:40%;" />
 
 本来的 DQN 就是直接输出 Q 函数的值。现在这个 dueling 的 DQN，它不直接输出 Q 函数的值，它分成两条 path 去运算，**第一个 path 算出一个标量 $V(s)$ 即每列的平均值**。因为它跟输入 s 是有关系，所以叫做 V(s)。**第二个path 会输出一个向量 $A(s,a)$ 即分别使用每列的数据减去该列的平均值**，该向量具有列零和特征。
 
 把 $V(s)$ 和 $A(S,a)$ 加起来就得到 Q 函数的值
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201028211522.png" style="zoom: 22%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201028211522.png" style="zoom: 22%;" />
 
 ## 7. 基于 CartPole 的 DQN 实现
 

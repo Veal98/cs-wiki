@@ -15,7 +15,7 @@
 
 通过下面这张图你可以将我提到的这些 Netty 核心组件串联起来：
 
-![](https://gitee.com/veal98/images/raw/master/img/20201210152621.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201210152621.png)
 
 ## 2. Bytebuf 字节容器
 
@@ -74,7 +74,7 @@
 
 从上面的示例中，我们可以看出：
 
-![](https://gitee.com/veal98/images/raw/master/img/20201210221726.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201210221726.png)
 
 1. `Bootstrap` 通常使用 `connet()` 方法连接到远程的主机和端口，作为一个 Netty **TCP** 协议通信中的客户端。另外，`Bootstrap` 也可以通过 `bind()` 方法绑定本地的一个端口，作为 **UDP** 协议通信中的一端。
 2. `ServerBootstrap`通常使用 `bind()` 方法绑定本地的端口上，然后等待客户端的连接。
@@ -139,7 +139,7 @@
 
 下图是 Netty **NIO** 模型对应的 `EventLoop` 模型。通过这个图应该可以将 `EventloopGroup`、`EventLoop`、 `Channel` 三者联系起来：
 
-![](https://gitee.com/veal98/images/raw/master/img/20201210213439.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201210213439.png)
 
 ## 6. ChannelHandler（消息处理器）和 ChannelPipeline（ChannelHandler 对象链表）
 
@@ -151,7 +151,7 @@
 
 `ChannelHandler` 主要分为处理入站数据的 `ChannelInboundHandler` 和出站数据的 `ChannelOutboundHandler `接口。
 
-![](https://gitee.com/veal98/images/raw/master/img/20201210222527.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201210222527.png)
 
 Netty 以**适配器**的形式提供了大量默认的 `ChannelHandler` 实现，主要目的是为了简化程序开发的过程，我们只需要 重写我们关注的事件和方法就可以了。 通常我们会**以继承的方式使用以下适配器和抽象**:
 
@@ -182,7 +182,7 @@ Netty 以**适配器**的形式提供了大量默认的 `ChannelHandler` 实现�
 
 从服务端角度来看，如果一个事件的运动方向是从客户端到服务端，那么这个事件是入站的，如果事件运动的方向 是从服务端到客户端，那么这个事件是出站的。
 
-![](https://gitee.com/veal98/images/raw/master/img/20201210222844.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201210222844.png)
 
 上图是 Netty 事件入站和出站的大致流向，入站和出站的 `ChannelHandler` 可以被安装到一个`ChannelPipeline`中， 如果一个消息或其他的入站事件被[读取]，那么它会从`ChannelPipeline`的头部开始流动，并传递给第一个`ChannelInboundHandler `，这个`ChannelHandler`的行为取决于它的具体功能，不一定会修改消息。 在经历过第一个`ChannelInboundHandler`之后， 消息会被传递给这条`ChannelHandler`链的下一个`ChannelHandler`，最终消息会到达`ChannelPipeline`尾端，消息的读取也就结束了。
 
@@ -194,7 +194,7 @@ Netty 以**适配器**的形式提供了大量默认的 `ChannelHandler` 实现�
 
 当`ChannelHandler`被添加到`ChannelPipeline`中后，它会被分配一个`ChannelHandlerContext`， 它代表了`ChannelHandler`和`ChannelPipeline`之间的绑定。 `ChannelPipeline` 通过 `ChannelHandlerContext`来间接管理 `ChannelHandler` 。
 
-![](https://gitee.com/veal98/images/raw/master/img/20201210220033.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201210220033.png)
 
 ### ④ 编码器、解码器
 

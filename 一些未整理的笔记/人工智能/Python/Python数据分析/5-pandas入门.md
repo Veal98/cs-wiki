@@ -275,7 +275,7 @@ Out[45]:
 
 如果你使用的是Jupyter notebook，pandas DataFrame 对象会以对浏览器友好的HTML表格的方式呈现。
 
-![](https://gitee.com/veal98/images/raw/master/img/20200610094138.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200610094138.png)
 
 对于特别大的 DataFrame，**`head` 方法会选取前五行**：
 ```python
@@ -483,7 +483,7 @@ Out[71]:
 
 👇 下表列出了 DataFrame 构造函数所能接受的各种数据：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200610100025.png" style="zoom: 67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200610100025.png" style="zoom: 67%;" />
 
 如果设置了DataFrame的index和columns的name属性，则这些信息也会被显示出来：
 ```python
@@ -594,7 +594,7 @@ Out[90]: Index(['foo', 'foo', 'bar', 'bar'], dtype='object')
 
 每个索引都有一些方法和属性，它们可用于设置逻辑并回答有关该索引所包含的数据的常见问题。下表列出了这些函数：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200610102825.png" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200610102825.png" style="zoom:67%;" />
 
 ## 5.3 基本功能
 😀 <u>本节中，我将介绍操作Series和DataFrame中的数据的基本手段</u>。后续章节将更加深入地挖掘 pandas 在数据分析和处理方面的功能。本书不是 pandas 库的详尽文档，主要关注的是最重要的功能，那些不大常用的内容（也就是那些更深奥的内容）就交给你自己去摸索吧。
@@ -687,7 +687,7 @@ d      7   NaN           8
 
 下表列出了 reindex 函数的各参数及说明：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200610104807.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200610104807.png" style="zoom:80%;" />
 
 ### 2. 丢弃指定轴上的项
 **丢弃某条轴上的一个或多个项很简单，只要有一个索引数组或列表即可**。由于需要执行一些数据整理和集合逻辑，所以 **`drop` 方法返回的是一个在指定轴上删除了指定值的<u>新对象</u>**：
@@ -990,7 +990,7 @@ New York   12   13     14
 
 所以，在pandas中，有多个方法可以选取和重新组合数据。对于DataFrame，下表进行了总结。后面会看到，还有更多的方法进行层级化索引。
 
-![](https://gitee.com/veal98/images/raw/master/img/20200610110712.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200610110712.png)
 
 > 🚩 在一开始设计pandas时，我觉得用 `frame[:, col]` 取列过于繁琐（也容易出错），因为列的选择是非常常见的操作。我做了些取舍，将花式索引的功能（标签和整数）放到了 ix 运算符中。在实践中，这会导致许多边缘情况，数据的轴标签是整数，所以pandas团队决定创造loc和iloc运算符分别处理严格基于标签和整数的索引。
 > ix 运算符仍然可用，但并不推荐。
@@ -1212,7 +1212,7 @@ Out[173]:
 2  0.125000  0.111111  0.100000  0.090909
 ```
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200610112137.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200610112137.png" style="zoom:80%;" />
 
 与此类似，在对Series或DataFrame重新索引时，也可以指定一个填充值：
 ```python
@@ -1564,7 +1564,7 @@ dtype: float64
 
 下表列出了所有用于破坏平级关系的 method 选项：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200610114943.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200610114943.png" style="zoom:80%;" />
 
 DataFrame 可以在行或列上计算排名：
 
@@ -1699,7 +1699,7 @@ dtype: float64
 
 下表列出了这些约简方法的常用选项：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200610143619.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200610143619.png" style="zoom:80%;" />
 
 有些方法（如 idxmin 和 idxmax ）返回的是间接统计（比如达到最小值或最大值的索引）：
 ```python
@@ -1751,7 +1751,7 @@ dtype: object
 
 下表列出了所有与描述统计相关的方法：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200610143815.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200610143815.png)
 
 ### 2. 相关系数与协方差
 有些汇总统计（如相关系数和协方差）是通过参数对计算出来的。我们来看几个DataFrame，它们的数据来自 Yahoo!Finance 的股票价格和成交量，使用的是pandas-datareader包（可以用conda或pip安装）：
@@ -1936,7 +1936,7 @@ Out[262]: array([0, 2, 1, 1, 0, 2])
 
 下表给出了这几个方法的一些参考信息：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200610144813.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200610144813.png)
 
 有时，你可能希望得到DataFrame中多个相关列的一张柱状图。例如：
 ```python
@@ -1981,7 +1981,7 @@ Out[266]:
 
 - 📕  [《利用Python进行数据分析-第2版-中文译版》](https://www.jianshu.com/p/04d180d90a3f)
 
-  <img src="https://gitee.com/veal98/images/raw/master/img/20200607091609.png" style="zoom:50%;" />
+  <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200607091609.png" style="zoom:50%;" />
 
 - 🚝 [Gihub《Python数据分析》配套源码](https://github.com/wesm/pydata-book)
 

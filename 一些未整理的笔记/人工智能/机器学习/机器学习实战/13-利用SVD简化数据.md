@@ -8,7 +8,7 @@
 
 ⭐ **奇异值分解的定义**如下：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200802174615.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200802174615.png" style="zoom:80%;" />
 
 <u>对于任意实矩阵，奇异值分解一定存在</u>
 
@@ -16,7 +16,7 @@ SVD 将原始的数据集矩阵 Data 分解成 3 个矩阵 U、∑、V，如果�
 
 ⭐ 即：$Data_{m*n} = U_{m*m} * ∑_{m*n} * V^T_{n*n}$
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200802163434.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200802163434.png" style="zoom:80%;" />
 
 🚩 注意：
 
@@ -40,7 +40,7 @@ SVD 将原始的数据集矩阵 Data 分解成 3 个矩阵 U、∑、V，如果�
 
 我们利用 Numpy 的 `linalg` 的线性代数工具箱来实现奇异值分解。
 
-比如说，分解该矩阵：<img src="https://gitee.com/veal98/images/raw/master/img/20200801215237.png" style="zoom:80%;" />
+比如说，分解该矩阵：<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200801215237.png" style="zoom:80%;" />
 
 ```python
 import numpy as np
@@ -48,7 +48,7 @@ import numpy as np
 U,Sigma,VT = np.linalg.svd([[1,1],[7,7]]) # 2x2
 ```
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200801220502.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200801220502.png" style="zoom:80%;" />
 
 OK，接下来处理一个稍大的数据集：
 
@@ -67,17 +67,17 @@ Data = loadExData()
 U,Sigma,VT = np.linalg.svd(Data)
 ```
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200801220821.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200801220821.png" style="zoom:80%;" />
 
 分解出的 5 个奇异值中后 2 个数值比前面小了太多，所以我们就可以将最后两个值去掉了。
 
 这样，利用新的 Σ 对原始数据矩阵进行近似从而实现降维：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200801221221.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200801221221.png)
 
 💡 上述近似计算的示意图如下：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200801221818.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200801221818.png" style="zoom:80%;" />
 
 OK，现在我们已经通过 3 个矩阵对原始矩阵进行了近似，下面我们将讨论一个比较流行的 SVD 应用的例子——推荐引擎。
 
@@ -99,11 +99,11 @@ OK，现在我们已经通过 3 个矩阵对原始矩阵进行了近似，下面
 
 比如说，我们看下面这个用户对菜品的打分矩阵：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200802141949.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200802141949.png" style="zoom:80%;" />
 
-手撕猪肉和烤牛肉之间的欧式距离为：<img src="https://gitee.com/veal98/images/raw/master/img/20200802142202.png" style="zoom:80%;" />
+手撕猪肉和烤牛肉之间的欧式距离为：<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200802142202.png" style="zoom:80%;" />
 
-而手撕猪肉和鳗鱼饭之间的欧氏距离为：<img src="https://gitee.com/veal98/images/raw/master/img/20200802142246.png" style="zoom:80%;" />
+而手撕猪肉和鳗鱼饭之间的欧氏距离为：<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200802142246.png" style="zoom:80%;" />
 
 显然，手撕猪肉和烤牛肉更为相似。
 
@@ -132,9 +132,9 @@ def loadExData():
 myMat = np.mat(loadExData())
 ```
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200802145612.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200802145612.png" style="zoom:80%;" />
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200802145635.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200802145635.png" style="zoom:80%;" />
 
 #### Ⅱ 皮尔逊相关系数 Pearson correlation
 
@@ -154,13 +154,13 @@ def pearsSim(inA, inB):
 
 🏃‍ 运行该代码：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200802145821.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200802145821.png" style="zoom:80%;" />
 
 #### Ⅲ 余弦相似度 cosine similarity
 
 它计算的是两个向量夹角的余弦值。如果夹角为 90 度，则相似度为 0，如果两个向量方向相同，即夹角为 0，则相似度为 1。
 
-两个向量 A 和 B 的余弦相似度为 <img src="https://gitee.com/veal98/images/raw/master/img/20200802143523.png" style="zoom:80%;" /> ，$||A||$ 表示向量 A 的 2 范数。比如 向量 $[4,2,2]$ 的 2 范数为：<img src="https://gitee.com/veal98/images/raw/master/img/20200802144014.png" style="zoom:80%;" />，在 Numpy 中，计算 $||A||$ 的函数为 `linalg.norm()`
+两个向量 A 和 B 的余弦相似度为 <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200802143523.png" style="zoom:80%;" /> ，$||A||$ 表示向量 A 的 2 范数。比如 向量 $[4,2,2]$ 的 2 范数为：<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200802144014.png" style="zoom:80%;" />，在 Numpy 中，计算 $||A||$ 的函数为 `linalg.norm()`
 
 余弦相似度的取值范围在 -1 到 1 之间，同样要将其归一化到 0 到 1 之间，得出 `相似度= 0.5 + 0.5*( float(A.T*B) / np.linalg.norm(A) * np.linalg.norm(B))`
 
@@ -176,7 +176,7 @@ def cosSim(inA, inB):
 
 🏃‍ 运行该代码：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200802145649.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200802145649.png" style="zoom:80%;" />
 
 ### ② 基于物品的相似度还是基于用户的相似度？
 
@@ -297,7 +297,7 @@ def loadExData():
 myMat = np.mat(loadExData())
 ```
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200802160333.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200802160333.png" style="zoom:80%;" />
 
 这表明了用户 2（第 3 行） 对物品 2 （第 3 列）的预测评分值为 2.5，对 物品 1 的预测评分值为 2.02
 
@@ -328,7 +328,7 @@ def loadExData2():
 myMat = np.mat(loadExData2())
 ```
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200802160808.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200802160808.png" style="zoom:80%;" />
 
 我们可以将用户物品评分矩阵进行SVD分解，将原始矩阵降维到一个低维矩阵（其中 U 矩阵可以将物品转换到低维空间，而 V 矩阵可以将用户转换到低维空间），从而减少计算相似度时的计算量，提高效率。在低维空间下，再利用前面的相似度方法来进行推荐。
 
@@ -383,7 +383,7 @@ def svdEst(dataMat, user, simMeas, item):
 
 🏃‍ 运行该代码：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200802162027.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200802162027.png" style="zoom:80%;" />
 
 ### ③ 构建推荐系统面临的挑战
 
@@ -403,7 +403,7 @@ def svdEst(dataMat, user, simMeas, item):
 
 - 《Machine Learning in Action》
 
-  <img src="https://gitee.com/veal98/images/raw/master/img/20200804111716.png" style="zoom:80%;" />
+  <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200804111716.png" style="zoom:80%;" />
 
 - 《机器学习 — 周志华》
 

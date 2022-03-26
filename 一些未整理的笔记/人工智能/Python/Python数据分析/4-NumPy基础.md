@@ -179,7 +179,7 @@ Out[32]: array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14])
 
 下表列出了一些数组创建函数。**由于 NumPy 关注的是数值计算，因此，如果没有特别指定，数据类型基本都是 float64（浮点数）**。
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200609091524.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200609091524.png" style="zoom:80%;" />
 
 ### ③ ndarray的数据类型
 dtype（数据类型）是一个特殊的对象，它含有 ndarray 将一块内存解释为特定数据类型所需的信息：
@@ -197,7 +197,7 @@ Out[36]: dtype('int32')
 
 dtype 是 NumPy 灵活交互其它系统的源泉之一。多数情况下，它们直接映射到相应的机器表示，这使得“读写磁盘上的二进制数据流”以及“集成低级语言代码（如C、Fortran）”等工作变得更加简单。数值型dtype的命名方式相同：🚩 **一个类型名（如float或int），后面跟一个用于表示各元素位长的数字**。标准的双精度浮点值（即Python中的float对象）需要占用8字节（即64位）。因此，该类型在NumPy中就记作float64。下表列出了NumPy所支持的全部数据类型。
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200609091853.png" style="zoom: 67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200609091853.png" style="zoom: 67%;" />
 
 >🙂 记不住这些 NumPy 的 dtype 也没关系，新手更是如此。通常只需要知道你所处理的数据的大致类型是浮点数、复数、整数、布尔值、字符串，还是普通的Python对象即可。当你需要控制数据在内存和磁盘中的存储方式时（尤其是对大数据集），那就得了解如何控制存储类型。
 
@@ -385,7 +385,7 @@ Out[75]: 3
 
 下图说明了二维数组的索引方式：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200609094442.png" style="zoom: 33%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200609094442.png" style="zoom: 33%;" />
 
 在多维数组中，如果省略了后面的索引，则返回对象会是一个维度低一点的ndarray（它含有高一级维度上的所有数据）。因此，在2×2×3数组arr3d中：
 ```python
@@ -509,7 +509,7 @@ array([[1],
        [7]])
 ```
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200609095009.png" style="zoom: 67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200609095009.png" style="zoom: 67%;" />
 
 
 自然，**对切片表达式的赋值操作也会被扩散到整个选区**：
@@ -914,9 +914,9 @@ Out[154]: array([    nan,     nan,     nan,  2.318 ,  1.9022,  1.8574,  2.2378])
 
 下表分别列出了一些一元和二元ufunc：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200609104555.png" style="zoom: 80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200609104555.png" style="zoom: 80%;" />
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200609104617.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200609104617.png" style="zoom:80%;" />
 
 
 
@@ -980,7 +980,7 @@ Out[162]: <matplotlib.text.Text at 0x7f715d2de748>
 
 如下图，是用 matplotlib 的 `imshow` 函数创建的。
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200609105451.png" style="zoom:50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200609105451.png" style="zoom:50%;" />
 
 ### ② 将条件逻辑表述为数组运算 
 **`numpy.where` 函数是三元表达式 x if condition else y 的矢量化版本**。假设我们有一个布尔数组和两个值数组：
@@ -1119,7 +1119,7 @@ array([[  0,   0,   0],
 
 下表列出了全部的基本数组统计方法。后续章节中有很多例子都会用到这些方法。
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200609110824.png" style="zoom: 67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200609110824.png" style="zoom: 67%;" />
 
 ### ④ 用于布尔型数组的方法
 在上面这些方法中，布尔值会被强制转换为 1（True）和 0（False）。因此，sum 经常被用来对布尔型数组中的 True 值计数：
@@ -1182,7 +1182,7 @@ array([[-0.2555,  0.6033,  1.2636],
 
 ⭐ **顶级方法 `np.sort` 返回的是数组的已排序副本，而就地排序则会修改数组本身**：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200609111407.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200609111407.png" style="zoom:80%;" />
 
 计算数组分位数最简单的办法是对其进行排序，然后选取特定位置的值：
 
@@ -1353,7 +1353,7 @@ array([[-1.6914,  4.38  ,  0.1757,  0.4075, -0.7838],
 
 下表列出了一些最常用的线性代数函数：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200609112050.png" style="zoom: 67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200609112050.png" style="zoom: 67%;" />
 
 ## 4.7 伪随机数生成
 `numpy.random` 模块对Python内置的random进行了补充，增加了一些用于高效生成多种概率分布的样本值的函数。例如，你可以用 `normal` 来得到一个标准正态分布的 4×4 样本数组：
@@ -1400,7 +1400,7 @@ array([ 0.4714, -1.191 ,  1.4327, -0.3127, -0.7206,  0.8872,  0.8596,
 
 下表列出了numpy.random中的部分函数。在下一节中，我将给出一些利用这些函数一次性生成大量样本值的范例：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200609112331.png" style="zoom: 67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200609112331.png" style="zoom: 67%;" />
 
 ## 4.8 示例：随机漫步 Random Walk
 
@@ -1442,7 +1442,7 @@ In [247]: import random
 In [249]: plt.plot(walk[:100])
 ```
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200609112445.png" style="zoom: 50%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200609112445.png" style="zoom: 50%;" />
 
 不难看出，这其实就是随机漫步中各步的累计和，可以用一个数组运算来实现。因此，我用np.random模块一次性随机产生1000个“掷硬币”结果（即两个数中任选一个），将其分别设置为1或－1，然后计算累计和：
 ```python
@@ -1535,7 +1535,7 @@ In [271]: steps = np.random.normal(loc=0, scale=0.25,
 
 矩阵里的元素可以是数字、符号或数学式。以下是一个由 6 个数字元素构成的 2 行 3 列的矩阵：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200711211207.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200711211207.png" style="zoom:80%;" />
 
 ### ① 创建一个 matrix
 
@@ -1547,7 +1547,7 @@ a = np.matrix('1 2; 3 4')
 a = np.mat('1 2; 3 4')
 ```
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200711211755.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200711211755.png" style="zoom:80%;" />
 
 或者
 
@@ -1555,7 +1555,7 @@ a = np.mat('1 2; 3 4')
 np.matrix([[1, 2], [3, 4]])
 ```
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200711211827.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200711211827.png" style="zoom:80%;" />
 
 ### ② matrix 和 array 的不同之处
 
@@ -1609,13 +1609,13 @@ print(mata*matb)
 
 对比 array：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200711213052.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200711213052.png)
 
 而对于**点乘（对应元素相乘）**：array 中 `*` 代表点乘，而在 matrix 中 `multiply()` 代表点乘。
 
 对于**矩阵平方**：array() 的平方是矩阵对应位置数的平方。mat() 的平方是矩阵与自身的乘积：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200711214326.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200711214326.png)
 
 >  matrix 和 array 都可以通过objects后面加`.T` 得到其转置。
 
@@ -1623,17 +1623,17 @@ print(mata*matb)
 
 💡 **使用 `matrix.getA()` 可以将 matrix 转换成 array**：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200711213340.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200711213340.png)
 
 **直接使用 `np.mat(array)` 将 array 转换成 matrix**：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200711214652.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200711214652.png)
 
 ## 📚 References
 
 - 📕  [《利用Python进行数据分析-第2版-中文译版》](https://www.jianshu.com/p/04d180d90a3f)
 
-  <img src="https://gitee.com/veal98/images/raw/master/img/20200607091609.png" style="zoom:50%;" />
+  <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200607091609.png" style="zoom:50%;" />
 
 - 🚝 [Gihub《Python数据分析》配套源码](https://github.com/wesm/pydata-book)
 

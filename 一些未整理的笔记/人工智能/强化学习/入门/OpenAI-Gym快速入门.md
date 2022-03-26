@@ -6,7 +6,7 @@
 
 管理员身份打开 Anaconda Promt，进入 tensorflow 环境：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201102203831.png" style="zoom: 80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201102203831.png" style="zoom: 80%;" />
 
 在配置好的 tensorflow 环境下安装 gym：
 
@@ -16,7 +16,7 @@
 pip install gym
 ```
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201102113908.png" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201102113908.png" style="zoom:67%;" />
 
 ## 2. 核心概念
 

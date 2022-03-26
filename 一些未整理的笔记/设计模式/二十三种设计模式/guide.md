@@ -9,11 +9,11 @@
 | 序号 |                             图稿                             |                             模式                             | 🏆 重要性 |
 | :--: | :----------------------------------------------------------: | :----------------------------------------------------------: | :------: |
 |      |                                                              | [简单工厂模式 (Simple Factory) / 静态工厂方法模式 (Static Factory Method)](设计模式/二十三种设计模式/创建型模式/0-简单工厂模式.md) |    4     |
-|  1   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206212655.png" alt="img" style="zoom:80%;" /> | [工厂方法模式 (Factory Method) / 工厂模式 (Factory)](设计模式/二十三种设计模式/创建型模式/1-工厂方法模式.md) |    5     |
-|  2   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206212930.png" alt="img" style="zoom:80%;" /> | [抽象工厂模式 (Abstract Factory)](设计模式/二十三种设计模式/创建型模式/2-抽象工厂模式.md) |    5     |
-|  3   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206212713.png" alt="img" style="zoom:80%;" /> | [建造者模式 / 生成器模式 (Builder)](设计模式/二十三种设计模式/创建型模式/3-建造者模式.md) |    2     |
-|  4   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206212723.png" alt="img" style="zoom:80%;" /> | [原型模式 (Prototype)](设计模式/二十三种设计模式/创建型模式/4-原型模式.md) |    1     |
-|  5   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206212734.png" alt="img" style="zoom:80%;" /> | [单例模式 (Singleton)](设计模式/二十三种设计模式/创建型模式/5-单例模式.md) |    4     |
+|  1   | <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201206212655.png" alt="img" style="zoom:80%;" /> | [工厂方法模式 (Factory Method) / 工厂模式 (Factory)](设计模式/二十三种设计模式/创建型模式/1-工厂方法模式.md) |    5     |
+|  2   | <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201206212930.png" alt="img" style="zoom:80%;" /> | [抽象工厂模式 (Abstract Factory)](设计模式/二十三种设计模式/创建型模式/2-抽象工厂模式.md) |    5     |
+|  3   | <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201206212713.png" alt="img" style="zoom:80%;" /> | [建造者模式 / 生成器模式 (Builder)](设计模式/二十三种设计模式/创建型模式/3-建造者模式.md) |    2     |
+|  4   | <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201206212723.png" alt="img" style="zoom:80%;" /> | [原型模式 (Prototype)](设计模式/二十三种设计模式/创建型模式/4-原型模式.md) |    1     |
+|  5   | <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201206212734.png" alt="img" style="zoom:80%;" /> | [单例模式 (Singleton)](设计模式/二十三种设计模式/创建型模式/5-单例模式.md) |    4     |
 
 ## 2. 结构型模式 Structural Pattern
 
@@ -27,13 +27,13 @@
 
 | 序号 |                             图稿                             |         模式         | 🏆 重要性 |
 | :--: | :----------------------------------------------------------: | :------------------: | :------: |
-|  1   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214000.png" alt="img" style="zoom:67%;" /> | 适配器模式 (Adapter) |    4     |
-|  2   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214020.png" alt="img" style="zoom:80%;" /> |  桥接模式 (Bridge)   |    3     |
-|  3   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214031.png" alt="img" style="zoom:80%;" /> | 组合模式 (Composite) |    4     |
-|  4   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214051.png" alt="img" style="zoom:80%;" /> | 装饰模式 (Decorator) |    3     |
-|  5   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214107.png" alt="img" style="zoom:80%;" /> |  外观模式 (Facade)   |    5     |
-|  6   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214116.png" alt="img" style="zoom:80%;" /> | 享元模式 (Flyweight) |    1     |
-|  7   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214125.png" alt="img" style="zoom:80%;" /> |   代理模式 (Proxy)   |    4     |
+|  1   | <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201206214000.png" alt="img" style="zoom:67%;" /> | 适配器模式 (Adapter) |    4     |
+|  2   | <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201206214020.png" alt="img" style="zoom:80%;" /> |  桥接模式 (Bridge)   |    3     |
+|  3   | <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201206214031.png" alt="img" style="zoom:80%;" /> | 组合模式 (Composite) |    4     |
+|  4   | <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201206214051.png" alt="img" style="zoom:80%;" /> | 装饰模式 (Decorator) |    3     |
+|  5   | <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201206214107.png" alt="img" style="zoom:80%;" /> |  外观模式 (Facade)   |    5     |
+|  6   | <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201206214116.png" alt="img" style="zoom:80%;" /> | 享元模式 (Flyweight) |    1     |
+|  7   | <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201206214125.png" alt="img" style="zoom:80%;" /> |   代理模式 (Proxy)   |    4     |
 
 ## 3. 行为型模式 Behavioral Pattern
 
@@ -47,17 +47,17 @@
 
 | 序号 |                             图稿                             |                 模式                 | 🏆 重要性 |
 | :--: | :----------------------------------------------------------: | :----------------------------------: | :------: |
-|  1   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214241.png" alt="img" style="zoom:80%;" /> | 职责链模式 (Chain of Responsibility) |    3     |
-|  2   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214249.png" alt="img" style="zoom:80%;" /> |          命令模式 (Command)          |    4     |
+|  1   | <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201206214241.png" alt="img" style="zoom:80%;" /> | 职责链模式 (Chain of Responsibility) |    3     |
+|  2   | <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201206214249.png" alt="img" style="zoom:80%;" /> |          命令模式 (Command)          |    4     |
 |  3   |                                                              |       解释器模式 (Interpreter)       |    1     |
-|  4   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214316.png" alt="img" style="zoom:80%;" /> |        迭代器模式 (Iterator)         |    5     |
-|  5   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214327.png" alt="img" style="zoom:80%;" /> |        中介者模式 (Mediator)         |    2     |
-|  6   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214340.png" alt="img" style="zoom:80%;" /> |         备忘录模式 (Memento)         |    2     |
-|  7   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214348.png" alt="img" style="zoom:80%;" /> |        观察者模式 (Observer)         |    5     |
-|  8   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214407.png" alt="img" style="zoom:80%;" /> |           状态模式 (State)           |    3     |
-|  9   | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214416.png" alt="img" style="zoom:80%;" /> |         策略模式 (Strategy)          |    4     |
-|  10  | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214426.png" alt="img" style="zoom:80%;" /> |    模板方法模式 (Template Method)    |    3     |
-|  11  | <img src="https://gitee.com/veal98/images/raw/master/img/20201206214437.png" alt="img" style="zoom:80%;" /> |         访问者模式 (Visitor)         |    1     |
+|  4   | <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201206214316.png" alt="img" style="zoom:80%;" /> |        迭代器模式 (Iterator)         |    5     |
+|  5   | <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201206214327.png" alt="img" style="zoom:80%;" /> |        中介者模式 (Mediator)         |    2     |
+|  6   | <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201206214340.png" alt="img" style="zoom:80%;" /> |         备忘录模式 (Memento)         |    2     |
+|  7   | <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201206214348.png" alt="img" style="zoom:80%;" /> |        观察者模式 (Observer)         |    5     |
+|  8   | <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201206214407.png" alt="img" style="zoom:80%;" /> |           状态模式 (State)           |    3     |
+|  9   | <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201206214416.png" alt="img" style="zoom:80%;" /> |         策略模式 (Strategy)          |    4     |
+|  10  | <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201206214426.png" alt="img" style="zoom:80%;" /> |    模板方法模式 (Template Method)    |    3     |
+|  11  | <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201206214437.png" alt="img" style="zoom:80%;" /> |         访问者模式 (Visitor)         |    1     |
 
 ## 📚 References
 

@@ -30,7 +30,7 @@
 
 服务端包含三个文件：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201214210723.png" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201214210723.png" style="zoom:67%;" />
 
 - `SimpleChatServer`：用于绑定端口启动服务端
 - `SimpleChatServerHandler`：用于处理服务端的 I/O 事件。包括：
@@ -334,7 +334,7 @@ public class SimpleChatServer {
 
 客户端同样包含三个文件：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201214214106.png" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201214214106.png" style="zoom:67%;" />
 
 - `SimpleChatClient`：用于绑定端口启动客户端
 - `SimpleChatClientHandler`：用于处理客户端的 I/O 事件。客户端的处理比较简单，只需要将读到的信息打印出来即可
@@ -458,19 +458,19 @@ public class SimpleChatClient {
 
 🚨 注意，为了允许客户端的多次运行，需要进行如下设置：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201214205648.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201214205648.png" style="zoom:80%;" />
 
 服务端：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201214210012.png" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201214210012.png" style="zoom:67%;" />
 
 客户端 1：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201214205843.png" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201214205843.png" style="zoom:67%;" />
 
 客户端 2：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201214205854.png" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201214205854.png" style="zoom:67%;" />
 
 ## 📚 References
 

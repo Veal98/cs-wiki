@@ -33,7 +33,7 @@ ZooKeeper 数据模型采用**层次化的多叉树形结构（类似于 Linux �
 
 并且，每个节点还可以拥有 N 个子节点，最上层是根节点以“`/`”来代表。每个数据节点在 ZooKeeper 中被称为 **节点 znode**，它是 ZooKeeper 中数据的最小单元。**每个 znode 都有一个唯一的路径标识**。开发人员可以向节点中写入数据，也可以在节点下面创建子节点，这些操作我们后面都会介绍到。
 
-![](https://gitee.com/veal98/images/raw/master/img/20201129150633.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201129150633.png)
 
 🚨 强调一句：**ZooKeeper 主要是用来协调服务的，而不是用来存储业务数据的，所以不要放比较大的数据在 znode 上，ZooKeeper 给出的上限是每个结点的数据大小最大是 1M。**
 
@@ -116,7 +116,7 @@ ZooKeeper 采用 `ACL（Access Control Lists）访问控制列表` 策略来进�
 
 `Watcher` 为事件监听器，该机制是 ZooKeeper 实现分布式协调服务的重要特性，很多功能都依赖于它，它有点<u>类似于订阅的方式</u>，即客户端向服务端 **注册** 指定的 `watcher` ，当服务端符合了 `watcher` 的某些事件或要求则会 **向客户端发送事件通知** ，客户端收到通知后找到自己定义的 `Watcher` 然后 **执行相应的回调方法** 。
 
-![](https://gitee.com/veal98/images/raw/master/img/20201129152800.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201129152800.png)
 
 ### ⑤ 会话 Session
 
@@ -130,7 +130,7 @@ Session 有一个属性叫做：`sessionTimeout` ，`sessionTimeout` 代表会�
 
 为了保证高可用，最好是以**集群**形态来部署 ZooKeeper，这样只要集群中大部分机器是可用的（能够容忍一定的机器故障），那么 ZooKeeper 本身仍然是可用的。通常 3 台服务器就可以构成一个 ZooKeeper 集群了。ZooKeeper 官方提供的架构图就是一个 ZooKeeper 集群整体对外提供服务。
 
-![](https://gitee.com/veal98/images/raw/master/img/20201129153452.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201129153452.png)
 
 上图中每一个 Server 代表一个安装 ZooKeeper 服务的服务器。组成 ZooKeeper 服务的服务器都会在内存中维护当前的服务器状态，并且每台服务器之间都互相保持着通信。集群间通过 `ZAB 协议（ZooKeeper Atomic Broadcast）` 来保持数据的一致性。
 
@@ -144,7 +144,7 @@ Session 有一个属性叫做：`sessionTimeout` ，`sessionTimeout` 代表会�
 
 > 💡 **最典型的集群模式：Master/Slave 模式（主从模式）**。在这种模式中，通常 Master 服务器作为主服务器提供写服务，其他的 Slave 服务器从服务器通过异步复制的方式获取 Master 服务器最新的数据提供读服务。
 
-![](https://gitee.com/veal98/images/raw/master/img/20201129153922.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201129153922.png)
 
 - `Leader` ：集群中 **唯一的写请求处理者** ，能够发起投票（投票也是为了进行写请求）。
 - `Follower`：能够接收客户端的请求，如果是读请求则可以自己处理，**如果是写请求则要转发给 `Leader`** 。在选举过程中会参与投票，**有选举权和被选举权** 。
@@ -227,7 +227,7 @@ ZooKeeper 规定所有有效的投票都必须在同一轮次中。每个服务�
 
 > 💬 举个例子：
 >
-> <img src="https://gitee.com/veal98/images/raw/master/img/20201129212625.png" style="zoom: 40%;" />
+> <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201129212625.png" style="zoom: 40%;" />
 >
 > 在上图中，`(1, 1, 0)` 第一位数代表投出该选票的服务器的 `logicClock`，第二位数代表被推荐的服务器的 `myid`，第三位代表被推荐的服务器的最大的 `zxid`。<u>由于该步骤中所有选票都投给自己，所以第二位的 `myid` 即是自己的 `myid`，第三位的 `zxid` 即是自己的 `zxid`</u>。
 >
@@ -254,7 +254,7 @@ ZooKeeper 规定所有有效的投票都必须在同一轮次中。每个服务�
 
 > 💬 接上图：
 >
-> <img src="https://gitee.com/veal98/images/raw/master/img/20201129212802.png" style="zoom:40%;" />
+> <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201129212802.png" style="zoom:40%;" />
 >
 > 服务器 1 收到服务器 2 的选票（1, 2, 0）和服务器 3 的选票（1, 3, 0）后，由于所有的 `logicClock` 都相等，所有的 `zxid` 都相等，因此根据 `myid` 判断应该将自己的选票按照服务器 3 的选票更新为（1, 3, 0），并将自己的票箱全部清空，再将服务器 3 的选票与自己的选票存入自己的票箱，接着将自己更新后的选票广播出去。此时服务器1票箱内的选票为(1, 3)，(3, 3)。
 >
@@ -274,7 +274,7 @@ ZooKeeper 规定所有有效的投票都必须在同一轮次中。每个服务�
 
 > 💬 接上图：
 >
-> <img src="https://gitee.com/veal98/images/raw/master/img/20201129213154.png" style="zoom:40%;" />
+> <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201129213154.png" style="zoom:40%;" />
 >
 > 根据上述选票，三个服务器一致认为此时服务器 3 应该是Leader。因此服务器 1 和 2 都进入 `FOLLOWING` 状态，而服务器3进入 `LEADING` 状态。之后 Leader 发起并维护与 Follower 间的心跳。
 
@@ -288,7 +288,7 @@ ZooKeeper 规定所有有效的投票都必须在同一轮次中。每个服务�
 
 第一步肯定需要 `Leader` 将写请求 **广播** 出去，让 `Leader` 问问 `Followers` 是否同意更新，<u>如果超过半数以上的同意那么就进行 `Follower` 和 `Observer` 的更新</u>（和 `Paxos` 一样）
 
-![](https://gitee.com/veal98/images/raw/master/img/20201129154501.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201129154501.png)
 
 上图中的 **Queue 队列是为了保证顺序性**：比如我现在有一个写请求 A，此时 `Leader` 将请求 A 广播出去，因为只需要半数同意就行，所以可能这个时候有一个 `Follower` F1 因为网络原因没有收到，而 `Leader` 又广播了一个请求 B，因为网络原因，F1 先收到了请求 B 然后才收到了请求 A，这个时候请求处理的顺序不同就会导致数据的不同，从而 **产生数据不一致问题**
 
@@ -317,7 +317,7 @@ ZooKeeper 集群在宕掉几个 ZooKeeper 服务器之后，**如果剩下的 Zo
 
 成功创建该节点的客户端所在的机器就成为了 Master。同时，**其他没有成功创建该节点的客户端，都会在该节点上注册一个子节点变更的 `Watcher`**，用于监控当前 Master 机器是否存活，一旦发现当前的Master挂了，那么其他客户端将会**重新进行Master选举**。
 
-![](https://gitee.com/veal98/images/raw/master/img/20201129215431.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201129215431.png)
 
 ### ② 分布式锁
 
@@ -364,11 +364,11 @@ ZooKeeper上的**一个 ZNode 可以表示一个锁**。例如 `/exclusive_lock/
 
 `zookeeper` 天然支持的 `watcher` 和 临时节点能很好的实现数据发布/订阅（集群管理）。我们可以为每条机器创建临时节点，并监控其父节点，如果子节点列表有变动，那么我们可以使用在其父节点绑定的 `watcher` 进行状态监控和回调。
 
-![](https://gitee.com/veal98/images/raw/master/img/20201129220735.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201129220735.png)
 
 Zookeeper 作为注册中心就是让 **服务提供者** 在 `zookeeper` 中创建一个临时节点并且将自己的 `ip、port、调用方式` 写入节点，当 **服务消费者** 需要进行调用的时候会 **通过注册中心找到相应的服务的地址列表(IP端口什么的)** ，并缓存到本地(方便以后调用)，当消费者调用服务时，不会再去请求注册中心，而是直接通过负载均衡算法从地址列表中取一个服务提供者的服务器调用服务。
 
-![](https://gitee.com/veal98/images/raw/master/img/20201129220840.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201129220840.png)
 
 当服务提供者的某台服务器宕机或下线时，相应的地址会从服务提供者地址列表中移除。同时，注册中心会将新的服务地址列表发送给服务消费者的机器并缓存在消费者本机。
 

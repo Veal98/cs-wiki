@@ -11,7 +11,7 @@
 
 💬 举个例子：下面是用一个 杂货店例子来说明这两个概念，如下图所示
 
-![](https://gitee.com/veal98/images/raw/master/img/20200726145147.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200726145147.png)
 
 - 频繁项集：<u>{葡萄酒, 尿布, 豆奶}</u> 就是一个频繁项集的例子。
 - 关联规则：<u>尿布 -> 葡萄酒</u> 就是一个关联规则。这意味着如果顾客买了尿布，那么他很可能会买葡萄酒。
@@ -27,7 +27,7 @@
 
 假设我们一共有 4 个商品: 商品0, 商品1, 商品2, 商品3。 所有可能的情况如下:
 
-![](https://gitee.com/veal98/images/raw/master/img/20200726150414.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200726150414.png)
 
 空集表示不包含任何商品。商品集合之间的连线表示两个或者更多集合可以组成一个更大的集合。
 
@@ -37,7 +37,7 @@
 
 该原理直观上没有什么帮助，但是如果反过来看就有用了，也就是说⭐ **如果一个项集是 非频繁项集，那么它的所有超集也是非频繁项集**，如下图所示:
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200726150836.png" style="zoom:67%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200726150836.png" style="zoom:67%;" />
 
 假设 `{2,3}` 是**非频繁项集**，那么利用上面的知识，我们就可以知道 `{0,2,3} {1,2,3} {0,1,2,3}` 都是 **非频繁**的。 也就是说，计算出 `{2,3}` 的支持度，知道它是非频繁的之后，就不需要再计算 `{0,2,3} {1,2,3} {0,1,2,3}` 的支持度，因为我们知道这些集合不会满足我们的要求。 使用该原理就可以避免项集数目的指数增长，从而在合理的时间内计算出频繁项集。
 
@@ -144,7 +144,7 @@ def scanD(D, Ck, minSupport):
 
 🏃‍ 运行该代码：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200726154631.png" style="zoom:85%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200726154631.png" style="zoom:85%;" />
 
 上述 4 个支持度大于 0.5 的项集组成了 L1，由于物品 4 没有达到最小支持度，所有没有包含在 L1 中，通过去掉这件商品，减少了查找项集 [[1, 3, 4] 的工作量。
 
@@ -152,7 +152,7 @@ def scanD(D, Ck, minSupport):
 
 整个 Apriori 算法的伪代码如下：			
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200726161956.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200726161956.png" style="zoom:80%;" />
 
 ```python
 # 输入频繁项集列表 Lk 与返回的元素个数 k，然后输出所有可能的候选项集 Ck
@@ -234,7 +234,7 @@ def apriori(dataSet, minSupport=0.5):
 L,supportData = apriori(dataSet)
 ```
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200726223940.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200726223940.png" style="zoom:80%;" />
 
 至此，我们就找出我们所需要的**频繁项集**和他们的**支持度**了，接下来再找出关联规则即可。
 
@@ -256,7 +256,7 @@ L,supportData = apriori(dataSet)
 
 如下图所示，给出的是项集 {0,1,2,3} 产生的所有关联规则:
 
-![](https://gitee.com/veal98/images/raw/master/img/20200726225832.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200726225832.png)
 
 与我们前面的 `频繁项集` 生成一样，我们可以为每个频繁项集产生许多关联规则。如果能减少规则的数目来确保问题的可解析，那么计算起来就会好很多。
 
@@ -360,7 +360,7 @@ def generateRules(L, supportData, minConf=0.7):
 
 🏃‍ 运行该代码：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20200726231744.png" style="zoom:80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200726231744.png" style="zoom:80%;" />
 
 结果中给出了 3 条规则：
 
@@ -368,7 +368,7 @@ def generateRules(L, supportData, minConf=0.7):
 
 降低可信度阈值后会得到更多的关联规则：
 
-![](https://gitee.com/veal98/images/raw/master/img/20200726232101.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200726232101.png)
 
 ## ✅ End
 
@@ -378,6 +378,6 @@ def generateRules(L, supportData, minConf=0.7):
 
 - 《Machine Learning in Action
 
-  <img src="https://gitee.com/veal98/images/raw/master/img/20200804111716.png" style="zoom:80%;" />
+  <img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20200804111716.png" style="zoom:80%;" />
 
 - [Github - AiLearning](https://github.com/apachecn/AiLearning/)

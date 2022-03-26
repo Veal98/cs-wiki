@@ -26,7 +26,7 @@
 
 Channel 的生命周期如下图所示，**当这些状态发生改变时，将会生成对应的事件，`ChannelPipeline `中的`ChannelHandler `就可以及时做出处理**：
 
-<img src="https://gitee.com/veal98/images/raw/master/img/20201212112100.png" style="zoom: 80%;" />
+<img src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201212112100.png" style="zoom: 80%;" />
 
 ### ② ChannelHandler 生命周期
 
@@ -62,7 +62,7 @@ Netty 提供2个重要的 ChannelHandler 子接口：
 
 **这里有一个细节一定需要注意：当我们实现`ChannelInboundHandler`的`channelRead`方法时，请一定要记住 使用`ReferenceCountUtil`的`release`方法释放`ByteBuf`，这样可以减少内存的消耗，所以我们可以实现一个 `ChannelHandler`来完成对`ByteBuf`的释放，就像下面这样：**
 
-![](https://gitee.com/veal98/images/raw/master/img/20201212113602.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201212113602.png)
 
 **由于手工管理资源会很繁琐,您可以通过使用 `SimpleChannelInboundHandler` 简化问题**，因为`SimpleChannelInboundHandler`已经帮我们 把与业务无关的逻辑在`ChannelRead`方法实现了，**我们只需要实现它的`channelRead0`方法来完成我们的逻辑就够了**：
 
@@ -210,7 +210,7 @@ java -Dio.netty.leakDetectionLevel=ADVANCED
 
 Netty 总是将`ChannelPipeline`的入站口作为头部，出站口作为尾部，当我们通过`ChannelPipeline`的`add`方法 将入站处理器和出站处理器混合添加到`ChannelPipeline`后，`ChannelHandler`的顺序如下：
 
-![](https://gitee.com/veal98/images/raw/master/img/20201212140609.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201212140609.png)
 
 一个入站事件将从`ChannelPipeline`的头部（左侧）向尾部（右侧）开始传播，出站事件的传播则是与入站的传播方向相反。当`ChannelPipeline`在`ChannelHandler`之间传播事件的时候，它会判断下一个`ChannelHandler`的类型是否与当前`ChannelHandler`的类型相同（通过 `ChannelHandlerContext`），如果相同则说明它们是一个方向的事件， 如果不同则跳过该`ChannelHandler`并前进到下一个`ChannelHandler`，直到它找到相同类型的`ChannelHandler`。
 
@@ -264,7 +264,7 @@ Netty 总是将`ChannelPipeline`的入站口作为头部，出站口作为尾部
 
 `ChannelHandlerContext`代表的是`ChannelHandler`和`ChannelPipeline`之间的关联，每当有`ChannelHandler `添加到`ChannelPipeline`中时，都会创建`ChannelHandlerContext`。**`ChannelHandlerContext`的主要功能是 管理它所关联的`ChannelHandler`与同一个`ChannelPipeline`中的其他`ChannelHandler`之间的交互**：
 
-![](https://gitee.com/veal98/images/raw/master/img/20201212141047.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201212141047.png)
 
 `ChannelHandlerContext`的大部分方法和`Channel`和`ChannelPipeline`相似，但有一个重要的区别是： 调用`Channel`或`ChannelPipeline`的方法其影响是会沿着整个 `ChannelPipeline` 进行传播：
 
@@ -278,7 +278,7 @@ ChannelPipeline pipeline = ctx.pipeline();
 pipeline.write(xxx);
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20201212141409.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201212141409.png)
 
 而调用 `ChannelHandlerContext` 的方法则是从其关联的 `ChannelHandler` 开始，并且只会传播给位于该`ChannelPipeline`中的下一个能够处理该事件的 `ChannelHandler`：
 
@@ -288,7 +288,7 @@ ChannelHandlerContext ctx = context;
 ctx.write(xxx);
 ```
 
-![](https://gitee.com/veal98/images/raw/master/img/20201212141511.png)
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20201212141511.png)
 
 下面是一些比较重要的方法，有些和`ChannelPipeline`功能相似的方法就不再罗列了，各位同学可以直接查看原API。
 
