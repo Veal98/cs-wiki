@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: https://gitee.com/veal98/images/raw/master/img/20210212163625.png
+heroImage: https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20210212163625.png
 heroText: CS-Wiki
 tagline: 📙 致力打造完善的 Java 后端知识体系. Not only an Interview-Guide, but also a Learning-Direction.
 actionText: 开卷 →
