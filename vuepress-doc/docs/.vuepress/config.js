@@ -25,7 +25,12 @@ module.exports = {
   // 主题配置
   themeConfig: {
     nav: [
-     
+      // { text: 'Home', link: '/' },
+      // { text: '唠唠嗑儿', link: '/first/'},
+      // { text: '数据结构与算法', link: '/array/' },
+      // { text: '计算机基础', link: '/net/' },
+      // { text: 'Java', link: '/java/' },
+      // { text: '框架', link: '/spring/' },
     ],
     sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
     markdown: {
@@ -33,7 +38,7 @@ module.exports = {
     },
     
     //logo: 'https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200409124835.png', // 导航栏logo
-    // repo: 'veal98/cs-wiki', // 导航栏右侧生成Github链接
+    repo: 'veal98/cs-wiki', // 导航栏右侧生成Github链接
     searchMaxSuggestions: 10, // 搜索结果显示最大数
     lastUpdated: '上次更新', // 更新的时间，及前缀文字   string | boolean (取值为git提交时间)
 
@@ -109,6 +114,14 @@ module.exports = {
 
     ['fulltext-search'], // 全文搜索
 
+    ['@vuepress/pwa', {
+      serviceWorker: true,
+      updatePopup: {
+          message: "有新的内容~",
+          buttonText: "刷新"
+      }
+    }],
+
     // ['thirdparty-search', { // 可以添加第三方搜索链接的搜索框（原官方搜索框的参数仍可用）
     //   thirdparty: [ // 可选，默认 []
     //     {
@@ -140,6 +153,7 @@ module.exports = {
       duration: 1000, // prompt message display time.
       showInMobile: false // whether to display on the mobile side, default: false.
     }],
+
     ['demo-block', { // demo演示模块 https://github.com/xiguaxigua/vuepress-plugin-demo-block
       settings: {
         // jsLib: ['http://xxx'], // 在线示例(jsfiddle, codepen)中的js依赖
