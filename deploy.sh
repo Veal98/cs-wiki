@@ -3,7 +3,7 @@
 # 确保脚本抛出遇到的错误
 set -e
 
-#echo 'cswiki.top' > CNAME
+
 
 # 更新 master
 git add -A
@@ -16,6 +16,7 @@ npm run build  # 生成静态文件
 cd docs/.vuepress/dist # 进入生成的文件夹
 
 git init
+echo 'cswiki.top' > CNAME # 绑定域名
 git add -A
 git commit -m 'deploy'
 
