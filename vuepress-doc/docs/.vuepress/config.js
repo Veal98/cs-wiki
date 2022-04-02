@@ -10,7 +10,8 @@ module.exports = {
   title: "CS-Wiki",
   description: '致力打造完善的 Java 后端知识体系. Not only an Interview-Guide, but also a Learning-Direction.',
   // base: '/', // 默认'/'。如果你想将你的网站部署到如 https://foo.github.io/bar/，那么 base 应该被设置成 "/bar/",（否则页面将失去样式等文件）
-  base : '/cs-wiki/',
+  // 如果GitHub Pages绑定域名，那么配置文件中的base参数则需要删除，否则域名访问会失败。
+  // base : '/cs-wiki/',
   head: [ // 注入到页面<head> 中的标签，格式[tagName, { attrName: attrValue }, innerHTML?]
     ['link', { rel: 'icon', href: '/img/favicon.ico' }], //favicons，资源放在public文件夹
     ['meta', { name: 'keywords', content: 'java,algorithm,interview' }],
