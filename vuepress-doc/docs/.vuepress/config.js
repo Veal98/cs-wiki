@@ -117,10 +117,7 @@ module.exports = {
 
     ['@vuepress/pwa', {
       serviceWorker: true,
-      updatePopup: {
-          message: "有新的内容~",
-          buttonText: "刷新"
-      }
+      updatePopup: true
     }],
 
     // ['thirdparty-search', { // 可以添加第三方搜索链接的搜索框（原官方搜索框的参数仍可用）

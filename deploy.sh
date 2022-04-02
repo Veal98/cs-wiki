@@ -3,7 +3,7 @@
 # 确保脚本抛出遇到的错误
 set -e
 
-echo 'cswiki.top' > CNAME
+#echo 'cswiki.top' > CNAME
 
 # 更新 master
 git add -A
