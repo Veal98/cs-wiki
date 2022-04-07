@@ -115,9 +115,8 @@ module.exports = {
 
     ['fulltext-search'], // 全文搜索
 
-    ['@vuepress/pwa', {
-      serviceWorker: true,
-      updatePopup: true
+    ["@mr-hope/pwa", {
+      // 配置选项
     }],
 
     // ['thirdparty-search', { // 可以添加第三方搜索链接的搜索框（原官方搜索框的参数仍可用）
