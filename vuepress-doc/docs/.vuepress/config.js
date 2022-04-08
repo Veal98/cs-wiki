@@ -26,12 +26,34 @@ module.exports = {
   // 主题配置
   themeConfig: {
     nav: [
-      // { text: 'Home', link: '/' },
-      // { text: '唠唠嗑儿', link: '/first/'},
-      // { text: '数据结构与算法', link: '/array/' },
-      // { text: '计算机基础', link: '/net/' },
-      // { text: 'Java', link: '/java/' },
-      // { text: '框架', link: '/spring/' },
+      { text: 'Home', link: '/'},
+      { text: '唠唠嗑儿', link: '/pages/first/'},
+      { text: '数据结构与算法', link: '/pages/integer/'},
+      { 
+        text: '计算机基础', 
+        items: [
+          { text: '计算机网络', link: '/pages/net/' },
+          { text: '操作系统', link: '/pages/os/' },
+          { text: 'MySQL', link: '/pages/sql/' }
+        ]
+      },
+      { 
+        text: 'Java', 
+        items: [
+          { text: 'Java 基础', link: '/pages/java/' },
+          { text: 'Java 集合', link: '/pages/javalist/' },
+          { text: 'Java 并发', link: '/pages/javaconcurrent/' },
+          { text: 'Java 虚拟机', link: '/pages/jvm/' }
+        ]
+      },
+      { 
+        text: '框架', 
+        items: [
+          { text: 'Spring', link: '/pages/spring/' },
+          
+        ]
+      },
+      
     ],
     sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
     markdown: {
