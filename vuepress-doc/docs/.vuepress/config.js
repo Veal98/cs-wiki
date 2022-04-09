@@ -57,7 +57,8 @@ module.exports = {
     ],
     sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
     markdown: {
-      extractHeaders: [ 'h2', 'h3', 'h4', 'h5', 'h6' ]
+      extractHeaders: [ 'h2', 'h3', 'h4', 'h5', 'h6' ],
+      plugins: ['task-lists']
     },
     
     //logo: 'https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200409124835.png', // 导航栏logo
@@ -134,6 +135,16 @@ module.exports = {
     //   color: '#11a8cd', // 爱心颜色，默认随机色
     //   excludeClassName: 'theme-vdoing-content' // 要排除元素的class, 默认空''
     // }],
+
+    [
+      'vuepress-plugin-mathjax',
+      {
+        target: 'svg',
+        macros: {
+          '*': '\\times',
+        },
+      },
+    ],
 
     ['fulltext-search'], // 全文搜索
 
