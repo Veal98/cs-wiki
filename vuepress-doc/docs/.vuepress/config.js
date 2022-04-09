@@ -58,7 +58,9 @@ module.exports = {
     sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
     markdown: {
       extractHeaders: [ 'h2', 'h3', 'h4', 'h5', 'h6' ],
-      plugins: ['task-lists']
+      extendMarkdown: md => {
+        md.use(require('markdown-it-task-lists'), {enabled: true});
+      }
     },
     
     //logo: 'https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200409124835.png', // 导航栏logo
