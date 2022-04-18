@@ -1,0 +1,37 @@
+"use strict";
+/* IMPORT */
+Object.defineProperty(exports, "__esModule", { value: true });
+var utils_1 = require("../utils");
+var reusable_1 = require("../channels/reusable");
+/* RGB */
+var RGB = {
+    /* VARIABLES */
+    re: /^rgba?\(\s*?(-?(?:\d+(?:\.\d+)?|(?:\.\d+))(?:e\d+)?(%?))\s*?(?:,|\s)\s*?(-?(?:\d+(?:\.\d+)?|(?:\.\d+))(?:e\d+)?(%?))\s*?(?:,|\s)\s*?(-?(?:\d+(?:\.\d+)?|(?:\.\d+))(?:e\d+)?(%?))(?:\s*?(?:,|\/)\s*?\+?(-?(?:\d+(?:\.\d+)?|(?:\.\d+))(?:e\d+)?(%?)))?\s*?\)$/i,
+    /* API */
+    parse: function (color) {
+        var charCode = color.charCodeAt(0);
+        if (charCode !== 114 && charCode !== 82)
+            return; // 'r'/'R'
+        var match = color.match(RGB.re);
+        if (!match)
+            return;
+        var r = match[1], isRedPercentage = match[2], g = match[3], isGreenPercentage = match[4], b = match[5], isBluePercentage = match[6], a = match[7], isAlphaPercentage = match[8];
+        return reusable_1.default.set({
+            r: utils_1.default.channel.clamp.r(isRedPercentage ? parseFloat(r) * 2.55 : parseFloat(r)),
+            g: utils_1.default.channel.clamp.g(isGreenPercentage ? parseFloat(g) * 2.55 : parseFloat(g)),
+            b: utils_1.default.channel.clamp.b(isBluePercentage ? parseFloat(b) * 2.55 : parseFloat(b)),
+            a: a ? utils_1.default.channel.clamp.a(isAlphaPercentage ? parseFloat(a) / 100 : parseFloat(a)) : 1
+        }, color);
+    },
+    stringify: function (channels) {
+        var r = channels.r, g = channels.g, b = channels.b, a = channels.a;
+        if (a < 1) { // RGBA
+            return "rgba(" + utils_1.default.lang.round(r) + ", " + utils_1.default.lang.round(g) + ", " + utils_1.default.lang.round(b) + ", " + utils_1.default.lang.round(a) + ")";
+        }
+        else { // RGB
+            return "rgb(" + utils_1.default.lang.round(r) + ", " + utils_1.default.lang.round(g) + ", " + utils_1.default.lang.round(b) + ")";
+        }
+    }
+};
+/* EXPORT */
+exports.default = RGB;

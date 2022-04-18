@@ -57,9 +57,6 @@ module.exports = {
     sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
     markdown: {
       extractHeaders: [ 'h2', 'h3', 'h4', 'h5', 'h6' ],
-      extendMarkdown: md => {
-        md.use(require('markdown-it-task-lists'), {enabled: true});
-      }
     },
     
     //logo: 'https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200409124835.png', // 导航栏logo
@@ -138,20 +135,33 @@ module.exports = {
     // }],
 
     [
-      'vuepress-plugin-mathjax',
+      'md-enhance',
       {
-        target: 'svg',
-        macros: {
-          '*': '\\times',
-        },
+        // 启用任务列表
+        tasklist: true,
+        // 启用下角标功能
+        sub: true,
+        // 启用上角标
+        sup: true,
+        // 启用流程图
+        flowchart: true,
+        // Enable mermaid
+        mermaid: true,
+        // 启用 TeX 支持
+        tex: true,
+      },
+    ],
+
+    [
+      'pwa',
+      {
+        // 更新弹窗
+        popupComponent: 'SWUpdatePopup',
       },
     ],
 
     ['fulltext-search'], // 全文搜索
 
-    ["@mr-hope/pwa", {
-      // 配置选项
-    }],
 
     // ['thirdparty-search', { // 可以添加第三方搜索链接的搜索框（原官方搜索框的参数仍可用）
     //   thirdparty: [ // 可选，默认 []
