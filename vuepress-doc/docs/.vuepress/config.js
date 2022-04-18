@@ -135,7 +135,7 @@ module.exports = {
     // }],
 
     [
-      'md-enhance',
+      'mdEnhance',
       {
         // 启用任务列表
         tasklist: true,
@@ -152,13 +152,7 @@ module.exports = {
       },
     ],
 
-    [
-      'pwa',
-      {
-        // 更新弹窗
-        popupComponent: 'SWUpdatePopup',
-      },
-    ],
+    ['pwa'],
 
     ['fulltext-search'], // 全文搜索
 
