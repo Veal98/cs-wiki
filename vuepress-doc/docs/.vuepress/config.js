@@ -124,7 +124,25 @@ module.exports = {
       createYear: 2019, // 博客创建年份
       copyrightInfo: '小牛肉 | 心之所愿，素履以往', // 博客版权信息，支持a标签
     },
+    
     htmlModules, // 广告
+
+    mdEnhance: { // markdown 增强
+      // 启用任务列表
+      tasklist: true,
+      // 启用下角标功能
+      sub: true,
+      // 启用上角标
+      sup: true,
+      // 启用流程图
+      flowchart: true,
+      // Enable mermaid
+      mermaid: true,
+      // 启用 TeX 支持
+      tex: true,
+    },
+
+    pwa, //pwa
   },
 
   // 插件
@@ -133,26 +151,6 @@ module.exports = {
     //   color: '#11a8cd', // 爱心颜色，默认随机色
     //   excludeClassName: 'theme-vdoing-content' // 要排除元素的class, 默认空''
     // }],
-
-    [
-      'mdEnhance',
-      {
-        // 启用任务列表
-        tasklist: true,
-        // 启用下角标功能
-        sub: true,
-        // 启用上角标
-        sup: true,
-        // 启用流程图
-        flowchart: true,
-        // Enable mermaid
-        mermaid: true,
-        // 启用 TeX 支持
-        tex: true,
-      },
-    ],
-
-    ['pwa'],
 
     ['fulltext-search'], // 全文搜索
 
