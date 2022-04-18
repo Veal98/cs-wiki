@@ -124,7 +124,7 @@ module.exports = {
       createYear: 2019, // 博客创建年份
       copyrightInfo: '小牛肉 | 心之所愿，素履以往', // 博客版权信息，支持a标签
     },
-    
+
     htmlModules, // 广告
 
     mdEnhance: { // markdown 增强
@@ -142,7 +142,7 @@ module.exports = {
       tex: true,
     },
 
-    pwa, //pwa
+    pwa: true, //pwa
   },
 
   // 插件
