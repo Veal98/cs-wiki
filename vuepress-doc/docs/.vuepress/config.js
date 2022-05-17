@@ -27,7 +27,7 @@ module.exports = {
     nav: [
       { text: 'Home', link: '/'},
       { text: '唠唠嗑儿', link: '/pages/first/'},
-      { text: '数据结构与算法', link: '/pages/integer/'},
+      { text: '数据结构与算法', link: '/pages/tips/'},
       { 
         text: '计算机基础', 
         items: [
@@ -49,9 +49,9 @@ module.exports = {
         text: '框架', 
         items: [
           { text: 'Spring', link: '/pages/spring/' },
-          
         ]
       },
+      { text: '最近更新', link: '/archives/'},
       
     ],
     sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
@@ -59,7 +59,7 @@ module.exports = {
       extractHeaders: [ 'h2', 'h3', 'h4', 'h5', 'h6' ],
     },
     
-    //logo: 'https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200409124835.png', // 导航栏logo
+    logo: 'https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20220514093911.png', // 导航栏logo
     repo: 'veal98/cs-wiki', // 导航栏右侧生成Github链接
     searchMaxSuggestions: 10, // 搜索结果显示最大数
     lastUpdated: '上次更新', // 更新的时间，及前缀文字   string | boolean (取值为git提交时间)
@@ -73,8 +73,8 @@ module.exports = {
 
     // sidebarOpen: false, // 初始状态是否打开侧边栏，默认true
     updateBar: { // 最近更新栏
-      showToArticle: false, // 显示到文章页底部，默认true
-      // moreArticle: '/archives' // “更多文章”跳转的页面，默认'/archives'
+      showToArticle: true, // 显示到文章页底部，默认true
+      moreArticle: '/archives' // “更多文章”跳转的页面，默认'/archives'
     },
     // titleBadge: false, // 文章标题前的图标是否显示，默认true
     // titleBadgeIcons: [ // 文章标题前图标的地址，默认主题内置图标
@@ -94,7 +94,7 @@ module.exports = {
 
     category: false, // 是否打开分类功能，默认true。 如打开，会做的事情有：1. 自动生成的frontmatter包含分类字段 2.页面中显示与分类相关的信息和模块 3.自动生成分类页面（在@pages文件夹）。如关闭，则反之。
     tag: false, // 是否打开标签功能，默认true。 如打开，会做的事情有：1. 自动生成的frontmatter包含标签字段 2.页面中显示与标签相关的信息和模块 3.自动生成标签页面（在@pages文件夹）。如关闭，则反之。
-    // archive: false, // 是否打开归档功能，默认true。 如打开，会做的事情有：1.自动生成归档页面（在@pages文件夹）。如关闭，则反之。
+    archive: true, // 是否打开归档功能，默认true。 如打开，会做的事情有：1.自动生成归档页面（在@pages文件夹）。如关闭，则反之。
 
     author: { // 文章默认的作者信息，可在md文件中单独配置此信息 String | {name: String, href: String}
       name: '小牛肉', // 必需
@@ -153,6 +153,7 @@ module.exports = {
     // }],
 
     ['fulltext-search'], // 全文搜索
+    ['mathjax'],
 
 
     // ['thirdparty-search', { // 可以添加第三方搜索链接的搜索框（原官方搜索框的参数仍可用）

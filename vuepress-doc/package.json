@@ -23,5 +23,7 @@
     "vuepress-theme-vdoing": "^1.10.0",
     "yamljs": "^0.3.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "vuepress-plugin-mathjax": "^1.2.8"
+  }
 }

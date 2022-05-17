@@ -1,6 +1,7 @@
 <p align="center">
-    <img width="280px" src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20210212163625.png" >
-    <br>
+    <img width="180px" style="border:1px dashed #7F0518; border-radius:100px" src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20220514093911.png">
+    <h1 style="margin-top:8px">小牛肉『CS-Wiki』</h1>
+    <p style="margin-top:0px; margin-bottom:8px; font-size:18px; color:#666666;">致力打造完善的 Java 后端知识体系.<br>Not only an Interview-Guide, but also a Learning-Direction.</p>
     <a href = "https://www.cswiki.top">在线阅读: www.cswiki.top</a>
 </p>
 
@@ -41,9 +42,3 @@
 - 😉 有什么问题也可以添加我的微信，记得备注来意：格式 <u>（学校或公司 - 姓名或昵称 - 来意）</u>
 
   <img width = 240px src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/微信图片_20210105121328.jpg"  />
-
----
-
-小牛肉的计算机知识体系如下，更新中......
-
-![小牛肉的知识体系](./小牛肉的知识体系.png)
