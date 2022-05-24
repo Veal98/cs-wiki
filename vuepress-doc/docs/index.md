@@ -5,7 +5,7 @@ heroImage: https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20220514093911.png
 heroText: 小牛肉『CS-Wiki』
 tagline: 📙 致力打造完善的 Java 后端知识体系. Not only an Interview-Guide, but also a Learning-Direction.
 actionText: Let's Go
-actionLink: /pages/readme/
+actionLink: /pages/home/
 bannerBg: none # auto => 网格纹背景(有bodyBgImg时无背景)，默认 | none => 无 | '大图地址' | background: 自定义背景样式       提示：如发现文本颜色不适应你的背景时可以到palette.styl修改$bannerTextColor变量
 
 # features: # 可选的
@@ -17,7 +17,7 @@ bannerBg: none # auto => 网格纹背景(有bodyBgImg时无背景)，默认 | no
 #     details: 专为阅读设计的UI，配合多种颜色模式、可关闭的侧边栏和导航栏，带给你一种沉浸式阅读体验
 
 # 文章列表显示方式: detailed 默认，显示详细版文章列表（包括作者、分类、标签、摘要、分页等）| simple => 显示简约版文章列表（仅标题和日期）| none 不显示文章列表
-postList: simple
+postList: none
 ---
 
 ---
@@ -28,6 +28,24 @@ postList: simple
   <a href="https://github.com/Veal98/cs-wiki/stargazers" target="_blank"><img src='https://img.shields.io/github/stars/Veal98/cs-wiki' alt='GitHub stars' class="no-zoom"></a>
   <a href="https://img.shields.io/github/forks/Veal98/cs-wiki?logo=github" target="_blank"><img src='https://img.shields.io/github/forks/Veal98/cs-wiki' alt='GitHub forks' class="no-zoom"></a>
 </div>
+
+- 🎓 小伙伴们大家好呀，我是**小牛肉**，目前东南大学研二在读，热爱健身与篮球。本仓库于我考研时建立并维护至今两年有已，旨在用于记录学习过程中的所思所想，并力图构建一个完善的知识体系
+
+- 🙏 由于本人水平有限，仓库中的知识点来自本人原创、视频、书籍、博客等，非原创均已标明出处（或在参考资料中列出），如有遗漏或发现文章错误及排版问题，请提 issue 或 PR
+
+- 💬 文章会第一时间发布在公众号【**飞天小牛肉**】，并且会在上面分享我的成长经历，下方扫码关注第一时间获取干货更新：
+
+  <img width = 240px src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/公众号二维码.png" />
+
+- 🎁 **春秋招交流群**：公众号后台回复 `春秋招` 免费进入交流群，大家一起吐槽信息共享
+
+- 🚀 [大厂面试火箭计划](https://flying-veal.notion.site/CS-Wiki-ac77673444e447fd92f36c542fc31ec2)：大厂面试真题汇总，提供背诵版 + 详解版 
+
+- 🦄 [「开源社区系统 Echo」Gitee 官方推荐项目，目前已累计 1.1k+ star](https://gitee.com/veal98/Echo)，基于 SpringBoot + MyBatis + MySQL + Redis + Kafka + Elasticsearch ... 并提供详细的开发文档和配套教程。公众号后台回复 `Echo` 可以获取配套手把手教程
+
+- 😉 有什么问题也可以添加我的微信，记得备注来意：格式 <u>（学校或公司 - 姓名或昵称 - 来意）</u>
+
+  <img width = 240px src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/微信图片_20210105121328.jpg"  />
 
 
 <style>
@@ -51,46 +69,9 @@ postList: simple
 }
 </style>
 
-<!-- <br/> -->
-<!-- <p align="center">
-  <a href="https://www.npmjs.com/package/vuepress-theme-vdoing" target="_blank"><img src="https://img.shields.io/npm/v/vuepress-theme-vdoing" alt="npm" class="no-zoom"></a>
-  <a href="https://www.npmjs.com/package/vuepress-theme-vdoing" target="_blank"><img src="https://img.shields.io/npm/dt/vuepress-theme-vdoing" alt="npm" class="no-zoom"></a>
-  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank"><img src='https://img.shields.io/github/stars/xugaoyi/vuepress-theme-vdoing' alt='GitHub stars' class="no-zoom"></a>
-  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank"><img src='https://img.shields.io/github/forks/xugaoyi/vuepress-theme-vdoing' alt='GitHub forks' class="no-zoom"></a>
-</p>
-
-<!-- ## 🎖特别用户
-::: cardList 2
-```yaml
-- name: OpenHarmony
-  desc: 开放原子开源基金会
-  link: https://docs.openharmony.cn/pages/000000/
-  bgColor: '#f1f1f1'
-  textColor: '#2A3344'
-- name: MyBatis-Plus官网
-  desc: 🚀为简化开发而生
-  link: https://baomidou.com/
-  bgColor: '#f1f1f1'
-  textColor: '#2A3344'
-- name: Deepin 社区
-  desc: Deepin 应用开发技术分享、DTK开发经验等
-  link: https://docs.deepin.org
-  bgColor: '#f1f1f1'
-  textColor: '#2A3344'
-- name: VForm官网
-  desc: 低代码表单优选方案，拖拽式设计，一键生成源码
-  link: http://www.vform666.com
-  bgColor: '#f1f1f1'
-  textColor: '#2A3344'
-```
-::: -->
-
-<!-- <br/>  -->
-
-
-
 <!-- Happy new year -->
 <!-- <br/><br/>
+
 <div class="container-happy">
   <div>
     <span>Happy</span>

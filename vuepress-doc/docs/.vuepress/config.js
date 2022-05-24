@@ -26,11 +26,11 @@ module.exports = {
   themeConfig: {
     nav: [
       { text: 'Home', link: '/'},
-      { text: '唠唠嗑儿', link: '/pages/first/'},
-      { text: '数据结构与算法', link: '/pages/tips/'},
+      { text: '知识体系总览', link: '/pages/home/'},
       { 
         text: '计算机基础', 
         items: [
+          { text: '数据结构与算法', link: '/pages/tips/'},
           { text: '计算机网络', link: '/pages/net/' },
           { text: '操作系统', link: '/pages/os/' },
           { text: 'MySQL', link: '/pages/sql/' }
@@ -46,9 +46,22 @@ module.exports = {
         ]
       },
       { 
-        text: '框架', 
+        text: '基础框架', 
         items: [
           { text: 'Spring', link: '/pages/spring/' },
+        ]
+      },
+      { 
+        text: '中间件', 
+        items: [
+          { text: 'Redis', link: '/pages/redis/' },
+        ]
+      },
+      { 
+        text: '唠唠嗑儿', 
+        items: [
+          { text: '唠唠嗑儿', link: '/pages/first/' },
+          { text: '读书笔记', link: '/pages/readnotes/' }
         ]
       },
       { text: '最近更新', link: '/archives/'},
