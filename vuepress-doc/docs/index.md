@@ -29,23 +29,46 @@ postList: none
   <a href="https://img.shields.io/github/forks/Veal98/cs-wiki?logo=github" target="_blank"><img src='https://img.shields.io/github/forks/Veal98/cs-wiki' alt='GitHub forks' class="no-zoom"></a>
 </div>
 
-- 🎓 小伙伴们大家好呀，我是**小牛肉**，目前东南大学研二在读，热爱健身与篮球。本仓库于我考研时建立并维护至今两年有已，旨在用于记录学习过程中的所思所想，并力图构建一个完善的知识体系
+### 关于
 
-- 🙏 由于本人水平有限，仓库中的知识点来自本人原创、视频、书籍、博客等，非原创均已标明出处（或在参考资料中列出），如有遗漏或发现文章错误及排版问题，请提 issue 或 PR
+🎓 博主东南大学研二在读，携程 Java 后台开发暑期实习生，热爱健身与篮球。本仓库于我考研时建立并维护至今两年有已，旨在用于记录学习过程中的所思所想，并力图构建一个完善的知识体系
 
-- 💬 文章会第一时间发布在公众号【**飞天小牛肉**】，并且会在上面分享我的成长经历，下方扫码关注第一时间获取干货更新：
+📖 [在线阅读：www.cswiki.top](https://www.cswiki.top)
 
-  <img width = 240px src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/公众号二维码.png" />
+⚡ [Gitee 仓库地址 (推荐)](https://gitee.com/veal98/cs-wiki) |  [Github 仓库地址](https://github.com/Veal98/cs-wiki)，文档源文件在 `vuepress-doc/docs/文档` 目录下
 
-- 🎁 **春秋招交流群**：公众号后台回复 `春秋招` 免费进入交流群，大家一起吐槽信息共享
+💬 文章会第一时间发布在公众号 **飞天小牛肉**，并且会在上面分享我的成长经历，下方扫码关注第一时间获取干货更新：
 
-- 🚀 [大厂面试火箭计划](https://flying-veal.notion.site/CS-Wiki-ac77673444e447fd92f36c542fc31ec2)：大厂面试真题汇总，提供背诵版 + 详解版 
+<img width = 240px src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/公众号二维码.png" />
 
-- 🦄 [「开源社区系统 Echo」Gitee 官方推荐项目，目前已累计 1.1k+ star](https://gitee.com/veal98/Echo)，基于 SpringBoot + MyBatis + MySQL + Redis + Kafka + Elasticsearch ... 并提供详细的开发文档和配套教程。公众号后台回复 `Echo` 可以获取配套手把手教程
+🎁 **春秋招交流群**：公众号后台回复 `春秋招` 免费进入交流群，大家一起吐槽信息共享
 
-- 😉 有什么问题也可以添加我的微信，记得备注来意：格式 <u>（学校或公司 - 姓名或昵称 - 来意）</u>
+🚀 [大厂面试火箭计划](https://flying-veal.notion.site/CS-Wiki-ac77673444e447fd92f36c542fc31ec2)：大厂面试真题汇总，提供背诵版 + 详解版 
 
-  <img width = 240px src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/微信图片_20210105121328.jpg"  />
+🦄 [「开源社区系统 Echo」Gitee 官方推荐项目，目前已累计 1.1k+ star](https://gitee.com/veal98/Echo)，基于 SpringBoot + MyBatis + MySQL + Redis + Kafka + Elasticsearch ... 并提供详细的开发文档和配套教程。公众号后台回复 `Echo` 可以获取配套手把手教程
+
+😉 有什么问题也可以添加我的微信，记得备注来意：格式 <u>（学校或公司 - 姓名或昵称 - 来意）</u>
+
+<img width = 240px src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/微信图片_20210105121328.jpg"  />
+
+### 勘误
+
+由于本人水平有限，仓库中的知识点来自本人原创、视频、书籍、博客等，非原创均已标明出处（或在参考资料中列出）
+
+如果你在阅读本仓库过程中，如果你发现一些 `内容`、`图稿`、`代码` 等中的错误，可以提交 Issue 或者 PR 的方式进行问题反馈，帮助小牛肉完善这个仓库~
+
+- Issue：[Issues · Veal98/cs-wiki (github.com)](https://github.com/Veal98/cs-wiki/issues)
+- PR：[Pull requests · Veal98/cs-wiki (github.com)](https://github.com/Veal98/cs-wiki/pulls)
+
+提交 PR 的具体步骤：
+
+1、在打算编辑的文章的最下面左侧找到 `帮助小牛肉改善此页面`的按钮。
+
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20220525131651.png)
+
+2、进行勘误，填写描述信息并提交 request
+
+![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20220525131852.png)
 
 
 <style>
@@ -69,84 +92,3 @@ postList: none
 }
 </style>
 
-<!-- Happy new year -->
-<!-- <br/><br/>
-
-<div class="container-happy">
-  <div>
-    <span>Happy</span>
-    <span>Wish</span>
-  </div>
-    <div>
-    <span>New</span>
-    <span>You</span>
-  </div>
-  <footer>
-      <div>
-    <span>Year</span>
-    <span>Luck</span>
-  </div>
-  <div>
-    <span>2022</span>
-    <span>Tomorrow</span>
-  </div>
-  </footer>
-</div>
-
-<style>
-.container-happy {
-  font-size: 18px;
-  font-family: Times New Roman;
-  perspective: 35rem;
-  width: 100%;
-  margin: 0 auto;
-  color: tomato;
-  opacity: 0.8;
-}
-
-.container-happy footer {
-  perspective: 35rem;
-  transform: translateY(-1.4rem);
-}
-
-.container-happy div {
-  font-size: 5rem;
-  height: 6rem;
-  overflow: hidden;
-  text-transform: uppercase;
-
-}
-
-.container-happy div>span {
-  display: block;
-  height: 6rem;
-  padding: 0 1rem;
-  font-weight: bold;
-  letter-spacing: .2rem;
-  text-align: center;
-  transition: .3s;
-}
-
-.container-happy:hover div>span {
-  transform: translateY(-100%);
-}
-
-.container-happy div:nth-child(odd) {
-  background-color: #EBFCFF;
-  transform: rotateX(30deg);
-}
-
-.container-happy div:nth-child(even) {
-  background-color: #E6F4F1;
-  transform: translateY(-.6rem) rotateX(-30deg);
-}
-</style> -->
-
-<!-- 广告 -->
-<!-- <div class="wwads-cn wwads-horizontal pageB" data-id="136" style="width:100%;max-height:80px;min-height:auto;"></div>
-<style>
-  .pageB img{width:80px!important;}
-  .pageT .wwads-content{display:flex;align-items: center;}
-  .pageT .wwads-poweredby{display:none!important;}
-  .pageT .wwads-hide{display:none!important;}
-</style> -->

@@ -64,7 +64,7 @@ module.exports = {
           { text: '读书笔记', link: '/pages/readnotes/' }
         ]
       },
-      { text: '最近更新', link: '/archives/'},
+      { text: '归档', link: '/archives/'},
       
     ],
     sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
@@ -74,6 +74,13 @@ module.exports = {
     
     logo: 'https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20220514093911.png', // 导航栏logo
     repo: 'veal98/cs-wiki', // 导航栏右侧生成Github链接
+
+    docsDir: 'vuepress-doc/docs',
+    // 默认是 false, 设置为 true 来启用
+    editLinks: true,
+    // 默认为 "Edit this page"
+    editLinkText: '帮助小牛肉改善此页面',
+
     searchMaxSuggestions: 10, // 搜索结果显示最大数
     lastUpdated: '上次更新', // 更新的时间，及前缀文字   string | boolean (取值为git提交时间)
 
