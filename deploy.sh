@@ -24,7 +24,7 @@ git commit -m 'deploy'
 # git push -f git@github.com:veal98/cs-wiki.git master:gh-pages
 
 # 发布到 个人云服务器
-git push -f git@http://124.221.132.200:/home/www/website/cswiki.git master
+git push -f git@124.221.132.200:/home/www/website/cswiki.git master
 
 cd -
 
