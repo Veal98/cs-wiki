@@ -16,12 +16,15 @@ npm run build  # 生成静态文件
 cd docs/.vuepress/dist # 进入生成的文件夹
 
 git init
-echo 'cswiki.top' > CNAME # 绑定域名
+# echo 'cswiki.top' > CNAME # 绑定域名
 git add -A
 git commit -m 'deploy'
 
-# 发布到 https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:veal98/cs-wiki.git master:gh-pages
+# 发布到 Github Pages: https://<USERNAME>.github.io/<REPO>
+# git push -f git@github.com:veal98/cs-wiki.git master:gh-pages
+
+# 发布到 个人云服务器
+git push -f git@http://124.221.132.200:/home/www/website/cswiki.git master
 
 cd -
 
