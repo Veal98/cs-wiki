@@ -142,7 +142,7 @@ module.exports = {
     // },
     footer: { // 页脚信息
       createYear: 2019, // 博客创建年份
-      copyrightInfo: '小牛肉 | 心之所愿，素履以往', // 博客版权信息，支持a标签
+      copyrightInfo: '飞天小牛肉 | <a href="https://beian.miit.gov.cn/" target="_blank">皖ICP备2022008966号</a>', // 博客版权信息，支持a标签
     },
 
     htmlModules, // 广告
