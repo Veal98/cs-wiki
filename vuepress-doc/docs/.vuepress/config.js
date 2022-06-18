@@ -51,12 +51,12 @@ module.exports = {
           { text: 'Spring', link: '/pages/spring/' },
         ]
       },
-      { 
-        text: '中间件', 
-        items: [
-          { text: 'Redis', link: '/pages/redis/' },
-        ]
-      },
+      // { 
+      //   text: '中间件', 
+      //   items: [
+      //     { text: 'Redis', link: '/pages/redis/' },
+      //   ]
+      // },
       { 
         text: '唠唠嗑儿', 
         items: [
