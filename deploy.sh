@@ -20,7 +20,6 @@ git init
 git add -A
 git commit -m 'deploy'
 
-
 # 发布到 Github Pages: https://<USERNAME>.github.io/<REPO>
 # git push -f git@github.com:veal98/cs-wiki.git master:gh-pages
 
