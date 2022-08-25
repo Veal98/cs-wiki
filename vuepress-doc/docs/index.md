@@ -3,7 +3,7 @@ home: true
 #heroImage: https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20210212163625.png
 heroImage: https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20220514093911.png
 heroText: 小牛肉『CS-Wiki』
-tagline: 📙 致力打造完善的 Java 后端知识体系. Not only an Interview-Guide, but also a Learning-Direction.
+tagline: 📙 致力打造完善的后端知识体系. Not only an Interview-Guide, but also a Learning-Direction.
 actionText: Let's Go
 actionLink: /pages/home/
 bannerBg: none # auto => 网格纹背景(有bodyBgImg时无背景)，默认 | none => 无 | '大图地址' | background: 自定义背景样式       提示：如发现文本颜色不适应你的背景时可以到palette.styl修改$bannerTextColor变量
@@ -31,7 +31,7 @@ postList: none
 
 ### 关于
 
-🎓 博主研二在读，本仓库于我考研时建立并维护至今两年有已，旨在用于记录学习过程中的所思所想，并力图构建一个完善的知识体系
+🎓 博主研二在读，本仓库于我考研时建立并维护至今三年有已，旨在用于记录学习过程中的所思所想，并力图构建一个完善的知识体系
 
 📖 [在线阅读：www.cswiki.top](https://www.cswiki.top)
 
@@ -43,9 +43,7 @@ postList: none
 
 🎁 **春秋招交流群**：公众号后台回复 `春秋招` 免费进入交流群，大家一起吐槽信息共享
 
-🚀 [大厂面试火箭计划](https://flying-veal.notion.site/CS-Wiki-ac77673444e447fd92f36c542fc31ec2)：大厂面试真题汇总，提供背诵版 + 详解版 
-
-🦄 [「开源社区系统 Echo」Gitee 官方推荐项目，目前已累计 1.1k+ star](https://gitee.com/veal98/Echo)，基于 SpringBoot + MyBatis + MySQL + Redis + Kafka + Elasticsearch ... 并提供详细的开发文档和配套教程。公众号后台回复 `Echo` 可以获取配套手把手教程
+🦄 [「开源社区系统 Echo」Gitee 官方推荐项目，目前已累计 2.0k+ star](https://gitee.com/veal98/Echo)，基于 SpringBoot + MyBatis + MySQL + Redis + Kafka + Elasticsearch ... 并提供详细的开发文档和配套教程。公众号后台回复 `Echo` 可以获取配套手把手教程
 
 😉 有什么问题也可以添加我的微信，记得备注来意：格式 <u>（学校或公司 - 姓名或昵称 - 来意）</u>
 

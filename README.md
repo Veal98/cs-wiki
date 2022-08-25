@@ -1,7 +1,7 @@
 <div align="center">
     <img width="180px" src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20220514093911.png">
     <h1 style="margin-top:0px">小牛肉『CS-Wiki』</h1>
-    <p style="margin-top:0px; margin-bottom:8px; font-size:18px">致力打造完善的 Java 后端知识体系.<br>Not only an Interview-Guide, but also a Learning-Direction.</p>
+    <p style="margin-top:0px; margin-bottom:8px; font-size:18px">致力打造完善的后端知识体系.<br>Not only an Interview-Guide, but also a Learning-Direction.</p>
     <a href = "https://www.cswiki.top">在线阅读: www.cswiki.top</a>
 </div >
 
@@ -17,13 +17,12 @@
 
 <a href="#公众号"><img src="https://img.shields.io/badge/公众号-飞天小牛肉-orange" alt="公众号"></a>
 <a href="https://gitee.com/veal98/Echo"><img src="https://img.shields.io/badge/备战校招-开源社区项目-blueviolet" alt="配套教程"></a>
-<a href="https://flying-veal.notion.site/CS-Wiki-ac77673444e447fd92f36c542fc31ec2"><img src="https://img.shields.io/badge/冲刺大厂-火箭计划-brightgreen" alt="大厂面试火箭计划"></a>
 
 </div>
 
 ### 关于
 
-🎓 博主研二在读，本仓库于我考研时建立并维护至今两年有已，旨在用于记录学习过程中的所思所想，并力图构建一个完善的知识体系
+🎓 博主研二在读，本仓库于我考研时建立并维护至今三年有已，旨在用于记录学习过程中的所思所想，并力图构建一个完善的知识体系
 
 📖 [在线阅读：www.cswiki.top](https://www.cswiki.top)
 
@@ -34,8 +33,6 @@
 <img width = 240px src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/公众号二维码.png" />
 
 🎁 **春秋招交流群**：公众号后台回复 `春秋招` 免费进入交流群，大家一起吐槽信息共享
-
-🚀 [大厂面试火箭计划](https://flying-veal.notion.site/CS-Wiki-ac77673444e447fd92f36c542fc31ec2)：大厂面试真题汇总，提供背诵版 + 详解版 
 
 🦄 [「开源社区系统 Echo」Gitee 官方推荐项目，目前已累计 2.0k+ star](https://gitee.com/veal98/Echo)，基于 SpringBoot + MyBatis + MySQL + Redis + Kafka + Elasticsearch ... 并提供详细的开发文档和配套教程。公众号后台回复 `Echo` 可以获取配套手把手教程
 
