@@ -241,11 +241,10 @@ module.exports = {
   markdown: {
     // lineNumbers: true,
     extractHeaders: ['h2', 'h3', 'h4', 'h5', 'h6'], // 提取标题到侧边栏的级别，默认['h2', 'h3']
-  },
-
-  extendMarkdown: md => {
-    // use more markdown-it plugins!
-    md.use(require('markdown-it-task-lists'))
+    extendMarkdown: md => {
+      // use more markdown-it plugins!
+      md.use(require('markdown-it-task-lists'))
+    }
   },
 
   // 监听文件变化并重新构建
