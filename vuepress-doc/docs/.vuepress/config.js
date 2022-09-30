@@ -174,7 +174,6 @@ module.exports = {
 
     ['fulltext-search'], // 全文搜索
     ['mathjax'],
-    ['task-lists'], // Task List
 
 
     // ['thirdparty-search', { // 可以添加第三方搜索链接的搜索框（原官方搜索框的参数仍可用）
@@ -242,6 +241,11 @@ module.exports = {
   markdown: {
     // lineNumbers: true,
     extractHeaders: ['h2', 'h3', 'h4', 'h5', 'h6'], // 提取标题到侧边栏的级别，默认['h2', 'h3']
+  },
+
+  extendMarkdown: md => {
+    // use more markdown-it plugins!
+    md.use(require('markdown-it-task-lists'))
   },
 
   // 监听文件变化并重新构建
