@@ -1,3 +1,8 @@
+---
+title: 4-Logistic回归
+date: 2021-01-18 10:58:30
+permalink: /pages/14a387/
+---
 # 🎃 Logistic 回归
 
 ---

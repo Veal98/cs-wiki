@@ -1,3 +1,8 @@
+---
+title: 7-Policy-Gradient
+date: 2021-01-18 10:58:30
+permalink: /pages/cb2052/
+---
 # 💫 策略梯度 Policy Gradient
 
 ---

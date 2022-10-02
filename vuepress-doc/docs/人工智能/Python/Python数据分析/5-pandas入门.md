@@ -1,3 +1,8 @@
+---
+title: 5-pandas入门
+date: 2021-01-18 10:58:30
+permalink: /pages/acbd91/
+---
 # 🥃 第 5 章 pandas 入门 
 
 ---

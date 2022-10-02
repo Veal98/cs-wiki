@@ -1,3 +1,8 @@
+---
+title: 1-Python基础
+date: 2021-01-18 10:58:30
+permalink: /pages/cf1e57/
+---
 # ⛪ Python 基础
 
 ---

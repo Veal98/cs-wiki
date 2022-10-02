@@ -1,3 +1,8 @@
+---
+title: 8-Actor-Critic
+date: 2021-01-18 10:58:30
+permalink: /pages/4fbf8f/
+---
 # 🎭 演员-评论员算法 Actor-Critic
 
 ---

@@ -1,3 +1,8 @@
+---
+title: TensorFlow2快速入门
+date: 2021-01-18 10:58:30
+permalink: /pages/0440a2/
+---
 # 🚀 TensorFlow 2 快速入门教程
 
 ---

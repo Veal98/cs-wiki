@@ -1,3 +1,8 @@
+---
+title: 1-Sequential顺序模型
+date: 2021-01-18 10:58:30
+permalink: /pages/efd3d3/
+---
 # ☕ 序贯/顺序模型 The Sequential model
 
 ---

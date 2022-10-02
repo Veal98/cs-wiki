@@ -1,3 +1,8 @@
+---
+title: Mybatis知识点全解
+date: 2020-08-13 21:32:29
+permalink: /pages/366440/
+---
 # 一、第一个Mybatis项目
 
 > 采用接口式编程

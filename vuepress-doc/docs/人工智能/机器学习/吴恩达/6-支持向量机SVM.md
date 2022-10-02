@@ -1,3 +1,8 @@
+---
+title: 6-支持向量机SVM
+date: 2021-01-18 10:58:30
+permalink: /pages/275e20/
+---
 # 🍍 支持向量机(Support Vector Machines)
 
 ## 1. 优化目标 Optimization Objective

@@ -1,3 +1,8 @@
+---
+title: 2-使用函数式API的Model类模型
+date: 2021-01-18 10:58:30
+permalink: /pages/c8878a/
+---
 # 🍆 Keras 函数式 API
 
 ---

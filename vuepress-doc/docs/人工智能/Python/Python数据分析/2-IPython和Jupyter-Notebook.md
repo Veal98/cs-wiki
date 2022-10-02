@@ -1,3 +1,8 @@
+---
+title: 2-IPython和Jupyter-Notebook
+date: 2021-01-18 10:58:30
+permalink: /pages/420999/
+---
 # 🧀 第 2 章 IPython 和 Jupyter Notebook
 
 ## 2.1 Python解释器 

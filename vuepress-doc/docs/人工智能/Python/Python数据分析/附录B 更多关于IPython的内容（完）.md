@@ -1,3 +1,8 @@
+---
+title: 附录B 更多关于IPython的内容（完）
+date: 2021-01-18 10:58:30
+permalink: /pages/8eb5c2/
+---
 第2章中，我们学习了IPython shell和Jupyter notebook的基础。本章中，我们会探索IPython更深层次的功能，可以从控制台或在jupyter使用。
 
 # B.1 使用命令历史
