@@ -29,3 +29,5 @@ git push -f git@124.221.132.200:/home/www/website/cswiki.git master
 cd -
 
 cd ../
+
+pause
