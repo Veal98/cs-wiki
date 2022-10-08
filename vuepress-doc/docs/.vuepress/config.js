@@ -99,7 +99,7 @@ module.exports = {
           { text: '分布式 ID', link: '/pages/distributed-id/' },
           { text: '分布式锁', link: '/pages/distributed-lock/' },
           {
-            text: '分布式协调服务',
+            text: '分布式协调服务', 
             items: [
               { text: 'Zookeeper', link: '/pages/zookeeper/' }
             ]
