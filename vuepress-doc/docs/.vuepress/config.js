@@ -107,6 +107,14 @@ module.exports = {
         ]
       },
       {
+        text: '其他中间件',
+        items: [
+          { text: 'Spring Security', link: '/pages/springsecurity/' },
+          { text: 'Shiro', link: '/pages/shiro/' },
+          { text: 'Netty', link: '/pages/netty/' }
+        ]
+      },
+      {
         text: '唠唠嗑儿',
         items: [
           { text: '唠唠嗑儿', link: '/pages/first/' },
