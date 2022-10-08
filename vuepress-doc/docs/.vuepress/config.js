@@ -211,7 +211,7 @@ module.exports = {
       tex: true,
     },
 
-    pwa: true, //pwa
+    // pwa: true, //pwa
   },
 
   // 插件
