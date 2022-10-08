@@ -20,58 +20,107 @@ module.exports = {
     // ['script', { src: 'https://cdn.wwads.cn/js/makemoney.js', type: 'text/javascript' }], // 广告相关，你可以去掉
   ],
 
-  
+
 
   // 主题配置
   themeConfig: {
     nav: [
-      { text: 'Home', link: '/'},
-      { text: '知识体系总览', link: '/pages/home/'},
-      { 
-        text: '计算机基础', 
+      { text: 'Home', link: '/' },
+      { text: '知识体系总览', link: '/pages/home/' },
+      {
+        text: '计算机基础',
         items: [
-          { text: '数据结构与算法', link: '/pages/tips/'},
+          { text: '数据结构与算法', link: '/pages/tips/' },
           { text: '计算机网络', link: '/pages/net/' },
           { text: '操作系统', link: '/pages/os/' },
           { text: 'MySQL', link: '/pages/sql/' }
         ]
       },
-      { 
-        text: 'Java', 
+      {
+        text: 'Java',
         items: [
           { text: 'Java 基础', link: '/pages/java/' },
           { text: 'Java 集合', link: '/pages/javalist/' },
           { text: 'Java 并发', link: '/pages/javaconcurrent/' },
-          { text: 'Java 虚拟机', link: '/pages/jvm/' }
+          { text: 'Java 虚拟机', link: '/pages/jvm/' },
+          { text: 'Java 新版本特性', link: '/pages/java8new/' }
         ]
       },
-      { 
-        text: '基础框架', 
+      {
+        text: '基础框架',
         items: [
-          { text: 'Spring', link: '/pages/spring/' },
+          {
+            text: 'Java 开发框架',
+            items: [
+              { text: 'Spring', link: '/pages/spring/' },
+              { text: 'SpringMVC', link: '/pages/springmvc/' },
+              { text: 'SpringBoot', link: '/pages/springboot/' }
+            ]
+          },
+          {
+            text: 'ORM 框架',
+            items: [
+              { text: 'MyBatis', link: '/pages/mybatis/' },
+              { text: 'Spring Data JPA', link: '/pages/jpa/' }
+            ]
+          }
         ]
       },
-      // { 
-      //   text: '中间件', 
-      //   items: [
-      //     { text: 'Redis', link: '/pages/redis/' },
-      //   ]
-      // },
-      { 
-        text: '唠唠嗑儿', 
+      {
+        text: '微服务',
+        items: [
+          { text: 'Dubbo', link: '/pages/dubbo/' }
+        ]
+      },
+      {
+        text: '高并发/高性能',
+        items: [
+          // {
+          //   text: '缓存',
+          //   items: [
+          //     { text: 'Redis', link: '/pages/spring/' }
+          //   ]
+          // },
+          {
+            text: '消息队列',
+            items: [
+              { text: 'Kafka', link: '/pages/kafka/' }
+            ]
+          }
+        ]
+      },
+      {
+        text: '分布式',
+        items: [
+          { text: 'CAP & BASE 理论', link: '/pages/capandbase/' },
+          { text: '分布式一致性算法', link: '/pages/consistency-hash/' },
+          { text: '分布式 Session', link: '/pages/distributed-session/' },
+          { text: '分布式事务', link: '/pages/distributed-transaction/' },
+          { text: '分布式 ID', link: '/pages/distributed-id/' },
+          { text: '分布式锁', link: '/pages/distributed-lock/' },
+          {
+            text: '分布式协调服务',
+            items: [
+              { text: 'Zookeeper', link: '/pages/zookeeper/' }
+            ]
+          }
+        ]
+      },
+      {
+        text: '唠唠嗑儿',
         items: [
           { text: '唠唠嗑儿', link: '/pages/first/' },
           { text: '读书笔记', link: '/pages/readnotes/' }
         ]
       },
-      { text: '归档', link: '/archives/'},
-      
+      { text: '归档', link: '/archives/' },
+
     ],
     sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
     markdown: {
-      extractHeaders: [ 'h2', 'h3', 'h4', 'h5', 'h6' ],
+      extractHeaders: ['h2', 'h3', 'h4', 'h5', 'h6'],
     },
-    
+
     logo: 'https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20220514093911.png', // 导航栏logo
     repo: 'veal98/cs-wiki', // 导航栏右侧生成Github链接
 
@@ -89,7 +138,7 @@ module.exports = {
     // editLinkText: '编辑',
 
     // 以下配置是Vdoing主题改动的和新增的配置
-    sidebar: { mode: 'structuring'}, // 侧边栏  'structuring' | { mode: 'structuring', collapsable: Boolean} | 'auto' | 自定义    温馨提示：目录页数据依赖于结构化的侧边栏数据，如果你不设置为'structuring',将无法使用目录页
+    sidebar: { mode: 'structuring' }, // 侧边栏  'structuring' | { mode: 'structuring', collapsable: Boolean} | 'auto' | 自定义    温馨提示：目录页数据依赖于结构化的侧边栏数据，如果你不设置为'structuring',将无法使用目录页
 
     // sidebarOpen: false, // 初始状态是否打开侧边栏，默认true
     updateBar: { // 最近更新栏
@@ -197,7 +246,7 @@ module.exports = {
     [
       'vuepress-plugin-baidu-tongji', // 百度统计
       {
-        hm: baiduCode || 'c89b131cde681bc6084d91c96d86db7f' 
+        hm: baiduCode || 'c89b131cde681bc6084d91c96d86db7f'
       }
     ],
 
