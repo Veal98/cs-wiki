@@ -12,7 +12,7 @@ git push
 
 # 更新 gh-pages
 cd vuepress-doc
-npm run build  # 生成静态文件
+npm --max-old-space-size=8192 run build  # 生成静态文件
 cd docs/.vuepress/dist # 进入生成的文件夹
 
 git init
