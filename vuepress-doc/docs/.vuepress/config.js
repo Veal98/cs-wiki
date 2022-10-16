@@ -4,7 +4,7 @@ const htmlModules = require('./config/htmlModules.js');
 
 module.exports = {
 
-  theme: 'vdoing', // 使用依赖包主题 
+  theme: 'vdoing', // 使用依赖包主题
   // theme: require.resolve('../../vdoing'), // 使用本地主题
 
   title: "CS-Wiki",
@@ -32,7 +32,12 @@ module.exports = {
         items: [
           { text: '数据结构与算法', link: '/pages/tips/' },
           { text: '计算机网络', link: '/pages/net/' },
-          { text: '操作系统', link: '/pages/os/' },
+          { text: '操作系统', link: '/pages/os/' }
+        ]
+      },
+      {
+        text: '数据库',
+        items: [
           { text: 'MySQL', link: '/pages/sql/' }
         ]
       },
@@ -67,12 +72,6 @@ module.exports = {
         ]
       },
       {
-        text: '微服务',
-        items: [
-          { text: 'Dubbo', link: '/pages/dubbo/' }
-        ]
-      },
-      {
         text: '高并发/高性能',
         items: [
           // {
@@ -98,6 +97,12 @@ module.exports = {
           { text: '分布式事务', link: '/pages/distributed-transaction/' },
           { text: '分布式 ID', link: '/pages/distributed-id/' },
           { text: '分布式锁', link: '/pages/distributed-lock/' },
+          {
+            text: '分布式 RPC 框架', 
+            items: [
+              { text: 'Dubbo', link: '/pages/dubbo/' }
+            ]
+          },
           {
             text: '分布式协调服务', 
             items: [
