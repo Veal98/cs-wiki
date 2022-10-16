@@ -2,8 +2,8 @@
   "name": "theme-vdoing-doc",
   "version": "1.0.0",
   "scripts": {
-    "dev": "node --max_old_space_size=8192 ./node_modules/vuepress/vuepress.js dev docs", 
-    "build": "node --max_old_space_size=8192 ./node_modules/vuepress/vuepress.js build docs",
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs",
     "deploy": "bash deploy.sh",
     "updateTheme": "yarn remove vuepress-theme-vdoing && rm -rf node_modules && yarn && yarn add vuepress-theme-vdoing -D",
     "editFm": "node utils/editFrontmatter.js"
