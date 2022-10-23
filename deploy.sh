@@ -10,6 +10,8 @@ git add -A
 git commit -m "更新"
 git push
 
+export NODE_OPTIONS="--max-old-space-size=8192" # Increase to 8 GB
+
 # 更新 gh-pages
 cd vuepress-doc
 npm run build  # 生成静态文件
