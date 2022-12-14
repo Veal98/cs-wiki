@@ -48,7 +48,8 @@ module.exports = {
           { text: 'Java 集合', link: '/pages/javalist/' },
           { text: 'Java 并发', link: '/pages/javaconcurrent/' },
           { text: 'Java 虚拟机', link: '/pages/jvm/' },
-          { text: 'Java 新版本特性', link: '/pages/java8new/' }
+          { text: 'Java 新版本特性'}
+          // { text: 'Java 新版本特性', link: '/pages/java8new/' }
         ]
       },
       {
@@ -58,8 +59,10 @@ module.exports = {
             text: 'Java 开发框架',
             items: [
               { text: 'Spring', link: '/pages/spring/' },
-              { text: 'SpringMVC', link: '/pages/springmvc/' },
-              { text: 'SpringBoot', link: '/pages/springboot/' }
+              { text: 'SpringMVC'},
+              { text: 'SpringBoot'}
+              // { text: 'SpringMVC', link: '/pages/springmvc/' },
+              // { text: 'SpringBoot', link: '/pages/springboot/' }
             ]
           },
           {
@@ -67,6 +70,8 @@ module.exports = {
             items: [
               { text: 'MyBatis', link: '/pages/mybatis/' },
               { text: 'Spring Data JPA', link: '/pages/jpa/' }
+              // { text: 'MyBatis', link: '/pages/mybatis/' },
+              // { text: 'Spring Data JPA', link: '/pages/jpa/' }
             ]
           }
         ]
@@ -91,32 +96,53 @@ module.exports = {
       {
         text: '分布式',
         items: [
-          { text: 'CAP & BASE 理论', link: '/pages/capandbase/' },
-          { text: '分布式一致性算法', link: '/pages/consistency-hash/' },
-          { text: '分布式 Session', link: '/pages/distributed-session/' },
-          { text: '分布式事务', link: '/pages/distributed-transaction/' },
-          { text: '分布式 ID', link: '/pages/distributed-id/' },
-          { text: '分布式锁', link: '/pages/distributed-lock/' },
+          { text: 'CAP & BASE 理论'},
+          { text: '分布式一致性算法'},
+          { text: '分布式 Session'},
+          { text: '分布式事务'},
+          { text: '分布式 ID'},
+          { text: '分布式锁'},
           {
             text: '分布式 RPC 框架', 
             items: [
-              { text: 'Dubbo', link: '/pages/dubbo/' }
+              { text: 'Dubbo'}
             ]
           },
           {
             text: '分布式协调服务', 
             items: [
-              { text: 'Zookeeper', link: '/pages/zookeeper/' }
+              { text: 'Zookeeper'}
             ]
           }
+          // { text: 'CAP & BASE 理论', link: '/pages/capandbase/' },
+          // { text: '分布式一致性算法', link: '/pages/consistency-hash/' },
+          // { text: '分布式 Session', link: '/pages/distributed-session/' },
+          // { text: '分布式事务', link: '/pages/distributed-transaction/' },
+          // { text: '分布式 ID', link: '/pages/distributed-id/' },
+          // { text: '分布式锁', link: '/pages/distributed-lock/' },
+          // {
+          //   text: '分布式 RPC 框架', 
+          //   items: [
+          //     { text: 'Dubbo', link: '/pages/dubbo/' }
+          //   ]
+          // },
+          // {
+          //   text: '分布式协调服务', 
+          //   items: [
+          //     { text: 'Zookeeper', link: '/pages/zookeeper/' }
+          //   ]
+          // }
         ]
       },
       {
         text: '其他中间件',
         items: [
-          { text: 'Spring Security', link: '/pages/springsecurity/' },
-          { text: 'Shiro', link: '/pages/shiro/' },
-          { text: 'Netty', link: '/pages/netty/' }
+          { text: 'Spring Security' },
+          { text: 'Shiro'},
+          { text: 'Netty' }
+          // { text: 'Spring Security', link: '/pages/springsecurity/' },
+          // { text: 'Shiro', link: '/pages/shiro/' },
+          // { text: 'Netty', link: '/pages/netty/' }
         ]
       },
       {
