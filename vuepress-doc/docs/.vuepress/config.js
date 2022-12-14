@@ -48,7 +48,6 @@ module.exports = {
           { text: 'Java 集合', link: '/pages/javalist/' },
           { text: 'Java 并发', link: '/pages/javaconcurrent/' },
           { text: 'Java 虚拟机', link: '/pages/jvm/' },
-          { text: 'Java 新版本特性'}
           // { text: 'Java 新版本特性', link: '/pages/java8new/' }
         ]
       },
