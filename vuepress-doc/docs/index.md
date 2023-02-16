@@ -19,7 +19,6 @@ bannerBg: none # auto => 网格纹背景(有bodyBgImg时无背景)，默认 | no
 # 文章列表显示方式: detailed 默认，显示详细版文章列表（包括作者、分类、标签、摘要、分页等）| simple => 显示简约版文章列表（仅标题和日期）| none 不显示文章列表
 postList: none
 ---
-
 ---
 
 <div align="center">
@@ -28,6 +27,9 @@ postList: none
   <a href="https://github.com/Veal98/cs-wiki/stargazers" target="_blank"><img src='https://img.shields.io/github/stars/Veal98/cs-wiki' alt='GitHub stars' class="no-zoom"></a>
   <a href="https://img.shields.io/github/forks/Veal98/cs-wiki?logo=github" target="_blank"><img src='https://img.shields.io/github/forks/Veal98/cs-wiki' alt='GitHub forks' class="no-zoom"></a>
 </div>
+
+
+<div class="wwads-cn wwads-horizontal" data-id="215" style="max-width:350px"></div>
 
 ### 关于
 
@@ -45,7 +47,7 @@ postList: none
 
 🦄 [「开源社区系统 Echo」Gitee 官方推荐项目，目前已累计 2.0k+ star](https://gitee.com/veal98/Echo)，基于 SpringBoot + MyBatis + MySQL + Redis + Kafka + Elasticsearch ... 并提供详细的开发文档和配套教程。公众号后台回复 `Echo` 可以获取配套手把手教程
 
-😉 有什么问题也可以添加我的微信，记得备注来意：格式 <u>（学校或公司 - 姓名或昵称 - 来意）</u>
+😉 有什么问题也可以添加我的微信，记得备注来意：格式 `<u>`（学校或公司 - 姓名或昵称 - 来意）`</u>`
 
 <img width = 240px src="https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/微信图片_20210105121328.jpg"  />
 
@@ -68,7 +70,6 @@ postList: none
 
 ![](https://cs-wiki.oss-cn-shanghai.aliyuncs.com/img/20220525131852.png)
 
-
 <style>
 .become-sponsor{
   padding: 8px 20px;
@@ -89,4 +90,3 @@ postList: none
   font-size: 1.4rem !important;
 }
 </style>
-
