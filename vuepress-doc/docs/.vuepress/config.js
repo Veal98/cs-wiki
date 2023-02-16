@@ -74,7 +74,7 @@ module.exports = {
       {
         text: '校招扫盲',
         items: [
-          { text: '校招扫盲', link: '/pages/notion//' },
+          { text: '校招扫盲', link: '/pages/notion/' },
           { text: '项目推荐', link: '/pages/introduce/' }
         ]
       },
