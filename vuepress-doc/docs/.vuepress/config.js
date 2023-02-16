@@ -43,84 +43,40 @@ module.exports = {
         ]
       },
       {
+        text: '设计模式',
+        items: [
+          { text: 'MySQL', link: '/pages/singleton/' }
+        ]
+      },
+      {
         text: 'Java',
         items: [
           { text: 'Java 基础', link: '/pages/java/' },
           { text: 'Java 集合', link: '/pages/javalist/' },
           { text: 'Java 并发', link: '/pages/javaconcurrent/' },
           { text: 'Java 虚拟机', link: '/pages/jvm/' },
-          { text: '项目推荐', link: '/pages/introduce//' },
           // { text: 'Java 新版本特性', link: '/pages/java8new/' }
         ]
       },
       {
-        text: '基础框架',
+        text: 'SSM',
         items: [
-          {
-            text: 'Java 开发框架',
-            items: [
-              { text: 'Spring', link: '/pages/spring/' },
-              // { text: 'SpringMVC', link: '/pages/springmvc/' },
-              // { text: 'SpringBoot', link: '/pages/springboot/' }
-            ]
-          },
-          // {
-          //   text: 'ORM 框架',
-          //   items: [
-          //     { text: 'MyBatis', link: '/pages/mybatis/' },
-          //     { text: 'Spring Data JPA', link: '/pages/jpa/' }
-          //   ]
-          // }
+          { text: 'Spring', link: '/pages/spring/' },
         ]
       },
       {
-        text: '高并发/高性能',
+        text: '中间件',
         items: [
-          // {
-          //   text: '缓存',
-          //   items: [
-          //     { text: 'Redis', link: '/pages/spring/' }
-          //   ]
-          // },
-          {
-            text: '消息队列',
-            items: [
-              { text: 'Kafka', link: '/pages/kafka/' }
-            ]
-          }
+          { text: 'Kafka', link: '/pages/kafka/' }
         ]
       },
-      // {
-      //   text: '分布式',
-      //   items: [
-      //     { text: 'CAP & BASE 理论', link: '/pages/capandbase/' },
-      //     { text: '分布式一致性算法', link: '/pages/consistency-hash/' },
-      //     { text: '分布式 Session', link: '/pages/distributed-session/' },
-      //     { text: '分布式事务', link: '/pages/distributed-transaction/' },
-      //     { text: '分布式 ID', link: '/pages/distributed-id/' },
-      //     { text: '分布式锁', link: '/pages/distributed-lock/' },
-      //     {
-      //       text: '分布式 RPC 框架', 
-      //       items: [
-      //         { text: 'Dubbo', link: '/pages/dubbo/' }
-      //       ]
-      //     },
-      //     {
-      //       text: '分布式协调服务', 
-      //       items: [
-      //         { text: 'Zookeeper', link: '/pages/zookeeper/' }
-      //       ]
-      //     }
-      //   ]
-      // },
-      // {
-      //   text: '其他中间件',
-      //   items: [
-      //     { text: 'Spring Security', link: '/pages/springsecurity/' },
-      //     { text: 'Shiro', link: '/pages/shiro/' },
-      //     { text: 'Netty', link: '/pages/netty/' }
-      //   ]
-      // },
+      {
+        text: '校招扫盲',
+        items: [
+          { text: '校招扫盲', link: '/pages/notion//' },
+          { text: '项目推荐', link: '/pages/introduce/' }
+        ]
+      },
       {
         text: '唠唠嗑儿',
         items: [
