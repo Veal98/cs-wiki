@@ -39,13 +39,14 @@ module.exports = {
       {
         text: '数据库',
         items: [
-          { text: 'MySQL', link: '/pages/sql/' }
+          { text: 'MySQL', link: '/pages/sql/' },
+          { text: 'Redis', link: '/pages/skiplist/' }
         ]
       },
       {
-        text: '设计模式',
+        text: '系统架构',
         items: [
-          { text: 'MySQL', link: '/pages/singleton/' }
+          { text: '设计模式', link: '/pages/singleton/' },
         ]
       },
       {
